@@ -27,6 +27,5 @@
             "4.1.36": "4.1.36.x-dev"
         }
     },
-    "minimum-stability": "dev",
     "prefer-stable": true
 }
