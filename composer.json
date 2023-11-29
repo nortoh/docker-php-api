@@ -15,7 +15,7 @@
     },
     "require": {
         "php": ">=7.1",
-        "nortoh/docker-php-api": "^5.0",
+        "docker-php/docker-php-api": "^5.0",
         "guzzlehttp/psr7": "^1.2",
         "php-http/client-common": "^2.7",
         "php-http/socket-client": "^2.1.0",
