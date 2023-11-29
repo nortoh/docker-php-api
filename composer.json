@@ -15,7 +15,7 @@
     },
     "require": {
         "php": ">=7.1",
-        "docker-php/docker-php-api": "^5.0",
+        "docker-php/docker-php-api": "dev-feature.php83-christian",
         "guzzlehttp/psr7": "^1.2",
         "php-http/client-common": "^2.7",
         "php-http/socket-client": "^2.1.0",
@@ -39,16 +39,8 @@
     },
     "repositories": [
         {
-            "type": "package",
-            "package": {
-                "name": "nortoh/docker-php-api",
-                "version": "5.0",
-                "source": {
-                    "url": "https://github.com/nortoh/docker-php-api",
-                    "type": "git",
-                    "reference": "origin/5.0"
-                }
-            }
+            "type": "vcs",
+            "url": "https://github.com/nortoh/docker-php-api"
         }
     ],
     "scripts": {
