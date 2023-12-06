@@ -3,7 +3,6 @@
 return [
     'directory' => 'src',
     'namespace' => 'Docker\\API',
-    'openapi-file' => __DIR__ . '/docker-swagger.yaml',
-    'async' => true,
+    'openapi-file' => __DIR__ . '/openapi.yaml',
     'strict' => false,
 ];
