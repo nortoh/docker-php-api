@@ -49,7 +49,7 @@ class NetworksCreatePostBody extends \ArrayObject
      */
     protected $ingress;
     /**
-     * 
+     *
      *
      * @var IPAM|null
      */
@@ -205,7 +205,7 @@ class NetworksCreatePostBody extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return IPAM|null
      */
@@ -214,7 +214,7 @@ class NetworksCreatePostBody extends \ArrayObject
         return $this->iPAM;
     }
     /**
-     * 
+     *
      *
      * @param IPAM|null $iPAM
      *
@@ -253,7 +253,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getOptions() : ?iterable
+    public function getOptions() : ?\ArrayObject
     {
         return $this->options;
     }
@@ -264,7 +264,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?iterable $options) : self
+    public function setOptions(?\ArrayObject $options) : self
     {
         $this->initialized['options'] = true;
         $this->options = $options;
@@ -275,7 +275,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels() : ?\ArrayObject
     {
         return $this->labels;
     }
@@ -286,7 +286,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?\ArrayObject $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;

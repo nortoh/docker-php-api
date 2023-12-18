@@ -85,7 +85,7 @@ class VolumesCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getDriverOpts() : ?iterable
+    public function getDriverOpts() : ?\ArrayObject
     {
         return $this->driverOpts;
     }
@@ -96,7 +96,7 @@ class VolumesCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setDriverOpts(?iterable $driverOpts) : self
+    public function setDriverOpts(?\ArrayObject $driverOpts) : self
     {
         $this->initialized['driverOpts'] = true;
         $this->driverOpts = $driverOpts;
@@ -107,7 +107,7 @@ class VolumesCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels() : ?\ArrayObject
     {
         return $this->labels;
     }
@@ -118,7 +118,7 @@ class VolumesCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?\ArrayObject $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;

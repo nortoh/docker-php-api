@@ -21,7 +21,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-    
+
     *
     * @var array<string, string>|null
     */
@@ -51,24 +51,24 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-    
+
     *
     * @return array<string, string>|null
     */
-    public function getOptions() : ?iterable
+    public function getOptions() : ?\ArrayObject
     {
         return $this->options;
     }
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-    
+
     *
     * @param array<string, string>|null $options
     *
     * @return self
     */
-    public function setOptions(?iterable $options) : self
+    public function setOptions(?\ArrayObject $options) : self
     {
         $this->initialized['options'] = true;
         $this->options = $options;

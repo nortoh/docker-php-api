@@ -50,9 +50,9 @@ class ContainerConfig extends \ArrayObject
     protected $attachStderr = true;
     /**
     * An object mapping ports to an empty object in the form:
-    
+
     `{"<port>/<tcp|udp>": {}}`
-    
+
     *
     * @var array<string, ContainerConfigExposedPortsItem>|null
     */
@@ -119,9 +119,9 @@ class ContainerConfig extends \ArrayObject
     protected $workingDir;
     /**
     * The entry point for the container as a string or an array of strings.
-    
+
     If the array consists of exactly one empty string (`[""]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
-    
+
     *
     * @var string[]|null
     */
@@ -302,9 +302,9 @@ class ContainerConfig extends \ArrayObject
     }
     /**
     * An object mapping ports to an empty object in the form:
-    
+
     `{"<port>/<tcp|udp>": {}}`
-    
+
     *
     * @return array<string, ContainerConfigExposedPortsItem>|null
     */
@@ -314,9 +314,9 @@ class ContainerConfig extends \ArrayObject
     }
     /**
     * An object mapping ports to an empty object in the form:
-    
+
     `{"<port>/<tcp|udp>": {}}`
-    
+
     *
     * @param array<string, ContainerConfigExposedPortsItem>|null $exposedPorts
     *
@@ -550,9 +550,9 @@ class ContainerConfig extends \ArrayObject
     }
     /**
     * The entry point for the container as a string or an array of strings.
-    
+
     If the array consists of exactly one empty string (`[""]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
-    
+
     *
     * @return string[]|null
     */
@@ -562,9 +562,9 @@ class ContainerConfig extends \ArrayObject
     }
     /**
     * The entry point for the container as a string or an array of strings.
-    
+
     If the array consists of exactly one empty string (`[""]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
-    
+
     *
     * @param string[]|null $entrypoint
     *
@@ -647,7 +647,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels() : ?\ArrayObject
     {
         return $this->labels;
     }
@@ -658,7 +658,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?\ArrayObject $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;

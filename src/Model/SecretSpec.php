@@ -27,10 +27,10 @@ class SecretSpec extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-    
+
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-    
+
     *
     * @var string|null
     */
@@ -68,7 +68,7 @@ class SecretSpec extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels() : ?\ArrayObject
     {
         return $this->labels;
     }
@@ -79,7 +79,7 @@ class SecretSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?\ArrayObject $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -88,10 +88,10 @@ class SecretSpec extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-    
+
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-    
+
     *
     * @return string|null
     */
@@ -102,10 +102,10 @@ class SecretSpec extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-    
+
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-    
+
     *
     * @param string|null $data
     *

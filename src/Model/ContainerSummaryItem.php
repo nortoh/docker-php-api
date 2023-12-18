@@ -85,7 +85,7 @@ class ContainerSummaryItem extends \ArrayObject
      */
     protected $status;
     /**
-     * 
+     *
      *
      * @var ContainerSummaryItemHostConfig|null
      */
@@ -97,7 +97,7 @@ class ContainerSummaryItem extends \ArrayObject
      */
     protected $networkSettings;
     /**
-     * 
+     *
      *
      * @var Mount[]|null
      */
@@ -305,7 +305,7 @@ class ContainerSummaryItem extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels() : ?\ArrayObject
     {
         return $this->labels;
     }
@@ -316,7 +316,7 @@ class ContainerSummaryItem extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?\ArrayObject $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -367,7 +367,7 @@ class ContainerSummaryItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ContainerSummaryItemHostConfig|null
      */
@@ -376,7 +376,7 @@ class ContainerSummaryItem extends \ArrayObject
         return $this->hostConfig;
     }
     /**
-     * 
+     *
      *
      * @param ContainerSummaryItemHostConfig|null $hostConfig
      *
@@ -411,7 +411,7 @@ class ContainerSummaryItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return Mount[]|null
      */
@@ -420,7 +420,7 @@ class ContainerSummaryItem extends \ArrayObject
         return $this->mounts;
     }
     /**
-     * 
+     *
      *
      * @param Mount[]|null $mounts
      *

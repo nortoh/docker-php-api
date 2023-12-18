@@ -40,10 +40,10 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-    
+
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-    
+
     *
     * @var array<string, VolumeStatusItem>|null
     */
@@ -69,7 +69,7 @@ class Volume extends \ArrayObject
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-    
+
     *
     * @var VolumeUsageData|null
     */
@@ -166,14 +166,14 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-    
+
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-    
+
     *
     * @return array<string, VolumeStatusItem>|null
     */
-    public function getStatus() : ?iterable
+    public function getStatus() : ?\ArrayObject
     {
         return $this->status;
     }
@@ -181,16 +181,16 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-    
+
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-    
+
     *
     * @param array<string, VolumeStatusItem>|null $status
     *
     * @return self
     */
-    public function setStatus(?iterable $status) : self
+    public function setStatus(?\ArrayObject $status) : self
     {
         $this->initialized['status'] = true;
         $this->status = $status;
@@ -201,7 +201,7 @@ class Volume extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels() : ?\ArrayObject
     {
         return $this->labels;
     }
@@ -212,7 +212,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?\ArrayObject $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -245,7 +245,7 @@ class Volume extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getOptions() : ?iterable
+    public function getOptions() : ?\ArrayObject
     {
         return $this->options;
     }
@@ -256,7 +256,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?iterable $options) : self
+    public function setOptions(?\ArrayObject $options) : self
     {
         $this->initialized['options'] = true;
         $this->options = $options;
@@ -265,7 +265,7 @@ class Volume extends \ArrayObject
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-    
+
     *
     * @return VolumeUsageData|null
     */
@@ -276,7 +276,7 @@ class Volume extends \ArrayObject
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-    
+
     *
     * @param VolumeUsageData|null $usageData
     *

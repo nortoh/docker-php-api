@@ -119,9 +119,9 @@ class TaskSpecContainerSpec extends \ArrayObject
     file. The format of extra hosts is specified in the
     [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html)
     man page:
-    
+
        IP_address canonical_hostname [aliases...]
-    
+
     *
     * @var string[]|null
     */
@@ -177,7 +177,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels() : ?\ArrayObject
     {
         return $this->labels;
     }
@@ -188,7 +188,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?\ArrayObject $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -529,9 +529,9 @@ class TaskSpecContainerSpec extends \ArrayObject
     file. The format of extra hosts is specified in the
     [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html)
     man page:
-    
+
        IP_address canonical_hostname [aliases...]
-    
+
     *
     * @return string[]|null
     */
@@ -544,9 +544,9 @@ class TaskSpecContainerSpec extends \ArrayObject
     file. The format of extra hosts is specified in the
     [hosts(5)](http://man7.org/linux/man-pages/man5/hosts.5.html)
     man page:
-    
+
        IP_address canonical_hostname [aliases...]
-    
+
     *
     * @param string[]|null $hosts
     *

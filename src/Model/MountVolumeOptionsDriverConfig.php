@@ -51,7 +51,7 @@ class MountVolumeOptionsDriverConfig extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getOptions() : ?iterable
+    public function getOptions() : ?\ArrayObject
     {
         return $this->options;
     }
@@ -62,7 +62,7 @@ class MountVolumeOptionsDriverConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?iterable $options) : self
+    public function setOptions(?\ArrayObject $options) : self
     {
         $this->initialized['options'] = true;
         $this->options = $options;

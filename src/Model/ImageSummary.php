@@ -13,67 +13,67 @@ class ImageSummary extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $id;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $parentId;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $repoTags;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $repoDigests;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $created;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $size;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $sharedSize;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $virtualSize;
     /**
-     * 
+     *
      *
      * @var array<string, string>|null
      */
     protected $labels;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $containers;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -82,7 +82,7 @@ class ImageSummary extends \ArrayObject
         return $this->id;
     }
     /**
-     * 
+     *
      *
      * @param string|null $id
      *
@@ -95,7 +95,7 @@ class ImageSummary extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -104,7 +104,7 @@ class ImageSummary extends \ArrayObject
         return $this->parentId;
     }
     /**
-     * 
+     *
      *
      * @param string|null $parentId
      *
@@ -117,7 +117,7 @@ class ImageSummary extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -126,7 +126,7 @@ class ImageSummary extends \ArrayObject
         return $this->repoTags;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $repoTags
      *
@@ -139,7 +139,7 @@ class ImageSummary extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -148,7 +148,7 @@ class ImageSummary extends \ArrayObject
         return $this->repoDigests;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $repoDigests
      *
@@ -161,7 +161,7 @@ class ImageSummary extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -170,7 +170,7 @@ class ImageSummary extends \ArrayObject
         return $this->created;
     }
     /**
-     * 
+     *
      *
      * @param int|null $created
      *
@@ -183,7 +183,7 @@ class ImageSummary extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -192,7 +192,7 @@ class ImageSummary extends \ArrayObject
         return $this->size;
     }
     /**
-     * 
+     *
      *
      * @param int|null $size
      *
@@ -205,7 +205,7 @@ class ImageSummary extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -214,7 +214,7 @@ class ImageSummary extends \ArrayObject
         return $this->sharedSize;
     }
     /**
-     * 
+     *
      *
      * @param int|null $sharedSize
      *
@@ -227,7 +227,7 @@ class ImageSummary extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -236,7 +236,7 @@ class ImageSummary extends \ArrayObject
         return $this->virtualSize;
     }
     /**
-     * 
+     *
      *
      * @param int|null $virtualSize
      *
@@ -249,29 +249,29 @@ class ImageSummary extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels() : ?\ArrayObject
     {
         return $this->labels;
     }
     /**
-     * 
+     *
      *
      * @param array<string, string>|null $labels
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?\ArrayObject $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -280,7 +280,7 @@ class ImageSummary extends \ArrayObject
         return $this->containers;
     }
     /**
-     * 
+     *
      *
      * @param int|null $containers
      *
