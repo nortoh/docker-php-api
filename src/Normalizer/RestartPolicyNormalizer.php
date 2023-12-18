@@ -67,16 +67,16 @@ class RestartPolicyNormalizer implements DenormalizerInterface, NormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \stdClass();
         if ($object->isInitialized('name') && null !== $object->getName()) {
-            $data['Name'] = $object->getName();
+            $data->{'Name'} = $object->getName();
         }
         if ($object->isInitialized('maximumRetryCount') && null !== $object->getMaximumRetryCount()) {
-            $data['MaximumRetryCount'] = $object->getMaximumRetryCount();
+            $data->{'MaximumRetryCount'} = $object->getMaximumRetryCount();
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value;
+                $data->{$key} = $value;
             }
         }
         return $data;
