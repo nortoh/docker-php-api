@@ -81,7 +81,7 @@ class TaskSpecRestartPolicyNormalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('condition') && null !== $object->getCondition()) {
             $data['Condition'] = $object->getCondition();
         }

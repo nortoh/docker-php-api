@@ -74,7 +74,7 @@ class VersionGetResponse200ComponentsItemNormalizer implements DenormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['Name'] = $object->getName();
         $data['Version'] = $object->getVersion();
         if ($object->isInitialized('details') && null !== $object->getDetails()) {

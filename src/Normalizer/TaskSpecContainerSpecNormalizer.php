@@ -243,7 +243,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('image') && null !== $object->getImage()) {
             $data['Image'] = $object->getImage();
         }

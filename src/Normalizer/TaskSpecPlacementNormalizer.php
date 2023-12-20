@@ -86,7 +86,7 @@ class TaskSpecPlacementNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('constraints') && null !== $object->getConstraints()) {
             $values = array();
             foreach ($object->getConstraints() as $value) {

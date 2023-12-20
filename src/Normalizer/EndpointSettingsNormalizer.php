@@ -156,7 +156,7 @@ class EndpointSettingsNormalizer implements DenormalizerInterface, NormalizerInt
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('iPAMConfig') && null !== $object->getIPAMConfig()) {
             $data['IPAMConfig'] = $this->normalizer->normalize($object->getIPAMConfig(), 'json', $context);
         }

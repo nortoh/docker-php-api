@@ -60,7 +60,7 @@ class BuildPrunePostResponse200Normalizer implements DenormalizerInterface, Norm
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('spaceReclaimed') && null !== $object->getSpaceReclaimed()) {
             $data['SpaceReclaimed'] = $object->getSpaceReclaimed();
         }

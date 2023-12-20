@@ -67,7 +67,7 @@ class TaskSpecContainerSpecPrivilegesCredentialSpecNormalizer implements Denorma
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('file') && null !== $object->getFile()) {
             $data['File'] = $object->getFile();
         }

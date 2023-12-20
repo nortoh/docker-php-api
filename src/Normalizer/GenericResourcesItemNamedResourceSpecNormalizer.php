@@ -67,7 +67,7 @@ class GenericResourcesItemNamedResourceSpecNormalizer implements DenormalizerInt
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('kind') && null !== $object->getKind()) {
             $data['Kind'] = $object->getKind();
         }

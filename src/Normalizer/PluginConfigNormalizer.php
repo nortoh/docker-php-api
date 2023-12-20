@@ -177,7 +177,7 @@ class PluginConfigNormalizer implements DenormalizerInterface, NormalizerInterfa
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('dockerVersion') && null !== $object->getDockerVersion()) {
             $data['DockerVersion'] = $object->getDockerVersion();
         }

@@ -67,7 +67,7 @@ class TaskSpecResourcesNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('limits') && null !== $object->getLimits()) {
             $data['Limits'] = $this->normalizer->normalize($object->getLimits(), 'json', $context);
         }

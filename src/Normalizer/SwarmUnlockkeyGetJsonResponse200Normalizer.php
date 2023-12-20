@@ -60,7 +60,7 @@ class SwarmUnlockkeyGetJsonResponse200Normalizer implements DenormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('unlockKey') && null !== $object->getUnlockKey()) {
             $data['UnlockKey'] = $object->getUnlockKey();
         }

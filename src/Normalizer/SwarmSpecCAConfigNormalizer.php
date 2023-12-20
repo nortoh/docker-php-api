@@ -92,7 +92,7 @@ class SwarmSpecCAConfigNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('nodeCertExpiry') && null !== $object->getNodeCertExpiry()) {
             $data['NodeCertExpiry'] = $object->getNodeCertExpiry();
         }

@@ -67,7 +67,7 @@ class ContainersIdWaitPostResponse200Normalizer implements DenormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['StatusCode'] = $object->getStatusCode();
         if ($object->isInitialized('error') && null !== $object->getError()) {
             $data['Error'] = $this->normalizer->normalize($object->getError(), 'json', $context);

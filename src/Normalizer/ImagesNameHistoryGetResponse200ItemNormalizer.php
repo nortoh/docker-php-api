@@ -99,7 +99,7 @@ class ImagesNameHistoryGetResponse200ItemNormalizer implements DenormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['Id'] = $object->getId();
         $data['Created'] = $object->getCreated();
         $data['CreatedBy'] = $object->getCreatedBy();

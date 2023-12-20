@@ -71,7 +71,7 @@ class ContainersCreatePostResponse201Normalizer implements DenormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['Id'] = $object->getId();
         $values = array();
         foreach ($object->getWarnings() as $value) {

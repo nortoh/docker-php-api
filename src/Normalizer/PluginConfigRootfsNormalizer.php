@@ -71,7 +71,7 @@ class PluginConfigRootfsNormalizer implements DenormalizerInterface, NormalizerI
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('type') && null !== $object->getType()) {
             $data['type'] = $object->getType();
         }

@@ -78,7 +78,7 @@ class ImageRootFSNormalizer implements DenormalizerInterface, NormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['Type'] = $object->getType();
         if ($object->isInitialized('layers') && null !== $object->getLayers()) {
             $values = array();

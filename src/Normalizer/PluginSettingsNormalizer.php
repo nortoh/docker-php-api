@@ -97,7 +97,7 @@ class PluginSettingsNormalizer implements DenormalizerInterface, NormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $values = array();
         foreach ($object->getMounts() as $value) {
             $values[] = $this->normalizer->normalize($value, 'json', $context);

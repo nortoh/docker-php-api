@@ -64,7 +64,7 @@ class ContainerSummaryItemNetworkSettingsNormalizer implements DenormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('networks') && null !== $object->getNetworks()) {
             $values = array();
             foreach ($object->getNetworks() as $key => $value) {

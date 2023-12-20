@@ -67,7 +67,7 @@ class ServiceSpecModeNormalizer implements DenormalizerInterface, NormalizerInte
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('replicated') && null !== $object->getReplicated()) {
             $data['Replicated'] = $this->normalizer->normalize($object->getReplicated(), 'json', $context);
         }

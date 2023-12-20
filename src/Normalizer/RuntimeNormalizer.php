@@ -71,7 +71,7 @@ class RuntimeNormalizer implements DenormalizerInterface, NormalizerInterface, D
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('path') && null !== $object->getPath()) {
             $data['path'] = $object->getPath();
         }

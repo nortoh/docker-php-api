@@ -120,7 +120,7 @@ class TaskSpecNormalizer implements DenormalizerInterface, NormalizerInterface, 
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('pluginSpec') && null !== $object->getPluginSpec()) {
             $data['PluginSpec'] = $this->normalizer->normalize($object->getPluginSpec(), 'json', $context);
         }

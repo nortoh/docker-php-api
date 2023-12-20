@@ -79,7 +79,7 @@ class ContainersIdTopGetTextplainResponse200Normalizer implements DenormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('titles') && null !== $object->getTitles()) {
             $values = array();
             foreach ($object->getTitles() as $value) {

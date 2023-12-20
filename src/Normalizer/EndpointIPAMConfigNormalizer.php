@@ -78,7 +78,7 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('iPv4Address') && null !== $object->getIPv4Address()) {
             $data['IPv4Address'] = $object->getIPv4Address();
         }

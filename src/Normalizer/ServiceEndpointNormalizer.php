@@ -82,7 +82,7 @@ class ServiceEndpointNormalizer implements DenormalizerInterface, NormalizerInte
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('spec') && null !== $object->getSpec()) {
             $data['Spec'] = $this->normalizer->normalize($object->getSpec(), 'json', $context);
         }

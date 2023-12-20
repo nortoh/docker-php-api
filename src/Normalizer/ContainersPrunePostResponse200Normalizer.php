@@ -71,7 +71,7 @@ class ContainersPrunePostResponse200Normalizer implements DenormalizerInterface,
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('containersDeleted') && null !== $object->getContainersDeleted()) {
             $values = array();
             foreach ($object->getContainersDeleted() as $value) {

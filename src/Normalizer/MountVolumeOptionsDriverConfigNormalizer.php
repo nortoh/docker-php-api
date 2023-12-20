@@ -71,14 +71,14 @@ class MountVolumeOptionsDriverConfigNormalizer implements DenormalizerInterface,
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
         }
         if ($object->isInitialized('options') && null !== $object->getOptions()) {
-            $values = new \stdClass;
+            $values = array();
             foreach ($object->getOptions() as $key => $value) {
-                $values->{$key} = $value;
+                $values[$key] = $value;
             }
             $data['Options'] = $values;
         }

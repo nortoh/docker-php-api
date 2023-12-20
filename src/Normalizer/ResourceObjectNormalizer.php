@@ -78,7 +78,7 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('nanoCPUs') && null !== $object->getNanoCPUs()) {
             $data['NanoCPUs'] = $object->getNanoCPUs();
         }

@@ -103,7 +103,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('architecture') && null !== $object->getArchitecture()) {
             $data['Architecture'] = $object->getArchitecture();
         }

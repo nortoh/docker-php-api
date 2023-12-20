@@ -85,7 +85,7 @@ class SwarmSpecCAConfigExternalCAsItemNormalizer implements DenormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('protocol') && null !== $object->getProtocol()) {
             $data['Protocol'] = $object->getProtocol();
         }

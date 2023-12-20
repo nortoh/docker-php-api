@@ -60,7 +60,7 @@ class ServiceSpecModeReplicatedNormalizer implements DenormalizerInterface, Norm
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('replicas') && null !== $object->getReplicas()) {
             $data['Replicas'] = $object->getReplicas();
         }

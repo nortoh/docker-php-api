@@ -71,7 +71,7 @@ class VolumesPrunePostResponse200Normalizer implements DenormalizerInterface, No
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('volumesDeleted') && null !== $object->getVolumesDeleted()) {
             $values = array();
             foreach ($object->getVolumesDeleted() as $value) {

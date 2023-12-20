@@ -53,7 +53,7 @@ class ContainersIdJsonGetResponse200NodeNormalizer implements DenormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

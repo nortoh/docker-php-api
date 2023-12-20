@@ -131,7 +131,7 @@ class NetworksCreatePostBodyNormalizer implements DenormalizerInterface, Normali
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['Name'] = $object->getName();
         if ($object->isInitialized('checkDuplicate') && null !== $object->getCheckDuplicate()) {
             $data['CheckDuplicate'] = $object->getCheckDuplicate();

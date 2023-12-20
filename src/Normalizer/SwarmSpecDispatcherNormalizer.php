@@ -60,7 +60,7 @@ class SwarmSpecDispatcherNormalizer implements DenormalizerInterface, Normalizer
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('heartbeatPeriod') && null !== $object->getHeartbeatPeriod()) {
             $data['HeartbeatPeriod'] = $object->getHeartbeatPeriod();
         }

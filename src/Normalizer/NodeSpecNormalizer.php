@@ -85,7 +85,7 @@ class NodeSpecNormalizer implements DenormalizerInterface, NormalizerInterface, 
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
         }

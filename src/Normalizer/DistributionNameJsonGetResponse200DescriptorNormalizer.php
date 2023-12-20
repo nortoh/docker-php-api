@@ -85,7 +85,7 @@ class DistributionNameJsonGetResponse200DescriptorNormalizer implements Denormal
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('mediaType') && null !== $object->getMediaType()) {
             $data['MediaType'] = $object->getMediaType();
         }

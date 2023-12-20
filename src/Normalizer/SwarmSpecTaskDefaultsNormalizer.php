@@ -60,7 +60,7 @@ class SwarmSpecTaskDefaultsNormalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('logDriver') && null !== $object->getLogDriver()) {
             $data['LogDriver'] = $this->normalizer->normalize($object->getLogDriver(), 'json', $context);
         }

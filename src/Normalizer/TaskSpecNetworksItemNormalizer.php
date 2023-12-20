@@ -71,7 +71,7 @@ class TaskSpecNetworksItemNormalizer implements DenormalizerInterface, Normalize
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('target') && null !== $object->getTarget()) {
             $data['Target'] = $object->getTarget();
         }

@@ -141,7 +141,7 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('platform') && null !== $object->getPlatform()) {
             $data['Platform'] = $this->normalizer->normalize($object->getPlatform(), 'json', $context);
         }

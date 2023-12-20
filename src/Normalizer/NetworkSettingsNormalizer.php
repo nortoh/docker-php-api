@@ -199,7 +199,7 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('bridge') && null !== $object->getBridge()) {
             $data['Bridge'] = $object->getBridge();
         }

@@ -97,7 +97,7 @@ class PluginsInfoNormalizer implements DenormalizerInterface, NormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('volume') && null !== $object->getVolume()) {
             $values = array();
             foreach ($object->getVolume() as $value) {

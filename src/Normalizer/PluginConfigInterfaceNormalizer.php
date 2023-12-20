@@ -71,7 +71,7 @@ class PluginConfigInterfaceNormalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $values = array();
         foreach ($object->getTypes() as $value) {
             $values[] = $this->normalizer->normalize($value, 'json', $context);

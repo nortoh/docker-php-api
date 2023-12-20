@@ -78,7 +78,7 @@ class MountVolumeOptionsNormalizer implements DenormalizerInterface, NormalizerI
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('noCopy') && null !== $object->getNoCopy()) {
             $data['NoCopy'] = $object->getNoCopy();
         }

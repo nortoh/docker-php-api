@@ -98,7 +98,7 @@ class ServiceSpecRollbackConfigNormalizer implements DenormalizerInterface, Norm
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('parallelism') && null !== $object->getParallelism()) {
             $data['Parallelism'] = $object->getParallelism();
         }

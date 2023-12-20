@@ -67,7 +67,7 @@ class ResourcesBlkioWeightDeviceItemNormalizer implements DenormalizerInterface,
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('path') && null !== $object->getPath()) {
             $data['Path'] = $object->getPath();
         }

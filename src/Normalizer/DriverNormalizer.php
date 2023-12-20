@@ -71,7 +71,7 @@ class DriverNormalizer implements DenormalizerInterface, NormalizerInterface, De
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['Name'] = $object->getName();
         if ($object->isInitialized('options') && null !== $object->getOptions()) {
             $values = array();

@@ -92,7 +92,7 @@ class ProcessConfigNormalizer implements DenormalizerInterface, NormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('privileged') && null !== $object->getPrivileged()) {
             $data['privileged'] = $object->getPrivileged();
         }

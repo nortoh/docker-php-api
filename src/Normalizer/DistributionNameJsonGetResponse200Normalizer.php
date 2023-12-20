@@ -71,7 +71,7 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['Descriptor'] = $this->normalizer->normalize($object->getDescriptor(), 'json', $context);
         $values = array();
         foreach ($object->getPlatforms() as $value) {

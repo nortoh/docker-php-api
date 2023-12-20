@@ -60,7 +60,7 @@ class ErrorResponseNormalizer implements DenormalizerInterface, NormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['message'] = $object->getMessage();
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

@@ -194,7 +194,7 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $data['Id'] = $object->getId();
         if ($object->isInitialized('repoTags') && null !== $object->getRepoTags()) {
             $values = array();

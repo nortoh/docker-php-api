@@ -90,7 +90,7 @@ class IPAMNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('driver') && null !== $object->getDriver()) {
             $data['Driver'] = $object->getDriver();
         }

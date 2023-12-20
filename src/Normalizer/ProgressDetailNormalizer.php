@@ -67,7 +67,7 @@ class ProgressDetailNormalizer implements DenormalizerInterface, NormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('current') && null !== $object->getCurrent()) {
             $data['current'] = $object->getCurrent();
         }

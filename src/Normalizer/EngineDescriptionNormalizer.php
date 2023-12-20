@@ -82,7 +82,7 @@ class EngineDescriptionNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('engineVersion') && null !== $object->getEngineVersion()) {
             $data['EngineVersion'] = $object->getEngineVersion();
         }

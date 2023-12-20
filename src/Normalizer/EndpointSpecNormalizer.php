@@ -71,7 +71,7 @@ class EndpointSpecNormalizer implements DenormalizerInterface, NormalizerInterfa
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('mode') && null !== $object->getMode()) {
             $data['Mode'] = $object->getMode();
         }

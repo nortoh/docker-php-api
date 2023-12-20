@@ -60,7 +60,7 @@ class ObjectVersionNormalizer implements DenormalizerInterface, NormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         if ($object->isInitialized('index') && null !== $object->getIndex()) {
             $data['Index'] = $object->getIndex();
         }

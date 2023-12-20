@@ -82,7 +82,7 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = array();
+        $data = new \ArrayObject();
         $values = array();
         foreach ($object->getCapabilities() as $value) {
             $values[] = $value;
