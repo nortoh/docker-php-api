@@ -42,7 +42,7 @@ class ContainersPrunePostResponse200Normalizer implements DenormalizerInterface,
             return $object;
         }
         if (\array_key_exists('ContainersDeleted', $data) && $data['ContainersDeleted'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['ContainersDeleted'] as $value) {
                 $values[] = $value;
             }
@@ -73,7 +73,7 @@ class ContainersPrunePostResponse200Normalizer implements DenormalizerInterface,
     {
         $data = new \ArrayObject();
         if ($object->isInitialized('containersDeleted') && null !== $object->getContainersDeleted()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getContainersDeleted() as $value) {
                 $values[] = $value;
             }

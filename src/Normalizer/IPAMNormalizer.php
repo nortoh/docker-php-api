@@ -49,7 +49,7 @@ class IPAMNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
             $object->setDriver(null);
         }
         if (\array_key_exists('Config', $data) && $data['Config'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Config'] as $value) {
                 $values_1 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($value as $key => $value_1) {
@@ -95,7 +95,7 @@ class IPAMNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
             $data['Driver'] = $object->getDriver();
         }
         if ($object->isInitialized('config') && null !== $object->getConfig()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getConfig() as $value) {
                 $values_1 = array();
                 foreach ($value as $key => $value_1) {

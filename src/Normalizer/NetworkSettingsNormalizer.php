@@ -216,7 +216,7 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
             $data['LinkLocalIPv6PrefixLen'] = $object->getLinkLocalIPv6PrefixLen();
         }
         if ($object->isInitialized('ports') && null !== $object->getPorts()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getPorts() as $key => $value) {
                 $values_1 = array();
                 foreach ($value as $value_1) {

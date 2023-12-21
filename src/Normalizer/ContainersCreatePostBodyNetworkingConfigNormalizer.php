@@ -66,7 +66,7 @@ class ContainersCreatePostBodyNetworkingConfigNormalizer implements Denormalizer
     {
         $data = new \ArrayObject();
         if ($object->isInitialized('endpointsConfig') && null !== $object->getEndpointsConfig()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getEndpointsConfig() as $key => $value) {
                 $values[$key] = $this->normalizer->normalize($value, 'json', $context);
             }

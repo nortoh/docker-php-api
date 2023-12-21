@@ -49,7 +49,7 @@ class IndexInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $object->setName(null);
         }
         if (\array_key_exists('Mirrors', $data) && $data['Mirrors'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Mirrors'] as $value) {
                 $values[] = $value;
             }
@@ -90,7 +90,7 @@ class IndexInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['Name'] = $object->getName();
         }
         if ($object->isInitialized('mirrors') && null !== $object->getMirrors()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getMirrors() as $value) {
                 $values[] = $value;
             }

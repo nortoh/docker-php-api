@@ -87,7 +87,7 @@ class EngineDescriptionNormalizer implements DenormalizerInterface, NormalizerIn
             $data['EngineVersion'] = $object->getEngineVersion();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getLabels() as $key => $value) {
                 $values[$key] = $value;
             }

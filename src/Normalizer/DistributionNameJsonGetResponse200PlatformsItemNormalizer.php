@@ -63,7 +63,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             $object->setOSVersion(null);
         }
         if (\array_key_exists('OSFeatures', $data) && $data['OSFeatures'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['OSFeatures'] as $value) {
                 $values[] = $value;
             }
@@ -114,7 +114,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             $data['OSVersion'] = $object->getOSVersion();
         }
         if ($object->isInitialized('oSFeatures') && null !== $object->getOSFeatures()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getOSFeatures() as $value) {
                 $values[] = $value;
             }

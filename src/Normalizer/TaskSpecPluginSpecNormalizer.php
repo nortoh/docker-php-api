@@ -63,7 +63,7 @@ class TaskSpecPluginSpecNormalizer implements DenormalizerInterface, NormalizerI
             $object->setDisabled(null);
         }
         if (\array_key_exists('PluginPrivilege', $data) && $data['PluginPrivilege'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['PluginPrivilege'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\TaskSpecPluginSpecPluginPrivilegeItem', 'json', $context);
             }
@@ -96,7 +96,7 @@ class TaskSpecPluginSpecNormalizer implements DenormalizerInterface, NormalizerI
             $data['Disabled'] = $object->getDisabled();
         }
         if ($object->isInitialized('pluginPrivilege') && null !== $object->getPluginPrivilege()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getPluginPrivilege() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

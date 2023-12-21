@@ -42,7 +42,7 @@ class ImagesPrunePostResponse200Normalizer implements DenormalizerInterface, Nor
             return $object;
         }
         if (\array_key_exists('ImagesDeleted', $data) && $data['ImagesDeleted'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['ImagesDeleted'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageDeleteResponseItem', 'json', $context);
             }
@@ -73,7 +73,7 @@ class ImagesPrunePostResponse200Normalizer implements DenormalizerInterface, Nor
     {
         $data = new \ArrayObject();
         if ($object->isInitialized('imagesDeleted') && null !== $object->getImagesDeleted()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getImagesDeleted() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

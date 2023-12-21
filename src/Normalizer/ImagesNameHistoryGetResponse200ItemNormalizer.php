@@ -63,7 +63,7 @@ class ImagesNameHistoryGetResponse200ItemNormalizer implements DenormalizerInter
             $object->setCreatedBy(null);
         }
         if (\array_key_exists('Tags', $data) && $data['Tags'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Tags'] as $value) {
                 $values[] = $value;
             }
@@ -103,7 +103,7 @@ class ImagesNameHistoryGetResponse200ItemNormalizer implements DenormalizerInter
         $data['Id'] = $object->getId();
         $data['Created'] = $object->getCreated();
         $data['CreatedBy'] = $object->getCreatedBy();
-        $values = array();
+        $values = new \ArrayObject();
         foreach ($object->getTags() as $value) {
             $values[] = $value;
         }

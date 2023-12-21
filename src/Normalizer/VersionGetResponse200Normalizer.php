@@ -49,7 +49,7 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
             $object->setPlatform(null);
         }
         if (\array_key_exists('Components', $data) && $data['Components'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Components'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem', 'json', $context);
             }
@@ -146,7 +146,7 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
             $data['Platform'] = $this->normalizer->normalize($object->getPlatform(), 'json', $context);
         }
         if ($object->isInitialized('components') && null !== $object->getComponents()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getComponents() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

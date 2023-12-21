@@ -56,7 +56,7 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setMemoryBytes(null);
         }
         if (\array_key_exists('GenericResources', $data) && $data['GenericResources'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['GenericResources'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\GenericResourcesItem', 'json', $context);
             }
@@ -86,7 +86,7 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
             $data['MemoryBytes'] = $object->getMemoryBytes();
         }
         if ($object->isInitialized('genericResources') && null !== $object->getGenericResources()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getGenericResources() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

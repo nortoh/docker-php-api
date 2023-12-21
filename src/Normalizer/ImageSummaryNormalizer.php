@@ -56,7 +56,7 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setParentId(null);
         }
         if (\array_key_exists('RepoTags', $data) && $data['RepoTags'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['RepoTags'] as $value) {
                 $values[] = $value;
             }
@@ -138,7 +138,7 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
         $data = new \ArrayObject();
         $data['Id'] = $object->getId();
         $data['ParentId'] = $object->getParentId();
-        $values = array();
+        $values = new \ArrayObject();
         foreach ($object->getRepoTags() as $value) {
             $values[] = $value;
         }

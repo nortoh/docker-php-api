@@ -49,7 +49,7 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setId(null);
         }
         if (\array_key_exists('RepoTags', $data) && $data['RepoTags'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['RepoTags'] as $value) {
                 $values[] = $value;
             }
@@ -197,7 +197,7 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         $data = new \ArrayObject();
         $data['Id'] = $object->getId();
         if ($object->isInitialized('repoTags') && null !== $object->getRepoTags()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getRepoTags() as $value) {
                 $values[] = $value;
             }

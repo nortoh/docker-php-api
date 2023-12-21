@@ -63,7 +63,7 @@ class ContainersIdJsonGetResponse200Normalizer implements DenormalizerInterface,
             $object->setPath(null);
         }
         if (\array_key_exists('Args', $data) && $data['Args'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Args'] as $value) {
                 $values[] = $value;
             }
@@ -247,7 +247,7 @@ class ContainersIdJsonGetResponse200Normalizer implements DenormalizerInterface,
             $data['Path'] = $object->getPath();
         }
         if ($object->isInitialized('args') && null !== $object->getArgs()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getArgs() as $value) {
                 $values[] = $value;
             }

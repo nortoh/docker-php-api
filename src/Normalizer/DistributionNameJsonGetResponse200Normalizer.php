@@ -49,7 +49,7 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
             $object->setDescriptor(null);
         }
         if (\array_key_exists('Platforms', $data) && $data['Platforms'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Platforms'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem', 'json', $context);
             }
@@ -73,7 +73,7 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
     {
         $data = new \ArrayObject();
         $data['Descriptor'] = $this->normalizer->normalize($object->getDescriptor(), 'json', $context);
-        $values = array();
+        $values = new \ArrayObject();
         foreach ($object->getPlatforms() as $value) {
             $values[] = $this->normalizer->normalize($value, 'json', $context);
         }

@@ -70,7 +70,7 @@ class ContainersIdUpdatePostBodyNormalizer implements DenormalizerInterface, Nor
             $object->setBlkioWeight(null);
         }
         if (\array_key_exists('BlkioWeightDevice', $data) && $data['BlkioWeightDevice'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['BlkioWeightDevice'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem', 'json', $context);
             }
@@ -316,7 +316,7 @@ class ContainersIdUpdatePostBodyNormalizer implements DenormalizerInterface, Nor
             $data['BlkioWeight'] = $object->getBlkioWeight();
         }
         if ($object->isInitialized('blkioWeightDevice') && null !== $object->getBlkioWeightDevice()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getBlkioWeightDevice() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

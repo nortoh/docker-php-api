@@ -77,7 +77,7 @@ class SwarmInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $object->setError(null);
         }
         if (\array_key_exists('RemoteManagers', $data) && $data['RemoteManagers'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['RemoteManagers'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\PeerNode', 'json', $context);
             }
@@ -137,7 +137,7 @@ class SwarmInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['Error'] = $object->getError();
         }
         if ($object->isInitialized('remoteManagers') && null !== $object->getRemoteManagers()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getRemoteManagers() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

@@ -42,7 +42,7 @@ class ContainersIdTopGetJsonResponse200Normalizer implements DenormalizerInterfa
             return $object;
         }
         if (\array_key_exists('Titles', $data) && $data['Titles'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Titles'] as $value) {
                 $values[] = $value;
             }
@@ -81,7 +81,7 @@ class ContainersIdTopGetJsonResponse200Normalizer implements DenormalizerInterfa
     {
         $data = new \ArrayObject();
         if ($object->isInitialized('titles') && null !== $object->getTitles()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getTitles() as $value) {
                 $values[] = $value;
             }

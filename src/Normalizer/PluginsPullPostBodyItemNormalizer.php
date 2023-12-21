@@ -56,7 +56,7 @@ class PluginsPullPostBodyItemNormalizer implements DenormalizerInterface, Normal
             $object->setDescription(null);
         }
         if (\array_key_exists('Value', $data) && $data['Value'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Value'] as $value) {
                 $values[] = $value;
             }
@@ -86,7 +86,7 @@ class PluginsPullPostBodyItemNormalizer implements DenormalizerInterface, Normal
             $data['Description'] = $object->getDescription();
         }
         if ($object->isInitialized('value') && null !== $object->getValue()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getValue() as $value) {
                 $values[] = $value;
             }

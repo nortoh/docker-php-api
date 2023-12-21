@@ -49,7 +49,7 @@ class ContainerSummaryItemNormalizer implements DenormalizerInterface, Normalize
             $object->setId(null);
         }
         if (\array_key_exists('Names', $data) && $data['Names'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Names'] as $value) {
                 $values[] = $value;
             }
@@ -179,7 +179,7 @@ class ContainerSummaryItemNormalizer implements DenormalizerInterface, Normalize
             $data['Id'] = $object->getId();
         }
         if ($object->isInitialized('names') && null !== $object->getNames()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getNames() as $value) {
                 $values[] = $value;
             }

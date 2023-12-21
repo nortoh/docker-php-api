@@ -280,7 +280,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $data['AttachStderr'] = $object->getAttachStderr();
         }
         if ($object->isInitialized('exposedPorts') && null !== $object->getExposedPorts()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getExposedPorts() as $key => $value) {
                 $values[$key] = $this->normalizer->normalize($value, 'json', $context);
             }

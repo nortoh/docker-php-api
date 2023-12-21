@@ -122,7 +122,7 @@ class ServicesIdUpdatePostBodyNormalizer implements DenormalizerInterface, Norma
             $data['Name'] = $object->getName();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getLabels() as $key => $value) {
                 $values[$key] = $value;
             }

@@ -42,7 +42,7 @@ class PluginsInfoNormalizer implements DenormalizerInterface, NormalizerInterfac
             return $object;
         }
         if (\array_key_exists('Volume', $data) && $data['Volume'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Volume'] as $value) {
                 $values[] = $value;
             }
@@ -99,7 +99,7 @@ class PluginsInfoNormalizer implements DenormalizerInterface, NormalizerInterfac
     {
         $data = new \ArrayObject();
         if ($object->isInitialized('volume') && null !== $object->getVolume()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getVolume() as $value) {
                 $values[] = $value;
             }

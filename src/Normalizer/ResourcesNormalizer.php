@@ -70,7 +70,7 @@ class ResourcesNormalizer implements DenormalizerInterface, NormalizerInterface,
             $object->setBlkioWeight(null);
         }
         if (\array_key_exists('BlkioWeightDevice', $data) && $data['BlkioWeightDevice'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['BlkioWeightDevice'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem', 'json', $context);
             }
@@ -309,7 +309,7 @@ class ResourcesNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['BlkioWeight'] = $object->getBlkioWeight();
         }
         if ($object->isInitialized('blkioWeightDevice') && null !== $object->getBlkioWeightDevice()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getBlkioWeightDevice() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

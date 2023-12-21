@@ -248,7 +248,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $data['Image'] = $object->getImage();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getLabels() as $key => $value) {
                 $values[$key] = $value;
             }

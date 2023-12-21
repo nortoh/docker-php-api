@@ -49,7 +49,7 @@ class ServiceEndpointNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setSpec(null);
         }
         if (\array_key_exists('Ports', $data) && $data['Ports'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Ports'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\EndpointPortConfig', 'json', $context);
             }
@@ -87,7 +87,7 @@ class ServiceEndpointNormalizer implements DenormalizerInterface, NormalizerInte
             $data['Spec'] = $this->normalizer->normalize($object->getSpec(), 'json', $context);
         }
         if ($object->isInitialized('ports') && null !== $object->getPorts()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getPorts() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

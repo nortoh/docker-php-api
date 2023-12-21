@@ -42,7 +42,7 @@ class ServiceUpdateResponseNormalizer implements DenormalizerInterface, Normaliz
             return $object;
         }
         if (\array_key_exists('Warnings', $data) && $data['Warnings'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Warnings'] as $value) {
                 $values[] = $value;
             }
@@ -66,7 +66,7 @@ class ServiceUpdateResponseNormalizer implements DenormalizerInterface, Normaliz
     {
         $data = new \ArrayObject();
         if ($object->isInitialized('warnings') && null !== $object->getWarnings()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getWarnings() as $value) {
                 $values[] = $value;
             }

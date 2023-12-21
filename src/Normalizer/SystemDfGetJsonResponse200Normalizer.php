@@ -49,7 +49,7 @@ class SystemDfGetJsonResponse200Normalizer implements DenormalizerInterface, Nor
             $object->setLayersSize(null);
         }
         if (\array_key_exists('Images', $data) && $data['Images'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Images'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageSummary', 'json', $context);
             }
@@ -102,7 +102,7 @@ class SystemDfGetJsonResponse200Normalizer implements DenormalizerInterface, Nor
             $data['LayersSize'] = $object->getLayersSize();
         }
         if ($object->isInitialized('images') && null !== $object->getImages()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getImages() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

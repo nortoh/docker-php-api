@@ -49,7 +49,7 @@ class RuntimeNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $object->setPath(null);
         }
         if (\array_key_exists('runtimeArgs', $data) && $data['runtimeArgs'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['runtimeArgs'] as $value) {
                 $values[] = $value;
             }
@@ -76,7 +76,7 @@ class RuntimeNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $data['path'] = $object->getPath();
         }
         if ($object->isInitialized('runtimeArgs') && null !== $object->getRuntimeArgs()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getRuntimeArgs() as $value) {
                 $values[] = $value;
             }

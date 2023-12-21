@@ -83,7 +83,7 @@ class MountVolumeOptionsNormalizer implements DenormalizerInterface, NormalizerI
             $data['NoCopy'] = $object->getNoCopy();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getLabels() as $key => $value) {
                 $values[$key] = $value;
             }

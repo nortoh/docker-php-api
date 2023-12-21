@@ -49,7 +49,7 @@ class TaskSpecNetworksItemNormalizer implements DenormalizerInterface, Normalize
             $object->setTarget(null);
         }
         if (\array_key_exists('Aliases', $data) && $data['Aliases'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Aliases'] as $value) {
                 $values[] = $value;
             }
@@ -76,7 +76,7 @@ class TaskSpecNetworksItemNormalizer implements DenormalizerInterface, Normalize
             $data['Target'] = $object->getTarget();
         }
         if ($object->isInitialized('aliases') && null !== $object->getAliases()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getAliases() as $value) {
                 $values[] = $value;
             }

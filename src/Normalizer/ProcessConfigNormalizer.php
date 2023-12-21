@@ -70,7 +70,7 @@ class ProcessConfigNormalizer implements DenormalizerInterface, NormalizerInterf
             $object->setEntrypoint(null);
         }
         if (\array_key_exists('arguments', $data) && $data['arguments'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['arguments'] as $value) {
                 $values[] = $value;
             }
@@ -106,7 +106,7 @@ class ProcessConfigNormalizer implements DenormalizerInterface, NormalizerInterf
             $data['entrypoint'] = $object->getEntrypoint();
         }
         if ($object->isInitialized('arguments') && null !== $object->getArguments()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getArguments() as $value) {
                 $values[] = $value;
             }

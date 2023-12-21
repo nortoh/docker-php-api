@@ -49,7 +49,7 @@ class EndpointSettingsNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setIPAMConfig(null);
         }
         if (\array_key_exists('Links', $data) && $data['Links'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Links'] as $value) {
                 $values[] = $value;
             }
@@ -161,7 +161,7 @@ class EndpointSettingsNormalizer implements DenormalizerInterface, NormalizerInt
             $data['IPAMConfig'] = $this->normalizer->normalize($object->getIPAMConfig(), 'json', $context);
         }
         if ($object->isInitialized('links') && null !== $object->getLinks()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getLinks() as $value) {
                 $values[] = $value;
             }

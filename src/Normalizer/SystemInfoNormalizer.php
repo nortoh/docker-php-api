@@ -91,7 +91,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setDriver(null);
         }
         if (\array_key_exists('DriverStatus', $data) && $data['DriverStatus'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['DriverStatus'] as $value) {
                 $values_1 = array();
                 foreach ($value as $value_1) {
@@ -507,7 +507,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['Driver'] = $object->getDriver();
         }
         if ($object->isInitialized('driverStatus') && null !== $object->getDriverStatus()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getDriverStatus() as $value) {
                 $values_1 = array();
                 foreach ($value as $value_1) {

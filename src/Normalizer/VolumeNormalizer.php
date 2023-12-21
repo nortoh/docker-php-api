@@ -136,7 +136,7 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $data['CreatedAt'] = $object->getCreatedAt();
         }
         if ($object->isInitialized('status') && null !== $object->getStatus()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getStatus() as $key => $value) {
                 $values[$key] = $this->normalizer->normalize($value, 'json', $context);
             }

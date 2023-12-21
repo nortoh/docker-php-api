@@ -42,7 +42,7 @@ class TaskSpecPlacementNormalizer implements DenormalizerInterface, NormalizerIn
             return $object;
         }
         if (\array_key_exists('Constraints', $data) && $data['Constraints'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Constraints'] as $value) {
                 $values[] = $value;
             }
@@ -88,7 +88,7 @@ class TaskSpecPlacementNormalizer implements DenormalizerInterface, NormalizerIn
     {
         $data = new \ArrayObject();
         if ($object->isInitialized('constraints') && null !== $object->getConstraints()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getConstraints() as $value) {
                 $values[] = $value;
             }

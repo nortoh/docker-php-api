@@ -42,7 +42,7 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
             return $object;
         }
         if (\array_key_exists('Capabilities', $data) && $data['Capabilities'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Capabilities'] as $value) {
                 $values[] = $value;
             }
@@ -83,7 +83,7 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
     public function normalize($object, $format = null, array $context = array())
     {
         $data = new \ArrayObject();
-        $values = array();
+        $values = new \ArrayObject();
         foreach ($object->getCapabilities() as $value) {
             $values[] = $value;
         }

@@ -77,7 +77,7 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
             $object->setTty(null);
         }
         if (\array_key_exists('Env', $data) && $data['Env'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Env'] as $value) {
                 $values[] = $value;
             }
@@ -148,7 +148,7 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
             $data['Tty'] = $object->getTty();
         }
         if ($object->isInitialized('env') && null !== $object->getEnv()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getEnv() as $value) {
                 $values[] = $value;
             }

@@ -63,7 +63,7 @@ class DistributionNameJsonGetResponse200DescriptorNormalizer implements Denormal
             $object->setDigest(null);
         }
         if (\array_key_exists('URLs', $data) && $data['URLs'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['URLs'] as $value) {
                 $values[] = $value;
             }
@@ -96,7 +96,7 @@ class DistributionNameJsonGetResponse200DescriptorNormalizer implements Denormal
             $data['Digest'] = $object->getDigest();
         }
         if ($object->isInitialized('uRLs') && null !== $object->getURLs()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getURLs() as $value) {
                 $values[] = $value;
             }

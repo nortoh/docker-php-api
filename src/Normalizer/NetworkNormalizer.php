@@ -188,7 +188,7 @@ class NetworkNormalizer implements DenormalizerInterface, NormalizerInterface, D
             $data['Ingress'] = $object->getIngress();
         }
         if ($object->isInitialized('containers') && null !== $object->getContainers()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getContainers() as $key => $value) {
                 $values[$key] = $this->normalizer->normalize($value, 'json', $context);
             }

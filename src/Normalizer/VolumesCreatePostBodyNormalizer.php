@@ -97,7 +97,7 @@ class VolumesCreatePostBodyNormalizer implements DenormalizerInterface, Normaliz
             $data['Driver'] = $object->getDriver();
         }
         if ($object->isInitialized('driverOpts') && null !== $object->getDriverOpts()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getDriverOpts() as $key => $value) {
                 $values[$key] = $value;
             }

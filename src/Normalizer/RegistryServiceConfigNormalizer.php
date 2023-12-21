@@ -42,7 +42,7 @@ class RegistryServiceConfigNormalizer implements DenormalizerInterface, Normaliz
             return $object;
         }
         if (\array_key_exists('AllowNondistributableArtifactsCIDRs', $data) && $data['AllowNondistributableArtifactsCIDRs'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['AllowNondistributableArtifactsCIDRs'] as $value) {
                 $values[] = $value;
             }
@@ -110,7 +110,7 @@ class RegistryServiceConfigNormalizer implements DenormalizerInterface, Normaliz
     {
         $data = new \ArrayObject();
         if ($object->isInitialized('allowNondistributableArtifactsCIDRs') && null !== $object->getAllowNondistributableArtifactsCIDRs()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getAllowNondistributableArtifactsCIDRs() as $value) {
                 $values[] = $value;
             }

@@ -49,7 +49,7 @@ class PluginConfigRootfsNormalizer implements DenormalizerInterface, NormalizerI
             $object->setType(null);
         }
         if (\array_key_exists('diff_ids', $data) && $data['diff_ids'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['diff_ids'] as $value) {
                 $values[] = $value;
             }
@@ -76,7 +76,7 @@ class PluginConfigRootfsNormalizer implements DenormalizerInterface, NormalizerI
             $data['type'] = $object->getType();
         }
         if ($object->isInitialized('diffIds') && null !== $object->getDiffIds()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getDiffIds() as $value) {
                 $values[] = $value;
             }

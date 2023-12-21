@@ -155,7 +155,7 @@ class NetworksCreatePostBodyNormalizer implements DenormalizerInterface, Normali
             $data['EnableIPv6'] = $object->getEnableIPv6();
         }
         if ($object->isInitialized('options') && null !== $object->getOptions()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getOptions() as $key => $value) {
                 $values[$key] = $value;
             }

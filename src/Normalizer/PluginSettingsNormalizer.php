@@ -42,7 +42,7 @@ class PluginSettingsNormalizer implements DenormalizerInterface, NormalizerInter
             return $object;
         }
         if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Mounts'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\PluginMount', 'json', $context);
             }
@@ -98,7 +98,7 @@ class PluginSettingsNormalizer implements DenormalizerInterface, NormalizerInter
     public function normalize($object, $format = null, array $context = array())
     {
         $data = new \ArrayObject();
-        $values = array();
+        $values = new \ArrayObject();
         foreach ($object->getMounts() as $value) {
             $values[] = $this->normalizer->normalize($value, 'json', $context);
         }

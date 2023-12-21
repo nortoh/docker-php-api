@@ -76,7 +76,7 @@ class HostConfigLogConfigNormalizer implements DenormalizerInterface, Normalizer
             $data['Type'] = $object->getType();
         }
         if ($object->isInitialized('config') && null !== $object->getConfig()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getConfig() as $key => $value) {
                 $values[$key] = $value;
             }

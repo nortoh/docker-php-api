@@ -70,7 +70,7 @@ class PluginConfigNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setInterface(null);
         }
         if (\array_key_exists('Entrypoint', $data) && $data['Entrypoint'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Entrypoint'] as $value) {
                 $values[] = $value;
             }
@@ -184,7 +184,7 @@ class PluginConfigNormalizer implements DenormalizerInterface, NormalizerInterfa
         $data['Description'] = $object->getDescription();
         $data['Documentation'] = $object->getDocumentation();
         $data['Interface'] = $this->normalizer->normalize($object->getInterface(), 'json', $context);
-        $values = array();
+        $values = new \ArrayObject();
         foreach ($object->getEntrypoint() as $value) {
             $values[] = $value;
         }

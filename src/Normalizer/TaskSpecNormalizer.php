@@ -91,7 +91,7 @@ class TaskSpecNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $object->setRuntime(null);
         }
         if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Networks'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\TaskSpecNetworksItem', 'json', $context);
             }
@@ -143,7 +143,7 @@ class TaskSpecNormalizer implements DenormalizerInterface, NormalizerInterface, 
             $data['Runtime'] = $object->getRuntime();
         }
         if ($object->isInitialized('networks') && null !== $object->getNetworks()) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($object->getNetworks() as $value) {
                 $values[] = $this->normalizer->normalize($value, 'json', $context);
             }

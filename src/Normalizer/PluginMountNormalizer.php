@@ -56,7 +56,7 @@ class PluginMountNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setDescription(null);
         }
         if (\array_key_exists('Settable', $data) && $data['Settable'] !== null) {
-            $values = array();
+            $values = new \ArrayObject();
             foreach ($data['Settable'] as $value) {
                 $values[] = $value;
             }
@@ -113,7 +113,7 @@ class PluginMountNormalizer implements DenormalizerInterface, NormalizerInterfac
         $data = new \ArrayObject();
         $data['Name'] = $object->getName();
         $data['Description'] = $object->getDescription();
-        $values = array();
+        $values = new \ArrayObject();
         foreach ($object->getSettable() as $value) {
             $values[] = $value;
         }
