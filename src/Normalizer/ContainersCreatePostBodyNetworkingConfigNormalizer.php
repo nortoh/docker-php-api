@@ -64,11 +64,11 @@ class ContainersCreatePostBodyNetworkingConfigNormalizer implements Denormalizer
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('endpointsConfig') && null !== $object->getEndpointsConfig()) {
-            $values = new \ArrayObject();
+            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getEndpointsConfig() as $key => $value) {
-                $values[$key] = $this->normalizer->normalize($value, 'json', $context);
+                $values[$key] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['EndpointsConfig'] = $values;
         }

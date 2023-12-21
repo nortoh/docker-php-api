@@ -56,11 +56,11 @@ class PluginsPrivilegesGetTextplainResponse200ItemNormalizer implements Denormal
             $object->setDescription(null);
         }
         if (\array_key_exists('Value', $data) && $data['Value'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Value'] as $value) {
                 $values[] = $value;
             }
-            $object->setValue($values->getArrayCopy());
+            $object->setValue($values);
             unset($data['Value']);
         }
         elseif (\array_key_exists('Value', $data) && $data['Value'] === null) {
@@ -78,7 +78,7 @@ class PluginsPrivilegesGetTextplainResponse200ItemNormalizer implements Denormal
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
         }
@@ -86,7 +86,7 @@ class PluginsPrivilegesGetTextplainResponse200ItemNormalizer implements Denormal
             $data['Description'] = $object->getDescription();
         }
         if ($object->isInitialized('value') && null !== $object->getValue()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getValue() as $value) {
                 $values[] = $value;
             }

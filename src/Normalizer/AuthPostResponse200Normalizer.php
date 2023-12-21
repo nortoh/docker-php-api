@@ -67,7 +67,7 @@ class AuthPostResponse200Normalizer implements DenormalizerInterface, Normalizer
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Status'] = $object->getStatus();
         if ($object->isInitialized('identityToken') && null !== $object->getIdentityToken()) {
             $data['IdentityToken'] = $object->getIdentityToken();

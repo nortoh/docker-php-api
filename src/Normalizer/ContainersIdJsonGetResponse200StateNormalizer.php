@@ -130,7 +130,7 @@ class ContainersIdJsonGetResponse200StateNormalizer implements DenormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('status') && null !== $object->getStatus()) {
             $data['Status'] = $object->getStatus();
         }

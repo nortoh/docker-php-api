@@ -85,7 +85,7 @@ class SwarmSpecCAConfigExternalCAsItemNormalizer implements DenormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('protocol') && null !== $object->getProtocol()) {
             $data['Protocol'] = $object->getProtocol();
         }
@@ -93,7 +93,7 @@ class SwarmSpecCAConfigExternalCAsItemNormalizer implements DenormalizerInterfac
             $data['URL'] = $object->getURL();
         }
         if ($object->isInitialized('options') && null !== $object->getOptions()) {
-            $values = new \ArrayObject();
+            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getOptions() as $key => $value) {
                 $values[$key] = $value;
             }

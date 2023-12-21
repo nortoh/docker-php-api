@@ -88,7 +88,7 @@ class SwarmSpecRaftNormalizer implements DenormalizerInterface, NormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('snapshotInterval') && null !== $object->getSnapshotInterval()) {
             $data['SnapshotInterval'] = $object->getSnapshotInterval();
         }

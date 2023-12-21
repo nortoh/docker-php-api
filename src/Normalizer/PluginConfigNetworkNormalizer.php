@@ -60,7 +60,7 @@ class PluginConfigNetworkNormalizer implements DenormalizerInterface, Normalizer
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Type'] = $object->getType();
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

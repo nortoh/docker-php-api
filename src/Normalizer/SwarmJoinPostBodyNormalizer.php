@@ -88,7 +88,7 @@ class SwarmJoinPostBodyNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('listenAddr') && null !== $object->getListenAddr()) {
             $data['ListenAddr'] = $object->getListenAddr();
         }

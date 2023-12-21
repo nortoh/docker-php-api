@@ -60,7 +60,7 @@ class ImageMetadataNormalizer implements DenormalizerInterface, NormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('lastTagTime') && null !== $object->getLastTagTime()) {
             $data['LastTagTime'] = $object->getLastTagTime();
         }

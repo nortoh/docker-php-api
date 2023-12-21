@@ -56,11 +56,11 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setMemoryBytes(null);
         }
         if (\array_key_exists('GenericResources', $data) && $data['GenericResources'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['GenericResources'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\GenericResourcesItem', 'json', $context);
             }
-            $object->setGenericResources($values->getArrayCopy());
+            $object->setGenericResources($values);
             unset($data['GenericResources']);
         }
         elseif (\array_key_exists('GenericResources', $data) && $data['GenericResources'] === null) {
@@ -78,7 +78,7 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('nanoCPUs') && null !== $object->getNanoCPUs()) {
             $data['NanoCPUs'] = $object->getNanoCPUs();
         }
@@ -86,9 +86,9 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
             $data['MemoryBytes'] = $object->getMemoryBytes();
         }
         if ($object->isInitialized('genericResources') && null !== $object->getGenericResources()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getGenericResources() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['GenericResources'] = $values;
         }

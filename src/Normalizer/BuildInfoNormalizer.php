@@ -109,7 +109,7 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('id') && null !== $object->getId()) {
             $data['id'] = $object->getId();
         }
@@ -120,7 +120,7 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['error'] = $object->getError();
         }
         if ($object->isInitialized('errorDetail') && null !== $object->getErrorDetail()) {
-            $data['errorDetail'] = $this->normalizer->normalize($object->getErrorDetail(), 'json', $context);
+            $data['errorDetail'] = $object->getErrorDetail() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getErrorDetail(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('status') && null !== $object->getStatus()) {
             $data['status'] = $object->getStatus();
@@ -129,10 +129,10 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['progress'] = $object->getProgress();
         }
         if ($object->isInitialized('progressDetail') && null !== $object->getProgressDetail()) {
-            $data['progressDetail'] = $this->normalizer->normalize($object->getProgressDetail(), 'json', $context);
+            $data['progressDetail'] = $object->getProgressDetail() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getProgressDetail(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('aux') && null !== $object->getAux()) {
-            $data['aux'] = $this->normalizer->normalize($object->getAux(), 'json', $context);
+            $data['aux'] = $object->getAux() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getAux(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

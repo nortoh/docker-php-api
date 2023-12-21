@@ -67,7 +67,7 @@ class ErrorDetailNormalizer implements DenormalizerInterface, NormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('code') && null !== $object->getCode()) {
             $data['code'] = $object->getCode();
         }

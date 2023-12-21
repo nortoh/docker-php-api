@@ -74,7 +74,7 @@ class NodeStatusNormalizer implements DenormalizerInterface, NormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('state') && null !== $object->getState()) {
             $data['State'] = $object->getState();
         }

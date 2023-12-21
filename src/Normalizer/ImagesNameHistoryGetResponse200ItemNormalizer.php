@@ -63,11 +63,11 @@ class ImagesNameHistoryGetResponse200ItemNormalizer implements DenormalizerInter
             $object->setCreatedBy(null);
         }
         if (\array_key_exists('Tags', $data) && $data['Tags'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Tags'] as $value) {
                 $values[] = $value;
             }
-            $object->setTags($values->getArrayCopy());
+            $object->setTags($values);
             unset($data['Tags']);
         }
         elseif (\array_key_exists('Tags', $data) && $data['Tags'] === null) {
@@ -99,11 +99,11 @@ class ImagesNameHistoryGetResponse200ItemNormalizer implements DenormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Id'] = $object->getId();
         $data['Created'] = $object->getCreated();
         $data['CreatedBy'] = $object->getCreatedBy();
-        $values = new \ArrayObject();
+        $values = array();
         foreach ($object->getTags() as $value) {
             $values[] = $value;
         }

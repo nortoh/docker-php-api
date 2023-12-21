@@ -60,7 +60,7 @@ class MountBindOptionsNormalizer implements DenormalizerInterface, NormalizerInt
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('propagation') && null !== $object->getPropagation()) {
             $data['Propagation'] = $object->getPropagation();
         }

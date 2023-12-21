@@ -49,7 +49,7 @@ class IPAMNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
             $object->setDriver(null);
         }
         if (\array_key_exists('Config', $data) && $data['Config'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Config'] as $value) {
                 $values_1 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($value as $key => $value_1) {
@@ -90,14 +90,14 @@ class IPAMNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('driver') && null !== $object->getDriver()) {
             $data['Driver'] = $object->getDriver();
         }
         if ($object->isInitialized('config') && null !== $object->getConfig()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getConfig() as $value) {
-                $values_1 = array();
+                $values_1 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($value as $key => $value_1) {
                     $values_1[$key] = $value_1;
                 }
@@ -108,7 +108,7 @@ class IPAMNormalizer implements DenormalizerInterface, NormalizerInterface, Deno
         if ($object->isInitialized('options') && null !== $object->getOptions()) {
             $values_2 = array();
             foreach ($object->getOptions() as $value_2) {
-                $values_3 = array();
+                $values_3 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($value_2 as $key_1 => $value_3) {
                     $values_3[$key_1] = $value_3;
                 }

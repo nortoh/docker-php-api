@@ -74,7 +74,7 @@ class DeviceMappingNormalizer implements DenormalizerInterface, NormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('pathOnHost') && null !== $object->getPathOnHost()) {
             $data['PathOnHost'] = $object->getPathOnHost();
         }

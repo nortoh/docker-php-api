@@ -70,11 +70,11 @@ class ContainersIdUpdatePostBodyNormalizer implements DenormalizerInterface, Nor
             $object->setBlkioWeight(null);
         }
         if (\array_key_exists('BlkioWeightDevice', $data) && $data['BlkioWeightDevice'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['BlkioWeightDevice'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem', 'json', $context);
             }
-            $object->setBlkioWeightDevice($values->getArrayCopy());
+            $object->setBlkioWeightDevice($values);
             unset($data['BlkioWeightDevice']);
         }
         elseif (\array_key_exists('BlkioWeightDevice', $data) && $data['BlkioWeightDevice'] === null) {
@@ -302,7 +302,7 @@ class ContainersIdUpdatePostBodyNormalizer implements DenormalizerInterface, Nor
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('cpuShares') && null !== $object->getCpuShares()) {
             $data['CpuShares'] = $object->getCpuShares();
         }
@@ -316,37 +316,37 @@ class ContainersIdUpdatePostBodyNormalizer implements DenormalizerInterface, Nor
             $data['BlkioWeight'] = $object->getBlkioWeight();
         }
         if ($object->isInitialized('blkioWeightDevice') && null !== $object->getBlkioWeightDevice()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getBlkioWeightDevice() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioWeightDevice'] = $values;
         }
         if ($object->isInitialized('blkioDeviceReadBps') && null !== $object->getBlkioDeviceReadBps()) {
             $values_1 = array();
             foreach ($object->getBlkioDeviceReadBps() as $value_1) {
-                $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+                $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioDeviceReadBps'] = $values_1;
         }
         if ($object->isInitialized('blkioDeviceWriteBps') && null !== $object->getBlkioDeviceWriteBps()) {
             $values_2 = array();
             foreach ($object->getBlkioDeviceWriteBps() as $value_2) {
-                $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
+                $values_2[] = $value_2 == null ? null : new \ArrayObject($this->normalizer->normalize($value_2, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioDeviceWriteBps'] = $values_2;
         }
         if ($object->isInitialized('blkioDeviceReadIOps') && null !== $object->getBlkioDeviceReadIOps()) {
             $values_3 = array();
             foreach ($object->getBlkioDeviceReadIOps() as $value_3) {
-                $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
+                $values_3[] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioDeviceReadIOps'] = $values_3;
         }
         if ($object->isInitialized('blkioDeviceWriteIOps') && null !== $object->getBlkioDeviceWriteIOps()) {
             $values_4 = array();
             foreach ($object->getBlkioDeviceWriteIOps() as $value_4) {
-                $values_4[] = $this->normalizer->normalize($value_4, 'json', $context);
+                $values_4[] = $value_4 == null ? null : new \ArrayObject($this->normalizer->normalize($value_4, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioDeviceWriteIOps'] = $values_4;
         }
@@ -371,7 +371,7 @@ class ContainersIdUpdatePostBodyNormalizer implements DenormalizerInterface, Nor
         if ($object->isInitialized('devices') && null !== $object->getDevices()) {
             $values_5 = array();
             foreach ($object->getDevices() as $value_5) {
-                $values_5[] = $this->normalizer->normalize($value_5, 'json', $context);
+                $values_5[] = $value_5 == null ? null : new \ArrayObject($this->normalizer->normalize($value_5, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Devices'] = $values_5;
         }
@@ -409,7 +409,7 @@ class ContainersIdUpdatePostBodyNormalizer implements DenormalizerInterface, Nor
         if ($object->isInitialized('ulimits') && null !== $object->getUlimits()) {
             $values_7 = array();
             foreach ($object->getUlimits() as $value_7) {
-                $values_7[] = $this->normalizer->normalize($value_7, 'json', $context);
+                $values_7[] = $value_7 == null ? null : new \ArrayObject($this->normalizer->normalize($value_7, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Ulimits'] = $values_7;
         }
@@ -426,7 +426,7 @@ class ContainersIdUpdatePostBodyNormalizer implements DenormalizerInterface, Nor
             $data['IOMaximumBandwidth'] = $object->getIOMaximumBandwidth();
         }
         if ($object->isInitialized('restartPolicy') && null !== $object->getRestartPolicy()) {
-            $data['RestartPolicy'] = $this->normalizer->normalize($object->getRestartPolicy(), 'json', $context);
+            $data['RestartPolicy'] = $object->getRestartPolicy() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getRestartPolicy(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value_8) {
             if (preg_match('/.*/', (string) $key)) {

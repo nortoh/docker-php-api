@@ -42,11 +42,11 @@ class TaskSpecPlacementNormalizer implements DenormalizerInterface, NormalizerIn
             return $object;
         }
         if (\array_key_exists('Constraints', $data) && $data['Constraints'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Constraints'] as $value) {
                 $values[] = $value;
             }
-            $object->setConstraints($values->getArrayCopy());
+            $object->setConstraints($values);
             unset($data['Constraints']);
         }
         elseif (\array_key_exists('Constraints', $data) && $data['Constraints'] === null) {
@@ -86,9 +86,9 @@ class TaskSpecPlacementNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('constraints') && null !== $object->getConstraints()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getConstraints() as $value) {
                 $values[] = $value;
             }
@@ -97,14 +97,14 @@ class TaskSpecPlacementNormalizer implements DenormalizerInterface, NormalizerIn
         if ($object->isInitialized('preferences') && null !== $object->getPreferences()) {
             $values_1 = array();
             foreach ($object->getPreferences() as $value_1) {
-                $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+                $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Preferences'] = $values_1;
         }
         if ($object->isInitialized('platforms') && null !== $object->getPlatforms()) {
             $values_2 = array();
             foreach ($object->getPlatforms() as $value_2) {
-                $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
+                $values_2[] = $value_2 == null ? null : new \ArrayObject($this->normalizer->normalize($value_2, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Platforms'] = $values_2;
         }

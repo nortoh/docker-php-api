@@ -49,11 +49,11 @@ class ImageRootFSNormalizer implements DenormalizerInterface, NormalizerInterfac
             $object->setType(null);
         }
         if (\array_key_exists('Layers', $data) && $data['Layers'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Layers'] as $value) {
                 $values[] = $value;
             }
-            $object->setLayers($values->getArrayCopy());
+            $object->setLayers($values);
             unset($data['Layers']);
         }
         elseif (\array_key_exists('Layers', $data) && $data['Layers'] === null) {
@@ -78,10 +78,10 @@ class ImageRootFSNormalizer implements DenormalizerInterface, NormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Type'] = $object->getType();
         if ($object->isInitialized('layers') && null !== $object->getLayers()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getLayers() as $value) {
                 $values[] = $value;
             }

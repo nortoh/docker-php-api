@@ -74,7 +74,7 @@ class TaskStatusContainerStatusNormalizer implements DenormalizerInterface, Norm
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('containerID') && null !== $object->getContainerID()) {
             $data['ContainerID'] = $object->getContainerID();
         }

@@ -67,7 +67,7 @@ class NetworksIdDisconnectPostBodyNormalizer implements DenormalizerInterface, N
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('container') && null !== $object->getContainer()) {
             $data['Container'] = $object->getContainer();
         }

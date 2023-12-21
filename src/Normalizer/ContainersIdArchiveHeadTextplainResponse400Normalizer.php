@@ -60,7 +60,7 @@ class ContainersIdArchiveHeadTextplainResponse400Normalizer implements Denormali
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('message') && null !== $object->getMessage()) {
             $data['message'] = $object->getMessage();
         }

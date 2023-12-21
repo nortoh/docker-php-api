@@ -88,7 +88,7 @@ class TaskSpecContainerSpecPrivilegesSELinuxContextNormalizer implements Denorma
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('disable') && null !== $object->getDisable()) {
             $data['Disable'] = $object->getDisable();
         }

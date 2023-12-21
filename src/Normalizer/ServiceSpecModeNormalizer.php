@@ -67,12 +67,12 @@ class ServiceSpecModeNormalizer implements DenormalizerInterface, NormalizerInte
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('replicated') && null !== $object->getReplicated()) {
-            $data['Replicated'] = $this->normalizer->normalize($object->getReplicated(), 'json', $context);
+            $data['Replicated'] = $object->getReplicated() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getReplicated(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('global') && null !== $object->getGlobal()) {
-            $data['Global'] = $this->normalizer->normalize($object->getGlobal(), 'json', $context);
+            $data['Global'] = $object->getGlobal() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getGlobal(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

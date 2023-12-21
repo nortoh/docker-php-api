@@ -60,7 +60,7 @@ class SwarmSpecOrchestrationNormalizer implements DenormalizerInterface, Normali
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('taskHistoryRetentionLimit') && null !== $object->getTaskHistoryRetentionLimit()) {
             $data['TaskHistoryRetentionLimit'] = $object->getTaskHistoryRetentionLimit();
         }

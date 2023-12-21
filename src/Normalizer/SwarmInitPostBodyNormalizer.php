@@ -88,7 +88,7 @@ class SwarmInitPostBodyNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('listenAddr') && null !== $object->getListenAddr()) {
             $data['ListenAddr'] = $object->getListenAddr();
         }
@@ -102,7 +102,7 @@ class SwarmInitPostBodyNormalizer implements DenormalizerInterface, NormalizerIn
             $data['ForceNewCluster'] = $object->getForceNewCluster();
         }
         if ($object->isInitialized('spec') && null !== $object->getSpec()) {
-            $data['Spec'] = $this->normalizer->normalize($object->getSpec(), 'json', $context);
+            $data['Spec'] = $object->getSpec() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getSpec(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

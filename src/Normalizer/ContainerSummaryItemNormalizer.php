@@ -49,11 +49,11 @@ class ContainerSummaryItemNormalizer implements DenormalizerInterface, Normalize
             $object->setId(null);
         }
         if (\array_key_exists('Names', $data) && $data['Names'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Names'] as $value) {
                 $values[] = $value;
             }
-            $object->setNames($values->getArrayCopy());
+            $object->setNames($values);
             unset($data['Names']);
         }
         elseif (\array_key_exists('Names', $data) && $data['Names'] === null) {
@@ -174,12 +174,12 @@ class ContainerSummaryItemNormalizer implements DenormalizerInterface, Normalize
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('id') && null !== $object->getId()) {
             $data['Id'] = $object->getId();
         }
         if ($object->isInitialized('names') && null !== $object->getNames()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getNames() as $value) {
                 $values[] = $value;
             }
@@ -200,7 +200,7 @@ class ContainerSummaryItemNormalizer implements DenormalizerInterface, Normalize
         if ($object->isInitialized('ports') && null !== $object->getPorts()) {
             $values_1 = array();
             foreach ($object->getPorts() as $value_1) {
-                $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+                $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Ports'] = $values_1;
         }
@@ -211,7 +211,7 @@ class ContainerSummaryItemNormalizer implements DenormalizerInterface, Normalize
             $data['SizeRootFs'] = $object->getSizeRootFs();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values_2 = array();
+            $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getLabels() as $key => $value_2) {
                 $values_2[$key] = $value_2;
             }
@@ -224,15 +224,15 @@ class ContainerSummaryItemNormalizer implements DenormalizerInterface, Normalize
             $data['Status'] = $object->getStatus();
         }
         if ($object->isInitialized('hostConfig') && null !== $object->getHostConfig()) {
-            $data['HostConfig'] = $this->normalizer->normalize($object->getHostConfig(), 'json', $context);
+            $data['HostConfig'] = $object->getHostConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getHostConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('networkSettings') && null !== $object->getNetworkSettings()) {
-            $data['NetworkSettings'] = $this->normalizer->normalize($object->getNetworkSettings(), 'json', $context);
+            $data['NetworkSettings'] = $object->getNetworkSettings() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getNetworkSettings(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('mounts') && null !== $object->getMounts()) {
             $values_3 = array();
             foreach ($object->getMounts() as $value_3) {
-                $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
+                $values_3[] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Mounts'] = $values_3;
         }

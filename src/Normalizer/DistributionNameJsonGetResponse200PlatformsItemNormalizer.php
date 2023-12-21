@@ -63,11 +63,11 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             $object->setOSVersion(null);
         }
         if (\array_key_exists('OSFeatures', $data) && $data['OSFeatures'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['OSFeatures'] as $value) {
                 $values[] = $value;
             }
-            $object->setOSFeatures($values->getArrayCopy());
+            $object->setOSFeatures($values);
             unset($data['OSFeatures']);
         }
         elseif (\array_key_exists('OSFeatures', $data) && $data['OSFeatures'] === null) {
@@ -103,7 +103,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('architecture') && null !== $object->getArchitecture()) {
             $data['Architecture'] = $object->getArchitecture();
         }
@@ -114,7 +114,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             $data['OSVersion'] = $object->getOSVersion();
         }
         if ($object->isInitialized('oSFeatures') && null !== $object->getOSFeatures()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getOSFeatures() as $value) {
                 $values[] = $value;
             }

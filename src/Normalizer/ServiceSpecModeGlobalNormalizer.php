@@ -53,7 +53,7 @@ class ServiceSpecModeGlobalNormalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

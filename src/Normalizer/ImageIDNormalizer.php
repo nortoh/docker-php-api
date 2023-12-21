@@ -60,7 +60,7 @@ class ImageIDNormalizer implements DenormalizerInterface, NormalizerInterface, D
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('iD') && null !== $object->getID()) {
             $data['ID'] = $object->getID();
         }

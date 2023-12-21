@@ -60,7 +60,7 @@ class TaskSpecPlacementPreferencesItemSpreadNormalizer implements DenormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('spreadDescriptor') && null !== $object->getSpreadDescriptor()) {
             $data['SpreadDescriptor'] = $object->getSpreadDescriptor();
         }

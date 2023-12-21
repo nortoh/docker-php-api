@@ -10,7 +10,6 @@ abstract class BaseEndpoint implements Endpoint
 {
     protected $queryParameters = [];
     protected $headerParameters = [];
-    protected $formParameters = [];
     protected $body;
     public abstract function getMethod() : string;
     public abstract function getBody(SerializerInterface $serializer, $streamFactory = null) : array;

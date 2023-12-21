@@ -26,19 +26,19 @@ class Task extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @var ObjectVersion|null
     */
     protected $version;
     /**
-     *
+     * 
      *
      * @var string|null
      */
     protected $createdAt;
     /**
-     *
+     * 
      *
      * @var string|null
      */
@@ -68,7 +68,7 @@ class Task extends \ArrayObject
      */
     protected $serviceID;
     /**
-     *
+     * 
      *
      * @var int|null
      */
@@ -86,13 +86,13 @@ class Task extends \ArrayObject
      */
     protected $assignedGenericResources;
     /**
-     *
+     * 
      *
      * @var TaskStatus|null
      */
     protected $status;
     /**
-     *
+     * 
      *
      * @var string|null
      */
@@ -127,7 +127,7 @@ class Task extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @return ObjectVersion|null
     */
@@ -143,7 +143,7 @@ class Task extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @param ObjectVersion|null $version
     *
@@ -156,7 +156,7 @@ class Task extends \ArrayObject
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string|null
      */
@@ -165,7 +165,7 @@ class Task extends \ArrayObject
         return $this->createdAt;
     }
     /**
-     *
+     * 
      *
      * @param string|null $createdAt
      *
@@ -178,7 +178,7 @@ class Task extends \ArrayObject
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string|null
      */
@@ -187,7 +187,7 @@ class Task extends \ArrayObject
         return $this->updatedAt;
     }
     /**
-     *
+     * 
      *
      * @param string|null $updatedAt
      *
@@ -226,7 +226,7 @@ class Task extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?\ArrayObject
+    public function getLabels() : ?iterable
     {
         return $this->labels;
     }
@@ -237,7 +237,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?\ArrayObject $labels) : self
+    public function setLabels(?iterable $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -288,7 +288,7 @@ class Task extends \ArrayObject
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return int|null
      */
@@ -297,7 +297,7 @@ class Task extends \ArrayObject
         return $this->slot;
     }
     /**
-     *
+     * 
      *
      * @param int|null $slot
      *
@@ -354,7 +354,7 @@ class Task extends \ArrayObject
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return TaskStatus|null
      */
@@ -363,7 +363,7 @@ class Task extends \ArrayObject
         return $this->status;
     }
     /**
-     *
+     * 
      *
      * @param TaskStatus|null $status
      *
@@ -376,7 +376,7 @@ class Task extends \ArrayObject
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string|null
      */
@@ -385,7 +385,7 @@ class Task extends \ArrayObject
         return $this->desiredState;
     }
     /**
-     *
+     * 
      *
      * @param string|null $desiredState
      *

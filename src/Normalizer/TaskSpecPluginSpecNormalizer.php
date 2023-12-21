@@ -63,11 +63,11 @@ class TaskSpecPluginSpecNormalizer implements DenormalizerInterface, NormalizerI
             $object->setDisabled(null);
         }
         if (\array_key_exists('PluginPrivilege', $data) && $data['PluginPrivilege'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['PluginPrivilege'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\TaskSpecPluginSpecPluginPrivilegeItem', 'json', $context);
             }
-            $object->setPluginPrivilege($values->getArrayCopy());
+            $object->setPluginPrivilege($values);
             unset($data['PluginPrivilege']);
         }
         elseif (\array_key_exists('PluginPrivilege', $data) && $data['PluginPrivilege'] === null) {
@@ -85,7 +85,7 @@ class TaskSpecPluginSpecNormalizer implements DenormalizerInterface, NormalizerI
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
         }
@@ -96,9 +96,9 @@ class TaskSpecPluginSpecNormalizer implements DenormalizerInterface, NormalizerI
             $data['Disabled'] = $object->getDisabled();
         }
         if ($object->isInitialized('pluginPrivilege') && null !== $object->getPluginPrivilege()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getPluginPrivilege() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['PluginPrivilege'] = $values;
         }

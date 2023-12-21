@@ -49,11 +49,11 @@ class SystemDfGetTextplainResponse200Normalizer implements DenormalizerInterface
             $object->setLayersSize(null);
         }
         if (\array_key_exists('Images', $data) && $data['Images'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Images'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageSummary', 'json', $context);
             }
-            $object->setImages($values->getArrayCopy());
+            $object->setImages($values);
             unset($data['Images']);
         }
         elseif (\array_key_exists('Images', $data) && $data['Images'] === null) {
@@ -97,14 +97,14 @@ class SystemDfGetTextplainResponse200Normalizer implements DenormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('layersSize') && null !== $object->getLayersSize()) {
             $data['LayersSize'] = $object->getLayersSize();
         }
         if ($object->isInitialized('images') && null !== $object->getImages()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getImages() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Images'] = $values;
         }
@@ -113,7 +113,7 @@ class SystemDfGetTextplainResponse200Normalizer implements DenormalizerInterface
             foreach ($object->getContainers() as $value_1) {
                 $values_2 = array();
                 foreach ($value_1 as $value_2) {
-                    $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
+                    $values_2[] = $value_2 == null ? null : new \ArrayObject($this->normalizer->normalize($value_2, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
                 }
                 $values_1[] = $values_2;
             }
@@ -122,7 +122,7 @@ class SystemDfGetTextplainResponse200Normalizer implements DenormalizerInterface
         if ($object->isInitialized('volumes') && null !== $object->getVolumes()) {
             $values_3 = array();
             foreach ($object->getVolumes() as $value_3) {
-                $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
+                $values_3[] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Volumes'] = $values_3;
         }

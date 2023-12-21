@@ -42,11 +42,11 @@ class PluginsInfoNormalizer implements DenormalizerInterface, NormalizerInterfac
             return $object;
         }
         if (\array_key_exists('Volume', $data) && $data['Volume'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Volume'] as $value) {
                 $values[] = $value;
             }
-            $object->setVolume($values->getArrayCopy());
+            $object->setVolume($values);
             unset($data['Volume']);
         }
         elseif (\array_key_exists('Volume', $data) && $data['Volume'] === null) {
@@ -97,9 +97,9 @@ class PluginsInfoNormalizer implements DenormalizerInterface, NormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('volume') && null !== $object->getVolume()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getVolume() as $value) {
                 $values[] = $value;
             }

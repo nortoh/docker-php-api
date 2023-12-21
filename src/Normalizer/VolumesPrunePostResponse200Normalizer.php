@@ -42,11 +42,11 @@ class VolumesPrunePostResponse200Normalizer implements DenormalizerInterface, No
             return $object;
         }
         if (\array_key_exists('VolumesDeleted', $data) && $data['VolumesDeleted'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['VolumesDeleted'] as $value) {
                 $values[] = $value;
             }
-            $object->setVolumesDeleted($values->getArrayCopy());
+            $object->setVolumesDeleted($values);
             unset($data['VolumesDeleted']);
         }
         elseif (\array_key_exists('VolumesDeleted', $data) && $data['VolumesDeleted'] === null) {
@@ -71,9 +71,9 @@ class VolumesPrunePostResponse200Normalizer implements DenormalizerInterface, No
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('volumesDeleted') && null !== $object->getVolumesDeleted()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getVolumesDeleted() as $value) {
                 $values[] = $value;
             }

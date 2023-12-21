@@ -56,11 +56,11 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setParentId(null);
         }
         if (\array_key_exists('RepoTags', $data) && $data['RepoTags'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['RepoTags'] as $value) {
                 $values[] = $value;
             }
-            $object->setRepoTags($values->getArrayCopy());
+            $object->setRepoTags($values);
             unset($data['RepoTags']);
         }
         elseif (\array_key_exists('RepoTags', $data) && $data['RepoTags'] === null) {
@@ -135,10 +135,10 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Id'] = $object->getId();
         $data['ParentId'] = $object->getParentId();
-        $values = new \ArrayObject();
+        $values = array();
         foreach ($object->getRepoTags() as $value) {
             $values[] = $value;
         }
@@ -152,7 +152,7 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
         $data['Size'] = $object->getSize();
         $data['SharedSize'] = $object->getSharedSize();
         $data['VirtualSize'] = $object->getVirtualSize();
-        $values_2 = array();
+        $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
         foreach ($object->getLabels() as $key => $value_2) {
             $values_2[$key] = $value_2;
         }

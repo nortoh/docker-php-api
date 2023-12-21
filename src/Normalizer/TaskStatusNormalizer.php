@@ -88,7 +88,7 @@ class TaskStatusNormalizer implements DenormalizerInterface, NormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('timestamp') && null !== $object->getTimestamp()) {
             $data['Timestamp'] = $object->getTimestamp();
         }
@@ -102,7 +102,7 @@ class TaskStatusNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['Err'] = $object->getErr();
         }
         if ($object->isInitialized('containerStatus') && null !== $object->getContainerStatus()) {
-            $data['ContainerStatus'] = $this->normalizer->normalize($object->getContainerStatus(), 'json', $context);
+            $data['ContainerStatus'] = $object->getContainerStatus() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getContainerStatus(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

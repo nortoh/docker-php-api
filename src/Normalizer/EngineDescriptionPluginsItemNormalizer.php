@@ -67,7 +67,7 @@ class EngineDescriptionPluginsItemNormalizer implements DenormalizerInterface, N
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('type') && null !== $object->getType()) {
             $data['Type'] = $object->getType();
         }

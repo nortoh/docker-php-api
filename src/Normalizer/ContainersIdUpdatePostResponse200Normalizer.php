@@ -42,11 +42,11 @@ class ContainersIdUpdatePostResponse200Normalizer implements DenormalizerInterfa
             return $object;
         }
         if (\array_key_exists('Warnings', $data) && $data['Warnings'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Warnings'] as $value) {
                 $values[] = $value;
             }
-            $object->setWarnings($values->getArrayCopy());
+            $object->setWarnings($values);
             unset($data['Warnings']);
         }
         elseif (\array_key_exists('Warnings', $data) && $data['Warnings'] === null) {
@@ -64,9 +64,9 @@ class ContainersIdUpdatePostResponse200Normalizer implements DenormalizerInterfa
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('warnings') && null !== $object->getWarnings()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getWarnings() as $value) {
                 $values[] = $value;
             }

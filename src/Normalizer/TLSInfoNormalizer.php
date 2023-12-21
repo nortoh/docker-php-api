@@ -74,7 +74,7 @@ class TLSInfoNormalizer implements DenormalizerInterface, NormalizerInterface, D
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('trustRoot') && null !== $object->getTrustRoot()) {
             $data['TrustRoot'] = $object->getTrustRoot();
         }

@@ -27,7 +27,7 @@ class ConfigsCreatePostBody extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     config data.
-
+    
     *
     * @var string|null
     */
@@ -59,7 +59,7 @@ class ConfigsCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?\ArrayObject
+    public function getLabels() : ?iterable
     {
         return $this->labels;
     }
@@ -70,7 +70,7 @@ class ConfigsCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?\ArrayObject $labels) : self
+    public function setLabels(?iterable $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -79,7 +79,7 @@ class ConfigsCreatePostBody extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     config data.
-
+    
     *
     * @return string|null
     */
@@ -90,7 +90,7 @@ class ConfigsCreatePostBody extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     config data.
-
+    
     *
     * @param string|null $data
     *

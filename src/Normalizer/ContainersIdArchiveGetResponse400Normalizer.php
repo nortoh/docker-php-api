@@ -60,7 +60,7 @@ class ContainersIdArchiveGetResponse400Normalizer implements DenormalizerInterfa
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('message') && null !== $object->getMessage()) {
             $data['message'] = $object->getMessage();
         }

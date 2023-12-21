@@ -67,7 +67,7 @@ class RestartPolicyNormalizer implements DenormalizerInterface, NormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
         }

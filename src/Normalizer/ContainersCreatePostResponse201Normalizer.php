@@ -49,11 +49,11 @@ class ContainersCreatePostResponse201Normalizer implements DenormalizerInterface
             $object->setId(null);
         }
         if (\array_key_exists('Warnings', $data) && $data['Warnings'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Warnings'] as $value) {
                 $values[] = $value;
             }
-            $object->setWarnings($values->getArrayCopy());
+            $object->setWarnings($values);
             unset($data['Warnings']);
         }
         elseif (\array_key_exists('Warnings', $data) && $data['Warnings'] === null) {
@@ -71,9 +71,9 @@ class ContainersCreatePostResponse201Normalizer implements DenormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Id'] = $object->getId();
-        $values = new \ArrayObject();
+        $values = array();
         foreach ($object->getWarnings() as $value) {
             $values[] = $value;
         }

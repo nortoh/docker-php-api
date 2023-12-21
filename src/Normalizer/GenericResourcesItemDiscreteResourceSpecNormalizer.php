@@ -67,7 +67,7 @@ class GenericResourcesItemDiscreteResourceSpecNormalizer implements Denormalizer
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('kind') && null !== $object->getKind()) {
             $data['Kind'] = $object->getKind();
         }

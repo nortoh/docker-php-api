@@ -42,11 +42,11 @@ class PluginConfigInterfaceNormalizer implements DenormalizerInterface, Normaliz
             return $object;
         }
         if (\array_key_exists('Types', $data) && $data['Types'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Types'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\PluginInterfaceType', 'json', $context);
             }
-            $object->setTypes($values->getArrayCopy());
+            $object->setTypes($values);
             unset($data['Types']);
         }
         elseif (\array_key_exists('Types', $data) && $data['Types'] === null) {
@@ -71,10 +71,10 @@ class PluginConfigInterfaceNormalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
-        $values = new \ArrayObject();
+        $data = array();
+        $values = array();
         foreach ($object->getTypes() as $value) {
-            $values[] = $this->normalizer->normalize($value, 'json', $context);
+            $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Types'] = $values;
         $data['Socket'] = $object->getSocket();

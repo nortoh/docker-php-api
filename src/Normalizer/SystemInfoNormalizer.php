@@ -91,7 +91,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setDriver(null);
         }
         if (\array_key_exists('DriverStatus', $data) && $data['DriverStatus'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['DriverStatus'] as $value) {
                 $values_1 = array();
                 foreach ($value as $value_1) {
@@ -99,7 +99,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
                 }
                 $values[] = $values_1;
             }
-            $object->setDriverStatus($values->getArrayCopy());
+            $object->setDriverStatus($values);
             unset($data['DriverStatus']);
         }
         elseif (\array_key_exists('DriverStatus', $data) && $data['DriverStatus'] === null) {
@@ -484,7 +484,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('iD') && null !== $object->getID()) {
             $data['ID'] = $object->getID();
         }
@@ -507,7 +507,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['Driver'] = $object->getDriver();
         }
         if ($object->isInitialized('driverStatus') && null !== $object->getDriverStatus()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getDriverStatus() as $value) {
                 $values_1 = array();
                 foreach ($value as $value_1) {
@@ -532,7 +532,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['SystemStatus'] = $values_2;
         }
         if ($object->isInitialized('plugins') && null !== $object->getPlugins()) {
-            $data['Plugins'] = $this->normalizer->normalize($object->getPlugins(), 'json', $context);
+            $data['Plugins'] = $object->getPlugins() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getPlugins(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('memoryLimit') && null !== $object->getMemoryLimit()) {
             $data['MemoryLimit'] = $object->getMemoryLimit();
@@ -610,12 +610,12 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['IndexServerAddress'] = $object->getIndexServerAddress();
         }
         if ($object->isInitialized('registryConfig') && null !== $object->getRegistryConfig()) {
-            $data['RegistryConfig'] = $this->normalizer->normalize($object->getRegistryConfig(), 'json', $context);
+            $data['RegistryConfig'] = $object->getRegistryConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getRegistryConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('genericResources') && null !== $object->getGenericResources()) {
             $values_4 = array();
             foreach ($object->getGenericResources() as $value_4) {
-                $values_4[] = $this->normalizer->normalize($value_4, 'json', $context);
+                $values_4[] = $value_4 == null ? null : new \ArrayObject($this->normalizer->normalize($value_4, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['GenericResources'] = $values_4;
         }
@@ -651,9 +651,9 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['ClusterAdvertise'] = $object->getClusterAdvertise();
         }
         if ($object->isInitialized('runtimes') && null !== $object->getRuntimes()) {
-            $values_6 = array();
+            $values_6 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getRuntimes() as $key => $value_6) {
-                $values_6[$key] = $this->normalizer->normalize($value_6, 'json', $context);
+                $values_6[$key] = $value_6 == null ? null : new \ArrayObject($this->normalizer->normalize($value_6, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Runtimes'] = $values_6;
         }
@@ -661,7 +661,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['DefaultRuntime'] = $object->getDefaultRuntime();
         }
         if ($object->isInitialized('swarm') && null !== $object->getSwarm()) {
-            $data['Swarm'] = $this->normalizer->normalize($object->getSwarm(), 'json', $context);
+            $data['Swarm'] = $object->getSwarm() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getSwarm(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('liveRestoreEnabled') && null !== $object->getLiveRestoreEnabled()) {
             $data['LiveRestoreEnabled'] = $object->getLiveRestoreEnabled();
@@ -673,13 +673,13 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['InitBinary'] = $object->getInitBinary();
         }
         if ($object->isInitialized('containerdCommit') && null !== $object->getContainerdCommit()) {
-            $data['ContainerdCommit'] = $this->normalizer->normalize($object->getContainerdCommit(), 'json', $context);
+            $data['ContainerdCommit'] = $object->getContainerdCommit() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getContainerdCommit(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('runcCommit') && null !== $object->getRuncCommit()) {
-            $data['RuncCommit'] = $this->normalizer->normalize($object->getRuncCommit(), 'json', $context);
+            $data['RuncCommit'] = $object->getRuncCommit() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getRuncCommit(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('initCommit') && null !== $object->getInitCommit()) {
-            $data['InitCommit'] = $this->normalizer->normalize($object->getInitCommit(), 'json', $context);
+            $data['InitCommit'] = $object->getInitCommit() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getInitCommit(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('securityOptions') && null !== $object->getSecurityOptions()) {
             $values_7 = array();

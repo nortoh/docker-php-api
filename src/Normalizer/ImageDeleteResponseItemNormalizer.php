@@ -67,7 +67,7 @@ class ImageDeleteResponseItemNormalizer implements DenormalizerInterface, Normal
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('untagged') && null !== $object->getUntagged()) {
             $data['Untagged'] = $object->getUntagged();
         }

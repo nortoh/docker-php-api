@@ -60,7 +60,7 @@ class IdResponseNormalizer implements DenormalizerInterface, NormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Id'] = $object->getId();
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

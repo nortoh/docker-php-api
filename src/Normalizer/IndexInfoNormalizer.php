@@ -49,11 +49,11 @@ class IndexInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $object->setName(null);
         }
         if (\array_key_exists('Mirrors', $data) && $data['Mirrors'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Mirrors'] as $value) {
                 $values[] = $value;
             }
-            $object->setMirrors($values->getArrayCopy());
+            $object->setMirrors($values);
             unset($data['Mirrors']);
         }
         elseif (\array_key_exists('Mirrors', $data) && $data['Mirrors'] === null) {
@@ -85,12 +85,12 @@ class IndexInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
         }
         if ($object->isInitialized('mirrors') && null !== $object->getMirrors()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getMirrors() as $value) {
                 $values[] = $value;
             }

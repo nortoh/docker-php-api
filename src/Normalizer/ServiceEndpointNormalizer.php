@@ -49,11 +49,11 @@ class ServiceEndpointNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setSpec(null);
         }
         if (\array_key_exists('Ports', $data) && $data['Ports'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Ports'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\EndpointPortConfig', 'json', $context);
             }
-            $object->setPorts($values->getArrayCopy());
+            $object->setPorts($values);
             unset($data['Ports']);
         }
         elseif (\array_key_exists('Ports', $data) && $data['Ports'] === null) {
@@ -82,21 +82,21 @@ class ServiceEndpointNormalizer implements DenormalizerInterface, NormalizerInte
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('spec') && null !== $object->getSpec()) {
-            $data['Spec'] = $this->normalizer->normalize($object->getSpec(), 'json', $context);
+            $data['Spec'] = $object->getSpec() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getSpec(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('ports') && null !== $object->getPorts()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getPorts() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Ports'] = $values;
         }
         if ($object->isInitialized('virtualIPs') && null !== $object->getVirtualIPs()) {
             $values_1 = array();
             foreach ($object->getVirtualIPs() as $value_1) {
-                $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+                $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['VirtualIPs'] = $values_1;
         }

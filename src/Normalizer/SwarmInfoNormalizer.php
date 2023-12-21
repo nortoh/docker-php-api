@@ -77,11 +77,11 @@ class SwarmInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $object->setError(null);
         }
         if (\array_key_exists('RemoteManagers', $data) && $data['RemoteManagers'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['RemoteManagers'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\PeerNode', 'json', $context);
             }
-            $object->setRemoteManagers($values->getArrayCopy());
+            $object->setRemoteManagers($values);
             unset($data['RemoteManagers']);
         }
         elseif (\array_key_exists('RemoteManagers', $data) && $data['RemoteManagers'] === null) {
@@ -120,7 +120,7 @@ class SwarmInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('nodeID') && null !== $object->getNodeID()) {
             $data['NodeID'] = $object->getNodeID();
         }
@@ -137,9 +137,9 @@ class SwarmInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['Error'] = $object->getError();
         }
         if ($object->isInitialized('remoteManagers') && null !== $object->getRemoteManagers()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getRemoteManagers() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['RemoteManagers'] = $values;
         }
@@ -150,7 +150,7 @@ class SwarmInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['Managers'] = $object->getManagers();
         }
         if ($object->isInitialized('cluster') && null !== $object->getCluster()) {
-            $data['Cluster'] = $this->normalizer->normalize($object->getCluster(), 'json', $context);
+            $data['Cluster'] = $object->getCluster() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getCluster(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {

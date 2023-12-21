@@ -95,17 +95,17 @@ class PluginNormalizer implements DenormalizerInterface, NormalizerInterface, De
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('id') && null !== $object->getId()) {
             $data['Id'] = $object->getId();
         }
         $data['Name'] = $object->getName();
         $data['Enabled'] = $object->getEnabled();
-        $data['Settings'] = $this->normalizer->normalize($object->getSettings(), 'json', $context);
+        $data['Settings'] = $object->getSettings() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getSettings(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         if ($object->isInitialized('pluginReference') && null !== $object->getPluginReference()) {
             $data['PluginReference'] = $object->getPluginReference();
         }
-        $data['Config'] = $this->normalizer->normalize($object->getConfig(), 'json', $context);
+        $data['Config'] = $object->getConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;

@@ -49,7 +49,7 @@ class EndpointSettingsNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setIPAMConfig(null);
         }
         if (\array_key_exists('Links', $data) && $data['Links'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Links'] as $value) {
                 $values[] = $value;
             }
@@ -156,12 +156,12 @@ class EndpointSettingsNormalizer implements DenormalizerInterface, NormalizerInt
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('iPAMConfig') && null !== $object->getIPAMConfig()) {
-            $data['IPAMConfig'] = $this->normalizer->normalize($object->getIPAMConfig(), 'json', $context);
+            $data['IPAMConfig'] = $object->getIPAMConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getIPAMConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('links') && null !== $object->getLinks()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getLinks() as $value) {
                 $values[] = $value;
             }
@@ -202,7 +202,7 @@ class EndpointSettingsNormalizer implements DenormalizerInterface, NormalizerInt
             $data['MacAddress'] = $object->getMacAddress();
         }
         if ($object->isInitialized('driverOpts') && null !== $object->getDriverOpts()) {
-            $values_2 = array();
+            $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getDriverOpts() as $key => $value_2) {
                 $values_2[$key] = $value_2;
             }

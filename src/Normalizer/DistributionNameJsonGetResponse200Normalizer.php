@@ -49,11 +49,11 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
             $object->setDescriptor(null);
         }
         if (\array_key_exists('Platforms', $data) && $data['Platforms'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Platforms'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem', 'json', $context);
             }
-            $object->setPlatforms($values->getArrayCopy());
+            $object->setPlatforms($values);
             unset($data['Platforms']);
         }
         elseif (\array_key_exists('Platforms', $data) && $data['Platforms'] === null) {
@@ -71,11 +71,11 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
-        $data['Descriptor'] = $this->normalizer->normalize($object->getDescriptor(), 'json', $context);
-        $values = new \ArrayObject();
+        $data = array();
+        $data['Descriptor'] = $object->getDescriptor() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getDescriptor(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        $values = array();
         foreach ($object->getPlatforms() as $value) {
-            $values[] = $this->normalizer->normalize($value, 'json', $context);
+            $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Platforms'] = $values;
         foreach ($object as $key => $value_1) {

@@ -63,11 +63,11 @@ class DistributionNameJsonGetResponse200DescriptorNormalizer implements Denormal
             $object->setDigest(null);
         }
         if (\array_key_exists('URLs', $data) && $data['URLs'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['URLs'] as $value) {
                 $values[] = $value;
             }
-            $object->setURLs($values->getArrayCopy());
+            $object->setURLs($values);
             unset($data['URLs']);
         }
         elseif (\array_key_exists('URLs', $data) && $data['URLs'] === null) {
@@ -85,7 +85,7 @@ class DistributionNameJsonGetResponse200DescriptorNormalizer implements Denormal
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('mediaType') && null !== $object->getMediaType()) {
             $data['MediaType'] = $object->getMediaType();
         }
@@ -96,7 +96,7 @@ class DistributionNameJsonGetResponse200DescriptorNormalizer implements Denormal
             $data['Digest'] = $object->getDigest();
         }
         if ($object->isInitialized('uRLs') && null !== $object->getURLs()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getURLs() as $value) {
                 $values[] = $value;
             }

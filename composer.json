@@ -10,13 +10,11 @@
     },
     "require": {
         "php": ">=7.1",
-        "jane-php/open-api-runtime": "^7.0"
+        "jane-php/jane-php": "^7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.4",
         "friendsofphp/php-cs-fixer": "^2.9",
-        "jane-php/open-api-3": "^7.0",
-        "jane-php/json-schema": "^7.0",
         "amphp/artax": "^3.0"
     },
     "suggest": {
@@ -28,5 +26,10 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    }
 }

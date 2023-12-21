@@ -42,11 +42,11 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
             return $object;
         }
         if (\array_key_exists('Capabilities', $data) && $data['Capabilities'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Capabilities'] as $value) {
                 $values[] = $value;
             }
-            $object->setCapabilities($values->getArrayCopy());
+            $object->setCapabilities($values);
             unset($data['Capabilities']);
         }
         elseif (\array_key_exists('Capabilities', $data) && $data['Capabilities'] === null) {
@@ -82,8 +82,8 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
-        $values = new \ArrayObject();
+        $data = array();
+        $values = array();
         foreach ($object->getCapabilities() as $value) {
             $values[] = $value;
         }
@@ -91,7 +91,7 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
         $data['AllowAllDevices'] = $object->getAllowAllDevices();
         $values_1 = array();
         foreach ($object->getDevices() as $value_1) {
-            $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+            $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Devices'] = $values_1;
         foreach ($object as $key => $value_2) {

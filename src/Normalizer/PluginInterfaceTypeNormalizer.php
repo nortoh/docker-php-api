@@ -74,7 +74,7 @@ class PluginInterfaceTypeNormalizer implements DenormalizerInterface, Normalizer
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Prefix'] = $object->getPrefix();
         $data['Capability'] = $object->getCapability();
         $data['Version'] = $object->getVersion();

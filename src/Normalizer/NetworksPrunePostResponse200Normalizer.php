@@ -42,11 +42,11 @@ class NetworksPrunePostResponse200Normalizer implements DenormalizerInterface, N
             return $object;
         }
         if (\array_key_exists('NetworksDeleted', $data) && $data['NetworksDeleted'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['NetworksDeleted'] as $value) {
                 $values[] = $value;
             }
-            $object->setNetworksDeleted($values->getArrayCopy());
+            $object->setNetworksDeleted($values);
             unset($data['NetworksDeleted']);
         }
         elseif (\array_key_exists('NetworksDeleted', $data) && $data['NetworksDeleted'] === null) {
@@ -64,9 +64,9 @@ class NetworksPrunePostResponse200Normalizer implements DenormalizerInterface, N
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('networksDeleted') && null !== $object->getNetworksDeleted()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getNetworksDeleted() as $value) {
                 $values[] = $value;
             }

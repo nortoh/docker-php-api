@@ -42,11 +42,11 @@ class PluginSettingsNormalizer implements DenormalizerInterface, NormalizerInter
             return $object;
         }
         if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Mounts'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\PluginMount', 'json', $context);
             }
-            $object->setMounts($values->getArrayCopy());
+            $object->setMounts($values);
             unset($data['Mounts']);
         }
         elseif (\array_key_exists('Mounts', $data) && $data['Mounts'] === null) {
@@ -97,10 +97,10 @@ class PluginSettingsNormalizer implements DenormalizerInterface, NormalizerInter
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
-        $values = new \ArrayObject();
+        $data = array();
+        $values = array();
         foreach ($object->getMounts() as $value) {
-            $values[] = $this->normalizer->normalize($value, 'json', $context);
+            $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Mounts'] = $values;
         $values_1 = array();
@@ -115,7 +115,7 @@ class PluginSettingsNormalizer implements DenormalizerInterface, NormalizerInter
         $data['Args'] = $values_2;
         $values_3 = array();
         foreach ($object->getDevices() as $value_3) {
-            $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
+            $values_3[] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Devices'] = $values_3;
         foreach ($object as $key => $value_4) {

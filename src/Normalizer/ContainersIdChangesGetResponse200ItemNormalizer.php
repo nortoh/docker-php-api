@@ -67,7 +67,7 @@ class ContainersIdChangesGetResponse200ItemNormalizer implements DenormalizerInt
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Path'] = $object->getPath();
         $data['Kind'] = $object->getKind();
         foreach ($object as $key => $value) {

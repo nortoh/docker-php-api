@@ -42,11 +42,11 @@ class RegistryServiceConfigNormalizer implements DenormalizerInterface, Normaliz
             return $object;
         }
         if (\array_key_exists('AllowNondistributableArtifactsCIDRs', $data) && $data['AllowNondistributableArtifactsCIDRs'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['AllowNondistributableArtifactsCIDRs'] as $value) {
                 $values[] = $value;
             }
-            $object->setAllowNondistributableArtifactsCIDRs($values->getArrayCopy());
+            $object->setAllowNondistributableArtifactsCIDRs($values);
             unset($data['AllowNondistributableArtifactsCIDRs']);
         }
         elseif (\array_key_exists('AllowNondistributableArtifactsCIDRs', $data) && $data['AllowNondistributableArtifactsCIDRs'] === null) {
@@ -108,9 +108,9 @@ class RegistryServiceConfigNormalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('allowNondistributableArtifactsCIDRs') && null !== $object->getAllowNondistributableArtifactsCIDRs()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getAllowNondistributableArtifactsCIDRs() as $value) {
                 $values[] = $value;
             }
@@ -131,9 +131,9 @@ class RegistryServiceConfigNormalizer implements DenormalizerInterface, Normaliz
             $data['InsecureRegistryCIDRs'] = $values_2;
         }
         if ($object->isInitialized('indexConfigs') && null !== $object->getIndexConfigs()) {
-            $values_3 = array();
+            $values_3 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getIndexConfigs() as $key => $value_3) {
-                $values_3[$key] = $this->normalizer->normalize($value_3, 'json', $context);
+                $values_3[$key] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['IndexConfigs'] = $values_3;
         }

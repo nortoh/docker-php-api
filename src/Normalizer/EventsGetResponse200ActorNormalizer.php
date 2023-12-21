@@ -71,12 +71,12 @@ class EventsGetResponse200ActorNormalizer implements DenormalizerInterface, Norm
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('iD') && null !== $object->getID()) {
             $data['ID'] = $object->getID();
         }
         if ($object->isInitialized('attributes') && null !== $object->getAttributes()) {
-            $values = new \ArrayObject();
+            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getAttributes() as $key => $value) {
                 $values[$key] = $value;
             }

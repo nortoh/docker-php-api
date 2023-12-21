@@ -60,7 +60,7 @@ class ContainerSummaryItemHostConfigNormalizer implements DenormalizerInterface,
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('networkMode') && null !== $object->getNetworkMode()) {
             $data['NetworkMode'] = $object->getNetworkMode();
         }

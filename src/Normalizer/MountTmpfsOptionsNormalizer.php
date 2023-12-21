@@ -67,7 +67,7 @@ class MountTmpfsOptionsNormalizer implements DenormalizerInterface, NormalizerIn
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('sizeBytes') && null !== $object->getSizeBytes()) {
             $data['SizeBytes'] = $object->getSizeBytes();
         }

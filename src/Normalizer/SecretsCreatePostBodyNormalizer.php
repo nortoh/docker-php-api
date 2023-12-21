@@ -85,12 +85,12 @@ class SecretsCreatePostBodyNormalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values = new \ArrayObject();
+            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getLabels() as $key => $value) {
                 $values[$key] = $value;
             }
@@ -100,7 +100,7 @@ class SecretsCreatePostBodyNormalizer implements DenormalizerInterface, Normaliz
             $data['Data'] = $object->getData();
         }
         if ($object->isInitialized('driver') && null !== $object->getDriver()) {
-            $data['Driver'] = $this->normalizer->normalize($object->getDriver(), 'json', $context);
+            $data['Driver'] = $object->getDriver() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key_1 => $value_1) {
             if (preg_match('/.*/', (string) $key_1)) {

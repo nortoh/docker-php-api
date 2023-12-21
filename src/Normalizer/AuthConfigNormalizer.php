@@ -81,7 +81,7 @@ class AuthConfigNormalizer implements DenormalizerInterface, NormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('username') && null !== $object->getUsername()) {
             $data['username'] = $object->getUsername();
         }

@@ -13,25 +13,25 @@ class EngineDescription extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
+     * 
      *
      * @var string|null
      */
     protected $engineVersion;
     /**
-     *
+     * 
      *
      * @var array<string, string>|null
      */
     protected $labels;
     /**
-     *
+     * 
      *
      * @var EngineDescriptionPluginsItem[]|null
      */
     protected $plugins;
     /**
-     *
+     * 
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class EngineDescription extends \ArrayObject
         return $this->engineVersion;
     }
     /**
-     *
+     * 
      *
      * @param string|null $engineVersion
      *
@@ -53,29 +53,29 @@ class EngineDescription extends \ArrayObject
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?\ArrayObject
+    public function getLabels() : ?iterable
     {
         return $this->labels;
     }
     /**
-     *
+     * 
      *
      * @param array<string, string>|null $labels
      *
      * @return self
      */
-    public function setLabels(?\ArrayObject $labels) : self
+    public function setLabels(?iterable $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return EngineDescriptionPluginsItem[]|null
      */
@@ -84,7 +84,7 @@ class EngineDescription extends \ArrayObject
         return $this->plugins;
     }
     /**
-     *
+     * 
      *
      * @param EngineDescriptionPluginsItem[]|null $plugins
      *

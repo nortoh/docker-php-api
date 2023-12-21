@@ -42,11 +42,11 @@ class HealthConfigNormalizer implements DenormalizerInterface, NormalizerInterfa
             return $object;
         }
         if (\array_key_exists('Test', $data) && $data['Test'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Test'] as $value) {
                 $values[] = $value;
             }
-            $object->setTest($values->getArrayCopy());
+            $object->setTest($values);
             unset($data['Test']);
         }
         elseif (\array_key_exists('Test', $data) && $data['Test'] === null) {
@@ -92,9 +92,9 @@ class HealthConfigNormalizer implements DenormalizerInterface, NormalizerInterfa
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('test') && null !== $object->getTest()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getTest() as $value) {
                 $values[] = $value;
             }

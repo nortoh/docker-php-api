@@ -274,7 +274,7 @@ class ContainersCreatePostBodyNormalizer implements DenormalizerInterface, Norma
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('hostname') && null !== $object->getHostname()) {
             $data['Hostname'] = $object->getHostname();
         }
@@ -294,9 +294,9 @@ class ContainersCreatePostBodyNormalizer implements DenormalizerInterface, Norma
             $data['AttachStderr'] = $object->getAttachStderr();
         }
         if ($object->isInitialized('exposedPorts') && null !== $object->getExposedPorts()) {
-            $values = new \ArrayObject();
+            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getExposedPorts() as $key => $value) {
-                $values[$key] = $this->normalizer->normalize($value, 'json', $context);
+                $values[$key] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['ExposedPorts'] = $values;
         }
@@ -324,7 +324,7 @@ class ContainersCreatePostBodyNormalizer implements DenormalizerInterface, Norma
             $data['Cmd'] = $values_2;
         }
         if ($object->isInitialized('healthcheck') && null !== $object->getHealthcheck()) {
-            $data['Healthcheck'] = $this->normalizer->normalize($object->getHealthcheck(), 'json', $context);
+            $data['Healthcheck'] = $object->getHealthcheck() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getHealthcheck(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('argsEscaped') && null !== $object->getArgsEscaped()) {
             $data['ArgsEscaped'] = $object->getArgsEscaped();
@@ -333,9 +333,9 @@ class ContainersCreatePostBodyNormalizer implements DenormalizerInterface, Norma
             $data['Image'] = $object->getImage();
         }
         if ($object->isInitialized('volumes') && null !== $object->getVolumes()) {
-            $values_3 = array();
+            $values_3 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getVolumes() as $key_1 => $value_3) {
-                $values_3[$key_1] = $this->normalizer->normalize($value_3, 'json', $context);
+                $values_3[$key_1] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Volumes'] = $values_3;
         }
@@ -363,7 +363,7 @@ class ContainersCreatePostBodyNormalizer implements DenormalizerInterface, Norma
             $data['OnBuild'] = $values_5;
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values_6 = array();
+            $values_6 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getLabels() as $key_2 => $value_6) {
                 $values_6[$key_2] = $value_6;
             }
@@ -383,10 +383,10 @@ class ContainersCreatePostBodyNormalizer implements DenormalizerInterface, Norma
             $data['Shell'] = $values_7;
         }
         if ($object->isInitialized('hostConfig') && null !== $object->getHostConfig()) {
-            $data['HostConfig'] = $this->normalizer->normalize($object->getHostConfig(), 'json', $context);
+            $data['HostConfig'] = $object->getHostConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getHostConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('networkingConfig') && null !== $object->getNetworkingConfig()) {
-            $data['NetworkingConfig'] = $this->normalizer->normalize($object->getNetworkingConfig(), 'json', $context);
+            $data['NetworkingConfig'] = $object->getNetworkingConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getNetworkingConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key_3 => $value_8) {
             if (preg_match('/.*/', (string) $key_3)) {

@@ -42,11 +42,11 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
             return $object;
         }
         if (\array_key_exists('Nameservers', $data) && $data['Nameservers'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Nameservers'] as $value) {
                 $values[] = $value;
             }
-            $object->setNameservers($values->getArrayCopy());
+            $object->setNameservers($values);
             unset($data['Nameservers']);
         }
         elseif (\array_key_exists('Nameservers', $data) && $data['Nameservers'] === null) {
@@ -86,9 +86,9 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('nameservers') && null !== $object->getNameservers()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getNameservers() as $value) {
                 $values[] = $value;
             }

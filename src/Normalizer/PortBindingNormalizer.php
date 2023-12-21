@@ -67,7 +67,7 @@ class PortBindingNormalizer implements DenormalizerInterface, NormalizerInterfac
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('hostIp') && null !== $object->getHostIp()) {
             $data['HostIp'] = $object->getHostIp();
         }

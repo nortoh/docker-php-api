@@ -56,11 +56,11 @@ class PluginConfigArgsNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setDescription(null);
         }
         if (\array_key_exists('Settable', $data) && $data['Settable'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Settable'] as $value) {
                 $values[] = $value;
             }
-            $object->setSettable($values->getArrayCopy());
+            $object->setSettable($values);
             unset($data['Settable']);
         }
         elseif (\array_key_exists('Settable', $data) && $data['Settable'] === null) {
@@ -89,10 +89,10 @@ class PluginConfigArgsNormalizer implements DenormalizerInterface, NormalizerInt
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         $data['Name'] = $object->getName();
         $data['Description'] = $object->getDescription();
-        $values = new \ArrayObject();
+        $values = array();
         foreach ($object->getSettable() as $value) {
             $values[] = $value;
         }

@@ -67,12 +67,12 @@ class GenericResourcesItemNormalizer implements DenormalizerInterface, Normalize
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('namedResourceSpec') && null !== $object->getNamedResourceSpec()) {
-            $data['NamedResourceSpec'] = $this->normalizer->normalize($object->getNamedResourceSpec(), 'json', $context);
+            $data['NamedResourceSpec'] = $object->getNamedResourceSpec() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getNamedResourceSpec(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('discreteResourceSpec') && null !== $object->getDiscreteResourceSpec()) {
-            $data['DiscreteResourceSpec'] = $this->normalizer->normalize($object->getDiscreteResourceSpec(), 'json', $context);
+            $data['DiscreteResourceSpec'] = $object->getDiscreteResourceSpec() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getDiscreteResourceSpec(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

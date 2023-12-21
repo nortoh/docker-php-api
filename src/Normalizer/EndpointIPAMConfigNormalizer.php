@@ -56,7 +56,7 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
             $object->setIPv6Address(null);
         }
         if (\array_key_exists('LinkLocalIPs', $data) && $data['LinkLocalIPs'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['LinkLocalIPs'] as $value) {
                 $values[] = $value;
             }
@@ -78,7 +78,7 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('iPv4Address') && null !== $object->getIPv4Address()) {
             $data['IPv4Address'] = $object->getIPv4Address();
         }
@@ -86,7 +86,7 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
             $data['IPv6Address'] = $object->getIPv6Address();
         }
         if ($object->isInitialized('linkLocalIPs') && null !== $object->getLinkLocalIPs()) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($object->getLinkLocalIPs() as $value) {
                 $values[] = $value;
             }

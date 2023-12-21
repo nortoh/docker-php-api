@@ -42,7 +42,7 @@ class VolumesGetResponse200Normalizer implements DenormalizerInterface, Normaliz
             return $object;
         }
         if (\array_key_exists('Volumes', $data) && $data['Volumes'] !== null) {
-            $values = new \ArrayObject();
+            $values = array();
             foreach ($data['Volumes'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\Volume', 'json', $context);
             }
@@ -75,10 +75,10 @@ class VolumesGetResponse200Normalizer implements DenormalizerInterface, Normaliz
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
-        $values = new \ArrayObject();
+        $data = array();
+        $values = array();
         foreach ($object->getVolumes() as $value) {
-            $values[] = $this->normalizer->normalize($value, 'json', $context);
+            $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Volumes'] = $values;
         $values_1 = array();

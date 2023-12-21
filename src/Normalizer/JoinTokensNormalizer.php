@@ -67,7 +67,7 @@ class JoinTokensNormalizer implements DenormalizerInterface, NormalizerInterface
      */
     public function normalize($object, $format = null, array $context = array())
     {
-        $data = new \ArrayObject();
+        $data = array();
         if ($object->isInitialized('worker') && null !== $object->getWorker()) {
             $data['Worker'] = $object->getWorker();
         }
