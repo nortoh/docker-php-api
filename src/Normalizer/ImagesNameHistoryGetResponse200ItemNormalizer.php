@@ -67,7 +67,7 @@ class ImagesNameHistoryGetResponse200ItemNormalizer implements DenormalizerInter
             foreach ($data['Tags'] as $value) {
                 $values[] = $value;
             }
-            $object->setTags($values);
+            $object->setTags($values->getArrayCopy());
             unset($data['Tags']);
         }
         elseif (\array_key_exists('Tags', $data) && $data['Tags'] === null) {

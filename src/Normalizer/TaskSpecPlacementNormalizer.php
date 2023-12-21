@@ -46,7 +46,7 @@ class TaskSpecPlacementNormalizer implements DenormalizerInterface, NormalizerIn
             foreach ($data['Constraints'] as $value) {
                 $values[] = $value;
             }
-            $object->setConstraints($values);
+            $object->setConstraints($values->getArrayCopy());
             unset($data['Constraints']);
         }
         elseif (\array_key_exists('Constraints', $data) && $data['Constraints'] === null) {

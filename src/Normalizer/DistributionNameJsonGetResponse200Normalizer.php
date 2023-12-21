@@ -53,7 +53,7 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
             foreach ($data['Platforms'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem', 'json', $context);
             }
-            $object->setPlatforms($values);
+            $object->setPlatforms($values->getArrayCopy());
             unset($data['Platforms']);
         }
         elseif (\array_key_exists('Platforms', $data) && $data['Platforms'] === null) {

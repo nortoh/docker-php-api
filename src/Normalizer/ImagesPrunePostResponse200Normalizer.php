@@ -46,7 +46,7 @@ class ImagesPrunePostResponse200Normalizer implements DenormalizerInterface, Nor
             foreach ($data['ImagesDeleted'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageDeleteResponseItem', 'json', $context);
             }
-            $object->setImagesDeleted($values);
+            $object->setImagesDeleted($values->getArrayCopy());
             unset($data['ImagesDeleted']);
         }
         elseif (\array_key_exists('ImagesDeleted', $data) && $data['ImagesDeleted'] === null) {

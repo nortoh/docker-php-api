@@ -67,7 +67,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             foreach ($data['OSFeatures'] as $value) {
                 $values[] = $value;
             }
-            $object->setOSFeatures($values);
+            $object->setOSFeatures($values->getArrayCopy());
             unset($data['OSFeatures']);
         }
         elseif (\array_key_exists('OSFeatures', $data) && $data['OSFeatures'] === null) {

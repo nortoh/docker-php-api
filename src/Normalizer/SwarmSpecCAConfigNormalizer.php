@@ -53,7 +53,7 @@ class SwarmSpecCAConfigNormalizer implements DenormalizerInterface, NormalizerIn
             foreach ($data['ExternalCAs'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\SwarmSpecCAConfigExternalCAsItem', 'json', $context);
             }
-            $object->setExternalCAs($values);
+            $object->setExternalCAs($values->getArrayCopy());
             unset($data['ExternalCAs']);
         }
         elseif (\array_key_exists('ExternalCAs', $data) && $data['ExternalCAs'] === null) {

@@ -46,7 +46,7 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
             foreach ($data['Capabilities'] as $value) {
                 $values[] = $value;
             }
-            $object->setCapabilities($values);
+            $object->setCapabilities($values->getArrayCopy());
             unset($data['Capabilities']);
         }
         elseif (\array_key_exists('Capabilities', $data) && $data['Capabilities'] === null) {

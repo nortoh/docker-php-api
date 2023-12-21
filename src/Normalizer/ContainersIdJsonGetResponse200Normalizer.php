@@ -67,7 +67,7 @@ class ContainersIdJsonGetResponse200Normalizer implements DenormalizerInterface,
             foreach ($data['Args'] as $value) {
                 $values[] = $value;
             }
-            $object->setArgs($values);
+            $object->setArgs($values->getArrayCopy());
             unset($data['Args']);
         }
         elseif (\array_key_exists('Args', $data) && $data['Args'] === null) {

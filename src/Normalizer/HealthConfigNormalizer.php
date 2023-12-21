@@ -46,7 +46,7 @@ class HealthConfigNormalizer implements DenormalizerInterface, NormalizerInterfa
             foreach ($data['Test'] as $value) {
                 $values[] = $value;
             }
-            $object->setTest($values);
+            $object->setTest($values->getArrayCopy());
             unset($data['Test']);
         }
         elseif (\array_key_exists('Test', $data) && $data['Test'] === null) {

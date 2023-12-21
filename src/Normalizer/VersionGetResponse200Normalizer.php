@@ -53,7 +53,7 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
             foreach ($data['Components'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem', 'json', $context);
             }
-            $object->setComponents($values);
+            $object->setComponents($values->getArrayCopy());
             unset($data['Components']);
         }
         elseif (\array_key_exists('Components', $data) && $data['Components'] === null) {

@@ -46,7 +46,7 @@ class ContainersPrunePostResponse200Normalizer implements DenormalizerInterface,
             foreach ($data['ContainersDeleted'] as $value) {
                 $values[] = $value;
             }
-            $object->setContainersDeleted($values);
+            $object->setContainersDeleted($values->getArrayCopy());
             unset($data['ContainersDeleted']);
         }
         elseif (\array_key_exists('ContainersDeleted', $data) && $data['ContainersDeleted'] === null) {

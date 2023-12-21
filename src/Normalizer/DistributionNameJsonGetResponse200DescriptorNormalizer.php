@@ -67,7 +67,7 @@ class DistributionNameJsonGetResponse200DescriptorNormalizer implements Denormal
             foreach ($data['URLs'] as $value) {
                 $values[] = $value;
             }
-            $object->setURLs($values);
+            $object->setURLs($values->getArrayCopy());
             unset($data['URLs']);
         }
         elseif (\array_key_exists('URLs', $data) && $data['URLs'] === null) {

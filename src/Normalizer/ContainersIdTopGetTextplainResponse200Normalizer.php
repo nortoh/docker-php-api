@@ -46,7 +46,7 @@ class ContainersIdTopGetTextplainResponse200Normalizer implements DenormalizerIn
             foreach ($data['Titles'] as $value) {
                 $values[] = $value;
             }
-            $object->setTitles($values);
+            $object->setTitles($values->getArrayCopy());
             unset($data['Titles']);
         }
         elseif (\array_key_exists('Titles', $data) && $data['Titles'] === null) {

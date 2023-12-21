@@ -74,7 +74,7 @@ class HostConfigNormalizer implements DenormalizerInterface, NormalizerInterface
             foreach ($data['BlkioWeightDevice'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem', 'json', $context);
             }
-            $object->setBlkioWeightDevice($values);
+            $object->setBlkioWeightDevice($values->getArrayCopy());
             unset($data['BlkioWeightDevice']);
         }
         elseif (\array_key_exists('BlkioWeightDevice', $data) && $data['BlkioWeightDevice'] === null) {

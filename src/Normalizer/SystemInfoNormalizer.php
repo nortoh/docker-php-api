@@ -99,7 +99,7 @@ class SystemInfoNormalizer implements DenormalizerInterface, NormalizerInterface
                 }
                 $values[] = $values_1;
             }
-            $object->setDriverStatus($values);
+            $object->setDriverStatus($values->getArrayCopy());
             unset($data['DriverStatus']);
         }
         elseif (\array_key_exists('DriverStatus', $data) && $data['DriverStatus'] === null) {

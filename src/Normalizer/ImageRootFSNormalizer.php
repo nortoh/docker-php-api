@@ -53,7 +53,7 @@ class ImageRootFSNormalizer implements DenormalizerInterface, NormalizerInterfac
             foreach ($data['Layers'] as $value) {
                 $values[] = $value;
             }
-            $object->setLayers($values);
+            $object->setLayers($values->getArrayCopy());
             unset($data['Layers']);
         }
         elseif (\array_key_exists('Layers', $data) && $data['Layers'] === null) {

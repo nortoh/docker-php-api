@@ -53,7 +53,7 @@ class RuntimeNormalizer implements DenormalizerInterface, NormalizerInterface, D
             foreach ($data['runtimeArgs'] as $value) {
                 $values[] = $value;
             }
-            $object->setRuntimeArgs($values);
+            $object->setRuntimeArgs($values->getArrayCopy());
             unset($data['runtimeArgs']);
         }
         elseif (\array_key_exists('runtimeArgs', $data) && $data['runtimeArgs'] === null) {

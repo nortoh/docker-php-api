@@ -60,7 +60,7 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
             foreach ($data['RepoTags'] as $value) {
                 $values[] = $value;
             }
-            $object->setRepoTags($values);
+            $object->setRepoTags($values->getArrayCopy());
             unset($data['RepoTags']);
         }
         elseif (\array_key_exists('RepoTags', $data) && $data['RepoTags'] === null) {

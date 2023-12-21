@@ -81,7 +81,7 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
             foreach ($data['Env'] as $value) {
                 $values[] = $value;
             }
-            $object->setEnv($values);
+            $object->setEnv($values->getArrayCopy());
             unset($data['Env']);
         }
         elseif (\array_key_exists('Env', $data) && $data['Env'] === null) {

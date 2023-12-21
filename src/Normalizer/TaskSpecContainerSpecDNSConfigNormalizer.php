@@ -46,7 +46,7 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
             foreach ($data['Nameservers'] as $value) {
                 $values[] = $value;
             }
-            $object->setNameservers($values);
+            $object->setNameservers($values->getArrayCopy());
             unset($data['Nameservers']);
         }
         elseif (\array_key_exists('Nameservers', $data) && $data['Nameservers'] === null) {

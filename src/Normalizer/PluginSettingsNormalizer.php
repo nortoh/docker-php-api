@@ -46,7 +46,7 @@ class PluginSettingsNormalizer implements DenormalizerInterface, NormalizerInter
             foreach ($data['Mounts'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\PluginMount', 'json', $context);
             }
-            $object->setMounts($values);
+            $object->setMounts($values->getArrayCopy());
             unset($data['Mounts']);
         }
         elseif (\array_key_exists('Mounts', $data) && $data['Mounts'] === null) {

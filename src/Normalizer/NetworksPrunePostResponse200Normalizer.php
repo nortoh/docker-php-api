@@ -46,7 +46,7 @@ class NetworksPrunePostResponse200Normalizer implements DenormalizerInterface, N
             foreach ($data['NetworksDeleted'] as $value) {
                 $values[] = $value;
             }
-            $object->setNetworksDeleted($values);
+            $object->setNetworksDeleted($values->getArrayCopy());
             unset($data['NetworksDeleted']);
         }
         elseif (\array_key_exists('NetworksDeleted', $data) && $data['NetworksDeleted'] === null) {

@@ -46,7 +46,7 @@ class PluginsInfoNormalizer implements DenormalizerInterface, NormalizerInterfac
             foreach ($data['Volume'] as $value) {
                 $values[] = $value;
             }
-            $object->setVolume($values);
+            $object->setVolume($values->getArrayCopy());
             unset($data['Volume']);
         }
         elseif (\array_key_exists('Volume', $data) && $data['Volume'] === null) {

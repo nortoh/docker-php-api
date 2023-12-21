@@ -53,7 +53,7 @@ class IndexInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             foreach ($data['Mirrors'] as $value) {
                 $values[] = $value;
             }
-            $object->setMirrors($values);
+            $object->setMirrors($values->getArrayCopy());
             unset($data['Mirrors']);
         }
         elseif (\array_key_exists('Mirrors', $data) && $data['Mirrors'] === null) {

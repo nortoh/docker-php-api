@@ -53,7 +53,7 @@ class SystemDfGetTextplainResponse200Normalizer implements DenormalizerInterface
             foreach ($data['Images'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageSummary', 'json', $context);
             }
-            $object->setImages($values);
+            $object->setImages($values->getArrayCopy());
             unset($data['Images']);
         }
         elseif (\array_key_exists('Images', $data) && $data['Images'] === null) {

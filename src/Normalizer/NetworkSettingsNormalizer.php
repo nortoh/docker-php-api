@@ -85,7 +85,7 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
                 }
                 $values[$key] = $values_1;
             }
-            $object->setPorts($values);
+            $object->setPorts($values->getArrayCopy());
             unset($data['Ports']);
         }
         elseif (\array_key_exists('Ports', $data) && $data['Ports'] === null) {

@@ -53,7 +53,7 @@ class TaskSpecNetworksItemNormalizer implements DenormalizerInterface, Normalize
             foreach ($data['Aliases'] as $value) {
                 $values[] = $value;
             }
-            $object->setAliases($values);
+            $object->setAliases($values->getArrayCopy());
             unset($data['Aliases']);
         }
         elseif (\array_key_exists('Aliases', $data) && $data['Aliases'] === null) {

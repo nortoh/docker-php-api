@@ -53,7 +53,7 @@ class ContainersCreatePostResponse201Normalizer implements DenormalizerInterface
             foreach ($data['Warnings'] as $value) {
                 $values[] = $value;
             }
-            $object->setWarnings($values);
+            $object->setWarnings($values->getArrayCopy());
             unset($data['Warnings']);
         }
         elseif (\array_key_exists('Warnings', $data) && $data['Warnings'] === null) {

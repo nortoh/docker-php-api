@@ -53,7 +53,7 @@ class ContainerSummaryItemNormalizer implements DenormalizerInterface, Normalize
             foreach ($data['Names'] as $value) {
                 $values[] = $value;
             }
-            $object->setNames($values);
+            $object->setNames($values->getArrayCopy());
             unset($data['Names']);
         }
         elseif (\array_key_exists('Names', $data) && $data['Names'] === null) {

@@ -74,7 +74,7 @@ class PluginConfigNormalizer implements DenormalizerInterface, NormalizerInterfa
             foreach ($data['Entrypoint'] as $value) {
                 $values[] = $value;
             }
-            $object->setEntrypoint($values);
+            $object->setEntrypoint($values->getArrayCopy());
             unset($data['Entrypoint']);
         }
         elseif (\array_key_exists('Entrypoint', $data) && $data['Entrypoint'] === null) {

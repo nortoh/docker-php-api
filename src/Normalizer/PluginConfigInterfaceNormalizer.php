@@ -46,7 +46,7 @@ class PluginConfigInterfaceNormalizer implements DenormalizerInterface, Normaliz
             foreach ($data['Types'] as $value) {
                 $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\PluginInterfaceType', 'json', $context);
             }
-            $object->setTypes($values);
+            $object->setTypes($values->getArrayCopy());
             unset($data['Types']);
         }
         elseif (\array_key_exists('Types', $data) && $data['Types'] === null) {

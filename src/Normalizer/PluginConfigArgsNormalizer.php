@@ -60,7 +60,7 @@ class PluginConfigArgsNormalizer implements DenormalizerInterface, NormalizerInt
             foreach ($data['Settable'] as $value) {
                 $values[] = $value;
             }
-            $object->setSettable($values);
+            $object->setSettable($values->getArrayCopy());
             unset($data['Settable']);
         }
         elseif (\array_key_exists('Settable', $data) && $data['Settable'] === null) {

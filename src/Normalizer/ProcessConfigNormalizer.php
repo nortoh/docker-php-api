@@ -74,7 +74,7 @@ class ProcessConfigNormalizer implements DenormalizerInterface, NormalizerInterf
             foreach ($data['arguments'] as $value) {
                 $values[] = $value;
             }
-            $object->setArguments($values);
+            $object->setArguments($values->getArrayCopy());
             unset($data['arguments']);
         }
         elseif (\array_key_exists('arguments', $data) && $data['arguments'] === null) {

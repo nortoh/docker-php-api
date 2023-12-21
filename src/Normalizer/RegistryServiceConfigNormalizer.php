@@ -46,7 +46,7 @@ class RegistryServiceConfigNormalizer implements DenormalizerInterface, Normaliz
             foreach ($data['AllowNondistributableArtifactsCIDRs'] as $value) {
                 $values[] = $value;
             }
-            $object->setAllowNondistributableArtifactsCIDRs($values);
+            $object->setAllowNondistributableArtifactsCIDRs($values->getArrayCopy());
             unset($data['AllowNondistributableArtifactsCIDRs']);
         }
         elseif (\array_key_exists('AllowNondistributableArtifactsCIDRs', $data) && $data['AllowNondistributableArtifactsCIDRs'] === null) {

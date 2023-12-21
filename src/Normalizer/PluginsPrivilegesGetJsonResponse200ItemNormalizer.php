@@ -60,7 +60,7 @@ class PluginsPrivilegesGetJsonResponse200ItemNormalizer implements DenormalizerI
             foreach ($data['Value'] as $value) {
                 $values[] = $value;
             }
-            $object->setValue($values);
+            $object->setValue($values->getArrayCopy());
             unset($data['Value']);
         }
         elseif (\array_key_exists('Value', $data) && $data['Value'] === null) {
