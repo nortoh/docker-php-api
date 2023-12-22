@@ -6,9 +6,9 @@ class SwarmJoin extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
 {
     protected $accept;
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\SwarmJoinPostBody $requestBody 
+     *
+     * @param null|\Docker\API\Model\SwarmJoinPostBody $requestBody
      * @param array $accept Accept content header application/json|text/plain
      */
     public function __construct(?\Docker\API\Model\SwarmJoinPostBody $requestBody = null, array $accept = array())

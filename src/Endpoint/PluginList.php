@@ -9,10 +9,10 @@ class PluginList extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
     *
     * @param array $queryParameters {
     *     @var string $filters A JSON encoded value of the filters (a `map[string][]string`) to process on the plugin list. Available filters:
-    
+
     - `capability=<capability name>`
     - `enable=<true>|<false>`
-    
+
     * }
     */
     public function __construct(array $queryParameters = array())

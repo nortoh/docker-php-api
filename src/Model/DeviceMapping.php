@@ -13,25 +13,25 @@ class DeviceMapping extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $pathOnHost;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $pathInContainer;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $cgroupPermissions;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class DeviceMapping extends \ArrayObject
         return $this->pathOnHost;
     }
     /**
-     * 
+     *
      *
      * @param string|null $pathOnHost
      *
@@ -53,7 +53,7 @@ class DeviceMapping extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class DeviceMapping extends \ArrayObject
         return $this->pathInContainer;
     }
     /**
-     * 
+     *
      *
      * @param string|null $pathInContainer
      *
@@ -75,7 +75,7 @@ class DeviceMapping extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -84,7 +84,7 @@ class DeviceMapping extends \ArrayObject
         return $this->cgroupPermissions;
     }
     /**
-     * 
+     *
      *
      * @param string|null $cgroupPermissions
      *

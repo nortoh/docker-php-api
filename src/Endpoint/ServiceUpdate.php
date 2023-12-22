@@ -6,10 +6,10 @@ class ServiceUpdate extends \Docker\API\Runtime\Client\BaseEndpoint implements \
 {
     protected $id;
     /**
-     * 
+     *
      *
      * @param string $id ID or name of service.
-     * @param null|\Docker\API\Model\ServicesIdUpdatePostBody $requestBody 
+     * @param null|\Docker\API\Model\ServicesIdUpdatePostBody $requestBody
      * @param array $queryParameters {
      *     @var int $version The version number of the service object being updated. This is required to avoid conflicting writes.
      *     @var string $registryAuthFrom If the X-Registry-Auth header is not specified, this parameter indicates where to find registry authorization credentials. The valid values are `spec` and `previous-spec`.

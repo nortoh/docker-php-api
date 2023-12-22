@@ -13,13 +13,13 @@ class ImageID extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $iD;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -28,7 +28,7 @@ class ImageID extends \ArrayObject
         return $this->iD;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iD
      *

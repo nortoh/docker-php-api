@@ -7,7 +7,7 @@ class NetworkDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements \
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id Network ID or name
      * @param array $accept Accept content header application/json|text/plain

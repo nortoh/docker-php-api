@@ -13,43 +13,43 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $architecture;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $oS;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $oSVersion;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $oSFeatures;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $variant;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $features;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -58,7 +58,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this->architecture;
     }
     /**
-     * 
+     *
      *
      * @param string|null $architecture
      *
@@ -71,7 +71,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this->oS;
     }
     /**
-     * 
+     *
      *
      * @param string|null $oS
      *
@@ -93,7 +93,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -102,7 +102,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this->oSVersion;
     }
     /**
-     * 
+     *
      *
      * @param string|null $oSVersion
      *
@@ -115,7 +115,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -124,7 +124,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this->oSFeatures;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $oSFeatures
      *
@@ -137,7 +137,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -146,7 +146,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this->variant;
     }
     /**
-     * 
+     *
      *
      * @param string|null $variant
      *
@@ -159,7 +159,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -168,7 +168,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
         return $this->features;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $features
      *

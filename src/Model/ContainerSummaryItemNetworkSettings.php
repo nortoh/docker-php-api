@@ -13,13 +13,13 @@ class ContainerSummaryItemNetworkSettings extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var array<string, EndpointSettings>|null
      */
     protected $networks;
     /**
-     * 
+     *
      *
      * @return array<string, EndpointSettings>|null
      */
@@ -28,7 +28,7 @@ class ContainerSummaryItemNetworkSettings extends \ArrayObject
         return $this->networks;
     }
     /**
-     * 
+     *
      *
      * @param array<string, EndpointSettings>|null $networks
      *

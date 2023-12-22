@@ -6,7 +6,7 @@ class ConfigInspect extends \Docker\API\Runtime\Client\BaseEndpoint implements \
 {
     protected $id;
     /**
-     * 
+     *
      *
      * @param string $id ID of the config
      */

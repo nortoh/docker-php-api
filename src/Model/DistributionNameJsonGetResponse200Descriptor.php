@@ -13,31 +13,31 @@ class DistributionNameJsonGetResponse200Descriptor extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $mediaType;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $size;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $digest;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $uRLs;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -46,7 +46,7 @@ class DistributionNameJsonGetResponse200Descriptor extends \ArrayObject
         return $this->mediaType;
     }
     /**
-     * 
+     *
      *
      * @param string|null $mediaType
      *
@@ -59,7 +59,7 @@ class DistributionNameJsonGetResponse200Descriptor extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -68,7 +68,7 @@ class DistributionNameJsonGetResponse200Descriptor extends \ArrayObject
         return $this->size;
     }
     /**
-     * 
+     *
      *
      * @param int|null $size
      *
@@ -81,7 +81,7 @@ class DistributionNameJsonGetResponse200Descriptor extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -90,7 +90,7 @@ class DistributionNameJsonGetResponse200Descriptor extends \ArrayObject
         return $this->digest;
     }
     /**
-     * 
+     *
      *
      * @param string|null $digest
      *
@@ -103,7 +103,7 @@ class DistributionNameJsonGetResponse200Descriptor extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -112,7 +112,7 @@ class DistributionNameJsonGetResponse200Descriptor extends \ArrayObject
         return $this->uRLs;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $uRLs
      *

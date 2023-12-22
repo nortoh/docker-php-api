@@ -14,12 +14,12 @@ class HealthConfig extends \ArrayObject
     }
     /**
     * The test to perform. Possible values are:
-    
+
     - `[]` inherit healthcheck from image or parent image
     - `["NONE"]` disable healthcheck
     - `["CMD", args...]` exec arguments directly
     - `["CMD-SHELL", command]` run command with system's default shell
-    
+
     *
     * @var string[]|null
     */
@@ -50,12 +50,12 @@ class HealthConfig extends \ArrayObject
     protected $startPeriod;
     /**
     * The test to perform. Possible values are:
-    
+
     - `[]` inherit healthcheck from image or parent image
     - `["NONE"]` disable healthcheck
     - `["CMD", args...]` exec arguments directly
     - `["CMD-SHELL", command]` run command with system's default shell
-    
+
     *
     * @return string[]|null
     */
@@ -65,12 +65,12 @@ class HealthConfig extends \ArrayObject
     }
     /**
     * The test to perform. Possible values are:
-    
+
     - `[]` inherit healthcheck from image or parent image
     - `["NONE"]` disable healthcheck
     - `["CMD", args...]` exec arguments directly
     - `["CMD-SHELL", command]` run command with system's default shell
-    
+
     *
     * @param string[]|null $test
     *

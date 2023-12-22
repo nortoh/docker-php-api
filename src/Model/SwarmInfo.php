@@ -21,7 +21,7 @@ class SwarmInfo extends \ArrayObject
     /**
     * IP address at which this node can be reached by other nodes in the
     swarm.
-    
+
     *
     * @var string|null
     */
@@ -33,13 +33,13 @@ class SwarmInfo extends \ArrayObject
      */
     protected $localNodeState = '';
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $controlAvailable = false;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -65,7 +65,7 @@ class SwarmInfo extends \ArrayObject
     /**
     * ClusterInfo represents information about the swarm as is returned by the
     "/info" endpoint. Join-tokens are not included.
-    
+
     *
     * @var ClusterInfo|null
     */
@@ -95,7 +95,7 @@ class SwarmInfo extends \ArrayObject
     /**
     * IP address at which this node can be reached by other nodes in the
     swarm.
-    
+
     *
     * @return string|null
     */
@@ -106,7 +106,7 @@ class SwarmInfo extends \ArrayObject
     /**
     * IP address at which this node can be reached by other nodes in the
     swarm.
-    
+
     *
     * @param string|null $nodeAddr
     *
@@ -141,7 +141,7 @@ class SwarmInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -150,7 +150,7 @@ class SwarmInfo extends \ArrayObject
         return $this->controlAvailable;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $controlAvailable
      *
@@ -163,7 +163,7 @@ class SwarmInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -172,7 +172,7 @@ class SwarmInfo extends \ArrayObject
         return $this->error;
     }
     /**
-     * 
+     *
      *
      * @param string|null $error
      *
@@ -253,7 +253,7 @@ class SwarmInfo extends \ArrayObject
     /**
     * ClusterInfo represents information about the swarm as is returned by the
     "/info" endpoint. Join-tokens are not included.
-    
+
     *
     * @return ClusterInfo|null
     */
@@ -264,7 +264,7 @@ class SwarmInfo extends \ArrayObject
     /**
     * ClusterInfo represents information about the swarm as is returned by the
     "/info" endpoint. Join-tokens are not included.
-    
+
     *
     * @param ClusterInfo|null $cluster
     *

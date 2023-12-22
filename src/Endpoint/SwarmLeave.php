@@ -6,7 +6,7 @@ class SwarmLeave extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
 {
     protected $accept;
     /**
-     * 
+     *
      *
      * @param array $queryParameters {
      *     @var bool $force Force leave swarm, even if this is the last manager or that it will break the cluster.

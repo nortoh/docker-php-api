@@ -13,37 +13,37 @@ class CreateImageInfo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $id;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $error;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $status;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $progress;
     /**
-     * 
+     *
      *
      * @var ProgressDetail|null
      */
     protected $progressDetail;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -52,7 +52,7 @@ class CreateImageInfo extends \ArrayObject
         return $this->id;
     }
     /**
-     * 
+     *
      *
      * @param string|null $id
      *
@@ -65,7 +65,7 @@ class CreateImageInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -74,7 +74,7 @@ class CreateImageInfo extends \ArrayObject
         return $this->error;
     }
     /**
-     * 
+     *
      *
      * @param string|null $error
      *
@@ -87,7 +87,7 @@ class CreateImageInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -96,7 +96,7 @@ class CreateImageInfo extends \ArrayObject
         return $this->status;
     }
     /**
-     * 
+     *
      *
      * @param string|null $status
      *
@@ -109,7 +109,7 @@ class CreateImageInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -118,7 +118,7 @@ class CreateImageInfo extends \ArrayObject
         return $this->progress;
     }
     /**
-     * 
+     *
      *
      * @param string|null $progress
      *
@@ -131,7 +131,7 @@ class CreateImageInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ProgressDetail|null
      */
@@ -140,7 +140,7 @@ class CreateImageInfo extends \ArrayObject
         return $this->progressDetail;
     }
     /**
-     * 
+     *
      *
      * @param ProgressDetail|null $progressDetail
      *

@@ -32,18 +32,18 @@ class SwarmSpecRaft extends \ArrayObject
     protected $logEntriesForSlowFollowers;
     /**
     * The number of ticks that a follower will wait for a message from the leader before becoming a candidate and starting an election. `ElectionTick` must be greater than `HeartbeatTick`.
-    
+
     A tick currently defaults to one second, so these translate directly to seconds currently, but this is NOT guaranteed.
-    
+
     *
     * @var int|null
     */
     protected $electionTick;
     /**
     * The number of ticks between heartbeats. Every HeartbeatTick ticks, the leader will send a heartbeat to the followers.
-    
+
     A tick currently defaults to one second, so these translate directly to seconds currently, but this is NOT guaranteed.
-    
+
     *
     * @var int|null
     */
@@ -116,9 +116,9 @@ class SwarmSpecRaft extends \ArrayObject
     }
     /**
     * The number of ticks that a follower will wait for a message from the leader before becoming a candidate and starting an election. `ElectionTick` must be greater than `HeartbeatTick`.
-    
+
     A tick currently defaults to one second, so these translate directly to seconds currently, but this is NOT guaranteed.
-    
+
     *
     * @return int|null
     */
@@ -128,9 +128,9 @@ class SwarmSpecRaft extends \ArrayObject
     }
     /**
     * The number of ticks that a follower will wait for a message from the leader before becoming a candidate and starting an election. `ElectionTick` must be greater than `HeartbeatTick`.
-    
+
     A tick currently defaults to one second, so these translate directly to seconds currently, but this is NOT guaranteed.
-    
+
     *
     * @param int|null $electionTick
     *
@@ -144,9 +144,9 @@ class SwarmSpecRaft extends \ArrayObject
     }
     /**
     * The number of ticks between heartbeats. Every HeartbeatTick ticks, the leader will send a heartbeat to the followers.
-    
+
     A tick currently defaults to one second, so these translate directly to seconds currently, but this is NOT guaranteed.
-    
+
     *
     * @return int|null
     */
@@ -156,9 +156,9 @@ class SwarmSpecRaft extends \ArrayObject
     }
     /**
     * The number of ticks between heartbeats. Every HeartbeatTick ticks, the leader will send a heartbeat to the followers.
-    
+
     A tick currently defaults to one second, so these translate directly to seconds currently, but this is NOT guaranteed.
-    
+
     *
     * @param int|null $heartbeatTick
     *

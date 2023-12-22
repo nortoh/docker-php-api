@@ -5,9 +5,9 @@ namespace Docker\API\Endpoint;
 class ServiceCreate extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\ServicesCreatePostBody $requestBody 
+     *
+     * @param null|\Docker\API\Model\ServicesCreatePostBody $requestBody
      * @param array $headerParameters {
      *     @var string $X-Registry-Auth A base64-encoded auth configuration for pulling from private registries. [See the authentication section for details.](#section/Authentication)
      * }

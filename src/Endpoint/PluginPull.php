@@ -6,18 +6,18 @@ class PluginPull extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
 {
     /**
     * Pulls and installs a plugin. After the plugin is installed, it can be enabled using the [`POST /plugins/{name}/enable` endpoint](#operation/PostPluginsEnable).
-    
+
     *
-    * @param null|\Docker\API\Model\PluginsPullPostBodyItem[] $requestBody 
+    * @param null|\Docker\API\Model\PluginsPullPostBodyItem[] $requestBody
     * @param array $queryParameters {
     *     @var string $remote Remote reference for plugin to install.
-    
+
     The `:latest` tag is optional, and is used as the default if omitted.
-    
+
     *     @var string $name Local name for the pulled plugin.
-    
+
     The `:latest` tag is optional, and is used as the default if omitted.
-    
+
     * }
     * @param array $headerParameters {
     *     @var string $X-Registry-Auth A base64-encoded auth configuration to use when pulling a plugin from a registry. [See the authentication section for details.](#section/Authentication)

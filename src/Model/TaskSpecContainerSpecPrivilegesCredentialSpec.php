@@ -16,13 +16,13 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     * Load credential spec from this file. The file is read by the daemon, and must be present in the
     `CredentialSpecs` subdirectory in the docker data directory, which defaults to
     `C:\ProgramData\Docker\` on Windows.
-    
+
     For example, specifying `spec.json` loads `C:\ProgramData\Docker\CredentialSpecs\spec.json`.
-    
+
     <p><br /></p>
-    
+
     > **Note**: `CredentialSpec.File` and `CredentialSpec.Registry` are mutually exclusive.
-    
+
     *
     * @var string|null
     */
@@ -30,14 +30,14 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     /**
     * Load credential spec from this value in the Windows registry. The specified registry value must be
     located in:
-    
+
     `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers\CredentialSpecs`
-    
+
     <p><br /></p>
-    
-    
+
+
     > **Note**: `CredentialSpec.File` and `CredentialSpec.Registry` are mutually exclusive.
-    
+
     *
     * @var string|null
     */
@@ -46,13 +46,13 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     * Load credential spec from this file. The file is read by the daemon, and must be present in the
     `CredentialSpecs` subdirectory in the docker data directory, which defaults to
     `C:\ProgramData\Docker\` on Windows.
-    
+
     For example, specifying `spec.json` loads `C:\ProgramData\Docker\CredentialSpecs\spec.json`.
-    
+
     <p><br /></p>
-    
+
     > **Note**: `CredentialSpec.File` and `CredentialSpec.Registry` are mutually exclusive.
-    
+
     *
     * @return string|null
     */
@@ -64,13 +64,13 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     * Load credential spec from this file. The file is read by the daemon, and must be present in the
     `CredentialSpecs` subdirectory in the docker data directory, which defaults to
     `C:\ProgramData\Docker\` on Windows.
-    
+
     For example, specifying `spec.json` loads `C:\ProgramData\Docker\CredentialSpecs\spec.json`.
-    
+
     <p><br /></p>
-    
+
     > **Note**: `CredentialSpec.File` and `CredentialSpec.Registry` are mutually exclusive.
-    
+
     *
     * @param string|null $file
     *
@@ -85,14 +85,14 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     /**
     * Load credential spec from this value in the Windows registry. The specified registry value must be
     located in:
-    
+
     `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers\CredentialSpecs`
-    
+
     <p><br /></p>
-    
-    
+
+
     > **Note**: `CredentialSpec.File` and `CredentialSpec.Registry` are mutually exclusive.
-    
+
     *
     * @return string|null
     */
@@ -103,14 +103,14 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     /**
     * Load credential spec from this value in the Windows registry. The specified registry value must be
     located in:
-    
+
     `HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Virtualization\Containers\CredentialSpecs`
-    
+
     <p><br /></p>
-    
-    
+
+
     > **Note**: `CredentialSpec.File` and `CredentialSpec.Registry` are mutually exclusive.
-    
+
     *
     * @param string|null $registry
     *

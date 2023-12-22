@@ -13,31 +13,31 @@ class PluginSettings extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var PluginMount[]|null
      */
     protected $mounts;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $env;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $args;
     /**
-     * 
+     *
      *
      * @var PluginDevice[]|null
      */
     protected $devices;
     /**
-     * 
+     *
      *
      * @return PluginMount[]|null
      */
@@ -46,7 +46,7 @@ class PluginSettings extends \ArrayObject
         return $this->mounts;
     }
     /**
-     * 
+     *
      *
      * @param PluginMount[]|null $mounts
      *
@@ -59,7 +59,7 @@ class PluginSettings extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -68,7 +68,7 @@ class PluginSettings extends \ArrayObject
         return $this->env;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $env
      *
@@ -81,7 +81,7 @@ class PluginSettings extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -90,7 +90,7 @@ class PluginSettings extends \ArrayObject
         return $this->args;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $args
      *
@@ -103,7 +103,7 @@ class PluginSettings extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginDevice[]|null
      */
@@ -112,7 +112,7 @@ class PluginSettings extends \ArrayObject
         return $this->devices;
     }
     /**
-     * 
+     *
      *
      * @param PluginDevice[]|null $devices
      *

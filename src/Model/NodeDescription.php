@@ -13,7 +13,7 @@ class NodeDescription extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -43,7 +43,7 @@ class NodeDescription extends \ArrayObject
      */
     protected $tLSInfo;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -52,7 +52,7 @@ class NodeDescription extends \ArrayObject
         return $this->hostname;
     }
     /**
-     * 
+     *
      *
      * @param string|null $hostname
      *

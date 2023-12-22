@@ -10,9 +10,9 @@ class PutContainerArchive extends \Docker\API\Runtime\Client\BaseEndpoint implem
      * Upload a tar archive to be extracted to a path in the filesystem of container id.
      *
      * @param string $id ID or name of the container
-     * @param null|string $requestBody 
+     * @param null|string $requestBody
      * @param array $queryParameters {
-     *     @var string $path Path to a directory in the container to extract the archive’s contents into. 
+     *     @var string $path Path to a directory in the container to extract the archive’s contents into.
      *     @var string $noOverwriteDirNonDir If “1”, “true”, or “True” then it will be an error if unpacking the given content would cause an existing directory to be replaced with a non-directory and vice versa.
      * }
      * @param array $accept Accept content header application/json|text/plain

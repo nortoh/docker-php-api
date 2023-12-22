@@ -7,10 +7,10 @@ class NetworkDisconnect extends \Docker\API\Runtime\Client\BaseEndpoint implemen
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id Network ID or name
-     * @param null|\Docker\API\Model\NetworksIdDisconnectPostBody $requestBody 
+     * @param null|\Docker\API\Model\NetworksIdDisconnectPostBody $requestBody
      * @param array $accept Accept content header application/json|text/plain
      */
     public function __construct(string $id, ?\Docker\API\Model\NetworksIdDisconnectPostBody $requestBody = null, array $accept = array())

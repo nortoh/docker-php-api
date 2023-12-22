@@ -13,85 +13,85 @@ class Network extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $id;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $created;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $scope;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $driver;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $enableIPv6;
     /**
-     * 
+     *
      *
      * @var IPAM|null
      */
     protected $iPAM;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $internal;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $attachable;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $ingress;
     /**
-     * 
+     *
      *
      * @var array<string, NetworkContainer>|null
      */
     protected $containers;
     /**
-     * 
+     *
      *
      * @var array<string, string>|null
      */
     protected $options;
     /**
-     * 
+     *
      *
      * @var array<string, string>|null
      */
     protected $labels;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -100,7 +100,7 @@ class Network extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -113,7 +113,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -122,7 +122,7 @@ class Network extends \ArrayObject
         return $this->id;
     }
     /**
-     * 
+     *
      *
      * @param string|null $id
      *
@@ -135,7 +135,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -144,7 +144,7 @@ class Network extends \ArrayObject
         return $this->created;
     }
     /**
-     * 
+     *
      *
      * @param string|null $created
      *
@@ -157,7 +157,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -166,7 +166,7 @@ class Network extends \ArrayObject
         return $this->scope;
     }
     /**
-     * 
+     *
      *
      * @param string|null $scope
      *
@@ -179,7 +179,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -188,7 +188,7 @@ class Network extends \ArrayObject
         return $this->driver;
     }
     /**
-     * 
+     *
      *
      * @param string|null $driver
      *
@@ -201,7 +201,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -210,7 +210,7 @@ class Network extends \ArrayObject
         return $this->enableIPv6;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $enableIPv6
      *
@@ -223,7 +223,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return IPAM|null
      */
@@ -232,7 +232,7 @@ class Network extends \ArrayObject
         return $this->iPAM;
     }
     /**
-     * 
+     *
      *
      * @param IPAM|null $iPAM
      *
@@ -245,7 +245,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -254,7 +254,7 @@ class Network extends \ArrayObject
         return $this->internal;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $internal
      *
@@ -267,7 +267,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -276,7 +276,7 @@ class Network extends \ArrayObject
         return $this->attachable;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $attachable
      *
@@ -289,7 +289,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -298,7 +298,7 @@ class Network extends \ArrayObject
         return $this->ingress;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $ingress
      *
@@ -311,7 +311,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return array<string, NetworkContainer>|null
      */
@@ -320,7 +320,7 @@ class Network extends \ArrayObject
         return $this->containers;
     }
     /**
-     * 
+     *
      *
      * @param array<string, NetworkContainer>|null $containers
      *
@@ -333,7 +333,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return array<string, string>|null
      */
@@ -342,7 +342,7 @@ class Network extends \ArrayObject
         return $this->options;
     }
     /**
-     * 
+     *
      *
      * @param array<string, string>|null $options
      *
@@ -355,7 +355,7 @@ class Network extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return array<string, string>|null
      */
@@ -364,7 +364,7 @@ class Network extends \ArrayObject
         return $this->labels;
     }
     /**
-     * 
+     *
      *
      * @param array<string, string>|null $labels
      *

@@ -8,10 +8,10 @@ class ImageDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
     /**
     * Remove an image, along with any untagged parent images that were
     referenced by that image.
-    
+
     Images can't be removed if they have descendant images, are being
     used by a running container or are being used by a build.
-    
+
     *
     * @param string $name Image name or ID
     * @param array $queryParameters {

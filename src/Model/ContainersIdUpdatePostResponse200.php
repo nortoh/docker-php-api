@@ -13,13 +13,13 @@ class ContainersIdUpdatePostResponse200 extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $warnings;
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -28,7 +28,7 @@ class ContainersIdUpdatePostResponse200 extends \ArrayObject
         return $this->warnings;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $warnings
      *

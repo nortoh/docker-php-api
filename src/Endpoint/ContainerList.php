@@ -6,17 +6,17 @@ class ContainerList extends \Docker\API\Runtime\Client\BaseEndpoint implements \
 {
     /**
     * Returns a list of containers. For details on the format, see [the inspect endpoint](#operation/ContainerInspect).
-    
+
     Note that it uses a different, smaller representation of a container than inspecting a single container. For example,
     the list of linked containers is not propagated .
-    
+
     *
     * @param array $queryParameters {
     *     @var bool $all Return all containers. By default, only running containers are shown
     *     @var int $limit Return this number of most recently created containers, including non-running ones.
     *     @var bool $size Return the size of container as fields `SizeRw` and `SizeRootFs`.
     *     @var string $filters Filters to process on the container list, encoded as JSON (a `map[string][]string`). For example, `{"status": ["paused"]}` will only return paused containers. Available filters:
-    
+
     - `ancestor`=(`<image-name>[:<tag>]`, `<image id>`, or `<image@digest>`)
     - `before`=(`<container id>` or `<container name>`)
     - `expose`=(`<port>[/<proto>]`|`<startport-endport>/[<proto>]`)
@@ -32,7 +32,7 @@ class ContainerList extends \Docker\API\Runtime\Client\BaseEndpoint implements \
     - `since`=(`<container id>` or `<container name>`)
     - `status=`(`created`|`restarting`|`running`|`removing`|`paused`|`exited`|`dead`)
     - `volume`=(`<volume name>` or `<mount point destination>`)
-    
+
     * }
     */
     public function __construct(array $queryParameters = array())

@@ -29,7 +29,7 @@ class TaskSpecPlacement extends \ArrayObject
     run on. This field is used in the platform filter for scheduling.
     If empty, then the platform filter is off, meaning there are no
     scheduling restrictions.
-    
+
     *
     * @var Platform[]|null
     */
@@ -83,7 +83,7 @@ class TaskSpecPlacement extends \ArrayObject
     run on. This field is used in the platform filter for scheduling.
     If empty, then the platform filter is off, meaning there are no
     scheduling restrictions.
-    
+
     *
     * @return Platform[]|null
     */
@@ -96,7 +96,7 @@ class TaskSpecPlacement extends \ArrayObject
     run on. This field is used in the platform filter for scheduling.
     If empty, then the platform filter is off, meaning there are no
     scheduling restrictions.
-    
+
     *
     * @param Platform[]|null $platforms
     *

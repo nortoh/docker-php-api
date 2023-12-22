@@ -13,13 +13,13 @@ class ContainerSummaryItemHostConfig extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $networkMode;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -28,7 +28,7 @@ class ContainerSummaryItemHostConfig extends \ArrayObject
         return $this->networkMode;
     }
     /**
-     * 
+     *
      *
      * @param string|null $networkMode
      *

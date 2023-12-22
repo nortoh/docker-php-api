@@ -13,19 +13,19 @@ class GenericResourcesItem extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var GenericResourcesItemNamedResourceSpec|null
      */
     protected $namedResourceSpec;
     /**
-     * 
+     *
      *
      * @var GenericResourcesItemDiscreteResourceSpec|null
      */
     protected $discreteResourceSpec;
     /**
-     * 
+     *
      *
      * @return GenericResourcesItemNamedResourceSpec|null
      */
@@ -34,7 +34,7 @@ class GenericResourcesItem extends \ArrayObject
         return $this->namedResourceSpec;
     }
     /**
-     * 
+     *
      *
      * @param GenericResourcesItemNamedResourceSpec|null $namedResourceSpec
      *
@@ -47,7 +47,7 @@ class GenericResourcesItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return GenericResourcesItemDiscreteResourceSpec|null
      */
@@ -56,7 +56,7 @@ class GenericResourcesItem extends \ArrayObject
         return $this->discreteResourceSpec;
     }
     /**
-     * 
+     *
      *
      * @param GenericResourcesItemDiscreteResourceSpec|null $discreteResourceSpec
      *

@@ -7,10 +7,10 @@ class NetworkConnect extends \Docker\API\Runtime\Client\BaseEndpoint implements 
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id Network ID or name
-     * @param null|\Docker\API\Model\NetworksIdConnectPostBody $requestBody 
+     * @param null|\Docker\API\Model\NetworksIdConnectPostBody $requestBody
      * @param array $accept Accept content header application/json|text/plain
      */
     public function __construct(string $id, ?\Docker\API\Model\NetworksIdConnectPostBody $requestBody = null, array $accept = array())

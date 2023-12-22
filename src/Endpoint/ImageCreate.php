@@ -7,7 +7,7 @@ class ImageCreate extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
     /**
      * Create an image by either pulling it from a registry or importing it.
      *
-     * @param null|string $requestBody 
+     * @param null|string $requestBody
      * @param array $queryParameters {
      *     @var string $fromImage Name of the image to pull. The name may include a tag or digest. This parameter may only be used when pulling an image. The pull is cancelled if the HTTP connection is closed.
      *     @var string $fromSrc Source to import. The value may be a URL from which the image can be retrieved or `-` to read the image from the request body. This parameter may only be used when importing an image.

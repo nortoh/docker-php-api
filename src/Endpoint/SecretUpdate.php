@@ -7,10 +7,10 @@ class SecretUpdate extends \Docker\API\Runtime\Client\BaseEndpoint implements \D
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id The ID or name of the secret
-     * @param null|\Docker\API\Model\SecretSpec $requestBody 
+     * @param null|\Docker\API\Model\SecretSpec $requestBody
      * @param array $queryParameters {
      *     @var int $version The version number of the secret object being updated. This is required to avoid conflicting writes.
      * }

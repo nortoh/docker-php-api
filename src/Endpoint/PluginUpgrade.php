@@ -7,15 +7,15 @@ class PluginUpgrade extends \Docker\API\Runtime\Client\BaseEndpoint implements \
     protected $name;
     protected $accept;
     /**
-    * 
+    *
     *
     * @param string $name The name of the plugin. The `:latest` tag is optional, and is the default if omitted.
-    * @param null|\Docker\API\Model\PluginsNameUpgradePostBodyItem[] $requestBody 
+    * @param null|\Docker\API\Model\PluginsNameUpgradePostBodyItem[] $requestBody
     * @param array $queryParameters {
     *     @var string $remote Remote reference to upgrade to.
-    
+
     The `:latest` tag is optional, and is used as the default if omitted.
-    
+
     * }
     * @param array $headerParameters {
     *     @var string $X-Registry-Auth A base64-encoded auth configuration to use when pulling a plugin from a registry. [See the authentication section for details.](#section/Authentication)

@@ -19,13 +19,13 @@ class ServiceEndpoint extends \ArrayObject
      */
     protected $spec;
     /**
-     * 
+     *
      *
      * @var EndpointPortConfig[]|null
      */
     protected $ports;
     /**
-     * 
+     *
      *
      * @var ServiceEndpointVirtualIPsItem[]|null
      */
@@ -53,7 +53,7 @@ class ServiceEndpoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return EndpointPortConfig[]|null
      */
@@ -62,7 +62,7 @@ class ServiceEndpoint extends \ArrayObject
         return $this->ports;
     }
     /**
-     * 
+     *
      *
      * @param EndpointPortConfig[]|null $ports
      *
@@ -75,7 +75,7 @@ class ServiceEndpoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ServiceEndpointVirtualIPsItem[]|null
      */
@@ -84,7 +84,7 @@ class ServiceEndpoint extends \ArrayObject
         return $this->virtualIPs;
     }
     /**
-     * 
+     *
      *
      * @param ServiceEndpointVirtualIPsItem[]|null $virtualIPs
      *

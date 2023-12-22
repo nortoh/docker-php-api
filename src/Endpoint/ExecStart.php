@@ -9,7 +9,7 @@ class ExecStart extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
      * Starts a previously set up exec instance. If detach is true, this endpoint returns immediately after starting the command. Otherwise, it sets up an interactive session with the command.
      *
      * @param string $id Exec instance ID
-     * @param null|\Docker\API\Model\ExecIdStartPostBody $requestBody 
+     * @param null|\Docker\API\Model\ExecIdStartPostBody $requestBody
      */
     public function __construct(string $id, ?\Docker\API\Model\ExecIdStartPostBody $requestBody = null)
     {

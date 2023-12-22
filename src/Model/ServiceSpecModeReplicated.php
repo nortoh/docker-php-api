@@ -13,13 +13,13 @@ class ServiceSpecModeReplicated extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $replicas;
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -28,7 +28,7 @@ class ServiceSpecModeReplicated extends \ArrayObject
         return $this->replicas;
     }
     /**
-     * 
+     *
      *
      * @param int|null $replicas
      *

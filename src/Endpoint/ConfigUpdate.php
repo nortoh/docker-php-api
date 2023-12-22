@@ -7,10 +7,10 @@ class ConfigUpdate extends \Docker\API\Runtime\Client\BaseEndpoint implements \D
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id The ID or name of the config
-     * @param null|\Docker\API\Model\ConfigSpec $requestBody 
+     * @param null|\Docker\API\Model\ConfigSpec $requestBody
      * @param array $queryParameters {
      *     @var int $version The version number of the config object being updated. This is required to avoid conflicting writes.
      * }

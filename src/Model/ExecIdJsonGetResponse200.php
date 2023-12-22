@@ -13,61 +13,61 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $canRemove;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $detachKeys;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $iD;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $running;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $exitCode;
     /**
-     * 
+     *
      *
      * @var ProcessConfig|null
      */
     protected $processConfig;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $openStdin;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $openStderr;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $openStdout;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -79,7 +79,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
      */
     protected $pid;
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -88,7 +88,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->canRemove;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $canRemove
      *
@@ -101,7 +101,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -110,7 +110,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->detachKeys;
     }
     /**
-     * 
+     *
      *
      * @param string|null $detachKeys
      *
@@ -123,7 +123,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -132,7 +132,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->iD;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iD
      *
@@ -145,7 +145,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -154,7 +154,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->running;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $running
      *
@@ -167,7 +167,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -176,7 +176,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->exitCode;
     }
     /**
-     * 
+     *
      *
      * @param int|null $exitCode
      *
@@ -189,7 +189,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ProcessConfig|null
      */
@@ -198,7 +198,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->processConfig;
     }
     /**
-     * 
+     *
      *
      * @param ProcessConfig|null $processConfig
      *
@@ -211,7 +211,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -220,7 +220,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->openStdin;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $openStdin
      *
@@ -233,7 +233,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -242,7 +242,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->openStderr;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $openStderr
      *
@@ -255,7 +255,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -264,7 +264,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->openStdout;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $openStdout
      *
@@ -277,7 +277,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -286,7 +286,7 @@ class ExecIdJsonGetResponse200 extends \ArrayObject
         return $this->containerID;
     }
     /**
-     * 
+     *
      *
      * @param string|null $containerID
      *

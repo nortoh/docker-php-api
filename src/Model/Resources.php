@@ -170,18 +170,18 @@ class Resources extends \ArrayObject
     protected $ulimits;
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @var int|null
     */
     protected $cpuCount;
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @var int|null
     */
@@ -772,9 +772,9 @@ class Resources extends \ArrayObject
     }
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @return int|null
     */
@@ -784,9 +784,9 @@ class Resources extends \ArrayObject
     }
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @param int|null $cpuCount
     *
@@ -800,9 +800,9 @@ class Resources extends \ArrayObject
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @return int|null
     */
@@ -812,9 +812,9 @@ class Resources extends \ArrayObject
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @param int|null $cpuPercent
     *

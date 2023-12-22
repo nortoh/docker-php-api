@@ -14,12 +14,12 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Unique identifier of the daemon.
-    
+
     <p><br /></p>
-    
+
     > **Note**: The format of the ID itself is not part of the API, and
     > should not be considered stable.
-    
+
     *
     * @var string|null
     */
@@ -50,9 +50,9 @@ class SystemInfo extends \ArrayObject
     protected $containersStopped;
     /**
     * Total number of images on the host.
-    
+
     Both _tagged_ and _untagged_ (dangling) images are counted.
-    
+
     *
     * @var int|null
     */
@@ -66,53 +66,53 @@ class SystemInfo extends \ArrayObject
     /**
     * Information specific to the storage driver, provided as
     "label" / "value" pairs.
-    
+
     This information is provided by the storage driver, and formatted
     in a way consistent with the output of `docker info` on the command
     line.
-    
+
     <p><br /></p>
-    
+
     > **Note**: The information returned in this field, including the
     > formatting of values and labels, should not be considered stable,
     > and may change without notice.
-    
+
     *
     * @var string[][]|null
     */
     protected $driverStatus;
     /**
     * Root directory of persistent Docker state.
-    
+
     Defaults to `/var/lib/docker` on Linux, and `C:\ProgramData\docker`
     on Windows.
-    
+
     *
     * @var string|null
     */
     protected $dockerRootDir;
     /**
     * Status information about this node (standalone Swarm API).
-    
+
     <p><br /></p>
-    
+
     > **Note**: The information returned in this field is only propagated
     > by the Swarm standalone API, and is empty (`null`) when using
     > built-in swarm mode.
-    
+
     *
     * @var string[][]|null
     */
     protected $systemStatus;
     /**
     * Available plugins per type.
-    
+
     <p><br /></p>
-    
+
     > **Note**: Only unmanaged (V1) plugins are included in this list.
     > V1 plugins are "lazily" loaded, and are not returned in this list
     > if there is no resource using the plugin.
-    
+
     *
     * @var PluginsInfo|null
     */
@@ -155,9 +155,9 @@ class SystemInfo extends \ArrayObject
     protected $cPUShares;
     /**
     * Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
-    
+
     See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
-    
+
     *
     * @var bool|null
     */
@@ -194,18 +194,18 @@ class SystemInfo extends \ArrayObject
     protected $debug;
     /**
     * The total number of file Descriptors in use by the daemon process.
-    
+
     This information is only returned if debug-mode is enabled.
-    
+
     *
     * @var int|null
     */
     protected $nFd;
     /**
     * The  number of goroutines that currently exist.
-    
+
     This information is only returned if debug-mode is enabled.
-    
+
     *
     * @var int|null
     */
@@ -213,7 +213,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Current system-time in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
     format with nano-seconds.
-    
+
     *
     * @var string|null
     */
@@ -238,11 +238,11 @@ class SystemInfo extends \ArrayObject
     protected $nEventsListener;
     /**
     * Kernel version of the host.
-    
+
     On Linux, this information obtained from `uname`. On Windows this
     information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
     registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
-    
+
     *
     * @var string|null
     */
@@ -250,7 +250,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
     or "Windows Server 2016 Datacenter"
-    
+
     *
     * @var string|null
     */
@@ -258,10 +258,10 @@ class SystemInfo extends \ArrayObject
     /**
     * Generic type of the operating system of the host, as returned by the
     Go runtime (`GOOS`).
-    
+
     Currently returned values are "linux" and "windows". A full list of
     possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
-    
+
     *
     * @var string|null
     */
@@ -269,20 +269,20 @@ class SystemInfo extends \ArrayObject
     /**
     * Hardware architecture of the host, as returned by the Go runtime
     (`GOARCH`).
-    
+
     A full list of possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
-    
+
     *
     * @var string|null
     */
     protected $architecture;
     /**
     * The number of logical CPUs usable by the daemon.
-    
+
     The number of available CPUs is checked by querying the operating
     system when the daemon starts. Changes to operating system CPU
     allocation after the daemon is started are not reflected.
-    
+
     *
     * @var int|null
     */
@@ -296,7 +296,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Address / URL of the index server that is used for image search,
     and as a default for user authentication for Docker Hub and Docker Cloud.
-    
+
     *
     * @var string|null
     */
@@ -316,9 +316,9 @@ class SystemInfo extends \ArrayObject
     /**
     * HTTP-proxy configured for the daemon. This value is obtained from the
     [`HTTP_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html) environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @var string|null
     */
@@ -326,9 +326,9 @@ class SystemInfo extends \ArrayObject
     /**
     * HTTPS-proxy configured for the daemon. This value is obtained from the
     [`HTTPS_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html) environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @var string|null
     */
@@ -337,9 +337,9 @@ class SystemInfo extends \ArrayObject
     * Comma-separated list of domain extensions for which no proxy should be
     used. This value is obtained from the [`NO_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html)
     environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @var string|null
     */
@@ -352,15 +352,15 @@ class SystemInfo extends \ArrayObject
     protected $name;
     /**
     * User-defined labels (key/value metadata) as set on the daemon.
-    
+
     <p><br /></p>
-    
+
     > **Note**: When part of a Swarm, nodes can both have _daemon_ labels,
     > set through the daemon configuration, and _node_ labels, set from a
     > manager node in the Swarm. Node labels are not included in this
     > field. Node labels can be retrieved using the `/nodes/(id)` endpoint
     > on a manager node in the Swarm.
-    
+
     *
     * @var string[]|null
     */
@@ -373,29 +373,29 @@ class SystemInfo extends \ArrayObject
     protected $experimentalBuild;
     /**
     * Version string of the daemon.
-    
+
     > **Note**: the [standalone Swarm API](https://docs.docker.com/swarm/swarm-api/)
     > returns the Swarm version instead of the daemon  version, for example
     > `swarm/1.2.8`.
-    
+
     *
     * @var string|null
     */
     protected $serverVersion;
     /**
     * URL of the distributed storage backend.
-    
-    
+
+
     The storage backend is used for multihost networking (to store
     network and endpoint information) and by the node discovery mechanism.
-    
+
     <p><br /></p>
-    
+
     > **Note**: This field is only propagated when using standalone Swarm
     > mode, and overlay networking using an external k/v store. Overlay
     > networks with Swarm mode enabled use the built-in raft store, and
     > this field will be empty.
-    
+
     *
     * @var string|null
     */
@@ -404,14 +404,14 @@ class SystemInfo extends \ArrayObject
     * The network endpoint that the Engine advertises for the purpose of
     node discovery. ClusterAdvertise is a `host:port` combination on which
     the daemon is reachable by other hosts.
-    
+
     <p><br /></p>
-    
+
     > **Note**: This field is only propagated when using standalone Swarm
     > mode, and overlay networking using an external k/v store. Overlay
     > networks with Swarm mode enabled use the built-in raft store, and
     > this field will be empty.
-    
+
     *
     * @var string|null
     */
@@ -420,23 +420,23 @@ class SystemInfo extends \ArrayObject
     * List of [OCI compliant](https://github.com/opencontainers/runtime-spec)
     runtimes configured on the daemon. Keys hold the "name" used to
     reference the runtime.
-    
+
     The Docker daemon relies on an OCI compliant runtime (invoked via the
     `containerd` daemon) as its interface to the Linux kernel namespaces,
     cgroups, and SELinux.
-    
+
     The default runtime is `runc`, and automatically configured. Additional
     runtimes can be configured by the user and will be listed here.
-    
+
     *
     * @var array<string, Runtime>|null
     */
     protected $runtimes;
     /**
     * Name of the default OCI runtime that is used when starting containers.
-    
+
     The default can be overridden per-container at create time.
-    
+
     *
     * @var string|null
     */
@@ -449,10 +449,10 @@ class SystemInfo extends \ArrayObject
     protected $swarm;
     /**
     * Indicates if live restore is enabled.
-    
+
     If enabled, containers are kept running when the daemon is shutdown
     or upon daemon start if running containers are detected.
-    
+
     *
     * @var bool|null
     */
@@ -460,22 +460,22 @@ class SystemInfo extends \ArrayObject
     /**
     * Represents the isolation technology to use as a default for containers.
     The supported values are platform-specific.
-    
+
     If no isolation value is specified on daemon start, on Windows client,
     the default is `hyperv`, and on Windows server, the default is `process`.
-    
+
     This option is currently not used on other platforms.
-    
+
     *
     * @var string|null
     */
     protected $isolation = 'default';
     /**
     * Name and, optional, path of the the `docker-init` binary.
-    
+
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-    
+
     *
     * @var string|null
     */
@@ -484,7 +484,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @var Commit|null
     */
@@ -493,7 +493,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @var Commit|null
     */
@@ -502,7 +502,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @var Commit|null
     */
@@ -510,23 +510,23 @@ class SystemInfo extends \ArrayObject
     /**
     * List of security features that are enabled on the daemon, such as
     apparmor, seccomp, SELinux, and user-namespaces (userns).
-    
+
     Additional configuration options for each security feature may
     be present, and are included as a comma-separated list of key/value
     pairs.
-    
+
     *
     * @var string[]|null
     */
     protected $securityOptions;
     /**
     * Unique identifier of the daemon.
-    
+
     <p><br /></p>
-    
+
     > **Note**: The format of the ID itself is not part of the API, and
     > should not be considered stable.
-    
+
     *
     * @return string|null
     */
@@ -536,12 +536,12 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Unique identifier of the daemon.
-    
+
     <p><br /></p>
-    
+
     > **Note**: The format of the ID itself is not part of the API, and
     > should not be considered stable.
-    
+
     *
     * @param string|null $iD
     *
@@ -643,9 +643,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Total number of images on the host.
-    
+
     Both _tagged_ and _untagged_ (dangling) images are counted.
-    
+
     *
     * @return int|null
     */
@@ -655,9 +655,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Total number of images on the host.
-    
+
     Both _tagged_ and _untagged_ (dangling) images are counted.
-    
+
     *
     * @param int|null $images
     *
@@ -694,17 +694,17 @@ class SystemInfo extends \ArrayObject
     /**
     * Information specific to the storage driver, provided as
     "label" / "value" pairs.
-    
+
     This information is provided by the storage driver, and formatted
     in a way consistent with the output of `docker info` on the command
     line.
-    
+
     <p><br /></p>
-    
+
     > **Note**: The information returned in this field, including the
     > formatting of values and labels, should not be considered stable,
     > and may change without notice.
-    
+
     *
     * @return string[][]|null
     */
@@ -715,17 +715,17 @@ class SystemInfo extends \ArrayObject
     /**
     * Information specific to the storage driver, provided as
     "label" / "value" pairs.
-    
+
     This information is provided by the storage driver, and formatted
     in a way consistent with the output of `docker info` on the command
     line.
-    
+
     <p><br /></p>
-    
+
     > **Note**: The information returned in this field, including the
     > formatting of values and labels, should not be considered stable,
     > and may change without notice.
-    
+
     *
     * @param string[][]|null $driverStatus
     *
@@ -739,10 +739,10 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Root directory of persistent Docker state.
-    
+
     Defaults to `/var/lib/docker` on Linux, and `C:\ProgramData\docker`
     on Windows.
-    
+
     *
     * @return string|null
     */
@@ -752,10 +752,10 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Root directory of persistent Docker state.
-    
+
     Defaults to `/var/lib/docker` on Linux, and `C:\ProgramData\docker`
     on Windows.
-    
+
     *
     * @param string|null $dockerRootDir
     *
@@ -769,13 +769,13 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Status information about this node (standalone Swarm API).
-    
+
     <p><br /></p>
-    
+
     > **Note**: The information returned in this field is only propagated
     > by the Swarm standalone API, and is empty (`null`) when using
     > built-in swarm mode.
-    
+
     *
     * @return string[][]|null
     */
@@ -785,13 +785,13 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Status information about this node (standalone Swarm API).
-    
+
     <p><br /></p>
-    
+
     > **Note**: The information returned in this field is only propagated
     > by the Swarm standalone API, and is empty (`null`) when using
     > built-in swarm mode.
-    
+
     *
     * @param string[][]|null $systemStatus
     *
@@ -805,13 +805,13 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Available plugins per type.
-    
+
     <p><br /></p>
-    
+
     > **Note**: Only unmanaged (V1) plugins are included in this list.
     > V1 plugins are "lazily" loaded, and are not returned in this list
     > if there is no resource using the plugin.
-    
+
     *
     * @return PluginsInfo|null
     */
@@ -821,13 +821,13 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Available plugins per type.
-    
+
     <p><br /></p>
-    
+
     > **Note**: Only unmanaged (V1) plugins are included in this list.
     > V1 plugins are "lazily" loaded, and are not returned in this list
     > if there is no resource using the plugin.
-    
+
     *
     * @param PluginsInfo|null $plugins
     *
@@ -973,9 +973,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
-    
+
     See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
-    
+
     *
     * @return bool|null
     */
@@ -985,9 +985,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Indicates if CPUsets (cpuset.cpus, cpuset.mems) are supported by the host.
-    
+
     See [cpuset(7)](https://www.kernel.org/doc/Documentation/cgroup-v1/cpusets.txt)
-    
+
     *
     * @param bool|null $cPUSet
     *
@@ -1111,9 +1111,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * The total number of file Descriptors in use by the daemon process.
-    
+
     This information is only returned if debug-mode is enabled.
-    
+
     *
     * @return int|null
     */
@@ -1123,9 +1123,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * The total number of file Descriptors in use by the daemon process.
-    
+
     This information is only returned if debug-mode is enabled.
-    
+
     *
     * @param int|null $nFd
     *
@@ -1139,9 +1139,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * The  number of goroutines that currently exist.
-    
+
     This information is only returned if debug-mode is enabled.
-    
+
     *
     * @return int|null
     */
@@ -1151,9 +1151,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * The  number of goroutines that currently exist.
-    
+
     This information is only returned if debug-mode is enabled.
-    
+
     *
     * @param int|null $nGoroutines
     *
@@ -1168,7 +1168,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Current system-time in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
     format with nano-seconds.
-    
+
     *
     * @return string|null
     */
@@ -1179,7 +1179,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Current system-time in [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt)
     format with nano-seconds.
-    
+
     *
     * @param string|null $systemTime
     *
@@ -1259,11 +1259,11 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Kernel version of the host.
-    
+
     On Linux, this information obtained from `uname`. On Windows this
     information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
     registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
-    
+
     *
     * @return string|null
     */
@@ -1273,11 +1273,11 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Kernel version of the host.
-    
+
     On Linux, this information obtained from `uname`. On Windows this
     information is queried from the <kbd>HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\</kbd>
     registry value, for example _"10.0 14393 (14393.1198.amd64fre.rs1_release_sec.170427-1353)"_.
-    
+
     *
     * @param string|null $kernelVersion
     *
@@ -1292,7 +1292,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
     or "Windows Server 2016 Datacenter"
-    
+
     *
     * @return string|null
     */
@@ -1303,7 +1303,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Name of the host's operating system, for example: "Ubuntu 16.04.2 LTS"
     or "Windows Server 2016 Datacenter"
-    
+
     *
     * @param string|null $operatingSystem
     *
@@ -1318,10 +1318,10 @@ class SystemInfo extends \ArrayObject
     /**
     * Generic type of the operating system of the host, as returned by the
     Go runtime (`GOOS`).
-    
+
     Currently returned values are "linux" and "windows". A full list of
     possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
-    
+
     *
     * @return string|null
     */
@@ -1332,10 +1332,10 @@ class SystemInfo extends \ArrayObject
     /**
     * Generic type of the operating system of the host, as returned by the
     Go runtime (`GOOS`).
-    
+
     Currently returned values are "linux" and "windows". A full list of
     possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
-    
+
     *
     * @param string|null $oSType
     *
@@ -1350,9 +1350,9 @@ class SystemInfo extends \ArrayObject
     /**
     * Hardware architecture of the host, as returned by the Go runtime
     (`GOARCH`).
-    
+
     A full list of possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
-    
+
     *
     * @return string|null
     */
@@ -1363,9 +1363,9 @@ class SystemInfo extends \ArrayObject
     /**
     * Hardware architecture of the host, as returned by the Go runtime
     (`GOARCH`).
-    
+
     A full list of possible values can be found in the [Go documentation](https://golang.org/doc/install/source#environment).
-    
+
     *
     * @param string|null $architecture
     *
@@ -1379,11 +1379,11 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * The number of logical CPUs usable by the daemon.
-    
+
     The number of available CPUs is checked by querying the operating
     system when the daemon starts. Changes to operating system CPU
     allocation after the daemon is started are not reflected.
-    
+
     *
     * @return int|null
     */
@@ -1393,11 +1393,11 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * The number of logical CPUs usable by the daemon.
-    
+
     The number of available CPUs is checked by querying the operating
     system when the daemon starts. Changes to operating system CPU
     allocation after the daemon is started are not reflected.
-    
+
     *
     * @param int|null $nCPU
     *
@@ -1434,7 +1434,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Address / URL of the index server that is used for image search,
     and as a default for user authentication for Docker Hub and Docker Cloud.
-    
+
     *
     * @return string|null
     */
@@ -1445,7 +1445,7 @@ class SystemInfo extends \ArrayObject
     /**
     * Address / URL of the index server that is used for image search,
     and as a default for user authentication for Docker Hub and Docker Cloud.
-    
+
     *
     * @param string|null $indexServerAddress
     *
@@ -1504,9 +1504,9 @@ class SystemInfo extends \ArrayObject
     /**
     * HTTP-proxy configured for the daemon. This value is obtained from the
     [`HTTP_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html) environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @return string|null
     */
@@ -1517,9 +1517,9 @@ class SystemInfo extends \ArrayObject
     /**
     * HTTP-proxy configured for the daemon. This value is obtained from the
     [`HTTP_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html) environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @param string|null $httpProxy
     *
@@ -1534,9 +1534,9 @@ class SystemInfo extends \ArrayObject
     /**
     * HTTPS-proxy configured for the daemon. This value is obtained from the
     [`HTTPS_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html) environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @return string|null
     */
@@ -1547,9 +1547,9 @@ class SystemInfo extends \ArrayObject
     /**
     * HTTPS-proxy configured for the daemon. This value is obtained from the
     [`HTTPS_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html) environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @param string|null $httpsProxy
     *
@@ -1565,9 +1565,9 @@ class SystemInfo extends \ArrayObject
     * Comma-separated list of domain extensions for which no proxy should be
     used. This value is obtained from the [`NO_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html)
     environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @return string|null
     */
@@ -1579,9 +1579,9 @@ class SystemInfo extends \ArrayObject
     * Comma-separated list of domain extensions for which no proxy should be
     used. This value is obtained from the [`NO_PROXY`](https://www.gnu.org/software/wget/manual/html_node/Proxies.html)
     environment variable.
-    
+
     Containers do not automatically inherit this configuration.
-    
+
     *
     * @param string|null $noProxy
     *
@@ -1617,15 +1617,15 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * User-defined labels (key/value metadata) as set on the daemon.
-    
+
     <p><br /></p>
-    
+
     > **Note**: When part of a Swarm, nodes can both have _daemon_ labels,
     > set through the daemon configuration, and _node_ labels, set from a
     > manager node in the Swarm. Node labels are not included in this
     > field. Node labels can be retrieved using the `/nodes/(id)` endpoint
     > on a manager node in the Swarm.
-    
+
     *
     * @return string[]|null
     */
@@ -1635,15 +1635,15 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * User-defined labels (key/value metadata) as set on the daemon.
-    
+
     <p><br /></p>
-    
+
     > **Note**: When part of a Swarm, nodes can both have _daemon_ labels,
     > set through the daemon configuration, and _node_ labels, set from a
     > manager node in the Swarm. Node labels are not included in this
     > field. Node labels can be retrieved using the `/nodes/(id)` endpoint
     > on a manager node in the Swarm.
-    
+
     *
     * @param string[]|null $labels
     *
@@ -1679,11 +1679,11 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Version string of the daemon.
-    
+
     > **Note**: the [standalone Swarm API](https://docs.docker.com/swarm/swarm-api/)
     > returns the Swarm version instead of the daemon  version, for example
     > `swarm/1.2.8`.
-    
+
     *
     * @return string|null
     */
@@ -1693,11 +1693,11 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Version string of the daemon.
-    
+
     > **Note**: the [standalone Swarm API](https://docs.docker.com/swarm/swarm-api/)
     > returns the Swarm version instead of the daemon  version, for example
     > `swarm/1.2.8`.
-    
+
     *
     * @param string|null $serverVersion
     *
@@ -1711,18 +1711,18 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * URL of the distributed storage backend.
-    
-    
+
+
     The storage backend is used for multihost networking (to store
     network and endpoint information) and by the node discovery mechanism.
-    
+
     <p><br /></p>
-    
+
     > **Note**: This field is only propagated when using standalone Swarm
     > mode, and overlay networking using an external k/v store. Overlay
     > networks with Swarm mode enabled use the built-in raft store, and
     > this field will be empty.
-    
+
     *
     * @return string|null
     */
@@ -1732,18 +1732,18 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * URL of the distributed storage backend.
-    
-    
+
+
     The storage backend is used for multihost networking (to store
     network and endpoint information) and by the node discovery mechanism.
-    
+
     <p><br /></p>
-    
+
     > **Note**: This field is only propagated when using standalone Swarm
     > mode, and overlay networking using an external k/v store. Overlay
     > networks with Swarm mode enabled use the built-in raft store, and
     > this field will be empty.
-    
+
     *
     * @param string|null $clusterStore
     *
@@ -1759,14 +1759,14 @@ class SystemInfo extends \ArrayObject
     * The network endpoint that the Engine advertises for the purpose of
     node discovery. ClusterAdvertise is a `host:port` combination on which
     the daemon is reachable by other hosts.
-    
+
     <p><br /></p>
-    
+
     > **Note**: This field is only propagated when using standalone Swarm
     > mode, and overlay networking using an external k/v store. Overlay
     > networks with Swarm mode enabled use the built-in raft store, and
     > this field will be empty.
-    
+
     *
     * @return string|null
     */
@@ -1778,14 +1778,14 @@ class SystemInfo extends \ArrayObject
     * The network endpoint that the Engine advertises for the purpose of
     node discovery. ClusterAdvertise is a `host:port` combination on which
     the daemon is reachable by other hosts.
-    
+
     <p><br /></p>
-    
+
     > **Note**: This field is only propagated when using standalone Swarm
     > mode, and overlay networking using an external k/v store. Overlay
     > networks with Swarm mode enabled use the built-in raft store, and
     > this field will be empty.
-    
+
     *
     * @param string|null $clusterAdvertise
     *
@@ -1801,14 +1801,14 @@ class SystemInfo extends \ArrayObject
     * List of [OCI compliant](https://github.com/opencontainers/runtime-spec)
     runtimes configured on the daemon. Keys hold the "name" used to
     reference the runtime.
-    
+
     The Docker daemon relies on an OCI compliant runtime (invoked via the
     `containerd` daemon) as its interface to the Linux kernel namespaces,
     cgroups, and SELinux.
-    
+
     The default runtime is `runc`, and automatically configured. Additional
     runtimes can be configured by the user and will be listed here.
-    
+
     *
     * @return array<string, Runtime>|null
     */
@@ -1820,14 +1820,14 @@ class SystemInfo extends \ArrayObject
     * List of [OCI compliant](https://github.com/opencontainers/runtime-spec)
     runtimes configured on the daemon. Keys hold the "name" used to
     reference the runtime.
-    
+
     The Docker daemon relies on an OCI compliant runtime (invoked via the
     `containerd` daemon) as its interface to the Linux kernel namespaces,
     cgroups, and SELinux.
-    
+
     The default runtime is `runc`, and automatically configured. Additional
     runtimes can be configured by the user and will be listed here.
-    
+
     *
     * @param array<string, Runtime>|null $runtimes
     *
@@ -1841,9 +1841,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Name of the default OCI runtime that is used when starting containers.
-    
+
     The default can be overridden per-container at create time.
-    
+
     *
     * @return string|null
     */
@@ -1853,9 +1853,9 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Name of the default OCI runtime that is used when starting containers.
-    
+
     The default can be overridden per-container at create time.
-    
+
     *
     * @param string|null $defaultRuntime
     *
@@ -1891,10 +1891,10 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Indicates if live restore is enabled.
-    
+
     If enabled, containers are kept running when the daemon is shutdown
     or upon daemon start if running containers are detected.
-    
+
     *
     * @return bool|null
     */
@@ -1904,10 +1904,10 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Indicates if live restore is enabled.
-    
+
     If enabled, containers are kept running when the daemon is shutdown
     or upon daemon start if running containers are detected.
-    
+
     *
     * @param bool|null $liveRestoreEnabled
     *
@@ -1922,12 +1922,12 @@ class SystemInfo extends \ArrayObject
     /**
     * Represents the isolation technology to use as a default for containers.
     The supported values are platform-specific.
-    
+
     If no isolation value is specified on daemon start, on Windows client,
     the default is `hyperv`, and on Windows server, the default is `process`.
-    
+
     This option is currently not used on other platforms.
-    
+
     *
     * @return string|null
     */
@@ -1938,12 +1938,12 @@ class SystemInfo extends \ArrayObject
     /**
     * Represents the isolation technology to use as a default for containers.
     The supported values are platform-specific.
-    
+
     If no isolation value is specified on daemon start, on Windows client,
     the default is `hyperv`, and on Windows server, the default is `process`.
-    
+
     This option is currently not used on other platforms.
-    
+
     *
     * @param string|null $isolation
     *
@@ -1957,10 +1957,10 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Name and, optional, path of the the `docker-init` binary.
-    
+
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-    
+
     *
     * @return string|null
     */
@@ -1970,10 +1970,10 @@ class SystemInfo extends \ArrayObject
     }
     /**
     * Name and, optional, path of the the `docker-init` binary.
-    
+
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-    
+
     *
     * @param string|null $initBinary
     *
@@ -1989,7 +1989,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @return Commit|null
     */
@@ -2001,7 +2001,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @param Commit|null $containerdCommit
     *
@@ -2017,7 +2017,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @return Commit|null
     */
@@ -2029,7 +2029,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @param Commit|null $runcCommit
     *
@@ -2045,7 +2045,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @return Commit|null
     */
@@ -2057,7 +2057,7 @@ class SystemInfo extends \ArrayObject
     * Commit holds the Git-commit (SHA1) that a binary was built from, as
     reported in the version-string of external tools, such as `containerd`,
     or `runC`.
-    
+
     *
     * @param Commit|null $initCommit
     *
@@ -2072,11 +2072,11 @@ class SystemInfo extends \ArrayObject
     /**
     * List of security features that are enabled on the daemon, such as
     apparmor, seccomp, SELinux, and user-namespaces (userns).
-    
+
     Additional configuration options for each security feature may
     be present, and are included as a comma-separated list of key/value
     pairs.
-    
+
     *
     * @return string[]|null
     */
@@ -2087,11 +2087,11 @@ class SystemInfo extends \ArrayObject
     /**
     * List of security features that are enabled on the daemon, such as
     apparmor, seccomp, SELinux, and user-namespaces (userns).
-    
+
     Additional configuration options for each security feature may
     be present, and are included as a comma-separated list of key/value
     pairs.
-    
+
     *
     * @param string[]|null $securityOptions
     *

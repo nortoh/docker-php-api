@@ -13,13 +13,13 @@ class ImageMetadata extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $lastTagTime;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -28,7 +28,7 @@ class ImageMetadata extends \ArrayObject
         return $this->lastTagTime;
     }
     /**
-     * 
+     *
      *
      * @param string|null $lastTagTime
      *

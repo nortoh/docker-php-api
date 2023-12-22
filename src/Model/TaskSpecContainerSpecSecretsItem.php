@@ -27,7 +27,7 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
     /**
     * SecretName is the name of the secret that this references, but this is just provided for
     lookup/display purposes. The secret in the reference will be identified by its ID.
-    
+
     *
     * @var string|null
     */
@@ -79,7 +79,7 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
     /**
     * SecretName is the name of the secret that this references, but this is just provided for
     lookup/display purposes. The secret in the reference will be identified by its ID.
-    
+
     *
     * @return string|null
     */
@@ -90,7 +90,7 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
     /**
     * SecretName is the name of the secret that this references, but this is just provided for
     lookup/display purposes. The secret in the reference will be identified by its ID.
-    
+
     *
     * @param string|null $secretName
     *

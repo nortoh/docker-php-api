@@ -7,7 +7,7 @@ class NodeDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id The ID or name of the node
      * @param array $queryParameters {

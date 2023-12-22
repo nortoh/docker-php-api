@@ -49,7 +49,7 @@ class NetworksCreatePostBody extends \ArrayObject
      */
     protected $ingress;
     /**
-     * 
+     *
      *
      * @var IPAM|null
      */
@@ -205,7 +205,7 @@ class NetworksCreatePostBody extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return IPAM|null
      */
@@ -214,7 +214,7 @@ class NetworksCreatePostBody extends \ArrayObject
         return $this->iPAM;
     }
     /**
-     * 
+     *
      *
      * @param IPAM|null $iPAM
      *

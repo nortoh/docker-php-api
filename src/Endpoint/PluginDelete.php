@@ -7,7 +7,7 @@ class PluginDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements \D
     protected $name;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $name The name of the plugin. The `:latest` tag is optional, and is the default if omitted.
      * @param array $queryParameters {

@@ -6,7 +6,7 @@ class GetPluginPrivileges extends \Docker\API\Runtime\Client\BaseEndpoint implem
 {
     protected $accept;
     /**
-     * 
+     *
      *
      * @param array $queryParameters {
      *     @var string $remote The name of the plugin. The `:latest` tag is optional, and is the default if omitted.

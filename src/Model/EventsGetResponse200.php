@@ -25,7 +25,7 @@ class EventsGetResponse200 extends \ArrayObject
      */
     protected $action;
     /**
-     * 
+     *
      *
      * @var EventsGetResponse200Actor|null
      */
@@ -87,7 +87,7 @@ class EventsGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return EventsGetResponse200Actor|null
      */
@@ -96,7 +96,7 @@ class EventsGetResponse200 extends \ArrayObject
         return $this->actor;
     }
     /**
-     * 
+     *
      *
      * @param EventsGetResponse200Actor|null $actor
      *

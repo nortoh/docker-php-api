@@ -20,16 +20,16 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
     protected $status;
     /**
     * Whether this container is running.
-    
+
     Note that a running container can be _paused_. The `Running` and `Paused`
     booleans are not mutually exclusive:
-    
+
     When pausing a container (on Linux), the cgroups freezer is used to suspend
     all processes in the container. Freezing the process requires the process to
     be running. As a result, paused containers are both `Running` _and_ `Paused`.
-    
+
     Use the `Status` field instead to determine if a container's state is "running".
-    
+
     *
     * @var bool|null
     */
@@ -53,7 +53,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      */
     protected $oOMKilled;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
@@ -71,7 +71,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      */
     protected $exitCode;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -112,16 +112,16 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
     }
     /**
     * Whether this container is running.
-    
+
     Note that a running container can be _paused_. The `Running` and `Paused`
     booleans are not mutually exclusive:
-    
+
     When pausing a container (on Linux), the cgroups freezer is used to suspend
     all processes in the container. Freezing the process requires the process to
     be running. As a result, paused containers are both `Running` _and_ `Paused`.
-    
+
     Use the `Status` field instead to determine if a container's state is "running".
-    
+
     *
     * @return bool|null
     */
@@ -131,16 +131,16 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
     }
     /**
     * Whether this container is running.
-    
+
     Note that a running container can be _paused_. The `Running` and `Paused`
     booleans are not mutually exclusive:
-    
+
     When pausing a container (on Linux), the cgroups freezer is used to suspend
     all processes in the container. Freezing the process requires the process to
     be running. As a result, paused containers are both `Running` _and_ `Paused`.
-    
+
     Use the `Status` field instead to determine if a container's state is "running".
-    
+
     *
     * @param bool|null $running
     *
@@ -219,7 +219,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -228,7 +228,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
         return $this->dead;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $dead
      *
@@ -285,7 +285,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -294,7 +294,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
         return $this->error;
     }
     /**
-     * 
+     *
      *
      * @param string|null $error
      *

@@ -13,43 +13,43 @@ class Image extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $id;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $repoTags;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $repoDigests;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $parent;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $comment;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $created;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -61,13 +61,13 @@ class Image extends \ArrayObject
      */
     protected $containerConfig;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $dockerVersion;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -79,31 +79,31 @@ class Image extends \ArrayObject
      */
     protected $config;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $architecture;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $os;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $osVersion;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $size;
     /**
-     * 
+     *
      *
      * @var int|null
      */
@@ -115,19 +115,19 @@ class Image extends \ArrayObject
      */
     protected $graphDriver;
     /**
-     * 
+     *
      *
      * @var ImageRootFS|null
      */
     protected $rootFS;
     /**
-     * 
+     *
      *
      * @var ImageMetadata|null
      */
     protected $metadata;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -136,7 +136,7 @@ class Image extends \ArrayObject
         return $this->id;
     }
     /**
-     * 
+     *
      *
      * @param string|null $id
      *
@@ -149,7 +149,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -158,7 +158,7 @@ class Image extends \ArrayObject
         return $this->repoTags;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $repoTags
      *
@@ -171,7 +171,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -180,7 +180,7 @@ class Image extends \ArrayObject
         return $this->repoDigests;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $repoDigests
      *
@@ -193,7 +193,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -202,7 +202,7 @@ class Image extends \ArrayObject
         return $this->parent;
     }
     /**
-     * 
+     *
      *
      * @param string|null $parent
      *
@@ -215,7 +215,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -224,7 +224,7 @@ class Image extends \ArrayObject
         return $this->comment;
     }
     /**
-     * 
+     *
      *
      * @param string|null $comment
      *
@@ -237,7 +237,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -246,7 +246,7 @@ class Image extends \ArrayObject
         return $this->created;
     }
     /**
-     * 
+     *
      *
      * @param string|null $created
      *
@@ -259,7 +259,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -268,7 +268,7 @@ class Image extends \ArrayObject
         return $this->container;
     }
     /**
-     * 
+     *
      *
      * @param string|null $container
      *
@@ -303,7 +303,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -312,7 +312,7 @@ class Image extends \ArrayObject
         return $this->dockerVersion;
     }
     /**
-     * 
+     *
      *
      * @param string|null $dockerVersion
      *
@@ -325,7 +325,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -334,7 +334,7 @@ class Image extends \ArrayObject
         return $this->author;
     }
     /**
-     * 
+     *
      *
      * @param string|null $author
      *
@@ -369,7 +369,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -378,7 +378,7 @@ class Image extends \ArrayObject
         return $this->architecture;
     }
     /**
-     * 
+     *
      *
      * @param string|null $architecture
      *
@@ -391,7 +391,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -400,7 +400,7 @@ class Image extends \ArrayObject
         return $this->os;
     }
     /**
-     * 
+     *
      *
      * @param string|null $os
      *
@@ -413,7 +413,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -422,7 +422,7 @@ class Image extends \ArrayObject
         return $this->osVersion;
     }
     /**
-     * 
+     *
      *
      * @param string|null $osVersion
      *
@@ -435,7 +435,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -444,7 +444,7 @@ class Image extends \ArrayObject
         return $this->size;
     }
     /**
-     * 
+     *
      *
      * @param int|null $size
      *
@@ -457,7 +457,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -466,7 +466,7 @@ class Image extends \ArrayObject
         return $this->virtualSize;
     }
     /**
-     * 
+     *
      *
      * @param int|null $virtualSize
      *
@@ -501,7 +501,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ImageRootFS|null
      */
@@ -510,7 +510,7 @@ class Image extends \ArrayObject
         return $this->rootFS;
     }
     /**
-     * 
+     *
      *
      * @param ImageRootFS|null $rootFS
      *
@@ -523,7 +523,7 @@ class Image extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ImageMetadata|null
      */
@@ -532,7 +532,7 @@ class Image extends \ArrayObject
         return $this->metadata;
     }
     /**
-     * 
+     *
      *
      * @param ImageMetadata|null $metadata
      *

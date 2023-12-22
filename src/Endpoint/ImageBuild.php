@@ -6,15 +6,15 @@ class ImageBuild extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
 {
     /**
     * Build an image from a tar archive with a `Dockerfile` in it.
-    
+
     The `Dockerfile` specifies how the image is built from the tar archive. It is typically in the archive's root, but can be at a different path or have a different name by specifying the `dockerfile` parameter. [See the `Dockerfile` reference for more information](https://docs.docker.com/engine/reference/builder/).
-    
+
     The Docker daemon performs a preliminary validation of the `Dockerfile` before starting the build, and returns an error if the syntax is incorrect. After that, each instruction is run one-by-one until the ID of the new image is output.
-    
+
     The build is canceled if the client drops the connection by quitting or being killed.
-    
+
     *
-    * @param null|string|resource|\Psr\Http\Message\StreamInterface $requestBody 
+    * @param null|string|resource|\Psr\Http\Message\StreamInterface $requestBody
     * @param array $queryParameters {
     *     @var string $dockerfile Path within the build context to the `Dockerfile`. This is ignored if `remote` is specified and points to an external `Dockerfile`.
     *     @var string $t A name and optional tag to apply to the image in the `name:tag` format. If you omit the tag the default `latest` value is assumed. You can provide several `t` parameters.
@@ -40,11 +40,11 @@ class ImageBuild extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
     *     @var string $platform Platform in the format os[/arch[/variant]]
     * }
     * @param array $headerParameters {
-    *     @var string $Content-type 
+    *     @var string $Content-type
     *     @var string $X-Registry-Config This is a base64-encoded JSON object with auth configurations for multiple registries that a build may refer to.
-    
+
     The key is a registry URL, and the value is an auth configuration object, [as described in the authentication section](#section/Authentication). For example:
-    
+
     ```
     {
      "docker.example.com": {
@@ -57,9 +57,9 @@ class ImageBuild extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
      }
     }
     ```
-    
+
     Only the registry domain name (and port if not the default 443) are required. However, for legacy reasons, the Docker Hub registry must be specified with both a `https://` prefix and a `/v1/` suffix even though Docker will prefer to use the v2 registry API.
-    
+
     * }
     */
     public function __construct($requestBody = null, array $queryParameters = array(), array $headerParameters = array())

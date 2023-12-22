@@ -40,10 +40,10 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-    
+
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-    
+
     *
     * @var array<string, VolumeStatusItem>|null
     */
@@ -69,7 +69,7 @@ class Volume extends \ArrayObject
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-    
+
     *
     * @var VolumeUsageData|null
     */
@@ -166,10 +166,10 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-    
+
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-    
+
     *
     * @return array<string, VolumeStatusItem>|null
     */
@@ -181,10 +181,10 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-    
+
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-    
+
     *
     * @param array<string, VolumeStatusItem>|null $status
     *
@@ -265,7 +265,7 @@ class Volume extends \ArrayObject
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-    
+
     *
     * @return VolumeUsageData|null
     */
@@ -276,7 +276,7 @@ class Volume extends \ArrayObject
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-    
+
     *
     * @param VolumeUsageData|null $usageData
     *

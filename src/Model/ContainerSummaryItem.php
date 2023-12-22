@@ -85,7 +85,7 @@ class ContainerSummaryItem extends \ArrayObject
      */
     protected $status;
     /**
-     * 
+     *
      *
      * @var ContainerSummaryItemHostConfig|null
      */
@@ -97,7 +97,7 @@ class ContainerSummaryItem extends \ArrayObject
      */
     protected $networkSettings;
     /**
-     * 
+     *
      *
      * @var Mount[]|null
      */
@@ -367,7 +367,7 @@ class ContainerSummaryItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ContainerSummaryItemHostConfig|null
      */
@@ -376,7 +376,7 @@ class ContainerSummaryItem extends \ArrayObject
         return $this->hostConfig;
     }
     /**
-     * 
+     *
      *
      * @param ContainerSummaryItemHostConfig|null $hostConfig
      *
@@ -411,7 +411,7 @@ class ContainerSummaryItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return Mount[]|null
      */
@@ -420,7 +420,7 @@ class ContainerSummaryItem extends \ArrayObject
         return $this->mounts;
     }
     /**
-     * 
+     *
      *
      * @param Mount[]|null $mounts
      *

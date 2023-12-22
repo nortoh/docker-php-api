@@ -21,7 +21,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-    
+
     *
     * @var array<string, string>|null
     */
@@ -51,7 +51,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-    
+
     *
     * @return array<string, string>|null
     */
@@ -62,7 +62,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-    
+
     *
     * @param array<string, string>|null $options
     *

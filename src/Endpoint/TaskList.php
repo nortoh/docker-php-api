@@ -5,18 +5,18 @@ namespace Docker\API\Endpoint;
 class TaskList extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
-    * 
+    *
     *
     * @param array $queryParameters {
     *     @var string $filters A JSON encoded value of the filters (a `map[string][]string`) to process on the tasks list. Available filters:
-    
+
     - `desired-state=(running | shutdown | accepted)`
     - `id=<task id>`
     - `label=key` or `label="key=value"`
     - `name=<task name>`
     - `node=<node id or name>`
     - `service=<service name>`
-    
+
     * }
     */
     public function __construct(array $queryParameters = array())

@@ -13,19 +13,19 @@ class ErrorDetail extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $code;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $message;
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -34,7 +34,7 @@ class ErrorDetail extends \ArrayObject
         return $this->code;
     }
     /**
-     * 
+     *
      *
      * @param int|null $code
      *
@@ -47,7 +47,7 @@ class ErrorDetail extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -56,7 +56,7 @@ class ErrorDetail extends \ArrayObject
         return $this->message;
     }
     /**
-     * 
+     *
      *
      * @param string|null $message
      *

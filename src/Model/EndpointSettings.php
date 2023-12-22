@@ -19,13 +19,13 @@ class EndpointSettings extends \ArrayObject
      */
     protected $iPAMConfig;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $links;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
@@ -87,7 +87,7 @@ class EndpointSettings extends \ArrayObject
     /**
     * DriverOpts is a mapping of driver options and values. These options
     are passed directly to the driver and are driver specific.
-    
+
     *
     * @var array<string, string>|null
     */
@@ -115,7 +115,7 @@ class EndpointSettings extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -124,7 +124,7 @@ class EndpointSettings extends \ArrayObject
         return $this->links;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $links
      *
@@ -137,7 +137,7 @@ class EndpointSettings extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -146,7 +146,7 @@ class EndpointSettings extends \ArrayObject
         return $this->aliases;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $aliases
      *
@@ -359,7 +359,7 @@ class EndpointSettings extends \ArrayObject
     /**
     * DriverOpts is a mapping of driver options and values. These options
     are passed directly to the driver and are driver specific.
-    
+
     *
     * @return array<string, string>|null
     */
@@ -370,7 +370,7 @@ class EndpointSettings extends \ArrayObject
     /**
     * DriverOpts is a mapping of driver options and values. These options
     are passed directly to the driver and are driver specific.
-    
+
     *
     * @param array<string, string>|null $driverOpts
     *

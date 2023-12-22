@@ -26,7 +26,7 @@ class ClusterInfo extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @var ObjectVersion|null
     */
@@ -34,7 +34,7 @@ class ClusterInfo extends \ArrayObject
     /**
     * Date and time at which the swarm was initialised in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @var string|null
     */
@@ -42,7 +42,7 @@ class ClusterInfo extends \ArrayObject
     /**
     * Date and time at which the swarm was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @var string|null
     */
@@ -95,7 +95,7 @@ class ClusterInfo extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @return ObjectVersion|null
     */
@@ -111,7 +111,7 @@ class ClusterInfo extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @param ObjectVersion|null $version
     *
@@ -126,7 +126,7 @@ class ClusterInfo extends \ArrayObject
     /**
     * Date and time at which the swarm was initialised in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @return string|null
     */
@@ -137,7 +137,7 @@ class ClusterInfo extends \ArrayObject
     /**
     * Date and time at which the swarm was initialised in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @param string|null $createdAt
     *
@@ -152,7 +152,7 @@ class ClusterInfo extends \ArrayObject
     /**
     * Date and time at which the swarm was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @return string|null
     */
@@ -163,7 +163,7 @@ class ClusterInfo extends \ArrayObject
     /**
     * Date and time at which the swarm was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @param string|null $updatedAt
     *

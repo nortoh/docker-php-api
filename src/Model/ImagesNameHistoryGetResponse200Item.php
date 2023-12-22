@@ -13,43 +13,43 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $id;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $created;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $createdBy;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $tags;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $size;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $comment;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -58,7 +58,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this->id;
     }
     /**
-     * 
+     *
      *
      * @param string|null $id
      *
@@ -71,7 +71,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -80,7 +80,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this->created;
     }
     /**
-     * 
+     *
      *
      * @param int|null $created
      *
@@ -93,7 +93,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -102,7 +102,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this->createdBy;
     }
     /**
-     * 
+     *
      *
      * @param string|null $createdBy
      *
@@ -115,7 +115,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -124,7 +124,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this->tags;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $tags
      *
@@ -137,7 +137,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -146,7 +146,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this->size;
     }
     /**
-     * 
+     *
      *
      * @param int|null $size
      *
@@ -159,7 +159,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -168,7 +168,7 @@ class ImagesNameHistoryGetResponse200Item extends \ArrayObject
         return $this->comment;
     }
     /**
-     * 
+     *
      *
      * @param string|null $comment
      *

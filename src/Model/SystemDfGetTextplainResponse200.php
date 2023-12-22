@@ -13,31 +13,31 @@ class SystemDfGetTextplainResponse200 extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $layersSize;
     /**
-     * 
+     *
      *
      * @var ImageSummary[]|null
      */
     protected $images;
     /**
-     * 
+     *
      *
      * @var ContainerSummaryItem[][]|null
      */
     protected $containers;
     /**
-     * 
+     *
      *
      * @var Volume[]|null
      */
     protected $volumes;
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -46,7 +46,7 @@ class SystemDfGetTextplainResponse200 extends \ArrayObject
         return $this->layersSize;
     }
     /**
-     * 
+     *
      *
      * @param int|null $layersSize
      *
@@ -59,7 +59,7 @@ class SystemDfGetTextplainResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ImageSummary[]|null
      */
@@ -68,7 +68,7 @@ class SystemDfGetTextplainResponse200 extends \ArrayObject
         return $this->images;
     }
     /**
-     * 
+     *
      *
      * @param ImageSummary[]|null $images
      *
@@ -81,7 +81,7 @@ class SystemDfGetTextplainResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ContainerSummaryItem[][]|null
      */
@@ -90,7 +90,7 @@ class SystemDfGetTextplainResponse200 extends \ArrayObject
         return $this->containers;
     }
     /**
-     * 
+     *
      *
      * @param ContainerSummaryItem[][]|null $containers
      *
@@ -103,7 +103,7 @@ class SystemDfGetTextplainResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return Volume[]|null
      */
@@ -112,7 +112,7 @@ class SystemDfGetTextplainResponse200 extends \ArrayObject
         return $this->volumes;
     }
     /**
-     * 
+     *
      *
      * @param Volume[]|null $volumes
      *

@@ -13,7 +13,7 @@ class ManagerStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var bool|null
      */
@@ -31,7 +31,7 @@ class ManagerStatus extends \ArrayObject
      */
     protected $addr;
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -40,7 +40,7 @@ class ManagerStatus extends \ArrayObject
         return $this->leader;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $leader
      *

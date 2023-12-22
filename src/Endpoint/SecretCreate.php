@@ -5,9 +5,9 @@ namespace Docker\API\Endpoint;
 class SecretCreate extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\SecretsCreatePostBody $requestBody 
+     *
+     * @param null|\Docker\API\Model\SecretsCreatePostBody $requestBody
      */
     public function __construct(?\Docker\API\Model\SecretsCreatePostBody $requestBody = null)
     {

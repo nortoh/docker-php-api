@@ -170,18 +170,18 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     protected $ulimits;
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @var int|null
     */
     protected $cpuCount;
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @var int|null
     */
@@ -200,9 +200,9 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     protected $iOMaximumBandwidth;
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-    
+
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-    
+
     *
     * @var RestartPolicy|null
     */
@@ -781,9 +781,9 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @return int|null
     */
@@ -793,9 +793,9 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @param int|null $cpuCount
     *
@@ -809,9 +809,9 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @return int|null
     */
@@ -821,9 +821,9 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @param int|null $cpuPercent
     *
@@ -881,9 +881,9 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-    
+
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-    
+
     *
     * @return RestartPolicy|null
     */
@@ -893,9 +893,9 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-    
+
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-    
+
     *
     * @param RestartPolicy|null $restartPolicy
     *

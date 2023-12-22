@@ -13,49 +13,49 @@ class PluginMount extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $description;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $settable;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $source;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $destination;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $type;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $options;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -64,7 +64,7 @@ class PluginMount extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -77,7 +77,7 @@ class PluginMount extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -86,7 +86,7 @@ class PluginMount extends \ArrayObject
         return $this->description;
     }
     /**
-     * 
+     *
      *
      * @param string|null $description
      *
@@ -99,7 +99,7 @@ class PluginMount extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -108,7 +108,7 @@ class PluginMount extends \ArrayObject
         return $this->settable;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $settable
      *
@@ -121,7 +121,7 @@ class PluginMount extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -130,7 +130,7 @@ class PluginMount extends \ArrayObject
         return $this->source;
     }
     /**
-     * 
+     *
      *
      * @param string|null $source
      *
@@ -143,7 +143,7 @@ class PluginMount extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -152,7 +152,7 @@ class PluginMount extends \ArrayObject
         return $this->destination;
     }
     /**
-     * 
+     *
      *
      * @param string|null $destination
      *
@@ -165,7 +165,7 @@ class PluginMount extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -174,7 +174,7 @@ class PluginMount extends \ArrayObject
         return $this->type;
     }
     /**
-     * 
+     *
      *
      * @param string|null $type
      *
@@ -187,7 +187,7 @@ class PluginMount extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -196,7 +196,7 @@ class PluginMount extends \ArrayObject
         return $this->options;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $options
      *

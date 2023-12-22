@@ -13,13 +13,13 @@ class TaskSpecPlacementPreferencesItem extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var TaskSpecPlacementPreferencesItemSpread|null
      */
     protected $spread;
     /**
-     * 
+     *
      *
      * @return TaskSpecPlacementPreferencesItemSpread|null
      */
@@ -28,7 +28,7 @@ class TaskSpecPlacementPreferencesItem extends \ArrayObject
         return $this->spread;
     }
     /**
-     * 
+     *
      *
      * @param TaskSpecPlacementPreferencesItemSpread|null $spread
      *

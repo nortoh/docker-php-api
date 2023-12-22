@@ -13,19 +13,19 @@ class ServiceSpecMode extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var ServiceSpecModeReplicated|null
      */
     protected $replicated;
     /**
-     * 
+     *
      *
      * @var ServiceSpecModeGlobal|null
      */
     protected $global;
     /**
-     * 
+     *
      *
      * @return ServiceSpecModeReplicated|null
      */
@@ -34,7 +34,7 @@ class ServiceSpecMode extends \ArrayObject
         return $this->replicated;
     }
     /**
-     * 
+     *
      *
      * @param ServiceSpecModeReplicated|null $replicated
      *
@@ -47,7 +47,7 @@ class ServiceSpecMode extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ServiceSpecModeGlobal|null
      */
@@ -56,7 +56,7 @@ class ServiceSpecMode extends \ArrayObject
         return $this->global;
     }
     /**
-     * 
+     *
      *
      * @param ServiceSpecModeGlobal|null $global
      *

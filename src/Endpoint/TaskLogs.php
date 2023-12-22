@@ -8,17 +8,17 @@ class TaskLogs extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docke
     protected $accept;
     /**
     * Get `stdout` and `stderr` logs from a task.
-    
+
     **Note**: This endpoint works only for services with the `json-file` or `journald` logging drivers.
-    
+
     *
     * @param string $id ID of the task
     * @param array $queryParameters {
     *     @var bool $details Show task context and extra details provided to logs.
     *     @var bool $follow Return the logs as a stream.
-    
+
     This will return a `101` HTTP response with a `Connection: upgrade` header, then hijack the HTTP connection to send raw output. For more information about hijacking and the stream format, [see the documentation for the attach endpoint](#operation/ContainerAttach).
-    
+
     *     @var bool $stdout Return logs from `stdout`
     *     @var bool $stderr Return logs from `stderr`
     *     @var int $since Only return logs since this time, as a UNIX timestamp

@@ -13,13 +13,13 @@ class VersionGetResponse200Platform extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -28,7 +28,7 @@ class VersionGetResponse200Platform extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *

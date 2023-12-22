@@ -13,25 +13,25 @@ class PluginConfigLinux extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $capabilities;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $allowAllDevices;
     /**
-     * 
+     *
      *
      * @var PluginDevice[]|null
      */
     protected $devices;
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -40,7 +40,7 @@ class PluginConfigLinux extends \ArrayObject
         return $this->capabilities;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $capabilities
      *
@@ -53,7 +53,7 @@ class PluginConfigLinux extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -62,7 +62,7 @@ class PluginConfigLinux extends \ArrayObject
         return $this->allowAllDevices;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $allowAllDevices
      *
@@ -75,7 +75,7 @@ class PluginConfigLinux extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginDevice[]|null
      */
@@ -84,7 +84,7 @@ class PluginConfigLinux extends \ArrayObject
         return $this->devices;
     }
     /**
-     * 
+     *
      *
      * @param PluginDevice[]|null $devices
      *

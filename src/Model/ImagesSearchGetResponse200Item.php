@@ -13,37 +13,37 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $description;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $isOfficial;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $isAutomated;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $starCount;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -52,7 +52,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this->description;
     }
     /**
-     * 
+     *
      *
      * @param string|null $description
      *
@@ -65,7 +65,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -74,7 +74,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this->isOfficial;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $isOfficial
      *
@@ -87,7 +87,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -96,7 +96,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this->isAutomated;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $isAutomated
      *
@@ -109,7 +109,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -118,7 +118,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -131,7 +131,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -140,7 +140,7 @@ class ImagesSearchGetResponse200Item extends \ArrayObject
         return $this->starCount;
     }
     /**
-     * 
+     *
      *
      * @param int|null $starCount
      *

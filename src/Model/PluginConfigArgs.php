@@ -13,31 +13,31 @@ class PluginConfigArgs extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $description;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $settable;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $value;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -46,7 +46,7 @@ class PluginConfigArgs extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -59,7 +59,7 @@ class PluginConfigArgs extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -68,7 +68,7 @@ class PluginConfigArgs extends \ArrayObject
         return $this->description;
     }
     /**
-     * 
+     *
      *
      * @param string|null $description
      *
@@ -81,7 +81,7 @@ class PluginConfigArgs extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -90,7 +90,7 @@ class PluginConfigArgs extends \ArrayObject
         return $this->settable;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $settable
      *
@@ -103,7 +103,7 @@ class PluginConfigArgs extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -112,7 +112,7 @@ class PluginConfigArgs extends \ArrayObject
         return $this->value;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $value
      *

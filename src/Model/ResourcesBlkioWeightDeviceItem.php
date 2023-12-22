@@ -13,19 +13,19 @@ class ResourcesBlkioWeightDeviceItem extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $path;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $weight;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -34,7 +34,7 @@ class ResourcesBlkioWeightDeviceItem extends \ArrayObject
         return $this->path;
     }
     /**
-     * 
+     *
      *
      * @param string|null $path
      *
@@ -47,7 +47,7 @@ class ResourcesBlkioWeightDeviceItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -56,7 +56,7 @@ class ResourcesBlkioWeightDeviceItem extends \ArrayObject
         return $this->weight;
     }
     /**
-     * 
+     *
      *
      * @param int|null $weight
      *

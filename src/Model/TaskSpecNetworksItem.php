@@ -13,19 +13,19 @@ class TaskSpecNetworksItem extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $target;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $aliases;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -34,7 +34,7 @@ class TaskSpecNetworksItem extends \ArrayObject
         return $this->target;
     }
     /**
-     * 
+     *
      *
      * @param string|null $target
      *
@@ -47,7 +47,7 @@ class TaskSpecNetworksItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -56,7 +56,7 @@ class TaskSpecNetworksItem extends \ArrayObject
         return $this->aliases;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $aliases
      *

@@ -13,13 +13,13 @@ class ObjectVersion extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $index;
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -28,7 +28,7 @@ class ObjectVersion extends \ArrayObject
         return $this->index;
     }
     /**
-     * 
+     *
      *
      * @param int|null $index
      *

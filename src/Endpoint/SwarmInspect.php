@@ -6,7 +6,7 @@ class SwarmInspect extends \Docker\API\Runtime\Client\BaseEndpoint implements \D
 {
     protected $accept;
     /**
-     * 
+     *
      *
      * @param array $accept Accept content header application/json|text/plain
      */

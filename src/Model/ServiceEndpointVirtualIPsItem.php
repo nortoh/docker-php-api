@@ -13,19 +13,19 @@ class ServiceEndpointVirtualIPsItem extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $networkID;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $addr;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -34,7 +34,7 @@ class ServiceEndpointVirtualIPsItem extends \ArrayObject
         return $this->networkID;
     }
     /**
-     * 
+     *
      *
      * @param string|null $networkID
      *
@@ -47,7 +47,7 @@ class ServiceEndpointVirtualIPsItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -56,7 +56,7 @@ class ServiceEndpointVirtualIPsItem extends \ArrayObject
         return $this->addr;
     }
     /**
-     * 
+     *
      *
      * @param string|null $addr
      *

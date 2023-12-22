@@ -27,10 +27,10 @@ class SecretSpec extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-    
+
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-    
+
     *
     * @var string|null
     */
@@ -88,10 +88,10 @@ class SecretSpec extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-    
+
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-    
+
     *
     * @return string|null
     */
@@ -102,10 +102,10 @@ class SecretSpec extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-    
+
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-    
+
     *
     * @param string|null $data
     *
