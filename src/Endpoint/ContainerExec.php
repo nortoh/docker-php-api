@@ -9,7 +9,7 @@ class ContainerExec extends \Docker\API\Runtime\Client\BaseEndpoint implements \
      * Run a command inside a running container.
      *
      * @param string $id ID or name of container
-     * @param null|\Docker\API\Model\ContainersIdExecPostBody $requestBody 
+     * @param null|\Docker\API\Model\ContainersIdExecPostBody $requestBody
      */
     public function __construct(string $id, ?\Docker\API\Model\ContainersIdExecPostBody $requestBody = null)
     {

@@ -13,43 +13,43 @@ class BuildInfo extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $id;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $stream;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $error;
     /**
-     * 
+     *
      *
      * @var ErrorDetail|null
      */
     protected $errorDetail;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $status;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $progress;
     /**
-     * 
+     *
      *
      * @var ProgressDetail|null
      */
@@ -61,7 +61,7 @@ class BuildInfo extends \ArrayObject
      */
     protected $aux;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -70,7 +70,7 @@ class BuildInfo extends \ArrayObject
         return $this->id;
     }
     /**
-     * 
+     *
      *
      * @param string|null $id
      *
@@ -83,7 +83,7 @@ class BuildInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -92,7 +92,7 @@ class BuildInfo extends \ArrayObject
         return $this->stream;
     }
     /**
-     * 
+     *
      *
      * @param string|null $stream
      *
@@ -105,7 +105,7 @@ class BuildInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -114,7 +114,7 @@ class BuildInfo extends \ArrayObject
         return $this->error;
     }
     /**
-     * 
+     *
      *
      * @param string|null $error
      *
@@ -127,7 +127,7 @@ class BuildInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ErrorDetail|null
      */
@@ -136,7 +136,7 @@ class BuildInfo extends \ArrayObject
         return $this->errorDetail;
     }
     /**
-     * 
+     *
      *
      * @param ErrorDetail|null $errorDetail
      *
@@ -149,7 +149,7 @@ class BuildInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -158,7 +158,7 @@ class BuildInfo extends \ArrayObject
         return $this->status;
     }
     /**
-     * 
+     *
      *
      * @param string|null $status
      *
@@ -171,7 +171,7 @@ class BuildInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -180,7 +180,7 @@ class BuildInfo extends \ArrayObject
         return $this->progress;
     }
     /**
-     * 
+     *
      *
      * @param string|null $progress
      *
@@ -193,7 +193,7 @@ class BuildInfo extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ProgressDetail|null
      */
@@ -202,7 +202,7 @@ class BuildInfo extends \ArrayObject
         return $this->progressDetail;
     }
     /**
-     * 
+     *
      *
      * @param ProgressDetail|null $progressDetail
      *

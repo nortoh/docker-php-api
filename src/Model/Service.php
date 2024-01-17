@@ -13,7 +13,7 @@ class Service extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -26,19 +26,19 @@ class Service extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @var ObjectVersion|null
     */
     protected $version;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $createdAt;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -50,7 +50,7 @@ class Service extends \ArrayObject
      */
     protected $spec;
     /**
-     * 
+     *
      *
      * @var ServiceEndpoint|null
      */
@@ -62,7 +62,7 @@ class Service extends \ArrayObject
      */
     protected $updateStatus;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -71,7 +71,7 @@ class Service extends \ArrayObject
         return $this->iD;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iD
      *
@@ -91,7 +91,7 @@ class Service extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @return ObjectVersion|null
     */
@@ -107,7 +107,7 @@ class Service extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @param ObjectVersion|null $version
     *
@@ -120,7 +120,7 @@ class Service extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -129,7 +129,7 @@ class Service extends \ArrayObject
         return $this->createdAt;
     }
     /**
-     * 
+     *
      *
      * @param string|null $createdAt
      *
@@ -142,7 +142,7 @@ class Service extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -151,7 +151,7 @@ class Service extends \ArrayObject
         return $this->updatedAt;
     }
     /**
-     * 
+     *
      *
      * @param string|null $updatedAt
      *
@@ -186,7 +186,7 @@ class Service extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ServiceEndpoint|null
      */
@@ -195,7 +195,7 @@ class Service extends \ArrayObject
         return $this->endpoint;
     }
     /**
-     * 
+     *
      *
      * @param ServiceEndpoint|null $endpoint
      *

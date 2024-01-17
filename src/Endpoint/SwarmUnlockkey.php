@@ -6,7 +6,7 @@ class SwarmUnlockkey extends \Docker\API\Runtime\Client\BaseEndpoint implements 
 {
     protected $accept;
     /**
-     * 
+     *
      *
      * @param array $accept Accept content header application/json|text/plain
      */

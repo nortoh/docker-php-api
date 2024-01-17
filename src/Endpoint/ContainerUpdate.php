@@ -9,7 +9,7 @@ class ContainerUpdate extends \Docker\API\Runtime\Client\BaseEndpoint implements
      * Change various configuration options of a container without having to recreate it.
      *
      * @param string $id ID or name of the container
-     * @param null|\Docker\API\Model\ContainersIdUpdatePostBody $requestBody 
+     * @param null|\Docker\API\Model\ContainersIdUpdatePostBody $requestBody
      */
     public function __construct(string $id, ?\Docker\API\Model\ContainersIdUpdatePostBody $requestBody = null)
     {

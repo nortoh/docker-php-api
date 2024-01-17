@@ -13,19 +13,19 @@ class ProgressDetail extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $current;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $total;
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -34,7 +34,7 @@ class ProgressDetail extends \ArrayObject
         return $this->current;
     }
     /**
-     * 
+     *
      *
      * @param int|null $current
      *
@@ -47,7 +47,7 @@ class ProgressDetail extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -56,7 +56,7 @@ class ProgressDetail extends \ArrayObject
         return $this->total;
     }
     /**
-     * 
+     *
      *
      * @param int|null $total
      *

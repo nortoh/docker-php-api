@@ -17,7 +17,7 @@ class VolumeUsageData extends \ArrayObject
     is only available for volumes created with the `"local"` volume
     driver. For volumes created with other volume drivers, this field
     is set to `-1` ("not available")
-    
+
     *
     * @var int|null
     */
@@ -25,7 +25,7 @@ class VolumeUsageData extends \ArrayObject
     /**
     * The number of containers referencing this volume. This field
     is set to `-1` if the reference-count is not available.
-    
+
     *
     * @var int|null
     */
@@ -35,7 +35,7 @@ class VolumeUsageData extends \ArrayObject
     is only available for volumes created with the `"local"` volume
     driver. For volumes created with other volume drivers, this field
     is set to `-1` ("not available")
-    
+
     *
     * @return int|null
     */
@@ -48,7 +48,7 @@ class VolumeUsageData extends \ArrayObject
     is only available for volumes created with the `"local"` volume
     driver. For volumes created with other volume drivers, this field
     is set to `-1` ("not available")
-    
+
     *
     * @param int|null $size
     *
@@ -63,7 +63,7 @@ class VolumeUsageData extends \ArrayObject
     /**
     * The number of containers referencing this volume. This field
     is set to `-1` if the reference-count is not available.
-    
+
     *
     * @return int|null
     */
@@ -74,7 +74,7 @@ class VolumeUsageData extends \ArrayObject
     /**
     * The number of containers referencing this volume. This field
     is set to `-1` if the reference-count is not available.
-    
+
     *
     * @param int|null $refCount
     *

@@ -13,31 +13,31 @@ class ServiceUpdateStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $state;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $startedAt;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $completedAt;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $message;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -46,7 +46,7 @@ class ServiceUpdateStatus extends \ArrayObject
         return $this->state;
     }
     /**
-     * 
+     *
      *
      * @param string|null $state
      *
@@ -59,7 +59,7 @@ class ServiceUpdateStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -68,7 +68,7 @@ class ServiceUpdateStatus extends \ArrayObject
         return $this->startedAt;
     }
     /**
-     * 
+     *
      *
      * @param string|null $startedAt
      *
@@ -81,7 +81,7 @@ class ServiceUpdateStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -90,7 +90,7 @@ class ServiceUpdateStatus extends \ArrayObject
         return $this->completedAt;
     }
     /**
-     * 
+     *
      *
      * @param string|null $completedAt
      *
@@ -103,7 +103,7 @@ class ServiceUpdateStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -112,7 +112,7 @@ class ServiceUpdateStatus extends \ArrayObject
         return $this->message;
     }
     /**
-     * 
+     *
      *
      * @param string|null $message
      *

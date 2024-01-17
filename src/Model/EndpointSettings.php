@@ -363,7 +363,7 @@ class EndpointSettings extends \ArrayObject
     *
     * @return array<string, string>|null
     */
-    public function getDriverOpts() : ?\ArrayObject
+    public function getDriverOpts() : ?iterable
     {
         return $this->driverOpts;
     }
@@ -376,7 +376,7 @@ class EndpointSettings extends \ArrayObject
     *
     * @return self
     */
-    public function setDriverOpts(?\ArrayObject $driverOpts) : self
+    public function setDriverOpts(?iterable $driverOpts) : self
     {
         $this->initialized['driverOpts'] = true;
         $this->driverOpts = $driverOpts;

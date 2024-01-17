@@ -7,10 +7,10 @@ class PluginSet extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
     protected $name;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $name The name of the plugin. The `:latest` tag is optional, and is the default if omitted.
-     * @param null|array[] $requestBody 
+     * @param null|array[] $requestBody
      * @param array $accept Accept content header application/json|text/plain
      */
     public function __construct(string $name, ?array $requestBody = null, array $accept = array())

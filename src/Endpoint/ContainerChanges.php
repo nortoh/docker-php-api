@@ -8,11 +8,11 @@ class ContainerChanges extends \Docker\API\Runtime\Client\BaseEndpoint implement
     /**
     * Returns which files in a container's filesystem have been added, deleted,
     or modified. The `Kind` of modification can be one of:
-    
+
     - `0`: Modified
     - `1`: Added
     - `2`: Deleted
-    
+
     *
     * @param string $id ID or name of the container
     */

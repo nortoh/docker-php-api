@@ -13,19 +13,19 @@ class GraphDriverData extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var array<string, string>|null
      */
     protected $data;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -34,7 +34,7 @@ class GraphDriverData extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -47,7 +47,7 @@ class GraphDriverData extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return array<string, string>|null
      */
@@ -56,7 +56,7 @@ class GraphDriverData extends \ArrayObject
         return $this->data;
     }
     /**
-     * 
+     *
      *
      * @param array<string, string>|null $data
      *

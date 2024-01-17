@@ -5,9 +5,9 @@ namespace Docker\API\Endpoint;
 class ContainerCreate extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\ContainersCreatePostBody $requestBody 
+     *
+     * @param null|\Docker\API\Model\ContainersCreatePostBody $requestBody
      * @param array $queryParameters {
      *     @var string $name Assign the specified name to the container. Must match `/?[a-zA-Z0-9_-]+`.
      * }

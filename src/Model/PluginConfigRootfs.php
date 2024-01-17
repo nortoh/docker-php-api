@@ -13,19 +13,19 @@ class PluginConfigRootfs extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $type;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $diffIds;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -34,7 +34,7 @@ class PluginConfigRootfs extends \ArrayObject
         return $this->type;
     }
     /**
-     * 
+     *
      *
      * @param string|null $type
      *
@@ -47,7 +47,7 @@ class PluginConfigRootfs extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -56,7 +56,7 @@ class PluginConfigRootfs extends \ArrayObject
         return $this->diffIds;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $diffIds
      *

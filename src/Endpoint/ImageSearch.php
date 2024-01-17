@@ -11,11 +11,11 @@ class ImageSearch extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
     *     @var string $term Term to search
     *     @var int $limit Maximum number of results to return
     *     @var string $filters A JSON encoded value of the filters (a `map[string][]string`) to process on the images list. Available filters:
-    
+
     - `is-automated=(true|false)`
     - `is-official=(true|false)`
     - `stars=<number>` Matches images that has at least 'number' stars.
-    
+
     * }
     */
     public function __construct(array $queryParameters = array())

@@ -93,16 +93,16 @@ class NodeDescriptionNormalizer implements DenormalizerInterface, NormalizerInte
             $data['Hostname'] = $object->getHostname();
         }
         if ($object->isInitialized('platform') && null !== $object->getPlatform()) {
-            $data['Platform'] = $this->normalizer->normalize($object->getPlatform(), 'json', $context);
+            $data['Platform'] = $object->getPlatform() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getPlatform(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('resources') && null !== $object->getResources()) {
-            $data['Resources'] = $this->normalizer->normalize($object->getResources(), 'json', $context);
+            $data['Resources'] = $object->getResources() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getResources(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('engine') && null !== $object->getEngine()) {
-            $data['Engine'] = $this->normalizer->normalize($object->getEngine(), 'json', $context);
+            $data['Engine'] = $object->getEngine() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getEngine(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('tLSInfo') && null !== $object->getTLSInfo()) {
-            $data['TLSInfo'] = $this->normalizer->normalize($object->getTLSInfo(), 'json', $context);
+            $data['TLSInfo'] = $object->getTLSInfo() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getTLSInfo(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {

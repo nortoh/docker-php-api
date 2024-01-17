@@ -6,16 +6,16 @@ class ServiceList extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
 {
     protected $accept;
     /**
-    * 
+    *
     *
     * @param array $queryParameters {
     *     @var string $filters A JSON encoded value of the filters (a `map[string][]string`) to process on the services list. Available filters:
-    
+
     - `id=<service id>`
     - `label=<service label>`
     - `mode=["replicated"|"global"]`
     - `name=<service name>`
-    
+
     * }
     * @param array $accept Accept content header application/json|text/plain
     */

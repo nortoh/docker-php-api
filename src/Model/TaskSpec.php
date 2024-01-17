@@ -37,7 +37,7 @@ class TaskSpec extends \ArrayObject
      */
     protected $restartPolicy;
     /**
-     * 
+     *
      *
      * @var TaskSpecPlacement|null
      */
@@ -55,7 +55,7 @@ class TaskSpec extends \ArrayObject
      */
     protected $runtime;
     /**
-     * 
+     *
      *
      * @var TaskSpecNetworksItem[]|null
      */
@@ -155,7 +155,7 @@ class TaskSpec extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return TaskSpecPlacement|null
      */
@@ -164,7 +164,7 @@ class TaskSpec extends \ArrayObject
         return $this->placement;
     }
     /**
-     * 
+     *
      *
      * @param TaskSpecPlacement|null $placement
      *
@@ -221,7 +221,7 @@ class TaskSpec extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return TaskSpecNetworksItem[]|null
      */
@@ -230,7 +230,7 @@ class TaskSpec extends \ArrayObject
         return $this->networks;
     }
     /**
-     * 
+     *
      *
      * @param TaskSpecNetworksItem[]|null $networks
      *

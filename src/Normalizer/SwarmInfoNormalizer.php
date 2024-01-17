@@ -139,7 +139,7 @@ class SwarmInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
         if ($object->isInitialized('remoteManagers') && null !== $object->getRemoteManagers()) {
             $values = array();
             foreach ($object->getRemoteManagers() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['RemoteManagers'] = $values;
         }
@@ -150,7 +150,7 @@ class SwarmInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['Managers'] = $object->getManagers();
         }
         if ($object->isInitialized('cluster') && null !== $object->getCluster()) {
-            $data['Cluster'] = $this->normalizer->normalize($object->getCluster(), 'json', $context);
+            $data['Cluster'] = $object->getCluster() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getCluster(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value_1) {
             if (preg_match('/.*/', (string) $key)) {

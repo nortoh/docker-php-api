@@ -13,55 +13,55 @@ class MountPoint extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $type;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $source;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $destination;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $driver;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $mode;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $rW;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $propagation;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -70,7 +70,7 @@ class MountPoint extends \ArrayObject
         return $this->type;
     }
     /**
-     * 
+     *
      *
      * @param string|null $type
      *
@@ -83,7 +83,7 @@ class MountPoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -92,7 +92,7 @@ class MountPoint extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -105,7 +105,7 @@ class MountPoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -114,7 +114,7 @@ class MountPoint extends \ArrayObject
         return $this->source;
     }
     /**
-     * 
+     *
      *
      * @param string|null $source
      *
@@ -127,7 +127,7 @@ class MountPoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -136,7 +136,7 @@ class MountPoint extends \ArrayObject
         return $this->destination;
     }
     /**
-     * 
+     *
      *
      * @param string|null $destination
      *
@@ -149,7 +149,7 @@ class MountPoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -158,7 +158,7 @@ class MountPoint extends \ArrayObject
         return $this->driver;
     }
     /**
-     * 
+     *
      *
      * @param string|null $driver
      *
@@ -171,7 +171,7 @@ class MountPoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -180,7 +180,7 @@ class MountPoint extends \ArrayObject
         return $this->mode;
     }
     /**
-     * 
+     *
      *
      * @param string|null $mode
      *
@@ -193,7 +193,7 @@ class MountPoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -202,7 +202,7 @@ class MountPoint extends \ArrayObject
         return $this->rW;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $rW
      *
@@ -215,7 +215,7 @@ class MountPoint extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -224,7 +224,7 @@ class MountPoint extends \ArrayObject
         return $this->propagation;
     }
     /**
-     * 
+     *
      *
      * @param string|null $propagation
      *

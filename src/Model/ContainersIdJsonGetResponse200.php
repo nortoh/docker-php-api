@@ -49,25 +49,25 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
      */
     protected $image;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $resolvConfPath;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $hostnamePath;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $hostsPath;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -79,43 +79,43 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
      */
     protected $node;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $restartCount;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $driver;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $mountLabel;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $processLabel;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $appArmorProfile;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -145,7 +145,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
      */
     protected $sizeRootFs;
     /**
-     * 
+     *
      *
      * @var MountPoint[]|null
      */
@@ -295,7 +295,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -304,7 +304,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->resolvConfPath;
     }
     /**
-     * 
+     *
      *
      * @param string|null $resolvConfPath
      *
@@ -317,7 +317,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -326,7 +326,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->hostnamePath;
     }
     /**
-     * 
+     *
      *
      * @param string|null $hostnamePath
      *
@@ -339,7 +339,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -348,7 +348,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->hostsPath;
     }
     /**
-     * 
+     *
      *
      * @param string|null $hostsPath
      *
@@ -361,7 +361,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -370,7 +370,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->logPath;
     }
     /**
-     * 
+     *
      *
      * @param string|null $logPath
      *
@@ -405,7 +405,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -414,7 +414,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -427,7 +427,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -436,7 +436,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->restartCount;
     }
     /**
-     * 
+     *
      *
      * @param int|null $restartCount
      *
@@ -449,7 +449,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -458,7 +458,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->driver;
     }
     /**
-     * 
+     *
      *
      * @param string|null $driver
      *
@@ -471,7 +471,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -480,7 +480,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->mountLabel;
     }
     /**
-     * 
+     *
      *
      * @param string|null $mountLabel
      *
@@ -493,7 +493,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -502,7 +502,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->processLabel;
     }
     /**
-     * 
+     *
      *
      * @param string|null $processLabel
      *
@@ -515,7 +515,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -524,7 +524,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->appArmorProfile;
     }
     /**
-     * 
+     *
      *
      * @param string|null $appArmorProfile
      *
@@ -537,7 +537,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -546,7 +546,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->execIDs;
     }
     /**
-     * 
+     *
      *
      * @param string|null $execIDs
      *
@@ -647,7 +647,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return MountPoint[]|null
      */
@@ -656,7 +656,7 @@ class ContainersIdJsonGetResponse200 extends \ArrayObject
         return $this->mounts;
     }
     /**
-     * 
+     *
      *
      * @param MountPoint[]|null $mounts
      *

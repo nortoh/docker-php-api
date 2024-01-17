@@ -143,12 +143,12 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
     {
         $data = array();
         if ($object->isInitialized('platform') && null !== $object->getPlatform()) {
-            $data['Platform'] = $this->normalizer->normalize($object->getPlatform(), 'json', $context);
+            $data['Platform'] = $object->getPlatform() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getPlatform(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('components') && null !== $object->getComponents()) {
             $values = array();
             foreach ($object->getComponents() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Components'] = $values;
         }

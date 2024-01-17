@@ -8,15 +8,15 @@ class ContainerStats extends \Docker\API\Runtime\Client\BaseEndpoint implements 
     /**
     * This endpoint returns a live stream of a container’s resource usage
     statistics.
-    
+
     The `precpu_stats` is the CPU statistic of last read, which is used
     for calculating the CPU usage percentage. It is not the same as the
     `cpu_stats` field.
-    
+
     If either `precpu_stats.online_cpus` or `cpu_stats.online_cpus` is
     nil then for compatibility with older daemons the length of the
     corresponding `cpu_usage.percpu_usage` array should be used.
-    
+
     *
     * @param string $id ID or name of the container
     * @param array $queryParameters {

@@ -13,79 +13,79 @@ class VersionGetResponse200 extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var VersionGetResponse200Platform|null
      */
     protected $platform;
     /**
-     * 
+     *
      *
      * @var VersionGetResponse200ComponentsItem[]|null
      */
     protected $components;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $version;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $apiVersion;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $minAPIVersion;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $gitCommit;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $goVersion;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $os;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $arch;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $kernelVersion;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $experimental;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $buildTime;
     /**
-     * 
+     *
      *
      * @return VersionGetResponse200Platform|null
      */
@@ -94,7 +94,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->platform;
     }
     /**
-     * 
+     *
      *
      * @param VersionGetResponse200Platform|null $platform
      *
@@ -107,7 +107,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return VersionGetResponse200ComponentsItem[]|null
      */
@@ -116,7 +116,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->components;
     }
     /**
-     * 
+     *
      *
      * @param VersionGetResponse200ComponentsItem[]|null $components
      *
@@ -129,7 +129,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -138,7 +138,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->version;
     }
     /**
-     * 
+     *
      *
      * @param string|null $version
      *
@@ -151,7 +151,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -160,7 +160,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->apiVersion;
     }
     /**
-     * 
+     *
      *
      * @param string|null $apiVersion
      *
@@ -173,7 +173,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -182,7 +182,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->minAPIVersion;
     }
     /**
-     * 
+     *
      *
      * @param string|null $minAPIVersion
      *
@@ -195,7 +195,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -204,7 +204,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->gitCommit;
     }
     /**
-     * 
+     *
      *
      * @param string|null $gitCommit
      *
@@ -217,7 +217,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -226,7 +226,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->goVersion;
     }
     /**
-     * 
+     *
      *
      * @param string|null $goVersion
      *
@@ -239,7 +239,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -248,7 +248,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->os;
     }
     /**
-     * 
+     *
      *
      * @param string|null $os
      *
@@ -261,7 +261,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -270,7 +270,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->arch;
     }
     /**
-     * 
+     *
      *
      * @param string|null $arch
      *
@@ -283,7 +283,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -292,7 +292,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->kernelVersion;
     }
     /**
-     * 
+     *
      *
      * @param string|null $kernelVersion
      *
@@ -305,7 +305,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -314,7 +314,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->experimental;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $experimental
      *
@@ -327,7 +327,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -336,7 +336,7 @@ class VersionGetResponse200 extends \ArrayObject
         return $this->buildTime;
     }
     /**
-     * 
+     *
      *
      * @param string|null $buildTime
      *

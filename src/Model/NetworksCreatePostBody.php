@@ -253,7 +253,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getOptions() : ?\ArrayObject
+    public function getOptions() : ?iterable
     {
         return $this->options;
     }
@@ -264,7 +264,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?\ArrayObject $options) : self
+    public function setOptions(?iterable $options) : self
     {
         $this->initialized['options'] = true;
         $this->options = $options;
@@ -275,7 +275,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?\ArrayObject
+    public function getLabels() : ?iterable
     {
         return $this->labels;
     }
@@ -286,7 +286,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?\ArrayObject $labels) : self
+    public function setLabels(?iterable $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;

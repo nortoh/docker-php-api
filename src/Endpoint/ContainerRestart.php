@@ -7,7 +7,7 @@ class ContainerRestart extends \Docker\API\Runtime\Client\BaseEndpoint implement
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id ID or name of the container
      * @param array $queryParameters {

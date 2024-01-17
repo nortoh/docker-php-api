@@ -13,7 +13,7 @@ class Node extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -26,7 +26,7 @@ class Node extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @var ObjectVersion|null
     */
@@ -34,7 +34,7 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was added to the swarm in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @var string|null
     */
@@ -42,13 +42,13 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @var string|null
     */
     protected $updatedAt;
     /**
-     * 
+     *
      *
      * @var NodeSpec|null
      */
@@ -56,32 +56,32 @@ class Node extends \ArrayObject
     /**
     * NodeDescription encapsulates the properties of the Node as reported by the
     agent.
-    
+
     *
     * @var NodeDescription|null
     */
     protected $description;
     /**
     * NodeStatus represents the status of a node.
-    
+
     It provides the current status of the node, as seen by the manager.
-    
+
     *
     * @var NodeStatus|null
     */
     protected $status;
     /**
     * ManagerStatus represents the status of a manager.
-    
+
     It provides the current status of a node's manager component, if the node
     is a manager.
-    
+
     *
     * @var ManagerStatus|null
     */
     protected $managerStatus;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -90,7 +90,7 @@ class Node extends \ArrayObject
         return $this->iD;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iD
      *
@@ -110,7 +110,7 @@ class Node extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @return ObjectVersion|null
     */
@@ -126,7 +126,7 @@ class Node extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @param ObjectVersion|null $version
     *
@@ -141,7 +141,7 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was added to the swarm in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @return string|null
     */
@@ -152,7 +152,7 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was added to the swarm in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @param string|null $createdAt
     *
@@ -167,7 +167,7 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @return string|null
     */
@@ -178,7 +178,7 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-    
+
     *
     * @param string|null $updatedAt
     *
@@ -191,7 +191,7 @@ class Node extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return NodeSpec|null
      */
@@ -200,7 +200,7 @@ class Node extends \ArrayObject
         return $this->spec;
     }
     /**
-     * 
+     *
      *
      * @param NodeSpec|null $spec
      *
@@ -215,7 +215,7 @@ class Node extends \ArrayObject
     /**
     * NodeDescription encapsulates the properties of the Node as reported by the
     agent.
-    
+
     *
     * @return NodeDescription|null
     */
@@ -226,7 +226,7 @@ class Node extends \ArrayObject
     /**
     * NodeDescription encapsulates the properties of the Node as reported by the
     agent.
-    
+
     *
     * @param NodeDescription|null $description
     *
@@ -240,9 +240,9 @@ class Node extends \ArrayObject
     }
     /**
     * NodeStatus represents the status of a node.
-    
+
     It provides the current status of the node, as seen by the manager.
-    
+
     *
     * @return NodeStatus|null
     */
@@ -252,9 +252,9 @@ class Node extends \ArrayObject
     }
     /**
     * NodeStatus represents the status of a node.
-    
+
     It provides the current status of the node, as seen by the manager.
-    
+
     *
     * @param NodeStatus|null $status
     *
@@ -268,10 +268,10 @@ class Node extends \ArrayObject
     }
     /**
     * ManagerStatus represents the status of a manager.
-    
+
     It provides the current status of a node's manager component, if the node
     is a manager.
-    
+
     *
     * @return ManagerStatus|null
     */
@@ -281,10 +281,10 @@ class Node extends \ArrayObject
     }
     /**
     * ManagerStatus represents the status of a manager.
-    
+
     It provides the current status of a node's manager component, if the node
     is a manager.
-    
+
     *
     * @param ManagerStatus|null $managerStatus
     *

@@ -13,7 +13,7 @@ class Config extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -26,31 +26,31 @@ class Config extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @var ObjectVersion|null
     */
     protected $version;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $createdAt;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $updatedAt;
     /**
-     * 
+     *
      *
      * @var ConfigSpec|null
      */
     protected $spec;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -59,7 +59,7 @@ class Config extends \ArrayObject
         return $this->iD;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iD
      *
@@ -79,7 +79,7 @@ class Config extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @return ObjectVersion|null
     */
@@ -95,7 +95,7 @@ class Config extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-    
+
     *
     * @param ObjectVersion|null $version
     *
@@ -108,7 +108,7 @@ class Config extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -117,7 +117,7 @@ class Config extends \ArrayObject
         return $this->createdAt;
     }
     /**
-     * 
+     *
      *
      * @param string|null $createdAt
      *
@@ -130,7 +130,7 @@ class Config extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -139,7 +139,7 @@ class Config extends \ArrayObject
         return $this->updatedAt;
     }
     /**
-     * 
+     *
      *
      * @param string|null $updatedAt
      *
@@ -152,7 +152,7 @@ class Config extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return ConfigSpec|null
      */
@@ -161,7 +161,7 @@ class Config extends \ArrayObject
         return $this->spec;
     }
     /**
-     * 
+     *
      *
      * @param ConfigSpec|null $spec
      *

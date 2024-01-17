@@ -19,7 +19,7 @@ class NetworksCreatePostResponse201 extends \ArrayObject
      */
     protected $id;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -47,7 +47,7 @@ class NetworksCreatePostResponse201 extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -56,7 +56,7 @@ class NetworksCreatePostResponse201 extends \ArrayObject
         return $this->warning;
     }
     /**
-     * 
+     *
      *
      * @param string|null $warning
      *

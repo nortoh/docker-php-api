@@ -13,7 +13,7 @@ class Port extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -31,13 +31,13 @@ class Port extends \ArrayObject
      */
     protected $publicPort;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $type;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -46,7 +46,7 @@ class Port extends \ArrayObject
         return $this->iP;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iP
      *
@@ -103,7 +103,7 @@ class Port extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -112,7 +112,7 @@ class Port extends \ArrayObject
         return $this->type;
     }
     /**
-     * 
+     *
      *
      * @param string|null $type
      *

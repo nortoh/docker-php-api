@@ -17,7 +17,7 @@ class RestartPolicy extends \ArrayObject
     - `always` Always restart
     - `unless-stopped` Restart always except when the user has manually stopped the container
     - `on-failure` Restart only when the container exit code is non-zero
-    
+
     *
     * @var string|null
     */
@@ -33,7 +33,7 @@ class RestartPolicy extends \ArrayObject
     - `always` Always restart
     - `unless-stopped` Restart always except when the user has manually stopped the container
     - `on-failure` Restart only when the container exit code is non-zero
-    
+
     *
     * @return string|null
     */
@@ -46,7 +46,7 @@ class RestartPolicy extends \ArrayObject
     - `always` Always restart
     - `unless-stopped` Restart always except when the user has manually stopped the container
     - `on-failure` Restart only when the container exit code is non-zero
-    
+
     *
     * @param string|null $name
     *

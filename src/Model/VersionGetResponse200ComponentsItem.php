@@ -13,25 +13,25 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $version;
     /**
-     * 
+     *
      *
      * @var VersionGetResponse200ComponentsItemDetails|null
      */
     protected $details;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -53,7 +53,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
         return $this->version;
     }
     /**
-     * 
+     *
      *
      * @param string|null $version
      *
@@ -75,7 +75,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return VersionGetResponse200ComponentsItemDetails|null
      */
@@ -84,7 +84,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
         return $this->details;
     }
     /**
-     * 
+     *
      *
      * @param VersionGetResponse200ComponentsItemDetails|null $details
      *

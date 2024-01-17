@@ -13,13 +13,13 @@ class Plugin extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $id;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -49,7 +49,7 @@ class Plugin extends \ArrayObject
      */
     protected $config;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -58,7 +58,7 @@ class Plugin extends \ArrayObject
         return $this->id;
     }
     /**
-     * 
+     *
      *
      * @param string|null $id
      *
@@ -71,7 +71,7 @@ class Plugin extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -80,7 +80,7 @@ class Plugin extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *

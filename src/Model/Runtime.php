@@ -14,10 +14,10 @@ class Runtime extends \ArrayObject
     }
     /**
     * Name and, optional, path, of the OCI executable binary.
-    
+
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-    
+
     *
     * @var string|null
     */
@@ -30,10 +30,10 @@ class Runtime extends \ArrayObject
     protected $runtimeArgs;
     /**
     * Name and, optional, path, of the OCI executable binary.
-    
+
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-    
+
     *
     * @return string|null
     */
@@ -43,10 +43,10 @@ class Runtime extends \ArrayObject
     }
     /**
     * Name and, optional, path, of the OCI executable binary.
-    
+
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-    
+
     *
     * @param string|null $path
     *

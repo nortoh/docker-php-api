@@ -13,25 +13,25 @@ class EndpointIPAMConfig extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $iPv4Address;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $iPv6Address;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $linkLocalIPs;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class EndpointIPAMConfig extends \ArrayObject
         return $this->iPv4Address;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iPv4Address
      *
@@ -53,7 +53,7 @@ class EndpointIPAMConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class EndpointIPAMConfig extends \ArrayObject
         return $this->iPv6Address;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iPv6Address
      *
@@ -75,7 +75,7 @@ class EndpointIPAMConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -84,7 +84,7 @@ class EndpointIPAMConfig extends \ArrayObject
         return $this->linkLocalIPs;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $linkLocalIPs
      *

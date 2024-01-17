@@ -13,37 +13,37 @@ class ProcessConfig extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $privileged;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $user;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $tty;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $entrypoint;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $arguments;
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -52,7 +52,7 @@ class ProcessConfig extends \ArrayObject
         return $this->privileged;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $privileged
      *
@@ -65,7 +65,7 @@ class ProcessConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -74,7 +74,7 @@ class ProcessConfig extends \ArrayObject
         return $this->user;
     }
     /**
-     * 
+     *
      *
      * @param string|null $user
      *
@@ -87,7 +87,7 @@ class ProcessConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -96,7 +96,7 @@ class ProcessConfig extends \ArrayObject
         return $this->tty;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $tty
      *
@@ -109,7 +109,7 @@ class ProcessConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -118,7 +118,7 @@ class ProcessConfig extends \ArrayObject
         return $this->entrypoint;
     }
     /**
-     * 
+     *
      *
      * @param string|null $entrypoint
      *
@@ -131,7 +131,7 @@ class ProcessConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -140,7 +140,7 @@ class ProcessConfig extends \ArrayObject
         return $this->arguments;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $arguments
      *

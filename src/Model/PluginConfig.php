@@ -19,13 +19,13 @@ class PluginConfig extends \ArrayObject
      */
     protected $dockerVersion;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $description;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -37,73 +37,73 @@ class PluginConfig extends \ArrayObject
      */
     protected $interface;
     /**
-     * 
+     *
      *
      * @var string[]|null
      */
     protected $entrypoint;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $workDir;
     /**
-     * 
+     *
      *
      * @var PluginConfigUser|null
      */
     protected $user;
     /**
-     * 
+     *
      *
      * @var PluginConfigNetwork|null
      */
     protected $network;
     /**
-     * 
+     *
      *
      * @var PluginConfigLinux|null
      */
     protected $linux;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $propagatedMount;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $ipcHost;
     /**
-     * 
+     *
      *
      * @var bool|null
      */
     protected $pidHost;
     /**
-     * 
+     *
      *
      * @var PluginMount[]|null
      */
     protected $mounts;
     /**
-     * 
+     *
      *
      * @var PluginEnv[]|null
      */
     protected $env;
     /**
-     * 
+     *
      *
      * @var PluginConfigArgs|null
      */
     protected $args;
     /**
-     * 
+     *
      *
      * @var PluginConfigRootfs|null
      */
@@ -131,7 +131,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -140,7 +140,7 @@ class PluginConfig extends \ArrayObject
         return $this->description;
     }
     /**
-     * 
+     *
      *
      * @param string|null $description
      *
@@ -153,7 +153,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -162,7 +162,7 @@ class PluginConfig extends \ArrayObject
         return $this->documentation;
     }
     /**
-     * 
+     *
      *
      * @param string|null $documentation
      *
@@ -197,7 +197,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string[]|null
      */
@@ -206,7 +206,7 @@ class PluginConfig extends \ArrayObject
         return $this->entrypoint;
     }
     /**
-     * 
+     *
      *
      * @param string[]|null $entrypoint
      *
@@ -219,7 +219,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -228,7 +228,7 @@ class PluginConfig extends \ArrayObject
         return $this->workDir;
     }
     /**
-     * 
+     *
      *
      * @param string|null $workDir
      *
@@ -241,7 +241,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginConfigUser|null
      */
@@ -250,7 +250,7 @@ class PluginConfig extends \ArrayObject
         return $this->user;
     }
     /**
-     * 
+     *
      *
      * @param PluginConfigUser|null $user
      *
@@ -263,7 +263,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginConfigNetwork|null
      */
@@ -272,7 +272,7 @@ class PluginConfig extends \ArrayObject
         return $this->network;
     }
     /**
-     * 
+     *
      *
      * @param PluginConfigNetwork|null $network
      *
@@ -285,7 +285,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginConfigLinux|null
      */
@@ -294,7 +294,7 @@ class PluginConfig extends \ArrayObject
         return $this->linux;
     }
     /**
-     * 
+     *
      *
      * @param PluginConfigLinux|null $linux
      *
@@ -307,7 +307,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -316,7 +316,7 @@ class PluginConfig extends \ArrayObject
         return $this->propagatedMount;
     }
     /**
-     * 
+     *
      *
      * @param string|null $propagatedMount
      *
@@ -329,7 +329,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -338,7 +338,7 @@ class PluginConfig extends \ArrayObject
         return $this->ipcHost;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $ipcHost
      *
@@ -351,7 +351,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return bool|null
      */
@@ -360,7 +360,7 @@ class PluginConfig extends \ArrayObject
         return $this->pidHost;
     }
     /**
-     * 
+     *
      *
      * @param bool|null $pidHost
      *
@@ -373,7 +373,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginMount[]|null
      */
@@ -382,7 +382,7 @@ class PluginConfig extends \ArrayObject
         return $this->mounts;
     }
     /**
-     * 
+     *
      *
      * @param PluginMount[]|null $mounts
      *
@@ -395,7 +395,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginEnv[]|null
      */
@@ -404,7 +404,7 @@ class PluginConfig extends \ArrayObject
         return $this->env;
     }
     /**
-     * 
+     *
      *
      * @param PluginEnv[]|null $env
      *
@@ -417,7 +417,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginConfigArgs|null
      */
@@ -426,7 +426,7 @@ class PluginConfig extends \ArrayObject
         return $this->args;
     }
     /**
-     * 
+     *
      *
      * @param PluginConfigArgs|null $args
      *
@@ -439,7 +439,7 @@ class PluginConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return PluginConfigRootfs|null
      */
@@ -448,7 +448,7 @@ class PluginConfig extends \ArrayObject
         return $this->rootfs;
     }
     /**
-     * 
+     *
      *
      * @param PluginConfigRootfs|null $rootfs
      *

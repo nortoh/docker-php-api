@@ -8,11 +8,11 @@ class ImagePush extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
     protected $accept;
     /**
     * Push an image to a registry.
-    
+
     If you wish to push an image on to a private registry, that image must already have a tag which references the registry. For example, `registry.example.com/myimage:latest`.
-    
+
     The push is cancelled if the HTTP connection is closed.
-    
+
     *
     * @param string $name Image name or ID.
     * @param array $queryParameters {

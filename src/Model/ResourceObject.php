@@ -13,13 +13,13 @@ class ResourceObject extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $nanoCPUs;
     /**
-     * 
+     *
      *
      * @var int|null
      */
@@ -31,7 +31,7 @@ class ResourceObject extends \ArrayObject
      */
     protected $genericResources;
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -40,7 +40,7 @@ class ResourceObject extends \ArrayObject
         return $this->nanoCPUs;
     }
     /**
-     * 
+     *
      *
      * @param int|null $nanoCPUs
      *
@@ -53,7 +53,7 @@ class ResourceObject extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -62,7 +62,7 @@ class ResourceObject extends \ArrayObject
         return $this->memoryBytes;
     }
     /**
-     * 
+     *
      *
      * @param int|null $memoryBytes
      *

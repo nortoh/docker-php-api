@@ -13,31 +13,31 @@ class AuthConfig extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $username;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $password;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $email;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $serveraddress;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -46,7 +46,7 @@ class AuthConfig extends \ArrayObject
         return $this->username;
     }
     /**
-     * 
+     *
      *
      * @param string|null $username
      *
@@ -59,7 +59,7 @@ class AuthConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -68,7 +68,7 @@ class AuthConfig extends \ArrayObject
         return $this->password;
     }
     /**
-     * 
+     *
      *
      * @param string|null $password
      *
@@ -81,7 +81,7 @@ class AuthConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -90,7 +90,7 @@ class AuthConfig extends \ArrayObject
         return $this->email;
     }
     /**
-     * 
+     *
      *
      * @param string|null $email
      *
@@ -103,7 +103,7 @@ class AuthConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -112,7 +112,7 @@ class AuthConfig extends \ArrayObject
         return $this->serveraddress;
     }
     /**
-     * 
+     *
      *
      * @param string|null $serveraddress
      *

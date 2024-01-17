@@ -7,7 +7,7 @@ class PluginDisable extends \Docker\API\Runtime\Client\BaseEndpoint implements \
     protected $name;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $name The name of the plugin. The `:latest` tag is optional, and is the default if omitted.
      * @param array $accept Accept content header application/json|text/plain

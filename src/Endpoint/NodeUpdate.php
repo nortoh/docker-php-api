@@ -7,10 +7,10 @@ class NodeUpdate extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id The ID of the node
-     * @param null|\Docker\API\Model\NodeSpec $requestBody 
+     * @param null|\Docker\API\Model\NodeSpec $requestBody
      * @param array $queryParameters {
      *     @var int $version The version number of the node object being updated. This is required to avoid conflicting writes.
      * }

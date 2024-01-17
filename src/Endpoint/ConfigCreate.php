@@ -5,9 +5,9 @@ namespace Docker\API\Endpoint;
 class ConfigCreate extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\ConfigsCreatePostBody $requestBody 
+     *
+     * @param null|\Docker\API\Model\ConfigsCreatePostBody $requestBody
      */
     public function __construct(?\Docker\API\Model\ConfigsCreatePostBody $requestBody = null)
     {

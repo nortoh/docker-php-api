@@ -226,7 +226,7 @@ class Task extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?\ArrayObject
+    public function getLabels() : ?iterable
     {
         return $this->labels;
     }
@@ -237,7 +237,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?\ArrayObject $labels) : self
+    public function setLabels(?iterable $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;

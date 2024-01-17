@@ -6,11 +6,11 @@ class ImageLoad extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
 {
     /**
     * Load a set of images and tags into a repository.
-    
+
     For details on the format, see [the export image endpoint](#operation/ImageGet).
-    
+
     *
-    * @param null|string|resource|\Psr\Http\Message\StreamInterface $requestBody 
+    * @param null|string|resource|\Psr\Http\Message\StreamInterface $requestBody
     * @param array $queryParameters {
     *     @var bool $quiet Suppress progress details during load.
     * }

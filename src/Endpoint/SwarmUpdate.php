@@ -6,9 +6,9 @@ class SwarmUpdate extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
 {
     protected $accept;
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\SwarmSpec $requestBody 
+     *
+     * @param null|\Docker\API\Model\SwarmSpec $requestBody
      * @param array $queryParameters {
      *     @var int $version The version number of the swarm object being updated. This is required to avoid conflicting writes.
      *     @var bool $rotateWorkerToken Rotate the worker join token.

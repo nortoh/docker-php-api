@@ -6,18 +6,18 @@ class NodeList extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docke
 {
     protected $accept;
     /**
-    * 
+    *
     *
     * @param array $queryParameters {
     *     @var string $filters Filters to process on the nodes list, encoded as JSON (a `map[string][]string`).
-    
+
     Available filters:
     - `id=<node id>`
     - `label=<engine label>`
     - `membership=`(`accepted`|`pending`)`
     - `name=<node name>`
     - `role=`(`manager`|`worker`)`
-    
+
     * }
     * @param array $accept Accept content header application/json|text/plain
     */

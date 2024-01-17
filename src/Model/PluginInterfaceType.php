@@ -13,25 +13,25 @@ class PluginInterfaceType extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $prefix;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $capability;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $version;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class PluginInterfaceType extends \ArrayObject
         return $this->prefix;
     }
     /**
-     * 
+     *
      *
      * @param string|null $prefix
      *
@@ -53,7 +53,7 @@ class PluginInterfaceType extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class PluginInterfaceType extends \ArrayObject
         return $this->capability;
     }
     /**
-     * 
+     *
      *
      * @param string|null $capability
      *
@@ -75,7 +75,7 @@ class PluginInterfaceType extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -84,7 +84,7 @@ class PluginInterfaceType extends \ArrayObject
         return $this->version;
     }
     /**
-     * 
+     *
      *
      * @param string|null $version
      *

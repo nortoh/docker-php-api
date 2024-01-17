@@ -7,7 +7,7 @@ class NodeInspect extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
     protected $id;
     protected $accept;
     /**
-     * 
+     *
      *
      * @param string $id The ID or name of the node
      * @param array $accept Accept content header application/json|text/plain

@@ -6,9 +6,9 @@ class SwarmInit extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
 {
     protected $accept;
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\SwarmInitPostBody $requestBody 
+     *
+     * @param null|\Docker\API\Model\SwarmInitPostBody $requestBody
      * @param array $accept Accept content header application/json|text/plain
      */
     public function __construct(?\Docker\API\Model\SwarmInitPostBody $requestBody = null, array $accept = array())

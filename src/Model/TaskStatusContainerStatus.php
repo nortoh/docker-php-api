@@ -13,25 +13,25 @@ class TaskStatusContainerStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $containerID;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $pID;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $exitCode;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -40,7 +40,7 @@ class TaskStatusContainerStatus extends \ArrayObject
         return $this->containerID;
     }
     /**
-     * 
+     *
      *
      * @param string|null $containerID
      *
@@ -53,7 +53,7 @@ class TaskStatusContainerStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -62,7 +62,7 @@ class TaskStatusContainerStatus extends \ArrayObject
         return $this->pID;
     }
     /**
-     * 
+     *
      *
      * @param int|null $pID
      *
@@ -75,7 +75,7 @@ class TaskStatusContainerStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -84,7 +84,7 @@ class TaskStatusContainerStatus extends \ArrayObject
         return $this->exitCode;
     }
     /**
-     * 
+     *
      *
      * @param int|null $exitCode
      *

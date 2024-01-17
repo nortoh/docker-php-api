@@ -170,18 +170,18 @@ class HostConfig extends \ArrayObject
     protected $ulimits;
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @var int|null
     */
     protected $cpuCount;
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @var int|null
     */
@@ -200,12 +200,12 @@ class HostConfig extends \ArrayObject
     protected $iOMaximumBandwidth;
     /**
     * A list of volume bindings for this container. Each volume binding is a string in one of these forms:
-    
+
     - `host-src:container-dest` to bind-mount a host path into the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `host-src:container-dest:ro` to make the bind mount read-only inside the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest` to bind-mount a volume managed by a volume driver into the container. `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest:ro` to mount the volume read-only inside the container.  `container-dest` must be an _absolute_ path.
-    
+
     *
     * @var string[]|null
     */
@@ -232,19 +232,19 @@ class HostConfig extends \ArrayObject
     * PortMap describes the mapping of container ports to host ports, using the
     container's port-number and protocol as key in the format `<port>/<protocol>`,
     for example, `80/udp`.
-    
+
     If a container's port is mapped for both `tcp` and `udp`, two separate
     entries are added to the mapping table.
-    
+
     *
     * @var array<string, PortBinding[]>|null
     */
     protected $portBindings;
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-    
+
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-    
+
     *
     * @var RestartPolicy|null
     */
@@ -317,16 +317,16 @@ class HostConfig extends \ArrayObject
     protected $groupAdd;
     /**
     * IPC sharing mode for the container. Possible values are:
-    
+
     - `"none"`: own private IPC namespace, with /dev/shm not mounted
     - `"private"`: own private IPC namespace
     - `"shareable"`: own private IPC namespace, with a possibility to share it with other containers
     - `"container:<name|id>"`: join another (shareable) container's IPC namespace
     - `"host"`: use the host system's IPC namespace
-    
+
     If not specified, daemon default is used, which can either be `"private"`
     or `"shareable"`, depending on daemon version and configuration.
-    
+
     *
     * @var string|null
     */
@@ -351,10 +351,10 @@ class HostConfig extends \ArrayObject
     protected $oomScoreAdj;
     /**
     * Set the PID (Process) Namespace mode for the container. It can be either:
-    
+
     - `"container:<name|id>"`: joins another container's PID namespace
     - `"host"`: use the host's PID namespace inside the container
-    
+
     *
     * @var string|null
     */
@@ -368,13 +368,13 @@ class HostConfig extends \ArrayObject
     /**
     * Allocates an ephemeral host port for all of a container's
     exposed ports.
-    
+
     Ports are de-allocated when the container stops and allocated when the container starts.
     The allocated port might be changed when restarting the container.
-    
+
     The port is selected from the ephemeral port range that depends on the kernel.
     For example, on Linux the range is defined by `/proc/sys/net/ipv4/ip_local_port_range`.
-    
+
     *
     * @var bool|null
     */
@@ -1019,9 +1019,9 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @return int|null
     */
@@ -1031,9 +1031,9 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The number of usable CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @param int|null $cpuCount
     *
@@ -1047,9 +1047,9 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @return int|null
     */
@@ -1059,9 +1059,9 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-    
+
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-    
+
     *
     * @param int|null $cpuPercent
     *
@@ -1119,12 +1119,12 @@ class HostConfig extends \ArrayObject
     }
     /**
     * A list of volume bindings for this container. Each volume binding is a string in one of these forms:
-    
+
     - `host-src:container-dest` to bind-mount a host path into the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `host-src:container-dest:ro` to make the bind mount read-only inside the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest` to bind-mount a volume managed by a volume driver into the container. `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest:ro` to mount the volume read-only inside the container.  `container-dest` must be an _absolute_ path.
-    
+
     *
     * @return string[]|null
     */
@@ -1134,12 +1134,12 @@ class HostConfig extends \ArrayObject
     }
     /**
     * A list of volume bindings for this container. Each volume binding is a string in one of these forms:
-    
+
     - `host-src:container-dest` to bind-mount a host path into the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `host-src:container-dest:ro` to make the bind mount read-only inside the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest` to bind-mount a volume managed by a volume driver into the container. `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest:ro` to mount the volume read-only inside the container.  `container-dest` must be an _absolute_ path.
-    
+
     *
     * @param string[]|null $binds
     *
@@ -1221,10 +1221,10 @@ class HostConfig extends \ArrayObject
     * PortMap describes the mapping of container ports to host ports, using the
     container's port-number and protocol as key in the format `<port>/<protocol>`,
     for example, `80/udp`.
-    
+
     If a container's port is mapped for both `tcp` and `udp`, two separate
     entries are added to the mapping table.
-    
+
     *
     * @return array<string, PortBinding[]>|null
     */
@@ -1236,10 +1236,10 @@ class HostConfig extends \ArrayObject
     * PortMap describes the mapping of container ports to host ports, using the
     container's port-number and protocol as key in the format `<port>/<protocol>`,
     for example, `80/udp`.
-    
+
     If a container's port is mapped for both `tcp` and `udp`, two separate
     entries are added to the mapping table.
-    
+
     *
     * @param array<string, PortBinding[]>|null $portBindings
     *
@@ -1253,9 +1253,9 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-    
+
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-    
+
     *
     * @return RestartPolicy|null
     */
@@ -1265,9 +1265,9 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-    
+
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-    
+
     *
     * @param RestartPolicy|null $restartPolicy
     *
@@ -1523,16 +1523,16 @@ class HostConfig extends \ArrayObject
     }
     /**
     * IPC sharing mode for the container. Possible values are:
-    
+
     - `"none"`: own private IPC namespace, with /dev/shm not mounted
     - `"private"`: own private IPC namespace
     - `"shareable"`: own private IPC namespace, with a possibility to share it with other containers
     - `"container:<name|id>"`: join another (shareable) container's IPC namespace
     - `"host"`: use the host system's IPC namespace
-    
+
     If not specified, daemon default is used, which can either be `"private"`
     or `"shareable"`, depending on daemon version and configuration.
-    
+
     *
     * @return string|null
     */
@@ -1542,16 +1542,16 @@ class HostConfig extends \ArrayObject
     }
     /**
     * IPC sharing mode for the container. Possible values are:
-    
+
     - `"none"`: own private IPC namespace, with /dev/shm not mounted
     - `"private"`: own private IPC namespace
     - `"shareable"`: own private IPC namespace, with a possibility to share it with other containers
     - `"container:<name|id>"`: join another (shareable) container's IPC namespace
     - `"host"`: use the host system's IPC namespace
-    
+
     If not specified, daemon default is used, which can either be `"private"`
     or `"shareable"`, depending on daemon version and configuration.
-    
+
     *
     * @param string|null $ipcMode
     *
@@ -1631,10 +1631,10 @@ class HostConfig extends \ArrayObject
     }
     /**
     * Set the PID (Process) Namespace mode for the container. It can be either:
-    
+
     - `"container:<name|id>"`: joins another container's PID namespace
     - `"host"`: use the host's PID namespace inside the container
-    
+
     *
     * @return string|null
     */
@@ -1644,10 +1644,10 @@ class HostConfig extends \ArrayObject
     }
     /**
     * Set the PID (Process) Namespace mode for the container. It can be either:
-    
+
     - `"container:<name|id>"`: joins another container's PID namespace
     - `"host"`: use the host's PID namespace inside the container
-    
+
     *
     * @param string|null $pidMode
     *
@@ -1684,13 +1684,13 @@ class HostConfig extends \ArrayObject
     /**
     * Allocates an ephemeral host port for all of a container's
     exposed ports.
-    
+
     Ports are de-allocated when the container stops and allocated when the container starts.
     The allocated port might be changed when restarting the container.
-    
+
     The port is selected from the ephemeral port range that depends on the kernel.
     For example, on Linux the range is defined by `/proc/sys/net/ipv4/ip_local_port_range`.
-    
+
     *
     * @return bool|null
     */
@@ -1701,13 +1701,13 @@ class HostConfig extends \ArrayObject
     /**
     * Allocates an ephemeral host port for all of a container's
     exposed ports.
-    
+
     Ports are de-allocated when the container stops and allocated when the container starts.
     The allocated port might be changed when restarting the container.
-    
+
     The port is selected from the ephemeral port range that depends on the kernel.
     For example, on Linux the range is defined by `/proc/sys/net/ipv4/ip_local_port_range`.
-    
+
     *
     * @param bool|null $publishAllPorts
     *

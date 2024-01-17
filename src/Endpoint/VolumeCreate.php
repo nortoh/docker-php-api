@@ -5,9 +5,9 @@ namespace Docker\API\Endpoint;
 class VolumeCreate extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\VolumesCreatePostBody $requestBody 
+     *
+     * @param null|\Docker\API\Model\VolumesCreatePostBody $requestBody
      */
     public function __construct(?\Docker\API\Model\VolumesCreatePostBody $requestBody = null)
     {

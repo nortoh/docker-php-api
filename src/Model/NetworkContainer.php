@@ -13,37 +13,37 @@ class NetworkContainer extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $name;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $endpointID;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $macAddress;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $iPv4Address;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $iPv6Address;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -52,7 +52,7 @@ class NetworkContainer extends \ArrayObject
         return $this->name;
     }
     /**
-     * 
+     *
      *
      * @param string|null $name
      *
@@ -65,7 +65,7 @@ class NetworkContainer extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -74,7 +74,7 @@ class NetworkContainer extends \ArrayObject
         return $this->endpointID;
     }
     /**
-     * 
+     *
      *
      * @param string|null $endpointID
      *
@@ -87,7 +87,7 @@ class NetworkContainer extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -96,7 +96,7 @@ class NetworkContainer extends \ArrayObject
         return $this->macAddress;
     }
     /**
-     * 
+     *
      *
      * @param string|null $macAddress
      *
@@ -109,7 +109,7 @@ class NetworkContainer extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -118,7 +118,7 @@ class NetworkContainer extends \ArrayObject
         return $this->iPv4Address;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iPv4Address
      *
@@ -131,7 +131,7 @@ class NetworkContainer extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -140,7 +140,7 @@ class NetworkContainer extends \ArrayObject
         return $this->iPv6Address;
     }
     /**
-     * 
+     *
      *
      * @param string|null $iPv6Address
      *

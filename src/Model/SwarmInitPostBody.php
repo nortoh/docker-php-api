@@ -28,11 +28,11 @@ class SwarmInitPostBody extends \ArrayObject
     * Address or interface to use for data path traffic (format: `<ip|interface>`), for example,  `192.168.1.1`,
     or an interface, like `eth0`. If `DataPathAddr` is unspecified, the same address as `AdvertiseAddr`
     is used.
-    
+
     The `DataPathAddr` specifies the address that global scope network drivers will publish towards other
     nodes in order to reach the containers running on this node. Using this parameter it is possible to
     separate the container data traffic from the management traffic of the cluster.
-    
+
     *
     * @var string|null
     */
@@ -97,11 +97,11 @@ class SwarmInitPostBody extends \ArrayObject
     * Address or interface to use for data path traffic (format: `<ip|interface>`), for example,  `192.168.1.1`,
     or an interface, like `eth0`. If `DataPathAddr` is unspecified, the same address as `AdvertiseAddr`
     is used.
-    
+
     The `DataPathAddr` specifies the address that global scope network drivers will publish towards other
     nodes in order to reach the containers running on this node. Using this parameter it is possible to
     separate the container data traffic from the management traffic of the cluster.
-    
+
     *
     * @return string|null
     */
@@ -113,11 +113,11 @@ class SwarmInitPostBody extends \ArrayObject
     * Address or interface to use for data path traffic (format: `<ip|interface>`), for example,  `192.168.1.1`,
     or an interface, like `eth0`. If `DataPathAddr` is unspecified, the same address as `AdvertiseAddr`
     is used.
-    
+
     The `DataPathAddr` specifies the address that global scope network drivers will publish towards other
     nodes in order to reach the containers running on this node. Using this parameter it is possible to
     separate the container data traffic from the management traffic of the cluster.
-    
+
     *
     * @param string|null $dataPathAddr
     *

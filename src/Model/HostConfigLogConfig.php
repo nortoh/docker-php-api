@@ -13,19 +13,19 @@ class HostConfigLogConfig extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $type;
     /**
-     * 
+     *
      *
      * @var array<string, string>|null
      */
     protected $config;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -34,7 +34,7 @@ class HostConfigLogConfig extends \ArrayObject
         return $this->type;
     }
     /**
-     * 
+     *
      *
      * @param string|null $type
      *
@@ -47,7 +47,7 @@ class HostConfigLogConfig extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return array<string, string>|null
      */
@@ -56,7 +56,7 @@ class HostConfigLogConfig extends \ArrayObject
         return $this->config;
     }
     /**
-     * 
+     *
      *
      * @param array<string, string>|null $config
      *

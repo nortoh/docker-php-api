@@ -27,7 +27,7 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
     /**
     * ConfigName is the name of the config that this references, but this is just provided for
     lookup/display purposes. The config in the reference will be identified by its ID.
-    
+
     *
     * @var string|null
     */
@@ -79,7 +79,7 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
     /**
     * ConfigName is the name of the config that this references, but this is just provided for
     lookup/display purposes. The config in the reference will be identified by its ID.
-    
+
     *
     * @return string|null
     */
@@ -90,7 +90,7 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
     /**
     * ConfigName is the name of the config that this references, but this is just provided for
     lookup/display purposes. The config in the reference will be identified by its ID.
-    
+
     *
     * @param string|null $configName
     *

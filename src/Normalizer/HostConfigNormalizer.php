@@ -628,35 +628,35 @@ class HostConfigNormalizer implements DenormalizerInterface, NormalizerInterface
         if ($object->isInitialized('blkioWeightDevice') && null !== $object->getBlkioWeightDevice()) {
             $values = array();
             foreach ($object->getBlkioWeightDevice() as $value) {
-                $values[] = $this->normalizer->normalize($value, 'json', $context);
+                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioWeightDevice'] = $values;
         }
         if ($object->isInitialized('blkioDeviceReadBps') && null !== $object->getBlkioDeviceReadBps()) {
             $values_1 = array();
             foreach ($object->getBlkioDeviceReadBps() as $value_1) {
-                $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+                $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioDeviceReadBps'] = $values_1;
         }
         if ($object->isInitialized('blkioDeviceWriteBps') && null !== $object->getBlkioDeviceWriteBps()) {
             $values_2 = array();
             foreach ($object->getBlkioDeviceWriteBps() as $value_2) {
-                $values_2[] = $this->normalizer->normalize($value_2, 'json', $context);
+                $values_2[] = $value_2 == null ? null : new \ArrayObject($this->normalizer->normalize($value_2, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioDeviceWriteBps'] = $values_2;
         }
         if ($object->isInitialized('blkioDeviceReadIOps') && null !== $object->getBlkioDeviceReadIOps()) {
             $values_3 = array();
             foreach ($object->getBlkioDeviceReadIOps() as $value_3) {
-                $values_3[] = $this->normalizer->normalize($value_3, 'json', $context);
+                $values_3[] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioDeviceReadIOps'] = $values_3;
         }
         if ($object->isInitialized('blkioDeviceWriteIOps') && null !== $object->getBlkioDeviceWriteIOps()) {
             $values_4 = array();
             foreach ($object->getBlkioDeviceWriteIOps() as $value_4) {
-                $values_4[] = $this->normalizer->normalize($value_4, 'json', $context);
+                $values_4[] = $value_4 == null ? null : new \ArrayObject($this->normalizer->normalize($value_4, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['BlkioDeviceWriteIOps'] = $values_4;
         }
@@ -681,7 +681,7 @@ class HostConfigNormalizer implements DenormalizerInterface, NormalizerInterface
         if ($object->isInitialized('devices') && null !== $object->getDevices()) {
             $values_5 = array();
             foreach ($object->getDevices() as $value_5) {
-                $values_5[] = $this->normalizer->normalize($value_5, 'json', $context);
+                $values_5[] = $value_5 == null ? null : new \ArrayObject($this->normalizer->normalize($value_5, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Devices'] = $values_5;
         }
@@ -719,7 +719,7 @@ class HostConfigNormalizer implements DenormalizerInterface, NormalizerInterface
         if ($object->isInitialized('ulimits') && null !== $object->getUlimits()) {
             $values_7 = array();
             foreach ($object->getUlimits() as $value_7) {
-                $values_7[] = $this->normalizer->normalize($value_7, 'json', $context);
+                $values_7[] = $value_7 == null ? null : new \ArrayObject($this->normalizer->normalize($value_7, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Ulimits'] = $values_7;
         }
@@ -746,24 +746,24 @@ class HostConfigNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['ContainerIDFile'] = $object->getContainerIDFile();
         }
         if ($object->isInitialized('logConfig') && null !== $object->getLogConfig()) {
-            $data['LogConfig'] = $this->normalizer->normalize($object->getLogConfig(), 'json', $context);
+            $data['LogConfig'] = $object->getLogConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getLogConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('networkMode') && null !== $object->getNetworkMode()) {
             $data['NetworkMode'] = $object->getNetworkMode();
         }
         if ($object->isInitialized('portBindings') && null !== $object->getPortBindings()) {
-            $values_9 = array();
+            $values_9 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getPortBindings() as $key => $value_9) {
                 $values_10 = array();
                 foreach ($value_9 as $value_10) {
-                    $values_10[] = $this->normalizer->normalize($value_10, 'json', $context);
+                    $values_10[] = $value_10 == null ? null : new \ArrayObject($this->normalizer->normalize($value_10, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
                 }
                 $values_9[$key] = $values_10;
             }
             $data['PortBindings'] = $values_9;
         }
         if ($object->isInitialized('restartPolicy') && null !== $object->getRestartPolicy()) {
-            $data['RestartPolicy'] = $this->normalizer->normalize($object->getRestartPolicy(), 'json', $context);
+            $data['RestartPolicy'] = $object->getRestartPolicy() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getRestartPolicy(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('autoRemove') && null !== $object->getAutoRemove()) {
             $data['AutoRemove'] = $object->getAutoRemove();
@@ -781,7 +781,7 @@ class HostConfigNormalizer implements DenormalizerInterface, NormalizerInterface
         if ($object->isInitialized('mounts') && null !== $object->getMounts()) {
             $values_12 = array();
             foreach ($object->getMounts() as $value_12) {
-                $values_12[] = $this->normalizer->normalize($value_12, 'json', $context);
+                $values_12[] = $value_12 == null ? null : new \ArrayObject($this->normalizer->normalize($value_12, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Mounts'] = $values_12;
         }
@@ -870,14 +870,14 @@ class HostConfigNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['SecurityOpt'] = $values_21;
         }
         if ($object->isInitialized('storageOpt') && null !== $object->getStorageOpt()) {
-            $values_22 = array();
+            $values_22 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getStorageOpt() as $key_1 => $value_22) {
                 $values_22[$key_1] = $value_22;
             }
             $data['StorageOpt'] = $values_22;
         }
         if ($object->isInitialized('tmpfs') && null !== $object->getTmpfs()) {
-            $values_23 = array();
+            $values_23 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getTmpfs() as $key_2 => $value_23) {
                 $values_23[$key_2] = $value_23;
             }
@@ -893,7 +893,7 @@ class HostConfigNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['ShmSize'] = $object->getShmSize();
         }
         if ($object->isInitialized('sysctls') && null !== $object->getSysctls()) {
-            $values_24 = array();
+            $values_24 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getSysctls() as $key_3 => $value_24) {
                 $values_24[$key_3] = $value_24;
             }

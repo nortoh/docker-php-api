@@ -13,19 +13,19 @@ class PluginConfigUser extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $uID;
     /**
-     * 
+     *
      *
      * @var int|null
      */
     protected $gID;
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -34,7 +34,7 @@ class PluginConfigUser extends \ArrayObject
         return $this->uID;
     }
     /**
-     * 
+     *
      *
      * @param int|null $uID
      *
@@ -47,7 +47,7 @@ class PluginConfigUser extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return int|null
      */
@@ -56,7 +56,7 @@ class PluginConfigUser extends \ArrayObject
         return $this->gID;
     }
     /**
-     * 
+     *
      *
      * @param int|null $gID
      *

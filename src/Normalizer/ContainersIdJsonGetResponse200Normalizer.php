@@ -254,7 +254,7 @@ class ContainersIdJsonGetResponse200Normalizer implements DenormalizerInterface,
             $data['Args'] = $values;
         }
         if ($object->isInitialized('state') && null !== $object->getState()) {
-            $data['State'] = $this->normalizer->normalize($object->getState(), 'json', $context);
+            $data['State'] = $object->getState() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getState(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('image') && null !== $object->getImage()) {
             $data['Image'] = $object->getImage();
@@ -272,7 +272,7 @@ class ContainersIdJsonGetResponse200Normalizer implements DenormalizerInterface,
             $data['LogPath'] = $object->getLogPath();
         }
         if ($object->isInitialized('node') && null !== $object->getNode()) {
-            $data['Node'] = $this->normalizer->normalize($object->getNode(), 'json', $context);
+            $data['Node'] = $object->getNode() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getNode(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
@@ -296,10 +296,10 @@ class ContainersIdJsonGetResponse200Normalizer implements DenormalizerInterface,
             $data['ExecIDs'] = $object->getExecIDs();
         }
         if ($object->isInitialized('hostConfig') && null !== $object->getHostConfig()) {
-            $data['HostConfig'] = $this->normalizer->normalize($object->getHostConfig(), 'json', $context);
+            $data['HostConfig'] = $object->getHostConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getHostConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('graphDriver') && null !== $object->getGraphDriver()) {
-            $data['GraphDriver'] = $this->normalizer->normalize($object->getGraphDriver(), 'json', $context);
+            $data['GraphDriver'] = $object->getGraphDriver() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getGraphDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('sizeRw') && null !== $object->getSizeRw()) {
             $data['SizeRw'] = $object->getSizeRw();
@@ -310,15 +310,15 @@ class ContainersIdJsonGetResponse200Normalizer implements DenormalizerInterface,
         if ($object->isInitialized('mounts') && null !== $object->getMounts()) {
             $values_1 = array();
             foreach ($object->getMounts() as $value_1) {
-                $values_1[] = $this->normalizer->normalize($value_1, 'json', $context);
+                $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Mounts'] = $values_1;
         }
         if ($object->isInitialized('config') && null !== $object->getConfig()) {
-            $data['Config'] = $this->normalizer->normalize($object->getConfig(), 'json', $context);
+            $data['Config'] = $object->getConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('networkSettings') && null !== $object->getNetworkSettings()) {
-            $data['NetworkSettings'] = $this->normalizer->normalize($object->getNetworkSettings(), 'json', $context);
+            $data['NetworkSettings'] = $object->getNetworkSettings() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getNetworkSettings(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value_2) {
             if (preg_match('/.*/', (string) $key)) {

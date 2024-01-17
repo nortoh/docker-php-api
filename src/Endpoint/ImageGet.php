@@ -7,21 +7,21 @@ class ImageGet extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docke
     protected $name;
     /**
     * Get a tarball containing all images and metadata for a repository.
-    
+
     If `name` is a specific name and tag (e.g. `ubuntu:latest`), then only that image (and its parents) are returned. If `name` is an image ID, similarly only that image (and its parents) are returned, but with the exclusion of the `repositories` file in the tarball, as there were no image names referenced.
-    
+
     ### Image tarball format
-    
+
     An image tarball contains one directory per image layer (named using its long ID), each containing these files:
-    
+
     - `VERSION`: currently `1.0` - the file format version
     - `json`: detailed layer information, similar to `docker inspect layer_id`
     - `layer.tar`: A tarfile containing the filesystem changes in this layer
-    
+
     The `layer.tar` file contains `aufs` style `.wh..wh.aufs` files and directories for storing attribute changes and deletions.
-    
+
     If the tarball defines a repository, the tarball should also include a `repositories` file at the root that contains a list of repository and tag names mapped to layer IDs.
-    
+
     ```json
     {
      "hello-world": {
@@ -29,7 +29,7 @@ class ImageGet extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docke
      }
     }
     ```
-    
+
     *
     * @param string $name Image name or ID
     */

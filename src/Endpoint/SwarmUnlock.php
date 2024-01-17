@@ -5,9 +5,9 @@ namespace Docker\API\Endpoint;
 class SwarmUnlock extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\SwarmUnlockPostBody $requestBody 
+     *
+     * @param null|\Docker\API\Model\SwarmUnlockPostBody $requestBody
      */
     public function __construct(?\Docker\API\Model\SwarmUnlockPostBody $requestBody = null)
     {

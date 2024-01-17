@@ -90,7 +90,7 @@ class SecretSpecNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['Name'] = $object->getName();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values = array();
+            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getLabels() as $key => $value) {
                 $values[$key] = $value;
             }
@@ -100,7 +100,7 @@ class SecretSpecNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['Data'] = $object->getData();
         }
         if ($object->isInitialized('driver') && null !== $object->getDriver()) {
-            $data['Driver'] = $this->normalizer->normalize($object->getDriver(), 'json', $context);
+            $data['Driver'] = $object->getDriver() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key_1 => $value_1) {
             if (preg_match('/.*/', (string) $key_1)) {

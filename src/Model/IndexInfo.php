@@ -27,17 +27,17 @@ class IndexInfo extends \ArrayObject
     /**
     * Indicates if the the registry is part of the list of insecure
     registries.
-    
+
     If `false`, the registry is insecure. Insecure registries accept
     un-encrypted (HTTP) and/or untrusted (HTTPS with certificates from
     unknown CAs) communication.
-    
+
     > **Warning**: Insecure registries can be useful when running a local
     > registry. However, because its use creates security vulnerabilities
     > it should ONLY be enabled for testing purposes. For increased
     > security, users should add their CA to their system's list of
     > trusted CAs instead of enabling this option.
-    
+
     *
     * @var bool|null
     */
@@ -95,17 +95,17 @@ class IndexInfo extends \ArrayObject
     /**
     * Indicates if the the registry is part of the list of insecure
     registries.
-    
+
     If `false`, the registry is insecure. Insecure registries accept
     un-encrypted (HTTP) and/or untrusted (HTTPS with certificates from
     unknown CAs) communication.
-    
+
     > **Warning**: Insecure registries can be useful when running a local
     > registry. However, because its use creates security vulnerabilities
     > it should ONLY be enabled for testing purposes. For increased
     > security, users should add their CA to their system's list of
     > trusted CAs instead of enabling this option.
-    
+
     *
     * @return bool|null
     */
@@ -116,17 +116,17 @@ class IndexInfo extends \ArrayObject
     /**
     * Indicates if the the registry is part of the list of insecure
     registries.
-    
+
     If `false`, the registry is insecure. Insecure registries accept
     un-encrypted (HTTP) and/or untrusted (HTTPS with certificates from
     unknown CAs) communication.
-    
+
     > **Warning**: Insecure registries can be useful when running a local
     > registry. However, because its use creates security vulnerabilities
     > it should ONLY be enabled for testing purposes. For increased
     > security, users should add their CA to their system's list of
     > trusted CAs instead of enabling this option.
-    
+
     *
     * @param bool|null $secure
     *

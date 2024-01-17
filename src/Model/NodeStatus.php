@@ -19,7 +19,7 @@ class NodeStatus extends \ArrayObject
      */
     protected $state;
     /**
-     * 
+     *
      *
      * @var string|null
      */
@@ -53,7 +53,7 @@ class NodeStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -62,7 +62,7 @@ class NodeStatus extends \ArrayObject
         return $this->message;
     }
     /**
-     * 
+     *
      *
      * @param string|null $message
      *

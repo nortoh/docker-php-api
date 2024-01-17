@@ -13,37 +13,37 @@ class TaskStatus extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $timestamp;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $state;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $message;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $err;
     /**
-     * 
+     *
      *
      * @var TaskStatusContainerStatus|null
      */
     protected $containerStatus;
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -52,7 +52,7 @@ class TaskStatus extends \ArrayObject
         return $this->timestamp;
     }
     /**
-     * 
+     *
      *
      * @param string|null $timestamp
      *
@@ -65,7 +65,7 @@ class TaskStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -74,7 +74,7 @@ class TaskStatus extends \ArrayObject
         return $this->state;
     }
     /**
-     * 
+     *
      *
      * @param string|null $state
      *
@@ -87,7 +87,7 @@ class TaskStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -96,7 +96,7 @@ class TaskStatus extends \ArrayObject
         return $this->message;
     }
     /**
-     * 
+     *
      *
      * @param string|null $message
      *
@@ -109,7 +109,7 @@ class TaskStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -118,7 +118,7 @@ class TaskStatus extends \ArrayObject
         return $this->err;
     }
     /**
-     * 
+     *
      *
      * @param string|null $err
      *
@@ -131,7 +131,7 @@ class TaskStatus extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return TaskStatusContainerStatus|null
      */
@@ -140,7 +140,7 @@ class TaskStatus extends \ArrayObject
         return $this->containerStatus;
     }
     /**
-     * 
+     *
      *
      * @param TaskStatusContainerStatus|null $containerStatus
      *

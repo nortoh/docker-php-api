@@ -73,7 +73,7 @@ class GraphDriverDataNormalizer implements DenormalizerInterface, NormalizerInte
     {
         $data = array();
         $data['Name'] = $object->getName();
-        $values = array();
+        $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
         foreach ($object->getData() as $key => $value) {
             $values[$key] = $value;
         }

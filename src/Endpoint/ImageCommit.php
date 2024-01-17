@@ -5,9 +5,9 @@ namespace Docker\API\Endpoint;
 class ImageCommit extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
-     * 
      *
-     * @param null|\Docker\API\Model\ContainerConfig $requestBody 
+     *
+     * @param null|\Docker\API\Model\ContainerConfig $requestBody
      * @param array $queryParameters {
      *     @var string $container The ID or name of the container to commit
      *     @var string $repo Repository name for the created image

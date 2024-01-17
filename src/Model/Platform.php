@@ -15,7 +15,7 @@ class Platform extends \ArrayObject
     /**
     * Architecture represents the hardware architecture (for example,
     `x86_64`).
-    
+
     *
     * @var string|null
     */
@@ -29,7 +29,7 @@ class Platform extends \ArrayObject
     /**
     * Architecture represents the hardware architecture (for example,
     `x86_64`).
-    
+
     *
     * @return string|null
     */
@@ -40,7 +40,7 @@ class Platform extends \ArrayObject
     /**
     * Architecture represents the hardware architecture (for example,
     `x86_64`).
-    
+
     *
     * @param string|null $architecture
     *

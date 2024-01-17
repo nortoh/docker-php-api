@@ -55,7 +55,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     *
     * @return array<string, string>|null
     */
-    public function getOptions() : ?\ArrayObject
+    public function getOptions() : ?iterable
     {
         return $this->options;
     }
@@ -68,7 +68,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     *
     * @return self
     */
-    public function setOptions(?\ArrayObject $options) : self
+    public function setOptions(?iterable $options) : self
     {
         $this->initialized['options'] = true;
         $this->options = $options;

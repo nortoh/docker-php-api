@@ -13,19 +13,19 @@ class PluginConfigInterface extends \ArrayObject
         return array_key_exists($property, $this->initialized);
     }
     /**
-     * 
+     *
      *
      * @var PluginInterfaceType[]|null
      */
     protected $types;
     /**
-     * 
+     *
      *
      * @var string|null
      */
     protected $socket;
     /**
-     * 
+     *
      *
      * @return PluginInterfaceType[]|null
      */
@@ -34,7 +34,7 @@ class PluginConfigInterface extends \ArrayObject
         return $this->types;
     }
     /**
-     * 
+     *
      *
      * @param PluginInterfaceType[]|null $types
      *
@@ -47,7 +47,7 @@ class PluginConfigInterface extends \ArrayObject
         return $this;
     }
     /**
-     * 
+     *
      *
      * @return string|null
      */
@@ -56,7 +56,7 @@ class PluginConfigInterface extends \ArrayObject
         return $this->socket;
     }
     /**
-     * 
+     *
      *
      * @param string|null $socket
      *

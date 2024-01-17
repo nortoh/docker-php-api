@@ -6,9 +6,9 @@ class PluginCreate extends \Docker\API\Runtime\Client\BaseEndpoint implements \D
 {
     protected $accept;
     /**
-     * 
      *
-     * @param null|string|resource|\Psr\Http\Message\StreamInterface $requestBody 
+     *
+     * @param null|string|resource|\Psr\Http\Message\StreamInterface $requestBody
      * @param array $queryParameters {
      *     @var string $name The name of the plugin. The `:latest` tag is optional, and is the default if omitted.
      * }
