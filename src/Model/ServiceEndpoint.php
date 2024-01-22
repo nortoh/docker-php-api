@@ -7,8 +7,8 @@ class ServiceEndpoint extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -19,13 +19,13 @@ class ServiceEndpoint extends \ArrayObject
      */
     protected $spec;
     /**
-     *
+     * 
      *
      * @var EndpointPortConfig[]|null
      */
     protected $ports;
     /**
-     *
+     * 
      *
      * @var ServiceEndpointVirtualIPsItem[]|null
      */
@@ -35,7 +35,7 @@ class ServiceEndpoint extends \ArrayObject
      *
      * @return EndpointSpec|null
      */
-    public function getSpec() : ?EndpointSpec
+    public function getSpec(): ?EndpointSpec
     {
         return $this->spec;
     }
@@ -46,51 +46,51 @@ class ServiceEndpoint extends \ArrayObject
      *
      * @return self
      */
-    public function setSpec(?EndpointSpec $spec) : self
+    public function setSpec(?EndpointSpec $spec): self
     {
         $this->initialized['spec'] = true;
         $this->spec = $spec;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return EndpointPortConfig[]|null
      */
-    public function getPorts() : ?array
+    public function getPorts(): ?array
     {
         return $this->ports;
     }
     /**
-     *
+     * 
      *
      * @param EndpointPortConfig[]|null $ports
      *
      * @return self
      */
-    public function setPorts(?array $ports) : self
+    public function setPorts(?array $ports): self
     {
         $this->initialized['ports'] = true;
         $this->ports = $ports;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return ServiceEndpointVirtualIPsItem[]|null
      */
-    public function getVirtualIPs() : ?array
+    public function getVirtualIPs(): ?array
     {
         return $this->virtualIPs;
     }
     /**
-     *
+     * 
      *
      * @param ServiceEndpointVirtualIPsItem[]|null $virtualIPs
      *
      * @return self
      */
-    public function setVirtualIPs(?array $virtualIPs) : self
+    public function setVirtualIPs(?array $virtualIPs): self
     {
         $this->initialized['virtualIPs'] = true;
         $this->virtualIPs = $virtualIPs;

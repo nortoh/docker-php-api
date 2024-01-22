@@ -7,8 +7,8 @@ class SecretSpec extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -27,10 +27,10 @@ class SecretSpec extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-
+    
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-
+    
     *
     * @var string|null
     */
@@ -46,7 +46,7 @@ class SecretSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -57,7 +57,7 @@ class SecretSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -68,7 +68,7 @@ class SecretSpec extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels(): ?iterable
     {
         return $this->labels;
     }
@@ -79,7 +79,7 @@ class SecretSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?iterable $labels): self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -88,30 +88,30 @@ class SecretSpec extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-
+    
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-
+    
     *
     * @return string|null
     */
-    public function getData() : ?string
+    public function getData(): ?string
     {
         return $this->data;
     }
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     data to store as secret.
-
+    
     This field is only used to _create_ a secret, and is not returned by
     other endpoints.
-
+    
     *
     * @param string|null $data
     *
     * @return self
     */
-    public function setData(?string $data) : self
+    public function setData(?string $data): self
     {
         $this->initialized['data'] = true;
         $this->data = $data;
@@ -122,7 +122,7 @@ class SecretSpec extends \ArrayObject
      *
      * @return Driver|null
      */
-    public function getDriver() : ?Driver
+    public function getDriver(): ?Driver
     {
         return $this->driver;
     }
@@ -133,7 +133,7 @@ class SecretSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setDriver(?Driver $driver) : self
+    public function setDriver(?Driver $driver): self
     {
         $this->initialized['driver'] = true;
         $this->driver = $driver;

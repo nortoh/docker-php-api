@@ -18,18 +18,18 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\EndpointIPAMConfig';
+        return $type === 'Docker\API\Model\EndpointIPAMConfig';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\EndpointIPAMConfig';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\EndpointIPAMConfig';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -56,7 +56,7 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
             $object->setIPv6Address(null);
         }
         if (\array_key_exists('LinkLocalIPs', $data) && $data['LinkLocalIPs'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['LinkLocalIPs'] as $value) {
                 $values[] = $value;
             }
@@ -76,9 +76,9 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('iPv4Address') && null !== $object->getIPv4Address()) {
             $data['IPv4Address'] = $object->getIPv4Address();
         }
@@ -86,7 +86,7 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
             $data['IPv6Address'] = $object->getIPv6Address();
         }
         if ($object->isInitialized('linkLocalIPs') && null !== $object->getLinkLocalIPs()) {
-            $values = array();
+            $values = [];
             foreach ($object->getLinkLocalIPs() as $value) {
                 $values[] = $value;
             }
@@ -99,8 +99,8 @@ class EndpointIPAMConfigNormalizer implements DenormalizerInterface, NormalizerI
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\EndpointIPAMConfig' => false);
+        return ['Docker\API\Model\EndpointIPAMConfig' => false];
     }
 }

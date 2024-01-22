@@ -18,18 +18,18 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\NetworkSettings';
+        return $type === 'Docker\API\Model\NetworkSettings';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\NetworkSettings';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\NetworkSettings';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -77,11 +77,11 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setLinkLocalIPv6PrefixLen(null);
         }
         if (\array_key_exists('Ports', $data) && $data['Ports'] !== null) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Ports'] as $key => $value) {
-                $values_1 = array();
+                $values_1 = [];
                 foreach ($value as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\PortBinding', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\API\Model\PortBinding', 'json', $context);
                 }
                 $values[$key] = $values_1;
             }
@@ -99,9 +99,9 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setSandboxKey(null);
         }
         if (\array_key_exists('SecondaryIPAddresses', $data) && $data['SecondaryIPAddresses'] !== null) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['SecondaryIPAddresses'] as $value_2) {
-                $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\Address', 'json', $context);
+                $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\API\Model\Address', 'json', $context);
             }
             $object->setSecondaryIPAddresses($values_2);
             unset($data['SecondaryIPAddresses']);
@@ -110,9 +110,9 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setSecondaryIPAddresses(null);
         }
         if (\array_key_exists('SecondaryIPv6Addresses', $data) && $data['SecondaryIPv6Addresses'] !== null) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($data['SecondaryIPv6Addresses'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\Address', 'json', $context);
+                $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\API\Model\Address', 'json', $context);
             }
             $object->setSecondaryIPv6Addresses($values_3);
             unset($data['SecondaryIPv6Addresses']);
@@ -177,9 +177,9 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setMacAddress(null);
         }
         if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
-            $values_4 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_4 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Networks'] as $key_1 => $value_4) {
-                $values_4[$key_1] = $this->denormalizer->denormalize($value_4, 'Docker\\API\\Model\\EndpointSettings', 'json', $context);
+                $values_4[$key_1] = $this->denormalizer->denormalize($value_4, 'Docker\API\Model\EndpointSettings', 'json', $context);
             }
             $object->setNetworks($values_4);
             unset($data['Networks']);
@@ -197,9 +197,9 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('bridge') && null !== $object->getBridge()) {
             $data['Bridge'] = $object->getBridge();
         }
@@ -216,11 +216,11 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
             $data['LinkLocalIPv6PrefixLen'] = $object->getLinkLocalIPv6PrefixLen();
         }
         if ($object->isInitialized('ports') && null !== $object->getPorts()) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getPorts() as $key => $value) {
-                $values_1 = array();
+                $values_1 = [];
                 foreach ($value as $value_1) {
-                    $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                    $values_1[] = ($value_1 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
                 }
                 $values[$key] = $values_1;
             }
@@ -230,16 +230,16 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
             $data['SandboxKey'] = $object->getSandboxKey();
         }
         if ($object->isInitialized('secondaryIPAddresses') && null !== $object->getSecondaryIPAddresses()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getSecondaryIPAddresses() as $value_2) {
-                $values_2[] = $value_2 == null ? null : new \ArrayObject($this->normalizer->normalize($value_2, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values_2[] = ($value_2 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_2, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['SecondaryIPAddresses'] = $values_2;
         }
         if ($object->isInitialized('secondaryIPv6Addresses') && null !== $object->getSecondaryIPv6Addresses()) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($object->getSecondaryIPv6Addresses() as $value_3) {
-                $values_3[] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values_3[] = ($value_3 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['SecondaryIPv6Addresses'] = $values_3;
         }
@@ -268,9 +268,9 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
             $data['MacAddress'] = $object->getMacAddress();
         }
         if ($object->isInitialized('networks') && null !== $object->getNetworks()) {
-            $values_4 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_4 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getNetworks() as $key_1 => $value_4) {
-                $values_4[$key_1] = $value_4 == null ? null : new \ArrayObject($this->normalizer->normalize($value_4, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values_4[$key_1] = ($value_4 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_4, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Networks'] = $values_4;
         }
@@ -281,8 +281,8 @@ class NetworkSettingsNormalizer implements DenormalizerInterface, NormalizerInte
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\NetworkSettings' => false);
+        return ['Docker\API\Model\NetworkSettings' => false];
     }
 }

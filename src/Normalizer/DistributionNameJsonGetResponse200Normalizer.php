@@ -18,18 +18,18 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\DistributionNameJsonGetResponse200';
+        return $type === 'Docker\API\Model\DistributionNameJsonGetResponse200';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\DistributionNameJsonGetResponse200';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\DistributionNameJsonGetResponse200';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,16 +42,16 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
             return $object;
         }
         if (\array_key_exists('Descriptor', $data) && $data['Descriptor'] !== null) {
-            $object->setDescriptor($this->denormalizer->denormalize($data['Descriptor'], 'Docker\\API\\Model\\DistributionNameJsonGetResponse200Descriptor', 'json', $context));
+            $object->setDescriptor($this->denormalizer->denormalize($data['Descriptor'], 'Docker\API\Model\DistributionNameJsonGetResponse200Descriptor', 'json', $context));
             unset($data['Descriptor']);
         }
         elseif (\array_key_exists('Descriptor', $data) && $data['Descriptor'] === null) {
             $object->setDescriptor(null);
         }
         if (\array_key_exists('Platforms', $data) && $data['Platforms'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Platforms'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem', 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, 'Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem', 'json', $context);
             }
             $object->setPlatforms($values);
             unset($data['Platforms']);
@@ -69,13 +69,13 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
-        $data['Descriptor'] = $object->getDescriptor() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getDescriptor(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
-        $values = array();
+        $data = [];
+        $data['Descriptor'] = ($object->getDescriptor() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getDescriptor(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        $values = [];
         foreach ($object->getPlatforms() as $value) {
-            $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $values[] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Platforms'] = $values;
         foreach ($object as $key => $value_1) {
@@ -85,8 +85,8 @@ class DistributionNameJsonGetResponse200Normalizer implements DenormalizerInterf
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\DistributionNameJsonGetResponse200' => false);
+        return ['Docker\API\Model\DistributionNameJsonGetResponse200' => false];
     }
 }

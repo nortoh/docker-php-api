@@ -18,18 +18,18 @@ class VersionGetResponse200ComponentsItemNormalizer implements DenormalizerInter
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem';
+        return $type === 'Docker\API\Model\VersionGetResponse200ComponentsItem';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\VersionGetResponse200ComponentsItem';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -56,7 +56,7 @@ class VersionGetResponse200ComponentsItemNormalizer implements DenormalizerInter
             $object->setVersion(null);
         }
         if (\array_key_exists('Details', $data) && $data['Details'] !== null) {
-            $object->setDetails($this->denormalizer->denormalize($data['Details'], 'Docker\\API\\Model\\VersionGetResponse200ComponentsItemDetails', 'json', $context));
+            $object->setDetails($this->denormalizer->denormalize($data['Details'], 'Docker\API\Model\VersionGetResponse200ComponentsItemDetails', 'json', $context));
             unset($data['Details']);
         }
         elseif (\array_key_exists('Details', $data) && $data['Details'] === null) {
@@ -72,13 +72,13 @@ class VersionGetResponse200ComponentsItemNormalizer implements DenormalizerInter
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         $data['Name'] = $object->getName();
         $data['Version'] = $object->getVersion();
         if ($object->isInitialized('details') && null !== $object->getDetails()) {
-            $data['Details'] = $object->getDetails() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getDetails(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Details'] = ($object->getDetails() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getDetails(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -87,8 +87,8 @@ class VersionGetResponse200ComponentsItemNormalizer implements DenormalizerInter
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\VersionGetResponse200ComponentsItem' => false);
+        return ['Docker\API\Model\VersionGetResponse200ComponentsItem' => false];
     }
 }

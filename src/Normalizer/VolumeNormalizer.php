@@ -18,18 +18,18 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\Volume';
+        return $type === 'Docker\API\Model\Volume';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Volume';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\Volume';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -70,9 +70,9 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $object->setCreatedAt(null);
         }
         if (\array_key_exists('Status', $data) && $data['Status'] !== null) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Status'] as $key => $value) {
-                $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\VolumeStatusItem', 'json', $context);
+                $values[$key] = $this->denormalizer->denormalize($value, 'Docker\API\Model\VolumeStatusItem', 'json', $context);
             }
             $object->setStatus($values);
             unset($data['Status']);
@@ -81,7 +81,7 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $object->setStatus(null);
         }
         if (\array_key_exists('Labels', $data) && $data['Labels'] !== null) {
-            $values_1 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_1 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Labels'] as $key_1 => $value_1) {
                 $values_1[$key_1] = $value_1;
             }
@@ -99,7 +99,7 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $object->setScope(null);
         }
         if (\array_key_exists('Options', $data) && $data['Options'] !== null) {
-            $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_2 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Options'] as $key_2 => $value_2) {
                 $values_2[$key_2] = $value_2;
             }
@@ -110,7 +110,7 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $object->setOptions(null);
         }
         if (\array_key_exists('UsageData', $data) && $data['UsageData'] !== null) {
-            $object->setUsageData($this->denormalizer->denormalize($data['UsageData'], 'Docker\\API\\Model\\VolumeUsageData', 'json', $context));
+            $object->setUsageData($this->denormalizer->denormalize($data['UsageData'], 'Docker\API\Model\VolumeUsageData', 'json', $context));
             unset($data['UsageData']);
         }
         elseif (\array_key_exists('UsageData', $data) && $data['UsageData'] === null) {
@@ -126,9 +126,9 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         $data['Name'] = $object->getName();
         $data['Driver'] = $object->getDriver();
         $data['Mountpoint'] = $object->getMountpoint();
@@ -136,25 +136,25 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $data['CreatedAt'] = $object->getCreatedAt();
         }
         if ($object->isInitialized('status') && null !== $object->getStatus()) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getStatus() as $key => $value) {
-                $values[$key] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values[$key] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Status'] = $values;
         }
-        $values_1 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+        $values_1 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
         foreach ($object->getLabels() as $key_1 => $value_1) {
             $values_1[$key_1] = $value_1;
         }
         $data['Labels'] = $values_1;
         $data['Scope'] = $object->getScope();
-        $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+        $values_2 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
         foreach ($object->getOptions() as $key_2 => $value_2) {
             $values_2[$key_2] = $value_2;
         }
         $data['Options'] = $values_2;
         if ($object->isInitialized('usageData') && null !== $object->getUsageData()) {
-            $data['UsageData'] = $object->getUsageData() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getUsageData(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['UsageData'] = ($object->getUsageData() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getUsageData(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key_3 => $value_3) {
             if (preg_match('/.*/', (string) $key_3)) {
@@ -163,8 +163,8 @@ class VolumeNormalizer implements DenormalizerInterface, NormalizerInterface, De
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\Volume' => false);
+        return ['Docker\API\Model\Volume' => false];
     }
 }

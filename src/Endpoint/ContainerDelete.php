@@ -7,7 +7,7 @@ class ContainerDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements
     protected $id;
     protected $accept;
     /**
-     *
+     * 
      *
      * @param string $id ID or name of the container
      * @param array $queryParameters {
@@ -17,41 +17,41 @@ class ContainerDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements
      * }
      * @param array $accept Accept content header application/json|text/plain
      */
-    public function __construct(string $id, array $queryParameters = array(), array $accept = array())
+    public function __construct(string $id, array $queryParameters = [], array $accept = [])
     {
         $this->id = $id;
         $this->queryParameters = $queryParameters;
         $this->accept = $accept;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'DELETE';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
-        return str_replace(array('{id}'), array($this->id), '/containers/{id}');
+        return str_replace(['{id}'], [$this->id], '/containers/{id}');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
-        return array(array(), null);
+        return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
         if (empty($this->accept)) {
-            return array('Accept' => array('application/json', 'text/plain'));
+            return ['Accept' => ['application/json', 'text/plain']];
         }
         return $this->accept;
     }
-    protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('v', 'force', 'link'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('v' => false, 'force' => false, 'link' => false));
-        $optionsResolver->addAllowedTypes('v', array('bool'));
-        $optionsResolver->addAllowedTypes('force', array('bool'));
-        $optionsResolver->addAllowedTypes('link', array('bool'));
+        $optionsResolver->setDefined(['v', 'force', 'link']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['v' => false, 'force' => false, 'link' => false]);
+        $optionsResolver->addAllowedTypes('v', ['bool']);
+        $optionsResolver->addAllowedTypes('force', ['bool']);
+        $optionsResolver->addAllowedTypes('link', ['bool']);
         return $optionsResolver;
     }
     /**
@@ -71,20 +71,20 @@ class ContainerDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements
         if (204 === $status) {
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ContainerDeleteBadRequestException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ContainerDeleteBadRequestException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (404 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ContainerDeleteNotFoundException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ContainerDeleteNotFoundException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (409 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ContainerDeleteConflictException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ContainerDeleteConflictException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (500 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ContainerDeleteInternalServerErrorException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ContainerDeleteInternalServerErrorException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
-        return array();
+        return [];
     }
 }

@@ -7,8 +7,8 @@ class SwarmInfo extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -21,7 +21,7 @@ class SwarmInfo extends \ArrayObject
     /**
     * IP address at which this node can be reached by other nodes in the
     swarm.
-
+    
     *
     * @var string|null
     */
@@ -33,13 +33,13 @@ class SwarmInfo extends \ArrayObject
      */
     protected $localNodeState = '';
     /**
-     *
+     * 
      *
      * @var bool|null
      */
     protected $controlAvailable = false;
     /**
-     *
+     * 
      *
      * @var string|null
      */
@@ -65,7 +65,7 @@ class SwarmInfo extends \ArrayObject
     /**
     * ClusterInfo represents information about the swarm as is returned by the
     "/info" endpoint. Join-tokens are not included.
-
+    
     *
     * @var ClusterInfo|null
     */
@@ -75,7 +75,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return string|null
      */
-    public function getNodeID() : ?string
+    public function getNodeID(): ?string
     {
         return $this->nodeID;
     }
@@ -86,7 +86,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setNodeID(?string $nodeID) : self
+    public function setNodeID(?string $nodeID): self
     {
         $this->initialized['nodeID'] = true;
         $this->nodeID = $nodeID;
@@ -95,24 +95,24 @@ class SwarmInfo extends \ArrayObject
     /**
     * IP address at which this node can be reached by other nodes in the
     swarm.
-
+    
     *
     * @return string|null
     */
-    public function getNodeAddr() : ?string
+    public function getNodeAddr(): ?string
     {
         return $this->nodeAddr;
     }
     /**
     * IP address at which this node can be reached by other nodes in the
     swarm.
-
+    
     *
     * @param string|null $nodeAddr
     *
     * @return self
     */
-    public function setNodeAddr(?string $nodeAddr) : self
+    public function setNodeAddr(?string $nodeAddr): self
     {
         $this->initialized['nodeAddr'] = true;
         $this->nodeAddr = $nodeAddr;
@@ -123,7 +123,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return string|null
      */
-    public function getLocalNodeState() : ?string
+    public function getLocalNodeState(): ?string
     {
         return $this->localNodeState;
     }
@@ -134,51 +134,51 @@ class SwarmInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setLocalNodeState(?string $localNodeState) : self
+    public function setLocalNodeState(?string $localNodeState): self
     {
         $this->initialized['localNodeState'] = true;
         $this->localNodeState = $localNodeState;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return bool|null
      */
-    public function getControlAvailable() : ?bool
+    public function getControlAvailable(): ?bool
     {
         return $this->controlAvailable;
     }
     /**
-     *
+     * 
      *
      * @param bool|null $controlAvailable
      *
      * @return self
      */
-    public function setControlAvailable(?bool $controlAvailable) : self
+    public function setControlAvailable(?bool $controlAvailable): self
     {
         $this->initialized['controlAvailable'] = true;
         $this->controlAvailable = $controlAvailable;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string|null
      */
-    public function getError() : ?string
+    public function getError(): ?string
     {
         return $this->error;
     }
     /**
-     *
+     * 
      *
      * @param string|null $error
      *
      * @return self
      */
-    public function setError(?string $error) : self
+    public function setError(?string $error): self
     {
         $this->initialized['error'] = true;
         $this->error = $error;
@@ -189,7 +189,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return PeerNode[]|null
      */
-    public function getRemoteManagers() : ?array
+    public function getRemoteManagers(): ?array
     {
         return $this->remoteManagers;
     }
@@ -200,7 +200,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setRemoteManagers(?array $remoteManagers) : self
+    public function setRemoteManagers(?array $remoteManagers): self
     {
         $this->initialized['remoteManagers'] = true;
         $this->remoteManagers = $remoteManagers;
@@ -211,7 +211,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return int|null
      */
-    public function getNodes() : ?int
+    public function getNodes(): ?int
     {
         return $this->nodes;
     }
@@ -222,7 +222,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setNodes(?int $nodes) : self
+    public function setNodes(?int $nodes): self
     {
         $this->initialized['nodes'] = true;
         $this->nodes = $nodes;
@@ -233,7 +233,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return int|null
      */
-    public function getManagers() : ?int
+    public function getManagers(): ?int
     {
         return $this->managers;
     }
@@ -244,7 +244,7 @@ class SwarmInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setManagers(?int $managers) : self
+    public function setManagers(?int $managers): self
     {
         $this->initialized['managers'] = true;
         $this->managers = $managers;
@@ -253,24 +253,24 @@ class SwarmInfo extends \ArrayObject
     /**
     * ClusterInfo represents information about the swarm as is returned by the
     "/info" endpoint. Join-tokens are not included.
-
+    
     *
     * @return ClusterInfo|null
     */
-    public function getCluster() : ?ClusterInfo
+    public function getCluster(): ?ClusterInfo
     {
         return $this->cluster;
     }
     /**
     * ClusterInfo represents information about the swarm as is returned by the
     "/info" endpoint. Join-tokens are not included.
-
+    
     *
     * @param ClusterInfo|null $cluster
     *
     * @return self
     */
-    public function setCluster(?ClusterInfo $cluster) : self
+    public function setCluster(?ClusterInfo $cluster): self
     {
         $this->initialized['cluster'] = true;
         $this->cluster = $cluster;

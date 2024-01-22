@@ -7,17 +7,17 @@ class Runtime extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
     * Name and, optional, path, of the OCI executable binary.
-
+    
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-
+    
     *
     * @var string|null
     */
@@ -30,29 +30,29 @@ class Runtime extends \ArrayObject
     protected $runtimeArgs;
     /**
     * Name and, optional, path, of the OCI executable binary.
-
+    
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-
+    
     *
     * @return string|null
     */
-    public function getPath() : ?string
+    public function getPath(): ?string
     {
         return $this->path;
     }
     /**
     * Name and, optional, path, of the OCI executable binary.
-
+    
     If the path is omitted, the daemon searches the host's `$PATH` for the
     binary and uses the first result.
-
+    
     *
     * @param string|null $path
     *
     * @return self
     */
-    public function setPath(?string $path) : self
+    public function setPath(?string $path): self
     {
         $this->initialized['path'] = true;
         $this->path = $path;
@@ -63,7 +63,7 @@ class Runtime extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getRuntimeArgs() : ?array
+    public function getRuntimeArgs(): ?array
     {
         return $this->runtimeArgs;
     }
@@ -74,7 +74,7 @@ class Runtime extends \ArrayObject
      *
      * @return self
      */
-    public function setRuntimeArgs(?array $runtimeArgs) : self
+    public function setRuntimeArgs(?array $runtimeArgs): self
     {
         $this->initialized['runtimeArgs'] = true;
         $this->runtimeArgs = $runtimeArgs;

@@ -7,8 +7,8 @@ class HostConfig extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -170,18 +170,18 @@ class HostConfig extends \ArrayObject
     protected $ulimits;
     /**
     * The number of usable CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @var int|null
     */
     protected $cpuCount;
     /**
     * The usable percentage of the available CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @var int|null
     */
@@ -200,12 +200,12 @@ class HostConfig extends \ArrayObject
     protected $iOMaximumBandwidth;
     /**
     * A list of volume bindings for this container. Each volume binding is a string in one of these forms:
-
+    
     - `host-src:container-dest` to bind-mount a host path into the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `host-src:container-dest:ro` to make the bind mount read-only inside the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest` to bind-mount a volume managed by a volume driver into the container. `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest:ro` to mount the volume read-only inside the container.  `container-dest` must be an _absolute_ path.
-
+    
     *
     * @var string[]|null
     */
@@ -232,19 +232,19 @@ class HostConfig extends \ArrayObject
     * PortMap describes the mapping of container ports to host ports, using the
     container's port-number and protocol as key in the format `<port>/<protocol>`,
     for example, `80/udp`.
-
+    
     If a container's port is mapped for both `tcp` and `udp`, two separate
     entries are added to the mapping table.
-
+    
     *
     * @var array<string, PortBinding[]>|null
     */
     protected $portBindings;
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-
+    
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-
+    
     *
     * @var RestartPolicy|null
     */
@@ -317,16 +317,16 @@ class HostConfig extends \ArrayObject
     protected $groupAdd;
     /**
     * IPC sharing mode for the container. Possible values are:
-
+    
     - `"none"`: own private IPC namespace, with /dev/shm not mounted
     - `"private"`: own private IPC namespace
     - `"shareable"`: own private IPC namespace, with a possibility to share it with other containers
     - `"container:<name|id>"`: join another (shareable) container's IPC namespace
     - `"host"`: use the host system's IPC namespace
-
+    
     If not specified, daemon default is used, which can either be `"private"`
     or `"shareable"`, depending on daemon version and configuration.
-
+    
     *
     * @var string|null
     */
@@ -351,10 +351,10 @@ class HostConfig extends \ArrayObject
     protected $oomScoreAdj;
     /**
     * Set the PID (Process) Namespace mode for the container. It can be either:
-
+    
     - `"container:<name|id>"`: joins another container's PID namespace
     - `"host"`: use the host's PID namespace inside the container
-
+    
     *
     * @var string|null
     */
@@ -368,13 +368,13 @@ class HostConfig extends \ArrayObject
     /**
     * Allocates an ephemeral host port for all of a container's
     exposed ports.
-
+    
     Ports are de-allocated when the container stops and allocated when the container starts.
     The allocated port might be changed when restarting the container.
-
+    
     The port is selected from the ephemeral port range that depends on the kernel.
     For example, on Linux the range is defined by `/proc/sys/net/ipv4/ip_local_port_range`.
-
+    
     *
     * @var bool|null
     */
@@ -450,7 +450,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuShares() : ?int
+    public function getCpuShares(): ?int
     {
         return $this->cpuShares;
     }
@@ -461,7 +461,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuShares(?int $cpuShares) : self
+    public function setCpuShares(?int $cpuShares): self
     {
         $this->initialized['cpuShares'] = true;
         $this->cpuShares = $cpuShares;
@@ -472,7 +472,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemory() : ?int
+    public function getMemory(): ?int
     {
         return $this->memory;
     }
@@ -483,7 +483,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setMemory(?int $memory) : self
+    public function setMemory(?int $memory): self
     {
         $this->initialized['memory'] = true;
         $this->memory = $memory;
@@ -494,7 +494,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCgroupParent() : ?string
+    public function getCgroupParent(): ?string
     {
         return $this->cgroupParent;
     }
@@ -505,7 +505,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCgroupParent(?string $cgroupParent) : self
+    public function setCgroupParent(?string $cgroupParent): self
     {
         $this->initialized['cgroupParent'] = true;
         $this->cgroupParent = $cgroupParent;
@@ -516,7 +516,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getBlkioWeight() : ?int
+    public function getBlkioWeight(): ?int
     {
         return $this->blkioWeight;
     }
@@ -527,7 +527,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioWeight(?int $blkioWeight) : self
+    public function setBlkioWeight(?int $blkioWeight): self
     {
         $this->initialized['blkioWeight'] = true;
         $this->blkioWeight = $blkioWeight;
@@ -538,7 +538,7 @@ class HostConfig extends \ArrayObject
      *
      * @return ResourcesBlkioWeightDeviceItem[]|null
      */
-    public function getBlkioWeightDevice() : ?array
+    public function getBlkioWeightDevice(): ?array
     {
         return $this->blkioWeightDevice;
     }
@@ -549,7 +549,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioWeightDevice(?array $blkioWeightDevice) : self
+    public function setBlkioWeightDevice(?array $blkioWeightDevice): self
     {
         $this->initialized['blkioWeightDevice'] = true;
         $this->blkioWeightDevice = $blkioWeightDevice;
@@ -560,7 +560,7 @@ class HostConfig extends \ArrayObject
      *
      * @return ThrottleDevice[]|null
      */
-    public function getBlkioDeviceReadBps() : ?array
+    public function getBlkioDeviceReadBps(): ?array
     {
         return $this->blkioDeviceReadBps;
     }
@@ -571,7 +571,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioDeviceReadBps(?array $blkioDeviceReadBps) : self
+    public function setBlkioDeviceReadBps(?array $blkioDeviceReadBps): self
     {
         $this->initialized['blkioDeviceReadBps'] = true;
         $this->blkioDeviceReadBps = $blkioDeviceReadBps;
@@ -582,7 +582,7 @@ class HostConfig extends \ArrayObject
      *
      * @return ThrottleDevice[]|null
      */
-    public function getBlkioDeviceWriteBps() : ?array
+    public function getBlkioDeviceWriteBps(): ?array
     {
         return $this->blkioDeviceWriteBps;
     }
@@ -593,7 +593,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioDeviceWriteBps(?array $blkioDeviceWriteBps) : self
+    public function setBlkioDeviceWriteBps(?array $blkioDeviceWriteBps): self
     {
         $this->initialized['blkioDeviceWriteBps'] = true;
         $this->blkioDeviceWriteBps = $blkioDeviceWriteBps;
@@ -604,7 +604,7 @@ class HostConfig extends \ArrayObject
      *
      * @return ThrottleDevice[]|null
      */
-    public function getBlkioDeviceReadIOps() : ?array
+    public function getBlkioDeviceReadIOps(): ?array
     {
         return $this->blkioDeviceReadIOps;
     }
@@ -615,7 +615,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioDeviceReadIOps(?array $blkioDeviceReadIOps) : self
+    public function setBlkioDeviceReadIOps(?array $blkioDeviceReadIOps): self
     {
         $this->initialized['blkioDeviceReadIOps'] = true;
         $this->blkioDeviceReadIOps = $blkioDeviceReadIOps;
@@ -626,7 +626,7 @@ class HostConfig extends \ArrayObject
      *
      * @return ThrottleDevice[]|null
      */
-    public function getBlkioDeviceWriteIOps() : ?array
+    public function getBlkioDeviceWriteIOps(): ?array
     {
         return $this->blkioDeviceWriteIOps;
     }
@@ -637,7 +637,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioDeviceWriteIOps(?array $blkioDeviceWriteIOps) : self
+    public function setBlkioDeviceWriteIOps(?array $blkioDeviceWriteIOps): self
     {
         $this->initialized['blkioDeviceWriteIOps'] = true;
         $this->blkioDeviceWriteIOps = $blkioDeviceWriteIOps;
@@ -648,7 +648,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuPeriod() : ?int
+    public function getCpuPeriod(): ?int
     {
         return $this->cpuPeriod;
     }
@@ -659,7 +659,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuPeriod(?int $cpuPeriod) : self
+    public function setCpuPeriod(?int $cpuPeriod): self
     {
         $this->initialized['cpuPeriod'] = true;
         $this->cpuPeriod = $cpuPeriod;
@@ -670,7 +670,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuQuota() : ?int
+    public function getCpuQuota(): ?int
     {
         return $this->cpuQuota;
     }
@@ -681,7 +681,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuQuota(?int $cpuQuota) : self
+    public function setCpuQuota(?int $cpuQuota): self
     {
         $this->initialized['cpuQuota'] = true;
         $this->cpuQuota = $cpuQuota;
@@ -692,7 +692,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuRealtimePeriod() : ?int
+    public function getCpuRealtimePeriod(): ?int
     {
         return $this->cpuRealtimePeriod;
     }
@@ -703,7 +703,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuRealtimePeriod(?int $cpuRealtimePeriod) : self
+    public function setCpuRealtimePeriod(?int $cpuRealtimePeriod): self
     {
         $this->initialized['cpuRealtimePeriod'] = true;
         $this->cpuRealtimePeriod = $cpuRealtimePeriod;
@@ -714,7 +714,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuRealtimeRuntime() : ?int
+    public function getCpuRealtimeRuntime(): ?int
     {
         return $this->cpuRealtimeRuntime;
     }
@@ -725,7 +725,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuRealtimeRuntime(?int $cpuRealtimeRuntime) : self
+    public function setCpuRealtimeRuntime(?int $cpuRealtimeRuntime): self
     {
         $this->initialized['cpuRealtimeRuntime'] = true;
         $this->cpuRealtimeRuntime = $cpuRealtimeRuntime;
@@ -736,7 +736,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCpusetCpus() : ?string
+    public function getCpusetCpus(): ?string
     {
         return $this->cpusetCpus;
     }
@@ -747,7 +747,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCpusetCpus(?string $cpusetCpus) : self
+    public function setCpusetCpus(?string $cpusetCpus): self
     {
         $this->initialized['cpusetCpus'] = true;
         $this->cpusetCpus = $cpusetCpus;
@@ -758,7 +758,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCpusetMems() : ?string
+    public function getCpusetMems(): ?string
     {
         return $this->cpusetMems;
     }
@@ -769,7 +769,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCpusetMems(?string $cpusetMems) : self
+    public function setCpusetMems(?string $cpusetMems): self
     {
         $this->initialized['cpusetMems'] = true;
         $this->cpusetMems = $cpusetMems;
@@ -780,7 +780,7 @@ class HostConfig extends \ArrayObject
      *
      * @return DeviceMapping[]|null
      */
-    public function getDevices() : ?array
+    public function getDevices(): ?array
     {
         return $this->devices;
     }
@@ -791,7 +791,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setDevices(?array $devices) : self
+    public function setDevices(?array $devices): self
     {
         $this->initialized['devices'] = true;
         $this->devices = $devices;
@@ -802,7 +802,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getDeviceCgroupRules() : ?array
+    public function getDeviceCgroupRules(): ?array
     {
         return $this->deviceCgroupRules;
     }
@@ -813,7 +813,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setDeviceCgroupRules(?array $deviceCgroupRules) : self
+    public function setDeviceCgroupRules(?array $deviceCgroupRules): self
     {
         $this->initialized['deviceCgroupRules'] = true;
         $this->deviceCgroupRules = $deviceCgroupRules;
@@ -824,7 +824,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getDiskQuota() : ?int
+    public function getDiskQuota(): ?int
     {
         return $this->diskQuota;
     }
@@ -835,7 +835,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setDiskQuota(?int $diskQuota) : self
+    public function setDiskQuota(?int $diskQuota): self
     {
         $this->initialized['diskQuota'] = true;
         $this->diskQuota = $diskQuota;
@@ -846,7 +846,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getKernelMemory() : ?int
+    public function getKernelMemory(): ?int
     {
         return $this->kernelMemory;
     }
@@ -857,7 +857,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setKernelMemory(?int $kernelMemory) : self
+    public function setKernelMemory(?int $kernelMemory): self
     {
         $this->initialized['kernelMemory'] = true;
         $this->kernelMemory = $kernelMemory;
@@ -868,7 +868,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemoryReservation() : ?int
+    public function getMemoryReservation(): ?int
     {
         return $this->memoryReservation;
     }
@@ -879,7 +879,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setMemoryReservation(?int $memoryReservation) : self
+    public function setMemoryReservation(?int $memoryReservation): self
     {
         $this->initialized['memoryReservation'] = true;
         $this->memoryReservation = $memoryReservation;
@@ -890,7 +890,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemorySwap() : ?int
+    public function getMemorySwap(): ?int
     {
         return $this->memorySwap;
     }
@@ -901,7 +901,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setMemorySwap(?int $memorySwap) : self
+    public function setMemorySwap(?int $memorySwap): self
     {
         $this->initialized['memorySwap'] = true;
         $this->memorySwap = $memorySwap;
@@ -912,7 +912,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemorySwappiness() : ?int
+    public function getMemorySwappiness(): ?int
     {
         return $this->memorySwappiness;
     }
@@ -923,7 +923,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setMemorySwappiness(?int $memorySwappiness) : self
+    public function setMemorySwappiness(?int $memorySwappiness): self
     {
         $this->initialized['memorySwappiness'] = true;
         $this->memorySwappiness = $memorySwappiness;
@@ -934,7 +934,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getNanoCPUs() : ?int
+    public function getNanoCPUs(): ?int
     {
         return $this->nanoCPUs;
     }
@@ -945,7 +945,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setNanoCPUs(?int $nanoCPUs) : self
+    public function setNanoCPUs(?int $nanoCPUs): self
     {
         $this->initialized['nanoCPUs'] = true;
         $this->nanoCPUs = $nanoCPUs;
@@ -956,7 +956,7 @@ class HostConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getOomKillDisable() : ?bool
+    public function getOomKillDisable(): ?bool
     {
         return $this->oomKillDisable;
     }
@@ -967,7 +967,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setOomKillDisable(?bool $oomKillDisable) : self
+    public function setOomKillDisable(?bool $oomKillDisable): self
     {
         $this->initialized['oomKillDisable'] = true;
         $this->oomKillDisable = $oomKillDisable;
@@ -978,7 +978,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getPidsLimit() : ?int
+    public function getPidsLimit(): ?int
     {
         return $this->pidsLimit;
     }
@@ -989,7 +989,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setPidsLimit(?int $pidsLimit) : self
+    public function setPidsLimit(?int $pidsLimit): self
     {
         $this->initialized['pidsLimit'] = true;
         $this->pidsLimit = $pidsLimit;
@@ -1000,7 +1000,7 @@ class HostConfig extends \ArrayObject
      *
      * @return ResourcesUlimitsItem[]|null
      */
-    public function getUlimits() : ?array
+    public function getUlimits(): ?array
     {
         return $this->ulimits;
     }
@@ -1011,7 +1011,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setUlimits(?array $ulimits) : self
+    public function setUlimits(?array $ulimits): self
     {
         $this->initialized['ulimits'] = true;
         $this->ulimits = $ulimits;
@@ -1019,27 +1019,27 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The number of usable CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @return int|null
     */
-    public function getCpuCount() : ?int
+    public function getCpuCount(): ?int
     {
         return $this->cpuCount;
     }
     /**
     * The number of usable CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @param int|null $cpuCount
     *
     * @return self
     */
-    public function setCpuCount(?int $cpuCount) : self
+    public function setCpuCount(?int $cpuCount): self
     {
         $this->initialized['cpuCount'] = true;
         $this->cpuCount = $cpuCount;
@@ -1047,27 +1047,27 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @return int|null
     */
-    public function getCpuPercent() : ?int
+    public function getCpuPercent(): ?int
     {
         return $this->cpuPercent;
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @param int|null $cpuPercent
     *
     * @return self
     */
-    public function setCpuPercent(?int $cpuPercent) : self
+    public function setCpuPercent(?int $cpuPercent): self
     {
         $this->initialized['cpuPercent'] = true;
         $this->cpuPercent = $cpuPercent;
@@ -1078,7 +1078,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getIOMaximumIOps() : ?int
+    public function getIOMaximumIOps(): ?int
     {
         return $this->iOMaximumIOps;
     }
@@ -1089,7 +1089,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setIOMaximumIOps(?int $iOMaximumIOps) : self
+    public function setIOMaximumIOps(?int $iOMaximumIOps): self
     {
         $this->initialized['iOMaximumIOps'] = true;
         $this->iOMaximumIOps = $iOMaximumIOps;
@@ -1100,7 +1100,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getIOMaximumBandwidth() : ?int
+    public function getIOMaximumBandwidth(): ?int
     {
         return $this->iOMaximumBandwidth;
     }
@@ -1111,7 +1111,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setIOMaximumBandwidth(?int $iOMaximumBandwidth) : self
+    public function setIOMaximumBandwidth(?int $iOMaximumBandwidth): self
     {
         $this->initialized['iOMaximumBandwidth'] = true;
         $this->iOMaximumBandwidth = $iOMaximumBandwidth;
@@ -1119,33 +1119,33 @@ class HostConfig extends \ArrayObject
     }
     /**
     * A list of volume bindings for this container. Each volume binding is a string in one of these forms:
-
+    
     - `host-src:container-dest` to bind-mount a host path into the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `host-src:container-dest:ro` to make the bind mount read-only inside the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest` to bind-mount a volume managed by a volume driver into the container. `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest:ro` to mount the volume read-only inside the container.  `container-dest` must be an _absolute_ path.
-
+    
     *
     * @return string[]|null
     */
-    public function getBinds() : ?array
+    public function getBinds(): ?array
     {
         return $this->binds;
     }
     /**
     * A list of volume bindings for this container. Each volume binding is a string in one of these forms:
-
+    
     - `host-src:container-dest` to bind-mount a host path into the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `host-src:container-dest:ro` to make the bind mount read-only inside the container. Both `host-src`, and `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest` to bind-mount a volume managed by a volume driver into the container. `container-dest` must be an _absolute_ path.
     - `volume-name:container-dest:ro` to mount the volume read-only inside the container.  `container-dest` must be an _absolute_ path.
-
+    
     *
     * @param string[]|null $binds
     *
     * @return self
     */
-    public function setBinds(?array $binds) : self
+    public function setBinds(?array $binds): self
     {
         $this->initialized['binds'] = true;
         $this->binds = $binds;
@@ -1156,7 +1156,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getContainerIDFile() : ?string
+    public function getContainerIDFile(): ?string
     {
         return $this->containerIDFile;
     }
@@ -1167,7 +1167,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setContainerIDFile(?string $containerIDFile) : self
+    public function setContainerIDFile(?string $containerIDFile): self
     {
         $this->initialized['containerIDFile'] = true;
         $this->containerIDFile = $containerIDFile;
@@ -1178,7 +1178,7 @@ class HostConfig extends \ArrayObject
      *
      * @return HostConfigLogConfig|null
      */
-    public function getLogConfig() : ?HostConfigLogConfig
+    public function getLogConfig(): ?HostConfigLogConfig
     {
         return $this->logConfig;
     }
@@ -1189,7 +1189,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setLogConfig(?HostConfigLogConfig $logConfig) : self
+    public function setLogConfig(?HostConfigLogConfig $logConfig): self
     {
         $this->initialized['logConfig'] = true;
         $this->logConfig = $logConfig;
@@ -1200,7 +1200,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getNetworkMode() : ?string
+    public function getNetworkMode(): ?string
     {
         return $this->networkMode;
     }
@@ -1211,7 +1211,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setNetworkMode(?string $networkMode) : self
+    public function setNetworkMode(?string $networkMode): self
     {
         $this->initialized['networkMode'] = true;
         $this->networkMode = $networkMode;
@@ -1221,14 +1221,14 @@ class HostConfig extends \ArrayObject
     * PortMap describes the mapping of container ports to host ports, using the
     container's port-number and protocol as key in the format `<port>/<protocol>`,
     for example, `80/udp`.
-
+    
     If a container's port is mapped for both `tcp` and `udp`, two separate
     entries are added to the mapping table.
-
+    
     *
     * @return array<string, PortBinding[]>|null
     */
-    public function getPortBindings() : ?iterable
+    public function getPortBindings(): ?iterable
     {
         return $this->portBindings;
     }
@@ -1236,16 +1236,16 @@ class HostConfig extends \ArrayObject
     * PortMap describes the mapping of container ports to host ports, using the
     container's port-number and protocol as key in the format `<port>/<protocol>`,
     for example, `80/udp`.
-
+    
     If a container's port is mapped for both `tcp` and `udp`, two separate
     entries are added to the mapping table.
-
+    
     *
     * @param array<string, PortBinding[]>|null $portBindings
     *
     * @return self
     */
-    public function setPortBindings(?iterable $portBindings) : self
+    public function setPortBindings(?iterable $portBindings): self
     {
         $this->initialized['portBindings'] = true;
         $this->portBindings = $portBindings;
@@ -1253,27 +1253,27 @@ class HostConfig extends \ArrayObject
     }
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-
+    
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-
+    
     *
     * @return RestartPolicy|null
     */
-    public function getRestartPolicy() : ?RestartPolicy
+    public function getRestartPolicy(): ?RestartPolicy
     {
         return $this->restartPolicy;
     }
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-
+    
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-
+    
     *
     * @param RestartPolicy|null $restartPolicy
     *
     * @return self
     */
-    public function setRestartPolicy(?RestartPolicy $restartPolicy) : self
+    public function setRestartPolicy(?RestartPolicy $restartPolicy): self
     {
         $this->initialized['restartPolicy'] = true;
         $this->restartPolicy = $restartPolicy;
@@ -1284,7 +1284,7 @@ class HostConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getAutoRemove() : ?bool
+    public function getAutoRemove(): ?bool
     {
         return $this->autoRemove;
     }
@@ -1295,7 +1295,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setAutoRemove(?bool $autoRemove) : self
+    public function setAutoRemove(?bool $autoRemove): self
     {
         $this->initialized['autoRemove'] = true;
         $this->autoRemove = $autoRemove;
@@ -1306,7 +1306,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getVolumeDriver() : ?string
+    public function getVolumeDriver(): ?string
     {
         return $this->volumeDriver;
     }
@@ -1317,7 +1317,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setVolumeDriver(?string $volumeDriver) : self
+    public function setVolumeDriver(?string $volumeDriver): self
     {
         $this->initialized['volumeDriver'] = true;
         $this->volumeDriver = $volumeDriver;
@@ -1328,7 +1328,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getVolumesFrom() : ?array
+    public function getVolumesFrom(): ?array
     {
         return $this->volumesFrom;
     }
@@ -1339,7 +1339,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setVolumesFrom(?array $volumesFrom) : self
+    public function setVolumesFrom(?array $volumesFrom): self
     {
         $this->initialized['volumesFrom'] = true;
         $this->volumesFrom = $volumesFrom;
@@ -1350,7 +1350,7 @@ class HostConfig extends \ArrayObject
      *
      * @return Mount[]|null
      */
-    public function getMounts() : ?array
+    public function getMounts(): ?array
     {
         return $this->mounts;
     }
@@ -1361,7 +1361,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setMounts(?array $mounts) : self
+    public function setMounts(?array $mounts): self
     {
         $this->initialized['mounts'] = true;
         $this->mounts = $mounts;
@@ -1372,7 +1372,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getCapAdd() : ?array
+    public function getCapAdd(): ?array
     {
         return $this->capAdd;
     }
@@ -1383,7 +1383,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCapAdd(?array $capAdd) : self
+    public function setCapAdd(?array $capAdd): self
     {
         $this->initialized['capAdd'] = true;
         $this->capAdd = $capAdd;
@@ -1394,7 +1394,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getCapDrop() : ?array
+    public function getCapDrop(): ?array
     {
         return $this->capDrop;
     }
@@ -1405,7 +1405,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCapDrop(?array $capDrop) : self
+    public function setCapDrop(?array $capDrop): self
     {
         $this->initialized['capDrop'] = true;
         $this->capDrop = $capDrop;
@@ -1416,7 +1416,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getDns() : ?array
+    public function getDns(): ?array
     {
         return $this->dns;
     }
@@ -1427,7 +1427,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setDns(?array $dns) : self
+    public function setDns(?array $dns): self
     {
         $this->initialized['dns'] = true;
         $this->dns = $dns;
@@ -1438,7 +1438,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getDnsOptions() : ?array
+    public function getDnsOptions(): ?array
     {
         return $this->dnsOptions;
     }
@@ -1449,7 +1449,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setDnsOptions(?array $dnsOptions) : self
+    public function setDnsOptions(?array $dnsOptions): self
     {
         $this->initialized['dnsOptions'] = true;
         $this->dnsOptions = $dnsOptions;
@@ -1460,7 +1460,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getDnsSearch() : ?array
+    public function getDnsSearch(): ?array
     {
         return $this->dnsSearch;
     }
@@ -1471,7 +1471,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setDnsSearch(?array $dnsSearch) : self
+    public function setDnsSearch(?array $dnsSearch): self
     {
         $this->initialized['dnsSearch'] = true;
         $this->dnsSearch = $dnsSearch;
@@ -1482,7 +1482,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getExtraHosts() : ?array
+    public function getExtraHosts(): ?array
     {
         return $this->extraHosts;
     }
@@ -1493,7 +1493,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setExtraHosts(?array $extraHosts) : self
+    public function setExtraHosts(?array $extraHosts): self
     {
         $this->initialized['extraHosts'] = true;
         $this->extraHosts = $extraHosts;
@@ -1504,7 +1504,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getGroupAdd() : ?array
+    public function getGroupAdd(): ?array
     {
         return $this->groupAdd;
     }
@@ -1515,7 +1515,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setGroupAdd(?array $groupAdd) : self
+    public function setGroupAdd(?array $groupAdd): self
     {
         $this->initialized['groupAdd'] = true;
         $this->groupAdd = $groupAdd;
@@ -1523,41 +1523,41 @@ class HostConfig extends \ArrayObject
     }
     /**
     * IPC sharing mode for the container. Possible values are:
-
+    
     - `"none"`: own private IPC namespace, with /dev/shm not mounted
     - `"private"`: own private IPC namespace
     - `"shareable"`: own private IPC namespace, with a possibility to share it with other containers
     - `"container:<name|id>"`: join another (shareable) container's IPC namespace
     - `"host"`: use the host system's IPC namespace
-
+    
     If not specified, daemon default is used, which can either be `"private"`
     or `"shareable"`, depending on daemon version and configuration.
-
+    
     *
     * @return string|null
     */
-    public function getIpcMode() : ?string
+    public function getIpcMode(): ?string
     {
         return $this->ipcMode;
     }
     /**
     * IPC sharing mode for the container. Possible values are:
-
+    
     - `"none"`: own private IPC namespace, with /dev/shm not mounted
     - `"private"`: own private IPC namespace
     - `"shareable"`: own private IPC namespace, with a possibility to share it with other containers
     - `"container:<name|id>"`: join another (shareable) container's IPC namespace
     - `"host"`: use the host system's IPC namespace
-
+    
     If not specified, daemon default is used, which can either be `"private"`
     or `"shareable"`, depending on daemon version and configuration.
-
+    
     *
     * @param string|null $ipcMode
     *
     * @return self
     */
-    public function setIpcMode(?string $ipcMode) : self
+    public function setIpcMode(?string $ipcMode): self
     {
         $this->initialized['ipcMode'] = true;
         $this->ipcMode = $ipcMode;
@@ -1568,7 +1568,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCgroup() : ?string
+    public function getCgroup(): ?string
     {
         return $this->cgroup;
     }
@@ -1579,7 +1579,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCgroup(?string $cgroup) : self
+    public function setCgroup(?string $cgroup): self
     {
         $this->initialized['cgroup'] = true;
         $this->cgroup = $cgroup;
@@ -1590,7 +1590,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getLinks() : ?array
+    public function getLinks(): ?array
     {
         return $this->links;
     }
@@ -1601,7 +1601,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setLinks(?array $links) : self
+    public function setLinks(?array $links): self
     {
         $this->initialized['links'] = true;
         $this->links = $links;
@@ -1612,7 +1612,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getOomScoreAdj() : ?int
+    public function getOomScoreAdj(): ?int
     {
         return $this->oomScoreAdj;
     }
@@ -1623,7 +1623,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setOomScoreAdj(?int $oomScoreAdj) : self
+    public function setOomScoreAdj(?int $oomScoreAdj): self
     {
         $this->initialized['oomScoreAdj'] = true;
         $this->oomScoreAdj = $oomScoreAdj;
@@ -1631,29 +1631,29 @@ class HostConfig extends \ArrayObject
     }
     /**
     * Set the PID (Process) Namespace mode for the container. It can be either:
-
+    
     - `"container:<name|id>"`: joins another container's PID namespace
     - `"host"`: use the host's PID namespace inside the container
-
+    
     *
     * @return string|null
     */
-    public function getPidMode() : ?string
+    public function getPidMode(): ?string
     {
         return $this->pidMode;
     }
     /**
     * Set the PID (Process) Namespace mode for the container. It can be either:
-
+    
     - `"container:<name|id>"`: joins another container's PID namespace
     - `"host"`: use the host's PID namespace inside the container
-
+    
     *
     * @param string|null $pidMode
     *
     * @return self
     */
-    public function setPidMode(?string $pidMode) : self
+    public function setPidMode(?string $pidMode): self
     {
         $this->initialized['pidMode'] = true;
         $this->pidMode = $pidMode;
@@ -1664,7 +1664,7 @@ class HostConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getPrivileged() : ?bool
+    public function getPrivileged(): ?bool
     {
         return $this->privileged;
     }
@@ -1675,7 +1675,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setPrivileged(?bool $privileged) : self
+    public function setPrivileged(?bool $privileged): self
     {
         $this->initialized['privileged'] = true;
         $this->privileged = $privileged;
@@ -1684,36 +1684,36 @@ class HostConfig extends \ArrayObject
     /**
     * Allocates an ephemeral host port for all of a container's
     exposed ports.
-
+    
     Ports are de-allocated when the container stops and allocated when the container starts.
     The allocated port might be changed when restarting the container.
-
+    
     The port is selected from the ephemeral port range that depends on the kernel.
     For example, on Linux the range is defined by `/proc/sys/net/ipv4/ip_local_port_range`.
-
+    
     *
     * @return bool|null
     */
-    public function getPublishAllPorts() : ?bool
+    public function getPublishAllPorts(): ?bool
     {
         return $this->publishAllPorts;
     }
     /**
     * Allocates an ephemeral host port for all of a container's
     exposed ports.
-
+    
     Ports are de-allocated when the container stops and allocated when the container starts.
     The allocated port might be changed when restarting the container.
-
+    
     The port is selected from the ephemeral port range that depends on the kernel.
     For example, on Linux the range is defined by `/proc/sys/net/ipv4/ip_local_port_range`.
-
+    
     *
     * @param bool|null $publishAllPorts
     *
     * @return self
     */
-    public function setPublishAllPorts(?bool $publishAllPorts) : self
+    public function setPublishAllPorts(?bool $publishAllPorts): self
     {
         $this->initialized['publishAllPorts'] = true;
         $this->publishAllPorts = $publishAllPorts;
@@ -1724,7 +1724,7 @@ class HostConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getReadonlyRootfs() : ?bool
+    public function getReadonlyRootfs(): ?bool
     {
         return $this->readonlyRootfs;
     }
@@ -1735,7 +1735,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setReadonlyRootfs(?bool $readonlyRootfs) : self
+    public function setReadonlyRootfs(?bool $readonlyRootfs): self
     {
         $this->initialized['readonlyRootfs'] = true;
         $this->readonlyRootfs = $readonlyRootfs;
@@ -1746,7 +1746,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getSecurityOpt() : ?array
+    public function getSecurityOpt(): ?array
     {
         return $this->securityOpt;
     }
@@ -1757,7 +1757,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setSecurityOpt(?array $securityOpt) : self
+    public function setSecurityOpt(?array $securityOpt): self
     {
         $this->initialized['securityOpt'] = true;
         $this->securityOpt = $securityOpt;
@@ -1768,7 +1768,7 @@ class HostConfig extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getStorageOpt() : ?iterable
+    public function getStorageOpt(): ?iterable
     {
         return $this->storageOpt;
     }
@@ -1779,7 +1779,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setStorageOpt(?iterable $storageOpt) : self
+    public function setStorageOpt(?iterable $storageOpt): self
     {
         $this->initialized['storageOpt'] = true;
         $this->storageOpt = $storageOpt;
@@ -1790,7 +1790,7 @@ class HostConfig extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getTmpfs() : ?iterable
+    public function getTmpfs(): ?iterable
     {
         return $this->tmpfs;
     }
@@ -1801,7 +1801,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setTmpfs(?iterable $tmpfs) : self
+    public function setTmpfs(?iterable $tmpfs): self
     {
         $this->initialized['tmpfs'] = true;
         $this->tmpfs = $tmpfs;
@@ -1812,7 +1812,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getUTSMode() : ?string
+    public function getUTSMode(): ?string
     {
         return $this->uTSMode;
     }
@@ -1823,7 +1823,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setUTSMode(?string $uTSMode) : self
+    public function setUTSMode(?string $uTSMode): self
     {
         $this->initialized['uTSMode'] = true;
         $this->uTSMode = $uTSMode;
@@ -1834,7 +1834,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getUsernsMode() : ?string
+    public function getUsernsMode(): ?string
     {
         return $this->usernsMode;
     }
@@ -1845,7 +1845,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setUsernsMode(?string $usernsMode) : self
+    public function setUsernsMode(?string $usernsMode): self
     {
         $this->initialized['usernsMode'] = true;
         $this->usernsMode = $usernsMode;
@@ -1856,7 +1856,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getShmSize() : ?int
+    public function getShmSize(): ?int
     {
         return $this->shmSize;
     }
@@ -1867,7 +1867,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setShmSize(?int $shmSize) : self
+    public function setShmSize(?int $shmSize): self
     {
         $this->initialized['shmSize'] = true;
         $this->shmSize = $shmSize;
@@ -1878,7 +1878,7 @@ class HostConfig extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getSysctls() : ?iterable
+    public function getSysctls(): ?iterable
     {
         return $this->sysctls;
     }
@@ -1889,7 +1889,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setSysctls(?iterable $sysctls) : self
+    public function setSysctls(?iterable $sysctls): self
     {
         $this->initialized['sysctls'] = true;
         $this->sysctls = $sysctls;
@@ -1900,7 +1900,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getRuntime() : ?string
+    public function getRuntime(): ?string
     {
         return $this->runtime;
     }
@@ -1911,7 +1911,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setRuntime(?string $runtime) : self
+    public function setRuntime(?string $runtime): self
     {
         $this->initialized['runtime'] = true;
         $this->runtime = $runtime;
@@ -1922,7 +1922,7 @@ class HostConfig extends \ArrayObject
      *
      * @return int[]|null
      */
-    public function getConsoleSize() : ?array
+    public function getConsoleSize(): ?array
     {
         return $this->consoleSize;
     }
@@ -1933,7 +1933,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setConsoleSize(?array $consoleSize) : self
+    public function setConsoleSize(?array $consoleSize): self
     {
         $this->initialized['consoleSize'] = true;
         $this->consoleSize = $consoleSize;
@@ -1944,7 +1944,7 @@ class HostConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getIsolation() : ?string
+    public function getIsolation(): ?string
     {
         return $this->isolation;
     }
@@ -1955,7 +1955,7 @@ class HostConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setIsolation(?string $isolation) : self
+    public function setIsolation(?string $isolation): self
     {
         $this->initialized['isolation'] = true;
         $this->isolation = $isolation;

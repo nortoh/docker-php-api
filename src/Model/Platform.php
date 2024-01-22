@@ -7,15 +7,15 @@ class Platform extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
     * Architecture represents the hardware architecture (for example,
     `x86_64`).
-
+    
     *
     * @var string|null
     */
@@ -29,24 +29,24 @@ class Platform extends \ArrayObject
     /**
     * Architecture represents the hardware architecture (for example,
     `x86_64`).
-
+    
     *
     * @return string|null
     */
-    public function getArchitecture() : ?string
+    public function getArchitecture(): ?string
     {
         return $this->architecture;
     }
     /**
     * Architecture represents the hardware architecture (for example,
     `x86_64`).
-
+    
     *
     * @param string|null $architecture
     *
     * @return self
     */
-    public function setArchitecture(?string $architecture) : self
+    public function setArchitecture(?string $architecture): self
     {
         $this->initialized['architecture'] = true;
         $this->architecture = $architecture;
@@ -57,7 +57,7 @@ class Platform extends \ArrayObject
      *
      * @return string|null
      */
-    public function getOS() : ?string
+    public function getOS(): ?string
     {
         return $this->oS;
     }
@@ -68,7 +68,7 @@ class Platform extends \ArrayObject
      *
      * @return self
      */
-    public function setOS(?string $oS) : self
+    public function setOS(?string $oS): self
     {
         $this->initialized['oS'] = true;
         $this->oS = $oS;

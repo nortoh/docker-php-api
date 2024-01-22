@@ -7,8 +7,8 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -170,18 +170,18 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     protected $ulimits;
     /**
     * The number of usable CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @var int|null
     */
     protected $cpuCount;
     /**
     * The usable percentage of the available CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @var int|null
     */
@@ -200,9 +200,9 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     protected $iOMaximumBandwidth;
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-
+    
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-
+    
     *
     * @var RestartPolicy|null
     */
@@ -212,7 +212,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuShares() : ?int
+    public function getCpuShares(): ?int
     {
         return $this->cpuShares;
     }
@@ -223,7 +223,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuShares(?int $cpuShares) : self
+    public function setCpuShares(?int $cpuShares): self
     {
         $this->initialized['cpuShares'] = true;
         $this->cpuShares = $cpuShares;
@@ -234,7 +234,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemory() : ?int
+    public function getMemory(): ?int
     {
         return $this->memory;
     }
@@ -245,7 +245,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setMemory(?int $memory) : self
+    public function setMemory(?int $memory): self
     {
         $this->initialized['memory'] = true;
         $this->memory = $memory;
@@ -256,7 +256,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCgroupParent() : ?string
+    public function getCgroupParent(): ?string
     {
         return $this->cgroupParent;
     }
@@ -267,7 +267,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCgroupParent(?string $cgroupParent) : self
+    public function setCgroupParent(?string $cgroupParent): self
     {
         $this->initialized['cgroupParent'] = true;
         $this->cgroupParent = $cgroupParent;
@@ -278,7 +278,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getBlkioWeight() : ?int
+    public function getBlkioWeight(): ?int
     {
         return $this->blkioWeight;
     }
@@ -289,7 +289,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioWeight(?int $blkioWeight) : self
+    public function setBlkioWeight(?int $blkioWeight): self
     {
         $this->initialized['blkioWeight'] = true;
         $this->blkioWeight = $blkioWeight;
@@ -300,7 +300,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return ResourcesBlkioWeightDeviceItem[]|null
      */
-    public function getBlkioWeightDevice() : ?array
+    public function getBlkioWeightDevice(): ?array
     {
         return $this->blkioWeightDevice;
     }
@@ -311,7 +311,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioWeightDevice(?array $blkioWeightDevice) : self
+    public function setBlkioWeightDevice(?array $blkioWeightDevice): self
     {
         $this->initialized['blkioWeightDevice'] = true;
         $this->blkioWeightDevice = $blkioWeightDevice;
@@ -322,7 +322,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return ThrottleDevice[]|null
      */
-    public function getBlkioDeviceReadBps() : ?array
+    public function getBlkioDeviceReadBps(): ?array
     {
         return $this->blkioDeviceReadBps;
     }
@@ -333,7 +333,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioDeviceReadBps(?array $blkioDeviceReadBps) : self
+    public function setBlkioDeviceReadBps(?array $blkioDeviceReadBps): self
     {
         $this->initialized['blkioDeviceReadBps'] = true;
         $this->blkioDeviceReadBps = $blkioDeviceReadBps;
@@ -344,7 +344,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return ThrottleDevice[]|null
      */
-    public function getBlkioDeviceWriteBps() : ?array
+    public function getBlkioDeviceWriteBps(): ?array
     {
         return $this->blkioDeviceWriteBps;
     }
@@ -355,7 +355,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioDeviceWriteBps(?array $blkioDeviceWriteBps) : self
+    public function setBlkioDeviceWriteBps(?array $blkioDeviceWriteBps): self
     {
         $this->initialized['blkioDeviceWriteBps'] = true;
         $this->blkioDeviceWriteBps = $blkioDeviceWriteBps;
@@ -366,7 +366,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return ThrottleDevice[]|null
      */
-    public function getBlkioDeviceReadIOps() : ?array
+    public function getBlkioDeviceReadIOps(): ?array
     {
         return $this->blkioDeviceReadIOps;
     }
@@ -377,7 +377,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioDeviceReadIOps(?array $blkioDeviceReadIOps) : self
+    public function setBlkioDeviceReadIOps(?array $blkioDeviceReadIOps): self
     {
         $this->initialized['blkioDeviceReadIOps'] = true;
         $this->blkioDeviceReadIOps = $blkioDeviceReadIOps;
@@ -388,7 +388,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return ThrottleDevice[]|null
      */
-    public function getBlkioDeviceWriteIOps() : ?array
+    public function getBlkioDeviceWriteIOps(): ?array
     {
         return $this->blkioDeviceWriteIOps;
     }
@@ -399,7 +399,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setBlkioDeviceWriteIOps(?array $blkioDeviceWriteIOps) : self
+    public function setBlkioDeviceWriteIOps(?array $blkioDeviceWriteIOps): self
     {
         $this->initialized['blkioDeviceWriteIOps'] = true;
         $this->blkioDeviceWriteIOps = $blkioDeviceWriteIOps;
@@ -410,7 +410,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuPeriod() : ?int
+    public function getCpuPeriod(): ?int
     {
         return $this->cpuPeriod;
     }
@@ -421,7 +421,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuPeriod(?int $cpuPeriod) : self
+    public function setCpuPeriod(?int $cpuPeriod): self
     {
         $this->initialized['cpuPeriod'] = true;
         $this->cpuPeriod = $cpuPeriod;
@@ -432,7 +432,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuQuota() : ?int
+    public function getCpuQuota(): ?int
     {
         return $this->cpuQuota;
     }
@@ -443,7 +443,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuQuota(?int $cpuQuota) : self
+    public function setCpuQuota(?int $cpuQuota): self
     {
         $this->initialized['cpuQuota'] = true;
         $this->cpuQuota = $cpuQuota;
@@ -454,7 +454,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuRealtimePeriod() : ?int
+    public function getCpuRealtimePeriod(): ?int
     {
         return $this->cpuRealtimePeriod;
     }
@@ -465,7 +465,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuRealtimePeriod(?int $cpuRealtimePeriod) : self
+    public function setCpuRealtimePeriod(?int $cpuRealtimePeriod): self
     {
         $this->initialized['cpuRealtimePeriod'] = true;
         $this->cpuRealtimePeriod = $cpuRealtimePeriod;
@@ -476,7 +476,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getCpuRealtimeRuntime() : ?int
+    public function getCpuRealtimeRuntime(): ?int
     {
         return $this->cpuRealtimeRuntime;
     }
@@ -487,7 +487,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuRealtimeRuntime(?int $cpuRealtimeRuntime) : self
+    public function setCpuRealtimeRuntime(?int $cpuRealtimeRuntime): self
     {
         $this->initialized['cpuRealtimeRuntime'] = true;
         $this->cpuRealtimeRuntime = $cpuRealtimeRuntime;
@@ -498,7 +498,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCpusetCpus() : ?string
+    public function getCpusetCpus(): ?string
     {
         return $this->cpusetCpus;
     }
@@ -509,7 +509,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCpusetCpus(?string $cpusetCpus) : self
+    public function setCpusetCpus(?string $cpusetCpus): self
     {
         $this->initialized['cpusetCpus'] = true;
         $this->cpusetCpus = $cpusetCpus;
@@ -520,7 +520,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCpusetMems() : ?string
+    public function getCpusetMems(): ?string
     {
         return $this->cpusetMems;
     }
@@ -531,7 +531,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCpusetMems(?string $cpusetMems) : self
+    public function setCpusetMems(?string $cpusetMems): self
     {
         $this->initialized['cpusetMems'] = true;
         $this->cpusetMems = $cpusetMems;
@@ -542,7 +542,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return DeviceMapping[]|null
      */
-    public function getDevices() : ?array
+    public function getDevices(): ?array
     {
         return $this->devices;
     }
@@ -553,7 +553,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setDevices(?array $devices) : self
+    public function setDevices(?array $devices): self
     {
         $this->initialized['devices'] = true;
         $this->devices = $devices;
@@ -564,7 +564,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getDeviceCgroupRules() : ?array
+    public function getDeviceCgroupRules(): ?array
     {
         return $this->deviceCgroupRules;
     }
@@ -575,7 +575,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setDeviceCgroupRules(?array $deviceCgroupRules) : self
+    public function setDeviceCgroupRules(?array $deviceCgroupRules): self
     {
         $this->initialized['deviceCgroupRules'] = true;
         $this->deviceCgroupRules = $deviceCgroupRules;
@@ -586,7 +586,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getDiskQuota() : ?int
+    public function getDiskQuota(): ?int
     {
         return $this->diskQuota;
     }
@@ -597,7 +597,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setDiskQuota(?int $diskQuota) : self
+    public function setDiskQuota(?int $diskQuota): self
     {
         $this->initialized['diskQuota'] = true;
         $this->diskQuota = $diskQuota;
@@ -608,7 +608,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getKernelMemory() : ?int
+    public function getKernelMemory(): ?int
     {
         return $this->kernelMemory;
     }
@@ -619,7 +619,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setKernelMemory(?int $kernelMemory) : self
+    public function setKernelMemory(?int $kernelMemory): self
     {
         $this->initialized['kernelMemory'] = true;
         $this->kernelMemory = $kernelMemory;
@@ -630,7 +630,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemoryReservation() : ?int
+    public function getMemoryReservation(): ?int
     {
         return $this->memoryReservation;
     }
@@ -641,7 +641,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setMemoryReservation(?int $memoryReservation) : self
+    public function setMemoryReservation(?int $memoryReservation): self
     {
         $this->initialized['memoryReservation'] = true;
         $this->memoryReservation = $memoryReservation;
@@ -652,7 +652,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemorySwap() : ?int
+    public function getMemorySwap(): ?int
     {
         return $this->memorySwap;
     }
@@ -663,7 +663,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setMemorySwap(?int $memorySwap) : self
+    public function setMemorySwap(?int $memorySwap): self
     {
         $this->initialized['memorySwap'] = true;
         $this->memorySwap = $memorySwap;
@@ -674,7 +674,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemorySwappiness() : ?int
+    public function getMemorySwappiness(): ?int
     {
         return $this->memorySwappiness;
     }
@@ -685,7 +685,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setMemorySwappiness(?int $memorySwappiness) : self
+    public function setMemorySwappiness(?int $memorySwappiness): self
     {
         $this->initialized['memorySwappiness'] = true;
         $this->memorySwappiness = $memorySwappiness;
@@ -696,7 +696,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getNanoCPUs() : ?int
+    public function getNanoCPUs(): ?int
     {
         return $this->nanoCPUs;
     }
@@ -707,7 +707,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setNanoCPUs(?int $nanoCPUs) : self
+    public function setNanoCPUs(?int $nanoCPUs): self
     {
         $this->initialized['nanoCPUs'] = true;
         $this->nanoCPUs = $nanoCPUs;
@@ -718,7 +718,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getOomKillDisable() : ?bool
+    public function getOomKillDisable(): ?bool
     {
         return $this->oomKillDisable;
     }
@@ -729,7 +729,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setOomKillDisable(?bool $oomKillDisable) : self
+    public function setOomKillDisable(?bool $oomKillDisable): self
     {
         $this->initialized['oomKillDisable'] = true;
         $this->oomKillDisable = $oomKillDisable;
@@ -740,7 +740,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getPidsLimit() : ?int
+    public function getPidsLimit(): ?int
     {
         return $this->pidsLimit;
     }
@@ -751,7 +751,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setPidsLimit(?int $pidsLimit) : self
+    public function setPidsLimit(?int $pidsLimit): self
     {
         $this->initialized['pidsLimit'] = true;
         $this->pidsLimit = $pidsLimit;
@@ -762,7 +762,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return ResourcesUlimitsItem[]|null
      */
-    public function getUlimits() : ?array
+    public function getUlimits(): ?array
     {
         return $this->ulimits;
     }
@@ -773,7 +773,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setUlimits(?array $ulimits) : self
+    public function setUlimits(?array $ulimits): self
     {
         $this->initialized['ulimits'] = true;
         $this->ulimits = $ulimits;
@@ -781,27 +781,27 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The number of usable CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @return int|null
     */
-    public function getCpuCount() : ?int
+    public function getCpuCount(): ?int
     {
         return $this->cpuCount;
     }
     /**
     * The number of usable CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @param int|null $cpuCount
     *
     * @return self
     */
-    public function setCpuCount(?int $cpuCount) : self
+    public function setCpuCount(?int $cpuCount): self
     {
         $this->initialized['cpuCount'] = true;
         $this->cpuCount = $cpuCount;
@@ -809,27 +809,27 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @return int|null
     */
-    public function getCpuPercent() : ?int
+    public function getCpuPercent(): ?int
     {
         return $this->cpuPercent;
     }
     /**
     * The usable percentage of the available CPUs (Windows only).
-
+    
     On Windows Server containers, the processor resource controls are mutually exclusive. The order of precedence is `CPUCount` first, then `CPUShares`, and `CPUPercent` last.
-
+    
     *
     * @param int|null $cpuPercent
     *
     * @return self
     */
-    public function setCpuPercent(?int $cpuPercent) : self
+    public function setCpuPercent(?int $cpuPercent): self
     {
         $this->initialized['cpuPercent'] = true;
         $this->cpuPercent = $cpuPercent;
@@ -840,7 +840,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getIOMaximumIOps() : ?int
+    public function getIOMaximumIOps(): ?int
     {
         return $this->iOMaximumIOps;
     }
@@ -851,7 +851,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setIOMaximumIOps(?int $iOMaximumIOps) : self
+    public function setIOMaximumIOps(?int $iOMaximumIOps): self
     {
         $this->initialized['iOMaximumIOps'] = true;
         $this->iOMaximumIOps = $iOMaximumIOps;
@@ -862,7 +862,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return int|null
      */
-    public function getIOMaximumBandwidth() : ?int
+    public function getIOMaximumBandwidth(): ?int
     {
         return $this->iOMaximumBandwidth;
     }
@@ -873,7 +873,7 @@ class ContainersIdUpdatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setIOMaximumBandwidth(?int $iOMaximumBandwidth) : self
+    public function setIOMaximumBandwidth(?int $iOMaximumBandwidth): self
     {
         $this->initialized['iOMaximumBandwidth'] = true;
         $this->iOMaximumBandwidth = $iOMaximumBandwidth;
@@ -881,27 +881,27 @@ class ContainersIdUpdatePostBody extends \ArrayObject
     }
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-
+    
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-
+    
     *
     * @return RestartPolicy|null
     */
-    public function getRestartPolicy() : ?RestartPolicy
+    public function getRestartPolicy(): ?RestartPolicy
     {
         return $this->restartPolicy;
     }
     /**
     * The behavior to apply when the container exits. The default is not to restart.
-
+    
     An ever increasing delay (double the previous delay, starting at 100ms) is added before each restart to prevent flooding the server.
-
+    
     *
     * @param RestartPolicy|null $restartPolicy
     *
     * @return self
     */
-    public function setRestartPolicy(?RestartPolicy $restartPolicy) : self
+    public function setRestartPolicy(?RestartPolicy $restartPolicy): self
     {
         $this->initialized['restartPolicy'] = true;
         $this->restartPolicy = $restartPolicy;

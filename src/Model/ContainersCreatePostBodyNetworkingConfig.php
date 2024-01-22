@@ -7,8 +7,8 @@ class ContainersCreatePostBodyNetworkingConfig extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ContainersCreatePostBodyNetworkingConfig extends \ArrayObject
      *
      * @return array<string, EndpointSettings>|null
      */
-    public function getEndpointsConfig() : ?iterable
+    public function getEndpointsConfig(): ?iterable
     {
         return $this->endpointsConfig;
     }
@@ -34,7 +34,7 @@ class ContainersCreatePostBodyNetworkingConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setEndpointsConfig(?iterable $endpointsConfig) : self
+    public function setEndpointsConfig(?iterable $endpointsConfig): self
     {
         $this->initialized['endpointsConfig'] = true;
         $this->endpointsConfig = $endpointsConfig;

@@ -18,18 +18,18 @@ class TaskSpecContainerSpecSecretsItemNormalizer implements DenormalizerInterfac
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItem';
+        return $type === 'Docker\API\Model\TaskSpecContainerSpecSecretsItem';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItem';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\TaskSpecContainerSpecSecretsItem';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class TaskSpecContainerSpecSecretsItemNormalizer implements DenormalizerInterfac
             return $object;
         }
         if (\array_key_exists('File', $data) && $data['File'] !== null) {
-            $object->setFile($this->denormalizer->denormalize($data['File'], 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItemFile', 'json', $context));
+            $object->setFile($this->denormalizer->denormalize($data['File'], 'Docker\API\Model\TaskSpecContainerSpecSecretsItemFile', 'json', $context));
             unset($data['File']);
         }
         elseif (\array_key_exists('File', $data) && $data['File'] === null) {
@@ -72,11 +72,11 @@ class TaskSpecContainerSpecSecretsItemNormalizer implements DenormalizerInterfac
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('file') && null !== $object->getFile()) {
-            $data['File'] = $object->getFile() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getFile(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['File'] = ($object->getFile() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getFile(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('secretID') && null !== $object->getSecretID()) {
             $data['SecretID'] = $object->getSecretID();
@@ -91,8 +91,8 @@ class TaskSpecContainerSpecSecretsItemNormalizer implements DenormalizerInterfac
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\TaskSpecContainerSpecSecretsItem' => false);
+        return ['Docker\API\Model\TaskSpecContainerSpecSecretsItem' => false];
     }
 }

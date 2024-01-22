@@ -18,18 +18,18 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\TaskSpecContainerSpecDNSConfig';
+        return $type === 'Docker\API\Model\TaskSpecContainerSpecDNSConfig';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecContainerSpecDNSConfig';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\TaskSpecContainerSpecDNSConfig';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
             return $object;
         }
         if (\array_key_exists('Nameservers', $data) && $data['Nameservers'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Nameservers'] as $value) {
                 $values[] = $value;
             }
@@ -53,7 +53,7 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
             $object->setNameservers(null);
         }
         if (\array_key_exists('Search', $data) && $data['Search'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Search'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -64,7 +64,7 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
             $object->setSearch(null);
         }
         if (\array_key_exists('Options', $data) && $data['Options'] !== null) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['Options'] as $value_2) {
                 $values_2[] = $value_2;
             }
@@ -84,25 +84,25 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('nameservers') && null !== $object->getNameservers()) {
-            $values = array();
+            $values = [];
             foreach ($object->getNameservers() as $value) {
                 $values[] = $value;
             }
             $data['Nameservers'] = $values;
         }
         if ($object->isInitialized('search') && null !== $object->getSearch()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getSearch() as $value_1) {
                 $values_1[] = $value_1;
             }
             $data['Search'] = $values_1;
         }
         if ($object->isInitialized('options') && null !== $object->getOptions()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getOptions() as $value_2) {
                 $values_2[] = $value_2;
             }
@@ -115,8 +115,8 @@ class TaskSpecContainerSpecDNSConfigNormalizer implements DenormalizerInterface,
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\TaskSpecContainerSpecDNSConfig' => false);
+        return ['Docker\API\Model\TaskSpecContainerSpecDNSConfig' => false];
     }
 }

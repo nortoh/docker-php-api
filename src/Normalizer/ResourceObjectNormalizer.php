@@ -18,18 +18,18 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\ResourceObject';
+        return $type === 'Docker\API\Model\ResourceObject';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ResourceObject';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\ResourceObject';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -56,9 +56,9 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
             $object->setMemoryBytes(null);
         }
         if (\array_key_exists('GenericResources', $data) && $data['GenericResources'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['GenericResources'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\GenericResourcesItem', 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, 'Docker\API\Model\GenericResourcesItem', 'json', $context);
             }
             $object->setGenericResources($values);
             unset($data['GenericResources']);
@@ -76,9 +76,9 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('nanoCPUs') && null !== $object->getNanoCPUs()) {
             $data['NanoCPUs'] = $object->getNanoCPUs();
         }
@@ -86,9 +86,9 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
             $data['MemoryBytes'] = $object->getMemoryBytes();
         }
         if ($object->isInitialized('genericResources') && null !== $object->getGenericResources()) {
-            $values = array();
+            $values = [];
             foreach ($object->getGenericResources() as $value) {
-                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values[] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['GenericResources'] = $values;
         }
@@ -99,8 +99,8 @@ class ResourceObjectNormalizer implements DenormalizerInterface, NormalizerInter
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\ResourceObject' => false);
+        return ['Docker\API\Model\ResourceObject' => false];
     }
 }

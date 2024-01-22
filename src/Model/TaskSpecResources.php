@@ -7,8 +7,8 @@ class TaskSpecResources extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class TaskSpecResources extends \ArrayObject
      *
      * @return ResourceObject|null
      */
-    public function getLimits() : ?ResourceObject
+    public function getLimits(): ?ResourceObject
     {
         return $this->limits;
     }
@@ -40,7 +40,7 @@ class TaskSpecResources extends \ArrayObject
      *
      * @return self
      */
-    public function setLimits(?ResourceObject $limits) : self
+    public function setLimits(?ResourceObject $limits): self
     {
         $this->initialized['limits'] = true;
         $this->limits = $limits;
@@ -51,7 +51,7 @@ class TaskSpecResources extends \ArrayObject
      *
      * @return ResourceObject|null
      */
-    public function getReservation() : ?ResourceObject
+    public function getReservation(): ?ResourceObject
     {
         return $this->reservation;
     }
@@ -62,7 +62,7 @@ class TaskSpecResources extends \ArrayObject
      *
      * @return self
      */
-    public function setReservation(?ResourceObject $reservation) : self
+    public function setReservation(?ResourceObject $reservation): self
     {
         $this->initialized['reservation'] = true;
         $this->reservation = $reservation;

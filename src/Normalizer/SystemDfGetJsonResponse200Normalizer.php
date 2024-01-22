@@ -18,18 +18,18 @@ class SystemDfGetJsonResponse200Normalizer implements DenormalizerInterface, Nor
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\SystemDfGetJsonResponse200';
+        return $type === 'Docker\API\Model\SystemDfGetJsonResponse200';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SystemDfGetJsonResponse200';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\SystemDfGetJsonResponse200';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -49,9 +49,9 @@ class SystemDfGetJsonResponse200Normalizer implements DenormalizerInterface, Nor
             $object->setLayersSize(null);
         }
         if (\array_key_exists('Images', $data) && $data['Images'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Images'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageSummary', 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, 'Docker\API\Model\ImageSummary', 'json', $context);
             }
             $object->setImages($values);
             unset($data['Images']);
@@ -60,11 +60,11 @@ class SystemDfGetJsonResponse200Normalizer implements DenormalizerInterface, Nor
             $object->setImages(null);
         }
         if (\array_key_exists('Containers', $data) && $data['Containers'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Containers'] as $value_1) {
-                $values_2 = array();
+                $values_2 = [];
                 foreach ($value_1 as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\ContainerSummaryItem', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\API\Model\ContainerSummaryItem', 'json', $context);
                 }
                 $values_1[] = $values_2;
             }
@@ -75,9 +75,9 @@ class SystemDfGetJsonResponse200Normalizer implements DenormalizerInterface, Nor
             $object->setContainers(null);
         }
         if (\array_key_exists('Volumes', $data) && $data['Volumes'] !== null) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($data['Volumes'] as $value_3) {
-                $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\Volume', 'json', $context);
+                $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\API\Model\Volume', 'json', $context);
             }
             $object->setVolumes($values_3);
             unset($data['Volumes']);
@@ -95,34 +95,34 @@ class SystemDfGetJsonResponse200Normalizer implements DenormalizerInterface, Nor
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('layersSize') && null !== $object->getLayersSize()) {
             $data['LayersSize'] = $object->getLayersSize();
         }
         if ($object->isInitialized('images') && null !== $object->getImages()) {
-            $values = array();
+            $values = [];
             foreach ($object->getImages() as $value) {
-                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values[] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Images'] = $values;
         }
         if ($object->isInitialized('containers') && null !== $object->getContainers()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getContainers() as $value_1) {
-                $values_2 = array();
+                $values_2 = [];
                 foreach ($value_1 as $value_2) {
-                    $values_2[] = $value_2 == null ? null : new \ArrayObject($this->normalizer->normalize($value_2, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                    $values_2[] = ($value_2 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_2, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
                 }
                 $values_1[] = $values_2;
             }
             $data['Containers'] = $values_1;
         }
         if ($object->isInitialized('volumes') && null !== $object->getVolumes()) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($object->getVolumes() as $value_3) {
-                $values_3[] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values_3[] = ($value_3 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Volumes'] = $values_3;
         }
@@ -133,8 +133,8 @@ class SystemDfGetJsonResponse200Normalizer implements DenormalizerInterface, Nor
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\SystemDfGetJsonResponse200' => false);
+        return ['Docker\API\Model\SystemDfGetJsonResponse200' => false];
     }
 }

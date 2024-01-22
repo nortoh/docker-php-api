@@ -10,14 +10,14 @@ class PutContainerArchive extends \Docker\API\Runtime\Client\BaseEndpoint implem
      * Upload a tar archive to be extracted to a path in the filesystem of container id.
      *
      * @param string $id ID or name of the container
-     * @param null|string $requestBody
+     * @param null|string $requestBody 
      * @param array $queryParameters {
-     *     @var string $path Path to a directory in the container to extract the archive’s contents into.
+     *     @var string $path Path to a directory in the container to extract the archive’s contents into. 
      *     @var string $noOverwriteDirNonDir If “1”, “true”, or “True” then it will be an error if unpacking the given content would cause an existing directory to be replaced with a non-directory and vice versa.
      * }
      * @param array $accept Accept content header application/json|text/plain
      */
-    public function __construct(string $id, ?string $requestBody = null, array $queryParameters = array(), array $accept = array())
+    public function __construct(string $id, ?string $requestBody = null, array $queryParameters = [], array $accept = [])
     {
         $this->id = $id;
         $this->body = $requestBody;
@@ -25,39 +25,39 @@ class PutContainerArchive extends \Docker\API\Runtime\Client\BaseEndpoint implem
         $this->accept = $accept;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'PUT';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
-        return str_replace(array('{id}'), array($this->id), '/containers/{id}/archive');
+        return str_replace(['{id}'], [$this->id], '/containers/{id}/archive');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
         if (is_string($this->body)) {
-            return array(array('Content-Type' => array('application/x-tar')), $this->body);
+            return [['Content-Type' => ['application/x-tar']], $this->body];
         }
         if (is_string($this->body)) {
-            return array(array('Content-Type' => array('application/octet-stream')), $this->body);
+            return [['Content-Type' => ['application/octet-stream']], $this->body];
         }
-        return array(array(), null);
+        return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
         if (empty($this->accept)) {
-            return array('Accept' => array('application/json', 'text/plain'));
+            return ['Accept' => ['application/json', 'text/plain']];
         }
         return $this->accept;
     }
-    protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('path', 'noOverwriteDirNonDir'));
-        $optionsResolver->setRequired(array('path'));
-        $optionsResolver->setDefaults(array());
-        $optionsResolver->addAllowedTypes('path', array('string'));
-        $optionsResolver->addAllowedTypes('noOverwriteDirNonDir', array('string'));
+        $optionsResolver->setDefined(['path', 'noOverwriteDirNonDir']);
+        $optionsResolver->setRequired(['path']);
+        $optionsResolver->setDefaults([]);
+        $optionsResolver->addAllowedTypes('path', ['string']);
+        $optionsResolver->addAllowedTypes('noOverwriteDirNonDir', ['string']);
         return $optionsResolver;
     }
     /**
@@ -77,20 +77,20 @@ class PutContainerArchive extends \Docker\API\Runtime\Client\BaseEndpoint implem
         if (200 === $status) {
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\PutContainerArchiveBadRequestException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\PutContainerArchiveBadRequestException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (403 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\PutContainerArchiveForbiddenException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\PutContainerArchiveForbiddenException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (404 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\PutContainerArchiveNotFoundException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\PutContainerArchiveNotFoundException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (500 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\PutContainerArchiveInternalServerErrorException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\PutContainerArchiveInternalServerErrorException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
-        return array();
+        return [];
     }
 }

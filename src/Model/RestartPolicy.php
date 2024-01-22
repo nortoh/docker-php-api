@@ -7,8 +7,8 @@ class RestartPolicy extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -17,7 +17,7 @@ class RestartPolicy extends \ArrayObject
     - `always` Always restart
     - `unless-stopped` Restart always except when the user has manually stopped the container
     - `on-failure` Restart only when the container exit code is non-zero
-
+    
     *
     * @var string|null
     */
@@ -33,11 +33,11 @@ class RestartPolicy extends \ArrayObject
     - `always` Always restart
     - `unless-stopped` Restart always except when the user has manually stopped the container
     - `on-failure` Restart only when the container exit code is non-zero
-
+    
     *
     * @return string|null
     */
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -46,13 +46,13 @@ class RestartPolicy extends \ArrayObject
     - `always` Always restart
     - `unless-stopped` Restart always except when the user has manually stopped the container
     - `on-failure` Restart only when the container exit code is non-zero
-
+    
     *
     * @param string|null $name
     *
     * @return self
     */
-    public function setName(?string $name) : self
+    public function setName(?string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -63,7 +63,7 @@ class RestartPolicy extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMaximumRetryCount() : ?int
+    public function getMaximumRetryCount(): ?int
     {
         return $this->maximumRetryCount;
     }
@@ -74,7 +74,7 @@ class RestartPolicy extends \ArrayObject
      *
      * @return self
      */
-    public function setMaximumRetryCount(?int $maximumRetryCount) : self
+    public function setMaximumRetryCount(?int $maximumRetryCount): self
     {
         $this->initialized['maximumRetryCount'] = true;
         $this->maximumRetryCount = $maximumRetryCount;

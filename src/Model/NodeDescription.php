@@ -7,13 +7,13 @@ class NodeDescription extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
+     * 
      *
      * @var string|null
      */
@@ -43,22 +43,22 @@ class NodeDescription extends \ArrayObject
      */
     protected $tLSInfo;
     /**
-     *
+     * 
      *
      * @return string|null
      */
-    public function getHostname() : ?string
+    public function getHostname(): ?string
     {
         return $this->hostname;
     }
     /**
-     *
+     * 
      *
      * @param string|null $hostname
      *
      * @return self
      */
-    public function setHostname(?string $hostname) : self
+    public function setHostname(?string $hostname): self
     {
         $this->initialized['hostname'] = true;
         $this->hostname = $hostname;
@@ -69,7 +69,7 @@ class NodeDescription extends \ArrayObject
      *
      * @return Platform|null
      */
-    public function getPlatform() : ?Platform
+    public function getPlatform(): ?Platform
     {
         return $this->platform;
     }
@@ -80,7 +80,7 @@ class NodeDescription extends \ArrayObject
      *
      * @return self
      */
-    public function setPlatform(?Platform $platform) : self
+    public function setPlatform(?Platform $platform): self
     {
         $this->initialized['platform'] = true;
         $this->platform = $platform;
@@ -91,7 +91,7 @@ class NodeDescription extends \ArrayObject
      *
      * @return ResourceObject|null
      */
-    public function getResources() : ?ResourceObject
+    public function getResources(): ?ResourceObject
     {
         return $this->resources;
     }
@@ -102,7 +102,7 @@ class NodeDescription extends \ArrayObject
      *
      * @return self
      */
-    public function setResources(?ResourceObject $resources) : self
+    public function setResources(?ResourceObject $resources): self
     {
         $this->initialized['resources'] = true;
         $this->resources = $resources;
@@ -113,7 +113,7 @@ class NodeDescription extends \ArrayObject
      *
      * @return EngineDescription|null
      */
-    public function getEngine() : ?EngineDescription
+    public function getEngine(): ?EngineDescription
     {
         return $this->engine;
     }
@@ -124,7 +124,7 @@ class NodeDescription extends \ArrayObject
      *
      * @return self
      */
-    public function setEngine(?EngineDescription $engine) : self
+    public function setEngine(?EngineDescription $engine): self
     {
         $this->initialized['engine'] = true;
         $this->engine = $engine;
@@ -135,7 +135,7 @@ class NodeDescription extends \ArrayObject
      *
      * @return TLSInfo|null
      */
-    public function getTLSInfo() : ?TLSInfo
+    public function getTLSInfo(): ?TLSInfo
     {
         return $this->tLSInfo;
     }
@@ -146,7 +146,7 @@ class NodeDescription extends \ArrayObject
      *
      * @return self
      */
-    public function setTLSInfo(?TLSInfo $tLSInfo) : self
+    public function setTLSInfo(?TLSInfo $tLSInfo): self
     {
         $this->initialized['tLSInfo'] = true;
         $this->tLSInfo = $tLSInfo;

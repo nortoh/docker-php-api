@@ -8,10 +8,10 @@ class ImageDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
     /**
     * Remove an image, along with any untagged parent images that were
     referenced by that image.
-
+    
     Images can't be removed if they have descendant images, are being
     used by a running container or are being used by a build.
-
+    
     *
     * @param string $name Image name or ID
     * @param array $queryParameters {
@@ -19,36 +19,36 @@ class ImageDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
     *     @var bool $noprune Do not delete untagged parent images
     * }
     */
-    public function __construct(string $name, array $queryParameters = array())
+    public function __construct(string $name, array $queryParameters = [])
     {
         $this->name = $name;
         $this->queryParameters = $queryParameters;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'DELETE';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
-        return str_replace(array('{name}'), array($this->name), '/images/{name}');
+        return str_replace(['{name}'], [$this->name], '/images/{name}');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
-        return array(array(), null);
+        return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
-    protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('force', 'noprune'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('force' => false, 'noprune' => false));
-        $optionsResolver->addAllowedTypes('force', array('bool'));
-        $optionsResolver->addAllowedTypes('noprune', array('bool'));
+        $optionsResolver->setDefined(['force', 'noprune']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['force' => false, 'noprune' => false]);
+        $optionsResolver->addAllowedTypes('force', ['bool']);
+        $optionsResolver->addAllowedTypes('noprune', ['bool']);
         return $optionsResolver;
     }
     /**
@@ -65,20 +65,20 @@ class ImageDelete extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (is_null($contentType) === false && (200 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            return $serializer->deserialize($body, 'Docker\\API\\Model\\ImageDeleteResponseItem[]', 'json');
+            return $serializer->deserialize($body, 'Docker\API\Model\ImageDeleteResponseItem[]', 'json');
         }
         if (is_null($contentType) === false && (404 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ImageDeleteNotFoundException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ImageDeleteNotFoundException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (409 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ImageDeleteConflictException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ImageDeleteConflictException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (500 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ImageDeleteInternalServerErrorException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ImageDeleteInternalServerErrorException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
-        return array();
+        return [];
     }
 }

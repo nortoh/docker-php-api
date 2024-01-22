@@ -18,18 +18,18 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\ImageSummary';
+        return $type === 'Docker\API\Model\ImageSummary';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ImageSummary';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\ImageSummary';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -56,7 +56,7 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setParentId(null);
         }
         if (\array_key_exists('RepoTags', $data) && $data['RepoTags'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['RepoTags'] as $value) {
                 $values[] = $value;
             }
@@ -67,7 +67,7 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setRepoTags(null);
         }
         if (\array_key_exists('RepoDigests', $data) && $data['RepoDigests'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['RepoDigests'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -106,7 +106,7 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
             $object->setVirtualSize(null);
         }
         if (\array_key_exists('Labels', $data) && $data['Labels'] !== null) {
-            $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_2 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Labels'] as $key => $value_2) {
                 $values_2[$key] = $value_2;
             }
@@ -133,17 +133,17 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         $data['Id'] = $object->getId();
         $data['ParentId'] = $object->getParentId();
-        $values = array();
+        $values = [];
         foreach ($object->getRepoTags() as $value) {
             $values[] = $value;
         }
         $data['RepoTags'] = $values;
-        $values_1 = array();
+        $values_1 = [];
         foreach ($object->getRepoDigests() as $value_1) {
             $values_1[] = $value_1;
         }
@@ -152,7 +152,7 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
         $data['Size'] = $object->getSize();
         $data['SharedSize'] = $object->getSharedSize();
         $data['VirtualSize'] = $object->getVirtualSize();
-        $values_2 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+        $values_2 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
         foreach ($object->getLabels() as $key => $value_2) {
             $values_2[$key] = $value_2;
         }
@@ -165,8 +165,8 @@ class ImageSummaryNormalizer implements DenormalizerInterface, NormalizerInterfa
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\ImageSummary' => false);
+        return ['Docker\API\Model\ImageSummary' => false];
     }
 }

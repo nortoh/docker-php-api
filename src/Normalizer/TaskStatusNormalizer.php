@@ -18,18 +18,18 @@ class TaskStatusNormalizer implements DenormalizerInterface, NormalizerInterface
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\TaskStatus';
+        return $type === 'Docker\API\Model\TaskStatus';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskStatus';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\TaskStatus';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -70,7 +70,7 @@ class TaskStatusNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setErr(null);
         }
         if (\array_key_exists('ContainerStatus', $data) && $data['ContainerStatus'] !== null) {
-            $object->setContainerStatus($this->denormalizer->denormalize($data['ContainerStatus'], 'Docker\\API\\Model\\TaskStatusContainerStatus', 'json', $context));
+            $object->setContainerStatus($this->denormalizer->denormalize($data['ContainerStatus'], 'Docker\API\Model\TaskStatusContainerStatus', 'json', $context));
             unset($data['ContainerStatus']);
         }
         elseif (\array_key_exists('ContainerStatus', $data) && $data['ContainerStatus'] === null) {
@@ -86,9 +86,9 @@ class TaskStatusNormalizer implements DenormalizerInterface, NormalizerInterface
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('timestamp') && null !== $object->getTimestamp()) {
             $data['Timestamp'] = $object->getTimestamp();
         }
@@ -102,7 +102,7 @@ class TaskStatusNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['Err'] = $object->getErr();
         }
         if ($object->isInitialized('containerStatus') && null !== $object->getContainerStatus()) {
-            $data['ContainerStatus'] = $object->getContainerStatus() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getContainerStatus(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['ContainerStatus'] = ($object->getContainerStatus() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getContainerStatus(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -111,8 +111,8 @@ class TaskStatusNormalizer implements DenormalizerInterface, NormalizerInterface
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\TaskStatus' => false);
+        return ['Docker\API\Model\TaskStatus' => false];
     }
 }

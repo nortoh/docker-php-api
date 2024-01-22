@@ -7,8 +7,8 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getProtocol() : ?string
+    public function getProtocol(): ?string
     {
         return $this->protocol;
     }
@@ -52,7 +52,7 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setProtocol(?string $protocol) : self
+    public function setProtocol(?string $protocol): self
     {
         $this->initialized['protocol'] = true;
         $this->protocol = $protocol;
@@ -63,7 +63,7 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getURL() : ?string
+    public function getURL(): ?string
     {
         return $this->uRL;
     }
@@ -74,7 +74,7 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setURL(?string $uRL) : self
+    public function setURL(?string $uRL): self
     {
         $this->initialized['uRL'] = true;
         $this->uRL = $uRL;
@@ -85,7 +85,7 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getOptions() : ?iterable
+    public function getOptions(): ?iterable
     {
         return $this->options;
     }
@@ -96,7 +96,7 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?iterable $options) : self
+    public function setOptions(?iterable $options): self
     {
         $this->initialized['options'] = true;
         $this->options = $options;
@@ -107,7 +107,7 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCACert() : ?string
+    public function getCACert(): ?string
     {
         return $this->cACert;
     }
@@ -118,7 +118,7 @@ class SwarmSpecCAConfigExternalCAsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setCACert(?string $cACert) : self
+    public function setCACert(?string $cACert): self
     {
         $this->initialized['cACert'] = true;
         $this->cACert = $cACert;

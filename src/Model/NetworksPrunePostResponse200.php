@@ -7,8 +7,8 @@ class NetworksPrunePostResponse200 extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class NetworksPrunePostResponse200 extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getNetworksDeleted() : ?array
+    public function getNetworksDeleted(): ?array
     {
         return $this->networksDeleted;
     }
@@ -34,7 +34,7 @@ class NetworksPrunePostResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setNetworksDeleted(?array $networksDeleted) : self
+    public function setNetworksDeleted(?array $networksDeleted): self
     {
         $this->initialized['networksDeleted'] = true;
         $this->networksDeleted = $networksDeleted;

@@ -7,8 +7,8 @@ class TaskSpecPluginSpec extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -31,7 +31,7 @@ class TaskSpecPluginSpec extends \ArrayObject
      */
     protected $disabled;
     /**
-     *
+     * 
      *
      * @var TaskSpecPluginSpecPluginPrivilegeItem[]|null
      */
@@ -41,7 +41,7 @@ class TaskSpecPluginSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -52,7 +52,7 @@ class TaskSpecPluginSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -63,7 +63,7 @@ class TaskSpecPluginSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getRemote() : ?string
+    public function getRemote(): ?string
     {
         return $this->remote;
     }
@@ -74,7 +74,7 @@ class TaskSpecPluginSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setRemote(?string $remote) : self
+    public function setRemote(?string $remote): self
     {
         $this->initialized['remote'] = true;
         $this->remote = $remote;
@@ -85,7 +85,7 @@ class TaskSpecPluginSpec extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getDisabled() : ?bool
+    public function getDisabled(): ?bool
     {
         return $this->disabled;
     }
@@ -96,29 +96,29 @@ class TaskSpecPluginSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setDisabled(?bool $disabled) : self
+    public function setDisabled(?bool $disabled): self
     {
         $this->initialized['disabled'] = true;
         $this->disabled = $disabled;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return TaskSpecPluginSpecPluginPrivilegeItem[]|null
      */
-    public function getPluginPrivilege() : ?array
+    public function getPluginPrivilege(): ?array
     {
         return $this->pluginPrivilege;
     }
     /**
-     *
+     * 
      *
      * @param TaskSpecPluginSpecPluginPrivilegeItem[]|null $pluginPrivilege
      *
      * @return self
      */
-    public function setPluginPrivilege(?array $pluginPrivilege) : self
+    public function setPluginPrivilege(?array $pluginPrivilege): self
     {
         $this->initialized['pluginPrivilege'] = true;
         $this->pluginPrivilege = $pluginPrivilege;

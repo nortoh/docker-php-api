@@ -18,18 +18,18 @@ class SwarmSpecTaskDefaultsNormalizer implements DenormalizerInterface, Normaliz
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\SwarmSpecTaskDefaults';
+        return $type === 'Docker\API\Model\SwarmSpecTaskDefaults';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SwarmSpecTaskDefaults';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\SwarmSpecTaskDefaults';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class SwarmSpecTaskDefaultsNormalizer implements DenormalizerInterface, Normaliz
             return $object;
         }
         if (\array_key_exists('LogDriver', $data) && $data['LogDriver'] !== null) {
-            $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], 'Docker\\API\\Model\\SwarmSpecTaskDefaultsLogDriver', 'json', $context));
+            $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], 'Docker\API\Model\SwarmSpecTaskDefaultsLogDriver', 'json', $context));
             unset($data['LogDriver']);
         }
         elseif (\array_key_exists('LogDriver', $data) && $data['LogDriver'] === null) {
@@ -58,11 +58,11 @@ class SwarmSpecTaskDefaultsNormalizer implements DenormalizerInterface, Normaliz
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('logDriver') && null !== $object->getLogDriver()) {
-            $data['LogDriver'] = $object->getLogDriver() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getLogDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['LogDriver'] = ($object->getLogDriver() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getLogDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -71,8 +71,8 @@ class SwarmSpecTaskDefaultsNormalizer implements DenormalizerInterface, Normaliz
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\SwarmSpecTaskDefaults' => false);
+        return ['Docker\API\Model\SwarmSpecTaskDefaults' => false];
     }
 }

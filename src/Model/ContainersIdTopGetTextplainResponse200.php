@@ -7,8 +7,8 @@ class ContainersIdTopGetTextplainResponse200 extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ContainersIdTopGetTextplainResponse200 extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getTitles() : ?array
+    public function getTitles(): ?array
     {
         return $this->titles;
     }
@@ -40,7 +40,7 @@ class ContainersIdTopGetTextplainResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setTitles(?array $titles) : self
+    public function setTitles(?array $titles): self
     {
         $this->initialized['titles'] = true;
         $this->titles = $titles;
@@ -51,7 +51,7 @@ class ContainersIdTopGetTextplainResponse200 extends \ArrayObject
      *
      * @return string[][]|null
      */
-    public function getProcesses() : ?array
+    public function getProcesses(): ?array
     {
         return $this->processes;
     }
@@ -62,7 +62,7 @@ class ContainersIdTopGetTextplainResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setProcesses(?array $processes) : self
+    public function setProcesses(?array $processes): self
     {
         $this->initialized['processes'] = true;
         $this->processes = $processes;

@@ -18,18 +18,18 @@ class MountNormalizer implements DenormalizerInterface, NormalizerInterface, Den
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\Mount';
+        return $type === 'Docker\API\Model\Mount';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Mount';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\Mount';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -77,21 +77,21 @@ class MountNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setConsistency(null);
         }
         if (\array_key_exists('BindOptions', $data) && $data['BindOptions'] !== null) {
-            $object->setBindOptions($this->denormalizer->denormalize($data['BindOptions'], 'Docker\\API\\Model\\MountBindOptions', 'json', $context));
+            $object->setBindOptions($this->denormalizer->denormalize($data['BindOptions'], 'Docker\API\Model\MountBindOptions', 'json', $context));
             unset($data['BindOptions']);
         }
         elseif (\array_key_exists('BindOptions', $data) && $data['BindOptions'] === null) {
             $object->setBindOptions(null);
         }
         if (\array_key_exists('VolumeOptions', $data) && $data['VolumeOptions'] !== null) {
-            $object->setVolumeOptions($this->denormalizer->denormalize($data['VolumeOptions'], 'Docker\\API\\Model\\MountVolumeOptions', 'json', $context));
+            $object->setVolumeOptions($this->denormalizer->denormalize($data['VolumeOptions'], 'Docker\API\Model\MountVolumeOptions', 'json', $context));
             unset($data['VolumeOptions']);
         }
         elseif (\array_key_exists('VolumeOptions', $data) && $data['VolumeOptions'] === null) {
             $object->setVolumeOptions(null);
         }
         if (\array_key_exists('TmpfsOptions', $data) && $data['TmpfsOptions'] !== null) {
-            $object->setTmpfsOptions($this->denormalizer->denormalize($data['TmpfsOptions'], 'Docker\\API\\Model\\MountTmpfsOptions', 'json', $context));
+            $object->setTmpfsOptions($this->denormalizer->denormalize($data['TmpfsOptions'], 'Docker\API\Model\MountTmpfsOptions', 'json', $context));
             unset($data['TmpfsOptions']);
         }
         elseif (\array_key_exists('TmpfsOptions', $data) && $data['TmpfsOptions'] === null) {
@@ -107,9 +107,9 @@ class MountNormalizer implements DenormalizerInterface, NormalizerInterface, Den
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('target') && null !== $object->getTarget()) {
             $data['Target'] = $object->getTarget();
         }
@@ -126,13 +126,13 @@ class MountNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $data['Consistency'] = $object->getConsistency();
         }
         if ($object->isInitialized('bindOptions') && null !== $object->getBindOptions()) {
-            $data['BindOptions'] = $object->getBindOptions() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getBindOptions(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['BindOptions'] = ($object->getBindOptions() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getBindOptions(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('volumeOptions') && null !== $object->getVolumeOptions()) {
-            $data['VolumeOptions'] = $object->getVolumeOptions() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getVolumeOptions(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['VolumeOptions'] = ($object->getVolumeOptions() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getVolumeOptions(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('tmpfsOptions') && null !== $object->getTmpfsOptions()) {
-            $data['TmpfsOptions'] = $object->getTmpfsOptions() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getTmpfsOptions(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['TmpfsOptions'] = ($object->getTmpfsOptions() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getTmpfsOptions(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -141,8 +141,8 @@ class MountNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\Mount' => false);
+        return ['Docker\API\Model\Mount' => false];
     }
 }

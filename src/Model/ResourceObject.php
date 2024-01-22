@@ -7,19 +7,19 @@ class ResourceObject extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
+     * 
      *
      * @var int|null
      */
     protected $nanoCPUs;
     /**
-     *
+     * 
      *
      * @var int|null
      */
@@ -31,44 +31,44 @@ class ResourceObject extends \ArrayObject
      */
     protected $genericResources;
     /**
-     *
+     * 
      *
      * @return int|null
      */
-    public function getNanoCPUs() : ?int
+    public function getNanoCPUs(): ?int
     {
         return $this->nanoCPUs;
     }
     /**
-     *
+     * 
      *
      * @param int|null $nanoCPUs
      *
      * @return self
      */
-    public function setNanoCPUs(?int $nanoCPUs) : self
+    public function setNanoCPUs(?int $nanoCPUs): self
     {
         $this->initialized['nanoCPUs'] = true;
         $this->nanoCPUs = $nanoCPUs;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return int|null
      */
-    public function getMemoryBytes() : ?int
+    public function getMemoryBytes(): ?int
     {
         return $this->memoryBytes;
     }
     /**
-     *
+     * 
      *
      * @param int|null $memoryBytes
      *
      * @return self
      */
-    public function setMemoryBytes(?int $memoryBytes) : self
+    public function setMemoryBytes(?int $memoryBytes): self
     {
         $this->initialized['memoryBytes'] = true;
         $this->memoryBytes = $memoryBytes;
@@ -79,7 +79,7 @@ class ResourceObject extends \ArrayObject
      *
      * @return GenericResourcesItem[]|null
      */
-    public function getGenericResources() : ?array
+    public function getGenericResources(): ?array
     {
         return $this->genericResources;
     }
@@ -90,7 +90,7 @@ class ResourceObject extends \ArrayObject
      *
      * @return self
      */
-    public function setGenericResources(?array $genericResources) : self
+    public function setGenericResources(?array $genericResources): self
     {
         $this->initialized['genericResources'] = true;
         $this->genericResources = $genericResources;

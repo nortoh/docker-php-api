@@ -18,18 +18,18 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem';
+        return $type === 'Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -63,7 +63,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             $object->setOSVersion(null);
         }
         if (\array_key_exists('OSFeatures', $data) && $data['OSFeatures'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['OSFeatures'] as $value) {
                 $values[] = $value;
             }
@@ -81,7 +81,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             $object->setVariant(null);
         }
         if (\array_key_exists('Features', $data) && $data['Features'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Features'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -101,9 +101,9 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('architecture') && null !== $object->getArchitecture()) {
             $data['Architecture'] = $object->getArchitecture();
         }
@@ -114,7 +114,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             $data['OSVersion'] = $object->getOSVersion();
         }
         if ($object->isInitialized('oSFeatures') && null !== $object->getOSFeatures()) {
-            $values = array();
+            $values = [];
             foreach ($object->getOSFeatures() as $value) {
                 $values[] = $value;
             }
@@ -124,7 +124,7 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
             $data['Variant'] = $object->getVariant();
         }
         if ($object->isInitialized('features') && null !== $object->getFeatures()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getFeatures() as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -137,8 +137,8 @@ class DistributionNameJsonGetResponse200PlatformsItemNormalizer implements Denor
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem' => false);
+        return ['Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem' => false];
     }
 }

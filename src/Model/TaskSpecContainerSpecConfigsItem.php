@@ -7,8 +7,8 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -27,7 +27,7 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
     /**
     * ConfigName is the name of the config that this references, but this is just provided for
     lookup/display purposes. The config in the reference will be identified by its ID.
-
+    
     *
     * @var string|null
     */
@@ -37,7 +37,7 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
      *
      * @return TaskSpecContainerSpecConfigsItemFile|null
      */
-    public function getFile() : ?TaskSpecContainerSpecConfigsItemFile
+    public function getFile(): ?TaskSpecContainerSpecConfigsItemFile
     {
         return $this->file;
     }
@@ -48,7 +48,7 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setFile(?TaskSpecContainerSpecConfigsItemFile $file) : self
+    public function setFile(?TaskSpecContainerSpecConfigsItemFile $file): self
     {
         $this->initialized['file'] = true;
         $this->file = $file;
@@ -59,7 +59,7 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getConfigID() : ?string
+    public function getConfigID(): ?string
     {
         return $this->configID;
     }
@@ -70,7 +70,7 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setConfigID(?string $configID) : self
+    public function setConfigID(?string $configID): self
     {
         $this->initialized['configID'] = true;
         $this->configID = $configID;
@@ -79,24 +79,24 @@ class TaskSpecContainerSpecConfigsItem extends \ArrayObject
     /**
     * ConfigName is the name of the config that this references, but this is just provided for
     lookup/display purposes. The config in the reference will be identified by its ID.
-
+    
     *
     * @return string|null
     */
-    public function getConfigName() : ?string
+    public function getConfigName(): ?string
     {
         return $this->configName;
     }
     /**
     * ConfigName is the name of the config that this references, but this is just provided for
     lookup/display purposes. The config in the reference will be identified by its ID.
-
+    
     *
     * @param string|null $configName
     *
     * @return self
     */
-    public function setConfigName(?string $configName) : self
+    public function setConfigName(?string $configName): self
     {
         $this->initialized['configName'] = true;
         $this->configName = $configName;

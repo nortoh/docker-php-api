@@ -7,19 +7,19 @@ class HealthConfig extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
     * The test to perform. Possible values are:
-
+    
     - `[]` inherit healthcheck from image or parent image
     - `["NONE"]` disable healthcheck
     - `["CMD", args...]` exec arguments directly
     - `["CMD-SHELL", command]` run command with system's default shell
-
+    
     *
     * @var string[]|null
     */
@@ -50,33 +50,33 @@ class HealthConfig extends \ArrayObject
     protected $startPeriod;
     /**
     * The test to perform. Possible values are:
-
+    
     - `[]` inherit healthcheck from image or parent image
     - `["NONE"]` disable healthcheck
     - `["CMD", args...]` exec arguments directly
     - `["CMD-SHELL", command]` run command with system's default shell
-
+    
     *
     * @return string[]|null
     */
-    public function getTest() : ?array
+    public function getTest(): ?array
     {
         return $this->test;
     }
     /**
     * The test to perform. Possible values are:
-
+    
     - `[]` inherit healthcheck from image or parent image
     - `["NONE"]` disable healthcheck
     - `["CMD", args...]` exec arguments directly
     - `["CMD-SHELL", command]` run command with system's default shell
-
+    
     *
     * @param string[]|null $test
     *
     * @return self
     */
-    public function setTest(?array $test) : self
+    public function setTest(?array $test): self
     {
         $this->initialized['test'] = true;
         $this->test = $test;
@@ -87,7 +87,7 @@ class HealthConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getInterval() : ?int
+    public function getInterval(): ?int
     {
         return $this->interval;
     }
@@ -98,7 +98,7 @@ class HealthConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setInterval(?int $interval) : self
+    public function setInterval(?int $interval): self
     {
         $this->initialized['interval'] = true;
         $this->interval = $interval;
@@ -109,7 +109,7 @@ class HealthConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getTimeout() : ?int
+    public function getTimeout(): ?int
     {
         return $this->timeout;
     }
@@ -120,7 +120,7 @@ class HealthConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setTimeout(?int $timeout) : self
+    public function setTimeout(?int $timeout): self
     {
         $this->initialized['timeout'] = true;
         $this->timeout = $timeout;
@@ -131,7 +131,7 @@ class HealthConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getRetries() : ?int
+    public function getRetries(): ?int
     {
         return $this->retries;
     }
@@ -142,7 +142,7 @@ class HealthConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setRetries(?int $retries) : self
+    public function setRetries(?int $retries): self
     {
         $this->initialized['retries'] = true;
         $this->retries = $retries;
@@ -153,7 +153,7 @@ class HealthConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getStartPeriod() : ?int
+    public function getStartPeriod(): ?int
     {
         return $this->startPeriod;
     }
@@ -164,7 +164,7 @@ class HealthConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setStartPeriod(?int $startPeriod) : self
+    public function setStartPeriod(?int $startPeriod): self
     {
         $this->initialized['startPeriod'] = true;
         $this->startPeriod = $startPeriod;

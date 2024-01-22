@@ -7,8 +7,8 @@ class ContainersIdExecPostBody extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -77,7 +77,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getAttachStdin() : ?bool
+    public function getAttachStdin(): ?bool
     {
         return $this->attachStdin;
     }
@@ -88,7 +88,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setAttachStdin(?bool $attachStdin) : self
+    public function setAttachStdin(?bool $attachStdin): self
     {
         $this->initialized['attachStdin'] = true;
         $this->attachStdin = $attachStdin;
@@ -99,7 +99,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getAttachStdout() : ?bool
+    public function getAttachStdout(): ?bool
     {
         return $this->attachStdout;
     }
@@ -110,7 +110,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setAttachStdout(?bool $attachStdout) : self
+    public function setAttachStdout(?bool $attachStdout): self
     {
         $this->initialized['attachStdout'] = true;
         $this->attachStdout = $attachStdout;
@@ -121,7 +121,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getAttachStderr() : ?bool
+    public function getAttachStderr(): ?bool
     {
         return $this->attachStderr;
     }
@@ -132,7 +132,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setAttachStderr(?bool $attachStderr) : self
+    public function setAttachStderr(?bool $attachStderr): self
     {
         $this->initialized['attachStderr'] = true;
         $this->attachStderr = $attachStderr;
@@ -143,7 +143,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getDetachKeys() : ?string
+    public function getDetachKeys(): ?string
     {
         return $this->detachKeys;
     }
@@ -154,7 +154,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setDetachKeys(?string $detachKeys) : self
+    public function setDetachKeys(?string $detachKeys): self
     {
         $this->initialized['detachKeys'] = true;
         $this->detachKeys = $detachKeys;
@@ -165,7 +165,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getTty() : ?bool
+    public function getTty(): ?bool
     {
         return $this->tty;
     }
@@ -176,7 +176,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setTty(?bool $tty) : self
+    public function setTty(?bool $tty): self
     {
         $this->initialized['tty'] = true;
         $this->tty = $tty;
@@ -187,7 +187,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getEnv() : ?array
+    public function getEnv(): ?array
     {
         return $this->env;
     }
@@ -198,7 +198,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setEnv(?array $env) : self
+    public function setEnv(?array $env): self
     {
         $this->initialized['env'] = true;
         $this->env = $env;
@@ -209,7 +209,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getCmd() : ?array
+    public function getCmd(): ?array
     {
         return $this->cmd;
     }
@@ -220,7 +220,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCmd(?array $cmd) : self
+    public function setCmd(?array $cmd): self
     {
         $this->initialized['cmd'] = true;
         $this->cmd = $cmd;
@@ -231,7 +231,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getPrivileged() : ?bool
+    public function getPrivileged(): ?bool
     {
         return $this->privileged;
     }
@@ -242,7 +242,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setPrivileged(?bool $privileged) : self
+    public function setPrivileged(?bool $privileged): self
     {
         $this->initialized['privileged'] = true;
         $this->privileged = $privileged;
@@ -253,7 +253,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getUser() : ?string
+    public function getUser(): ?string
     {
         return $this->user;
     }
@@ -264,7 +264,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setUser(?string $user) : self
+    public function setUser(?string $user): self
     {
         $this->initialized['user'] = true;
         $this->user = $user;
@@ -275,7 +275,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getWorkingDir() : ?string
+    public function getWorkingDir(): ?string
     {
         return $this->workingDir;
     }
@@ -286,7 +286,7 @@ class ContainersIdExecPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setWorkingDir(?string $workingDir) : self
+    public function setWorkingDir(?string $workingDir): self
     {
         $this->initialized['workingDir'] = true;
         $this->workingDir = $workingDir;

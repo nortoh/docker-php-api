@@ -7,8 +7,8 @@ class Mount extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -26,11 +26,11 @@ class Mount extends \ArrayObject
     protected $source;
     /**
     * The mount type. Available types:
-
+    
     - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
     - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
     - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-
+    
     *
     * @var string|null
     */
@@ -70,7 +70,7 @@ class Mount extends \ArrayObject
      *
      * @return string|null
      */
-    public function getTarget() : ?string
+    public function getTarget(): ?string
     {
         return $this->target;
     }
@@ -81,7 +81,7 @@ class Mount extends \ArrayObject
      *
      * @return self
      */
-    public function setTarget(?string $target) : self
+    public function setTarget(?string $target): self
     {
         $this->initialized['target'] = true;
         $this->target = $target;
@@ -92,7 +92,7 @@ class Mount extends \ArrayObject
      *
      * @return string|null
      */
-    public function getSource() : ?string
+    public function getSource(): ?string
     {
         return $this->source;
     }
@@ -103,7 +103,7 @@ class Mount extends \ArrayObject
      *
      * @return self
      */
-    public function setSource(?string $source) : self
+    public function setSource(?string $source): self
     {
         $this->initialized['source'] = true;
         $this->source = $source;
@@ -111,31 +111,31 @@ class Mount extends \ArrayObject
     }
     /**
     * The mount type. Available types:
-
+    
     - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
     - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
     - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-
+    
     *
     * @return string|null
     */
-    public function getType() : ?string
+    public function getType(): ?string
     {
         return $this->type;
     }
     /**
     * The mount type. Available types:
-
+    
     - `bind` Mounts a file or directory from the host into the container. Must exist prior to creating the container.
     - `volume` Creates a volume with the given name and options (or uses a pre-existing volume with the same name and options). These are **not** removed when the container is removed.
     - `tmpfs` Create a tmpfs with the given options. The mount source cannot be specified for tmpfs.
-
+    
     *
     * @param string|null $type
     *
     * @return self
     */
-    public function setType(?string $type) : self
+    public function setType(?string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -146,7 +146,7 @@ class Mount extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getReadOnly() : ?bool
+    public function getReadOnly(): ?bool
     {
         return $this->readOnly;
     }
@@ -157,7 +157,7 @@ class Mount extends \ArrayObject
      *
      * @return self
      */
-    public function setReadOnly(?bool $readOnly) : self
+    public function setReadOnly(?bool $readOnly): self
     {
         $this->initialized['readOnly'] = true;
         $this->readOnly = $readOnly;
@@ -168,7 +168,7 @@ class Mount extends \ArrayObject
      *
      * @return string|null
      */
-    public function getConsistency() : ?string
+    public function getConsistency(): ?string
     {
         return $this->consistency;
     }
@@ -179,7 +179,7 @@ class Mount extends \ArrayObject
      *
      * @return self
      */
-    public function setConsistency(?string $consistency) : self
+    public function setConsistency(?string $consistency): self
     {
         $this->initialized['consistency'] = true;
         $this->consistency = $consistency;
@@ -190,7 +190,7 @@ class Mount extends \ArrayObject
      *
      * @return MountBindOptions|null
      */
-    public function getBindOptions() : ?MountBindOptions
+    public function getBindOptions(): ?MountBindOptions
     {
         return $this->bindOptions;
     }
@@ -201,7 +201,7 @@ class Mount extends \ArrayObject
      *
      * @return self
      */
-    public function setBindOptions(?MountBindOptions $bindOptions) : self
+    public function setBindOptions(?MountBindOptions $bindOptions): self
     {
         $this->initialized['bindOptions'] = true;
         $this->bindOptions = $bindOptions;
@@ -212,7 +212,7 @@ class Mount extends \ArrayObject
      *
      * @return MountVolumeOptions|null
      */
-    public function getVolumeOptions() : ?MountVolumeOptions
+    public function getVolumeOptions(): ?MountVolumeOptions
     {
         return $this->volumeOptions;
     }
@@ -223,7 +223,7 @@ class Mount extends \ArrayObject
      *
      * @return self
      */
-    public function setVolumeOptions(?MountVolumeOptions $volumeOptions) : self
+    public function setVolumeOptions(?MountVolumeOptions $volumeOptions): self
     {
         $this->initialized['volumeOptions'] = true;
         $this->volumeOptions = $volumeOptions;
@@ -234,7 +234,7 @@ class Mount extends \ArrayObject
      *
      * @return MountTmpfsOptions|null
      */
-    public function getTmpfsOptions() : ?MountTmpfsOptions
+    public function getTmpfsOptions(): ?MountTmpfsOptions
     {
         return $this->tmpfsOptions;
     }
@@ -245,7 +245,7 @@ class Mount extends \ArrayObject
      *
      * @return self
      */
-    public function setTmpfsOptions(?MountTmpfsOptions $tmpfsOptions) : self
+    public function setTmpfsOptions(?MountTmpfsOptions $tmpfsOptions): self
     {
         $this->initialized['tmpfsOptions'] = true;
         $this->tmpfsOptions = $tmpfsOptions;

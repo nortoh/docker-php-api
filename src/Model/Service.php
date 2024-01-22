@@ -7,13 +7,13 @@ class Service extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
+     * 
      *
      * @var string|null
      */
@@ -26,19 +26,19 @@ class Service extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @var ObjectVersion|null
     */
     protected $version;
     /**
-     *
+     * 
      *
      * @var string|null
      */
     protected $createdAt;
     /**
-     *
+     * 
      *
      * @var string|null
      */
@@ -50,7 +50,7 @@ class Service extends \ArrayObject
      */
     protected $spec;
     /**
-     *
+     * 
      *
      * @var ServiceEndpoint|null
      */
@@ -62,22 +62,22 @@ class Service extends \ArrayObject
      */
     protected $updateStatus;
     /**
-     *
+     * 
      *
      * @return string|null
      */
-    public function getID() : ?string
+    public function getID(): ?string
     {
         return $this->iD;
     }
     /**
-     *
+     * 
      *
      * @param string|null $iD
      *
      * @return self
      */
-    public function setID(?string $iD) : self
+    public function setID(?string $iD): self
     {
         $this->initialized['iD'] = true;
         $this->iD = $iD;
@@ -91,11 +91,11 @@ class Service extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @return ObjectVersion|null
     */
-    public function getVersion() : ?ObjectVersion
+    public function getVersion(): ?ObjectVersion
     {
         return $this->version;
     }
@@ -107,57 +107,57 @@ class Service extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @param ObjectVersion|null $version
     *
     * @return self
     */
-    public function setVersion(?ObjectVersion $version) : self
+    public function setVersion(?ObjectVersion $version): self
     {
         $this->initialized['version'] = true;
         $this->version = $version;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string|null
      */
-    public function getCreatedAt() : ?string
+    public function getCreatedAt(): ?string
     {
         return $this->createdAt;
     }
     /**
-     *
+     * 
      *
      * @param string|null $createdAt
      *
      * @return self
      */
-    public function setCreatedAt(?string $createdAt) : self
+    public function setCreatedAt(?string $createdAt): self
     {
         $this->initialized['createdAt'] = true;
         $this->createdAt = $createdAt;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string|null
      */
-    public function getUpdatedAt() : ?string
+    public function getUpdatedAt(): ?string
     {
         return $this->updatedAt;
     }
     /**
-     *
+     * 
      *
      * @param string|null $updatedAt
      *
      * @return self
      */
-    public function setUpdatedAt(?string $updatedAt) : self
+    public function setUpdatedAt(?string $updatedAt): self
     {
         $this->initialized['updatedAt'] = true;
         $this->updatedAt = $updatedAt;
@@ -168,7 +168,7 @@ class Service extends \ArrayObject
      *
      * @return ServiceSpec|null
      */
-    public function getSpec() : ?ServiceSpec
+    public function getSpec(): ?ServiceSpec
     {
         return $this->spec;
     }
@@ -179,29 +179,29 @@ class Service extends \ArrayObject
      *
      * @return self
      */
-    public function setSpec(?ServiceSpec $spec) : self
+    public function setSpec(?ServiceSpec $spec): self
     {
         $this->initialized['spec'] = true;
         $this->spec = $spec;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return ServiceEndpoint|null
      */
-    public function getEndpoint() : ?ServiceEndpoint
+    public function getEndpoint(): ?ServiceEndpoint
     {
         return $this->endpoint;
     }
     /**
-     *
+     * 
      *
      * @param ServiceEndpoint|null $endpoint
      *
      * @return self
      */
-    public function setEndpoint(?ServiceEndpoint $endpoint) : self
+    public function setEndpoint(?ServiceEndpoint $endpoint): self
     {
         $this->initialized['endpoint'] = true;
         $this->endpoint = $endpoint;
@@ -212,7 +212,7 @@ class Service extends \ArrayObject
      *
      * @return ServiceUpdateStatus|null
      */
-    public function getUpdateStatus() : ?ServiceUpdateStatus
+    public function getUpdateStatus(): ?ServiceUpdateStatus
     {
         return $this->updateStatus;
     }
@@ -223,7 +223,7 @@ class Service extends \ArrayObject
      *
      * @return self
      */
-    public function setUpdateStatus(?ServiceUpdateStatus $updateStatus) : self
+    public function setUpdateStatus(?ServiceUpdateStatus $updateStatus): self
     {
         $this->initialized['updateStatus'] = true;
         $this->updateStatus = $updateStatus;

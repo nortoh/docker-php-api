@@ -18,18 +18,18 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\ContainerConfig';
+        return $type === 'Docker\API\Model\ContainerConfig';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainerConfig';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\ContainerConfig';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -84,9 +84,9 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setAttachStderr(null);
         }
         if (\array_key_exists('ExposedPorts', $data) && $data['ExposedPorts'] !== null) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['ExposedPorts'] as $key => $value) {
-                $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ContainerConfigExposedPortsItem', 'json', $context);
+                $values[$key] = $this->denormalizer->denormalize($value, 'Docker\API\Model\ContainerConfigExposedPortsItem', 'json', $context);
             }
             $object->setExposedPorts($values);
             unset($data['ExposedPorts']);
@@ -116,7 +116,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setStdinOnce(null);
         }
         if (\array_key_exists('Env', $data) && $data['Env'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Env'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -127,7 +127,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setEnv(null);
         }
         if (\array_key_exists('Cmd', $data) && $data['Cmd'] !== null) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['Cmd'] as $value_2) {
                 $values_2[] = $value_2;
             }
@@ -138,7 +138,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setCmd(null);
         }
         if (\array_key_exists('Healthcheck', $data) && $data['Healthcheck'] !== null) {
-            $object->setHealthcheck($this->denormalizer->denormalize($data['Healthcheck'], 'Docker\\API\\Model\\HealthConfig', 'json', $context));
+            $object->setHealthcheck($this->denormalizer->denormalize($data['Healthcheck'], 'Docker\API\Model\HealthConfig', 'json', $context));
             unset($data['Healthcheck']);
         }
         elseif (\array_key_exists('Healthcheck', $data) && $data['Healthcheck'] === null) {
@@ -159,9 +159,9 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setImage(null);
         }
         if (\array_key_exists('Volumes', $data) && $data['Volumes'] !== null) {
-            $values_3 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_3 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Volumes'] as $key_1 => $value_3) {
-                $values_3[$key_1] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\ContainerConfigVolumesItem', 'json', $context);
+                $values_3[$key_1] = $this->denormalizer->denormalize($value_3, 'Docker\API\Model\ContainerConfigVolumesItem', 'json', $context);
             }
             $object->setVolumes($values_3);
             unset($data['Volumes']);
@@ -177,7 +177,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setWorkingDir(null);
         }
         if (\array_key_exists('Entrypoint', $data) && $data['Entrypoint'] !== null) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($data['Entrypoint'] as $value_4) {
                 $values_4[] = $value_4;
             }
@@ -202,7 +202,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setMacAddress(null);
         }
         if (\array_key_exists('OnBuild', $data) && $data['OnBuild'] !== null) {
-            $values_5 = array();
+            $values_5 = [];
             foreach ($data['OnBuild'] as $value_5) {
                 $values_5[] = $value_5;
             }
@@ -213,7 +213,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setOnBuild(null);
         }
         if (\array_key_exists('Labels', $data) && $data['Labels'] !== null) {
-            $values_6 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_6 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Labels'] as $key_2 => $value_6) {
                 $values_6[$key_2] = $value_6;
             }
@@ -238,7 +238,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $object->setStopTimeout(null);
         }
         if (\array_key_exists('Shell', $data) && $data['Shell'] !== null) {
-            $values_7 = array();
+            $values_7 = [];
             foreach ($data['Shell'] as $value_7) {
                 $values_7[] = $value_7;
             }
@@ -258,9 +258,9 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('hostname') && null !== $object->getHostname()) {
             $data['Hostname'] = $object->getHostname();
         }
@@ -280,9 +280,9 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $data['AttachStderr'] = $object->getAttachStderr();
         }
         if ($object->isInitialized('exposedPorts') && null !== $object->getExposedPorts()) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getExposedPorts() as $key => $value) {
-                $values[$key] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values[$key] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['ExposedPorts'] = $values;
         }
@@ -296,21 +296,21 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $data['StdinOnce'] = $object->getStdinOnce();
         }
         if ($object->isInitialized('env') && null !== $object->getEnv()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getEnv() as $value_1) {
                 $values_1[] = $value_1;
             }
             $data['Env'] = $values_1;
         }
         if ($object->isInitialized('cmd') && null !== $object->getCmd()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getCmd() as $value_2) {
                 $values_2[] = $value_2;
             }
             $data['Cmd'] = $values_2;
         }
         if ($object->isInitialized('healthcheck') && null !== $object->getHealthcheck()) {
-            $data['Healthcheck'] = $object->getHealthcheck() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getHealthcheck(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Healthcheck'] = ($object->getHealthcheck() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getHealthcheck(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('argsEscaped') && null !== $object->getArgsEscaped()) {
             $data['ArgsEscaped'] = $object->getArgsEscaped();
@@ -319,9 +319,9 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $data['Image'] = $object->getImage();
         }
         if ($object->isInitialized('volumes') && null !== $object->getVolumes()) {
-            $values_3 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_3 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getVolumes() as $key_1 => $value_3) {
-                $values_3[$key_1] = $value_3 == null ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values_3[$key_1] = ($value_3 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_3, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Volumes'] = $values_3;
         }
@@ -329,7 +329,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $data['WorkingDir'] = $object->getWorkingDir();
         }
         if ($object->isInitialized('entrypoint') && null !== $object->getEntrypoint()) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($object->getEntrypoint() as $value_4) {
                 $values_4[] = $value_4;
             }
@@ -342,14 +342,14 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $data['MacAddress'] = $object->getMacAddress();
         }
         if ($object->isInitialized('onBuild') && null !== $object->getOnBuild()) {
-            $values_5 = array();
+            $values_5 = [];
             foreach ($object->getOnBuild() as $value_5) {
                 $values_5[] = $value_5;
             }
             $data['OnBuild'] = $values_5;
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values_6 = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values_6 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getLabels() as $key_2 => $value_6) {
                 $values_6[$key_2] = $value_6;
             }
@@ -362,7 +362,7 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
             $data['StopTimeout'] = $object->getStopTimeout();
         }
         if ($object->isInitialized('shell') && null !== $object->getShell()) {
-            $values_7 = array();
+            $values_7 = [];
             foreach ($object->getShell() as $value_7) {
                 $values_7[] = $value_7;
             }
@@ -375,8 +375,8 @@ class ContainerConfigNormalizer implements DenormalizerInterface, NormalizerInte
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\ContainerConfig' => false);
+        return ['Docker\API\Model\ContainerConfig' => false];
     }
 }

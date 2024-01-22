@@ -7,8 +7,8 @@ class SwarmJoinPostBody extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -28,11 +28,11 @@ class SwarmJoinPostBody extends \ArrayObject
     * Address or interface to use for data path traffic (format: `<ip|interface>`), for example,  `192.168.1.1`,
     or an interface, like `eth0`. If `DataPathAddr` is unspecified, the same address as `AdvertiseAddr`
     is used.
-
+    
     The `DataPathAddr` specifies the address that global scope network drivers will publish towards other
     nodes in order to reach the containers running on this node. Using this parameter it is possible to
     separate the container data traffic from the management traffic of the cluster.
-
+    
     *
     * @var string|null
     */
@@ -54,7 +54,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getListenAddr() : ?string
+    public function getListenAddr(): ?string
     {
         return $this->listenAddr;
     }
@@ -65,7 +65,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setListenAddr(?string $listenAddr) : self
+    public function setListenAddr(?string $listenAddr): self
     {
         $this->initialized['listenAddr'] = true;
         $this->listenAddr = $listenAddr;
@@ -76,7 +76,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getAdvertiseAddr() : ?string
+    public function getAdvertiseAddr(): ?string
     {
         return $this->advertiseAddr;
     }
@@ -87,7 +87,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setAdvertiseAddr(?string $advertiseAddr) : self
+    public function setAdvertiseAddr(?string $advertiseAddr): self
     {
         $this->initialized['advertiseAddr'] = true;
         $this->advertiseAddr = $advertiseAddr;
@@ -97,15 +97,15 @@ class SwarmJoinPostBody extends \ArrayObject
     * Address or interface to use for data path traffic (format: `<ip|interface>`), for example,  `192.168.1.1`,
     or an interface, like `eth0`. If `DataPathAddr` is unspecified, the same address as `AdvertiseAddr`
     is used.
-
+    
     The `DataPathAddr` specifies the address that global scope network drivers will publish towards other
     nodes in order to reach the containers running on this node. Using this parameter it is possible to
     separate the container data traffic from the management traffic of the cluster.
-
+    
     *
     * @return string|null
     */
-    public function getDataPathAddr() : ?string
+    public function getDataPathAddr(): ?string
     {
         return $this->dataPathAddr;
     }
@@ -113,17 +113,17 @@ class SwarmJoinPostBody extends \ArrayObject
     * Address or interface to use for data path traffic (format: `<ip|interface>`), for example,  `192.168.1.1`,
     or an interface, like `eth0`. If `DataPathAddr` is unspecified, the same address as `AdvertiseAddr`
     is used.
-
+    
     The `DataPathAddr` specifies the address that global scope network drivers will publish towards other
     nodes in order to reach the containers running on this node. Using this parameter it is possible to
     separate the container data traffic from the management traffic of the cluster.
-
+    
     *
     * @param string|null $dataPathAddr
     *
     * @return self
     */
-    public function setDataPathAddr(?string $dataPathAddr) : self
+    public function setDataPathAddr(?string $dataPathAddr): self
     {
         $this->initialized['dataPathAddr'] = true;
         $this->dataPathAddr = $dataPathAddr;
@@ -134,7 +134,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getRemoteAddrs() : ?string
+    public function getRemoteAddrs(): ?string
     {
         return $this->remoteAddrs;
     }
@@ -145,7 +145,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setRemoteAddrs(?string $remoteAddrs) : self
+    public function setRemoteAddrs(?string $remoteAddrs): self
     {
         $this->initialized['remoteAddrs'] = true;
         $this->remoteAddrs = $remoteAddrs;
@@ -156,7 +156,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getJoinToken() : ?string
+    public function getJoinToken(): ?string
     {
         return $this->joinToken;
     }
@@ -167,7 +167,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setJoinToken(?string $joinToken) : self
+    public function setJoinToken(?string $joinToken): self
     {
         $this->initialized['joinToken'] = true;
         $this->joinToken = $joinToken;

@@ -18,18 +18,18 @@ class SecretSpecNormalizer implements DenormalizerInterface, NormalizerInterface
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\SecretSpec';
+        return $type === 'Docker\API\Model\SecretSpec';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SecretSpec';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\SecretSpec';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -49,7 +49,7 @@ class SecretSpecNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setName(null);
         }
         if (\array_key_exists('Labels', $data) && $data['Labels'] !== null) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Labels'] as $key => $value) {
                 $values[$key] = $value;
             }
@@ -67,7 +67,7 @@ class SecretSpecNormalizer implements DenormalizerInterface, NormalizerInterface
             $object->setData(null);
         }
         if (\array_key_exists('Driver', $data) && $data['Driver'] !== null) {
-            $object->setDriver($this->denormalizer->denormalize($data['Driver'], 'Docker\\API\\Model\\Driver', 'json', $context));
+            $object->setDriver($this->denormalizer->denormalize($data['Driver'], 'Docker\API\Model\Driver', 'json', $context));
             unset($data['Driver']);
         }
         elseif (\array_key_exists('Driver', $data) && $data['Driver'] === null) {
@@ -83,14 +83,14 @@ class SecretSpecNormalizer implements DenormalizerInterface, NormalizerInterface
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('name') && null !== $object->getName()) {
             $data['Name'] = $object->getName();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getLabels() as $key => $value) {
                 $values[$key] = $value;
             }
@@ -100,7 +100,7 @@ class SecretSpecNormalizer implements DenormalizerInterface, NormalizerInterface
             $data['Data'] = $object->getData();
         }
         if ($object->isInitialized('driver') && null !== $object->getDriver()) {
-            $data['Driver'] = $object->getDriver() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Driver'] = ($object->getDriver() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key_1 => $value_1) {
             if (preg_match('/.*/', (string) $key_1)) {
@@ -109,8 +109,8 @@ class SecretSpecNormalizer implements DenormalizerInterface, NormalizerInterface
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\SecretSpec' => false);
+        return ['Docker\API\Model\SecretSpec' => false];
     }
 }
