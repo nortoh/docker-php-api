@@ -7,8 +7,8 @@ class TaskSpecContainerSpecDNSConfig extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class TaskSpecContainerSpecDNSConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getNameservers() : ?array
+    public function getNameservers(): ?array
     {
         return $this->nameservers;
     }
@@ -46,7 +46,7 @@ class TaskSpecContainerSpecDNSConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setNameservers(?array $nameservers) : self
+    public function setNameservers(?array $nameservers): self
     {
         $this->initialized['nameservers'] = true;
         $this->nameservers = $nameservers;
@@ -57,7 +57,7 @@ class TaskSpecContainerSpecDNSConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getSearch() : ?array
+    public function getSearch(): ?array
     {
         return $this->search;
     }
@@ -68,7 +68,7 @@ class TaskSpecContainerSpecDNSConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setSearch(?array $search) : self
+    public function setSearch(?array $search): self
     {
         $this->initialized['search'] = true;
         $this->search = $search;
@@ -79,7 +79,7 @@ class TaskSpecContainerSpecDNSConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getOptions() : ?array
+    public function getOptions(): ?array
     {
         return $this->options;
     }
@@ -90,7 +90,7 @@ class TaskSpecContainerSpecDNSConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?array $options) : self
+    public function setOptions(?array $options): self
     {
         $this->initialized['options'] = true;
         $this->options = $options;

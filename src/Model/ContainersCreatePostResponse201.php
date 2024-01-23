@@ -7,8 +7,8 @@ class ContainersCreatePostResponse201 extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ContainersCreatePostResponse201 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getId() : ?string
+    public function getId(): ?string
     {
         return $this->id;
     }
@@ -40,7 +40,7 @@ class ContainersCreatePostResponse201 extends \ArrayObject
      *
      * @return self
      */
-    public function setId(?string $id) : self
+    public function setId(?string $id): self
     {
         $this->initialized['id'] = true;
         $this->id = $id;
@@ -51,7 +51,7 @@ class ContainersCreatePostResponse201 extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getWarnings() : ?array
+    public function getWarnings(): ?array
     {
         return $this->warnings;
     }
@@ -62,7 +62,7 @@ class ContainersCreatePostResponse201 extends \ArrayObject
      *
      * @return self
      */
-    public function setWarnings(?array $warnings) : self
+    public function setWarnings(?array $warnings): self
     {
         $this->initialized['warnings'] = true;
         $this->warnings = $warnings;

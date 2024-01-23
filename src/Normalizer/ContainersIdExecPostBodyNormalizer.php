@@ -18,18 +18,18 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\ContainersIdExecPostBody';
+        return $type === 'Docker\API\Model\ContainersIdExecPostBody';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainersIdExecPostBody';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\ContainersIdExecPostBody';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -77,7 +77,7 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
             $object->setTty(null);
         }
         if (\array_key_exists('Env', $data) && $data['Env'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Env'] as $value) {
                 $values[] = $value;
             }
@@ -88,7 +88,7 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
             $object->setEnv(null);
         }
         if (\array_key_exists('Cmd', $data) && $data['Cmd'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Cmd'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -129,9 +129,9 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('attachStdin') && null !== $object->getAttachStdin()) {
             $data['AttachStdin'] = $object->getAttachStdin();
         }
@@ -148,14 +148,14 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
             $data['Tty'] = $object->getTty();
         }
         if ($object->isInitialized('env') && null !== $object->getEnv()) {
-            $values = array();
+            $values = [];
             foreach ($object->getEnv() as $value) {
                 $values[] = $value;
             }
             $data['Env'] = $values;
         }
         if ($object->isInitialized('cmd') && null !== $object->getCmd()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getCmd() as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -177,8 +177,8 @@ class ContainersIdExecPostBodyNormalizer implements DenormalizerInterface, Norma
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\ContainersIdExecPostBody' => false);
+        return ['Docker\API\Model\ContainersIdExecPostBody' => false];
     }
 }

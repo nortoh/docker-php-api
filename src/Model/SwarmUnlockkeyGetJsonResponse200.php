@@ -7,8 +7,8 @@ class SwarmUnlockkeyGetJsonResponse200 extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class SwarmUnlockkeyGetJsonResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getUnlockKey() : ?string
+    public function getUnlockKey(): ?string
     {
         return $this->unlockKey;
     }
@@ -34,7 +34,7 @@ class SwarmUnlockkeyGetJsonResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setUnlockKey(?string $unlockKey) : self
+    public function setUnlockKey(?string $unlockKey): self
     {
         $this->initialized['unlockKey'] = true;
         $this->unlockKey = $unlockKey;

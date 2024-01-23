@@ -7,13 +7,13 @@ class Node extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
+     * 
      *
      * @var string|null
      */
@@ -26,7 +26,7 @@ class Node extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @var ObjectVersion|null
     */
@@ -34,7 +34,7 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was added to the swarm in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-
+    
     *
     * @var string|null
     */
@@ -42,13 +42,13 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-
+    
     *
     * @var string|null
     */
     protected $updatedAt;
     /**
-     *
+     * 
      *
      * @var NodeSpec|null
      */
@@ -56,47 +56,47 @@ class Node extends \ArrayObject
     /**
     * NodeDescription encapsulates the properties of the Node as reported by the
     agent.
-
+    
     *
     * @var NodeDescription|null
     */
     protected $description;
     /**
     * NodeStatus represents the status of a node.
-
+    
     It provides the current status of the node, as seen by the manager.
-
+    
     *
     * @var NodeStatus|null
     */
     protected $status;
     /**
     * ManagerStatus represents the status of a manager.
-
+    
     It provides the current status of a node's manager component, if the node
     is a manager.
-
+    
     *
     * @var ManagerStatus|null
     */
     protected $managerStatus;
     /**
-     *
+     * 
      *
      * @return string|null
      */
-    public function getID() : ?string
+    public function getID(): ?string
     {
         return $this->iD;
     }
     /**
-     *
+     * 
      *
      * @param string|null $iD
      *
      * @return self
      */
-    public function setID(?string $iD) : self
+    public function setID(?string $iD): self
     {
         $this->initialized['iD'] = true;
         $this->iD = $iD;
@@ -110,11 +110,11 @@ class Node extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @return ObjectVersion|null
     */
-    public function getVersion() : ?ObjectVersion
+    public function getVersion(): ?ObjectVersion
     {
         return $this->version;
     }
@@ -126,13 +126,13 @@ class Node extends \ArrayObject
     if two update requests specify the same base version, only one of the requests can succeed.
     As a result, two separate update requests that happen at the same time will not
     unintentionally overwrite each other.
-
+    
     *
     * @param ObjectVersion|null $version
     *
     * @return self
     */
-    public function setVersion(?ObjectVersion $version) : self
+    public function setVersion(?ObjectVersion $version): self
     {
         $this->initialized['version'] = true;
         $this->version = $version;
@@ -141,24 +141,24 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was added to the swarm in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-
+    
     *
     * @return string|null
     */
-    public function getCreatedAt() : ?string
+    public function getCreatedAt(): ?string
     {
         return $this->createdAt;
     }
     /**
     * Date and time at which the node was added to the swarm in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-
+    
     *
     * @param string|null $createdAt
     *
     * @return self
     */
-    public function setCreatedAt(?string $createdAt) : self
+    public function setCreatedAt(?string $createdAt): self
     {
         $this->initialized['createdAt'] = true;
         $this->createdAt = $createdAt;
@@ -167,46 +167,46 @@ class Node extends \ArrayObject
     /**
     * Date and time at which the node was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-
+    
     *
     * @return string|null
     */
-    public function getUpdatedAt() : ?string
+    public function getUpdatedAt(): ?string
     {
         return $this->updatedAt;
     }
     /**
     * Date and time at which the node was last updated in
     [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) format with nano-seconds.
-
+    
     *
     * @param string|null $updatedAt
     *
     * @return self
     */
-    public function setUpdatedAt(?string $updatedAt) : self
+    public function setUpdatedAt(?string $updatedAt): self
     {
         $this->initialized['updatedAt'] = true;
         $this->updatedAt = $updatedAt;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return NodeSpec|null
      */
-    public function getSpec() : ?NodeSpec
+    public function getSpec(): ?NodeSpec
     {
         return $this->spec;
     }
     /**
-     *
+     * 
      *
      * @param NodeSpec|null $spec
      *
      * @return self
      */
-    public function setSpec(?NodeSpec $spec) : self
+    public function setSpec(?NodeSpec $spec): self
     {
         $this->initialized['spec'] = true;
         $this->spec = $spec;
@@ -215,24 +215,24 @@ class Node extends \ArrayObject
     /**
     * NodeDescription encapsulates the properties of the Node as reported by the
     agent.
-
+    
     *
     * @return NodeDescription|null
     */
-    public function getDescription() : ?NodeDescription
+    public function getDescription(): ?NodeDescription
     {
         return $this->description;
     }
     /**
     * NodeDescription encapsulates the properties of the Node as reported by the
     agent.
-
+    
     *
     * @param NodeDescription|null $description
     *
     * @return self
     */
-    public function setDescription(?NodeDescription $description) : self
+    public function setDescription(?NodeDescription $description): self
     {
         $this->initialized['description'] = true;
         $this->description = $description;
@@ -240,27 +240,27 @@ class Node extends \ArrayObject
     }
     /**
     * NodeStatus represents the status of a node.
-
+    
     It provides the current status of the node, as seen by the manager.
-
+    
     *
     * @return NodeStatus|null
     */
-    public function getStatus() : ?NodeStatus
+    public function getStatus(): ?NodeStatus
     {
         return $this->status;
     }
     /**
     * NodeStatus represents the status of a node.
-
+    
     It provides the current status of the node, as seen by the manager.
-
+    
     *
     * @param NodeStatus|null $status
     *
     * @return self
     */
-    public function setStatus(?NodeStatus $status) : self
+    public function setStatus(?NodeStatus $status): self
     {
         $this->initialized['status'] = true;
         $this->status = $status;
@@ -268,29 +268,29 @@ class Node extends \ArrayObject
     }
     /**
     * ManagerStatus represents the status of a manager.
-
+    
     It provides the current status of a node's manager component, if the node
     is a manager.
-
+    
     *
     * @return ManagerStatus|null
     */
-    public function getManagerStatus() : ?ManagerStatus
+    public function getManagerStatus(): ?ManagerStatus
     {
         return $this->managerStatus;
     }
     /**
     * ManagerStatus represents the status of a manager.
-
+    
     It provides the current status of a node's manager component, if the node
     is a manager.
-
+    
     *
     * @param ManagerStatus|null $managerStatus
     *
     * @return self
     */
-    public function setManagerStatus(?ManagerStatus $managerStatus) : self
+    public function setManagerStatus(?ManagerStatus $managerStatus): self
     {
         $this->initialized['managerStatus'] = true;
         $this->managerStatus = $managerStatus;

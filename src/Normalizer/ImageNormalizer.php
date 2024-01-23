@@ -18,18 +18,18 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\Image';
+        return $type === 'Docker\API\Model\Image';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Image';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\Image';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -49,7 +49,7 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setId(null);
         }
         if (\array_key_exists('RepoTags', $data) && $data['RepoTags'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['RepoTags'] as $value) {
                 $values[] = $value;
             }
@@ -60,7 +60,7 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setRepoTags(null);
         }
         if (\array_key_exists('RepoDigests', $data) && $data['RepoDigests'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['RepoDigests'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -99,7 +99,7 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setContainer(null);
         }
         if (\array_key_exists('ContainerConfig', $data) && $data['ContainerConfig'] !== null) {
-            $object->setContainerConfig($this->denormalizer->denormalize($data['ContainerConfig'], 'Docker\\API\\Model\\ContainerConfig', 'json', $context));
+            $object->setContainerConfig($this->denormalizer->denormalize($data['ContainerConfig'], 'Docker\API\Model\ContainerConfig', 'json', $context));
             unset($data['ContainerConfig']);
         }
         elseif (\array_key_exists('ContainerConfig', $data) && $data['ContainerConfig'] === null) {
@@ -120,7 +120,7 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setAuthor(null);
         }
         if (\array_key_exists('Config', $data) && $data['Config'] !== null) {
-            $object->setConfig($this->denormalizer->denormalize($data['Config'], 'Docker\\API\\Model\\ContainerConfig', 'json', $context));
+            $object->setConfig($this->denormalizer->denormalize($data['Config'], 'Docker\API\Model\ContainerConfig', 'json', $context));
             unset($data['Config']);
         }
         elseif (\array_key_exists('Config', $data) && $data['Config'] === null) {
@@ -162,21 +162,21 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
             $object->setVirtualSize(null);
         }
         if (\array_key_exists('GraphDriver', $data) && $data['GraphDriver'] !== null) {
-            $object->setGraphDriver($this->denormalizer->denormalize($data['GraphDriver'], 'Docker\\API\\Model\\GraphDriverData', 'json', $context));
+            $object->setGraphDriver($this->denormalizer->denormalize($data['GraphDriver'], 'Docker\API\Model\GraphDriverData', 'json', $context));
             unset($data['GraphDriver']);
         }
         elseif (\array_key_exists('GraphDriver', $data) && $data['GraphDriver'] === null) {
             $object->setGraphDriver(null);
         }
         if (\array_key_exists('RootFS', $data) && $data['RootFS'] !== null) {
-            $object->setRootFS($this->denormalizer->denormalize($data['RootFS'], 'Docker\\API\\Model\\ImageRootFS', 'json', $context));
+            $object->setRootFS($this->denormalizer->denormalize($data['RootFS'], 'Docker\API\Model\ImageRootFS', 'json', $context));
             unset($data['RootFS']);
         }
         elseif (\array_key_exists('RootFS', $data) && $data['RootFS'] === null) {
             $object->setRootFS(null);
         }
         if (\array_key_exists('Metadata', $data) && $data['Metadata'] !== null) {
-            $object->setMetadata($this->denormalizer->denormalize($data['Metadata'], 'Docker\\API\\Model\\ImageMetadata', 'json', $context));
+            $object->setMetadata($this->denormalizer->denormalize($data['Metadata'], 'Docker\API\Model\ImageMetadata', 'json', $context));
             unset($data['Metadata']);
         }
         elseif (\array_key_exists('Metadata', $data) && $data['Metadata'] === null) {
@@ -192,19 +192,19 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         $data['Id'] = $object->getId();
         if ($object->isInitialized('repoTags') && null !== $object->getRepoTags()) {
-            $values = array();
+            $values = [];
             foreach ($object->getRepoTags() as $value) {
                 $values[] = $value;
             }
             $data['RepoTags'] = $values;
         }
         if ($object->isInitialized('repoDigests') && null !== $object->getRepoDigests()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getRepoDigests() as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -215,12 +215,12 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         $data['Created'] = $object->getCreated();
         $data['Container'] = $object->getContainer();
         if ($object->isInitialized('containerConfig') && null !== $object->getContainerConfig()) {
-            $data['ContainerConfig'] = $object->getContainerConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getContainerConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['ContainerConfig'] = ($object->getContainerConfig() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getContainerConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['DockerVersion'] = $object->getDockerVersion();
         $data['Author'] = $object->getAuthor();
         if ($object->isInitialized('config') && null !== $object->getConfig()) {
-            $data['Config'] = $object->getConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Config'] = ($object->getConfig() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Architecture'] = $object->getArchitecture();
         $data['Os'] = $object->getOs();
@@ -229,10 +229,10 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         }
         $data['Size'] = $object->getSize();
         $data['VirtualSize'] = $object->getVirtualSize();
-        $data['GraphDriver'] = $object->getGraphDriver() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getGraphDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
-        $data['RootFS'] = $object->getRootFS() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getRootFS(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        $data['GraphDriver'] = ($object->getGraphDriver() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getGraphDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        $data['RootFS'] = ($object->getRootFS() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getRootFS(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         if ($object->isInitialized('metadata') && null !== $object->getMetadata()) {
-            $data['Metadata'] = $object->getMetadata() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getMetadata(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Metadata'] = ($object->getMetadata() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getMetadata(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value_2) {
             if (preg_match('/.*/', (string) $key)) {
@@ -241,8 +241,8 @@ class ImageNormalizer implements DenormalizerInterface, NormalizerInterface, Den
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\Image' => false);
+        return ['Docker\API\Model\Image' => false];
     }
 }

@@ -18,18 +18,18 @@ class ContainerSummaryItemNetworkSettingsNormalizer implements DenormalizerInter
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings';
+        return $type === 'Docker\API\Model\ContainerSummaryItemNetworkSettings';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\ContainerSummaryItemNetworkSettings';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,9 +42,9 @@ class ContainerSummaryItemNetworkSettingsNormalizer implements DenormalizerInter
             return $object;
         }
         if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Networks'] as $key => $value) {
-                $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\EndpointSettings', 'json', $context);
+                $values[$key] = $this->denormalizer->denormalize($value, 'Docker\API\Model\EndpointSettings', 'json', $context);
             }
             $object->setNetworks($values);
             unset($data['Networks']);
@@ -62,13 +62,13 @@ class ContainerSummaryItemNetworkSettingsNormalizer implements DenormalizerInter
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('networks') && null !== $object->getNetworks()) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getNetworks() as $key => $value) {
-                $values[$key] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values[$key] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Networks'] = $values;
         }
@@ -79,8 +79,8 @@ class ContainerSummaryItemNetworkSettingsNormalizer implements DenormalizerInter
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\ContainerSummaryItemNetworkSettings' => false);
+        return ['Docker\API\Model\ContainerSummaryItemNetworkSettings' => false];
     }
 }

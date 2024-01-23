@@ -18,18 +18,18 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\TaskSpecContainerSpec';
+        return $type === 'Docker\API\Model\TaskSpecContainerSpec';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecContainerSpec';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\TaskSpecContainerSpec';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -49,7 +49,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setImage(null);
         }
         if (\array_key_exists('Labels', $data) && $data['Labels'] !== null) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($data['Labels'] as $key => $value) {
                 $values[$key] = $value;
             }
@@ -60,7 +60,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setLabels(null);
         }
         if (\array_key_exists('Command', $data) && $data['Command'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Command'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -71,7 +71,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setCommand(null);
         }
         if (\array_key_exists('Args', $data) && $data['Args'] !== null) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($data['Args'] as $value_2) {
                 $values_2[] = $value_2;
             }
@@ -89,7 +89,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setHostname(null);
         }
         if (\array_key_exists('Env', $data) && $data['Env'] !== null) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($data['Env'] as $value_3) {
                 $values_3[] = $value_3;
             }
@@ -114,7 +114,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setUser(null);
         }
         if (\array_key_exists('Groups', $data) && $data['Groups'] !== null) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($data['Groups'] as $value_4) {
                 $values_4[] = $value_4;
             }
@@ -125,7 +125,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setGroups(null);
         }
         if (\array_key_exists('Privileges', $data) && $data['Privileges'] !== null) {
-            $object->setPrivileges($this->denormalizer->denormalize($data['Privileges'], 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges', 'json', $context));
+            $object->setPrivileges($this->denormalizer->denormalize($data['Privileges'], 'Docker\API\Model\TaskSpecContainerSpecPrivileges', 'json', $context));
             unset($data['Privileges']);
         }
         elseif (\array_key_exists('Privileges', $data) && $data['Privileges'] === null) {
@@ -153,9 +153,9 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setReadOnly(null);
         }
         if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
-            $values_5 = array();
+            $values_5 = [];
             foreach ($data['Mounts'] as $value_5) {
-                $values_5[] = $this->denormalizer->denormalize($value_5, 'Docker\\API\\Model\\Mount', 'json', $context);
+                $values_5[] = $this->denormalizer->denormalize($value_5, 'Docker\API\Model\Mount', 'json', $context);
             }
             $object->setMounts($values_5);
             unset($data['Mounts']);
@@ -178,14 +178,14 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setStopGracePeriod(null);
         }
         if (\array_key_exists('HealthCheck', $data) && $data['HealthCheck'] !== null) {
-            $object->setHealthCheck($this->denormalizer->denormalize($data['HealthCheck'], 'Docker\\API\\Model\\HealthConfig', 'json', $context));
+            $object->setHealthCheck($this->denormalizer->denormalize($data['HealthCheck'], 'Docker\API\Model\HealthConfig', 'json', $context));
             unset($data['HealthCheck']);
         }
         elseif (\array_key_exists('HealthCheck', $data) && $data['HealthCheck'] === null) {
             $object->setHealthCheck(null);
         }
         if (\array_key_exists('Hosts', $data) && $data['Hosts'] !== null) {
-            $values_6 = array();
+            $values_6 = [];
             foreach ($data['Hosts'] as $value_6) {
                 $values_6[] = $value_6;
             }
@@ -196,16 +196,16 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setHosts(null);
         }
         if (\array_key_exists('DNSConfig', $data) && $data['DNSConfig'] !== null) {
-            $object->setDNSConfig($this->denormalizer->denormalize($data['DNSConfig'], 'Docker\\API\\Model\\TaskSpecContainerSpecDNSConfig', 'json', $context));
+            $object->setDNSConfig($this->denormalizer->denormalize($data['DNSConfig'], 'Docker\API\Model\TaskSpecContainerSpecDNSConfig', 'json', $context));
             unset($data['DNSConfig']);
         }
         elseif (\array_key_exists('DNSConfig', $data) && $data['DNSConfig'] === null) {
             $object->setDNSConfig(null);
         }
         if (\array_key_exists('Secrets', $data) && $data['Secrets'] !== null) {
-            $values_7 = array();
+            $values_7 = [];
             foreach ($data['Secrets'] as $value_7) {
-                $values_7[] = $this->denormalizer->denormalize($value_7, 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItem', 'json', $context);
+                $values_7[] = $this->denormalizer->denormalize($value_7, 'Docker\API\Model\TaskSpecContainerSpecSecretsItem', 'json', $context);
             }
             $object->setSecrets($values_7);
             unset($data['Secrets']);
@@ -214,9 +214,9 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $object->setSecrets(null);
         }
         if (\array_key_exists('Configs', $data) && $data['Configs'] !== null) {
-            $values_8 = array();
+            $values_8 = [];
             foreach ($data['Configs'] as $value_8) {
-                $values_8[] = $this->denormalizer->denormalize($value_8, 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItem', 'json', $context);
+                $values_8[] = $this->denormalizer->denormalize($value_8, 'Docker\API\Model\TaskSpecContainerSpecConfigsItem', 'json', $context);
             }
             $object->setConfigs($values_8);
             unset($data['Configs']);
@@ -241,28 +241,28 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('image') && null !== $object->getImage()) {
             $data['Image'] = $object->getImage();
         }
         if ($object->isInitialized('labels') && null !== $object->getLabels()) {
-            $values = new \ArrayObject(array(), \ArrayObject::ARRAY_AS_PROPS);
+            $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
             foreach ($object->getLabels() as $key => $value) {
                 $values[$key] = $value;
             }
             $data['Labels'] = $values;
         }
         if ($object->isInitialized('command') && null !== $object->getCommand()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getCommand() as $value_1) {
                 $values_1[] = $value_1;
             }
             $data['Command'] = $values_1;
         }
         if ($object->isInitialized('args') && null !== $object->getArgs()) {
-            $values_2 = array();
+            $values_2 = [];
             foreach ($object->getArgs() as $value_2) {
                 $values_2[] = $value_2;
             }
@@ -272,7 +272,7 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $data['Hostname'] = $object->getHostname();
         }
         if ($object->isInitialized('env') && null !== $object->getEnv()) {
-            $values_3 = array();
+            $values_3 = [];
             foreach ($object->getEnv() as $value_3) {
                 $values_3[] = $value_3;
             }
@@ -285,14 +285,14 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $data['User'] = $object->getUser();
         }
         if ($object->isInitialized('groups') && null !== $object->getGroups()) {
-            $values_4 = array();
+            $values_4 = [];
             foreach ($object->getGroups() as $value_4) {
                 $values_4[] = $value_4;
             }
             $data['Groups'] = $values_4;
         }
         if ($object->isInitialized('privileges') && null !== $object->getPrivileges()) {
-            $data['Privileges'] = $object->getPrivileges() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getPrivileges(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Privileges'] = ($object->getPrivileges() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getPrivileges(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('tTY') && null !== $object->getTTY()) {
             $data['TTY'] = $object->getTTY();
@@ -304,9 +304,9 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $data['ReadOnly'] = $object->getReadOnly();
         }
         if ($object->isInitialized('mounts') && null !== $object->getMounts()) {
-            $values_5 = array();
+            $values_5 = [];
             foreach ($object->getMounts() as $value_5) {
-                $values_5[] = $value_5 == null ? null : new \ArrayObject($this->normalizer->normalize($value_5, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values_5[] = ($value_5 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_5, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Mounts'] = $values_5;
         }
@@ -317,29 +317,29 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
             $data['StopGracePeriod'] = $object->getStopGracePeriod();
         }
         if ($object->isInitialized('healthCheck') && null !== $object->getHealthCheck()) {
-            $data['HealthCheck'] = $object->getHealthCheck() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getHealthCheck(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['HealthCheck'] = ($object->getHealthCheck() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getHealthCheck(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('hosts') && null !== $object->getHosts()) {
-            $values_6 = array();
+            $values_6 = [];
             foreach ($object->getHosts() as $value_6) {
                 $values_6[] = $value_6;
             }
             $data['Hosts'] = $values_6;
         }
         if ($object->isInitialized('dNSConfig') && null !== $object->getDNSConfig()) {
-            $data['DNSConfig'] = $object->getDNSConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getDNSConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['DNSConfig'] = ($object->getDNSConfig() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getDNSConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('secrets') && null !== $object->getSecrets()) {
-            $values_7 = array();
+            $values_7 = [];
             foreach ($object->getSecrets() as $value_7) {
-                $values_7[] = $value_7 == null ? null : new \ArrayObject($this->normalizer->normalize($value_7, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values_7[] = ($value_7 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_7, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Secrets'] = $values_7;
         }
         if ($object->isInitialized('configs') && null !== $object->getConfigs()) {
-            $values_8 = array();
+            $values_8 = [];
             foreach ($object->getConfigs() as $value_8) {
-                $values_8[] = $value_8 == null ? null : new \ArrayObject($this->normalizer->normalize($value_8, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values_8[] = ($value_8 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_8, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Configs'] = $values_8;
         }
@@ -353,8 +353,8 @@ class TaskSpecContainerSpecNormalizer implements DenormalizerInterface, Normaliz
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\TaskSpecContainerSpec' => false);
+        return ['Docker\API\Model\TaskSpecContainerSpec' => false];
     }
 }

@@ -7,8 +7,8 @@ class Volume extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -40,10 +40,10 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-
+    
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-
+    
     *
     * @var array<string, VolumeStatusItem>|null
     */
@@ -69,7 +69,7 @@ class Volume extends \ArrayObject
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-
+    
     *
     * @var VolumeUsageData|null
     */
@@ -79,7 +79,7 @@ class Volume extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -90,7 +90,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -101,7 +101,7 @@ class Volume extends \ArrayObject
      *
      * @return string|null
      */
-    public function getDriver() : ?string
+    public function getDriver(): ?string
     {
         return $this->driver;
     }
@@ -112,7 +112,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setDriver(?string $driver) : self
+    public function setDriver(?string $driver): self
     {
         $this->initialized['driver'] = true;
         $this->driver = $driver;
@@ -123,7 +123,7 @@ class Volume extends \ArrayObject
      *
      * @return string|null
      */
-    public function getMountpoint() : ?string
+    public function getMountpoint(): ?string
     {
         return $this->mountpoint;
     }
@@ -134,7 +134,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setMountpoint(?string $mountpoint) : self
+    public function setMountpoint(?string $mountpoint): self
     {
         $this->initialized['mountpoint'] = true;
         $this->mountpoint = $mountpoint;
@@ -145,7 +145,7 @@ class Volume extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCreatedAt() : ?string
+    public function getCreatedAt(): ?string
     {
         return $this->createdAt;
     }
@@ -156,7 +156,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setCreatedAt(?string $createdAt) : self
+    public function setCreatedAt(?string $createdAt): self
     {
         $this->initialized['createdAt'] = true;
         $this->createdAt = $createdAt;
@@ -166,14 +166,14 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-
+    
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-
+    
     *
     * @return array<string, VolumeStatusItem>|null
     */
-    public function getStatus() : ?iterable
+    public function getStatus(): ?iterable
     {
         return $this->status;
     }
@@ -181,16 +181,16 @@ class Volume extends \ArrayObject
     * Low-level details about the volume, provided by the volume driver.
     Details are returned as a map with key/value pairs:
     `{"key":"value","key2":"value2"}`.
-
+    
     The `Status` field is optional, and is omitted if the volume driver
     does not support this feature.
-
+    
     *
     * @param array<string, VolumeStatusItem>|null $status
     *
     * @return self
     */
-    public function setStatus(?iterable $status) : self
+    public function setStatus(?iterable $status): self
     {
         $this->initialized['status'] = true;
         $this->status = $status;
@@ -201,7 +201,7 @@ class Volume extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels(): ?iterable
     {
         return $this->labels;
     }
@@ -212,7 +212,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?iterable $labels): self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -223,7 +223,7 @@ class Volume extends \ArrayObject
      *
      * @return string|null
      */
-    public function getScope() : ?string
+    public function getScope(): ?string
     {
         return $this->scope;
     }
@@ -234,7 +234,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setScope(?string $scope) : self
+    public function setScope(?string $scope): self
     {
         $this->initialized['scope'] = true;
         $this->scope = $scope;
@@ -245,7 +245,7 @@ class Volume extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getOptions() : ?iterable
+    public function getOptions(): ?iterable
     {
         return $this->options;
     }
@@ -256,7 +256,7 @@ class Volume extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?iterable $options) : self
+    public function setOptions(?iterable $options): self
     {
         $this->initialized['options'] = true;
         $this->options = $options;
@@ -265,24 +265,24 @@ class Volume extends \ArrayObject
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-
+    
     *
     * @return VolumeUsageData|null
     */
-    public function getUsageData() : ?VolumeUsageData
+    public function getUsageData(): ?VolumeUsageData
     {
         return $this->usageData;
     }
     /**
     * Usage details about the volume. This information is used by the
     `GET /system/df` endpoint, and omitted in other endpoints.
-
+    
     *
     * @param VolumeUsageData|null $usageData
     *
     * @return self
     */
-    public function setUsageData(?VolumeUsageData $usageData) : self
+    public function setUsageData(?VolumeUsageData $usageData): self
     {
         $this->initialized['usageData'] = true;
         $this->usageData = $usageData;

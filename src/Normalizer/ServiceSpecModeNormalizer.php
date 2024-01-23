@@ -18,18 +18,18 @@ class ServiceSpecModeNormalizer implements DenormalizerInterface, NormalizerInte
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\ServiceSpecMode';
+        return $type === 'Docker\API\Model\ServiceSpecMode';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ServiceSpecMode';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\ServiceSpecMode';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,14 +42,14 @@ class ServiceSpecModeNormalizer implements DenormalizerInterface, NormalizerInte
             return $object;
         }
         if (\array_key_exists('Replicated', $data) && $data['Replicated'] !== null) {
-            $object->setReplicated($this->denormalizer->denormalize($data['Replicated'], 'Docker\\API\\Model\\ServiceSpecModeReplicated', 'json', $context));
+            $object->setReplicated($this->denormalizer->denormalize($data['Replicated'], 'Docker\API\Model\ServiceSpecModeReplicated', 'json', $context));
             unset($data['Replicated']);
         }
         elseif (\array_key_exists('Replicated', $data) && $data['Replicated'] === null) {
             $object->setReplicated(null);
         }
         if (\array_key_exists('Global', $data) && $data['Global'] !== null) {
-            $object->setGlobal($this->denormalizer->denormalize($data['Global'], 'Docker\\API\\Model\\ServiceSpecModeGlobal', 'json', $context));
+            $object->setGlobal($this->denormalizer->denormalize($data['Global'], 'Docker\API\Model\ServiceSpecModeGlobal', 'json', $context));
             unset($data['Global']);
         }
         elseif (\array_key_exists('Global', $data) && $data['Global'] === null) {
@@ -65,14 +65,14 @@ class ServiceSpecModeNormalizer implements DenormalizerInterface, NormalizerInte
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('replicated') && null !== $object->getReplicated()) {
-            $data['Replicated'] = $object->getReplicated() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getReplicated(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Replicated'] = ($object->getReplicated() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getReplicated(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('global') && null !== $object->getGlobal()) {
-            $data['Global'] = $object->getGlobal() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getGlobal(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Global'] = ($object->getGlobal() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getGlobal(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -81,8 +81,8 @@ class ServiceSpecModeNormalizer implements DenormalizerInterface, NormalizerInte
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\ServiceSpecMode' => false);
+        return ['Docker\API\Model\ServiceSpecMode' => false];
     }
 }

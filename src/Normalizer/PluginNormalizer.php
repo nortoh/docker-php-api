@@ -18,18 +18,18 @@ class PluginNormalizer implements DenormalizerInterface, NormalizerInterface, De
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\Plugin';
+        return $type === 'Docker\API\Model\Plugin';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Plugin';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\Plugin';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -63,7 +63,7 @@ class PluginNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $object->setEnabled(null);
         }
         if (\array_key_exists('Settings', $data) && $data['Settings'] !== null) {
-            $object->setSettings($this->denormalizer->denormalize($data['Settings'], 'Docker\\API\\Model\\PluginSettings', 'json', $context));
+            $object->setSettings($this->denormalizer->denormalize($data['Settings'], 'Docker\API\Model\PluginSettings', 'json', $context));
             unset($data['Settings']);
         }
         elseif (\array_key_exists('Settings', $data) && $data['Settings'] === null) {
@@ -77,7 +77,7 @@ class PluginNormalizer implements DenormalizerInterface, NormalizerInterface, De
             $object->setPluginReference(null);
         }
         if (\array_key_exists('Config', $data) && $data['Config'] !== null) {
-            $object->setConfig($this->denormalizer->denormalize($data['Config'], 'Docker\\API\\Model\\PluginConfig', 'json', $context));
+            $object->setConfig($this->denormalizer->denormalize($data['Config'], 'Docker\API\Model\PluginConfig', 'json', $context));
             unset($data['Config']);
         }
         elseif (\array_key_exists('Config', $data) && $data['Config'] === null) {
@@ -93,19 +93,19 @@ class PluginNormalizer implements DenormalizerInterface, NormalizerInterface, De
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
             $data['Id'] = $object->getId();
         }
         $data['Name'] = $object->getName();
         $data['Enabled'] = $object->getEnabled();
-        $data['Settings'] = $object->getSettings() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getSettings(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        $data['Settings'] = ($object->getSettings() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getSettings(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         if ($object->isInitialized('pluginReference') && null !== $object->getPluginReference()) {
             $data['PluginReference'] = $object->getPluginReference();
         }
-        $data['Config'] = $object->getConfig() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        $data['Config'] = ($object->getConfig() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getConfig(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
                 $data[$key] = $value;
@@ -113,8 +113,8 @@ class PluginNormalizer implements DenormalizerInterface, NormalizerInterface, De
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\Plugin' => false);
+        return ['Docker\API\Model\Plugin' => false];
     }
 }

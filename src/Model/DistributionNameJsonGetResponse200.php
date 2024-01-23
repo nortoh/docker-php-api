@@ -7,8 +7,8 @@ class DistributionNameJsonGetResponse200 extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class DistributionNameJsonGetResponse200 extends \ArrayObject
      *
      * @return DistributionNameJsonGetResponse200Descriptor|null
      */
-    public function getDescriptor() : ?DistributionNameJsonGetResponse200Descriptor
+    public function getDescriptor(): ?DistributionNameJsonGetResponse200Descriptor
     {
         return $this->descriptor;
     }
@@ -40,7 +40,7 @@ class DistributionNameJsonGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setDescriptor(?DistributionNameJsonGetResponse200Descriptor $descriptor) : self
+    public function setDescriptor(?DistributionNameJsonGetResponse200Descriptor $descriptor): self
     {
         $this->initialized['descriptor'] = true;
         $this->descriptor = $descriptor;
@@ -51,7 +51,7 @@ class DistributionNameJsonGetResponse200 extends \ArrayObject
      *
      * @return DistributionNameJsonGetResponse200PlatformsItem[]|null
      */
-    public function getPlatforms() : ?array
+    public function getPlatforms(): ?array
     {
         return $this->platforms;
     }
@@ -62,7 +62,7 @@ class DistributionNameJsonGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setPlatforms(?array $platforms) : self
+    public function setPlatforms(?array $platforms): self
     {
         $this->initialized['platforms'] = true;
         $this->platforms = $platforms;

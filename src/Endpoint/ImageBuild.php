@@ -6,15 +6,15 @@ class ImageBuild extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
 {
     /**
     * Build an image from a tar archive with a `Dockerfile` in it.
-
+    
     The `Dockerfile` specifies how the image is built from the tar archive. It is typically in the archive's root, but can be at a different path or have a different name by specifying the `dockerfile` parameter. [See the `Dockerfile` reference for more information](https://docs.docker.com/engine/reference/builder/).
-
+    
     The Docker daemon performs a preliminary validation of the `Dockerfile` before starting the build, and returns an error if the syntax is incorrect. After that, each instruction is run one-by-one until the ID of the new image is output.
-
+    
     The build is canceled if the client drops the connection by quitting or being killed.
-
+    
     *
-    * @param null|string|resource|\Psr\Http\Message\StreamInterface $requestBody
+    * @param null|string|resource|\Psr\Http\Message\StreamInterface $requestBody 
     * @param array $queryParameters {
     *     @var string $dockerfile Path within the build context to the `Dockerfile`. This is ignored if `remote` is specified and points to an external `Dockerfile`.
     *     @var string $t A name and optional tag to apply to the image in the `name:tag` format. If you omit the tag the default `latest` value is assumed. You can provide several `t` parameters.
@@ -40,11 +40,11 @@ class ImageBuild extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
     *     @var string $platform Platform in the format os[/arch[/variant]]
     * }
     * @param array $headerParameters {
-    *     @var string $Content-type
+    *     @var string $Content-type 
     *     @var string $X-Registry-Config This is a base64-encoded JSON object with auth configurations for multiple registries that a build may refer to.
-
+    
     The key is a registry URL, and the value is an auth configuration object, [as described in the authentication section](#section/Authentication). For example:
-
+    
     ```
     {
      "docker.example.com": {
@@ -57,75 +57,75 @@ class ImageBuild extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
      }
     }
     ```
-
+    
     Only the registry domain name (and port if not the default 443) are required. However, for legacy reasons, the Docker Hub registry must be specified with both a `https://` prefix and a `/v1/` suffix even though Docker will prefer to use the v2 registry API.
-
+    
     * }
     */
-    public function __construct($requestBody = null, array $queryParameters = array(), array $headerParameters = array())
+    public function __construct($requestBody = null, array $queryParameters = [], array $headerParameters = [])
     {
         $this->body = $requestBody;
         $this->queryParameters = $queryParameters;
         $this->headerParameters = $headerParameters;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'POST';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
         return '/build';
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
         if (is_string($this->body) or is_resource($this->body) or $this->body instanceof \Psr\Http\Message\StreamInterface) {
-            return array(array('Content-Type' => array('application/octet-stream')), $this->body);
+            return [['Content-Type' => ['application/octet-stream']], $this->body];
         }
-        return array(array(), null);
+        return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
-    protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('dockerfile', 't', 'extrahosts', 'remote', 'q', 'nocache', 'cachefrom', 'pull', 'rm', 'forcerm', 'memory', 'memswap', 'cpushares', 'cpusetcpus', 'cpuperiod', 'cpuquota', 'buildargs', 'shmsize', 'squash', 'labels', 'networkmode', 'platform'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('dockerfile' => 'Dockerfile', 'q' => false, 'nocache' => false, 'rm' => true, 'forcerm' => false));
-        $optionsResolver->addAllowedTypes('dockerfile', array('string'));
-        $optionsResolver->addAllowedTypes('t', array('string'));
-        $optionsResolver->addAllowedTypes('extrahosts', array('string'));
-        $optionsResolver->addAllowedTypes('remote', array('string'));
-        $optionsResolver->addAllowedTypes('q', array('bool'));
-        $optionsResolver->addAllowedTypes('nocache', array('bool'));
-        $optionsResolver->addAllowedTypes('cachefrom', array('string'));
-        $optionsResolver->addAllowedTypes('pull', array('string'));
-        $optionsResolver->addAllowedTypes('rm', array('bool'));
-        $optionsResolver->addAllowedTypes('forcerm', array('bool'));
-        $optionsResolver->addAllowedTypes('memory', array('int'));
-        $optionsResolver->addAllowedTypes('memswap', array('int'));
-        $optionsResolver->addAllowedTypes('cpushares', array('int'));
-        $optionsResolver->addAllowedTypes('cpusetcpus', array('string'));
-        $optionsResolver->addAllowedTypes('cpuperiod', array('int'));
-        $optionsResolver->addAllowedTypes('cpuquota', array('int'));
-        $optionsResolver->addAllowedTypes('buildargs', array('string'));
-        $optionsResolver->addAllowedTypes('shmsize', array('int'));
-        $optionsResolver->addAllowedTypes('squash', array('bool'));
-        $optionsResolver->addAllowedTypes('labels', array('string'));
-        $optionsResolver->addAllowedTypes('networkmode', array('string'));
-        $optionsResolver->addAllowedTypes('platform', array('string'));
+        $optionsResolver->setDefined(['dockerfile', 't', 'extrahosts', 'remote', 'q', 'nocache', 'cachefrom', 'pull', 'rm', 'forcerm', 'memory', 'memswap', 'cpushares', 'cpusetcpus', 'cpuperiod', 'cpuquota', 'buildargs', 'shmsize', 'squash', 'labels', 'networkmode', 'platform']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['dockerfile' => 'Dockerfile', 'q' => false, 'nocache' => false, 'rm' => true, 'forcerm' => false]);
+        $optionsResolver->addAllowedTypes('dockerfile', ['string']);
+        $optionsResolver->addAllowedTypes('t', ['string']);
+        $optionsResolver->addAllowedTypes('extrahosts', ['string']);
+        $optionsResolver->addAllowedTypes('remote', ['string']);
+        $optionsResolver->addAllowedTypes('q', ['bool']);
+        $optionsResolver->addAllowedTypes('nocache', ['bool']);
+        $optionsResolver->addAllowedTypes('cachefrom', ['string']);
+        $optionsResolver->addAllowedTypes('pull', ['string']);
+        $optionsResolver->addAllowedTypes('rm', ['bool']);
+        $optionsResolver->addAllowedTypes('forcerm', ['bool']);
+        $optionsResolver->addAllowedTypes('memory', ['int']);
+        $optionsResolver->addAllowedTypes('memswap', ['int']);
+        $optionsResolver->addAllowedTypes('cpushares', ['int']);
+        $optionsResolver->addAllowedTypes('cpusetcpus', ['string']);
+        $optionsResolver->addAllowedTypes('cpuperiod', ['int']);
+        $optionsResolver->addAllowedTypes('cpuquota', ['int']);
+        $optionsResolver->addAllowedTypes('buildargs', ['string']);
+        $optionsResolver->addAllowedTypes('shmsize', ['int']);
+        $optionsResolver->addAllowedTypes('squash', ['bool']);
+        $optionsResolver->addAllowedTypes('labels', ['string']);
+        $optionsResolver->addAllowedTypes('networkmode', ['string']);
+        $optionsResolver->addAllowedTypes('platform', ['string']);
         return $optionsResolver;
     }
-    protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
-        $optionsResolver->setDefined(array('Content-type', 'X-Registry-Config'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('Content-type' => 'application/x-tar'));
-        $optionsResolver->addAllowedTypes('Content-type', array('string'));
-        $optionsResolver->addAllowedTypes('X-Registry-Config', array('string'));
+        $optionsResolver->setDefined(['Content-type', 'X-Registry-Config']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['Content-type' => 'application/x-tar']);
+        $optionsResolver->addAllowedTypes('Content-type', ['string']);
+        $optionsResolver->addAllowedTypes('X-Registry-Config', ['string']);
         return $optionsResolver;
     }
     /**
@@ -143,14 +143,14 @@ class ImageBuild extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
         if (200 === $status) {
         }
         if (is_null($contentType) === false && (400 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ImageBuildBadRequestException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ImageBuildBadRequestException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (500 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ImageBuildInternalServerErrorException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ImageBuildInternalServerErrorException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
-        return array();
+        return [];
     }
 }

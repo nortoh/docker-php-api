@@ -7,8 +7,8 @@ class ConfigsCreatePostBody extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -27,7 +27,7 @@ class ConfigsCreatePostBody extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     config data.
-
+    
     *
     * @var string|null
     */
@@ -37,7 +37,7 @@ class ConfigsCreatePostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -48,7 +48,7 @@ class ConfigsCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -59,7 +59,7 @@ class ConfigsCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels(): ?iterable
     {
         return $this->labels;
     }
@@ -70,7 +70,7 @@ class ConfigsCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?iterable $labels): self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -79,24 +79,24 @@ class ConfigsCreatePostBody extends \ArrayObject
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     config data.
-
+    
     *
     * @return string|null
     */
-    public function getData() : ?string
+    public function getData(): ?string
     {
         return $this->data;
     }
     /**
     * Base64-url-safe-encoded ([RFC 4648](https://tools.ietf.org/html/rfc4648#section-3.2))
     config data.
-
+    
     *
     * @param string|null $data
     *
     * @return self
     */
-    public function setData(?string $data) : self
+    public function setData(?string $data): self
     {
         $this->initialized['data'] = true;
         $this->data = $data;

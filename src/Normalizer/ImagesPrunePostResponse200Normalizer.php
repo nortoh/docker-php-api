@@ -18,18 +18,18 @@ class ImagesPrunePostResponse200Normalizer implements DenormalizerInterface, Nor
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\ImagesPrunePostResponse200';
+        return $type === 'Docker\API\Model\ImagesPrunePostResponse200';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ImagesPrunePostResponse200';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\ImagesPrunePostResponse200';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,9 +42,9 @@ class ImagesPrunePostResponse200Normalizer implements DenormalizerInterface, Nor
             return $object;
         }
         if (\array_key_exists('ImagesDeleted', $data) && $data['ImagesDeleted'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['ImagesDeleted'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageDeleteResponseItem', 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, 'Docker\API\Model\ImageDeleteResponseItem', 'json', $context);
             }
             $object->setImagesDeleted($values);
             unset($data['ImagesDeleted']);
@@ -69,13 +69,13 @@ class ImagesPrunePostResponse200Normalizer implements DenormalizerInterface, Nor
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('imagesDeleted') && null !== $object->getImagesDeleted()) {
-            $values = array();
+            $values = [];
             foreach ($object->getImagesDeleted() as $value) {
-                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values[] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['ImagesDeleted'] = $values;
         }
@@ -89,8 +89,8 @@ class ImagesPrunePostResponse200Normalizer implements DenormalizerInterface, Nor
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\ImagesPrunePostResponse200' => false);
+        return ['Docker\API\Model\ImagesPrunePostResponse200' => false];
     }
 }

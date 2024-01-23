@@ -18,18 +18,18 @@ class ContainersIdTopGetJsonResponse200Normalizer implements DenormalizerInterfa
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\ContainersIdTopGetJsonResponse200';
+        return $type === 'Docker\API\Model\ContainersIdTopGetJsonResponse200';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainersIdTopGetJsonResponse200';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\ContainersIdTopGetJsonResponse200';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class ContainersIdTopGetJsonResponse200Normalizer implements DenormalizerInterfa
             return $object;
         }
         if (\array_key_exists('Titles', $data) && $data['Titles'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Titles'] as $value) {
                 $values[] = $value;
             }
@@ -53,9 +53,9 @@ class ContainersIdTopGetJsonResponse200Normalizer implements DenormalizerInterfa
             $object->setTitles(null);
         }
         if (\array_key_exists('Processes', $data) && $data['Processes'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Processes'] as $value_1) {
-                $values_2 = array();
+                $values_2 = [];
                 foreach ($value_1 as $value_2) {
                     $values_2[] = $value_2;
                 }
@@ -77,20 +77,20 @@ class ContainersIdTopGetJsonResponse200Normalizer implements DenormalizerInterfa
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('titles') && null !== $object->getTitles()) {
-            $values = array();
+            $values = [];
             foreach ($object->getTitles() as $value) {
                 $values[] = $value;
             }
             $data['Titles'] = $values;
         }
         if ($object->isInitialized('processes') && null !== $object->getProcesses()) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($object->getProcesses() as $value_1) {
-                $values_2 = array();
+                $values_2 = [];
                 foreach ($value_1 as $value_2) {
                     $values_2[] = $value_2;
                 }
@@ -105,8 +105,8 @@ class ContainersIdTopGetJsonResponse200Normalizer implements DenormalizerInterfa
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\ContainersIdTopGetJsonResponse200' => false);
+        return ['Docker\API\Model\ContainersIdTopGetJsonResponse200' => false];
     }
 }

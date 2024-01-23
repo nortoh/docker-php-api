@@ -7,8 +7,8 @@ class IndexInfo extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -27,17 +27,17 @@ class IndexInfo extends \ArrayObject
     /**
     * Indicates if the the registry is part of the list of insecure
     registries.
-
+    
     If `false`, the registry is insecure. Insecure registries accept
     un-encrypted (HTTP) and/or untrusted (HTTPS with certificates from
     unknown CAs) communication.
-
+    
     > **Warning**: Insecure registries can be useful when running a local
     > registry. However, because its use creates security vulnerabilities
     > it should ONLY be enabled for testing purposes. For increased
     > security, users should add their CA to their system's list of
     > trusted CAs instead of enabling this option.
-
+    
     *
     * @var bool|null
     */
@@ -53,7 +53,7 @@ class IndexInfo extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -64,7 +64,7 @@ class IndexInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -75,7 +75,7 @@ class IndexInfo extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getMirrors() : ?array
+    public function getMirrors(): ?array
     {
         return $this->mirrors;
     }
@@ -86,7 +86,7 @@ class IndexInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setMirrors(?array $mirrors) : self
+    public function setMirrors(?array $mirrors): self
     {
         $this->initialized['mirrors'] = true;
         $this->mirrors = $mirrors;
@@ -95,44 +95,44 @@ class IndexInfo extends \ArrayObject
     /**
     * Indicates if the the registry is part of the list of insecure
     registries.
-
+    
     If `false`, the registry is insecure. Insecure registries accept
     un-encrypted (HTTP) and/or untrusted (HTTPS with certificates from
     unknown CAs) communication.
-
+    
     > **Warning**: Insecure registries can be useful when running a local
     > registry. However, because its use creates security vulnerabilities
     > it should ONLY be enabled for testing purposes. For increased
     > security, users should add their CA to their system's list of
     > trusted CAs instead of enabling this option.
-
+    
     *
     * @return bool|null
     */
-    public function getSecure() : ?bool
+    public function getSecure(): ?bool
     {
         return $this->secure;
     }
     /**
     * Indicates if the the registry is part of the list of insecure
     registries.
-
+    
     If `false`, the registry is insecure. Insecure registries accept
     un-encrypted (HTTP) and/or untrusted (HTTPS with certificates from
     unknown CAs) communication.
-
+    
     > **Warning**: Insecure registries can be useful when running a local
     > registry. However, because its use creates security vulnerabilities
     > it should ONLY be enabled for testing purposes. For increased
     > security, users should add their CA to their system's list of
     > trusted CAs instead of enabling this option.
-
+    
     *
     * @param bool|null $secure
     *
     * @return self
     */
-    public function setSecure(?bool $secure) : self
+    public function setSecure(?bool $secure): self
     {
         $this->initialized['secure'] = true;
         $this->secure = $secure;
@@ -143,7 +143,7 @@ class IndexInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getOfficial() : ?bool
+    public function getOfficial(): ?bool
     {
         return $this->official;
     }
@@ -154,7 +154,7 @@ class IndexInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setOfficial(?bool $official) : self
+    public function setOfficial(?bool $official): self
     {
         $this->initialized['official'] = true;
         $this->official = $official;

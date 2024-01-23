@@ -18,18 +18,18 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\PluginConfigLinux';
+        return $type === 'Docker\API\Model\PluginConfigLinux';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\PluginConfigLinux';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\PluginConfigLinux';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,7 +42,7 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
             return $object;
         }
         if (\array_key_exists('Capabilities', $data) && $data['Capabilities'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Capabilities'] as $value) {
                 $values[] = $value;
             }
@@ -60,9 +60,9 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
             $object->setAllowAllDevices(null);
         }
         if (\array_key_exists('Devices', $data) && $data['Devices'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Devices'] as $value_1) {
-                $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\PluginDevice', 'json', $context);
+                $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\API\Model\PluginDevice', 'json', $context);
             }
             $object->setDevices($values_1);
             unset($data['Devices']);
@@ -80,18 +80,18 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
-        $values = array();
+        $data = [];
+        $values = [];
         foreach ($object->getCapabilities() as $value) {
             $values[] = $value;
         }
         $data['Capabilities'] = $values;
         $data['AllowAllDevices'] = $object->getAllowAllDevices();
-        $values_1 = array();
+        $values_1 = [];
         foreach ($object->getDevices() as $value_1) {
-            $values_1[] = $value_1 == null ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $values_1[] = ($value_1 == null) ? null : new \ArrayObject($this->normalizer->normalize($value_1, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         $data['Devices'] = $values_1;
         foreach ($object as $key => $value_2) {
@@ -101,8 +101,8 @@ class PluginConfigLinuxNormalizer implements DenormalizerInterface, NormalizerIn
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\PluginConfigLinux' => false);
+        return ['Docker\API\Model\PluginConfigLinux' => false];
     }
 }

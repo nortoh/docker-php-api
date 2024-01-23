@@ -18,18 +18,18 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\VersionGetResponse200';
+        return $type === 'Docker\API\Model\VersionGetResponse200';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\VersionGetResponse200';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\VersionGetResponse200';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -42,16 +42,16 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
             return $object;
         }
         if (\array_key_exists('Platform', $data) && $data['Platform'] !== null) {
-            $object->setPlatform($this->denormalizer->denormalize($data['Platform'], 'Docker\\API\\Model\\VersionGetResponse200Platform', 'json', $context));
+            $object->setPlatform($this->denormalizer->denormalize($data['Platform'], 'Docker\API\Model\VersionGetResponse200Platform', 'json', $context));
             unset($data['Platform']);
         }
         elseif (\array_key_exists('Platform', $data) && $data['Platform'] === null) {
             $object->setPlatform(null);
         }
         if (\array_key_exists('Components', $data) && $data['Components'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Components'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem', 'json', $context);
+                $values[] = $this->denormalizer->denormalize($value, 'Docker\API\Model\VersionGetResponse200ComponentsItem', 'json', $context);
             }
             $object->setComponents($values);
             unset($data['Components']);
@@ -139,16 +139,16 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('platform') && null !== $object->getPlatform()) {
-            $data['Platform'] = $object->getPlatform() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getPlatform(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Platform'] = ($object->getPlatform() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getPlatform(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('components') && null !== $object->getComponents()) {
-            $values = array();
+            $values = [];
             foreach ($object->getComponents() as $value) {
-                $values[] = $value == null ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+                $values[] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
             }
             $data['Components'] = $values;
         }
@@ -189,8 +189,8 @@ class VersionGetResponse200Normalizer implements DenormalizerInterface, Normaliz
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\VersionGetResponse200' => false);
+        return ['Docker\API\Model\VersionGetResponse200' => false];
     }
 }

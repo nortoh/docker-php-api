@@ -5,9 +5,9 @@ namespace Docker\API\Endpoint;
 class ImageCommit extends \Docker\API\Runtime\Client\BaseEndpoint implements \Docker\API\Runtime\Client\Endpoint
 {
     /**
+     * 
      *
-     *
-     * @param null|\Docker\API\Model\ContainerConfig $requestBody
+     * @param null|\Docker\API\Model\ContainerConfig $requestBody 
      * @param array $queryParameters {
      *     @var string $container The ID or name of the container to commit
      *     @var string $repo Repository name for the created image
@@ -18,44 +18,44 @@ class ImageCommit extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
      *     @var string $changes `Dockerfile` instructions to apply while committing
      * }
      */
-    public function __construct(?\Docker\API\Model\ContainerConfig $requestBody = null, array $queryParameters = array())
+    public function __construct(?\Docker\API\Model\ContainerConfig $requestBody = null, array $queryParameters = [])
     {
         $this->body = $requestBody;
         $this->queryParameters = $queryParameters;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'POST';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
         return '/commit';
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
         if ($this->body instanceof \Docker\API\Model\ContainerConfig) {
-            return array(array('Content-Type' => array('application/json')), $serializer->serialize($this->body, 'json'));
+            return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
-        return array(array(), null);
+        return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
-        return array('Accept' => array('application/json'));
+        return ['Accept' => ['application/json']];
     }
-    protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
-        $optionsResolver->setDefined(array('container', 'repo', 'tag', 'comment', 'author', 'pause', 'changes'));
-        $optionsResolver->setRequired(array());
-        $optionsResolver->setDefaults(array('pause' => true));
-        $optionsResolver->addAllowedTypes('container', array('string'));
-        $optionsResolver->addAllowedTypes('repo', array('string'));
-        $optionsResolver->addAllowedTypes('tag', array('string'));
-        $optionsResolver->addAllowedTypes('comment', array('string'));
-        $optionsResolver->addAllowedTypes('author', array('string'));
-        $optionsResolver->addAllowedTypes('pause', array('bool'));
-        $optionsResolver->addAllowedTypes('changes', array('string'));
+        $optionsResolver->setDefined(['container', 'repo', 'tag', 'comment', 'author', 'pause', 'changes']);
+        $optionsResolver->setRequired([]);
+        $optionsResolver->setDefaults(['pause' => true]);
+        $optionsResolver->addAllowedTypes('container', ['string']);
+        $optionsResolver->addAllowedTypes('repo', ['string']);
+        $optionsResolver->addAllowedTypes('tag', ['string']);
+        $optionsResolver->addAllowedTypes('comment', ['string']);
+        $optionsResolver->addAllowedTypes('author', ['string']);
+        $optionsResolver->addAllowedTypes('pause', ['bool']);
+        $optionsResolver->addAllowedTypes('changes', ['string']);
         return $optionsResolver;
     }
     /**
@@ -71,17 +71,17 @@ class ImageCommit extends \Docker\API\Runtime\Client\BaseEndpoint implements \Do
         $status = $response->getStatusCode();
         $body = (string) $response->getBody();
         if (is_null($contentType) === false && (201 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            return $serializer->deserialize($body, 'Docker\\API\\Model\\IdResponse', 'json');
+            return $serializer->deserialize($body, 'Docker\API\Model\IdResponse', 'json');
         }
         if (is_null($contentType) === false && (404 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ImageCommitNotFoundException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ImageCommitNotFoundException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
         if (is_null($contentType) === false && (500 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\ImageCommitInternalServerErrorException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\ImageCommitInternalServerErrorException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
         }
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
-        return array();
+        return [];
     }
 }

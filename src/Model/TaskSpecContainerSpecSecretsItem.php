@@ -7,8 +7,8 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -27,7 +27,7 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
     /**
     * SecretName is the name of the secret that this references, but this is just provided for
     lookup/display purposes. The secret in the reference will be identified by its ID.
-
+    
     *
     * @var string|null
     */
@@ -37,7 +37,7 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
      *
      * @return TaskSpecContainerSpecSecretsItemFile|null
      */
-    public function getFile() : ?TaskSpecContainerSpecSecretsItemFile
+    public function getFile(): ?TaskSpecContainerSpecSecretsItemFile
     {
         return $this->file;
     }
@@ -48,7 +48,7 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setFile(?TaskSpecContainerSpecSecretsItemFile $file) : self
+    public function setFile(?TaskSpecContainerSpecSecretsItemFile $file): self
     {
         $this->initialized['file'] = true;
         $this->file = $file;
@@ -59,7 +59,7 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getSecretID() : ?string
+    public function getSecretID(): ?string
     {
         return $this->secretID;
     }
@@ -70,7 +70,7 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setSecretID(?string $secretID) : self
+    public function setSecretID(?string $secretID): self
     {
         $this->initialized['secretID'] = true;
         $this->secretID = $secretID;
@@ -79,24 +79,24 @@ class TaskSpecContainerSpecSecretsItem extends \ArrayObject
     /**
     * SecretName is the name of the secret that this references, but this is just provided for
     lookup/display purposes. The secret in the reference will be identified by its ID.
-
+    
     *
     * @return string|null
     */
-    public function getSecretName() : ?string
+    public function getSecretName(): ?string
     {
         return $this->secretName;
     }
     /**
     * SecretName is the name of the secret that this references, but this is just provided for
     lookup/display purposes. The secret in the reference will be identified by its ID.
-
+    
     *
     * @param string|null $secretName
     *
     * @return self
     */
-    public function setSecretName(?string $secretName) : self
+    public function setSecretName(?string $secretName): self
     {
         $this->initialized['secretName'] = true;
         $this->secretName = $secretName;

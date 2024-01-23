@@ -13,7 +13,7 @@ class ContainerArchiveNotFoundException extends NotFoundException
         parent::__construct('Container or path does not exist');
         $this->response = $response;
     }
-    public function getResponse() : ?\Psr\Http\Message\ResponseInterface
+    public function getResponse(): ?\Psr\Http\Message\ResponseInterface
     {
         return $this->response;
     }

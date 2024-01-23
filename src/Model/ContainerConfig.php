@@ -7,8 +7,8 @@ class ContainerConfig extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -50,9 +50,9 @@ class ContainerConfig extends \ArrayObject
     protected $attachStderr = true;
     /**
     * An object mapping ports to an empty object in the form:
-
+    
     `{"<port>/<tcp|udp>": {}}`
-
+    
     *
     * @var array<string, ContainerConfigExposedPortsItem>|null
     */
@@ -119,9 +119,9 @@ class ContainerConfig extends \ArrayObject
     protected $workingDir;
     /**
     * The entry point for the container as a string or an array of strings.
-
+    
     If the array consists of exactly one empty string (`[""]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
-
+    
     *
     * @var string[]|null
     */
@@ -173,7 +173,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getHostname() : ?string
+    public function getHostname(): ?string
     {
         return $this->hostname;
     }
@@ -184,7 +184,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setHostname(?string $hostname) : self
+    public function setHostname(?string $hostname): self
     {
         $this->initialized['hostname'] = true;
         $this->hostname = $hostname;
@@ -195,7 +195,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getDomainname() : ?string
+    public function getDomainname(): ?string
     {
         return $this->domainname;
     }
@@ -206,7 +206,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setDomainname(?string $domainname) : self
+    public function setDomainname(?string $domainname): self
     {
         $this->initialized['domainname'] = true;
         $this->domainname = $domainname;
@@ -217,7 +217,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getUser() : ?string
+    public function getUser(): ?string
     {
         return $this->user;
     }
@@ -228,7 +228,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setUser(?string $user) : self
+    public function setUser(?string $user): self
     {
         $this->initialized['user'] = true;
         $this->user = $user;
@@ -239,7 +239,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getAttachStdin() : ?bool
+    public function getAttachStdin(): ?bool
     {
         return $this->attachStdin;
     }
@@ -250,7 +250,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setAttachStdin(?bool $attachStdin) : self
+    public function setAttachStdin(?bool $attachStdin): self
     {
         $this->initialized['attachStdin'] = true;
         $this->attachStdin = $attachStdin;
@@ -261,7 +261,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getAttachStdout() : ?bool
+    public function getAttachStdout(): ?bool
     {
         return $this->attachStdout;
     }
@@ -272,7 +272,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setAttachStdout(?bool $attachStdout) : self
+    public function setAttachStdout(?bool $attachStdout): self
     {
         $this->initialized['attachStdout'] = true;
         $this->attachStdout = $attachStdout;
@@ -283,7 +283,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getAttachStderr() : ?bool
+    public function getAttachStderr(): ?bool
     {
         return $this->attachStderr;
     }
@@ -294,7 +294,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setAttachStderr(?bool $attachStderr) : self
+    public function setAttachStderr(?bool $attachStderr): self
     {
         $this->initialized['attachStderr'] = true;
         $this->attachStderr = $attachStderr;
@@ -302,27 +302,27 @@ class ContainerConfig extends \ArrayObject
     }
     /**
     * An object mapping ports to an empty object in the form:
-
+    
     `{"<port>/<tcp|udp>": {}}`
-
+    
     *
     * @return array<string, ContainerConfigExposedPortsItem>|null
     */
-    public function getExposedPorts() : ?iterable
+    public function getExposedPorts(): ?iterable
     {
         return $this->exposedPorts;
     }
     /**
     * An object mapping ports to an empty object in the form:
-
+    
     `{"<port>/<tcp|udp>": {}}`
-
+    
     *
     * @param array<string, ContainerConfigExposedPortsItem>|null $exposedPorts
     *
     * @return self
     */
-    public function setExposedPorts(?iterable $exposedPorts) : self
+    public function setExposedPorts(?iterable $exposedPorts): self
     {
         $this->initialized['exposedPorts'] = true;
         $this->exposedPorts = $exposedPorts;
@@ -333,7 +333,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getTty() : ?bool
+    public function getTty(): ?bool
     {
         return $this->tty;
     }
@@ -344,7 +344,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setTty(?bool $tty) : self
+    public function setTty(?bool $tty): self
     {
         $this->initialized['tty'] = true;
         $this->tty = $tty;
@@ -355,7 +355,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getOpenStdin() : ?bool
+    public function getOpenStdin(): ?bool
     {
         return $this->openStdin;
     }
@@ -366,7 +366,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setOpenStdin(?bool $openStdin) : self
+    public function setOpenStdin(?bool $openStdin): self
     {
         $this->initialized['openStdin'] = true;
         $this->openStdin = $openStdin;
@@ -377,7 +377,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getStdinOnce() : ?bool
+    public function getStdinOnce(): ?bool
     {
         return $this->stdinOnce;
     }
@@ -388,7 +388,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setStdinOnce(?bool $stdinOnce) : self
+    public function setStdinOnce(?bool $stdinOnce): self
     {
         $this->initialized['stdinOnce'] = true;
         $this->stdinOnce = $stdinOnce;
@@ -399,7 +399,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getEnv() : ?array
+    public function getEnv(): ?array
     {
         return $this->env;
     }
@@ -410,7 +410,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setEnv(?array $env) : self
+    public function setEnv(?array $env): self
     {
         $this->initialized['env'] = true;
         $this->env = $env;
@@ -421,7 +421,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getCmd() : ?array
+    public function getCmd(): ?array
     {
         return $this->cmd;
     }
@@ -432,7 +432,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setCmd(?array $cmd) : self
+    public function setCmd(?array $cmd): self
     {
         $this->initialized['cmd'] = true;
         $this->cmd = $cmd;
@@ -443,7 +443,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return HealthConfig|null
      */
-    public function getHealthcheck() : ?HealthConfig
+    public function getHealthcheck(): ?HealthConfig
     {
         return $this->healthcheck;
     }
@@ -454,7 +454,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setHealthcheck(?HealthConfig $healthcheck) : self
+    public function setHealthcheck(?HealthConfig $healthcheck): self
     {
         $this->initialized['healthcheck'] = true;
         $this->healthcheck = $healthcheck;
@@ -465,7 +465,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getArgsEscaped() : ?bool
+    public function getArgsEscaped(): ?bool
     {
         return $this->argsEscaped;
     }
@@ -476,7 +476,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setArgsEscaped(?bool $argsEscaped) : self
+    public function setArgsEscaped(?bool $argsEscaped): self
     {
         $this->initialized['argsEscaped'] = true;
         $this->argsEscaped = $argsEscaped;
@@ -487,7 +487,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getImage() : ?string
+    public function getImage(): ?string
     {
         return $this->image;
     }
@@ -498,7 +498,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(?string $image) : self
+    public function setImage(?string $image): self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -509,7 +509,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return array<string, ContainerConfigVolumesItem>|null
      */
-    public function getVolumes() : ?iterable
+    public function getVolumes(): ?iterable
     {
         return $this->volumes;
     }
@@ -520,7 +520,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setVolumes(?iterable $volumes) : self
+    public function setVolumes(?iterable $volumes): self
     {
         $this->initialized['volumes'] = true;
         $this->volumes = $volumes;
@@ -531,7 +531,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getWorkingDir() : ?string
+    public function getWorkingDir(): ?string
     {
         return $this->workingDir;
     }
@@ -542,7 +542,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setWorkingDir(?string $workingDir) : self
+    public function setWorkingDir(?string $workingDir): self
     {
         $this->initialized['workingDir'] = true;
         $this->workingDir = $workingDir;
@@ -550,27 +550,27 @@ class ContainerConfig extends \ArrayObject
     }
     /**
     * The entry point for the container as a string or an array of strings.
-
+    
     If the array consists of exactly one empty string (`[""]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
-
+    
     *
     * @return string[]|null
     */
-    public function getEntrypoint() : ?array
+    public function getEntrypoint(): ?array
     {
         return $this->entrypoint;
     }
     /**
     * The entry point for the container as a string or an array of strings.
-
+    
     If the array consists of exactly one empty string (`[""]`) then the entry point is reset to system default (i.e., the entry point used by docker when there is no `ENTRYPOINT` instruction in the `Dockerfile`).
-
+    
     *
     * @param string[]|null $entrypoint
     *
     * @return self
     */
-    public function setEntrypoint(?array $entrypoint) : self
+    public function setEntrypoint(?array $entrypoint): self
     {
         $this->initialized['entrypoint'] = true;
         $this->entrypoint = $entrypoint;
@@ -581,7 +581,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getNetworkDisabled() : ?bool
+    public function getNetworkDisabled(): ?bool
     {
         return $this->networkDisabled;
     }
@@ -592,7 +592,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setNetworkDisabled(?bool $networkDisabled) : self
+    public function setNetworkDisabled(?bool $networkDisabled): self
     {
         $this->initialized['networkDisabled'] = true;
         $this->networkDisabled = $networkDisabled;
@@ -603,7 +603,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getMacAddress() : ?string
+    public function getMacAddress(): ?string
     {
         return $this->macAddress;
     }
@@ -614,7 +614,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setMacAddress(?string $macAddress) : self
+    public function setMacAddress(?string $macAddress): self
     {
         $this->initialized['macAddress'] = true;
         $this->macAddress = $macAddress;
@@ -625,7 +625,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getOnBuild() : ?array
+    public function getOnBuild(): ?array
     {
         return $this->onBuild;
     }
@@ -636,7 +636,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setOnBuild(?array $onBuild) : self
+    public function setOnBuild(?array $onBuild): self
     {
         $this->initialized['onBuild'] = true;
         $this->onBuild = $onBuild;
@@ -647,7 +647,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels(): ?iterable
     {
         return $this->labels;
     }
@@ -658,7 +658,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?iterable $labels): self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -669,7 +669,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getStopSignal() : ?string
+    public function getStopSignal(): ?string
     {
         return $this->stopSignal;
     }
@@ -680,7 +680,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setStopSignal(?string $stopSignal) : self
+    public function setStopSignal(?string $stopSignal): self
     {
         $this->initialized['stopSignal'] = true;
         $this->stopSignal = $stopSignal;
@@ -691,7 +691,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getStopTimeout() : ?int
+    public function getStopTimeout(): ?int
     {
         return $this->stopTimeout;
     }
@@ -702,7 +702,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setStopTimeout(?int $stopTimeout) : self
+    public function setStopTimeout(?int $stopTimeout): self
     {
         $this->initialized['stopTimeout'] = true;
         $this->stopTimeout = $stopTimeout;
@@ -713,7 +713,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getShell() : ?array
+    public function getShell(): ?array
     {
         return $this->shell;
     }
@@ -724,7 +724,7 @@ class ContainerConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setShell(?array $shell) : self
+    public function setShell(?array $shell): self
     {
         $this->initialized['shell'] = true;
         $this->shell = $shell;

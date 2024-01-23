@@ -7,8 +7,8 @@ class EndpointSettings extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -19,13 +19,13 @@ class EndpointSettings extends \ArrayObject
      */
     protected $iPAMConfig;
     /**
-     *
+     * 
      *
      * @var string[]|null
      */
     protected $links;
     /**
-     *
+     * 
      *
      * @var string[]|null
      */
@@ -87,7 +87,7 @@ class EndpointSettings extends \ArrayObject
     /**
     * DriverOpts is a mapping of driver options and values. These options
     are passed directly to the driver and are driver specific.
-
+    
     *
     * @var array<string, string>|null
     */
@@ -97,7 +97,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return EndpointIPAMConfig|null
      */
-    public function getIPAMConfig() : ?EndpointIPAMConfig
+    public function getIPAMConfig(): ?EndpointIPAMConfig
     {
         return $this->iPAMConfig;
     }
@@ -108,51 +108,51 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setIPAMConfig(?EndpointIPAMConfig $iPAMConfig) : self
+    public function setIPAMConfig(?EndpointIPAMConfig $iPAMConfig): self
     {
         $this->initialized['iPAMConfig'] = true;
         $this->iPAMConfig = $iPAMConfig;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string[]|null
      */
-    public function getLinks() : ?array
+    public function getLinks(): ?array
     {
         return $this->links;
     }
     /**
-     *
+     * 
      *
      * @param string[]|null $links
      *
      * @return self
      */
-    public function setLinks(?array $links) : self
+    public function setLinks(?array $links): self
     {
         $this->initialized['links'] = true;
         $this->links = $links;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string[]|null
      */
-    public function getAliases() : ?array
+    public function getAliases(): ?array
     {
         return $this->aliases;
     }
     /**
-     *
+     * 
      *
      * @param string[]|null $aliases
      *
      * @return self
      */
-    public function setAliases(?array $aliases) : self
+    public function setAliases(?array $aliases): self
     {
         $this->initialized['aliases'] = true;
         $this->aliases = $aliases;
@@ -163,7 +163,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return string|null
      */
-    public function getNetworkID() : ?string
+    public function getNetworkID(): ?string
     {
         return $this->networkID;
     }
@@ -174,7 +174,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setNetworkID(?string $networkID) : self
+    public function setNetworkID(?string $networkID): self
     {
         $this->initialized['networkID'] = true;
         $this->networkID = $networkID;
@@ -185,7 +185,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return string|null
      */
-    public function getEndpointID() : ?string
+    public function getEndpointID(): ?string
     {
         return $this->endpointID;
     }
@@ -196,7 +196,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setEndpointID(?string $endpointID) : self
+    public function setEndpointID(?string $endpointID): self
     {
         $this->initialized['endpointID'] = true;
         $this->endpointID = $endpointID;
@@ -207,7 +207,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return string|null
      */
-    public function getGateway() : ?string
+    public function getGateway(): ?string
     {
         return $this->gateway;
     }
@@ -218,7 +218,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setGateway(?string $gateway) : self
+    public function setGateway(?string $gateway): self
     {
         $this->initialized['gateway'] = true;
         $this->gateway = $gateway;
@@ -229,7 +229,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return string|null
      */
-    public function getIPAddress() : ?string
+    public function getIPAddress(): ?string
     {
         return $this->iPAddress;
     }
@@ -240,7 +240,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setIPAddress(?string $iPAddress) : self
+    public function setIPAddress(?string $iPAddress): self
     {
         $this->initialized['iPAddress'] = true;
         $this->iPAddress = $iPAddress;
@@ -251,7 +251,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return int|null
      */
-    public function getIPPrefixLen() : ?int
+    public function getIPPrefixLen(): ?int
     {
         return $this->iPPrefixLen;
     }
@@ -262,7 +262,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setIPPrefixLen(?int $iPPrefixLen) : self
+    public function setIPPrefixLen(?int $iPPrefixLen): self
     {
         $this->initialized['iPPrefixLen'] = true;
         $this->iPPrefixLen = $iPPrefixLen;
@@ -273,7 +273,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return string|null
      */
-    public function getIPv6Gateway() : ?string
+    public function getIPv6Gateway(): ?string
     {
         return $this->iPv6Gateway;
     }
@@ -284,7 +284,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setIPv6Gateway(?string $iPv6Gateway) : self
+    public function setIPv6Gateway(?string $iPv6Gateway): self
     {
         $this->initialized['iPv6Gateway'] = true;
         $this->iPv6Gateway = $iPv6Gateway;
@@ -295,7 +295,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return string|null
      */
-    public function getGlobalIPv6Address() : ?string
+    public function getGlobalIPv6Address(): ?string
     {
         return $this->globalIPv6Address;
     }
@@ -306,7 +306,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setGlobalIPv6Address(?string $globalIPv6Address) : self
+    public function setGlobalIPv6Address(?string $globalIPv6Address): self
     {
         $this->initialized['globalIPv6Address'] = true;
         $this->globalIPv6Address = $globalIPv6Address;
@@ -317,7 +317,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return int|null
      */
-    public function getGlobalIPv6PrefixLen() : ?int
+    public function getGlobalIPv6PrefixLen(): ?int
     {
         return $this->globalIPv6PrefixLen;
     }
@@ -328,7 +328,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setGlobalIPv6PrefixLen(?int $globalIPv6PrefixLen) : self
+    public function setGlobalIPv6PrefixLen(?int $globalIPv6PrefixLen): self
     {
         $this->initialized['globalIPv6PrefixLen'] = true;
         $this->globalIPv6PrefixLen = $globalIPv6PrefixLen;
@@ -339,7 +339,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return string|null
      */
-    public function getMacAddress() : ?string
+    public function getMacAddress(): ?string
     {
         return $this->macAddress;
     }
@@ -350,7 +350,7 @@ class EndpointSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setMacAddress(?string $macAddress) : self
+    public function setMacAddress(?string $macAddress): self
     {
         $this->initialized['macAddress'] = true;
         $this->macAddress = $macAddress;
@@ -359,24 +359,24 @@ class EndpointSettings extends \ArrayObject
     /**
     * DriverOpts is a mapping of driver options and values. These options
     are passed directly to the driver and are driver specific.
-
+    
     *
     * @return array<string, string>|null
     */
-    public function getDriverOpts() : ?iterable
+    public function getDriverOpts(): ?iterable
     {
         return $this->driverOpts;
     }
     /**
     * DriverOpts is a mapping of driver options and values. These options
     are passed directly to the driver and are driver specific.
-
+    
     *
     * @param array<string, string>|null $driverOpts
     *
     * @return self
     */
-    public function setDriverOpts(?iterable $driverOpts) : self
+    public function setDriverOpts(?iterable $driverOpts): self
     {
         $this->initialized['driverOpts'] = true;
         $this->driverOpts = $driverOpts;

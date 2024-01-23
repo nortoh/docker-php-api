@@ -9,7 +9,7 @@ class ExecStart extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
      * Starts a previously set up exec instance. If detach is true, this endpoint returns immediately after starting the command. Otherwise, it sets up an interactive session with the command.
      *
      * @param string $id Exec instance ID
-     * @param null|\Docker\API\Model\ExecIdStartPostBody $requestBody
+     * @param null|\Docker\API\Model\ExecIdStartPostBody $requestBody 
      */
     public function __construct(string $id, ?\Docker\API\Model\ExecIdStartPostBody $requestBody = null)
     {
@@ -17,24 +17,24 @@ class ExecStart extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
         $this->body = $requestBody;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod() : string
+    public function getMethod(): string
     {
         return 'POST';
     }
-    public function getUri() : string
+    public function getUri(): string
     {
-        return str_replace(array('{id}'), array($this->id), '/exec/{id}/start');
+        return str_replace(['{id}'], [$this->id], '/exec/{id}/start');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
     {
         if ($this->body instanceof \Docker\API\Model\ExecIdStartPostBody) {
-            return array(array('Content-Type' => array('application/json')), $serializer->serialize($this->body, 'json'));
+            return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
-        return array(array(), null);
+        return [[], null];
     }
-    public function getExtraHeaders() : array
+    public function getExtraHeaders(): array
     {
-        return array('Accept' => array('application/vnd.docker.raw-stream'));
+        return ['Accept' => ['application/vnd.docker.raw-stream']];
     }
     /**
      * {@inheritdoc}
@@ -53,8 +53,8 @@ class ExecStart extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
         if (409 === $status) {
         }
     }
-    public function getAuthenticationScopes() : array
+    public function getAuthenticationScopes(): array
     {
-        return array();
+        return [];
     }
 }

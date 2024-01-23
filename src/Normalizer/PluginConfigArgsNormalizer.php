@@ -18,18 +18,18 @@ class PluginConfigArgsNormalizer implements DenormalizerInterface, NormalizerInt
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\PluginConfigArgs';
+        return $type === 'Docker\API\Model\PluginConfigArgs';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\PluginConfigArgs';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\PluginConfigArgs';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -56,7 +56,7 @@ class PluginConfigArgsNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setDescription(null);
         }
         if (\array_key_exists('Settable', $data) && $data['Settable'] !== null) {
-            $values = array();
+            $values = [];
             foreach ($data['Settable'] as $value) {
                 $values[] = $value;
             }
@@ -67,7 +67,7 @@ class PluginConfigArgsNormalizer implements DenormalizerInterface, NormalizerInt
             $object->setSettable(null);
         }
         if (\array_key_exists('Value', $data) && $data['Value'] !== null) {
-            $values_1 = array();
+            $values_1 = [];
             foreach ($data['Value'] as $value_1) {
                 $values_1[] = $value_1;
             }
@@ -87,17 +87,17 @@ class PluginConfigArgsNormalizer implements DenormalizerInterface, NormalizerInt
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         $data['Name'] = $object->getName();
         $data['Description'] = $object->getDescription();
-        $values = array();
+        $values = [];
         foreach ($object->getSettable() as $value) {
             $values[] = $value;
         }
         $data['Settable'] = $values;
-        $values_1 = array();
+        $values_1 = [];
         foreach ($object->getValue() as $value_1) {
             $values_1[] = $value_1;
         }
@@ -109,8 +109,8 @@ class PluginConfigArgsNormalizer implements DenormalizerInterface, NormalizerInt
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\PluginConfigArgs' => false);
+        return ['Docker\API\Model\PluginConfigArgs' => false];
     }
 }

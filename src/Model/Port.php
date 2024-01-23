@@ -7,13 +7,13 @@ class Port extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
+     * 
      *
      * @var string|null
      */
@@ -31,28 +31,28 @@ class Port extends \ArrayObject
      */
     protected $publicPort;
     /**
-     *
+     * 
      *
      * @var string|null
      */
     protected $type;
     /**
-     *
+     * 
      *
      * @return string|null
      */
-    public function getIP() : ?string
+    public function getIP(): ?string
     {
         return $this->iP;
     }
     /**
-     *
+     * 
      *
      * @param string|null $iP
      *
      * @return self
      */
-    public function setIP(?string $iP) : self
+    public function setIP(?string $iP): self
     {
         $this->initialized['iP'] = true;
         $this->iP = $iP;
@@ -63,7 +63,7 @@ class Port extends \ArrayObject
      *
      * @return int|null
      */
-    public function getPrivatePort() : ?int
+    public function getPrivatePort(): ?int
     {
         return $this->privatePort;
     }
@@ -74,7 +74,7 @@ class Port extends \ArrayObject
      *
      * @return self
      */
-    public function setPrivatePort(?int $privatePort) : self
+    public function setPrivatePort(?int $privatePort): self
     {
         $this->initialized['privatePort'] = true;
         $this->privatePort = $privatePort;
@@ -85,7 +85,7 @@ class Port extends \ArrayObject
      *
      * @return int|null
      */
-    public function getPublicPort() : ?int
+    public function getPublicPort(): ?int
     {
         return $this->publicPort;
     }
@@ -96,29 +96,29 @@ class Port extends \ArrayObject
      *
      * @return self
      */
-    public function setPublicPort(?int $publicPort) : self
+    public function setPublicPort(?int $publicPort): self
     {
         $this->initialized['publicPort'] = true;
         $this->publicPort = $publicPort;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return string|null
      */
-    public function getType() : ?string
+    public function getType(): ?string
     {
         return $this->type;
     }
     /**
-     *
+     * 
      *
      * @param string|null $type
      *
      * @return self
      */
-    public function setType(?string $type) : self
+    public function setType(?string $type): self
     {
         $this->initialized['type'] = true;
         $this->type = $type;

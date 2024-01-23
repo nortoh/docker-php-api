@@ -7,13 +7,13 @@ class ManagerStatus extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
     /**
-     *
+     * 
      *
      * @var bool|null
      */
@@ -31,22 +31,22 @@ class ManagerStatus extends \ArrayObject
      */
     protected $addr;
     /**
-     *
+     * 
      *
      * @return bool|null
      */
-    public function getLeader() : ?bool
+    public function getLeader(): ?bool
     {
         return $this->leader;
     }
     /**
-     *
+     * 
      *
      * @param bool|null $leader
      *
      * @return self
      */
-    public function setLeader(?bool $leader) : self
+    public function setLeader(?bool $leader): self
     {
         $this->initialized['leader'] = true;
         $this->leader = $leader;
@@ -57,7 +57,7 @@ class ManagerStatus extends \ArrayObject
      *
      * @return string|null
      */
-    public function getReachability() : ?string
+    public function getReachability(): ?string
     {
         return $this->reachability;
     }
@@ -68,7 +68,7 @@ class ManagerStatus extends \ArrayObject
      *
      * @return self
      */
-    public function setReachability(?string $reachability) : self
+    public function setReachability(?string $reachability): self
     {
         $this->initialized['reachability'] = true;
         $this->reachability = $reachability;
@@ -79,7 +79,7 @@ class ManagerStatus extends \ArrayObject
      *
      * @return string|null
      */
-    public function getAddr() : ?string
+    public function getAddr(): ?string
     {
         return $this->addr;
     }
@@ -90,7 +90,7 @@ class ManagerStatus extends \ArrayObject
      *
      * @return self
      */
-    public function setAddr(?string $addr) : self
+    public function setAddr(?string $addr): self
     {
         $this->initialized['addr'] = true;
         $this->addr = $addr;

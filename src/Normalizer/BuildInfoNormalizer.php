@@ -18,18 +18,18 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\BuildInfo';
+        return $type === 'Docker\API\Model\BuildInfo';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\BuildInfo';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\BuildInfo';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -63,7 +63,7 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $object->setError(null);
         }
         if (\array_key_exists('errorDetail', $data) && $data['errorDetail'] !== null) {
-            $object->setErrorDetail($this->denormalizer->denormalize($data['errorDetail'], 'Docker\\API\\Model\\ErrorDetail', 'json', $context));
+            $object->setErrorDetail($this->denormalizer->denormalize($data['errorDetail'], 'Docker\API\Model\ErrorDetail', 'json', $context));
             unset($data['errorDetail']);
         }
         elseif (\array_key_exists('errorDetail', $data) && $data['errorDetail'] === null) {
@@ -84,14 +84,14 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $object->setProgress(null);
         }
         if (\array_key_exists('progressDetail', $data) && $data['progressDetail'] !== null) {
-            $object->setProgressDetail($this->denormalizer->denormalize($data['progressDetail'], 'Docker\\API\\Model\\ProgressDetail', 'json', $context));
+            $object->setProgressDetail($this->denormalizer->denormalize($data['progressDetail'], 'Docker\API\Model\ProgressDetail', 'json', $context));
             unset($data['progressDetail']);
         }
         elseif (\array_key_exists('progressDetail', $data) && $data['progressDetail'] === null) {
             $object->setProgressDetail(null);
         }
         if (\array_key_exists('aux', $data) && $data['aux'] !== null) {
-            $object->setAux($this->denormalizer->denormalize($data['aux'], 'Docker\\API\\Model\\ImageID', 'json', $context));
+            $object->setAux($this->denormalizer->denormalize($data['aux'], 'Docker\API\Model\ImageID', 'json', $context));
             unset($data['aux']);
         }
         elseif (\array_key_exists('aux', $data) && $data['aux'] === null) {
@@ -107,9 +107,9 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('id') && null !== $object->getId()) {
             $data['id'] = $object->getId();
         }
@@ -120,7 +120,7 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['error'] = $object->getError();
         }
         if ($object->isInitialized('errorDetail') && null !== $object->getErrorDetail()) {
-            $data['errorDetail'] = $object->getErrorDetail() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getErrorDetail(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['errorDetail'] = ($object->getErrorDetail() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getErrorDetail(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('status') && null !== $object->getStatus()) {
             $data['status'] = $object->getStatus();
@@ -129,10 +129,10 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
             $data['progress'] = $object->getProgress();
         }
         if ($object->isInitialized('progressDetail') && null !== $object->getProgressDetail()) {
-            $data['progressDetail'] = $object->getProgressDetail() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getProgressDetail(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['progressDetail'] = ($object->getProgressDetail() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getProgressDetail(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('aux') && null !== $object->getAux()) {
-            $data['aux'] = $object->getAux() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getAux(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['aux'] = ($object->getAux() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getAux(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         foreach ($object as $key => $value) {
             if (preg_match('/.*/', (string) $key)) {
@@ -141,8 +141,8 @@ class BuildInfoNormalizer implements DenormalizerInterface, NormalizerInterface,
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\BuildInfo' => false);
+        return ['Docker\API\Model\BuildInfo' => false];
     }
 }

@@ -7,8 +7,8 @@ class NetworksCreatePostBody extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -49,7 +49,7 @@ class NetworksCreatePostBody extends \ArrayObject
      */
     protected $ingress;
     /**
-     *
+     * 
      *
      * @var IPAM|null
      */
@@ -77,7 +77,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -88,7 +88,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -99,7 +99,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getCheckDuplicate() : ?bool
+    public function getCheckDuplicate(): ?bool
     {
         return $this->checkDuplicate;
     }
@@ -110,7 +110,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setCheckDuplicate(?bool $checkDuplicate) : self
+    public function setCheckDuplicate(?bool $checkDuplicate): self
     {
         $this->initialized['checkDuplicate'] = true;
         $this->checkDuplicate = $checkDuplicate;
@@ -121,7 +121,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getDriver() : ?string
+    public function getDriver(): ?string
     {
         return $this->driver;
     }
@@ -132,7 +132,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setDriver(?string $driver) : self
+    public function setDriver(?string $driver): self
     {
         $this->initialized['driver'] = true;
         $this->driver = $driver;
@@ -143,7 +143,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getInternal() : ?bool
+    public function getInternal(): ?bool
     {
         return $this->internal;
     }
@@ -154,7 +154,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setInternal(?bool $internal) : self
+    public function setInternal(?bool $internal): self
     {
         $this->initialized['internal'] = true;
         $this->internal = $internal;
@@ -165,7 +165,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getAttachable() : ?bool
+    public function getAttachable(): ?bool
     {
         return $this->attachable;
     }
@@ -176,7 +176,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setAttachable(?bool $attachable) : self
+    public function setAttachable(?bool $attachable): self
     {
         $this->initialized['attachable'] = true;
         $this->attachable = $attachable;
@@ -187,7 +187,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getIngress() : ?bool
+    public function getIngress(): ?bool
     {
         return $this->ingress;
     }
@@ -198,29 +198,29 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setIngress(?bool $ingress) : self
+    public function setIngress(?bool $ingress): self
     {
         $this->initialized['ingress'] = true;
         $this->ingress = $ingress;
         return $this;
     }
     /**
-     *
+     * 
      *
      * @return IPAM|null
      */
-    public function getIPAM() : ?IPAM
+    public function getIPAM(): ?IPAM
     {
         return $this->iPAM;
     }
     /**
-     *
+     * 
      *
      * @param IPAM|null $iPAM
      *
      * @return self
      */
-    public function setIPAM(?IPAM $iPAM) : self
+    public function setIPAM(?IPAM $iPAM): self
     {
         $this->initialized['iPAM'] = true;
         $this->iPAM = $iPAM;
@@ -231,7 +231,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getEnableIPv6() : ?bool
+    public function getEnableIPv6(): ?bool
     {
         return $this->enableIPv6;
     }
@@ -242,7 +242,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setEnableIPv6(?bool $enableIPv6) : self
+    public function setEnableIPv6(?bool $enableIPv6): self
     {
         $this->initialized['enableIPv6'] = true;
         $this->enableIPv6 = $enableIPv6;
@@ -253,7 +253,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getOptions() : ?iterable
+    public function getOptions(): ?iterable
     {
         return $this->options;
     }
@@ -264,7 +264,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?iterable $options) : self
+    public function setOptions(?iterable $options): self
     {
         $this->initialized['options'] = true;
         $this->options = $options;
@@ -275,7 +275,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels() : ?iterable
+    public function getLabels(): ?iterable
     {
         return $this->labels;
     }
@@ -286,7 +286,7 @@ class NetworksCreatePostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels) : self
+    public function setLabels(?iterable $labels): self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;

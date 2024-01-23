@@ -18,18 +18,18 @@ class EventsGetResponse200Normalizer implements DenormalizerInterface, Normalize
     use NormalizerAwareTrait;
     use CheckArray;
     use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = array()) : bool
+    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
     {
-        return $type === 'Docker\\API\\Model\\EventsGetResponse200';
+        return $type === 'Docker\API\Model\EventsGetResponse200';
     }
-    public function supportsNormalization($data, $format = null, array $context = array()) : bool
+    public function supportsNormalization($data, $format = null, array $context = []): bool
     {
-        return is_object($data) && get_class($data) === 'Docker\\API\\Model\\EventsGetResponse200';
+        return is_object($data) && get_class($data) === 'Docker\API\Model\EventsGetResponse200';
     }
     /**
      * @return mixed
      */
-    public function denormalize($data, $class, $format = null, array $context = array())
+    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
     {
         if (isset($data['$ref'])) {
             return new Reference($data['$ref'], $context['document-origin']);
@@ -56,7 +56,7 @@ class EventsGetResponse200Normalizer implements DenormalizerInterface, Normalize
             $object->setAction(null);
         }
         if (\array_key_exists('Actor', $data) && $data['Actor'] !== null) {
-            $object->setActor($this->denormalizer->denormalize($data['Actor'], 'Docker\\API\\Model\\EventsGetResponse200Actor', 'json', $context));
+            $object->setActor($this->denormalizer->denormalize($data['Actor'], 'Docker\API\Model\EventsGetResponse200Actor', 'json', $context));
             unset($data['Actor']);
         }
         elseif (\array_key_exists('Actor', $data) && $data['Actor'] === null) {
@@ -86,9 +86,9 @@ class EventsGetResponse200Normalizer implements DenormalizerInterface, Normalize
     /**
      * @return array|string|int|float|bool|\ArrayObject|null
      */
-    public function normalize($object, $format = null, array $context = array())
+    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
     {
-        $data = array();
+        $data = [];
         if ($object->isInitialized('type') && null !== $object->getType()) {
             $data['Type'] = $object->getType();
         }
@@ -96,7 +96,7 @@ class EventsGetResponse200Normalizer implements DenormalizerInterface, Normalize
             $data['Action'] = $object->getAction();
         }
         if ($object->isInitialized('actor') && null !== $object->getActor()) {
-            $data['Actor'] = $object->getActor() == null ? null : new \ArrayObject($this->normalizer->normalize($object->getActor(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+            $data['Actor'] = ($object->getActor() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getActor(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
         }
         if ($object->isInitialized('time') && null !== $object->getTime()) {
             $data['time'] = $object->getTime();
@@ -111,8 +111,8 @@ class EventsGetResponse200Normalizer implements DenormalizerInterface, Normalize
         }
         return $data;
     }
-    public function getSupportedTypes(?string $format = null) : array
+    public function getSupportedTypes(?string $format = null): array
     {
-        return array('Docker\\API\\Model\\EventsGetResponse200' => false);
+        return ['Docker\API\Model\EventsGetResponse200' => false];
     }
 }

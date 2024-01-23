@@ -7,8 +7,8 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     /**
      * @var array
      */
-    protected $initialized = array();
-    public function isInitialized($property) : bool
+    protected $initialized = [];
+    public function isInitialized($property): bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -21,7 +21,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-
+    
     *
     * @var array<string, string>|null
     */
@@ -31,7 +31,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName() : ?string
+    public function getName(): ?string
     {
         return $this->name;
     }
@@ -42,7 +42,7 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name) : self
+    public function setName(?string $name): self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -51,24 +51,24 @@ class SwarmSpecTaskDefaultsLogDriver extends \ArrayObject
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-
+    
     *
     * @return array<string, string>|null
     */
-    public function getOptions() : ?iterable
+    public function getOptions(): ?iterable
     {
         return $this->options;
     }
     /**
     * Driver-specific options for the selectd log driver, specified
     as key/value pairs.
-
+    
     *
     * @param array<string, string>|null $options
     *
     * @return self
     */
-    public function setOptions(?iterable $options) : self
+    public function setOptions(?iterable $options): self
     {
         $this->initialized['options'] = true;
         $this->options = $options;
