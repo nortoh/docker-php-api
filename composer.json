@@ -10,7 +10,7 @@
     },
     "require": {
         "php": ">=7.1",
-        "jane-php/jane-php": "dev-nocworx-php83 as 7.5.10042"
+        "jane-php/jane-php": "7.5.10042"
     },
     "require-dev": {
         "phpunit/phpunit": "^10.4",
@@ -19,8 +19,16 @@
     },
     "repositories": [
         {
-            "type": "vcs",
-            "url": "https://github.com/nocworx/janephp"
+            "type": "package",
+            "package": {
+                "name": "jane-php/jane-php",
+                "version": "7.5.10042",
+                "source": {
+                    "url": "https://github.com/nocworx/janephp",
+                    "type": "git",
+                    "reference": "origin/nocworx-php83"
+                }
+            }
         }
     ],
     "suggest": {
