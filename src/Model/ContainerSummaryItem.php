@@ -303,7 +303,7 @@ class ContainerSummaryItem extends \ArrayObject
     /**
      * User-defined key/value metadata.
      *
-     * @return array<string, string>|null
+     * @return \ArrayObject|null
      */
     public function getLabels(): ?iterable
     {
