@@ -62,7 +62,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDataPathAddr(null);
             }
             if (\array_key_exists('RemoteAddrs', $data) && $data['RemoteAddrs'] !== null) {
-                $object->setRemoteAddrs($data['RemoteAddrs']);
+                $values = [];
+                foreach ($data['RemoteAddrs'] as $value) {
+                    $values[] = $value;
+                }
+                $object->setRemoteAddrs($values);
                 unset($data['RemoteAddrs']);
             }
             elseif (\array_key_exists('RemoteAddrs', $data) && $data['RemoteAddrs'] === null) {
@@ -75,9 +79,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('JoinToken', $data) && $data['JoinToken'] === null) {
                 $object->setJoinToken(null);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -95,14 +99,18 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $data['DataPathAddr'] = $object->getDataPathAddr();
             }
             if ($object->isInitialized('remoteAddrs') && null !== $object->getRemoteAddrs()) {
-                $data['RemoteAddrs'] = $object->getRemoteAddrs();
+                $values = [];
+                foreach ($object->getRemoteAddrs() as $value) {
+                    $values[] = $value;
+                }
+                $data['RemoteAddrs'] = $values;
             }
             if ($object->isInitialized('joinToken') && null !== $object->getJoinToken()) {
                 $data['JoinToken'] = $object->getJoinToken();
             }
-            foreach ($object as $key => $value) {
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;
@@ -164,7 +172,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDataPathAddr(null);
             }
             if (\array_key_exists('RemoteAddrs', $data) && $data['RemoteAddrs'] !== null) {
-                $object->setRemoteAddrs($data['RemoteAddrs']);
+                $values = [];
+                foreach ($data['RemoteAddrs'] as $value) {
+                    $values[] = $value;
+                }
+                $object->setRemoteAddrs($values);
                 unset($data['RemoteAddrs']);
             }
             elseif (\array_key_exists('RemoteAddrs', $data) && $data['RemoteAddrs'] === null) {
@@ -177,9 +189,9 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             elseif (\array_key_exists('JoinToken', $data) && $data['JoinToken'] === null) {
                 $object->setJoinToken(null);
             }
-            foreach ($data as $key => $value) {
+            foreach ($data as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $object[$key] = $value;
+                    $object[$key] = $value_1;
                 }
             }
             return $object;
@@ -200,14 +212,18 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $data['DataPathAddr'] = $object->getDataPathAddr();
             }
             if ($object->isInitialized('remoteAddrs') && null !== $object->getRemoteAddrs()) {
-                $data['RemoteAddrs'] = $object->getRemoteAddrs();
+                $values = [];
+                foreach ($object->getRemoteAddrs() as $value) {
+                    $values[] = $value;
+                }
+                $data['RemoteAddrs'] = $values;
             }
             if ($object->isInitialized('joinToken') && null !== $object->getJoinToken()) {
                 $data['JoinToken'] = $object->getJoinToken();
             }
-            foreach ($object as $key => $value) {
+            foreach ($object as $key => $value_1) {
                 if (preg_match('/.*/', (string) $key)) {
-                    $data[$key] = $value;
+                    $data[$key] = $value_1;
                 }
             }
             return $data;

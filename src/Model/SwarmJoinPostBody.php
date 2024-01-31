@@ -40,7 +40,7 @@ class SwarmJoinPostBody extends \ArrayObject
     /**
      * Addresses of manager nodes already participating in the swarm.
      *
-     * @var string|null
+     * @var string[]|null
      */
     protected $remoteAddrs;
     /**
@@ -132,20 +132,20 @@ class SwarmJoinPostBody extends \ArrayObject
     /**
      * Addresses of manager nodes already participating in the swarm.
      *
-     * @return string|null
+     * @return string[]|null
      */
-    public function getRemoteAddrs() : ?string
+    public function getRemoteAddrs() : ?array
     {
         return $this->remoteAddrs;
     }
     /**
      * Addresses of manager nodes already participating in the swarm.
      *
-     * @param string|null $remoteAddrs
+     * @param string[]|null $remoteAddrs
      *
      * @return self
      */
-    public function setRemoteAddrs(?string $remoteAddrs) : self
+    public function setRemoteAddrs(?array $remoteAddrs) : self
     {
         $this->initialized['remoteAddrs'] = true;
         $this->remoteAddrs = $remoteAddrs;
