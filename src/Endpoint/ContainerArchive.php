@@ -22,26 +22,26 @@ class ContainerArchive extends \Docker\API\Runtime\Client\BaseEndpoint implement
         $this->accept = $accept;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod(): string
+    public function getMethod() : string
     {
         return 'GET';
     }
-    public function getUri(): string
+    public function getUri() : string
     {
         return str_replace(['{id}'], [$this->id], '/containers/{id}/archive');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         return [[], null];
     }
-    public function getExtraHeaders(): array
+    public function getExtraHeaders() : array
     {
         if (empty($this->accept)) {
             return ['Accept' => ['application/x-tar', 'application/json']];
         }
         return $this->accept;
     }
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['path']);
@@ -71,7 +71,7 @@ class ContainerArchive extends \Docker\API\Runtime\Client\BaseEndpoint implement
         if (500 === $status) {
         }
     }
-    public function getAuthenticationScopes(): array
+    public function getAuthenticationScopes() : array
     {
         return [];
     }

@@ -8,7 +8,7 @@ class ImagesPrunePostResponse200 extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ImagesPrunePostResponse200 extends \ArrayObject
      *
      * @return ImageDeleteResponseItem[]|null
      */
-    public function getImagesDeleted(): ?array
+    public function getImagesDeleted() : ?array
     {
         return $this->imagesDeleted;
     }
@@ -40,7 +40,7 @@ class ImagesPrunePostResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setImagesDeleted(?array $imagesDeleted): self
+    public function setImagesDeleted(?array $imagesDeleted) : self
     {
         $this->initialized['imagesDeleted'] = true;
         $this->imagesDeleted = $imagesDeleted;
@@ -51,7 +51,7 @@ class ImagesPrunePostResponse200 extends \ArrayObject
      *
      * @return int|null
      */
-    public function getSpaceReclaimed(): ?int
+    public function getSpaceReclaimed() : ?int
     {
         return $this->spaceReclaimed;
     }
@@ -62,7 +62,7 @@ class ImagesPrunePostResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setSpaceReclaimed(?int $spaceReclaimed): self
+    public function setSpaceReclaimed(?int $spaceReclaimed) : self
     {
         $this->initialized['spaceReclaimed'] = true;
         $this->spaceReclaimed = $spaceReclaimed;

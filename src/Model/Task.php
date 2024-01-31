@@ -8,7 +8,7 @@ class Task extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -102,7 +102,7 @@ class Task extends \ArrayObject
      *
      * @return string|null
      */
-    public function getID(): ?string
+    public function getID() : ?string
     {
         return $this->iD;
     }
@@ -113,7 +113,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setID(?string $iD): self
+    public function setID(?string $iD) : self
     {
         $this->initialized['iD'] = true;
         $this->iD = $iD;
@@ -131,7 +131,7 @@ class Task extends \ArrayObject
     *
     * @return ObjectVersion|null
     */
-    public function getVersion(): ?ObjectVersion
+    public function getVersion() : ?ObjectVersion
     {
         return $this->version;
     }
@@ -149,7 +149,7 @@ class Task extends \ArrayObject
     *
     * @return self
     */
-    public function setVersion(?ObjectVersion $version): self
+    public function setVersion(?ObjectVersion $version) : self
     {
         $this->initialized['version'] = true;
         $this->version = $version;
@@ -160,7 +160,7 @@ class Task extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCreatedAt(): ?string
+    public function getCreatedAt() : ?string
     {
         return $this->createdAt;
     }
@@ -171,7 +171,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setCreatedAt(?string $createdAt): self
+    public function setCreatedAt(?string $createdAt) : self
     {
         $this->initialized['createdAt'] = true;
         $this->createdAt = $createdAt;
@@ -182,7 +182,7 @@ class Task extends \ArrayObject
      *
      * @return string|null
      */
-    public function getUpdatedAt(): ?string
+    public function getUpdatedAt() : ?string
     {
         return $this->updatedAt;
     }
@@ -193,7 +193,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setUpdatedAt(?string $updatedAt): self
+    public function setUpdatedAt(?string $updatedAt) : self
     {
         $this->initialized['updatedAt'] = true;
         $this->updatedAt = $updatedAt;
@@ -204,7 +204,7 @@ class Task extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName(): ?string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -215,7 +215,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name): self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -226,7 +226,7 @@ class Task extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels(): ?iterable
+    public function getLabels() : ?iterable
     {
         return $this->labels;
     }
@@ -237,7 +237,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels): self
+    public function setLabels(?iterable $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -248,7 +248,7 @@ class Task extends \ArrayObject
      *
      * @return TaskSpec|null
      */
-    public function getSpec(): ?TaskSpec
+    public function getSpec() : ?TaskSpec
     {
         return $this->spec;
     }
@@ -259,7 +259,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setSpec(?TaskSpec $spec): self
+    public function setSpec(?TaskSpec $spec) : self
     {
         $this->initialized['spec'] = true;
         $this->spec = $spec;
@@ -270,7 +270,7 @@ class Task extends \ArrayObject
      *
      * @return string|null
      */
-    public function getServiceID(): ?string
+    public function getServiceID() : ?string
     {
         return $this->serviceID;
     }
@@ -281,7 +281,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setServiceID(?string $serviceID): self
+    public function setServiceID(?string $serviceID) : self
     {
         $this->initialized['serviceID'] = true;
         $this->serviceID = $serviceID;
@@ -292,7 +292,7 @@ class Task extends \ArrayObject
      *
      * @return int|null
      */
-    public function getSlot(): ?int
+    public function getSlot() : ?int
     {
         return $this->slot;
     }
@@ -303,7 +303,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setSlot(?int $slot): self
+    public function setSlot(?int $slot) : self
     {
         $this->initialized['slot'] = true;
         $this->slot = $slot;
@@ -314,7 +314,7 @@ class Task extends \ArrayObject
      *
      * @return string|null
      */
-    public function getNodeID(): ?string
+    public function getNodeID() : ?string
     {
         return $this->nodeID;
     }
@@ -325,7 +325,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setNodeID(?string $nodeID): self
+    public function setNodeID(?string $nodeID) : self
     {
         $this->initialized['nodeID'] = true;
         $this->nodeID = $nodeID;
@@ -336,7 +336,7 @@ class Task extends \ArrayObject
      *
      * @return GenericResourcesItem[]|null
      */
-    public function getAssignedGenericResources(): ?array
+    public function getAssignedGenericResources() : ?array
     {
         return $this->assignedGenericResources;
     }
@@ -347,7 +347,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setAssignedGenericResources(?array $assignedGenericResources): self
+    public function setAssignedGenericResources(?array $assignedGenericResources) : self
     {
         $this->initialized['assignedGenericResources'] = true;
         $this->assignedGenericResources = $assignedGenericResources;
@@ -358,7 +358,7 @@ class Task extends \ArrayObject
      *
      * @return TaskStatus|null
      */
-    public function getStatus(): ?TaskStatus
+    public function getStatus() : ?TaskStatus
     {
         return $this->status;
     }
@@ -369,7 +369,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setStatus(?TaskStatus $status): self
+    public function setStatus(?TaskStatus $status) : self
     {
         $this->initialized['status'] = true;
         $this->status = $status;
@@ -380,7 +380,7 @@ class Task extends \ArrayObject
      *
      * @return string|null
      */
-    public function getDesiredState(): ?string
+    public function getDesiredState() : ?string
     {
         return $this->desiredState;
     }
@@ -391,7 +391,7 @@ class Task extends \ArrayObject
      *
      * @return self
      */
-    public function setDesiredState(?string $desiredState): self
+    public function setDesiredState(?string $desiredState) : self
     {
         $this->initialized['desiredState'] = true;
         $this->desiredState = $desiredState;

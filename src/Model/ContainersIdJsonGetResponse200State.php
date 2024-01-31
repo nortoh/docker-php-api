@@ -8,7 +8,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -93,7 +93,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return string|null
      */
-    public function getStatus(): ?string
+    public function getStatus() : ?string
     {
         return $this->status;
     }
@@ -104,7 +104,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setStatus(?string $status): self
+    public function setStatus(?string $status) : self
     {
         $this->initialized['status'] = true;
         $this->status = $status;
@@ -125,7 +125,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
     *
     * @return bool|null
     */
-    public function getRunning(): ?bool
+    public function getRunning() : ?bool
     {
         return $this->running;
     }
@@ -146,7 +146,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
     *
     * @return self
     */
-    public function setRunning(?bool $running): self
+    public function setRunning(?bool $running) : self
     {
         $this->initialized['running'] = true;
         $this->running = $running;
@@ -157,7 +157,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getPaused(): ?bool
+    public function getPaused() : ?bool
     {
         return $this->paused;
     }
@@ -168,7 +168,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setPaused(?bool $paused): self
+    public function setPaused(?bool $paused) : self
     {
         $this->initialized['paused'] = true;
         $this->paused = $paused;
@@ -179,7 +179,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getRestarting(): ?bool
+    public function getRestarting() : ?bool
     {
         return $this->restarting;
     }
@@ -190,7 +190,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setRestarting(?bool $restarting): self
+    public function setRestarting(?bool $restarting) : self
     {
         $this->initialized['restarting'] = true;
         $this->restarting = $restarting;
@@ -201,7 +201,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getOOMKilled(): ?bool
+    public function getOOMKilled() : ?bool
     {
         return $this->oOMKilled;
     }
@@ -212,7 +212,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setOOMKilled(?bool $oOMKilled): self
+    public function setOOMKilled(?bool $oOMKilled) : self
     {
         $this->initialized['oOMKilled'] = true;
         $this->oOMKilled = $oOMKilled;
@@ -223,7 +223,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getDead(): ?bool
+    public function getDead() : ?bool
     {
         return $this->dead;
     }
@@ -234,7 +234,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setDead(?bool $dead): self
+    public function setDead(?bool $dead) : self
     {
         $this->initialized['dead'] = true;
         $this->dead = $dead;
@@ -245,7 +245,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return int|null
      */
-    public function getPid(): ?int
+    public function getPid() : ?int
     {
         return $this->pid;
     }
@@ -256,7 +256,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setPid(?int $pid): self
+    public function setPid(?int $pid) : self
     {
         $this->initialized['pid'] = true;
         $this->pid = $pid;
@@ -267,7 +267,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return int|null
      */
-    public function getExitCode(): ?int
+    public function getExitCode() : ?int
     {
         return $this->exitCode;
     }
@@ -278,7 +278,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setExitCode(?int $exitCode): self
+    public function setExitCode(?int $exitCode) : self
     {
         $this->initialized['exitCode'] = true;
         $this->exitCode = $exitCode;
@@ -289,7 +289,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return string|null
      */
-    public function getError(): ?string
+    public function getError() : ?string
     {
         return $this->error;
     }
@@ -300,7 +300,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setError(?string $error): self
+    public function setError(?string $error) : self
     {
         $this->initialized['error'] = true;
         $this->error = $error;
@@ -311,7 +311,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return string|null
      */
-    public function getStartedAt(): ?string
+    public function getStartedAt() : ?string
     {
         return $this->startedAt;
     }
@@ -322,7 +322,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setStartedAt(?string $startedAt): self
+    public function setStartedAt(?string $startedAt) : self
     {
         $this->initialized['startedAt'] = true;
         $this->startedAt = $startedAt;
@@ -333,7 +333,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return string|null
      */
-    public function getFinishedAt(): ?string
+    public function getFinishedAt() : ?string
     {
         return $this->finishedAt;
     }
@@ -344,7 +344,7 @@ class ContainersIdJsonGetResponse200State extends \ArrayObject
      *
      * @return self
      */
-    public function setFinishedAt(?string $finishedAt): self
+    public function setFinishedAt(?string $finishedAt) : self
     {
         $this->initialized['finishedAt'] = true;
         $this->finishedAt = $finishedAt;

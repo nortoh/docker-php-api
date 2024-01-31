@@ -8,7 +8,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      *
      * @return int|null
      */
-    public function getLayersSize(): ?int
+    public function getLayersSize() : ?int
     {
         return $this->layersSize;
     }
@@ -52,7 +52,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setLayersSize(?int $layersSize): self
+    public function setLayersSize(?int $layersSize) : self
     {
         $this->initialized['layersSize'] = true;
         $this->layersSize = $layersSize;
@@ -63,7 +63,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      *
      * @return ImageSummary[]|null
      */
-    public function getImages(): ?array
+    public function getImages() : ?array
     {
         return $this->images;
     }
@@ -74,7 +74,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setImages(?array $images): self
+    public function setImages(?array $images) : self
     {
         $this->initialized['images'] = true;
         $this->images = $images;
@@ -85,7 +85,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      *
      * @return ContainerSummaryItem[][]|null
      */
-    public function getContainers(): ?array
+    public function getContainers() : ?array
     {
         return $this->containers;
     }
@@ -96,7 +96,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setContainers(?array $containers): self
+    public function setContainers(?array $containers) : self
     {
         $this->initialized['containers'] = true;
         $this->containers = $containers;
@@ -107,7 +107,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      *
      * @return Volume[]|null
      */
-    public function getVolumes(): ?array
+    public function getVolumes() : ?array
     {
         return $this->volumes;
     }
@@ -118,7 +118,7 @@ class SystemDfGetJsonResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setVolumes(?array $volumes): self
+    public function setVolumes(?array $volumes) : self
     {
         $this->initialized['volumes'] = true;
         $this->volumes = $volumes;

@@ -12,155 +12,305 @@ use Symfony\Component\Serializer\Normalizer\DenormalizerInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareInterface;
 use Symfony\Component\Serializer\Normalizer\NormalizerAwareTrait;
 use Symfony\Component\Serializer\Normalizer\NormalizerInterface;
-class TaskSpecNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
-{
-    use DenormalizerAwareTrait;
-    use NormalizerAwareTrait;
-    use CheckArray;
-    use ValidatorTrait;
-    public function supportsDenormalization($data, $type, $format = null, array $context = []): bool
+use Symfony\Component\HttpKernel\Kernel;
+if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR_VERSION === 6 and Kernel::MINOR_VERSION === 4)) {
+    class TaskSpecNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
     {
-        return $type === 'Docker\API\Model\TaskSpec';
-    }
-    public function supportsNormalization($data, $format = null, array $context = []): bool
-    {
-        return is_object($data) && get_class($data) === 'Docker\API\Model\TaskSpec';
-    }
-    /**
-     * @return mixed
-     */
-    public function denormalize(mixed $data, string $class, string $format = null, array $context = []): mixed
-    {
-        if (isset($data['$ref'])) {
-            return new Reference($data['$ref'], $context['document-origin']);
+        use DenormalizerAwareTrait;
+        use NormalizerAwareTrait;
+        use CheckArray;
+        use ValidatorTrait;
+        public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
+        {
+            return $type === 'Docker\\API\\Model\\TaskSpec';
         }
-        if (isset($data['$recursiveRef'])) {
-            return new Reference($data['$recursiveRef'], $context['document-origin']);
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        {
+            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpec';
         }
-        $object = new \Docker\API\Model\TaskSpec();
-        if (null === $data || false === \is_array($data)) {
+        public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
+        {
+            if (isset($data['$ref'])) {
+                return new Reference($data['$ref'], $context['document-origin']);
+            }
+            if (isset($data['$recursiveRef'])) {
+                return new Reference($data['$recursiveRef'], $context['document-origin']);
+            }
+            $object = new \Docker\API\Model\TaskSpec();
+            if (null === $data || false === \is_array($data)) {
+                return $object;
+            }
+            if (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] !== null) {
+                $object->setPluginSpec($this->denormalizer->denormalize($data['PluginSpec'], 'Docker\\API\\Model\\TaskSpecPluginSpec', 'json', $context));
+                unset($data['PluginSpec']);
+            }
+            elseif (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] === null) {
+                $object->setPluginSpec(null);
+            }
+            if (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] !== null) {
+                $object->setContainerSpec($this->denormalizer->denormalize($data['ContainerSpec'], 'Docker\\API\\Model\\TaskSpecContainerSpec', 'json', $context));
+                unset($data['ContainerSpec']);
+            }
+            elseif (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] === null) {
+                $object->setContainerSpec(null);
+            }
+            if (\array_key_exists('Resources', $data) && $data['Resources'] !== null) {
+                $object->setResources($this->denormalizer->denormalize($data['Resources'], 'Docker\\API\\Model\\TaskSpecResources', 'json', $context));
+                unset($data['Resources']);
+            }
+            elseif (\array_key_exists('Resources', $data) && $data['Resources'] === null) {
+                $object->setResources(null);
+            }
+            if (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] !== null) {
+                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], 'Docker\\API\\Model\\TaskSpecRestartPolicy', 'json', $context));
+                unset($data['RestartPolicy']);
+            }
+            elseif (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] === null) {
+                $object->setRestartPolicy(null);
+            }
+            if (\array_key_exists('Placement', $data) && $data['Placement'] !== null) {
+                $object->setPlacement($this->denormalizer->denormalize($data['Placement'], 'Docker\\API\\Model\\TaskSpecPlacement', 'json', $context));
+                unset($data['Placement']);
+            }
+            elseif (\array_key_exists('Placement', $data) && $data['Placement'] === null) {
+                $object->setPlacement(null);
+            }
+            if (\array_key_exists('ForceUpdate', $data) && $data['ForceUpdate'] !== null) {
+                $object->setForceUpdate($data['ForceUpdate']);
+                unset($data['ForceUpdate']);
+            }
+            elseif (\array_key_exists('ForceUpdate', $data) && $data['ForceUpdate'] === null) {
+                $object->setForceUpdate(null);
+            }
+            if (\array_key_exists('Runtime', $data) && $data['Runtime'] !== null) {
+                $object->setRuntime($data['Runtime']);
+                unset($data['Runtime']);
+            }
+            elseif (\array_key_exists('Runtime', $data) && $data['Runtime'] === null) {
+                $object->setRuntime(null);
+            }
+            if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
+                $values = [];
+                foreach ($data['Networks'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\TaskSpecNetworksItem', 'json', $context);
+                }
+                $object->setNetworks($values);
+                unset($data['Networks']);
+            }
+            elseif (\array_key_exists('Networks', $data) && $data['Networks'] === null) {
+                $object->setNetworks(null);
+            }
+            if (\array_key_exists('LogDriver', $data) && $data['LogDriver'] !== null) {
+                $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], 'Docker\\API\\Model\\TaskSpecLogDriver', 'json', $context));
+                unset($data['LogDriver']);
+            }
+            elseif (\array_key_exists('LogDriver', $data) && $data['LogDriver'] === null) {
+                $object->setLogDriver(null);
+            }
+            foreach ($data as $key => $value_1) {
+                if (preg_match('/.*/', (string) $key)) {
+                    $object[$key] = $value_1;
+                }
+            }
             return $object;
         }
-        if (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] !== null) {
-            $object->setPluginSpec($this->denormalizer->denormalize($data['PluginSpec'], 'Docker\API\Model\TaskSpecPluginSpec', 'json', $context));
-            unset($data['PluginSpec']);
-        }
-        elseif (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] === null) {
-            $object->setPluginSpec(null);
-        }
-        if (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] !== null) {
-            $object->setContainerSpec($this->denormalizer->denormalize($data['ContainerSpec'], 'Docker\API\Model\TaskSpecContainerSpec', 'json', $context));
-            unset($data['ContainerSpec']);
-        }
-        elseif (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] === null) {
-            $object->setContainerSpec(null);
-        }
-        if (\array_key_exists('Resources', $data) && $data['Resources'] !== null) {
-            $object->setResources($this->denormalizer->denormalize($data['Resources'], 'Docker\API\Model\TaskSpecResources', 'json', $context));
-            unset($data['Resources']);
-        }
-        elseif (\array_key_exists('Resources', $data) && $data['Resources'] === null) {
-            $object->setResources(null);
-        }
-        if (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] !== null) {
-            $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], 'Docker\API\Model\TaskSpecRestartPolicy', 'json', $context));
-            unset($data['RestartPolicy']);
-        }
-        elseif (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] === null) {
-            $object->setRestartPolicy(null);
-        }
-        if (\array_key_exists('Placement', $data) && $data['Placement'] !== null) {
-            $object->setPlacement($this->denormalizer->denormalize($data['Placement'], 'Docker\API\Model\TaskSpecPlacement', 'json', $context));
-            unset($data['Placement']);
-        }
-        elseif (\array_key_exists('Placement', $data) && $data['Placement'] === null) {
-            $object->setPlacement(null);
-        }
-        if (\array_key_exists('ForceUpdate', $data) && $data['ForceUpdate'] !== null) {
-            $object->setForceUpdate($data['ForceUpdate']);
-            unset($data['ForceUpdate']);
-        }
-        elseif (\array_key_exists('ForceUpdate', $data) && $data['ForceUpdate'] === null) {
-            $object->setForceUpdate(null);
-        }
-        if (\array_key_exists('Runtime', $data) && $data['Runtime'] !== null) {
-            $object->setRuntime($data['Runtime']);
-            unset($data['Runtime']);
-        }
-        elseif (\array_key_exists('Runtime', $data) && $data['Runtime'] === null) {
-            $object->setRuntime(null);
-        }
-        if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
-            $values = [];
-            foreach ($data['Networks'] as $value) {
-                $values[] = $this->denormalizer->denormalize($value, 'Docker\API\Model\TaskSpecNetworksItem', 'json', $context);
+        public function normalize(mixed $object, string $format = null, array $context = []) : array|string|int|float|bool|\ArrayObject|null
+        {
+            $data = [];
+            if ($object->isInitialized('pluginSpec') && null !== $object->getPluginSpec()) {
+                $data['PluginSpec'] = $this->normalizer->normalize($object->getPluginSpec(), 'json', $context);
             }
-            $object->setNetworks($values);
-            unset($data['Networks']);
-        }
-        elseif (\array_key_exists('Networks', $data) && $data['Networks'] === null) {
-            $object->setNetworks(null);
-        }
-        if (\array_key_exists('LogDriver', $data) && $data['LogDriver'] !== null) {
-            $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], 'Docker\API\Model\TaskSpecLogDriver', 'json', $context));
-            unset($data['LogDriver']);
-        }
-        elseif (\array_key_exists('LogDriver', $data) && $data['LogDriver'] === null) {
-            $object->setLogDriver(null);
-        }
-        foreach ($data as $key => $value_1) {
-            if (preg_match('/.*/', (string) $key)) {
-                $object[$key] = $value_1;
+            if ($object->isInitialized('containerSpec') && null !== $object->getContainerSpec()) {
+                $data['ContainerSpec'] = $this->normalizer->normalize($object->getContainerSpec(), 'json', $context);
             }
+            if ($object->isInitialized('resources') && null !== $object->getResources()) {
+                $data['Resources'] = $this->normalizer->normalize($object->getResources(), 'json', $context);
+            }
+            if ($object->isInitialized('restartPolicy') && null !== $object->getRestartPolicy()) {
+                $data['RestartPolicy'] = $this->normalizer->normalize($object->getRestartPolicy(), 'json', $context);
+            }
+            if ($object->isInitialized('placement') && null !== $object->getPlacement()) {
+                $data['Placement'] = $this->normalizer->normalize($object->getPlacement(), 'json', $context);
+            }
+            if ($object->isInitialized('forceUpdate') && null !== $object->getForceUpdate()) {
+                $data['ForceUpdate'] = $object->getForceUpdate();
+            }
+            if ($object->isInitialized('runtime') && null !== $object->getRuntime()) {
+                $data['Runtime'] = $object->getRuntime();
+            }
+            if ($object->isInitialized('networks') && null !== $object->getNetworks()) {
+                $values = [];
+                foreach ($object->getNetworks() as $value) {
+                    $values[] = $this->normalizer->normalize($value, 'json', $context);
+                }
+                $data['Networks'] = $values;
+            }
+            if ($object->isInitialized('logDriver') && null !== $object->getLogDriver()) {
+                $data['LogDriver'] = $this->normalizer->normalize($object->getLogDriver(), 'json', $context);
+            }
+            foreach ($object as $key => $value_1) {
+                if (preg_match('/.*/', (string) $key)) {
+                    $data[$key] = $value_1;
+                }
+            }
+            return $data;
         }
-        return $object;
+        public function getSupportedTypes(?string $format = null) : array
+        {
+            return ['Docker\\API\\Model\\TaskSpec' => false];
+        }
     }
-    /**
-     * @return array|string|int|float|bool|\ArrayObject|null
-     */
-    public function normalize(mixed $object, string $format = null, array $context = []): array|string|int|float|bool|\ArrayObject|null
+} else {
+    class TaskSpecNormalizer implements DenormalizerInterface, NormalizerInterface, DenormalizerAwareInterface, NormalizerAwareInterface
     {
-        $data = [];
-        if ($object->isInitialized('pluginSpec') && null !== $object->getPluginSpec()) {
-            $data['PluginSpec'] = ($object->getPluginSpec() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getPluginSpec(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        use DenormalizerAwareTrait;
+        use NormalizerAwareTrait;
+        use CheckArray;
+        use ValidatorTrait;
+        public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
+        {
+            return $type === 'Docker\\API\\Model\\TaskSpec';
         }
-        if ($object->isInitialized('containerSpec') && null !== $object->getContainerSpec()) {
-            $data['ContainerSpec'] = ($object->getContainerSpec() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getContainerSpec(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
+        {
+            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpec';
         }
-        if ($object->isInitialized('resources') && null !== $object->getResources()) {
-            $data['Resources'] = ($object->getResources() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getResources(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
-        }
-        if ($object->isInitialized('restartPolicy') && null !== $object->getRestartPolicy()) {
-            $data['RestartPolicy'] = ($object->getRestartPolicy() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getRestartPolicy(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
-        }
-        if ($object->isInitialized('placement') && null !== $object->getPlacement()) {
-            $data['Placement'] = ($object->getPlacement() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getPlacement(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
-        }
-        if ($object->isInitialized('forceUpdate') && null !== $object->getForceUpdate()) {
-            $data['ForceUpdate'] = $object->getForceUpdate();
-        }
-        if ($object->isInitialized('runtime') && null !== $object->getRuntime()) {
-            $data['Runtime'] = $object->getRuntime();
-        }
-        if ($object->isInitialized('networks') && null !== $object->getNetworks()) {
-            $values = [];
-            foreach ($object->getNetworks() as $value) {
-                $values[] = ($value == null) ? null : new \ArrayObject($this->normalizer->normalize($value, 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
+        /**
+         * @return mixed
+         */
+        public function denormalize($data, $type, $format = null, array $context = [])
+        {
+            if (isset($data['$ref'])) {
+                return new Reference($data['$ref'], $context['document-origin']);
             }
-            $data['Networks'] = $values;
-        }
-        if ($object->isInitialized('logDriver') && null !== $object->getLogDriver()) {
-            $data['LogDriver'] = ($object->getLogDriver() == null) ? null : new \ArrayObject($this->normalizer->normalize($object->getLogDriver(), 'json', $context), \ArrayObject::ARRAY_AS_PROPS);
-        }
-        foreach ($object as $key => $value_1) {
-            if (preg_match('/.*/', (string) $key)) {
-                $data[$key] = $value_1;
+            if (isset($data['$recursiveRef'])) {
+                return new Reference($data['$recursiveRef'], $context['document-origin']);
             }
+            $object = new \Docker\API\Model\TaskSpec();
+            if (null === $data || false === \is_array($data)) {
+                return $object;
+            }
+            if (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] !== null) {
+                $object->setPluginSpec($this->denormalizer->denormalize($data['PluginSpec'], 'Docker\\API\\Model\\TaskSpecPluginSpec', 'json', $context));
+                unset($data['PluginSpec']);
+            }
+            elseif (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] === null) {
+                $object->setPluginSpec(null);
+            }
+            if (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] !== null) {
+                $object->setContainerSpec($this->denormalizer->denormalize($data['ContainerSpec'], 'Docker\\API\\Model\\TaskSpecContainerSpec', 'json', $context));
+                unset($data['ContainerSpec']);
+            }
+            elseif (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] === null) {
+                $object->setContainerSpec(null);
+            }
+            if (\array_key_exists('Resources', $data) && $data['Resources'] !== null) {
+                $object->setResources($this->denormalizer->denormalize($data['Resources'], 'Docker\\API\\Model\\TaskSpecResources', 'json', $context));
+                unset($data['Resources']);
+            }
+            elseif (\array_key_exists('Resources', $data) && $data['Resources'] === null) {
+                $object->setResources(null);
+            }
+            if (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] !== null) {
+                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], 'Docker\\API\\Model\\TaskSpecRestartPolicy', 'json', $context));
+                unset($data['RestartPolicy']);
+            }
+            elseif (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] === null) {
+                $object->setRestartPolicy(null);
+            }
+            if (\array_key_exists('Placement', $data) && $data['Placement'] !== null) {
+                $object->setPlacement($this->denormalizer->denormalize($data['Placement'], 'Docker\\API\\Model\\TaskSpecPlacement', 'json', $context));
+                unset($data['Placement']);
+            }
+            elseif (\array_key_exists('Placement', $data) && $data['Placement'] === null) {
+                $object->setPlacement(null);
+            }
+            if (\array_key_exists('ForceUpdate', $data) && $data['ForceUpdate'] !== null) {
+                $object->setForceUpdate($data['ForceUpdate']);
+                unset($data['ForceUpdate']);
+            }
+            elseif (\array_key_exists('ForceUpdate', $data) && $data['ForceUpdate'] === null) {
+                $object->setForceUpdate(null);
+            }
+            if (\array_key_exists('Runtime', $data) && $data['Runtime'] !== null) {
+                $object->setRuntime($data['Runtime']);
+                unset($data['Runtime']);
+            }
+            elseif (\array_key_exists('Runtime', $data) && $data['Runtime'] === null) {
+                $object->setRuntime(null);
+            }
+            if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
+                $values = [];
+                foreach ($data['Networks'] as $value) {
+                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\TaskSpecNetworksItem', 'json', $context);
+                }
+                $object->setNetworks($values);
+                unset($data['Networks']);
+            }
+            elseif (\array_key_exists('Networks', $data) && $data['Networks'] === null) {
+                $object->setNetworks(null);
+            }
+            if (\array_key_exists('LogDriver', $data) && $data['LogDriver'] !== null) {
+                $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], 'Docker\\API\\Model\\TaskSpecLogDriver', 'json', $context));
+                unset($data['LogDriver']);
+            }
+            elseif (\array_key_exists('LogDriver', $data) && $data['LogDriver'] === null) {
+                $object->setLogDriver(null);
+            }
+            foreach ($data as $key => $value_1) {
+                if (preg_match('/.*/', (string) $key)) {
+                    $object[$key] = $value_1;
+                }
+            }
+            return $object;
         }
-        return $data;
-    }
-    public function getSupportedTypes(?string $format = null): array
-    {
-        return ['Docker\API\Model\TaskSpec' => false];
+        /**
+         * @return array|string|int|float|bool|\ArrayObject|null
+         */
+        public function normalize($object, $format = null, array $context = [])
+        {
+            $data = [];
+            if ($object->isInitialized('pluginSpec') && null !== $object->getPluginSpec()) {
+                $data['PluginSpec'] = $this->normalizer->normalize($object->getPluginSpec(), 'json', $context);
+            }
+            if ($object->isInitialized('containerSpec') && null !== $object->getContainerSpec()) {
+                $data['ContainerSpec'] = $this->normalizer->normalize($object->getContainerSpec(), 'json', $context);
+            }
+            if ($object->isInitialized('resources') && null !== $object->getResources()) {
+                $data['Resources'] = $this->normalizer->normalize($object->getResources(), 'json', $context);
+            }
+            if ($object->isInitialized('restartPolicy') && null !== $object->getRestartPolicy()) {
+                $data['RestartPolicy'] = $this->normalizer->normalize($object->getRestartPolicy(), 'json', $context);
+            }
+            if ($object->isInitialized('placement') && null !== $object->getPlacement()) {
+                $data['Placement'] = $this->normalizer->normalize($object->getPlacement(), 'json', $context);
+            }
+            if ($object->isInitialized('forceUpdate') && null !== $object->getForceUpdate()) {
+                $data['ForceUpdate'] = $object->getForceUpdate();
+            }
+            if ($object->isInitialized('runtime') && null !== $object->getRuntime()) {
+                $data['Runtime'] = $object->getRuntime();
+            }
+            if ($object->isInitialized('networks') && null !== $object->getNetworks()) {
+                $values = [];
+                foreach ($object->getNetworks() as $value) {
+                    $values[] = $this->normalizer->normalize($value, 'json', $context);
+                }
+                $data['Networks'] = $values;
+            }
+            if ($object->isInitialized('logDriver') && null !== $object->getLogDriver()) {
+                $data['LogDriver'] = $this->normalizer->normalize($object->getLogDriver(), 'json', $context);
+            }
+            foreach ($object as $key => $value_1) {
+                if (preg_match('/.*/', (string) $key)) {
+                    $data[$key] = $value_1;
+                }
+            }
+            return $data;
+        }
+        public function getSupportedTypes(?string $format = null) : array
+        {
+            return ['Docker\\API\\Model\\TaskSpec' => false];
+        }
     }
 }

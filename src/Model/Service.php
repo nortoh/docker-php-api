@@ -8,7 +8,7 @@ class Service extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -66,7 +66,7 @@ class Service extends \ArrayObject
      *
      * @return string|null
      */
-    public function getID(): ?string
+    public function getID() : ?string
     {
         return $this->iD;
     }
@@ -77,7 +77,7 @@ class Service extends \ArrayObject
      *
      * @return self
      */
-    public function setID(?string $iD): self
+    public function setID(?string $iD) : self
     {
         $this->initialized['iD'] = true;
         $this->iD = $iD;
@@ -95,7 +95,7 @@ class Service extends \ArrayObject
     *
     * @return ObjectVersion|null
     */
-    public function getVersion(): ?ObjectVersion
+    public function getVersion() : ?ObjectVersion
     {
         return $this->version;
     }
@@ -113,7 +113,7 @@ class Service extends \ArrayObject
     *
     * @return self
     */
-    public function setVersion(?ObjectVersion $version): self
+    public function setVersion(?ObjectVersion $version) : self
     {
         $this->initialized['version'] = true;
         $this->version = $version;
@@ -124,7 +124,7 @@ class Service extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCreatedAt(): ?string
+    public function getCreatedAt() : ?string
     {
         return $this->createdAt;
     }
@@ -135,7 +135,7 @@ class Service extends \ArrayObject
      *
      * @return self
      */
-    public function setCreatedAt(?string $createdAt): self
+    public function setCreatedAt(?string $createdAt) : self
     {
         $this->initialized['createdAt'] = true;
         $this->createdAt = $createdAt;
@@ -146,7 +146,7 @@ class Service extends \ArrayObject
      *
      * @return string|null
      */
-    public function getUpdatedAt(): ?string
+    public function getUpdatedAt() : ?string
     {
         return $this->updatedAt;
     }
@@ -157,7 +157,7 @@ class Service extends \ArrayObject
      *
      * @return self
      */
-    public function setUpdatedAt(?string $updatedAt): self
+    public function setUpdatedAt(?string $updatedAt) : self
     {
         $this->initialized['updatedAt'] = true;
         $this->updatedAt = $updatedAt;
@@ -168,7 +168,7 @@ class Service extends \ArrayObject
      *
      * @return ServiceSpec|null
      */
-    public function getSpec(): ?ServiceSpec
+    public function getSpec() : ?ServiceSpec
     {
         return $this->spec;
     }
@@ -179,7 +179,7 @@ class Service extends \ArrayObject
      *
      * @return self
      */
-    public function setSpec(?ServiceSpec $spec): self
+    public function setSpec(?ServiceSpec $spec) : self
     {
         $this->initialized['spec'] = true;
         $this->spec = $spec;
@@ -190,7 +190,7 @@ class Service extends \ArrayObject
      *
      * @return ServiceEndpoint|null
      */
-    public function getEndpoint(): ?ServiceEndpoint
+    public function getEndpoint() : ?ServiceEndpoint
     {
         return $this->endpoint;
     }
@@ -201,7 +201,7 @@ class Service extends \ArrayObject
      *
      * @return self
      */
-    public function setEndpoint(?ServiceEndpoint $endpoint): self
+    public function setEndpoint(?ServiceEndpoint $endpoint) : self
     {
         $this->initialized['endpoint'] = true;
         $this->endpoint = $endpoint;
@@ -212,7 +212,7 @@ class Service extends \ArrayObject
      *
      * @return ServiceUpdateStatus|null
      */
-    public function getUpdateStatus(): ?ServiceUpdateStatus
+    public function getUpdateStatus() : ?ServiceUpdateStatus
     {
         return $this->updateStatus;
     }
@@ -223,7 +223,7 @@ class Service extends \ArrayObject
      *
      * @return self
      */
-    public function setUpdateStatus(?ServiceUpdateStatus $updateStatus): self
+    public function setUpdateStatus(?ServiceUpdateStatus $updateStatus) : self
     {
         $this->initialized['updateStatus'] = true;
         $this->updateStatus = $updateStatus;

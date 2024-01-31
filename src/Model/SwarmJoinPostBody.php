@@ -8,7 +8,7 @@ class SwarmJoinPostBody extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -54,7 +54,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getListenAddr(): ?string
+    public function getListenAddr() : ?string
     {
         return $this->listenAddr;
     }
@@ -65,7 +65,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setListenAddr(?string $listenAddr): self
+    public function setListenAddr(?string $listenAddr) : self
     {
         $this->initialized['listenAddr'] = true;
         $this->listenAddr = $listenAddr;
@@ -76,7 +76,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getAdvertiseAddr(): ?string
+    public function getAdvertiseAddr() : ?string
     {
         return $this->advertiseAddr;
     }
@@ -87,7 +87,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setAdvertiseAddr(?string $advertiseAddr): self
+    public function setAdvertiseAddr(?string $advertiseAddr) : self
     {
         $this->initialized['advertiseAddr'] = true;
         $this->advertiseAddr = $advertiseAddr;
@@ -105,7 +105,7 @@ class SwarmJoinPostBody extends \ArrayObject
     *
     * @return string|null
     */
-    public function getDataPathAddr(): ?string
+    public function getDataPathAddr() : ?string
     {
         return $this->dataPathAddr;
     }
@@ -123,7 +123,7 @@ class SwarmJoinPostBody extends \ArrayObject
     *
     * @return self
     */
-    public function setDataPathAddr(?string $dataPathAddr): self
+    public function setDataPathAddr(?string $dataPathAddr) : self
     {
         $this->initialized['dataPathAddr'] = true;
         $this->dataPathAddr = $dataPathAddr;
@@ -134,7 +134,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getRemoteAddrs(): ?string
+    public function getRemoteAddrs() : ?string
     {
         return $this->remoteAddrs;
     }
@@ -145,7 +145,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setRemoteAddrs(?string $remoteAddrs): self
+    public function setRemoteAddrs(?string $remoteAddrs) : self
     {
         $this->initialized['remoteAddrs'] = true;
         $this->remoteAddrs = $remoteAddrs;
@@ -156,7 +156,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return string|null
      */
-    public function getJoinToken(): ?string
+    public function getJoinToken() : ?string
     {
         return $this->joinToken;
     }
@@ -167,7 +167,7 @@ class SwarmJoinPostBody extends \ArrayObject
      *
      * @return self
      */
-    public function setJoinToken(?string $joinToken): self
+    public function setJoinToken(?string $joinToken) : self
     {
         $this->initialized['joinToken'] = true;
         $this->joinToken = $joinToken;

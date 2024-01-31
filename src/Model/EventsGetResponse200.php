@@ -8,7 +8,7 @@ class EventsGetResponse200 extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getType(): ?string
+    public function getType() : ?string
     {
         return $this->type;
     }
@@ -58,7 +58,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setType(?string $type): self
+    public function setType(?string $type) : self
     {
         $this->initialized['type'] = true;
         $this->type = $type;
@@ -69,7 +69,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getAction(): ?string
+    public function getAction() : ?string
     {
         return $this->action;
     }
@@ -80,7 +80,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setAction(?string $action): self
+    public function setAction(?string $action) : self
     {
         $this->initialized['action'] = true;
         $this->action = $action;
@@ -91,7 +91,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return EventsGetResponse200Actor|null
      */
-    public function getActor(): ?EventsGetResponse200Actor
+    public function getActor() : ?EventsGetResponse200Actor
     {
         return $this->actor;
     }
@@ -102,7 +102,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setActor(?EventsGetResponse200Actor $actor): self
+    public function setActor(?EventsGetResponse200Actor $actor) : self
     {
         $this->initialized['actor'] = true;
         $this->actor = $actor;
@@ -113,7 +113,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return int|null
      */
-    public function getTime(): ?int
+    public function getTime() : ?int
     {
         return $this->time;
     }
@@ -124,7 +124,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setTime(?int $time): self
+    public function setTime(?int $time) : self
     {
         $this->initialized['time'] = true;
         $this->time = $time;
@@ -135,7 +135,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return int|null
      */
-    public function getTimeNano(): ?int
+    public function getTimeNano() : ?int
     {
         return $this->timeNano;
     }
@@ -146,7 +146,7 @@ class EventsGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setTimeNano(?int $timeNano): self
+    public function setTimeNano(?int $timeNano) : self
     {
         $this->initialized['timeNano'] = true;
         $this->timeNano = $timeNano;

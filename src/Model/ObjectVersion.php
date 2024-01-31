@@ -8,7 +8,7 @@ class ObjectVersion extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ObjectVersion extends \ArrayObject
      *
      * @return int|null
      */
-    public function getIndex(): ?int
+    public function getIndex() : ?int
     {
         return $this->index;
     }
@@ -34,7 +34,7 @@ class ObjectVersion extends \ArrayObject
      *
      * @return self
      */
-    public function setIndex(?int $index): self
+    public function setIndex(?int $index) : self
     {
         $this->initialized['index'] = true;
         $this->index = $index;

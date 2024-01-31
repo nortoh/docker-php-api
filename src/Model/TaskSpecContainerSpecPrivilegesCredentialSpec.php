@@ -8,7 +8,7 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -56,7 +56,7 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     *
     * @return string|null
     */
-    public function getFile(): ?string
+    public function getFile() : ?string
     {
         return $this->file;
     }
@@ -76,7 +76,7 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     *
     * @return self
     */
-    public function setFile(?string $file): self
+    public function setFile(?string $file) : self
     {
         $this->initialized['file'] = true;
         $this->file = $file;
@@ -96,7 +96,7 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     *
     * @return string|null
     */
-    public function getRegistry(): ?string
+    public function getRegistry() : ?string
     {
         return $this->registry;
     }
@@ -116,7 +116,7 @@ class TaskSpecContainerSpecPrivilegesCredentialSpec extends \ArrayObject
     *
     * @return self
     */
-    public function setRegistry(?string $registry): self
+    public function setRegistry(?string $registry) : self
     {
         $this->initialized['registry'] = true;
         $this->registry = $registry;

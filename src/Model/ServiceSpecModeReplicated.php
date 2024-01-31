@@ -8,7 +8,7 @@ class ServiceSpecModeReplicated extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class ServiceSpecModeReplicated extends \ArrayObject
      *
      * @return int|null
      */
-    public function getReplicas(): ?int
+    public function getReplicas() : ?int
     {
         return $this->replicas;
     }
@@ -34,7 +34,7 @@ class ServiceSpecModeReplicated extends \ArrayObject
      *
      * @return self
      */
-    public function setReplicas(?int $replicas): self
+    public function setReplicas(?int $replicas) : self
     {
         $this->initialized['replicas'] = true;
         $this->replicas = $replicas;

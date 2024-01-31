@@ -13,7 +13,7 @@ class ContainerResizeNotFoundException extends NotFoundException
         parent::__construct('no such container');
         $this->response = $response;
     }
-    public function getResponse(): ?\Psr\Http\Message\ResponseInterface
+    public function getResponse() : ?\Psr\Http\Message\ResponseInterface
     {
         return $this->response;
     }

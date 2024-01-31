@@ -8,7 +8,7 @@ class TaskSpec extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -71,7 +71,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return TaskSpecPluginSpec|null
      */
-    public function getPluginSpec(): ?TaskSpecPluginSpec
+    public function getPluginSpec() : ?TaskSpecPluginSpec
     {
         return $this->pluginSpec;
     }
@@ -82,7 +82,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setPluginSpec(?TaskSpecPluginSpec $pluginSpec): self
+    public function setPluginSpec(?TaskSpecPluginSpec $pluginSpec) : self
     {
         $this->initialized['pluginSpec'] = true;
         $this->pluginSpec = $pluginSpec;
@@ -93,7 +93,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return TaskSpecContainerSpec|null
      */
-    public function getContainerSpec(): ?TaskSpecContainerSpec
+    public function getContainerSpec() : ?TaskSpecContainerSpec
     {
         return $this->containerSpec;
     }
@@ -104,7 +104,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setContainerSpec(?TaskSpecContainerSpec $containerSpec): self
+    public function setContainerSpec(?TaskSpecContainerSpec $containerSpec) : self
     {
         $this->initialized['containerSpec'] = true;
         $this->containerSpec = $containerSpec;
@@ -115,7 +115,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return TaskSpecResources|null
      */
-    public function getResources(): ?TaskSpecResources
+    public function getResources() : ?TaskSpecResources
     {
         return $this->resources;
     }
@@ -126,7 +126,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setResources(?TaskSpecResources $resources): self
+    public function setResources(?TaskSpecResources $resources) : self
     {
         $this->initialized['resources'] = true;
         $this->resources = $resources;
@@ -137,7 +137,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return TaskSpecRestartPolicy|null
      */
-    public function getRestartPolicy(): ?TaskSpecRestartPolicy
+    public function getRestartPolicy() : ?TaskSpecRestartPolicy
     {
         return $this->restartPolicy;
     }
@@ -148,7 +148,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setRestartPolicy(?TaskSpecRestartPolicy $restartPolicy): self
+    public function setRestartPolicy(?TaskSpecRestartPolicy $restartPolicy) : self
     {
         $this->initialized['restartPolicy'] = true;
         $this->restartPolicy = $restartPolicy;
@@ -159,7 +159,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return TaskSpecPlacement|null
      */
-    public function getPlacement(): ?TaskSpecPlacement
+    public function getPlacement() : ?TaskSpecPlacement
     {
         return $this->placement;
     }
@@ -170,7 +170,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setPlacement(?TaskSpecPlacement $placement): self
+    public function setPlacement(?TaskSpecPlacement $placement) : self
     {
         $this->initialized['placement'] = true;
         $this->placement = $placement;
@@ -181,7 +181,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return int|null
      */
-    public function getForceUpdate(): ?int
+    public function getForceUpdate() : ?int
     {
         return $this->forceUpdate;
     }
@@ -192,7 +192,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setForceUpdate(?int $forceUpdate): self
+    public function setForceUpdate(?int $forceUpdate) : self
     {
         $this->initialized['forceUpdate'] = true;
         $this->forceUpdate = $forceUpdate;
@@ -203,7 +203,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getRuntime(): ?string
+    public function getRuntime() : ?string
     {
         return $this->runtime;
     }
@@ -214,7 +214,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setRuntime(?string $runtime): self
+    public function setRuntime(?string $runtime) : self
     {
         $this->initialized['runtime'] = true;
         $this->runtime = $runtime;
@@ -225,7 +225,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return TaskSpecNetworksItem[]|null
      */
-    public function getNetworks(): ?array
+    public function getNetworks() : ?array
     {
         return $this->networks;
     }
@@ -236,7 +236,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setNetworks(?array $networks): self
+    public function setNetworks(?array $networks) : self
     {
         $this->initialized['networks'] = true;
         $this->networks = $networks;
@@ -247,7 +247,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return TaskSpecLogDriver|null
      */
-    public function getLogDriver(): ?TaskSpecLogDriver
+    public function getLogDriver() : ?TaskSpecLogDriver
     {
         return $this->logDriver;
     }
@@ -258,7 +258,7 @@ class TaskSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setLogDriver(?TaskSpecLogDriver $logDriver): self
+    public function setLogDriver(?TaskSpecLogDriver $logDriver) : self
     {
         $this->initialized['logDriver'] = true;
         $this->logDriver = $logDriver;

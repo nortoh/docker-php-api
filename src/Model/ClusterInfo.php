@@ -8,7 +8,7 @@ class ClusterInfo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -70,7 +70,7 @@ class ClusterInfo extends \ArrayObject
      *
      * @return string|null
      */
-    public function getID(): ?string
+    public function getID() : ?string
     {
         return $this->iD;
     }
@@ -81,7 +81,7 @@ class ClusterInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setID(?string $iD): self
+    public function setID(?string $iD) : self
     {
         $this->initialized['iD'] = true;
         $this->iD = $iD;
@@ -99,7 +99,7 @@ class ClusterInfo extends \ArrayObject
     *
     * @return ObjectVersion|null
     */
-    public function getVersion(): ?ObjectVersion
+    public function getVersion() : ?ObjectVersion
     {
         return $this->version;
     }
@@ -117,7 +117,7 @@ class ClusterInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setVersion(?ObjectVersion $version): self
+    public function setVersion(?ObjectVersion $version) : self
     {
         $this->initialized['version'] = true;
         $this->version = $version;
@@ -130,7 +130,7 @@ class ClusterInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getCreatedAt(): ?string
+    public function getCreatedAt() : ?string
     {
         return $this->createdAt;
     }
@@ -143,7 +143,7 @@ class ClusterInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setCreatedAt(?string $createdAt): self
+    public function setCreatedAt(?string $createdAt) : self
     {
         $this->initialized['createdAt'] = true;
         $this->createdAt = $createdAt;
@@ -156,7 +156,7 @@ class ClusterInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getUpdatedAt(): ?string
+    public function getUpdatedAt() : ?string
     {
         return $this->updatedAt;
     }
@@ -169,7 +169,7 @@ class ClusterInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setUpdatedAt(?string $updatedAt): self
+    public function setUpdatedAt(?string $updatedAt) : self
     {
         $this->initialized['updatedAt'] = true;
         $this->updatedAt = $updatedAt;
@@ -180,7 +180,7 @@ class ClusterInfo extends \ArrayObject
      *
      * @return SwarmSpec|null
      */
-    public function getSpec(): ?SwarmSpec
+    public function getSpec() : ?SwarmSpec
     {
         return $this->spec;
     }
@@ -191,7 +191,7 @@ class ClusterInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setSpec(?SwarmSpec $spec): self
+    public function setSpec(?SwarmSpec $spec) : self
     {
         $this->initialized['spec'] = true;
         $this->spec = $spec;
@@ -202,7 +202,7 @@ class ClusterInfo extends \ArrayObject
      *
      * @return TLSInfo|null
      */
-    public function getTLSInfo(): ?TLSInfo
+    public function getTLSInfo() : ?TLSInfo
     {
         return $this->tLSInfo;
     }
@@ -213,7 +213,7 @@ class ClusterInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setTLSInfo(?TLSInfo $tLSInfo): self
+    public function setTLSInfo(?TLSInfo $tLSInfo) : self
     {
         $this->initialized['tLSInfo'] = true;
         $this->tLSInfo = $tLSInfo;
@@ -224,7 +224,7 @@ class ClusterInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getRootRotationInProgress(): ?bool
+    public function getRootRotationInProgress() : ?bool
     {
         return $this->rootRotationInProgress;
     }
@@ -235,7 +235,7 @@ class ClusterInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setRootRotationInProgress(?bool $rootRotationInProgress): self
+    public function setRootRotationInProgress(?bool $rootRotationInProgress) : self
     {
         $this->initialized['rootRotationInProgress'] = true;
         $this->rootRotationInProgress = $rootRotationInProgress;

@@ -8,7 +8,7 @@ class SystemInfo extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -530,7 +530,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getID(): ?string
+    public function getID() : ?string
     {
         return $this->iD;
     }
@@ -547,7 +547,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setID(?string $iD): self
+    public function setID(?string $iD) : self
     {
         $this->initialized['iD'] = true;
         $this->iD = $iD;
@@ -558,7 +558,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return int|null
      */
-    public function getContainers(): ?int
+    public function getContainers() : ?int
     {
         return $this->containers;
     }
@@ -569,7 +569,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setContainers(?int $containers): self
+    public function setContainers(?int $containers) : self
     {
         $this->initialized['containers'] = true;
         $this->containers = $containers;
@@ -580,7 +580,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return int|null
      */
-    public function getContainersRunning(): ?int
+    public function getContainersRunning() : ?int
     {
         return $this->containersRunning;
     }
@@ -591,7 +591,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setContainersRunning(?int $containersRunning): self
+    public function setContainersRunning(?int $containersRunning) : self
     {
         $this->initialized['containersRunning'] = true;
         $this->containersRunning = $containersRunning;
@@ -602,7 +602,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return int|null
      */
-    public function getContainersPaused(): ?int
+    public function getContainersPaused() : ?int
     {
         return $this->containersPaused;
     }
@@ -613,7 +613,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setContainersPaused(?int $containersPaused): self
+    public function setContainersPaused(?int $containersPaused) : self
     {
         $this->initialized['containersPaused'] = true;
         $this->containersPaused = $containersPaused;
@@ -624,7 +624,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return int|null
      */
-    public function getContainersStopped(): ?int
+    public function getContainersStopped() : ?int
     {
         return $this->containersStopped;
     }
@@ -635,7 +635,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setContainersStopped(?int $containersStopped): self
+    public function setContainersStopped(?int $containersStopped) : self
     {
         $this->initialized['containersStopped'] = true;
         $this->containersStopped = $containersStopped;
@@ -649,7 +649,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return int|null
     */
-    public function getImages(): ?int
+    public function getImages() : ?int
     {
         return $this->images;
     }
@@ -663,7 +663,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setImages(?int $images): self
+    public function setImages(?int $images) : self
     {
         $this->initialized['images'] = true;
         $this->images = $images;
@@ -674,7 +674,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return string|null
      */
-    public function getDriver(): ?string
+    public function getDriver() : ?string
     {
         return $this->driver;
     }
@@ -685,7 +685,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setDriver(?string $driver): self
+    public function setDriver(?string $driver) : self
     {
         $this->initialized['driver'] = true;
         $this->driver = $driver;
@@ -708,7 +708,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string[][]|null
     */
-    public function getDriverStatus(): ?array
+    public function getDriverStatus() : ?array
     {
         return $this->driverStatus;
     }
@@ -731,7 +731,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setDriverStatus(?array $driverStatus): self
+    public function setDriverStatus(?array $driverStatus) : self
     {
         $this->initialized['driverStatus'] = true;
         $this->driverStatus = $driverStatus;
@@ -746,7 +746,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getDockerRootDir(): ?string
+    public function getDockerRootDir() : ?string
     {
         return $this->dockerRootDir;
     }
@@ -761,7 +761,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setDockerRootDir(?string $dockerRootDir): self
+    public function setDockerRootDir(?string $dockerRootDir) : self
     {
         $this->initialized['dockerRootDir'] = true;
         $this->dockerRootDir = $dockerRootDir;
@@ -779,7 +779,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string[][]|null
     */
-    public function getSystemStatus(): ?array
+    public function getSystemStatus() : ?array
     {
         return $this->systemStatus;
     }
@@ -797,7 +797,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setSystemStatus(?array $systemStatus): self
+    public function setSystemStatus(?array $systemStatus) : self
     {
         $this->initialized['systemStatus'] = true;
         $this->systemStatus = $systemStatus;
@@ -815,7 +815,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return PluginsInfo|null
     */
-    public function getPlugins(): ?PluginsInfo
+    public function getPlugins() : ?PluginsInfo
     {
         return $this->plugins;
     }
@@ -833,7 +833,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setPlugins(?PluginsInfo $plugins): self
+    public function setPlugins(?PluginsInfo $plugins) : self
     {
         $this->initialized['plugins'] = true;
         $this->plugins = $plugins;
@@ -844,7 +844,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getMemoryLimit(): ?bool
+    public function getMemoryLimit() : ?bool
     {
         return $this->memoryLimit;
     }
@@ -855,7 +855,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setMemoryLimit(?bool $memoryLimit): self
+    public function setMemoryLimit(?bool $memoryLimit) : self
     {
         $this->initialized['memoryLimit'] = true;
         $this->memoryLimit = $memoryLimit;
@@ -866,7 +866,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getSwapLimit(): ?bool
+    public function getSwapLimit() : ?bool
     {
         return $this->swapLimit;
     }
@@ -877,7 +877,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setSwapLimit(?bool $swapLimit): self
+    public function setSwapLimit(?bool $swapLimit) : self
     {
         $this->initialized['swapLimit'] = true;
         $this->swapLimit = $swapLimit;
@@ -888,7 +888,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getKernelMemory(): ?bool
+    public function getKernelMemory() : ?bool
     {
         return $this->kernelMemory;
     }
@@ -899,7 +899,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setKernelMemory(?bool $kernelMemory): self
+    public function setKernelMemory(?bool $kernelMemory) : self
     {
         $this->initialized['kernelMemory'] = true;
         $this->kernelMemory = $kernelMemory;
@@ -910,7 +910,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getCpuCfsPeriod(): ?bool
+    public function getCpuCfsPeriod() : ?bool
     {
         return $this->cpuCfsPeriod;
     }
@@ -921,7 +921,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuCfsPeriod(?bool $cpuCfsPeriod): self
+    public function setCpuCfsPeriod(?bool $cpuCfsPeriod) : self
     {
         $this->initialized['cpuCfsPeriod'] = true;
         $this->cpuCfsPeriod = $cpuCfsPeriod;
@@ -932,7 +932,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getCpuCfsQuota(): ?bool
+    public function getCpuCfsQuota() : ?bool
     {
         return $this->cpuCfsQuota;
     }
@@ -943,7 +943,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setCpuCfsQuota(?bool $cpuCfsQuota): self
+    public function setCpuCfsQuota(?bool $cpuCfsQuota) : self
     {
         $this->initialized['cpuCfsQuota'] = true;
         $this->cpuCfsQuota = $cpuCfsQuota;
@@ -954,7 +954,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getCPUShares(): ?bool
+    public function getCPUShares() : ?bool
     {
         return $this->cPUShares;
     }
@@ -965,7 +965,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setCPUShares(?bool $cPUShares): self
+    public function setCPUShares(?bool $cPUShares) : self
     {
         $this->initialized['cPUShares'] = true;
         $this->cPUShares = $cPUShares;
@@ -979,7 +979,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return bool|null
     */
-    public function getCPUSet(): ?bool
+    public function getCPUSet() : ?bool
     {
         return $this->cPUSet;
     }
@@ -993,7 +993,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setCPUSet(?bool $cPUSet): self
+    public function setCPUSet(?bool $cPUSet) : self
     {
         $this->initialized['cPUSet'] = true;
         $this->cPUSet = $cPUSet;
@@ -1004,7 +1004,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getOomKillDisable(): ?bool
+    public function getOomKillDisable() : ?bool
     {
         return $this->oomKillDisable;
     }
@@ -1015,7 +1015,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setOomKillDisable(?bool $oomKillDisable): self
+    public function setOomKillDisable(?bool $oomKillDisable) : self
     {
         $this->initialized['oomKillDisable'] = true;
         $this->oomKillDisable = $oomKillDisable;
@@ -1026,7 +1026,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getIPv4Forwarding(): ?bool
+    public function getIPv4Forwarding() : ?bool
     {
         return $this->iPv4Forwarding;
     }
@@ -1037,7 +1037,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setIPv4Forwarding(?bool $iPv4Forwarding): self
+    public function setIPv4Forwarding(?bool $iPv4Forwarding) : self
     {
         $this->initialized['iPv4Forwarding'] = true;
         $this->iPv4Forwarding = $iPv4Forwarding;
@@ -1048,7 +1048,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getBridgeNfIptables(): ?bool
+    public function getBridgeNfIptables() : ?bool
     {
         return $this->bridgeNfIptables;
     }
@@ -1059,7 +1059,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setBridgeNfIptables(?bool $bridgeNfIptables): self
+    public function setBridgeNfIptables(?bool $bridgeNfIptables) : self
     {
         $this->initialized['bridgeNfIptables'] = true;
         $this->bridgeNfIptables = $bridgeNfIptables;
@@ -1070,7 +1070,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getBridgeNfIp6tables(): ?bool
+    public function getBridgeNfIp6tables() : ?bool
     {
         return $this->bridgeNfIp6tables;
     }
@@ -1081,7 +1081,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setBridgeNfIp6tables(?bool $bridgeNfIp6tables): self
+    public function setBridgeNfIp6tables(?bool $bridgeNfIp6tables) : self
     {
         $this->initialized['bridgeNfIp6tables'] = true;
         $this->bridgeNfIp6tables = $bridgeNfIp6tables;
@@ -1092,7 +1092,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getDebug(): ?bool
+    public function getDebug() : ?bool
     {
         return $this->debug;
     }
@@ -1103,7 +1103,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setDebug(?bool $debug): self
+    public function setDebug(?bool $debug) : self
     {
         $this->initialized['debug'] = true;
         $this->debug = $debug;
@@ -1117,7 +1117,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return int|null
     */
-    public function getNFd(): ?int
+    public function getNFd() : ?int
     {
         return $this->nFd;
     }
@@ -1131,7 +1131,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setNFd(?int $nFd): self
+    public function setNFd(?int $nFd) : self
     {
         $this->initialized['nFd'] = true;
         $this->nFd = $nFd;
@@ -1145,7 +1145,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return int|null
     */
-    public function getNGoroutines(): ?int
+    public function getNGoroutines() : ?int
     {
         return $this->nGoroutines;
     }
@@ -1159,7 +1159,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setNGoroutines(?int $nGoroutines): self
+    public function setNGoroutines(?int $nGoroutines) : self
     {
         $this->initialized['nGoroutines'] = true;
         $this->nGoroutines = $nGoroutines;
@@ -1172,7 +1172,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getSystemTime(): ?string
+    public function getSystemTime() : ?string
     {
         return $this->systemTime;
     }
@@ -1185,7 +1185,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setSystemTime(?string $systemTime): self
+    public function setSystemTime(?string $systemTime) : self
     {
         $this->initialized['systemTime'] = true;
         $this->systemTime = $systemTime;
@@ -1196,7 +1196,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return string|null
      */
-    public function getLoggingDriver(): ?string
+    public function getLoggingDriver() : ?string
     {
         return $this->loggingDriver;
     }
@@ -1207,7 +1207,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setLoggingDriver(?string $loggingDriver): self
+    public function setLoggingDriver(?string $loggingDriver) : self
     {
         $this->initialized['loggingDriver'] = true;
         $this->loggingDriver = $loggingDriver;
@@ -1218,7 +1218,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return string|null
      */
-    public function getCgroupDriver(): ?string
+    public function getCgroupDriver() : ?string
     {
         return $this->cgroupDriver;
     }
@@ -1229,7 +1229,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setCgroupDriver(?string $cgroupDriver): self
+    public function setCgroupDriver(?string $cgroupDriver) : self
     {
         $this->initialized['cgroupDriver'] = true;
         $this->cgroupDriver = $cgroupDriver;
@@ -1240,7 +1240,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return int|null
      */
-    public function getNEventsListener(): ?int
+    public function getNEventsListener() : ?int
     {
         return $this->nEventsListener;
     }
@@ -1251,7 +1251,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setNEventsListener(?int $nEventsListener): self
+    public function setNEventsListener(?int $nEventsListener) : self
     {
         $this->initialized['nEventsListener'] = true;
         $this->nEventsListener = $nEventsListener;
@@ -1267,7 +1267,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getKernelVersion(): ?string
+    public function getKernelVersion() : ?string
     {
         return $this->kernelVersion;
     }
@@ -1283,7 +1283,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setKernelVersion(?string $kernelVersion): self
+    public function setKernelVersion(?string $kernelVersion) : self
     {
         $this->initialized['kernelVersion'] = true;
         $this->kernelVersion = $kernelVersion;
@@ -1296,7 +1296,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getOperatingSystem(): ?string
+    public function getOperatingSystem() : ?string
     {
         return $this->operatingSystem;
     }
@@ -1309,7 +1309,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setOperatingSystem(?string $operatingSystem): self
+    public function setOperatingSystem(?string $operatingSystem) : self
     {
         $this->initialized['operatingSystem'] = true;
         $this->operatingSystem = $operatingSystem;
@@ -1325,7 +1325,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getOSType(): ?string
+    public function getOSType() : ?string
     {
         return $this->oSType;
     }
@@ -1341,7 +1341,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setOSType(?string $oSType): self
+    public function setOSType(?string $oSType) : self
     {
         $this->initialized['oSType'] = true;
         $this->oSType = $oSType;
@@ -1356,7 +1356,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getArchitecture(): ?string
+    public function getArchitecture() : ?string
     {
         return $this->architecture;
     }
@@ -1371,7 +1371,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setArchitecture(?string $architecture): self
+    public function setArchitecture(?string $architecture) : self
     {
         $this->initialized['architecture'] = true;
         $this->architecture = $architecture;
@@ -1387,7 +1387,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return int|null
     */
-    public function getNCPU(): ?int
+    public function getNCPU() : ?int
     {
         return $this->nCPU;
     }
@@ -1403,7 +1403,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setNCPU(?int $nCPU): self
+    public function setNCPU(?int $nCPU) : self
     {
         $this->initialized['nCPU'] = true;
         $this->nCPU = $nCPU;
@@ -1414,7 +1414,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemTotal(): ?int
+    public function getMemTotal() : ?int
     {
         return $this->memTotal;
     }
@@ -1425,7 +1425,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setMemTotal(?int $memTotal): self
+    public function setMemTotal(?int $memTotal) : self
     {
         $this->initialized['memTotal'] = true;
         $this->memTotal = $memTotal;
@@ -1438,7 +1438,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getIndexServerAddress(): ?string
+    public function getIndexServerAddress() : ?string
     {
         return $this->indexServerAddress;
     }
@@ -1451,7 +1451,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setIndexServerAddress(?string $indexServerAddress): self
+    public function setIndexServerAddress(?string $indexServerAddress) : self
     {
         $this->initialized['indexServerAddress'] = true;
         $this->indexServerAddress = $indexServerAddress;
@@ -1462,7 +1462,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return RegistryServiceConfig|null
      */
-    public function getRegistryConfig(): ?RegistryServiceConfig
+    public function getRegistryConfig() : ?RegistryServiceConfig
     {
         return $this->registryConfig;
     }
@@ -1473,7 +1473,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setRegistryConfig(?RegistryServiceConfig $registryConfig): self
+    public function setRegistryConfig(?RegistryServiceConfig $registryConfig) : self
     {
         $this->initialized['registryConfig'] = true;
         $this->registryConfig = $registryConfig;
@@ -1484,7 +1484,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return GenericResourcesItem[]|null
      */
-    public function getGenericResources(): ?array
+    public function getGenericResources() : ?array
     {
         return $this->genericResources;
     }
@@ -1495,7 +1495,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setGenericResources(?array $genericResources): self
+    public function setGenericResources(?array $genericResources) : self
     {
         $this->initialized['genericResources'] = true;
         $this->genericResources = $genericResources;
@@ -1510,7 +1510,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getHttpProxy(): ?string
+    public function getHttpProxy() : ?string
     {
         return $this->httpProxy;
     }
@@ -1525,7 +1525,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setHttpProxy(?string $httpProxy): self
+    public function setHttpProxy(?string $httpProxy) : self
     {
         $this->initialized['httpProxy'] = true;
         $this->httpProxy = $httpProxy;
@@ -1540,7 +1540,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getHttpsProxy(): ?string
+    public function getHttpsProxy() : ?string
     {
         return $this->httpsProxy;
     }
@@ -1555,7 +1555,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setHttpsProxy(?string $httpsProxy): self
+    public function setHttpsProxy(?string $httpsProxy) : self
     {
         $this->initialized['httpsProxy'] = true;
         $this->httpsProxy = $httpsProxy;
@@ -1571,7 +1571,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getNoProxy(): ?string
+    public function getNoProxy() : ?string
     {
         return $this->noProxy;
     }
@@ -1587,7 +1587,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setNoProxy(?string $noProxy): self
+    public function setNoProxy(?string $noProxy) : self
     {
         $this->initialized['noProxy'] = true;
         $this->noProxy = $noProxy;
@@ -1598,7 +1598,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName(): ?string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -1609,7 +1609,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name): self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -1629,7 +1629,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string[]|null
     */
-    public function getLabels(): ?array
+    public function getLabels() : ?array
     {
         return $this->labels;
     }
@@ -1649,7 +1649,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setLabels(?array $labels): self
+    public function setLabels(?array $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -1660,7 +1660,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getExperimentalBuild(): ?bool
+    public function getExperimentalBuild() : ?bool
     {
         return $this->experimentalBuild;
     }
@@ -1671,7 +1671,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setExperimentalBuild(?bool $experimentalBuild): self
+    public function setExperimentalBuild(?bool $experimentalBuild) : self
     {
         $this->initialized['experimentalBuild'] = true;
         $this->experimentalBuild = $experimentalBuild;
@@ -1687,7 +1687,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getServerVersion(): ?string
+    public function getServerVersion() : ?string
     {
         return $this->serverVersion;
     }
@@ -1703,7 +1703,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setServerVersion(?string $serverVersion): self
+    public function setServerVersion(?string $serverVersion) : self
     {
         $this->initialized['serverVersion'] = true;
         $this->serverVersion = $serverVersion;
@@ -1726,7 +1726,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getClusterStore(): ?string
+    public function getClusterStore() : ?string
     {
         return $this->clusterStore;
     }
@@ -1749,7 +1749,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setClusterStore(?string $clusterStore): self
+    public function setClusterStore(?string $clusterStore) : self
     {
         $this->initialized['clusterStore'] = true;
         $this->clusterStore = $clusterStore;
@@ -1770,7 +1770,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getClusterAdvertise(): ?string
+    public function getClusterAdvertise() : ?string
     {
         return $this->clusterAdvertise;
     }
@@ -1791,7 +1791,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setClusterAdvertise(?string $clusterAdvertise): self
+    public function setClusterAdvertise(?string $clusterAdvertise) : self
     {
         $this->initialized['clusterAdvertise'] = true;
         $this->clusterAdvertise = $clusterAdvertise;
@@ -1812,7 +1812,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return array<string, Runtime>|null
     */
-    public function getRuntimes(): ?iterable
+    public function getRuntimes() : ?iterable
     {
         return $this->runtimes;
     }
@@ -1833,7 +1833,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setRuntimes(?iterable $runtimes): self
+    public function setRuntimes(?iterable $runtimes) : self
     {
         $this->initialized['runtimes'] = true;
         $this->runtimes = $runtimes;
@@ -1847,7 +1847,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getDefaultRuntime(): ?string
+    public function getDefaultRuntime() : ?string
     {
         return $this->defaultRuntime;
     }
@@ -1861,7 +1861,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setDefaultRuntime(?string $defaultRuntime): self
+    public function setDefaultRuntime(?string $defaultRuntime) : self
     {
         $this->initialized['defaultRuntime'] = true;
         $this->defaultRuntime = $defaultRuntime;
@@ -1872,7 +1872,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return SwarmInfo|null
      */
-    public function getSwarm(): ?SwarmInfo
+    public function getSwarm() : ?SwarmInfo
     {
         return $this->swarm;
     }
@@ -1883,7 +1883,7 @@ class SystemInfo extends \ArrayObject
      *
      * @return self
      */
-    public function setSwarm(?SwarmInfo $swarm): self
+    public function setSwarm(?SwarmInfo $swarm) : self
     {
         $this->initialized['swarm'] = true;
         $this->swarm = $swarm;
@@ -1898,7 +1898,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return bool|null
     */
-    public function getLiveRestoreEnabled(): ?bool
+    public function getLiveRestoreEnabled() : ?bool
     {
         return $this->liveRestoreEnabled;
     }
@@ -1913,7 +1913,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setLiveRestoreEnabled(?bool $liveRestoreEnabled): self
+    public function setLiveRestoreEnabled(?bool $liveRestoreEnabled) : self
     {
         $this->initialized['liveRestoreEnabled'] = true;
         $this->liveRestoreEnabled = $liveRestoreEnabled;
@@ -1931,7 +1931,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getIsolation(): ?string
+    public function getIsolation() : ?string
     {
         return $this->isolation;
     }
@@ -1949,7 +1949,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setIsolation(?string $isolation): self
+    public function setIsolation(?string $isolation) : self
     {
         $this->initialized['isolation'] = true;
         $this->isolation = $isolation;
@@ -1964,7 +1964,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string|null
     */
-    public function getInitBinary(): ?string
+    public function getInitBinary() : ?string
     {
         return $this->initBinary;
     }
@@ -1979,7 +1979,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setInitBinary(?string $initBinary): self
+    public function setInitBinary(?string $initBinary) : self
     {
         $this->initialized['initBinary'] = true;
         $this->initBinary = $initBinary;
@@ -1993,7 +1993,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return Commit|null
     */
-    public function getContainerdCommit(): ?Commit
+    public function getContainerdCommit() : ?Commit
     {
         return $this->containerdCommit;
     }
@@ -2007,7 +2007,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setContainerdCommit(?Commit $containerdCommit): self
+    public function setContainerdCommit(?Commit $containerdCommit) : self
     {
         $this->initialized['containerdCommit'] = true;
         $this->containerdCommit = $containerdCommit;
@@ -2021,7 +2021,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return Commit|null
     */
-    public function getRuncCommit(): ?Commit
+    public function getRuncCommit() : ?Commit
     {
         return $this->runcCommit;
     }
@@ -2035,7 +2035,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setRuncCommit(?Commit $runcCommit): self
+    public function setRuncCommit(?Commit $runcCommit) : self
     {
         $this->initialized['runcCommit'] = true;
         $this->runcCommit = $runcCommit;
@@ -2049,7 +2049,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return Commit|null
     */
-    public function getInitCommit(): ?Commit
+    public function getInitCommit() : ?Commit
     {
         return $this->initCommit;
     }
@@ -2063,7 +2063,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setInitCommit(?Commit $initCommit): self
+    public function setInitCommit(?Commit $initCommit) : self
     {
         $this->initialized['initCommit'] = true;
         $this->initCommit = $initCommit;
@@ -2080,7 +2080,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return string[]|null
     */
-    public function getSecurityOptions(): ?array
+    public function getSecurityOptions() : ?array
     {
         return $this->securityOptions;
     }
@@ -2097,7 +2097,7 @@ class SystemInfo extends \ArrayObject
     *
     * @return self
     */
-    public function setSecurityOptions(?array $securityOptions): self
+    public function setSecurityOptions(?array $securityOptions) : self
     {
         $this->initialized['securityOptions'] = true;
         $this->securityOptions = $securityOptions;
