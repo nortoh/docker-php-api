@@ -17,22 +17,22 @@ class ExecStart extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
         $this->body = $requestBody;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod(): string
+    public function getMethod() : string
     {
         return 'POST';
     }
-    public function getUri(): string
+    public function getUri() : string
     {
         return str_replace(['{id}'], [$this->id], '/exec/{id}/start');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if ($this->body instanceof \Docker\API\Model\ExecIdStartPostBody) {
             return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
         }
         return [[], null];
     }
-    public function getExtraHeaders(): array
+    public function getExtraHeaders() : array
     {
         return ['Accept' => ['application/vnd.docker.raw-stream']];
     }
@@ -53,7 +53,7 @@ class ExecStart extends \Docker\API\Runtime\Client\BaseEndpoint implements \Dock
         if (409 === $status) {
         }
     }
-    public function getAuthenticationScopes(): array
+    public function getAuthenticationScopes() : array
     {
         return [];
     }

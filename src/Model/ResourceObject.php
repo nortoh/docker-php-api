@@ -8,7 +8,7 @@ class ResourceObject extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class ResourceObject extends \ArrayObject
      *
      * @return int|null
      */
-    public function getNanoCPUs(): ?int
+    public function getNanoCPUs() : ?int
     {
         return $this->nanoCPUs;
     }
@@ -46,7 +46,7 @@ class ResourceObject extends \ArrayObject
      *
      * @return self
      */
-    public function setNanoCPUs(?int $nanoCPUs): self
+    public function setNanoCPUs(?int $nanoCPUs) : self
     {
         $this->initialized['nanoCPUs'] = true;
         $this->nanoCPUs = $nanoCPUs;
@@ -57,7 +57,7 @@ class ResourceObject extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMemoryBytes(): ?int
+    public function getMemoryBytes() : ?int
     {
         return $this->memoryBytes;
     }
@@ -68,7 +68,7 @@ class ResourceObject extends \ArrayObject
      *
      * @return self
      */
-    public function setMemoryBytes(?int $memoryBytes): self
+    public function setMemoryBytes(?int $memoryBytes) : self
     {
         $this->initialized['memoryBytes'] = true;
         $this->memoryBytes = $memoryBytes;
@@ -79,7 +79,7 @@ class ResourceObject extends \ArrayObject
      *
      * @return GenericResourcesItem[]|null
      */
-    public function getGenericResources(): ?array
+    public function getGenericResources() : ?array
     {
         return $this->genericResources;
     }
@@ -90,7 +90,7 @@ class ResourceObject extends \ArrayObject
      *
      * @return self
      */
-    public function setGenericResources(?array $genericResources): self
+    public function setGenericResources(?array $genericResources) : self
     {
         $this->initialized['genericResources'] = true;
         $this->genericResources = $genericResources;

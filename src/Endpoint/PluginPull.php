@@ -30,15 +30,15 @@ class PluginPull extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
         $this->headerParameters = $headerParameters;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod(): string
+    public function getMethod() : string
     {
         return 'POST';
     }
-    public function getUri(): string
+    public function getUri() : string
     {
         return '/plugins/pull';
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         if (is_array($this->body) and isset($this->body[0]) and $this->body[0] instanceof \Docker\API\Model\PluginsPullPostBodyItem) {
             return [['Content-Type' => ['application/json']], $serializer->serialize($this->body, 'json')];
@@ -48,11 +48,11 @@ class PluginPull extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
         }
         return [[], null];
     }
-    public function getExtraHeaders(): array
+    public function getExtraHeaders() : array
     {
         return ['Accept' => ['application/json']];
     }
-    protected function getQueryOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getQueryOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getQueryOptionsResolver();
         $optionsResolver->setDefined(['remote', 'name']);
@@ -62,7 +62,7 @@ class PluginPull extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
         $optionsResolver->addAllowedTypes('name', ['string']);
         return $optionsResolver;
     }
-    protected function getHeadersOptionsResolver(): \Symfony\Component\OptionsResolver\OptionsResolver
+    protected function getHeadersOptionsResolver() : \Symfony\Component\OptionsResolver\OptionsResolver
     {
         $optionsResolver = parent::getHeadersOptionsResolver();
         $optionsResolver->setDefined(['X-Registry-Auth']);
@@ -85,10 +85,10 @@ class PluginPull extends \Docker\API\Runtime\Client\BaseEndpoint implements \Doc
         if (204 === $status) {
         }
         if (is_null($contentType) === false && (500 === $status && mb_strpos($contentType, 'application/json') !== false)) {
-            throw new \Docker\API\Exception\PluginPullInternalServerErrorException($serializer->deserialize($body, 'Docker\API\Model\ErrorResponse', 'json'), $response);
+            throw new \Docker\API\Exception\PluginPullInternalServerErrorException($serializer->deserialize($body, 'Docker\\API\\Model\\ErrorResponse', 'json'), $response);
         }
     }
-    public function getAuthenticationScopes(): array
+    public function getAuthenticationScopes() : array
     {
         return [];
     }

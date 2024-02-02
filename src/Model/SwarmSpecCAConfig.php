@@ -8,7 +8,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -47,7 +47,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getNodeCertExpiry(): ?int
+    public function getNodeCertExpiry() : ?int
     {
         return $this->nodeCertExpiry;
     }
@@ -58,7 +58,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setNodeCertExpiry(?int $nodeCertExpiry): self
+    public function setNodeCertExpiry(?int $nodeCertExpiry) : self
     {
         $this->initialized['nodeCertExpiry'] = true;
         $this->nodeCertExpiry = $nodeCertExpiry;
@@ -69,7 +69,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return SwarmSpecCAConfigExternalCAsItem[]|null
      */
-    public function getExternalCAs(): ?array
+    public function getExternalCAs() : ?array
     {
         return $this->externalCAs;
     }
@@ -80,7 +80,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setExternalCAs(?array $externalCAs): self
+    public function setExternalCAs(?array $externalCAs) : self
     {
         $this->initialized['externalCAs'] = true;
         $this->externalCAs = $externalCAs;
@@ -91,7 +91,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getSigningCACert(): ?string
+    public function getSigningCACert() : ?string
     {
         return $this->signingCACert;
     }
@@ -102,7 +102,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setSigningCACert(?string $signingCACert): self
+    public function setSigningCACert(?string $signingCACert) : self
     {
         $this->initialized['signingCACert'] = true;
         $this->signingCACert = $signingCACert;
@@ -113,7 +113,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getSigningCAKey(): ?string
+    public function getSigningCAKey() : ?string
     {
         return $this->signingCAKey;
     }
@@ -124,7 +124,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setSigningCAKey(?string $signingCAKey): self
+    public function setSigningCAKey(?string $signingCAKey) : self
     {
         $this->initialized['signingCAKey'] = true;
         $this->signingCAKey = $signingCAKey;
@@ -135,7 +135,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getForceRotate(): ?int
+    public function getForceRotate() : ?int
     {
         return $this->forceRotate;
     }
@@ -146,7 +146,7 @@ class SwarmSpecCAConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setForceRotate(?int $forceRotate): self
+    public function setForceRotate(?int $forceRotate) : self
     {
         $this->initialized['forceRotate'] = true;
         $this->forceRotate = $forceRotate;

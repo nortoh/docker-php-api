@@ -8,7 +8,7 @@ class ServiceSpecMode extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class ServiceSpecMode extends \ArrayObject
      *
      * @return ServiceSpecModeReplicated|null
      */
-    public function getReplicated(): ?ServiceSpecModeReplicated
+    public function getReplicated() : ?ServiceSpecModeReplicated
     {
         return $this->replicated;
     }
@@ -40,7 +40,7 @@ class ServiceSpecMode extends \ArrayObject
      *
      * @return self
      */
-    public function setReplicated(?ServiceSpecModeReplicated $replicated): self
+    public function setReplicated(?ServiceSpecModeReplicated $replicated) : self
     {
         $this->initialized['replicated'] = true;
         $this->replicated = $replicated;
@@ -51,7 +51,7 @@ class ServiceSpecMode extends \ArrayObject
      *
      * @return ServiceSpecModeGlobal|null
      */
-    public function getGlobal(): ?ServiceSpecModeGlobal
+    public function getGlobal() : ?ServiceSpecModeGlobal
     {
         return $this->global;
     }
@@ -62,7 +62,7 @@ class ServiceSpecMode extends \ArrayObject
      *
      * @return self
      */
-    public function setGlobal(?ServiceSpecModeGlobal $global): self
+    public function setGlobal(?ServiceSpecModeGlobal $global) : self
     {
         $this->initialized['global'] = true;
         $this->global = $global;

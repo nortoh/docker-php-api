@@ -8,7 +8,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -155,7 +155,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getImage(): ?string
+    public function getImage() : ?string
     {
         return $this->image;
     }
@@ -166,7 +166,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setImage(?string $image): self
+    public function setImage(?string $image) : self
     {
         $this->initialized['image'] = true;
         $this->image = $image;
@@ -177,7 +177,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return array<string, string>|null
      */
-    public function getLabels(): ?iterable
+    public function getLabels() : ?iterable
     {
         return $this->labels;
     }
@@ -188,7 +188,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setLabels(?iterable $labels): self
+    public function setLabels(?iterable $labels) : self
     {
         $this->initialized['labels'] = true;
         $this->labels = $labels;
@@ -199,7 +199,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getCommand(): ?array
+    public function getCommand() : ?array
     {
         return $this->command;
     }
@@ -210,7 +210,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setCommand(?array $command): self
+    public function setCommand(?array $command) : self
     {
         $this->initialized['command'] = true;
         $this->command = $command;
@@ -221,7 +221,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getArgs(): ?array
+    public function getArgs() : ?array
     {
         return $this->args;
     }
@@ -232,7 +232,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setArgs(?array $args): self
+    public function setArgs(?array $args) : self
     {
         $this->initialized['args'] = true;
         $this->args = $args;
@@ -243,7 +243,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getHostname(): ?string
+    public function getHostname() : ?string
     {
         return $this->hostname;
     }
@@ -254,7 +254,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setHostname(?string $hostname): self
+    public function setHostname(?string $hostname) : self
     {
         $this->initialized['hostname'] = true;
         $this->hostname = $hostname;
@@ -265,7 +265,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getEnv(): ?array
+    public function getEnv() : ?array
     {
         return $this->env;
     }
@@ -276,7 +276,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setEnv(?array $env): self
+    public function setEnv(?array $env) : self
     {
         $this->initialized['env'] = true;
         $this->env = $env;
@@ -287,7 +287,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getDir(): ?string
+    public function getDir() : ?string
     {
         return $this->dir;
     }
@@ -298,7 +298,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setDir(?string $dir): self
+    public function setDir(?string $dir) : self
     {
         $this->initialized['dir'] = true;
         $this->dir = $dir;
@@ -309,7 +309,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getUser(): ?string
+    public function getUser() : ?string
     {
         return $this->user;
     }
@@ -320,7 +320,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setUser(?string $user): self
+    public function setUser(?string $user) : self
     {
         $this->initialized['user'] = true;
         $this->user = $user;
@@ -331,7 +331,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getGroups(): ?array
+    public function getGroups() : ?array
     {
         return $this->groups;
     }
@@ -342,7 +342,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setGroups(?array $groups): self
+    public function setGroups(?array $groups) : self
     {
         $this->initialized['groups'] = true;
         $this->groups = $groups;
@@ -353,7 +353,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return TaskSpecContainerSpecPrivileges|null
      */
-    public function getPrivileges(): ?TaskSpecContainerSpecPrivileges
+    public function getPrivileges() : ?TaskSpecContainerSpecPrivileges
     {
         return $this->privileges;
     }
@@ -364,7 +364,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setPrivileges(?TaskSpecContainerSpecPrivileges $privileges): self
+    public function setPrivileges(?TaskSpecContainerSpecPrivileges $privileges) : self
     {
         $this->initialized['privileges'] = true;
         $this->privileges = $privileges;
@@ -375,7 +375,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getTTY(): ?bool
+    public function getTTY() : ?bool
     {
         return $this->tTY;
     }
@@ -386,7 +386,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setTTY(?bool $tTY): self
+    public function setTTY(?bool $tTY) : self
     {
         $this->initialized['tTY'] = true;
         $this->tTY = $tTY;
@@ -397,7 +397,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getOpenStdin(): ?bool
+    public function getOpenStdin() : ?bool
     {
         return $this->openStdin;
     }
@@ -408,7 +408,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setOpenStdin(?bool $openStdin): self
+    public function setOpenStdin(?bool $openStdin) : self
     {
         $this->initialized['openStdin'] = true;
         $this->openStdin = $openStdin;
@@ -419,7 +419,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getReadOnly(): ?bool
+    public function getReadOnly() : ?bool
     {
         return $this->readOnly;
     }
@@ -430,7 +430,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setReadOnly(?bool $readOnly): self
+    public function setReadOnly(?bool $readOnly) : self
     {
         $this->initialized['readOnly'] = true;
         $this->readOnly = $readOnly;
@@ -441,7 +441,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return Mount[]|null
      */
-    public function getMounts(): ?array
+    public function getMounts() : ?array
     {
         return $this->mounts;
     }
@@ -452,7 +452,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setMounts(?array $mounts): self
+    public function setMounts(?array $mounts) : self
     {
         $this->initialized['mounts'] = true;
         $this->mounts = $mounts;
@@ -463,7 +463,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getStopSignal(): ?string
+    public function getStopSignal() : ?string
     {
         return $this->stopSignal;
     }
@@ -474,7 +474,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setStopSignal(?string $stopSignal): self
+    public function setStopSignal(?string $stopSignal) : self
     {
         $this->initialized['stopSignal'] = true;
         $this->stopSignal = $stopSignal;
@@ -485,7 +485,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return int|null
      */
-    public function getStopGracePeriod(): ?int
+    public function getStopGracePeriod() : ?int
     {
         return $this->stopGracePeriod;
     }
@@ -496,7 +496,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setStopGracePeriod(?int $stopGracePeriod): self
+    public function setStopGracePeriod(?int $stopGracePeriod) : self
     {
         $this->initialized['stopGracePeriod'] = true;
         $this->stopGracePeriod = $stopGracePeriod;
@@ -507,7 +507,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return HealthConfig|null
      */
-    public function getHealthCheck(): ?HealthConfig
+    public function getHealthCheck() : ?HealthConfig
     {
         return $this->healthCheck;
     }
@@ -518,7 +518,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setHealthCheck(?HealthConfig $healthCheck): self
+    public function setHealthCheck(?HealthConfig $healthCheck) : self
     {
         $this->initialized['healthCheck'] = true;
         $this->healthCheck = $healthCheck;
@@ -535,7 +535,7 @@ class TaskSpecContainerSpec extends \ArrayObject
     *
     * @return string[]|null
     */
-    public function getHosts(): ?array
+    public function getHosts() : ?array
     {
         return $this->hosts;
     }
@@ -552,7 +552,7 @@ class TaskSpecContainerSpec extends \ArrayObject
     *
     * @return self
     */
-    public function setHosts(?array $hosts): self
+    public function setHosts(?array $hosts) : self
     {
         $this->initialized['hosts'] = true;
         $this->hosts = $hosts;
@@ -563,7 +563,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return TaskSpecContainerSpecDNSConfig|null
      */
-    public function getDNSConfig(): ?TaskSpecContainerSpecDNSConfig
+    public function getDNSConfig() : ?TaskSpecContainerSpecDNSConfig
     {
         return $this->dNSConfig;
     }
@@ -574,7 +574,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setDNSConfig(?TaskSpecContainerSpecDNSConfig $dNSConfig): self
+    public function setDNSConfig(?TaskSpecContainerSpecDNSConfig $dNSConfig) : self
     {
         $this->initialized['dNSConfig'] = true;
         $this->dNSConfig = $dNSConfig;
@@ -585,7 +585,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return TaskSpecContainerSpecSecretsItem[]|null
      */
-    public function getSecrets(): ?array
+    public function getSecrets() : ?array
     {
         return $this->secrets;
     }
@@ -596,7 +596,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setSecrets(?array $secrets): self
+    public function setSecrets(?array $secrets) : self
     {
         $this->initialized['secrets'] = true;
         $this->secrets = $secrets;
@@ -607,7 +607,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return TaskSpecContainerSpecConfigsItem[]|null
      */
-    public function getConfigs(): ?array
+    public function getConfigs() : ?array
     {
         return $this->configs;
     }
@@ -618,7 +618,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setConfigs(?array $configs): self
+    public function setConfigs(?array $configs) : self
     {
         $this->initialized['configs'] = true;
         $this->configs = $configs;
@@ -629,7 +629,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return string|null
      */
-    public function getIsolation(): ?string
+    public function getIsolation() : ?string
     {
         return $this->isolation;
     }
@@ -640,7 +640,7 @@ class TaskSpecContainerSpec extends \ArrayObject
      *
      * @return self
      */
-    public function setIsolation(?string $isolation): self
+    public function setIsolation(?string $isolation) : self
     {
         $this->initialized['isolation'] = true;
         $this->isolation = $isolation;

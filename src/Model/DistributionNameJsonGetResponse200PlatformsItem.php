@@ -8,7 +8,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getArchitecture(): ?string
+    public function getArchitecture() : ?string
     {
         return $this->architecture;
     }
@@ -64,7 +64,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setArchitecture(?string $architecture): self
+    public function setArchitecture(?string $architecture) : self
     {
         $this->initialized['architecture'] = true;
         $this->architecture = $architecture;
@@ -75,7 +75,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getOS(): ?string
+    public function getOS() : ?string
     {
         return $this->oS;
     }
@@ -86,7 +86,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setOS(?string $oS): self
+    public function setOS(?string $oS) : self
     {
         $this->initialized['oS'] = true;
         $this->oS = $oS;
@@ -97,7 +97,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getOSVersion(): ?string
+    public function getOSVersion() : ?string
     {
         return $this->oSVersion;
     }
@@ -108,7 +108,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setOSVersion(?string $oSVersion): self
+    public function setOSVersion(?string $oSVersion) : self
     {
         $this->initialized['oSVersion'] = true;
         $this->oSVersion = $oSVersion;
@@ -119,7 +119,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getOSFeatures(): ?array
+    public function getOSFeatures() : ?array
     {
         return $this->oSFeatures;
     }
@@ -130,7 +130,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setOSFeatures(?array $oSFeatures): self
+    public function setOSFeatures(?array $oSFeatures) : self
     {
         $this->initialized['oSFeatures'] = true;
         $this->oSFeatures = $oSFeatures;
@@ -141,7 +141,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getVariant(): ?string
+    public function getVariant() : ?string
     {
         return $this->variant;
     }
@@ -152,7 +152,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setVariant(?string $variant): self
+    public function setVariant(?string $variant) : self
     {
         $this->initialized['variant'] = true;
         $this->variant = $variant;
@@ -163,7 +163,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getFeatures(): ?array
+    public function getFeatures() : ?array
     {
         return $this->features;
     }
@@ -174,7 +174,7 @@ class DistributionNameJsonGetResponse200PlatformsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setFeatures(?array $features): self
+    public function setFeatures(?array $features) : self
     {
         $this->initialized['features'] = true;
         $this->features = $features;

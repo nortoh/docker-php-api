@@ -8,7 +8,7 @@ class BuildPrunePostResponse200 extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class BuildPrunePostResponse200 extends \ArrayObject
      *
      * @return int|null
      */
-    public function getSpaceReclaimed(): ?int
+    public function getSpaceReclaimed() : ?int
     {
         return $this->spaceReclaimed;
     }
@@ -34,7 +34,7 @@ class BuildPrunePostResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setSpaceReclaimed(?int $spaceReclaimed): self
+    public function setSpaceReclaimed(?int $spaceReclaimed) : self
     {
         $this->initialized['spaceReclaimed'] = true;
         $this->spaceReclaimed = $spaceReclaimed;

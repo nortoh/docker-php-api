@@ -8,7 +8,7 @@ class PluginConfigInterface extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class PluginConfigInterface extends \ArrayObject
      *
      * @return PluginInterfaceType[]|null
      */
-    public function getTypes(): ?array
+    public function getTypes() : ?array
     {
         return $this->types;
     }
@@ -40,7 +40,7 @@ class PluginConfigInterface extends \ArrayObject
      *
      * @return self
      */
-    public function setTypes(?array $types): self
+    public function setTypes(?array $types) : self
     {
         $this->initialized['types'] = true;
         $this->types = $types;
@@ -51,7 +51,7 @@ class PluginConfigInterface extends \ArrayObject
      *
      * @return string|null
      */
-    public function getSocket(): ?string
+    public function getSocket() : ?string
     {
         return $this->socket;
     }
@@ -62,7 +62,7 @@ class PluginConfigInterface extends \ArrayObject
      *
      * @return self
      */
-    public function setSocket(?string $socket): self
+    public function setSocket(?string $socket) : self
     {
         $this->initialized['socket'] = true;
         $this->socket = $socket;

@@ -8,7 +8,7 @@ class PluginSettings extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -41,7 +41,7 @@ class PluginSettings extends \ArrayObject
      *
      * @return PluginMount[]|null
      */
-    public function getMounts(): ?array
+    public function getMounts() : ?array
     {
         return $this->mounts;
     }
@@ -52,7 +52,7 @@ class PluginSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setMounts(?array $mounts): self
+    public function setMounts(?array $mounts) : self
     {
         $this->initialized['mounts'] = true;
         $this->mounts = $mounts;
@@ -63,7 +63,7 @@ class PluginSettings extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getEnv(): ?array
+    public function getEnv() : ?array
     {
         return $this->env;
     }
@@ -74,7 +74,7 @@ class PluginSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setEnv(?array $env): self
+    public function setEnv(?array $env) : self
     {
         $this->initialized['env'] = true;
         $this->env = $env;
@@ -85,7 +85,7 @@ class PluginSettings extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getArgs(): ?array
+    public function getArgs() : ?array
     {
         return $this->args;
     }
@@ -96,7 +96,7 @@ class PluginSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setArgs(?array $args): self
+    public function setArgs(?array $args) : self
     {
         $this->initialized['args'] = true;
         $this->args = $args;
@@ -107,7 +107,7 @@ class PluginSettings extends \ArrayObject
      *
      * @return PluginDevice[]|null
      */
-    public function getDevices(): ?array
+    public function getDevices() : ?array
     {
         return $this->devices;
     }
@@ -118,7 +118,7 @@ class PluginSettings extends \ArrayObject
      *
      * @return self
      */
-    public function setDevices(?array $devices): self
+    public function setDevices(?array $devices) : self
     {
         $this->initialized['devices'] = true;
         $this->devices = $devices;

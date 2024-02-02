@@ -8,7 +8,7 @@ class VersionGetResponse200 extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -89,7 +89,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return VersionGetResponse200Platform|null
      */
-    public function getPlatform(): ?VersionGetResponse200Platform
+    public function getPlatform() : ?VersionGetResponse200Platform
     {
         return $this->platform;
     }
@@ -100,7 +100,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setPlatform(?VersionGetResponse200Platform $platform): self
+    public function setPlatform(?VersionGetResponse200Platform $platform) : self
     {
         $this->initialized['platform'] = true;
         $this->platform = $platform;
@@ -111,7 +111,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return VersionGetResponse200ComponentsItem[]|null
      */
-    public function getComponents(): ?array
+    public function getComponents() : ?array
     {
         return $this->components;
     }
@@ -122,7 +122,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setComponents(?array $components): self
+    public function setComponents(?array $components) : self
     {
         $this->initialized['components'] = true;
         $this->components = $components;
@@ -133,7 +133,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getVersion(): ?string
+    public function getVersion() : ?string
     {
         return $this->version;
     }
@@ -144,7 +144,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setVersion(?string $version): self
+    public function setVersion(?string $version) : self
     {
         $this->initialized['version'] = true;
         $this->version = $version;
@@ -155,7 +155,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getApiVersion(): ?string
+    public function getApiVersion() : ?string
     {
         return $this->apiVersion;
     }
@@ -166,7 +166,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setApiVersion(?string $apiVersion): self
+    public function setApiVersion(?string $apiVersion) : self
     {
         $this->initialized['apiVersion'] = true;
         $this->apiVersion = $apiVersion;
@@ -177,7 +177,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getMinAPIVersion(): ?string
+    public function getMinAPIVersion() : ?string
     {
         return $this->minAPIVersion;
     }
@@ -188,7 +188,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setMinAPIVersion(?string $minAPIVersion): self
+    public function setMinAPIVersion(?string $minAPIVersion) : self
     {
         $this->initialized['minAPIVersion'] = true;
         $this->minAPIVersion = $minAPIVersion;
@@ -199,7 +199,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getGitCommit(): ?string
+    public function getGitCommit() : ?string
     {
         return $this->gitCommit;
     }
@@ -210,7 +210,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setGitCommit(?string $gitCommit): self
+    public function setGitCommit(?string $gitCommit) : self
     {
         $this->initialized['gitCommit'] = true;
         $this->gitCommit = $gitCommit;
@@ -221,7 +221,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getGoVersion(): ?string
+    public function getGoVersion() : ?string
     {
         return $this->goVersion;
     }
@@ -232,7 +232,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setGoVersion(?string $goVersion): self
+    public function setGoVersion(?string $goVersion) : self
     {
         $this->initialized['goVersion'] = true;
         $this->goVersion = $goVersion;
@@ -243,7 +243,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getOs(): ?string
+    public function getOs() : ?string
     {
         return $this->os;
     }
@@ -254,7 +254,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setOs(?string $os): self
+    public function setOs(?string $os) : self
     {
         $this->initialized['os'] = true;
         $this->os = $os;
@@ -265,7 +265,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getArch(): ?string
+    public function getArch() : ?string
     {
         return $this->arch;
     }
@@ -276,7 +276,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setArch(?string $arch): self
+    public function setArch(?string $arch) : self
     {
         $this->initialized['arch'] = true;
         $this->arch = $arch;
@@ -287,7 +287,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getKernelVersion(): ?string
+    public function getKernelVersion() : ?string
     {
         return $this->kernelVersion;
     }
@@ -298,7 +298,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setKernelVersion(?string $kernelVersion): self
+    public function setKernelVersion(?string $kernelVersion) : self
     {
         $this->initialized['kernelVersion'] = true;
         $this->kernelVersion = $kernelVersion;
@@ -309,7 +309,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return bool|null
      */
-    public function getExperimental(): ?bool
+    public function getExperimental() : ?bool
     {
         return $this->experimental;
     }
@@ -320,7 +320,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setExperimental(?bool $experimental): self
+    public function setExperimental(?bool $experimental) : self
     {
         $this->initialized['experimental'] = true;
         $this->experimental = $experimental;
@@ -331,7 +331,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return string|null
      */
-    public function getBuildTime(): ?string
+    public function getBuildTime() : ?string
     {
         return $this->buildTime;
     }
@@ -342,7 +342,7 @@ class VersionGetResponse200 extends \ArrayObject
      *
      * @return self
      */
-    public function setBuildTime(?string $buildTime): self
+    public function setBuildTime(?string $buildTime) : self
     {
         $this->initialized['buildTime'] = true;
         $this->buildTime = $buildTime;

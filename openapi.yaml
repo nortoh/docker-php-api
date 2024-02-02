@@ -5807,9 +5807,11 @@ paths:
                     nodes in order to reach the containers running on this node. Using this parameter it is possible to
                     separate the container data traffic from the management traffic of the cluster.
                 RemoteAddrs:
-                  type: string
+                  type: array
                   description: Addresses of manager nodes already participating in
                     the swarm.
+                  items:
+                    type: string
                 JoinToken:
                   type: string
                   description: Secret token for joining this swarm.
@@ -5848,9 +5850,11 @@ paths:
                     nodes in order to reach the containers running on this node. Using this parameter it is possible to
                     separate the container data traffic from the management traffic of the cluster.
                 RemoteAddrs:
-                  type: string
+                  type: array
                   description: Addresses of manager nodes already participating in
                     the swarm.
+                  items:
+                    type: string
                 JoinToken:
                   type: string
                   description: Secret token for joining this swarm.

@@ -8,7 +8,7 @@ class TaskSpecNetworksItem extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -29,7 +29,7 @@ class TaskSpecNetworksItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getTarget(): ?string
+    public function getTarget() : ?string
     {
         return $this->target;
     }
@@ -40,7 +40,7 @@ class TaskSpecNetworksItem extends \ArrayObject
      *
      * @return self
      */
-    public function setTarget(?string $target): self
+    public function setTarget(?string $target) : self
     {
         $this->initialized['target'] = true;
         $this->target = $target;
@@ -51,7 +51,7 @@ class TaskSpecNetworksItem extends \ArrayObject
      *
      * @return string[]|null
      */
-    public function getAliases(): ?array
+    public function getAliases() : ?array
     {
         return $this->aliases;
     }
@@ -62,7 +62,7 @@ class TaskSpecNetworksItem extends \ArrayObject
      *
      * @return self
      */
-    public function setAliases(?array $aliases): self
+    public function setAliases(?array $aliases) : self
     {
         $this->initialized['aliases'] = true;
         $this->aliases = $aliases;

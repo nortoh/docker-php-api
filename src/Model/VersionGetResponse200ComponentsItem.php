@@ -8,7 +8,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getName(): ?string
+    public function getName() : ?string
     {
         return $this->name;
     }
@@ -46,7 +46,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setName(?string $name): self
+    public function setName(?string $name) : self
     {
         $this->initialized['name'] = true;
         $this->name = $name;
@@ -57,7 +57,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
      *
      * @return string|null
      */
-    public function getVersion(): ?string
+    public function getVersion() : ?string
     {
         return $this->version;
     }
@@ -68,7 +68,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setVersion(?string $version): self
+    public function setVersion(?string $version) : self
     {
         $this->initialized['version'] = true;
         $this->version = $version;
@@ -79,7 +79,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
      *
      * @return VersionGetResponse200ComponentsItemDetails|null
      */
-    public function getDetails(): ?VersionGetResponse200ComponentsItemDetails
+    public function getDetails() : ?VersionGetResponse200ComponentsItemDetails
     {
         return $this->details;
     }
@@ -90,7 +90,7 @@ class VersionGetResponse200ComponentsItem extends \ArrayObject
      *
      * @return self
      */
-    public function setDetails(?VersionGetResponse200ComponentsItemDetails $details): self
+    public function setDetails(?VersionGetResponse200ComponentsItemDetails $details) : self
     {
         $this->initialized['details'] = true;
         $this->details = $details;

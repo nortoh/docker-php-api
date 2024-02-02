@@ -18,19 +18,19 @@ class ContainerExport extends \Docker\API\Runtime\Client\BaseEndpoint implements
         $this->accept = $accept;
     }
     use \Docker\API\Runtime\Client\EndpointTrait;
-    public function getMethod(): string
+    public function getMethod() : string
     {
         return 'GET';
     }
-    public function getUri(): string
+    public function getUri() : string
     {
         return str_replace(['{id}'], [$this->id], '/containers/{id}/export');
     }
-    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null): array
+    public function getBody(\Symfony\Component\Serializer\SerializerInterface $serializer, $streamFactory = null) : array
     {
         return [[], null];
     }
-    public function getExtraHeaders(): array
+    public function getExtraHeaders() : array
     {
         if (empty($this->accept)) {
             return ['Accept' => ['application/octet-stream', 'application/json']];
@@ -56,7 +56,7 @@ class ContainerExport extends \Docker\API\Runtime\Client\BaseEndpoint implements
         if (500 === $status) {
         }
     }
-    public function getAuthenticationScopes(): array
+    public function getAuthenticationScopes() : array
     {
         return [];
     }

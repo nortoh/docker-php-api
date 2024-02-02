@@ -8,7 +8,7 @@ class IPAM extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -35,7 +35,7 @@ class IPAM extends \ArrayObject
      *
      * @return string|null
      */
-    public function getDriver(): ?string
+    public function getDriver() : ?string
     {
         return $this->driver;
     }
@@ -46,7 +46,7 @@ class IPAM extends \ArrayObject
      *
      * @return self
      */
-    public function setDriver(?string $driver): self
+    public function setDriver(?string $driver) : self
     {
         $this->initialized['driver'] = true;
         $this->driver = $driver;
@@ -57,7 +57,7 @@ class IPAM extends \ArrayObject
      *
      * @return array<string, string>[]|null
      */
-    public function getConfig(): ?array
+    public function getConfig() : ?array
     {
         return $this->config;
     }
@@ -68,7 +68,7 @@ class IPAM extends \ArrayObject
      *
      * @return self
      */
-    public function setConfig(?array $config): self
+    public function setConfig(?array $config) : self
     {
         $this->initialized['config'] = true;
         $this->config = $config;
@@ -79,7 +79,7 @@ class IPAM extends \ArrayObject
      *
      * @return array<string, string>[]|null
      */
-    public function getOptions(): ?array
+    public function getOptions() : ?array
     {
         return $this->options;
     }
@@ -90,7 +90,7 @@ class IPAM extends \ArrayObject
      *
      * @return self
      */
-    public function setOptions(?array $options): self
+    public function setOptions(?array $options) : self
     {
         $this->initialized['options'] = true;
         $this->options = $options;

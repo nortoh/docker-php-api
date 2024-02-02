@@ -7986,8 +7986,11 @@
                     "description": "Address or interface to use for data path traffic (format: `<ip|interface>`), for example,  `192.168.1.1`,\nor an interface, like `eth0`. If `DataPathAddr` is unspecified, the same address as `AdvertiseAddr`\nis used.\n\nThe `DataPathAddr` specifies the address that global scope network drivers will publish towards other\nnodes in order to reach the containers running on this node. Using this parameter it is possible to\nseparate the container data traffic from the management traffic of the cluster.\n"
                   },
                   "RemoteAddrs": {
-                    "type": "string",
-                    "description": "Addresses of manager nodes already participating in the swarm."
+                    "type": "array",
+                    "description": "Addresses of manager nodes already participating in the swarm.",
+                    "items": {
+                      "type": "string"
+                    }
                   },
                   "JoinToken": {
                     "type": "string",
@@ -8021,8 +8024,11 @@
                     "description": "Address or interface to use for data path traffic (format: `<ip|interface>`), for example,  `192.168.1.1`,\nor an interface, like `eth0`. If `DataPathAddr` is unspecified, the same address as `AdvertiseAddr`\nis used.\n\nThe `DataPathAddr` specifies the address that global scope network drivers will publish towards other\nnodes in order to reach the containers running on this node. Using this parameter it is possible to\nseparate the container data traffic from the management traffic of the cluster.\n"
                   },
                   "RemoteAddrs": {
-                    "type": "string",
-                    "description": "Addresses of manager nodes already participating in the swarm."
+                    "type": "array",
+                    "description": "Addresses of manager nodes already participating in the swarm.",
+                    "items": {
+                      "type": "string"
+                    }
                   },
                   "JoinToken": {
                     "type": "string",

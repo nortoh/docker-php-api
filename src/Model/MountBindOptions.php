@@ -8,7 +8,7 @@ class MountBindOptions extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -23,7 +23,7 @@ class MountBindOptions extends \ArrayObject
      *
      * @return string|null
      */
-    public function getPropagation(): ?string
+    public function getPropagation() : ?string
     {
         return $this->propagation;
     }
@@ -34,7 +34,7 @@ class MountBindOptions extends \ArrayObject
      *
      * @return self
      */
-    public function setPropagation(?string $propagation): self
+    public function setPropagation(?string $propagation) : self
     {
         $this->initialized['propagation'] = true;
         $this->propagation = $propagation;

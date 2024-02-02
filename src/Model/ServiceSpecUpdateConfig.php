@@ -8,7 +8,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      * @var array
      */
     protected $initialized = [];
-    public function isInitialized($property): bool
+    public function isInitialized($property) : bool
     {
         return array_key_exists($property, $this->initialized);
     }
@@ -53,7 +53,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getParallelism(): ?int
+    public function getParallelism() : ?int
     {
         return $this->parallelism;
     }
@@ -64,7 +64,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setParallelism(?int $parallelism): self
+    public function setParallelism(?int $parallelism) : self
     {
         $this->initialized['parallelism'] = true;
         $this->parallelism = $parallelism;
@@ -75,7 +75,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getDelay(): ?int
+    public function getDelay() : ?int
     {
         return $this->delay;
     }
@@ -86,7 +86,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setDelay(?int $delay): self
+    public function setDelay(?int $delay) : self
     {
         $this->initialized['delay'] = true;
         $this->delay = $delay;
@@ -97,7 +97,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getFailureAction(): ?string
+    public function getFailureAction() : ?string
     {
         return $this->failureAction;
     }
@@ -108,7 +108,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setFailureAction(?string $failureAction): self
+    public function setFailureAction(?string $failureAction) : self
     {
         $this->initialized['failureAction'] = true;
         $this->failureAction = $failureAction;
@@ -119,7 +119,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return int|null
      */
-    public function getMonitor(): ?int
+    public function getMonitor() : ?int
     {
         return $this->monitor;
     }
@@ -130,7 +130,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setMonitor(?int $monitor): self
+    public function setMonitor(?int $monitor) : self
     {
         $this->initialized['monitor'] = true;
         $this->monitor = $monitor;
@@ -141,7 +141,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return float|null
      */
-    public function getMaxFailureRatio(): ?float
+    public function getMaxFailureRatio() : ?float
     {
         return $this->maxFailureRatio;
     }
@@ -152,7 +152,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setMaxFailureRatio(?float $maxFailureRatio): self
+    public function setMaxFailureRatio(?float $maxFailureRatio) : self
     {
         $this->initialized['maxFailureRatio'] = true;
         $this->maxFailureRatio = $maxFailureRatio;
@@ -163,7 +163,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return string|null
      */
-    public function getOrder(): ?string
+    public function getOrder() : ?string
     {
         return $this->order;
     }
@@ -174,7 +174,7 @@ class ServiceSpecUpdateConfig extends \ArrayObject
      *
      * @return self
      */
-    public function setOrder(?string $order): self
+    public function setOrder(?string $order) : self
     {
         $this->initialized['order'] = true;
         $this->order = $order;
