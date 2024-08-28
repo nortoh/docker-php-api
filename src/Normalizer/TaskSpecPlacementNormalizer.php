@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpecPlacement';
+            return $type === \Docker\API\Model\TaskSpecPlacement::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecPlacement';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpecPlacement::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -54,7 +54,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Preferences', $data) && $data['Preferences'] !== null) {
                 $values_1 = [];
                 foreach ($data['Preferences'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\TaskSpecPlacementPreferencesItem::class, 'json', $context);
                 }
                 $object->setPreferences($values_1);
                 unset($data['Preferences']);
@@ -65,7 +65,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Platforms', $data) && $data['Platforms'] !== null) {
                 $values_2 = [];
                 foreach ($data['Platforms'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\Platform', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \Docker\API\Model\Platform::class, 'json', $context);
                 }
                 $object->setPlatforms($values_2);
                 unset($data['Platforms']);
@@ -113,7 +113,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpecPlacement' => false];
+            return [\Docker\API\Model\TaskSpecPlacement::class => false];
         }
     }
 } else {
@@ -125,11 +125,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpecPlacement';
+            return $type === \Docker\API\Model\TaskSpecPlacement::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecPlacement';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpecPlacement::class;
         }
         /**
          * @return mixed
@@ -160,7 +160,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Preferences', $data) && $data['Preferences'] !== null) {
                 $values_1 = [];
                 foreach ($data['Preferences'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\TaskSpecPlacementPreferencesItem::class, 'json', $context);
                 }
                 $object->setPreferences($values_1);
                 unset($data['Preferences']);
@@ -171,7 +171,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Platforms', $data) && $data['Platforms'] !== null) {
                 $values_2 = [];
                 foreach ($data['Platforms'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\Platform', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \Docker\API\Model\Platform::class, 'json', $context);
                 }
                 $object->setPlatforms($values_2);
                 unset($data['Platforms']);
@@ -222,7 +222,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpecPlacement' => false];
+            return [\Docker\API\Model\TaskSpecPlacement::class => false];
         }
     }
 }

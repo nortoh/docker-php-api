@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainersIdJsonGetResponse200';
+            return $type === \Docker\API\Model\ContainersIdJsonGetResponse200::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainersIdJsonGetResponse200';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainersIdJsonGetResponse200::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -73,7 +73,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setArgs(null);
             }
             if (\array_key_exists('State', $data) && $data['State'] !== null) {
-                $object->setState($this->denormalizer->denormalize($data['State'], 'Docker\\API\\Model\\ContainersIdJsonGetResponse200State', 'json', $context));
+                $object->setState($this->denormalizer->denormalize($data['State'], \Docker\API\Model\ContainersIdJsonGetResponse200State::class, 'json', $context));
                 unset($data['State']);
             }
             elseif (\array_key_exists('State', $data) && $data['State'] === null) {
@@ -115,7 +115,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLogPath(null);
             }
             if (\array_key_exists('Node', $data) && $data['Node'] !== null) {
-                $object->setNode($this->denormalizer->denormalize($data['Node'], 'Docker\\API\\Model\\ContainersIdJsonGetResponse200Node', 'json', $context));
+                $object->setNode($this->denormalizer->denormalize($data['Node'], \Docker\API\Model\ContainersIdJsonGetResponse200Node::class, 'json', $context));
                 unset($data['Node']);
             }
             elseif (\array_key_exists('Node', $data) && $data['Node'] === null) {
@@ -171,14 +171,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setExecIDs(null);
             }
             if (\array_key_exists('HostConfig', $data) && $data['HostConfig'] !== null) {
-                $object->setHostConfig($this->denormalizer->denormalize($data['HostConfig'], 'Docker\\API\\Model\\HostConfig', 'json', $context));
+                $object->setHostConfig($this->denormalizer->denormalize($data['HostConfig'], \Docker\API\Model\HostConfig::class, 'json', $context));
                 unset($data['HostConfig']);
             }
             elseif (\array_key_exists('HostConfig', $data) && $data['HostConfig'] === null) {
                 $object->setHostConfig(null);
             }
             if (\array_key_exists('GraphDriver', $data) && $data['GraphDriver'] !== null) {
-                $object->setGraphDriver($this->denormalizer->denormalize($data['GraphDriver'], 'Docker\\API\\Model\\GraphDriverData', 'json', $context));
+                $object->setGraphDriver($this->denormalizer->denormalize($data['GraphDriver'], \Docker\API\Model\GraphDriverData::class, 'json', $context));
                 unset($data['GraphDriver']);
             }
             elseif (\array_key_exists('GraphDriver', $data) && $data['GraphDriver'] === null) {
@@ -201,7 +201,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
                 $values_1 = [];
                 foreach ($data['Mounts'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\MountPoint', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\MountPoint::class, 'json', $context);
                 }
                 $object->setMounts($values_1);
                 unset($data['Mounts']);
@@ -210,14 +210,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setMounts(null);
             }
             if (\array_key_exists('Config', $data) && $data['Config'] !== null) {
-                $object->setConfig($this->denormalizer->denormalize($data['Config'], 'Docker\\API\\Model\\ContainerConfig', 'json', $context));
+                $object->setConfig($this->denormalizer->denormalize($data['Config'], \Docker\API\Model\ContainerConfig::class, 'json', $context));
                 unset($data['Config']);
             }
             elseif (\array_key_exists('Config', $data) && $data['Config'] === null) {
                 $object->setConfig(null);
             }
             if (\array_key_exists('NetworkSettings', $data) && $data['NetworkSettings'] !== null) {
-                $object->setNetworkSettings($this->denormalizer->denormalize($data['NetworkSettings'], 'Docker\\API\\Model\\NetworkSettings', 'json', $context));
+                $object->setNetworkSettings($this->denormalizer->denormalize($data['NetworkSettings'], \Docker\API\Model\NetworkSettings::class, 'json', $context));
                 unset($data['NetworkSettings']);
             }
             elseif (\array_key_exists('NetworkSettings', $data) && $data['NetworkSettings'] === null) {
@@ -325,7 +325,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainersIdJsonGetResponse200' => false];
+            return [\Docker\API\Model\ContainersIdJsonGetResponse200::class => false];
         }
     }
 } else {
@@ -337,11 +337,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainersIdJsonGetResponse200';
+            return $type === \Docker\API\Model\ContainersIdJsonGetResponse200::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainersIdJsonGetResponse200';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainersIdJsonGetResponse200::class;
         }
         /**
          * @return mixed
@@ -391,7 +391,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setArgs(null);
             }
             if (\array_key_exists('State', $data) && $data['State'] !== null) {
-                $object->setState($this->denormalizer->denormalize($data['State'], 'Docker\\API\\Model\\ContainersIdJsonGetResponse200State', 'json', $context));
+                $object->setState($this->denormalizer->denormalize($data['State'], \Docker\API\Model\ContainersIdJsonGetResponse200State::class, 'json', $context));
                 unset($data['State']);
             }
             elseif (\array_key_exists('State', $data) && $data['State'] === null) {
@@ -433,7 +433,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLogPath(null);
             }
             if (\array_key_exists('Node', $data) && $data['Node'] !== null) {
-                $object->setNode($this->denormalizer->denormalize($data['Node'], 'Docker\\API\\Model\\ContainersIdJsonGetResponse200Node', 'json', $context));
+                $object->setNode($this->denormalizer->denormalize($data['Node'], \Docker\API\Model\ContainersIdJsonGetResponse200Node::class, 'json', $context));
                 unset($data['Node']);
             }
             elseif (\array_key_exists('Node', $data) && $data['Node'] === null) {
@@ -489,14 +489,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setExecIDs(null);
             }
             if (\array_key_exists('HostConfig', $data) && $data['HostConfig'] !== null) {
-                $object->setHostConfig($this->denormalizer->denormalize($data['HostConfig'], 'Docker\\API\\Model\\HostConfig', 'json', $context));
+                $object->setHostConfig($this->denormalizer->denormalize($data['HostConfig'], \Docker\API\Model\HostConfig::class, 'json', $context));
                 unset($data['HostConfig']);
             }
             elseif (\array_key_exists('HostConfig', $data) && $data['HostConfig'] === null) {
                 $object->setHostConfig(null);
             }
             if (\array_key_exists('GraphDriver', $data) && $data['GraphDriver'] !== null) {
-                $object->setGraphDriver($this->denormalizer->denormalize($data['GraphDriver'], 'Docker\\API\\Model\\GraphDriverData', 'json', $context));
+                $object->setGraphDriver($this->denormalizer->denormalize($data['GraphDriver'], \Docker\API\Model\GraphDriverData::class, 'json', $context));
                 unset($data['GraphDriver']);
             }
             elseif (\array_key_exists('GraphDriver', $data) && $data['GraphDriver'] === null) {
@@ -519,7 +519,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
                 $values_1 = [];
                 foreach ($data['Mounts'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\MountPoint', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\MountPoint::class, 'json', $context);
                 }
                 $object->setMounts($values_1);
                 unset($data['Mounts']);
@@ -528,14 +528,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setMounts(null);
             }
             if (\array_key_exists('Config', $data) && $data['Config'] !== null) {
-                $object->setConfig($this->denormalizer->denormalize($data['Config'], 'Docker\\API\\Model\\ContainerConfig', 'json', $context));
+                $object->setConfig($this->denormalizer->denormalize($data['Config'], \Docker\API\Model\ContainerConfig::class, 'json', $context));
                 unset($data['Config']);
             }
             elseif (\array_key_exists('Config', $data) && $data['Config'] === null) {
                 $object->setConfig(null);
             }
             if (\array_key_exists('NetworkSettings', $data) && $data['NetworkSettings'] !== null) {
-                $object->setNetworkSettings($this->denormalizer->denormalize($data['NetworkSettings'], 'Docker\\API\\Model\\NetworkSettings', 'json', $context));
+                $object->setNetworkSettings($this->denormalizer->denormalize($data['NetworkSettings'], \Docker\API\Model\NetworkSettings::class, 'json', $context));
                 unset($data['NetworkSettings']);
             }
             elseif (\array_key_exists('NetworkSettings', $data) && $data['NetworkSettings'] === null) {
@@ -646,7 +646,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainersIdJsonGetResponse200' => false];
+            return [\Docker\API\Model\ContainersIdJsonGetResponse200::class => false];
         }
     }
 }

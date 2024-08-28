@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings';
+            return $type === \Docker\API\Model\ContainerSummaryItemNetworkSettings::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainerSummaryItemNetworkSettings::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -43,7 +43,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
                 $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['Networks'] as $key => $value) {
-                    $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\EndpointSettings', 'json', $context);
+                    $values[$key] = $this->denormalizer->denormalize($value, \Docker\API\Model\EndpointSettings::class, 'json', $context);
                 }
                 $object->setNetworks($values);
                 unset($data['Networks']);
@@ -77,7 +77,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainerSummaryItemNetworkSettings' => false];
+            return [\Docker\API\Model\ContainerSummaryItemNetworkSettings::class => false];
         }
     }
 } else {
@@ -89,11 +89,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings';
+            return $type === \Docker\API\Model\ContainerSummaryItemNetworkSettings::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainerSummaryItemNetworkSettings::class;
         }
         /**
          * @return mixed
@@ -113,7 +113,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
                 $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['Networks'] as $key => $value) {
-                    $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\EndpointSettings', 'json', $context);
+                    $values[$key] = $this->denormalizer->denormalize($value, \Docker\API\Model\EndpointSettings::class, 'json', $context);
                 }
                 $object->setNetworks($values);
                 unset($data['Networks']);
@@ -150,7 +150,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainerSummaryItemNetworkSettings' => false];
+            return [\Docker\API\Model\ContainerSummaryItemNetworkSettings::class => false];
         }
     }
 }

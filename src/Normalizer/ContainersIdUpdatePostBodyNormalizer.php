@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainersIdUpdatePostBody';
+            return $type === \Docker\API\Model\ContainersIdUpdatePostBody::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainersIdUpdatePostBody';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainersIdUpdatePostBody::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -71,7 +71,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioWeightDevice', $data) && $data['BlkioWeightDevice'] !== null) {
                 $values = [];
                 foreach ($data['BlkioWeightDevice'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\ResourcesBlkioWeightDeviceItem::class, 'json', $context);
                 }
                 $object->setBlkioWeightDevice($values);
                 unset($data['BlkioWeightDevice']);
@@ -82,7 +82,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioDeviceReadBps', $data) && $data['BlkioDeviceReadBps'] !== null) {
                 $values_1 = [];
                 foreach ($data['BlkioDeviceReadBps'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\ThrottleDevice', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\ThrottleDevice::class, 'json', $context);
                 }
                 $object->setBlkioDeviceReadBps($values_1);
                 unset($data['BlkioDeviceReadBps']);
@@ -93,7 +93,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioDeviceWriteBps', $data) && $data['BlkioDeviceWriteBps'] !== null) {
                 $values_2 = [];
                 foreach ($data['BlkioDeviceWriteBps'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\ThrottleDevice', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \Docker\API\Model\ThrottleDevice::class, 'json', $context);
                 }
                 $object->setBlkioDeviceWriteBps($values_2);
                 unset($data['BlkioDeviceWriteBps']);
@@ -104,7 +104,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioDeviceReadIOps', $data) && $data['BlkioDeviceReadIOps'] !== null) {
                 $values_3 = [];
                 foreach ($data['BlkioDeviceReadIOps'] as $value_3) {
-                    $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\ThrottleDevice', 'json', $context);
+                    $values_3[] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\ThrottleDevice::class, 'json', $context);
                 }
                 $object->setBlkioDeviceReadIOps($values_3);
                 unset($data['BlkioDeviceReadIOps']);
@@ -115,7 +115,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioDeviceWriteIOps', $data) && $data['BlkioDeviceWriteIOps'] !== null) {
                 $values_4 = [];
                 foreach ($data['BlkioDeviceWriteIOps'] as $value_4) {
-                    $values_4[] = $this->denormalizer->denormalize($value_4, 'Docker\\API\\Model\\ThrottleDevice', 'json', $context);
+                    $values_4[] = $this->denormalizer->denormalize($value_4, \Docker\API\Model\ThrottleDevice::class, 'json', $context);
                 }
                 $object->setBlkioDeviceWriteIOps($values_4);
                 unset($data['BlkioDeviceWriteIOps']);
@@ -168,7 +168,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Devices', $data) && $data['Devices'] !== null) {
                 $values_5 = [];
                 foreach ($data['Devices'] as $value_5) {
-                    $values_5[] = $this->denormalizer->denormalize($value_5, 'Docker\\API\\Model\\DeviceMapping', 'json', $context);
+                    $values_5[] = $this->denormalizer->denormalize($value_5, \Docker\API\Model\DeviceMapping::class, 'json', $context);
                 }
                 $object->setDevices($values_5);
                 unset($data['Devices']);
@@ -246,7 +246,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Ulimits', $data) && $data['Ulimits'] !== null) {
                 $values_7 = [];
                 foreach ($data['Ulimits'] as $value_7) {
-                    $values_7[] = $this->denormalizer->denormalize($value_7, 'Docker\\API\\Model\\ResourcesUlimitsItem', 'json', $context);
+                    $values_7[] = $this->denormalizer->denormalize($value_7, \Docker\API\Model\ResourcesUlimitsItem::class, 'json', $context);
                 }
                 $object->setUlimits($values_7);
                 unset($data['Ulimits']);
@@ -283,7 +283,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setIOMaximumBandwidth(null);
             }
             if (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] !== null) {
-                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], 'Docker\\API\\Model\\RestartPolicy', 'json', $context));
+                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], \Docker\API\Model\RestartPolicy::class, 'json', $context));
                 unset($data['RestartPolicy']);
             }
             elseif (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] === null) {
@@ -433,7 +433,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainersIdUpdatePostBody' => false];
+            return [\Docker\API\Model\ContainersIdUpdatePostBody::class => false];
         }
     }
 } else {
@@ -445,11 +445,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainersIdUpdatePostBody';
+            return $type === \Docker\API\Model\ContainersIdUpdatePostBody::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainersIdUpdatePostBody';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainersIdUpdatePostBody::class;
         }
         /**
          * @return mixed
@@ -497,7 +497,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioWeightDevice', $data) && $data['BlkioWeightDevice'] !== null) {
                 $values = [];
                 foreach ($data['BlkioWeightDevice'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\ResourcesBlkioWeightDeviceItem::class, 'json', $context);
                 }
                 $object->setBlkioWeightDevice($values);
                 unset($data['BlkioWeightDevice']);
@@ -508,7 +508,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioDeviceReadBps', $data) && $data['BlkioDeviceReadBps'] !== null) {
                 $values_1 = [];
                 foreach ($data['BlkioDeviceReadBps'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\ThrottleDevice', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\ThrottleDevice::class, 'json', $context);
                 }
                 $object->setBlkioDeviceReadBps($values_1);
                 unset($data['BlkioDeviceReadBps']);
@@ -519,7 +519,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioDeviceWriteBps', $data) && $data['BlkioDeviceWriteBps'] !== null) {
                 $values_2 = [];
                 foreach ($data['BlkioDeviceWriteBps'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\ThrottleDevice', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \Docker\API\Model\ThrottleDevice::class, 'json', $context);
                 }
                 $object->setBlkioDeviceWriteBps($values_2);
                 unset($data['BlkioDeviceWriteBps']);
@@ -530,7 +530,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioDeviceReadIOps', $data) && $data['BlkioDeviceReadIOps'] !== null) {
                 $values_3 = [];
                 foreach ($data['BlkioDeviceReadIOps'] as $value_3) {
-                    $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\ThrottleDevice', 'json', $context);
+                    $values_3[] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\ThrottleDevice::class, 'json', $context);
                 }
                 $object->setBlkioDeviceReadIOps($values_3);
                 unset($data['BlkioDeviceReadIOps']);
@@ -541,7 +541,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('BlkioDeviceWriteIOps', $data) && $data['BlkioDeviceWriteIOps'] !== null) {
                 $values_4 = [];
                 foreach ($data['BlkioDeviceWriteIOps'] as $value_4) {
-                    $values_4[] = $this->denormalizer->denormalize($value_4, 'Docker\\API\\Model\\ThrottleDevice', 'json', $context);
+                    $values_4[] = $this->denormalizer->denormalize($value_4, \Docker\API\Model\ThrottleDevice::class, 'json', $context);
                 }
                 $object->setBlkioDeviceWriteIOps($values_4);
                 unset($data['BlkioDeviceWriteIOps']);
@@ -594,7 +594,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Devices', $data) && $data['Devices'] !== null) {
                 $values_5 = [];
                 foreach ($data['Devices'] as $value_5) {
-                    $values_5[] = $this->denormalizer->denormalize($value_5, 'Docker\\API\\Model\\DeviceMapping', 'json', $context);
+                    $values_5[] = $this->denormalizer->denormalize($value_5, \Docker\API\Model\DeviceMapping::class, 'json', $context);
                 }
                 $object->setDevices($values_5);
                 unset($data['Devices']);
@@ -672,7 +672,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Ulimits', $data) && $data['Ulimits'] !== null) {
                 $values_7 = [];
                 foreach ($data['Ulimits'] as $value_7) {
-                    $values_7[] = $this->denormalizer->denormalize($value_7, 'Docker\\API\\Model\\ResourcesUlimitsItem', 'json', $context);
+                    $values_7[] = $this->denormalizer->denormalize($value_7, \Docker\API\Model\ResourcesUlimitsItem::class, 'json', $context);
                 }
                 $object->setUlimits($values_7);
                 unset($data['Ulimits']);
@@ -709,7 +709,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setIOMaximumBandwidth(null);
             }
             if (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] !== null) {
-                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], 'Docker\\API\\Model\\RestartPolicy', 'json', $context));
+                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], \Docker\API\Model\RestartPolicy::class, 'json', $context));
                 unset($data['RestartPolicy']);
             }
             elseif (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] === null) {
@@ -862,7 +862,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainersIdUpdatePostBody' => false];
+            return [\Docker\API\Model\ContainersIdUpdatePostBody::class => false];
         }
     }
 }

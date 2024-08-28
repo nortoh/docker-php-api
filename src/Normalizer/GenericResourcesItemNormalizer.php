@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\GenericResourcesItem';
+            return $type === \Docker\API\Model\GenericResourcesItem::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\GenericResourcesItem';
+            return is_object($data) && get_class($data) === \Docker\API\Model\GenericResourcesItem::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -41,14 +41,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('NamedResourceSpec', $data) && $data['NamedResourceSpec'] !== null) {
-                $object->setNamedResourceSpec($this->denormalizer->denormalize($data['NamedResourceSpec'], 'Docker\\API\\Model\\GenericResourcesItemNamedResourceSpec', 'json', $context));
+                $object->setNamedResourceSpec($this->denormalizer->denormalize($data['NamedResourceSpec'], \Docker\API\Model\GenericResourcesItemNamedResourceSpec::class, 'json', $context));
                 unset($data['NamedResourceSpec']);
             }
             elseif (\array_key_exists('NamedResourceSpec', $data) && $data['NamedResourceSpec'] === null) {
                 $object->setNamedResourceSpec(null);
             }
             if (\array_key_exists('DiscreteResourceSpec', $data) && $data['DiscreteResourceSpec'] !== null) {
-                $object->setDiscreteResourceSpec($this->denormalizer->denormalize($data['DiscreteResourceSpec'], 'Docker\\API\\Model\\GenericResourcesItemDiscreteResourceSpec', 'json', $context));
+                $object->setDiscreteResourceSpec($this->denormalizer->denormalize($data['DiscreteResourceSpec'], \Docker\API\Model\GenericResourcesItemDiscreteResourceSpec::class, 'json', $context));
                 unset($data['DiscreteResourceSpec']);
             }
             elseif (\array_key_exists('DiscreteResourceSpec', $data) && $data['DiscreteResourceSpec'] === null) {
@@ -79,7 +79,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\GenericResourcesItem' => false];
+            return [\Docker\API\Model\GenericResourcesItem::class => false];
         }
     }
 } else {
@@ -91,11 +91,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\GenericResourcesItem';
+            return $type === \Docker\API\Model\GenericResourcesItem::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\GenericResourcesItem';
+            return is_object($data) && get_class($data) === \Docker\API\Model\GenericResourcesItem::class;
         }
         /**
          * @return mixed
@@ -113,14 +113,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('NamedResourceSpec', $data) && $data['NamedResourceSpec'] !== null) {
-                $object->setNamedResourceSpec($this->denormalizer->denormalize($data['NamedResourceSpec'], 'Docker\\API\\Model\\GenericResourcesItemNamedResourceSpec', 'json', $context));
+                $object->setNamedResourceSpec($this->denormalizer->denormalize($data['NamedResourceSpec'], \Docker\API\Model\GenericResourcesItemNamedResourceSpec::class, 'json', $context));
                 unset($data['NamedResourceSpec']);
             }
             elseif (\array_key_exists('NamedResourceSpec', $data) && $data['NamedResourceSpec'] === null) {
                 $object->setNamedResourceSpec(null);
             }
             if (\array_key_exists('DiscreteResourceSpec', $data) && $data['DiscreteResourceSpec'] !== null) {
-                $object->setDiscreteResourceSpec($this->denormalizer->denormalize($data['DiscreteResourceSpec'], 'Docker\\API\\Model\\GenericResourcesItemDiscreteResourceSpec', 'json', $context));
+                $object->setDiscreteResourceSpec($this->denormalizer->denormalize($data['DiscreteResourceSpec'], \Docker\API\Model\GenericResourcesItemDiscreteResourceSpec::class, 'json', $context));
                 unset($data['DiscreteResourceSpec']);
             }
             elseif (\array_key_exists('DiscreteResourceSpec', $data) && $data['DiscreteResourceSpec'] === null) {
@@ -154,7 +154,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\GenericResourcesItem' => false];
+            return [\Docker\API\Model\GenericResourcesItem::class => false];
         }
     }
 }

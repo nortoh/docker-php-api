@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Mount';
+            return $type === \Docker\API\Model\Mount::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Mount';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Mount::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -76,21 +76,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setConsistency(null);
             }
             if (\array_key_exists('BindOptions', $data) && $data['BindOptions'] !== null) {
-                $object->setBindOptions($this->denormalizer->denormalize($data['BindOptions'], 'Docker\\API\\Model\\MountBindOptions', 'json', $context));
+                $object->setBindOptions($this->denormalizer->denormalize($data['BindOptions'], \Docker\API\Model\MountBindOptions::class, 'json', $context));
                 unset($data['BindOptions']);
             }
             elseif (\array_key_exists('BindOptions', $data) && $data['BindOptions'] === null) {
                 $object->setBindOptions(null);
             }
             if (\array_key_exists('VolumeOptions', $data) && $data['VolumeOptions'] !== null) {
-                $object->setVolumeOptions($this->denormalizer->denormalize($data['VolumeOptions'], 'Docker\\API\\Model\\MountVolumeOptions', 'json', $context));
+                $object->setVolumeOptions($this->denormalizer->denormalize($data['VolumeOptions'], \Docker\API\Model\MountVolumeOptions::class, 'json', $context));
                 unset($data['VolumeOptions']);
             }
             elseif (\array_key_exists('VolumeOptions', $data) && $data['VolumeOptions'] === null) {
                 $object->setVolumeOptions(null);
             }
             if (\array_key_exists('TmpfsOptions', $data) && $data['TmpfsOptions'] !== null) {
-                $object->setTmpfsOptions($this->denormalizer->denormalize($data['TmpfsOptions'], 'Docker\\API\\Model\\MountTmpfsOptions', 'json', $context));
+                $object->setTmpfsOptions($this->denormalizer->denormalize($data['TmpfsOptions'], \Docker\API\Model\MountTmpfsOptions::class, 'json', $context));
                 unset($data['TmpfsOptions']);
             }
             elseif (\array_key_exists('TmpfsOptions', $data) && $data['TmpfsOptions'] === null) {
@@ -139,7 +139,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Mount' => false];
+            return [\Docker\API\Model\Mount::class => false];
         }
     }
 } else {
@@ -151,11 +151,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Mount';
+            return $type === \Docker\API\Model\Mount::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Mount';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Mount::class;
         }
         /**
          * @return mixed
@@ -208,21 +208,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setConsistency(null);
             }
             if (\array_key_exists('BindOptions', $data) && $data['BindOptions'] !== null) {
-                $object->setBindOptions($this->denormalizer->denormalize($data['BindOptions'], 'Docker\\API\\Model\\MountBindOptions', 'json', $context));
+                $object->setBindOptions($this->denormalizer->denormalize($data['BindOptions'], \Docker\API\Model\MountBindOptions::class, 'json', $context));
                 unset($data['BindOptions']);
             }
             elseif (\array_key_exists('BindOptions', $data) && $data['BindOptions'] === null) {
                 $object->setBindOptions(null);
             }
             if (\array_key_exists('VolumeOptions', $data) && $data['VolumeOptions'] !== null) {
-                $object->setVolumeOptions($this->denormalizer->denormalize($data['VolumeOptions'], 'Docker\\API\\Model\\MountVolumeOptions', 'json', $context));
+                $object->setVolumeOptions($this->denormalizer->denormalize($data['VolumeOptions'], \Docker\API\Model\MountVolumeOptions::class, 'json', $context));
                 unset($data['VolumeOptions']);
             }
             elseif (\array_key_exists('VolumeOptions', $data) && $data['VolumeOptions'] === null) {
                 $object->setVolumeOptions(null);
             }
             if (\array_key_exists('TmpfsOptions', $data) && $data['TmpfsOptions'] !== null) {
-                $object->setTmpfsOptions($this->denormalizer->denormalize($data['TmpfsOptions'], 'Docker\\API\\Model\\MountTmpfsOptions', 'json', $context));
+                $object->setTmpfsOptions($this->denormalizer->denormalize($data['TmpfsOptions'], \Docker\API\Model\MountTmpfsOptions::class, 'json', $context));
                 unset($data['TmpfsOptions']);
             }
             elseif (\array_key_exists('TmpfsOptions', $data) && $data['TmpfsOptions'] === null) {
@@ -274,7 +274,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Mount' => false];
+            return [\Docker\API\Model\Mount::class => false];
         }
     }
 }

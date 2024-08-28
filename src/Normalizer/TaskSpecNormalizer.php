@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpec';
+            return $type === \Docker\API\Model\TaskSpec::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpec';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpec::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -41,35 +41,35 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] !== null) {
-                $object->setPluginSpec($this->denormalizer->denormalize($data['PluginSpec'], 'Docker\\API\\Model\\TaskSpecPluginSpec', 'json', $context));
+                $object->setPluginSpec($this->denormalizer->denormalize($data['PluginSpec'], \Docker\API\Model\TaskSpecPluginSpec::class, 'json', $context));
                 unset($data['PluginSpec']);
             }
             elseif (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] === null) {
                 $object->setPluginSpec(null);
             }
             if (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] !== null) {
-                $object->setContainerSpec($this->denormalizer->denormalize($data['ContainerSpec'], 'Docker\\API\\Model\\TaskSpecContainerSpec', 'json', $context));
+                $object->setContainerSpec($this->denormalizer->denormalize($data['ContainerSpec'], \Docker\API\Model\TaskSpecContainerSpec::class, 'json', $context));
                 unset($data['ContainerSpec']);
             }
             elseif (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] === null) {
                 $object->setContainerSpec(null);
             }
             if (\array_key_exists('Resources', $data) && $data['Resources'] !== null) {
-                $object->setResources($this->denormalizer->denormalize($data['Resources'], 'Docker\\API\\Model\\TaskSpecResources', 'json', $context));
+                $object->setResources($this->denormalizer->denormalize($data['Resources'], \Docker\API\Model\TaskSpecResources::class, 'json', $context));
                 unset($data['Resources']);
             }
             elseif (\array_key_exists('Resources', $data) && $data['Resources'] === null) {
                 $object->setResources(null);
             }
             if (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] !== null) {
-                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], 'Docker\\API\\Model\\TaskSpecRestartPolicy', 'json', $context));
+                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], \Docker\API\Model\TaskSpecRestartPolicy::class, 'json', $context));
                 unset($data['RestartPolicy']);
             }
             elseif (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] === null) {
                 $object->setRestartPolicy(null);
             }
             if (\array_key_exists('Placement', $data) && $data['Placement'] !== null) {
-                $object->setPlacement($this->denormalizer->denormalize($data['Placement'], 'Docker\\API\\Model\\TaskSpecPlacement', 'json', $context));
+                $object->setPlacement($this->denormalizer->denormalize($data['Placement'], \Docker\API\Model\TaskSpecPlacement::class, 'json', $context));
                 unset($data['Placement']);
             }
             elseif (\array_key_exists('Placement', $data) && $data['Placement'] === null) {
@@ -92,7 +92,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
                 $values = [];
                 foreach ($data['Networks'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\TaskSpecNetworksItem', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\TaskSpecNetworksItem::class, 'json', $context);
                 }
                 $object->setNetworks($values);
                 unset($data['Networks']);
@@ -101,7 +101,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setNetworks(null);
             }
             if (\array_key_exists('LogDriver', $data) && $data['LogDriver'] !== null) {
-                $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], 'Docker\\API\\Model\\TaskSpecLogDriver', 'json', $context));
+                $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], \Docker\API\Model\TaskSpecLogDriver::class, 'json', $context));
                 unset($data['LogDriver']);
             }
             elseif (\array_key_exists('LogDriver', $data) && $data['LogDriver'] === null) {
@@ -157,7 +157,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpec' => false];
+            return [\Docker\API\Model\TaskSpec::class => false];
         }
     }
 } else {
@@ -169,11 +169,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpec';
+            return $type === \Docker\API\Model\TaskSpec::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpec';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpec::class;
         }
         /**
          * @return mixed
@@ -191,35 +191,35 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] !== null) {
-                $object->setPluginSpec($this->denormalizer->denormalize($data['PluginSpec'], 'Docker\\API\\Model\\TaskSpecPluginSpec', 'json', $context));
+                $object->setPluginSpec($this->denormalizer->denormalize($data['PluginSpec'], \Docker\API\Model\TaskSpecPluginSpec::class, 'json', $context));
                 unset($data['PluginSpec']);
             }
             elseif (\array_key_exists('PluginSpec', $data) && $data['PluginSpec'] === null) {
                 $object->setPluginSpec(null);
             }
             if (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] !== null) {
-                $object->setContainerSpec($this->denormalizer->denormalize($data['ContainerSpec'], 'Docker\\API\\Model\\TaskSpecContainerSpec', 'json', $context));
+                $object->setContainerSpec($this->denormalizer->denormalize($data['ContainerSpec'], \Docker\API\Model\TaskSpecContainerSpec::class, 'json', $context));
                 unset($data['ContainerSpec']);
             }
             elseif (\array_key_exists('ContainerSpec', $data) && $data['ContainerSpec'] === null) {
                 $object->setContainerSpec(null);
             }
             if (\array_key_exists('Resources', $data) && $data['Resources'] !== null) {
-                $object->setResources($this->denormalizer->denormalize($data['Resources'], 'Docker\\API\\Model\\TaskSpecResources', 'json', $context));
+                $object->setResources($this->denormalizer->denormalize($data['Resources'], \Docker\API\Model\TaskSpecResources::class, 'json', $context));
                 unset($data['Resources']);
             }
             elseif (\array_key_exists('Resources', $data) && $data['Resources'] === null) {
                 $object->setResources(null);
             }
             if (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] !== null) {
-                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], 'Docker\\API\\Model\\TaskSpecRestartPolicy', 'json', $context));
+                $object->setRestartPolicy($this->denormalizer->denormalize($data['RestartPolicy'], \Docker\API\Model\TaskSpecRestartPolicy::class, 'json', $context));
                 unset($data['RestartPolicy']);
             }
             elseif (\array_key_exists('RestartPolicy', $data) && $data['RestartPolicy'] === null) {
                 $object->setRestartPolicy(null);
             }
             if (\array_key_exists('Placement', $data) && $data['Placement'] !== null) {
-                $object->setPlacement($this->denormalizer->denormalize($data['Placement'], 'Docker\\API\\Model\\TaskSpecPlacement', 'json', $context));
+                $object->setPlacement($this->denormalizer->denormalize($data['Placement'], \Docker\API\Model\TaskSpecPlacement::class, 'json', $context));
                 unset($data['Placement']);
             }
             elseif (\array_key_exists('Placement', $data) && $data['Placement'] === null) {
@@ -242,7 +242,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Networks', $data) && $data['Networks'] !== null) {
                 $values = [];
                 foreach ($data['Networks'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\TaskSpecNetworksItem', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\TaskSpecNetworksItem::class, 'json', $context);
                 }
                 $object->setNetworks($values);
                 unset($data['Networks']);
@@ -251,7 +251,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setNetworks(null);
             }
             if (\array_key_exists('LogDriver', $data) && $data['LogDriver'] !== null) {
-                $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], 'Docker\\API\\Model\\TaskSpecLogDriver', 'json', $context));
+                $object->setLogDriver($this->denormalizer->denormalize($data['LogDriver'], \Docker\API\Model\TaskSpecLogDriver::class, 'json', $context));
                 unset($data['LogDriver']);
             }
             elseif (\array_key_exists('LogDriver', $data) && $data['LogDriver'] === null) {
@@ -310,7 +310,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpec' => false];
+            return [\Docker\API\Model\TaskSpec::class => false];
         }
     }
 }

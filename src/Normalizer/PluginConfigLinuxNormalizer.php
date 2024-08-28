@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\PluginConfigLinux';
+            return $type === \Docker\API\Model\PluginConfigLinux::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\PluginConfigLinux';
+            return is_object($data) && get_class($data) === \Docker\API\Model\PluginConfigLinux::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -61,7 +61,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Devices', $data) && $data['Devices'] !== null) {
                 $values_1 = [];
                 foreach ($data['Devices'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\PluginDevice', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\PluginDevice::class, 'json', $context);
                 }
                 $object->setDevices($values_1);
                 unset($data['Devices']);
@@ -99,7 +99,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\PluginConfigLinux' => false];
+            return [\Docker\API\Model\PluginConfigLinux::class => false];
         }
     }
 } else {
@@ -111,11 +111,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\PluginConfigLinux';
+            return $type === \Docker\API\Model\PluginConfigLinux::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\PluginConfigLinux';
+            return is_object($data) && get_class($data) === \Docker\API\Model\PluginConfigLinux::class;
         }
         /**
          * @return mixed
@@ -153,7 +153,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Devices', $data) && $data['Devices'] !== null) {
                 $values_1 = [];
                 foreach ($data['Devices'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\PluginDevice', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\PluginDevice::class, 'json', $context);
                 }
                 $object->setDevices($values_1);
                 unset($data['Devices']);
@@ -194,7 +194,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\PluginConfigLinux' => false];
+            return [\Docker\API\Model\PluginConfigLinux::class => false];
         }
     }
 }

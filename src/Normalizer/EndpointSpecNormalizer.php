@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\EndpointSpec';
+            return $type === \Docker\API\Model\EndpointSpec::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\EndpointSpec';
+            return is_object($data) && get_class($data) === \Docker\API\Model\EndpointSpec::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -50,7 +50,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Ports', $data) && $data['Ports'] !== null) {
                 $values = [];
                 foreach ($data['Ports'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\EndpointPortConfig', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\EndpointPortConfig::class, 'json', $context);
                 }
                 $object->setPorts($values);
                 unset($data['Ports']);
@@ -87,7 +87,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\EndpointSpec' => false];
+            return [\Docker\API\Model\EndpointSpec::class => false];
         }
     }
 } else {
@@ -99,11 +99,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\EndpointSpec';
+            return $type === \Docker\API\Model\EndpointSpec::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\EndpointSpec';
+            return is_object($data) && get_class($data) === \Docker\API\Model\EndpointSpec::class;
         }
         /**
          * @return mixed
@@ -130,7 +130,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Ports', $data) && $data['Ports'] !== null) {
                 $values = [];
                 foreach ($data['Ports'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\EndpointPortConfig', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\EndpointPortConfig::class, 'json', $context);
                 }
                 $object->setPorts($values);
                 unset($data['Ports']);
@@ -170,7 +170,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\EndpointSpec' => false];
+            return [\Docker\API\Model\EndpointSpec::class => false];
         }
     }
 }

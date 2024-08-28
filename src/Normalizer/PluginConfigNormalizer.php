@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\PluginConfig';
+            return $type === \Docker\API\Model\PluginConfig::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\PluginConfig';
+            return is_object($data) && get_class($data) === \Docker\API\Model\PluginConfig::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -62,7 +62,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDocumentation(null);
             }
             if (\array_key_exists('Interface', $data) && $data['Interface'] !== null) {
-                $object->setInterface($this->denormalizer->denormalize($data['Interface'], 'Docker\\API\\Model\\PluginConfigInterface', 'json', $context));
+                $object->setInterface($this->denormalizer->denormalize($data['Interface'], \Docker\API\Model\PluginConfigInterface::class, 'json', $context));
                 unset($data['Interface']);
             }
             elseif (\array_key_exists('Interface', $data) && $data['Interface'] === null) {
@@ -87,21 +87,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setWorkDir(null);
             }
             if (\array_key_exists('User', $data) && $data['User'] !== null) {
-                $object->setUser($this->denormalizer->denormalize($data['User'], 'Docker\\API\\Model\\PluginConfigUser', 'json', $context));
+                $object->setUser($this->denormalizer->denormalize($data['User'], \Docker\API\Model\PluginConfigUser::class, 'json', $context));
                 unset($data['User']);
             }
             elseif (\array_key_exists('User', $data) && $data['User'] === null) {
                 $object->setUser(null);
             }
             if (\array_key_exists('Network', $data) && $data['Network'] !== null) {
-                $object->setNetwork($this->denormalizer->denormalize($data['Network'], 'Docker\\API\\Model\\PluginConfigNetwork', 'json', $context));
+                $object->setNetwork($this->denormalizer->denormalize($data['Network'], \Docker\API\Model\PluginConfigNetwork::class, 'json', $context));
                 unset($data['Network']);
             }
             elseif (\array_key_exists('Network', $data) && $data['Network'] === null) {
                 $object->setNetwork(null);
             }
             if (\array_key_exists('Linux', $data) && $data['Linux'] !== null) {
-                $object->setLinux($this->denormalizer->denormalize($data['Linux'], 'Docker\\API\\Model\\PluginConfigLinux', 'json', $context));
+                $object->setLinux($this->denormalizer->denormalize($data['Linux'], \Docker\API\Model\PluginConfigLinux::class, 'json', $context));
                 unset($data['Linux']);
             }
             elseif (\array_key_exists('Linux', $data) && $data['Linux'] === null) {
@@ -131,7 +131,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
                 $values_1 = [];
                 foreach ($data['Mounts'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\PluginMount', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\PluginMount::class, 'json', $context);
                 }
                 $object->setMounts($values_1);
                 unset($data['Mounts']);
@@ -142,7 +142,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Env', $data) && $data['Env'] !== null) {
                 $values_2 = [];
                 foreach ($data['Env'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\PluginEnv', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \Docker\API\Model\PluginEnv::class, 'json', $context);
                 }
                 $object->setEnv($values_2);
                 unset($data['Env']);
@@ -151,14 +151,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEnv(null);
             }
             if (\array_key_exists('Args', $data) && $data['Args'] !== null) {
-                $object->setArgs($this->denormalizer->denormalize($data['Args'], 'Docker\\API\\Model\\PluginConfigArgs', 'json', $context));
+                $object->setArgs($this->denormalizer->denormalize($data['Args'], \Docker\API\Model\PluginConfigArgs::class, 'json', $context));
                 unset($data['Args']);
             }
             elseif (\array_key_exists('Args', $data) && $data['Args'] === null) {
                 $object->setArgs(null);
             }
             if (\array_key_exists('rootfs', $data) && $data['rootfs'] !== null) {
-                $object->setRootfs($this->denormalizer->denormalize($data['rootfs'], 'Docker\\API\\Model\\PluginConfigRootfs', 'json', $context));
+                $object->setRootfs($this->denormalizer->denormalize($data['rootfs'], \Docker\API\Model\PluginConfigRootfs::class, 'json', $context));
                 unset($data['rootfs']);
             }
             elseif (\array_key_exists('rootfs', $data) && $data['rootfs'] === null) {
@@ -217,7 +217,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\PluginConfig' => false];
+            return [\Docker\API\Model\PluginConfig::class => false];
         }
     }
 } else {
@@ -229,11 +229,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\PluginConfig';
+            return $type === \Docker\API\Model\PluginConfig::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\PluginConfig';
+            return is_object($data) && get_class($data) === \Docker\API\Model\PluginConfig::class;
         }
         /**
          * @return mixed
@@ -272,7 +272,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setDocumentation(null);
             }
             if (\array_key_exists('Interface', $data) && $data['Interface'] !== null) {
-                $object->setInterface($this->denormalizer->denormalize($data['Interface'], 'Docker\\API\\Model\\PluginConfigInterface', 'json', $context));
+                $object->setInterface($this->denormalizer->denormalize($data['Interface'], \Docker\API\Model\PluginConfigInterface::class, 'json', $context));
                 unset($data['Interface']);
             }
             elseif (\array_key_exists('Interface', $data) && $data['Interface'] === null) {
@@ -297,21 +297,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setWorkDir(null);
             }
             if (\array_key_exists('User', $data) && $data['User'] !== null) {
-                $object->setUser($this->denormalizer->denormalize($data['User'], 'Docker\\API\\Model\\PluginConfigUser', 'json', $context));
+                $object->setUser($this->denormalizer->denormalize($data['User'], \Docker\API\Model\PluginConfigUser::class, 'json', $context));
                 unset($data['User']);
             }
             elseif (\array_key_exists('User', $data) && $data['User'] === null) {
                 $object->setUser(null);
             }
             if (\array_key_exists('Network', $data) && $data['Network'] !== null) {
-                $object->setNetwork($this->denormalizer->denormalize($data['Network'], 'Docker\\API\\Model\\PluginConfigNetwork', 'json', $context));
+                $object->setNetwork($this->denormalizer->denormalize($data['Network'], \Docker\API\Model\PluginConfigNetwork::class, 'json', $context));
                 unset($data['Network']);
             }
             elseif (\array_key_exists('Network', $data) && $data['Network'] === null) {
                 $object->setNetwork(null);
             }
             if (\array_key_exists('Linux', $data) && $data['Linux'] !== null) {
-                $object->setLinux($this->denormalizer->denormalize($data['Linux'], 'Docker\\API\\Model\\PluginConfigLinux', 'json', $context));
+                $object->setLinux($this->denormalizer->denormalize($data['Linux'], \Docker\API\Model\PluginConfigLinux::class, 'json', $context));
                 unset($data['Linux']);
             }
             elseif (\array_key_exists('Linux', $data) && $data['Linux'] === null) {
@@ -341,7 +341,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
                 $values_1 = [];
                 foreach ($data['Mounts'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\PluginMount', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\PluginMount::class, 'json', $context);
                 }
                 $object->setMounts($values_1);
                 unset($data['Mounts']);
@@ -352,7 +352,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Env', $data) && $data['Env'] !== null) {
                 $values_2 = [];
                 foreach ($data['Env'] as $value_2) {
-                    $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\PluginEnv', 'json', $context);
+                    $values_2[] = $this->denormalizer->denormalize($value_2, \Docker\API\Model\PluginEnv::class, 'json', $context);
                 }
                 $object->setEnv($values_2);
                 unset($data['Env']);
@@ -361,14 +361,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEnv(null);
             }
             if (\array_key_exists('Args', $data) && $data['Args'] !== null) {
-                $object->setArgs($this->denormalizer->denormalize($data['Args'], 'Docker\\API\\Model\\PluginConfigArgs', 'json', $context));
+                $object->setArgs($this->denormalizer->denormalize($data['Args'], \Docker\API\Model\PluginConfigArgs::class, 'json', $context));
                 unset($data['Args']);
             }
             elseif (\array_key_exists('Args', $data) && $data['Args'] === null) {
                 $object->setArgs(null);
             }
             if (\array_key_exists('rootfs', $data) && $data['rootfs'] !== null) {
-                $object->setRootfs($this->denormalizer->denormalize($data['rootfs'], 'Docker\\API\\Model\\PluginConfigRootfs', 'json', $context));
+                $object->setRootfs($this->denormalizer->denormalize($data['rootfs'], \Docker\API\Model\PluginConfigRootfs::class, 'json', $context));
                 unset($data['rootfs']);
             }
             elseif (\array_key_exists('rootfs', $data) && $data['rootfs'] === null) {
@@ -430,7 +430,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\PluginConfig' => false];
+            return [\Docker\API\Model\PluginConfig::class => false];
         }
     }
 }

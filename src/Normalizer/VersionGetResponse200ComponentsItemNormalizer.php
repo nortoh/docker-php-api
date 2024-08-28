@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem';
+            return $type === \Docker\API\Model\VersionGetResponse200ComponentsItem::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem';
+            return is_object($data) && get_class($data) === \Docker\API\Model\VersionGetResponse200ComponentsItem::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -55,7 +55,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setVersion(null);
             }
             if (\array_key_exists('Details', $data) && $data['Details'] !== null) {
-                $object->setDetails($this->denormalizer->denormalize($data['Details'], 'Docker\\API\\Model\\VersionGetResponse200ComponentsItemDetails', 'json', $context));
+                $object->setDetails($this->denormalizer->denormalize($data['Details'], \Docker\API\Model\VersionGetResponse200ComponentsItemDetails::class, 'json', $context));
                 unset($data['Details']);
             }
             elseif (\array_key_exists('Details', $data) && $data['Details'] === null) {
@@ -85,7 +85,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\VersionGetResponse200ComponentsItem' => false];
+            return [\Docker\API\Model\VersionGetResponse200ComponentsItem::class => false];
         }
     }
 } else {
@@ -97,11 +97,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem';
+            return $type === \Docker\API\Model\VersionGetResponse200ComponentsItem::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem';
+            return is_object($data) && get_class($data) === \Docker\API\Model\VersionGetResponse200ComponentsItem::class;
         }
         /**
          * @return mixed
@@ -133,7 +133,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setVersion(null);
             }
             if (\array_key_exists('Details', $data) && $data['Details'] !== null) {
-                $object->setDetails($this->denormalizer->denormalize($data['Details'], 'Docker\\API\\Model\\VersionGetResponse200ComponentsItemDetails', 'json', $context));
+                $object->setDetails($this->denormalizer->denormalize($data['Details'], \Docker\API\Model\VersionGetResponse200ComponentsItemDetails::class, 'json', $context));
                 unset($data['Details']);
             }
             elseif (\array_key_exists('Details', $data) && $data['Details'] === null) {
@@ -166,7 +166,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\VersionGetResponse200ComponentsItem' => false];
+            return [\Docker\API\Model\VersionGetResponse200ComponentsItem::class => false];
         }
     }
 }

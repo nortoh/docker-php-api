@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\BuildInfo';
+            return $type === \Docker\API\Model\BuildInfo::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\BuildInfo';
+            return is_object($data) && get_class($data) === \Docker\API\Model\BuildInfo::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -62,7 +62,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setError(null);
             }
             if (\array_key_exists('errorDetail', $data) && $data['errorDetail'] !== null) {
-                $object->setErrorDetail($this->denormalizer->denormalize($data['errorDetail'], 'Docker\\API\\Model\\ErrorDetail', 'json', $context));
+                $object->setErrorDetail($this->denormalizer->denormalize($data['errorDetail'], \Docker\API\Model\ErrorDetail::class, 'json', $context));
                 unset($data['errorDetail']);
             }
             elseif (\array_key_exists('errorDetail', $data) && $data['errorDetail'] === null) {
@@ -83,14 +83,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setProgress(null);
             }
             if (\array_key_exists('progressDetail', $data) && $data['progressDetail'] !== null) {
-                $object->setProgressDetail($this->denormalizer->denormalize($data['progressDetail'], 'Docker\\API\\Model\\ProgressDetail', 'json', $context));
+                $object->setProgressDetail($this->denormalizer->denormalize($data['progressDetail'], \Docker\API\Model\ProgressDetail::class, 'json', $context));
                 unset($data['progressDetail']);
             }
             elseif (\array_key_exists('progressDetail', $data) && $data['progressDetail'] === null) {
                 $object->setProgressDetail(null);
             }
             if (\array_key_exists('aux', $data) && $data['aux'] !== null) {
-                $object->setAux($this->denormalizer->denormalize($data['aux'], 'Docker\\API\\Model\\ImageID', 'json', $context));
+                $object->setAux($this->denormalizer->denormalize($data['aux'], \Docker\API\Model\ImageID::class, 'json', $context));
                 unset($data['aux']);
             }
             elseif (\array_key_exists('aux', $data) && $data['aux'] === null) {
@@ -139,7 +139,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\BuildInfo' => false];
+            return [\Docker\API\Model\BuildInfo::class => false];
         }
     }
 } else {
@@ -151,11 +151,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\BuildInfo';
+            return $type === \Docker\API\Model\BuildInfo::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\BuildInfo';
+            return is_object($data) && get_class($data) === \Docker\API\Model\BuildInfo::class;
         }
         /**
          * @return mixed
@@ -194,7 +194,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setError(null);
             }
             if (\array_key_exists('errorDetail', $data) && $data['errorDetail'] !== null) {
-                $object->setErrorDetail($this->denormalizer->denormalize($data['errorDetail'], 'Docker\\API\\Model\\ErrorDetail', 'json', $context));
+                $object->setErrorDetail($this->denormalizer->denormalize($data['errorDetail'], \Docker\API\Model\ErrorDetail::class, 'json', $context));
                 unset($data['errorDetail']);
             }
             elseif (\array_key_exists('errorDetail', $data) && $data['errorDetail'] === null) {
@@ -215,14 +215,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setProgress(null);
             }
             if (\array_key_exists('progressDetail', $data) && $data['progressDetail'] !== null) {
-                $object->setProgressDetail($this->denormalizer->denormalize($data['progressDetail'], 'Docker\\API\\Model\\ProgressDetail', 'json', $context));
+                $object->setProgressDetail($this->denormalizer->denormalize($data['progressDetail'], \Docker\API\Model\ProgressDetail::class, 'json', $context));
                 unset($data['progressDetail']);
             }
             elseif (\array_key_exists('progressDetail', $data) && $data['progressDetail'] === null) {
                 $object->setProgressDetail(null);
             }
             if (\array_key_exists('aux', $data) && $data['aux'] !== null) {
-                $object->setAux($this->denormalizer->denormalize($data['aux'], 'Docker\\API\\Model\\ImageID', 'json', $context));
+                $object->setAux($this->denormalizer->denormalize($data['aux'], \Docker\API\Model\ImageID::class, 'json', $context));
                 unset($data['aux']);
             }
             elseif (\array_key_exists('aux', $data) && $data['aux'] === null) {
@@ -274,7 +274,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\BuildInfo' => false];
+            return [\Docker\API\Model\BuildInfo::class => false];
         }
     }
 }

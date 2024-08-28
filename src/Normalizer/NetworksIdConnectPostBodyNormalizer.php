@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\NetworksIdConnectPostBody';
+            return $type === \Docker\API\Model\NetworksIdConnectPostBody::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\NetworksIdConnectPostBody';
+            return is_object($data) && get_class($data) === \Docker\API\Model\NetworksIdConnectPostBody::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -48,7 +48,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setContainer(null);
             }
             if (\array_key_exists('EndpointConfig', $data) && $data['EndpointConfig'] !== null) {
-                $object->setEndpointConfig($this->denormalizer->denormalize($data['EndpointConfig'], 'Docker\\API\\Model\\EndpointSettings', 'json', $context));
+                $object->setEndpointConfig($this->denormalizer->denormalize($data['EndpointConfig'], \Docker\API\Model\EndpointSettings::class, 'json', $context));
                 unset($data['EndpointConfig']);
             }
             elseif (\array_key_exists('EndpointConfig', $data) && $data['EndpointConfig'] === null) {
@@ -79,7 +79,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\NetworksIdConnectPostBody' => false];
+            return [\Docker\API\Model\NetworksIdConnectPostBody::class => false];
         }
     }
 } else {
@@ -91,11 +91,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\NetworksIdConnectPostBody';
+            return $type === \Docker\API\Model\NetworksIdConnectPostBody::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\NetworksIdConnectPostBody';
+            return is_object($data) && get_class($data) === \Docker\API\Model\NetworksIdConnectPostBody::class;
         }
         /**
          * @return mixed
@@ -120,7 +120,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setContainer(null);
             }
             if (\array_key_exists('EndpointConfig', $data) && $data['EndpointConfig'] !== null) {
-                $object->setEndpointConfig($this->denormalizer->denormalize($data['EndpointConfig'], 'Docker\\API\\Model\\EndpointSettings', 'json', $context));
+                $object->setEndpointConfig($this->denormalizer->denormalize($data['EndpointConfig'], \Docker\API\Model\EndpointSettings::class, 'json', $context));
                 unset($data['EndpointConfig']);
             }
             elseif (\array_key_exists('EndpointConfig', $data) && $data['EndpointConfig'] === null) {
@@ -154,7 +154,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\NetworksIdConnectPostBody' => false];
+            return [\Docker\API\Model\NetworksIdConnectPostBody::class => false];
         }
     }
 }

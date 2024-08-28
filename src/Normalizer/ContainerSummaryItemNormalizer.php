@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainerSummaryItem';
+            return $type === \Docker\API\Model\ContainerSummaryItem::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainerSummaryItem';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainerSummaryItem::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -89,7 +89,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Ports', $data) && $data['Ports'] !== null) {
                 $values_1 = [];
                 foreach ($data['Ports'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\Port', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\Port::class, 'json', $context);
                 }
                 $object->setPorts($values_1);
                 unset($data['Ports']);
@@ -137,14 +137,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setStatus(null);
             }
             if (\array_key_exists('HostConfig', $data) && $data['HostConfig'] !== null) {
-                $object->setHostConfig($this->denormalizer->denormalize($data['HostConfig'], 'Docker\\API\\Model\\ContainerSummaryItemHostConfig', 'json', $context));
+                $object->setHostConfig($this->denormalizer->denormalize($data['HostConfig'], \Docker\API\Model\ContainerSummaryItemHostConfig::class, 'json', $context));
                 unset($data['HostConfig']);
             }
             elseif (\array_key_exists('HostConfig', $data) && $data['HostConfig'] === null) {
                 $object->setHostConfig(null);
             }
             if (\array_key_exists('NetworkSettings', $data) && $data['NetworkSettings'] !== null) {
-                $object->setNetworkSettings($this->denormalizer->denormalize($data['NetworkSettings'], 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings', 'json', $context));
+                $object->setNetworkSettings($this->denormalizer->denormalize($data['NetworkSettings'], \Docker\API\Model\ContainerSummaryItemNetworkSettings::class, 'json', $context));
                 unset($data['NetworkSettings']);
             }
             elseif (\array_key_exists('NetworkSettings', $data) && $data['NetworkSettings'] === null) {
@@ -153,7 +153,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
                 $values_3 = [];
                 foreach ($data['Mounts'] as $value_3) {
-                    $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\Mount', 'json', $context);
+                    $values_3[] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\Mount::class, 'json', $context);
                 }
                 $object->setMounts($values_3);
                 unset($data['Mounts']);
@@ -241,7 +241,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainerSummaryItem' => false];
+            return [\Docker\API\Model\ContainerSummaryItem::class => false];
         }
     }
 } else {
@@ -253,11 +253,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainerSummaryItem';
+            return $type === \Docker\API\Model\ContainerSummaryItem::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainerSummaryItem';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainerSummaryItem::class;
         }
         /**
          * @return mixed
@@ -323,7 +323,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Ports', $data) && $data['Ports'] !== null) {
                 $values_1 = [];
                 foreach ($data['Ports'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\Port', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\Port::class, 'json', $context);
                 }
                 $object->setPorts($values_1);
                 unset($data['Ports']);
@@ -371,14 +371,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setStatus(null);
             }
             if (\array_key_exists('HostConfig', $data) && $data['HostConfig'] !== null) {
-                $object->setHostConfig($this->denormalizer->denormalize($data['HostConfig'], 'Docker\\API\\Model\\ContainerSummaryItemHostConfig', 'json', $context));
+                $object->setHostConfig($this->denormalizer->denormalize($data['HostConfig'], \Docker\API\Model\ContainerSummaryItemHostConfig::class, 'json', $context));
                 unset($data['HostConfig']);
             }
             elseif (\array_key_exists('HostConfig', $data) && $data['HostConfig'] === null) {
                 $object->setHostConfig(null);
             }
             if (\array_key_exists('NetworkSettings', $data) && $data['NetworkSettings'] !== null) {
-                $object->setNetworkSettings($this->denormalizer->denormalize($data['NetworkSettings'], 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings', 'json', $context));
+                $object->setNetworkSettings($this->denormalizer->denormalize($data['NetworkSettings'], \Docker\API\Model\ContainerSummaryItemNetworkSettings::class, 'json', $context));
                 unset($data['NetworkSettings']);
             }
             elseif (\array_key_exists('NetworkSettings', $data) && $data['NetworkSettings'] === null) {
@@ -387,7 +387,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Mounts', $data) && $data['Mounts'] !== null) {
                 $values_3 = [];
                 foreach ($data['Mounts'] as $value_3) {
-                    $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\Mount', 'json', $context);
+                    $values_3[] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\Mount::class, 'json', $context);
                 }
                 $object->setMounts($values_3);
                 unset($data['Mounts']);
@@ -478,7 +478,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainerSummaryItem' => false];
+            return [\Docker\API\Model\ContainerSummaryItem::class => false];
         }
     }
 }

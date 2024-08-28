@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\SecretSpec';
+            return $type === \Docker\API\Model\SecretSpec::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SecretSpec';
+            return is_object($data) && get_class($data) === \Docker\API\Model\SecretSpec::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -66,7 +66,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setData(null);
             }
             if (\array_key_exists('Driver', $data) && $data['Driver'] !== null) {
-                $object->setDriver($this->denormalizer->denormalize($data['Driver'], 'Docker\\API\\Model\\Driver', 'json', $context));
+                $object->setDriver($this->denormalizer->denormalize($data['Driver'], \Docker\API\Model\Driver::class, 'json', $context));
                 unset($data['Driver']);
             }
             elseif (\array_key_exists('Driver', $data) && $data['Driver'] === null) {
@@ -107,7 +107,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\SecretSpec' => false];
+            return [\Docker\API\Model\SecretSpec::class => false];
         }
     }
 } else {
@@ -119,11 +119,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\SecretSpec';
+            return $type === \Docker\API\Model\SecretSpec::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SecretSpec';
+            return is_object($data) && get_class($data) === \Docker\API\Model\SecretSpec::class;
         }
         /**
          * @return mixed
@@ -166,7 +166,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setData(null);
             }
             if (\array_key_exists('Driver', $data) && $data['Driver'] !== null) {
-                $object->setDriver($this->denormalizer->denormalize($data['Driver'], 'Docker\\API\\Model\\Driver', 'json', $context));
+                $object->setDriver($this->denormalizer->denormalize($data['Driver'], \Docker\API\Model\Driver::class, 'json', $context));
                 unset($data['Driver']);
             }
             elseif (\array_key_exists('Driver', $data) && $data['Driver'] === null) {
@@ -210,7 +210,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\SecretSpec' => false];
+            return [\Docker\API\Model\SecretSpec::class => false];
         }
     }
 }

@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Task';
+            return $type === \Docker\API\Model\Task::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Task';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Task::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -48,7 +48,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setID(null);
             }
             if (\array_key_exists('Version', $data) && $data['Version'] !== null) {
-                $object->setVersion($this->denormalizer->denormalize($data['Version'], 'Docker\\API\\Model\\ObjectVersion', 'json', $context));
+                $object->setVersion($this->denormalizer->denormalize($data['Version'], \Docker\API\Model\ObjectVersion::class, 'json', $context));
                 unset($data['Version']);
             }
             elseif (\array_key_exists('Version', $data) && $data['Version'] === null) {
@@ -87,7 +87,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLabels(null);
             }
             if (\array_key_exists('Spec', $data) && $data['Spec'] !== null) {
-                $object->setSpec($this->denormalizer->denormalize($data['Spec'], 'Docker\\API\\Model\\TaskSpec', 'json', $context));
+                $object->setSpec($this->denormalizer->denormalize($data['Spec'], \Docker\API\Model\TaskSpec::class, 'json', $context));
                 unset($data['Spec']);
             }
             elseif (\array_key_exists('Spec', $data) && $data['Spec'] === null) {
@@ -117,7 +117,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('AssignedGenericResources', $data) && $data['AssignedGenericResources'] !== null) {
                 $values_1 = [];
                 foreach ($data['AssignedGenericResources'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\GenericResourcesItem', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\GenericResourcesItem::class, 'json', $context);
                 }
                 $object->setAssignedGenericResources($values_1);
                 unset($data['AssignedGenericResources']);
@@ -126,7 +126,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAssignedGenericResources(null);
             }
             if (\array_key_exists('Status', $data) && $data['Status'] !== null) {
-                $object->setStatus($this->denormalizer->denormalize($data['Status'], 'Docker\\API\\Model\\TaskStatus', 'json', $context));
+                $object->setStatus($this->denormalizer->denormalize($data['Status'], \Docker\API\Model\TaskStatus::class, 'json', $context));
                 unset($data['Status']);
             }
             elseif (\array_key_exists('Status', $data) && $data['Status'] === null) {
@@ -205,7 +205,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Task' => false];
+            return [\Docker\API\Model\Task::class => false];
         }
     }
 } else {
@@ -217,11 +217,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Task';
+            return $type === \Docker\API\Model\Task::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Task';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Task::class;
         }
         /**
          * @return mixed
@@ -246,7 +246,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setID(null);
             }
             if (\array_key_exists('Version', $data) && $data['Version'] !== null) {
-                $object->setVersion($this->denormalizer->denormalize($data['Version'], 'Docker\\API\\Model\\ObjectVersion', 'json', $context));
+                $object->setVersion($this->denormalizer->denormalize($data['Version'], \Docker\API\Model\ObjectVersion::class, 'json', $context));
                 unset($data['Version']);
             }
             elseif (\array_key_exists('Version', $data) && $data['Version'] === null) {
@@ -285,7 +285,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLabels(null);
             }
             if (\array_key_exists('Spec', $data) && $data['Spec'] !== null) {
-                $object->setSpec($this->denormalizer->denormalize($data['Spec'], 'Docker\\API\\Model\\TaskSpec', 'json', $context));
+                $object->setSpec($this->denormalizer->denormalize($data['Spec'], \Docker\API\Model\TaskSpec::class, 'json', $context));
                 unset($data['Spec']);
             }
             elseif (\array_key_exists('Spec', $data) && $data['Spec'] === null) {
@@ -315,7 +315,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('AssignedGenericResources', $data) && $data['AssignedGenericResources'] !== null) {
                 $values_1 = [];
                 foreach ($data['AssignedGenericResources'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\GenericResourcesItem', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\GenericResourcesItem::class, 'json', $context);
                 }
                 $object->setAssignedGenericResources($values_1);
                 unset($data['AssignedGenericResources']);
@@ -324,7 +324,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setAssignedGenericResources(null);
             }
             if (\array_key_exists('Status', $data) && $data['Status'] !== null) {
-                $object->setStatus($this->denormalizer->denormalize($data['Status'], 'Docker\\API\\Model\\TaskStatus', 'json', $context));
+                $object->setStatus($this->denormalizer->denormalize($data['Status'], \Docker\API\Model\TaskStatus::class, 'json', $context));
                 unset($data['Status']);
             }
             elseif (\array_key_exists('Status', $data) && $data['Status'] === null) {
@@ -406,7 +406,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Task' => false];
+            return [\Docker\API\Model\Task::class => false];
         }
     }
 }

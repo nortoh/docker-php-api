@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\DistributionNameJsonGetResponse200';
+            return $type === \Docker\API\Model\DistributionNameJsonGetResponse200::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\DistributionNameJsonGetResponse200';
+            return is_object($data) && get_class($data) === \Docker\API\Model\DistributionNameJsonGetResponse200::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Descriptor', $data) && $data['Descriptor'] !== null) {
-                $object->setDescriptor($this->denormalizer->denormalize($data['Descriptor'], 'Docker\\API\\Model\\DistributionNameJsonGetResponse200Descriptor', 'json', $context));
+                $object->setDescriptor($this->denormalizer->denormalize($data['Descriptor'], \Docker\API\Model\DistributionNameJsonGetResponse200Descriptor::class, 'json', $context));
                 unset($data['Descriptor']);
             }
             elseif (\array_key_exists('Descriptor', $data) && $data['Descriptor'] === null) {
@@ -50,7 +50,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Platforms', $data) && $data['Platforms'] !== null) {
                 $values = [];
                 foreach ($data['Platforms'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem::class, 'json', $context);
                 }
                 $object->setPlatforms($values);
                 unset($data['Platforms']);
@@ -83,7 +83,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\DistributionNameJsonGetResponse200' => false];
+            return [\Docker\API\Model\DistributionNameJsonGetResponse200::class => false];
         }
     }
 } else {
@@ -95,11 +95,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\DistributionNameJsonGetResponse200';
+            return $type === \Docker\API\Model\DistributionNameJsonGetResponse200::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\DistributionNameJsonGetResponse200';
+            return is_object($data) && get_class($data) === \Docker\API\Model\DistributionNameJsonGetResponse200::class;
         }
         /**
          * @return mixed
@@ -117,7 +117,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Descriptor', $data) && $data['Descriptor'] !== null) {
-                $object->setDescriptor($this->denormalizer->denormalize($data['Descriptor'], 'Docker\\API\\Model\\DistributionNameJsonGetResponse200Descriptor', 'json', $context));
+                $object->setDescriptor($this->denormalizer->denormalize($data['Descriptor'], \Docker\API\Model\DistributionNameJsonGetResponse200Descriptor::class, 'json', $context));
                 unset($data['Descriptor']);
             }
             elseif (\array_key_exists('Descriptor', $data) && $data['Descriptor'] === null) {
@@ -126,7 +126,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Platforms', $data) && $data['Platforms'] !== null) {
                 $values = [];
                 foreach ($data['Platforms'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem::class, 'json', $context);
                 }
                 $object->setPlatforms($values);
                 unset($data['Platforms']);
@@ -162,7 +162,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\DistributionNameJsonGetResponse200' => false];
+            return [\Docker\API\Model\DistributionNameJsonGetResponse200::class => false];
         }
     }
 }

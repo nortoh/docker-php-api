@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges';
+            return $type === \Docker\API\Model\TaskSpecContainerSpecPrivileges::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpecContainerSpecPrivileges::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -41,14 +41,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('CredentialSpec', $data) && $data['CredentialSpec'] !== null) {
-                $object->setCredentialSpec($this->denormalizer->denormalize($data['CredentialSpec'], 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesCredentialSpec', 'json', $context));
+                $object->setCredentialSpec($this->denormalizer->denormalize($data['CredentialSpec'], \Docker\API\Model\TaskSpecContainerSpecPrivilegesCredentialSpec::class, 'json', $context));
                 unset($data['CredentialSpec']);
             }
             elseif (\array_key_exists('CredentialSpec', $data) && $data['CredentialSpec'] === null) {
                 $object->setCredentialSpec(null);
             }
             if (\array_key_exists('SELinuxContext', $data) && $data['SELinuxContext'] !== null) {
-                $object->setSELinuxContext($this->denormalizer->denormalize($data['SELinuxContext'], 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesSELinuxContext', 'json', $context));
+                $object->setSELinuxContext($this->denormalizer->denormalize($data['SELinuxContext'], \Docker\API\Model\TaskSpecContainerSpecPrivilegesSELinuxContext::class, 'json', $context));
                 unset($data['SELinuxContext']);
             }
             elseif (\array_key_exists('SELinuxContext', $data) && $data['SELinuxContext'] === null) {
@@ -79,7 +79,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpecContainerSpecPrivileges' => false];
+            return [\Docker\API\Model\TaskSpecContainerSpecPrivileges::class => false];
         }
     }
 } else {
@@ -91,11 +91,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges';
+            return $type === \Docker\API\Model\TaskSpecContainerSpecPrivileges::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpecContainerSpecPrivileges::class;
         }
         /**
          * @return mixed
@@ -113,14 +113,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('CredentialSpec', $data) && $data['CredentialSpec'] !== null) {
-                $object->setCredentialSpec($this->denormalizer->denormalize($data['CredentialSpec'], 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesCredentialSpec', 'json', $context));
+                $object->setCredentialSpec($this->denormalizer->denormalize($data['CredentialSpec'], \Docker\API\Model\TaskSpecContainerSpecPrivilegesCredentialSpec::class, 'json', $context));
                 unset($data['CredentialSpec']);
             }
             elseif (\array_key_exists('CredentialSpec', $data) && $data['CredentialSpec'] === null) {
                 $object->setCredentialSpec(null);
             }
             if (\array_key_exists('SELinuxContext', $data) && $data['SELinuxContext'] !== null) {
-                $object->setSELinuxContext($this->denormalizer->denormalize($data['SELinuxContext'], 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesSELinuxContext', 'json', $context));
+                $object->setSELinuxContext($this->denormalizer->denormalize($data['SELinuxContext'], \Docker\API\Model\TaskSpecContainerSpecPrivilegesSELinuxContext::class, 'json', $context));
                 unset($data['SELinuxContext']);
             }
             elseif (\array_key_exists('SELinuxContext', $data) && $data['SELinuxContext'] === null) {
@@ -154,7 +154,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpecContainerSpecPrivileges' => false];
+            return [\Docker\API\Model\TaskSpecContainerSpecPrivileges::class => false];
         }
     }
 }

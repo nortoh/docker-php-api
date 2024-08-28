@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\VersionGetResponse200';
+            return $type === \Docker\API\Model\VersionGetResponse200::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\VersionGetResponse200';
+            return is_object($data) && get_class($data) === \Docker\API\Model\VersionGetResponse200::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Platform', $data) && $data['Platform'] !== null) {
-                $object->setPlatform($this->denormalizer->denormalize($data['Platform'], 'Docker\\API\\Model\\VersionGetResponse200Platform', 'json', $context));
+                $object->setPlatform($this->denormalizer->denormalize($data['Platform'], \Docker\API\Model\VersionGetResponse200Platform::class, 'json', $context));
                 unset($data['Platform']);
             }
             elseif (\array_key_exists('Platform', $data) && $data['Platform'] === null) {
@@ -50,7 +50,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Components', $data) && $data['Components'] !== null) {
                 $values = [];
                 foreach ($data['Components'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\VersionGetResponse200ComponentsItem::class, 'json', $context);
                 }
                 $object->setComponents($values);
                 unset($data['Components']);
@@ -187,7 +187,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\VersionGetResponse200' => false];
+            return [\Docker\API\Model\VersionGetResponse200::class => false];
         }
     }
 } else {
@@ -199,11 +199,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\VersionGetResponse200';
+            return $type === \Docker\API\Model\VersionGetResponse200::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\VersionGetResponse200';
+            return is_object($data) && get_class($data) === \Docker\API\Model\VersionGetResponse200::class;
         }
         /**
          * @return mixed
@@ -221,7 +221,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Platform', $data) && $data['Platform'] !== null) {
-                $object->setPlatform($this->denormalizer->denormalize($data['Platform'], 'Docker\\API\\Model\\VersionGetResponse200Platform', 'json', $context));
+                $object->setPlatform($this->denormalizer->denormalize($data['Platform'], \Docker\API\Model\VersionGetResponse200Platform::class, 'json', $context));
                 unset($data['Platform']);
             }
             elseif (\array_key_exists('Platform', $data) && $data['Platform'] === null) {
@@ -230,7 +230,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Components', $data) && $data['Components'] !== null) {
                 $values = [];
                 foreach ($data['Components'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\VersionGetResponse200ComponentsItem::class, 'json', $context);
                 }
                 $object->setComponents($values);
                 unset($data['Components']);
@@ -370,7 +370,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\VersionGetResponse200' => false];
+            return [\Docker\API\Model\VersionGetResponse200::class => false];
         }
     }
 }

@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Volume';
+            return $type === \Docker\API\Model\Volume::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Volume';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Volume::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -71,7 +71,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Status', $data) && $data['Status'] !== null) {
                 $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['Status'] as $key => $value) {
-                    $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\VolumeStatusItem', 'json', $context);
+                    $values[$key] = $this->denormalizer->denormalize($value, \Docker\API\Model\VolumeStatusItem::class, 'json', $context);
                 }
                 $object->setStatus($values);
                 unset($data['Status']);
@@ -109,7 +109,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOptions(null);
             }
             if (\array_key_exists('UsageData', $data) && $data['UsageData'] !== null) {
-                $object->setUsageData($this->denormalizer->denormalize($data['UsageData'], 'Docker\\API\\Model\\VolumeUsageData', 'json', $context));
+                $object->setUsageData($this->denormalizer->denormalize($data['UsageData'], \Docker\API\Model\VolumeUsageData::class, 'json', $context));
                 unset($data['UsageData']);
             }
             elseif (\array_key_exists('UsageData', $data) && $data['UsageData'] === null) {
@@ -161,7 +161,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Volume' => false];
+            return [\Docker\API\Model\Volume::class => false];
         }
     }
 } else {
@@ -173,11 +173,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Volume';
+            return $type === \Docker\API\Model\Volume::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Volume';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Volume::class;
         }
         /**
          * @return mixed
@@ -225,7 +225,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Status', $data) && $data['Status'] !== null) {
                 $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['Status'] as $key => $value) {
-                    $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\VolumeStatusItem', 'json', $context);
+                    $values[$key] = $this->denormalizer->denormalize($value, \Docker\API\Model\VolumeStatusItem::class, 'json', $context);
                 }
                 $object->setStatus($values);
                 unset($data['Status']);
@@ -263,7 +263,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setOptions(null);
             }
             if (\array_key_exists('UsageData', $data) && $data['UsageData'] !== null) {
-                $object->setUsageData($this->denormalizer->denormalize($data['UsageData'], 'Docker\\API\\Model\\VolumeUsageData', 'json', $context));
+                $object->setUsageData($this->denormalizer->denormalize($data['UsageData'], \Docker\API\Model\VolumeUsageData::class, 'json', $context));
                 unset($data['UsageData']);
             }
             elseif (\array_key_exists('UsageData', $data) && $data['UsageData'] === null) {
@@ -318,7 +318,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Volume' => false];
+            return [\Docker\API\Model\Volume::class => false];
         }
     }
 }

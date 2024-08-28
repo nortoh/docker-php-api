@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Service';
+            return $type === \Docker\API\Model\Service::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Service';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Service::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -48,7 +48,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setID(null);
             }
             if (\array_key_exists('Version', $data) && $data['Version'] !== null) {
-                $object->setVersion($this->denormalizer->denormalize($data['Version'], 'Docker\\API\\Model\\ObjectVersion', 'json', $context));
+                $object->setVersion($this->denormalizer->denormalize($data['Version'], \Docker\API\Model\ObjectVersion::class, 'json', $context));
                 unset($data['Version']);
             }
             elseif (\array_key_exists('Version', $data) && $data['Version'] === null) {
@@ -69,21 +69,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setUpdatedAt(null);
             }
             if (\array_key_exists('Spec', $data) && $data['Spec'] !== null) {
-                $object->setSpec($this->denormalizer->denormalize($data['Spec'], 'Docker\\API\\Model\\ServiceSpec', 'json', $context));
+                $object->setSpec($this->denormalizer->denormalize($data['Spec'], \Docker\API\Model\ServiceSpec::class, 'json', $context));
                 unset($data['Spec']);
             }
             elseif (\array_key_exists('Spec', $data) && $data['Spec'] === null) {
                 $object->setSpec(null);
             }
             if (\array_key_exists('Endpoint', $data) && $data['Endpoint'] !== null) {
-                $object->setEndpoint($this->denormalizer->denormalize($data['Endpoint'], 'Docker\\API\\Model\\ServiceEndpoint', 'json', $context));
+                $object->setEndpoint($this->denormalizer->denormalize($data['Endpoint'], \Docker\API\Model\ServiceEndpoint::class, 'json', $context));
                 unset($data['Endpoint']);
             }
             elseif (\array_key_exists('Endpoint', $data) && $data['Endpoint'] === null) {
                 $object->setEndpoint(null);
             }
             if (\array_key_exists('UpdateStatus', $data) && $data['UpdateStatus'] !== null) {
-                $object->setUpdateStatus($this->denormalizer->denormalize($data['UpdateStatus'], 'Docker\\API\\Model\\ServiceUpdateStatus', 'json', $context));
+                $object->setUpdateStatus($this->denormalizer->denormalize($data['UpdateStatus'], \Docker\API\Model\ServiceUpdateStatus::class, 'json', $context));
                 unset($data['UpdateStatus']);
             }
             elseif (\array_key_exists('UpdateStatus', $data) && $data['UpdateStatus'] === null) {
@@ -129,7 +129,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Service' => false];
+            return [\Docker\API\Model\Service::class => false];
         }
     }
 } else {
@@ -141,11 +141,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Service';
+            return $type === \Docker\API\Model\Service::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Service';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Service::class;
         }
         /**
          * @return mixed
@@ -170,7 +170,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setID(null);
             }
             if (\array_key_exists('Version', $data) && $data['Version'] !== null) {
-                $object->setVersion($this->denormalizer->denormalize($data['Version'], 'Docker\\API\\Model\\ObjectVersion', 'json', $context));
+                $object->setVersion($this->denormalizer->denormalize($data['Version'], \Docker\API\Model\ObjectVersion::class, 'json', $context));
                 unset($data['Version']);
             }
             elseif (\array_key_exists('Version', $data) && $data['Version'] === null) {
@@ -191,21 +191,21 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setUpdatedAt(null);
             }
             if (\array_key_exists('Spec', $data) && $data['Spec'] !== null) {
-                $object->setSpec($this->denormalizer->denormalize($data['Spec'], 'Docker\\API\\Model\\ServiceSpec', 'json', $context));
+                $object->setSpec($this->denormalizer->denormalize($data['Spec'], \Docker\API\Model\ServiceSpec::class, 'json', $context));
                 unset($data['Spec']);
             }
             elseif (\array_key_exists('Spec', $data) && $data['Spec'] === null) {
                 $object->setSpec(null);
             }
             if (\array_key_exists('Endpoint', $data) && $data['Endpoint'] !== null) {
-                $object->setEndpoint($this->denormalizer->denormalize($data['Endpoint'], 'Docker\\API\\Model\\ServiceEndpoint', 'json', $context));
+                $object->setEndpoint($this->denormalizer->denormalize($data['Endpoint'], \Docker\API\Model\ServiceEndpoint::class, 'json', $context));
                 unset($data['Endpoint']);
             }
             elseif (\array_key_exists('Endpoint', $data) && $data['Endpoint'] === null) {
                 $object->setEndpoint(null);
             }
             if (\array_key_exists('UpdateStatus', $data) && $data['UpdateStatus'] !== null) {
-                $object->setUpdateStatus($this->denormalizer->denormalize($data['UpdateStatus'], 'Docker\\API\\Model\\ServiceUpdateStatus', 'json', $context));
+                $object->setUpdateStatus($this->denormalizer->denormalize($data['UpdateStatus'], \Docker\API\Model\ServiceUpdateStatus::class, 'json', $context));
                 unset($data['UpdateStatus']);
             }
             elseif (\array_key_exists('UpdateStatus', $data) && $data['UpdateStatus'] === null) {
@@ -254,7 +254,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Service' => false];
+            return [\Docker\API\Model\Service::class => false];
         }
     }
 }

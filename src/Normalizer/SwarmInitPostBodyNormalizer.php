@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\SwarmInitPostBody';
+            return $type === \Docker\API\Model\SwarmInitPostBody::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SwarmInitPostBody';
+            return is_object($data) && get_class($data) === \Docker\API\Model\SwarmInitPostBody::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -69,7 +69,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setForceNewCluster(null);
             }
             if (\array_key_exists('Spec', $data) && $data['Spec'] !== null) {
-                $object->setSpec($this->denormalizer->denormalize($data['Spec'], 'Docker\\API\\Model\\SwarmSpec', 'json', $context));
+                $object->setSpec($this->denormalizer->denormalize($data['Spec'], \Docker\API\Model\SwarmSpec::class, 'json', $context));
                 unset($data['Spec']);
             }
             elseif (\array_key_exists('Spec', $data) && $data['Spec'] === null) {
@@ -109,7 +109,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\SwarmInitPostBody' => false];
+            return [\Docker\API\Model\SwarmInitPostBody::class => false];
         }
     }
 } else {
@@ -121,11 +121,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\SwarmInitPostBody';
+            return $type === \Docker\API\Model\SwarmInitPostBody::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SwarmInitPostBody';
+            return is_object($data) && get_class($data) === \Docker\API\Model\SwarmInitPostBody::class;
         }
         /**
          * @return mixed
@@ -171,7 +171,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setForceNewCluster(null);
             }
             if (\array_key_exists('Spec', $data) && $data['Spec'] !== null) {
-                $object->setSpec($this->denormalizer->denormalize($data['Spec'], 'Docker\\API\\Model\\SwarmSpec', 'json', $context));
+                $object->setSpec($this->denormalizer->denormalize($data['Spec'], \Docker\API\Model\SwarmSpec::class, 'json', $context));
                 unset($data['Spec']);
             }
             elseif (\array_key_exists('Spec', $data) && $data['Spec'] === null) {
@@ -214,7 +214,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\SwarmInitPostBody' => false];
+            return [\Docker\API\Model\SwarmInitPostBody::class => false];
         }
     }
 }

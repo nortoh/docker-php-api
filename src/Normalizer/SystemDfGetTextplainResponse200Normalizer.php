@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\SystemDfGetTextplainResponse200';
+            return $type === \Docker\API\Model\SystemDfGetTextplainResponse200::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SystemDfGetTextplainResponse200';
+            return is_object($data) && get_class($data) === \Docker\API\Model\SystemDfGetTextplainResponse200::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -50,7 +50,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Images', $data) && $data['Images'] !== null) {
                 $values = [];
                 foreach ($data['Images'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageSummary', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\ImageSummary::class, 'json', $context);
                 }
                 $object->setImages($values);
                 unset($data['Images']);
@@ -63,7 +63,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 foreach ($data['Containers'] as $value_1) {
                     $values_2 = [];
                     foreach ($value_1 as $value_2) {
-                        $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\ContainerSummaryItem', 'json', $context);
+                        $values_2[] = $this->denormalizer->denormalize($value_2, \Docker\API\Model\ContainerSummaryItem::class, 'json', $context);
                     }
                     $values_1[] = $values_2;
                 }
@@ -76,7 +76,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Volumes', $data) && $data['Volumes'] !== null) {
                 $values_3 = [];
                 foreach ($data['Volumes'] as $value_3) {
-                    $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\Volume', 'json', $context);
+                    $values_3[] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\Volume::class, 'json', $context);
                 }
                 $object->setVolumes($values_3);
                 unset($data['Volumes']);
@@ -131,7 +131,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\SystemDfGetTextplainResponse200' => false];
+            return [\Docker\API\Model\SystemDfGetTextplainResponse200::class => false];
         }
     }
 } else {
@@ -143,11 +143,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\SystemDfGetTextplainResponse200';
+            return $type === \Docker\API\Model\SystemDfGetTextplainResponse200::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SystemDfGetTextplainResponse200';
+            return is_object($data) && get_class($data) === \Docker\API\Model\SystemDfGetTextplainResponse200::class;
         }
         /**
          * @return mixed
@@ -174,7 +174,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Images', $data) && $data['Images'] !== null) {
                 $values = [];
                 foreach ($data['Images'] as $value) {
-                    $values[] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ImageSummary', 'json', $context);
+                    $values[] = $this->denormalizer->denormalize($value, \Docker\API\Model\ImageSummary::class, 'json', $context);
                 }
                 $object->setImages($values);
                 unset($data['Images']);
@@ -187,7 +187,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 foreach ($data['Containers'] as $value_1) {
                     $values_2 = [];
                     foreach ($value_1 as $value_2) {
-                        $values_2[] = $this->denormalizer->denormalize($value_2, 'Docker\\API\\Model\\ContainerSummaryItem', 'json', $context);
+                        $values_2[] = $this->denormalizer->denormalize($value_2, \Docker\API\Model\ContainerSummaryItem::class, 'json', $context);
                     }
                     $values_1[] = $values_2;
                 }
@@ -200,7 +200,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Volumes', $data) && $data['Volumes'] !== null) {
                 $values_3 = [];
                 foreach ($data['Volumes'] as $value_3) {
-                    $values_3[] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\Volume', 'json', $context);
+                    $values_3[] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\Volume::class, 'json', $context);
                 }
                 $object->setVolumes($values_3);
                 unset($data['Volumes']);
@@ -258,7 +258,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\SystemDfGetTextplainResponse200' => false];
+            return [\Docker\API\Model\SystemDfGetTextplainResponse200::class => false];
         }
     }
 }

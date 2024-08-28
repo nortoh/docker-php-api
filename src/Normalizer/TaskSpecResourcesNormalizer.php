@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpecResources';
+            return $type === \Docker\API\Model\TaskSpecResources::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecResources';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpecResources::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -41,14 +41,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Limits', $data) && $data['Limits'] !== null) {
-                $object->setLimits($this->denormalizer->denormalize($data['Limits'], 'Docker\\API\\Model\\ResourceObject', 'json', $context));
+                $object->setLimits($this->denormalizer->denormalize($data['Limits'], \Docker\API\Model\ResourceObject::class, 'json', $context));
                 unset($data['Limits']);
             }
             elseif (\array_key_exists('Limits', $data) && $data['Limits'] === null) {
                 $object->setLimits(null);
             }
             if (\array_key_exists('Reservation', $data) && $data['Reservation'] !== null) {
-                $object->setReservation($this->denormalizer->denormalize($data['Reservation'], 'Docker\\API\\Model\\ResourceObject', 'json', $context));
+                $object->setReservation($this->denormalizer->denormalize($data['Reservation'], \Docker\API\Model\ResourceObject::class, 'json', $context));
                 unset($data['Reservation']);
             }
             elseif (\array_key_exists('Reservation', $data) && $data['Reservation'] === null) {
@@ -79,7 +79,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpecResources' => false];
+            return [\Docker\API\Model\TaskSpecResources::class => false];
         }
     }
 } else {
@@ -91,11 +91,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpecResources';
+            return $type === \Docker\API\Model\TaskSpecResources::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecResources';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpecResources::class;
         }
         /**
          * @return mixed
@@ -113,14 +113,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Limits', $data) && $data['Limits'] !== null) {
-                $object->setLimits($this->denormalizer->denormalize($data['Limits'], 'Docker\\API\\Model\\ResourceObject', 'json', $context));
+                $object->setLimits($this->denormalizer->denormalize($data['Limits'], \Docker\API\Model\ResourceObject::class, 'json', $context));
                 unset($data['Limits']);
             }
             elseif (\array_key_exists('Limits', $data) && $data['Limits'] === null) {
                 $object->setLimits(null);
             }
             if (\array_key_exists('Reservation', $data) && $data['Reservation'] !== null) {
-                $object->setReservation($this->denormalizer->denormalize($data['Reservation'], 'Docker\\API\\Model\\ResourceObject', 'json', $context));
+                $object->setReservation($this->denormalizer->denormalize($data['Reservation'], \Docker\API\Model\ResourceObject::class, 'json', $context));
                 unset($data['Reservation']);
             }
             elseif (\array_key_exists('Reservation', $data) && $data['Reservation'] === null) {
@@ -154,7 +154,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpecResources' => false];
+            return [\Docker\API\Model\TaskSpecResources::class => false];
         }
     }
 }

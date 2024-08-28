@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Swarm';
+            return $type === \Docker\API\Model\Swarm::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Swarm';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Swarm::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -48,7 +48,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setID(null);
             }
             if (\array_key_exists('Version', $data) && $data['Version'] !== null) {
-                $object->setVersion($this->denormalizer->denormalize($data['Version'], 'Docker\\API\\Model\\ObjectVersion', 'json', $context));
+                $object->setVersion($this->denormalizer->denormalize($data['Version'], \Docker\API\Model\ObjectVersion::class, 'json', $context));
                 unset($data['Version']);
             }
             elseif (\array_key_exists('Version', $data) && $data['Version'] === null) {
@@ -69,14 +69,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setUpdatedAt(null);
             }
             if (\array_key_exists('Spec', $data) && $data['Spec'] !== null) {
-                $object->setSpec($this->denormalizer->denormalize($data['Spec'], 'Docker\\API\\Model\\SwarmSpec', 'json', $context));
+                $object->setSpec($this->denormalizer->denormalize($data['Spec'], \Docker\API\Model\SwarmSpec::class, 'json', $context));
                 unset($data['Spec']);
             }
             elseif (\array_key_exists('Spec', $data) && $data['Spec'] === null) {
                 $object->setSpec(null);
             }
             if (\array_key_exists('TLSInfo', $data) && $data['TLSInfo'] !== null) {
-                $object->setTLSInfo($this->denormalizer->denormalize($data['TLSInfo'], 'Docker\\API\\Model\\TLSInfo', 'json', $context));
+                $object->setTLSInfo($this->denormalizer->denormalize($data['TLSInfo'], \Docker\API\Model\TLSInfo::class, 'json', $context));
                 unset($data['TLSInfo']);
             }
             elseif (\array_key_exists('TLSInfo', $data) && $data['TLSInfo'] === null) {
@@ -90,7 +90,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRootRotationInProgress(null);
             }
             if (\array_key_exists('JoinTokens', $data) && $data['JoinTokens'] !== null) {
-                $object->setJoinTokens($this->denormalizer->denormalize($data['JoinTokens'], 'Docker\\API\\Model\\JoinTokens', 'json', $context));
+                $object->setJoinTokens($this->denormalizer->denormalize($data['JoinTokens'], \Docker\API\Model\JoinTokens::class, 'json', $context));
                 unset($data['JoinTokens']);
             }
             elseif (\array_key_exists('JoinTokens', $data) && $data['JoinTokens'] === null) {
@@ -139,7 +139,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Swarm' => false];
+            return [\Docker\API\Model\Swarm::class => false];
         }
     }
 } else {
@@ -151,11 +151,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Swarm';
+            return $type === \Docker\API\Model\Swarm::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Swarm';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Swarm::class;
         }
         /**
          * @return mixed
@@ -180,7 +180,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setID(null);
             }
             if (\array_key_exists('Version', $data) && $data['Version'] !== null) {
-                $object->setVersion($this->denormalizer->denormalize($data['Version'], 'Docker\\API\\Model\\ObjectVersion', 'json', $context));
+                $object->setVersion($this->denormalizer->denormalize($data['Version'], \Docker\API\Model\ObjectVersion::class, 'json', $context));
                 unset($data['Version']);
             }
             elseif (\array_key_exists('Version', $data) && $data['Version'] === null) {
@@ -201,14 +201,14 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setUpdatedAt(null);
             }
             if (\array_key_exists('Spec', $data) && $data['Spec'] !== null) {
-                $object->setSpec($this->denormalizer->denormalize($data['Spec'], 'Docker\\API\\Model\\SwarmSpec', 'json', $context));
+                $object->setSpec($this->denormalizer->denormalize($data['Spec'], \Docker\API\Model\SwarmSpec::class, 'json', $context));
                 unset($data['Spec']);
             }
             elseif (\array_key_exists('Spec', $data) && $data['Spec'] === null) {
                 $object->setSpec(null);
             }
             if (\array_key_exists('TLSInfo', $data) && $data['TLSInfo'] !== null) {
-                $object->setTLSInfo($this->denormalizer->denormalize($data['TLSInfo'], 'Docker\\API\\Model\\TLSInfo', 'json', $context));
+                $object->setTLSInfo($this->denormalizer->denormalize($data['TLSInfo'], \Docker\API\Model\TLSInfo::class, 'json', $context));
                 unset($data['TLSInfo']);
             }
             elseif (\array_key_exists('TLSInfo', $data) && $data['TLSInfo'] === null) {
@@ -222,7 +222,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setRootRotationInProgress(null);
             }
             if (\array_key_exists('JoinTokens', $data) && $data['JoinTokens'] !== null) {
-                $object->setJoinTokens($this->denormalizer->denormalize($data['JoinTokens'], 'Docker\\API\\Model\\JoinTokens', 'json', $context));
+                $object->setJoinTokens($this->denormalizer->denormalize($data['JoinTokens'], \Docker\API\Model\JoinTokens::class, 'json', $context));
                 unset($data['JoinTokens']);
             }
             elseif (\array_key_exists('JoinTokens', $data) && $data['JoinTokens'] === null) {
@@ -274,7 +274,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Swarm' => false];
+            return [\Docker\API\Model\Swarm::class => false];
         }
     }
 }

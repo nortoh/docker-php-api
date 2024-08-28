@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\EngineDescription';
+            return $type === \Docker\API\Model\EngineDescription::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\EngineDescription';
+            return is_object($data) && get_class($data) === \Docker\API\Model\EngineDescription::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -61,7 +61,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Plugins', $data) && $data['Plugins'] !== null) {
                 $values_1 = [];
                 foreach ($data['Plugins'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\EngineDescriptionPluginsItem', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\EngineDescriptionPluginsItem::class, 'json', $context);
                 }
                 $object->setPlugins($values_1);
                 unset($data['Plugins']);
@@ -105,7 +105,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\EngineDescription' => false];
+            return [\Docker\API\Model\EngineDescription::class => false];
         }
     }
 } else {
@@ -117,11 +117,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\EngineDescription';
+            return $type === \Docker\API\Model\EngineDescription::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\EngineDescription';
+            return is_object($data) && get_class($data) === \Docker\API\Model\EngineDescription::class;
         }
         /**
          * @return mixed
@@ -159,7 +159,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Plugins', $data) && $data['Plugins'] !== null) {
                 $values_1 = [];
                 foreach ($data['Plugins'] as $value_1) {
-                    $values_1[] = $this->denormalizer->denormalize($value_1, 'Docker\\API\\Model\\EngineDescriptionPluginsItem', 'json', $context);
+                    $values_1[] = $this->denormalizer->denormalize($value_1, \Docker\API\Model\EngineDescriptionPluginsItem::class, 'json', $context);
                 }
                 $object->setPlugins($values_1);
                 unset($data['Plugins']);
@@ -206,7 +206,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\EngineDescription' => false];
+            return [\Docker\API\Model\EngineDescription::class => false];
         }
     }
 }

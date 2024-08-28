@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\RegistryServiceConfig';
+            return $type === \Docker\API\Model\RegistryServiceConfig::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\RegistryServiceConfig';
+            return is_object($data) && get_class($data) === \Docker\API\Model\RegistryServiceConfig::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -76,7 +76,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('IndexConfigs', $data) && $data['IndexConfigs'] !== null) {
                 $values_3 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['IndexConfigs'] as $key => $value_3) {
-                    $values_3[$key] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\IndexInfo', 'json', $context);
+                    $values_3[$key] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\IndexInfo::class, 'json', $context);
                 }
                 $object->setIndexConfigs($values_3);
                 unset($data['IndexConfigs']);
@@ -149,7 +149,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\RegistryServiceConfig' => false];
+            return [\Docker\API\Model\RegistryServiceConfig::class => false];
         }
     }
 } else {
@@ -161,11 +161,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\RegistryServiceConfig';
+            return $type === \Docker\API\Model\RegistryServiceConfig::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\RegistryServiceConfig';
+            return is_object($data) && get_class($data) === \Docker\API\Model\RegistryServiceConfig::class;
         }
         /**
          * @return mixed
@@ -218,7 +218,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('IndexConfigs', $data) && $data['IndexConfigs'] !== null) {
                 $values_3 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['IndexConfigs'] as $key => $value_3) {
-                    $values_3[$key] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\IndexInfo', 'json', $context);
+                    $values_3[$key] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\IndexInfo::class, 'json', $context);
                 }
                 $object->setIndexConfigs($values_3);
                 unset($data['IndexConfigs']);
@@ -294,7 +294,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\RegistryServiceConfig' => false];
+            return [\Docker\API\Model\RegistryServiceConfig::class => false];
         }
     }
 }

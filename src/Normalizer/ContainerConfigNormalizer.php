@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainerConfig';
+            return $type === \Docker\API\Model\ContainerConfig::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainerConfig';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainerConfig::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -85,7 +85,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('ExposedPorts', $data) && $data['ExposedPorts'] !== null) {
                 $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['ExposedPorts'] as $key => $value) {
-                    $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ContainerConfigExposedPortsItem', 'json', $context);
+                    $values[$key] = $this->denormalizer->denormalize($value, \Docker\API\Model\ContainerConfigExposedPortsItem::class, 'json', $context);
                 }
                 $object->setExposedPorts($values);
                 unset($data['ExposedPorts']);
@@ -137,7 +137,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setCmd(null);
             }
             if (\array_key_exists('Healthcheck', $data) && $data['Healthcheck'] !== null) {
-                $object->setHealthcheck($this->denormalizer->denormalize($data['Healthcheck'], 'Docker\\API\\Model\\HealthConfig', 'json', $context));
+                $object->setHealthcheck($this->denormalizer->denormalize($data['Healthcheck'], \Docker\API\Model\HealthConfig::class, 'json', $context));
                 unset($data['Healthcheck']);
             }
             elseif (\array_key_exists('Healthcheck', $data) && $data['Healthcheck'] === null) {
@@ -160,7 +160,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Volumes', $data) && $data['Volumes'] !== null) {
                 $values_3 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['Volumes'] as $key_1 => $value_3) {
-                    $values_3[$key_1] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\ContainerConfigVolumesItem', 'json', $context);
+                    $values_3[$key_1] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\ContainerConfigVolumesItem::class, 'json', $context);
                 }
                 $object->setVolumes($values_3);
                 unset($data['Volumes']);
@@ -373,7 +373,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainerConfig' => false];
+            return [\Docker\API\Model\ContainerConfig::class => false];
         }
     }
 } else {
@@ -385,11 +385,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\ContainerConfig';
+            return $type === \Docker\API\Model\ContainerConfig::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\ContainerConfig';
+            return is_object($data) && get_class($data) === \Docker\API\Model\ContainerConfig::class;
         }
         /**
          * @return mixed
@@ -451,7 +451,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('ExposedPorts', $data) && $data['ExposedPorts'] !== null) {
                 $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['ExposedPorts'] as $key => $value) {
-                    $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\ContainerConfigExposedPortsItem', 'json', $context);
+                    $values[$key] = $this->denormalizer->denormalize($value, \Docker\API\Model\ContainerConfigExposedPortsItem::class, 'json', $context);
                 }
                 $object->setExposedPorts($values);
                 unset($data['ExposedPorts']);
@@ -503,7 +503,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setCmd(null);
             }
             if (\array_key_exists('Healthcheck', $data) && $data['Healthcheck'] !== null) {
-                $object->setHealthcheck($this->denormalizer->denormalize($data['Healthcheck'], 'Docker\\API\\Model\\HealthConfig', 'json', $context));
+                $object->setHealthcheck($this->denormalizer->denormalize($data['Healthcheck'], \Docker\API\Model\HealthConfig::class, 'json', $context));
                 unset($data['Healthcheck']);
             }
             elseif (\array_key_exists('Healthcheck', $data) && $data['Healthcheck'] === null) {
@@ -526,7 +526,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Volumes', $data) && $data['Volumes'] !== null) {
                 $values_3 = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['Volumes'] as $key_1 => $value_3) {
-                    $values_3[$key_1] = $this->denormalizer->denormalize($value_3, 'Docker\\API\\Model\\ContainerConfigVolumesItem', 'json', $context);
+                    $values_3[$key_1] = $this->denormalizer->denormalize($value_3, \Docker\API\Model\ContainerConfigVolumesItem::class, 'json', $context);
                 }
                 $object->setVolumes($values_3);
                 unset($data['Volumes']);
@@ -742,7 +742,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\ContainerConfig' => false];
+            return [\Docker\API\Model\ContainerConfig::class => false];
         }
     }
 }

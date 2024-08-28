@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\SwarmSpec';
+            return $type === \Docker\API\Model\SwarmSpec::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SwarmSpec';
+            return is_object($data) && get_class($data) === \Docker\API\Model\SwarmSpec::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -59,42 +59,42 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLabels(null);
             }
             if (\array_key_exists('Orchestration', $data) && $data['Orchestration'] !== null) {
-                $object->setOrchestration($this->denormalizer->denormalize($data['Orchestration'], 'Docker\\API\\Model\\SwarmSpecOrchestration', 'json', $context));
+                $object->setOrchestration($this->denormalizer->denormalize($data['Orchestration'], \Docker\API\Model\SwarmSpecOrchestration::class, 'json', $context));
                 unset($data['Orchestration']);
             }
             elseif (\array_key_exists('Orchestration', $data) && $data['Orchestration'] === null) {
                 $object->setOrchestration(null);
             }
             if (\array_key_exists('Raft', $data) && $data['Raft'] !== null) {
-                $object->setRaft($this->denormalizer->denormalize($data['Raft'], 'Docker\\API\\Model\\SwarmSpecRaft', 'json', $context));
+                $object->setRaft($this->denormalizer->denormalize($data['Raft'], \Docker\API\Model\SwarmSpecRaft::class, 'json', $context));
                 unset($data['Raft']);
             }
             elseif (\array_key_exists('Raft', $data) && $data['Raft'] === null) {
                 $object->setRaft(null);
             }
             if (\array_key_exists('Dispatcher', $data) && $data['Dispatcher'] !== null) {
-                $object->setDispatcher($this->denormalizer->denormalize($data['Dispatcher'], 'Docker\\API\\Model\\SwarmSpecDispatcher', 'json', $context));
+                $object->setDispatcher($this->denormalizer->denormalize($data['Dispatcher'], \Docker\API\Model\SwarmSpecDispatcher::class, 'json', $context));
                 unset($data['Dispatcher']);
             }
             elseif (\array_key_exists('Dispatcher', $data) && $data['Dispatcher'] === null) {
                 $object->setDispatcher(null);
             }
             if (\array_key_exists('CAConfig', $data) && $data['CAConfig'] !== null) {
-                $object->setCAConfig($this->denormalizer->denormalize($data['CAConfig'], 'Docker\\API\\Model\\SwarmSpecCAConfig', 'json', $context));
+                $object->setCAConfig($this->denormalizer->denormalize($data['CAConfig'], \Docker\API\Model\SwarmSpecCAConfig::class, 'json', $context));
                 unset($data['CAConfig']);
             }
             elseif (\array_key_exists('CAConfig', $data) && $data['CAConfig'] === null) {
                 $object->setCAConfig(null);
             }
             if (\array_key_exists('EncryptionConfig', $data) && $data['EncryptionConfig'] !== null) {
-                $object->setEncryptionConfig($this->denormalizer->denormalize($data['EncryptionConfig'], 'Docker\\API\\Model\\SwarmSpecEncryptionConfig', 'json', $context));
+                $object->setEncryptionConfig($this->denormalizer->denormalize($data['EncryptionConfig'], \Docker\API\Model\SwarmSpecEncryptionConfig::class, 'json', $context));
                 unset($data['EncryptionConfig']);
             }
             elseif (\array_key_exists('EncryptionConfig', $data) && $data['EncryptionConfig'] === null) {
                 $object->setEncryptionConfig(null);
             }
             if (\array_key_exists('TaskDefaults', $data) && $data['TaskDefaults'] !== null) {
-                $object->setTaskDefaults($this->denormalizer->denormalize($data['TaskDefaults'], 'Docker\\API\\Model\\SwarmSpecTaskDefaults', 'json', $context));
+                $object->setTaskDefaults($this->denormalizer->denormalize($data['TaskDefaults'], \Docker\API\Model\SwarmSpecTaskDefaults::class, 'json', $context));
                 unset($data['TaskDefaults']);
             }
             elseif (\array_key_exists('TaskDefaults', $data) && $data['TaskDefaults'] === null) {
@@ -147,7 +147,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\SwarmSpec' => false];
+            return [\Docker\API\Model\SwarmSpec::class => false];
         }
     }
 } else {
@@ -159,11 +159,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\SwarmSpec';
+            return $type === \Docker\API\Model\SwarmSpec::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\SwarmSpec';
+            return is_object($data) && get_class($data) === \Docker\API\Model\SwarmSpec::class;
         }
         /**
          * @return mixed
@@ -199,42 +199,42 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setLabels(null);
             }
             if (\array_key_exists('Orchestration', $data) && $data['Orchestration'] !== null) {
-                $object->setOrchestration($this->denormalizer->denormalize($data['Orchestration'], 'Docker\\API\\Model\\SwarmSpecOrchestration', 'json', $context));
+                $object->setOrchestration($this->denormalizer->denormalize($data['Orchestration'], \Docker\API\Model\SwarmSpecOrchestration::class, 'json', $context));
                 unset($data['Orchestration']);
             }
             elseif (\array_key_exists('Orchestration', $data) && $data['Orchestration'] === null) {
                 $object->setOrchestration(null);
             }
             if (\array_key_exists('Raft', $data) && $data['Raft'] !== null) {
-                $object->setRaft($this->denormalizer->denormalize($data['Raft'], 'Docker\\API\\Model\\SwarmSpecRaft', 'json', $context));
+                $object->setRaft($this->denormalizer->denormalize($data['Raft'], \Docker\API\Model\SwarmSpecRaft::class, 'json', $context));
                 unset($data['Raft']);
             }
             elseif (\array_key_exists('Raft', $data) && $data['Raft'] === null) {
                 $object->setRaft(null);
             }
             if (\array_key_exists('Dispatcher', $data) && $data['Dispatcher'] !== null) {
-                $object->setDispatcher($this->denormalizer->denormalize($data['Dispatcher'], 'Docker\\API\\Model\\SwarmSpecDispatcher', 'json', $context));
+                $object->setDispatcher($this->denormalizer->denormalize($data['Dispatcher'], \Docker\API\Model\SwarmSpecDispatcher::class, 'json', $context));
                 unset($data['Dispatcher']);
             }
             elseif (\array_key_exists('Dispatcher', $data) && $data['Dispatcher'] === null) {
                 $object->setDispatcher(null);
             }
             if (\array_key_exists('CAConfig', $data) && $data['CAConfig'] !== null) {
-                $object->setCAConfig($this->denormalizer->denormalize($data['CAConfig'], 'Docker\\API\\Model\\SwarmSpecCAConfig', 'json', $context));
+                $object->setCAConfig($this->denormalizer->denormalize($data['CAConfig'], \Docker\API\Model\SwarmSpecCAConfig::class, 'json', $context));
                 unset($data['CAConfig']);
             }
             elseif (\array_key_exists('CAConfig', $data) && $data['CAConfig'] === null) {
                 $object->setCAConfig(null);
             }
             if (\array_key_exists('EncryptionConfig', $data) && $data['EncryptionConfig'] !== null) {
-                $object->setEncryptionConfig($this->denormalizer->denormalize($data['EncryptionConfig'], 'Docker\\API\\Model\\SwarmSpecEncryptionConfig', 'json', $context));
+                $object->setEncryptionConfig($this->denormalizer->denormalize($data['EncryptionConfig'], \Docker\API\Model\SwarmSpecEncryptionConfig::class, 'json', $context));
                 unset($data['EncryptionConfig']);
             }
             elseif (\array_key_exists('EncryptionConfig', $data) && $data['EncryptionConfig'] === null) {
                 $object->setEncryptionConfig(null);
             }
             if (\array_key_exists('TaskDefaults', $data) && $data['TaskDefaults'] !== null) {
-                $object->setTaskDefaults($this->denormalizer->denormalize($data['TaskDefaults'], 'Docker\\API\\Model\\SwarmSpecTaskDefaults', 'json', $context));
+                $object->setTaskDefaults($this->denormalizer->denormalize($data['TaskDefaults'], \Docker\API\Model\SwarmSpecTaskDefaults::class, 'json', $context));
                 unset($data['TaskDefaults']);
             }
             elseif (\array_key_exists('TaskDefaults', $data) && $data['TaskDefaults'] === null) {
@@ -290,7 +290,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\SwarmSpec' => false];
+            return [\Docker\API\Model\SwarmSpec::class => false];
         }
     }
 }

@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\NetworksCreatePostBody';
+            return $type === \Docker\API\Model\NetworksCreatePostBody::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\NetworksCreatePostBody';
+            return is_object($data) && get_class($data) === \Docker\API\Model\NetworksCreatePostBody::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -83,7 +83,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setIngress(null);
             }
             if (\array_key_exists('IPAM', $data) && $data['IPAM'] !== null) {
-                $object->setIPAM($this->denormalizer->denormalize($data['IPAM'], 'Docker\\API\\Model\\IPAM', 'json', $context));
+                $object->setIPAM($this->denormalizer->denormalize($data['IPAM'], \Docker\API\Model\IPAM::class, 'json', $context));
                 unset($data['IPAM']);
             }
             elseif (\array_key_exists('IPAM', $data) && $data['IPAM'] === null) {
@@ -173,7 +173,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\NetworksCreatePostBody' => false];
+            return [\Docker\API\Model\NetworksCreatePostBody::class => false];
         }
     }
 } else {
@@ -185,11 +185,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\NetworksCreatePostBody';
+            return $type === \Docker\API\Model\NetworksCreatePostBody::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\NetworksCreatePostBody';
+            return is_object($data) && get_class($data) === \Docker\API\Model\NetworksCreatePostBody::class;
         }
         /**
          * @return mixed
@@ -249,7 +249,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setIngress(null);
             }
             if (\array_key_exists('IPAM', $data) && $data['IPAM'] !== null) {
-                $object->setIPAM($this->denormalizer->denormalize($data['IPAM'], 'Docker\\API\\Model\\IPAM', 'json', $context));
+                $object->setIPAM($this->denormalizer->denormalize($data['IPAM'], \Docker\API\Model\IPAM::class, 'json', $context));
                 unset($data['IPAM']);
             }
             elseif (\array_key_exists('IPAM', $data) && $data['IPAM'] === null) {
@@ -342,7 +342,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\NetworksCreatePostBody' => false];
+            return [\Docker\API\Model\NetworksCreatePostBody::class => false];
         }
     }
 }

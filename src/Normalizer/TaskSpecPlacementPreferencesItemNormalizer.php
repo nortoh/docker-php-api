@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem';
+            return $type === \Docker\API\Model\TaskSpecPlacementPreferencesItem::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpecPlacementPreferencesItem::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -41,7 +41,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Spread', $data) && $data['Spread'] !== null) {
-                $object->setSpread($this->denormalizer->denormalize($data['Spread'], 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItemSpread', 'json', $context));
+                $object->setSpread($this->denormalizer->denormalize($data['Spread'], \Docker\API\Model\TaskSpecPlacementPreferencesItemSpread::class, 'json', $context));
                 unset($data['Spread']);
             }
             elseif (\array_key_exists('Spread', $data) && $data['Spread'] === null) {
@@ -69,7 +69,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpecPlacementPreferencesItem' => false];
+            return [\Docker\API\Model\TaskSpecPlacementPreferencesItem::class => false];
         }
     }
 } else {
@@ -81,11 +81,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem';
+            return $type === \Docker\API\Model\TaskSpecPlacementPreferencesItem::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem';
+            return is_object($data) && get_class($data) === \Docker\API\Model\TaskSpecPlacementPreferencesItem::class;
         }
         /**
          * @return mixed
@@ -103,7 +103,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 return $object;
             }
             if (\array_key_exists('Spread', $data) && $data['Spread'] !== null) {
-                $object->setSpread($this->denormalizer->denormalize($data['Spread'], 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItemSpread', 'json', $context));
+                $object->setSpread($this->denormalizer->denormalize($data['Spread'], \Docker\API\Model\TaskSpecPlacementPreferencesItemSpread::class, 'json', $context));
                 unset($data['Spread']);
             }
             elseif (\array_key_exists('Spread', $data) && $data['Spread'] === null) {
@@ -134,7 +134,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\TaskSpecPlacementPreferencesItem' => false];
+            return [\Docker\API\Model\TaskSpecPlacementPreferencesItem::class => false];
         }
     }
 }

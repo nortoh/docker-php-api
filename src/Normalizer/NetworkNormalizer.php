@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Network';
+            return $type === \Docker\API\Model\Network::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Network';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Network::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -83,7 +83,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEnableIPv6(null);
             }
             if (\array_key_exists('IPAM', $data) && $data['IPAM'] !== null) {
-                $object->setIPAM($this->denormalizer->denormalize($data['IPAM'], 'Docker\\API\\Model\\IPAM', 'json', $context));
+                $object->setIPAM($this->denormalizer->denormalize($data['IPAM'], \Docker\API\Model\IPAM::class, 'json', $context));
                 unset($data['IPAM']);
             }
             elseif (\array_key_exists('IPAM', $data) && $data['IPAM'] === null) {
@@ -113,7 +113,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Containers', $data) && $data['Containers'] !== null) {
                 $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['Containers'] as $key => $value) {
-                    $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\NetworkContainer', 'json', $context);
+                    $values[$key] = $this->denormalizer->denormalize($value, \Docker\API\Model\NetworkContainer::class, 'json', $context);
                 }
                 $object->setContainers($values);
                 unset($data['Containers']);
@@ -213,7 +213,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Network' => false];
+            return [\Docker\API\Model\Network::class => false];
         }
     }
 } else {
@@ -225,11 +225,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Network';
+            return $type === \Docker\API\Model\Network::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Network';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Network::class;
         }
         /**
          * @return mixed
@@ -289,7 +289,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEnableIPv6(null);
             }
             if (\array_key_exists('IPAM', $data) && $data['IPAM'] !== null) {
-                $object->setIPAM($this->denormalizer->denormalize($data['IPAM'], 'Docker\\API\\Model\\IPAM', 'json', $context));
+                $object->setIPAM($this->denormalizer->denormalize($data['IPAM'], \Docker\API\Model\IPAM::class, 'json', $context));
                 unset($data['IPAM']);
             }
             elseif (\array_key_exists('IPAM', $data) && $data['IPAM'] === null) {
@@ -319,7 +319,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
             if (\array_key_exists('Containers', $data) && $data['Containers'] !== null) {
                 $values = new \ArrayObject([], \ArrayObject::ARRAY_AS_PROPS);
                 foreach ($data['Containers'] as $key => $value) {
-                    $values[$key] = $this->denormalizer->denormalize($value, 'Docker\\API\\Model\\NetworkContainer', 'json', $context);
+                    $values[$key] = $this->denormalizer->denormalize($value, \Docker\API\Model\NetworkContainer::class, 'json', $context);
                 }
                 $object->setContainers($values);
                 unset($data['Containers']);
@@ -422,7 +422,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Network' => false];
+            return [\Docker\API\Model\Network::class => false];
         }
     }
 }

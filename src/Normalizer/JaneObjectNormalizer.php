@@ -18,7 +18,400 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        protected $normalizers = array('Docker\\API\\Model\\Port' => 'Docker\\API\\Normalizer\\PortNormalizer', 'Docker\\API\\Model\\MountPoint' => 'Docker\\API\\Normalizer\\MountPointNormalizer', 'Docker\\API\\Model\\DeviceMapping' => 'Docker\\API\\Normalizer\\DeviceMappingNormalizer', 'Docker\\API\\Model\\ThrottleDevice' => 'Docker\\API\\Normalizer\\ThrottleDeviceNormalizer', 'Docker\\API\\Model\\Mount' => 'Docker\\API\\Normalizer\\MountNormalizer', 'Docker\\API\\Model\\MountBindOptions' => 'Docker\\API\\Normalizer\\MountBindOptionsNormalizer', 'Docker\\API\\Model\\MountVolumeOptions' => 'Docker\\API\\Normalizer\\MountVolumeOptionsNormalizer', 'Docker\\API\\Model\\MountVolumeOptionsDriverConfig' => 'Docker\\API\\Normalizer\\MountVolumeOptionsDriverConfigNormalizer', 'Docker\\API\\Model\\MountTmpfsOptions' => 'Docker\\API\\Normalizer\\MountTmpfsOptionsNormalizer', 'Docker\\API\\Model\\RestartPolicy' => 'Docker\\API\\Normalizer\\RestartPolicyNormalizer', 'Docker\\API\\Model\\Resources' => 'Docker\\API\\Normalizer\\ResourcesNormalizer', 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem' => 'Docker\\API\\Normalizer\\ResourcesBlkioWeightDeviceItemNormalizer', 'Docker\\API\\Model\\ResourcesUlimitsItem' => 'Docker\\API\\Normalizer\\ResourcesUlimitsItemNormalizer', 'Docker\\API\\Model\\ResourceObject' => 'Docker\\API\\Normalizer\\ResourceObjectNormalizer', 'Docker\\API\\Model\\GenericResourcesItem' => 'Docker\\API\\Normalizer\\GenericResourcesItemNormalizer', 'Docker\\API\\Model\\GenericResourcesItemNamedResourceSpec' => 'Docker\\API\\Normalizer\\GenericResourcesItemNamedResourceSpecNormalizer', 'Docker\\API\\Model\\GenericResourcesItemDiscreteResourceSpec' => 'Docker\\API\\Normalizer\\GenericResourcesItemDiscreteResourceSpecNormalizer', 'Docker\\API\\Model\\HealthConfig' => 'Docker\\API\\Normalizer\\HealthConfigNormalizer', 'Docker\\API\\Model\\HostConfig' => 'Docker\\API\\Normalizer\\HostConfigNormalizer', 'Docker\\API\\Model\\HostConfigLogConfig' => 'Docker\\API\\Normalizer\\HostConfigLogConfigNormalizer', 'Docker\\API\\Model\\ContainerConfig' => 'Docker\\API\\Normalizer\\ContainerConfigNormalizer', 'Docker\\API\\Model\\ContainerConfigExposedPortsItem' => 'Docker\\API\\Normalizer\\ContainerConfigExposedPortsItemNormalizer', 'Docker\\API\\Model\\ContainerConfigVolumesItem' => 'Docker\\API\\Normalizer\\ContainerConfigVolumesItemNormalizer', 'Docker\\API\\Model\\NetworkSettings' => 'Docker\\API\\Normalizer\\NetworkSettingsNormalizer', 'Docker\\API\\Model\\Address' => 'Docker\\API\\Normalizer\\AddressNormalizer', 'Docker\\API\\Model\\PortBinding' => 'Docker\\API\\Normalizer\\PortBindingNormalizer', 'Docker\\API\\Model\\GraphDriverData' => 'Docker\\API\\Normalizer\\GraphDriverDataNormalizer', 'Docker\\API\\Model\\Image' => 'Docker\\API\\Normalizer\\ImageNormalizer', 'Docker\\API\\Model\\ImageRootFS' => 'Docker\\API\\Normalizer\\ImageRootFSNormalizer', 'Docker\\API\\Model\\ImageMetadata' => 'Docker\\API\\Normalizer\\ImageMetadataNormalizer', 'Docker\\API\\Model\\ImageSummary' => 'Docker\\API\\Normalizer\\ImageSummaryNormalizer', 'Docker\\API\\Model\\AuthConfig' => 'Docker\\API\\Normalizer\\AuthConfigNormalizer', 'Docker\\API\\Model\\ProcessConfig' => 'Docker\\API\\Normalizer\\ProcessConfigNormalizer', 'Docker\\API\\Model\\Volume' => 'Docker\\API\\Normalizer\\VolumeNormalizer', 'Docker\\API\\Model\\VolumeStatusItem' => 'Docker\\API\\Normalizer\\VolumeStatusItemNormalizer', 'Docker\\API\\Model\\VolumeUsageData' => 'Docker\\API\\Normalizer\\VolumeUsageDataNormalizer', 'Docker\\API\\Model\\Network' => 'Docker\\API\\Normalizer\\NetworkNormalizer', 'Docker\\API\\Model\\IPAM' => 'Docker\\API\\Normalizer\\IPAMNormalizer', 'Docker\\API\\Model\\NetworkContainer' => 'Docker\\API\\Normalizer\\NetworkContainerNormalizer', 'Docker\\API\\Model\\BuildInfo' => 'Docker\\API\\Normalizer\\BuildInfoNormalizer', 'Docker\\API\\Model\\ImageID' => 'Docker\\API\\Normalizer\\ImageIDNormalizer', 'Docker\\API\\Model\\CreateImageInfo' => 'Docker\\API\\Normalizer\\CreateImageInfoNormalizer', 'Docker\\API\\Model\\PushImageInfo' => 'Docker\\API\\Normalizer\\PushImageInfoNormalizer', 'Docker\\API\\Model\\ErrorDetail' => 'Docker\\API\\Normalizer\\ErrorDetailNormalizer', 'Docker\\API\\Model\\ProgressDetail' => 'Docker\\API\\Normalizer\\ProgressDetailNormalizer', 'Docker\\API\\Model\\ErrorResponse' => 'Docker\\API\\Normalizer\\ErrorResponseNormalizer', 'Docker\\API\\Model\\IdResponse' => 'Docker\\API\\Normalizer\\IdResponseNormalizer', 'Docker\\API\\Model\\EndpointSettings' => 'Docker\\API\\Normalizer\\EndpointSettingsNormalizer', 'Docker\\API\\Model\\EndpointIPAMConfig' => 'Docker\\API\\Normalizer\\EndpointIPAMConfigNormalizer', 'Docker\\API\\Model\\PluginMount' => 'Docker\\API\\Normalizer\\PluginMountNormalizer', 'Docker\\API\\Model\\PluginDevice' => 'Docker\\API\\Normalizer\\PluginDeviceNormalizer', 'Docker\\API\\Model\\PluginEnv' => 'Docker\\API\\Normalizer\\PluginEnvNormalizer', 'Docker\\API\\Model\\PluginInterfaceType' => 'Docker\\API\\Normalizer\\PluginInterfaceTypeNormalizer', 'Docker\\API\\Model\\Plugin' => 'Docker\\API\\Normalizer\\PluginNormalizer', 'Docker\\API\\Model\\PluginSettings' => 'Docker\\API\\Normalizer\\PluginSettingsNormalizer', 'Docker\\API\\Model\\PluginConfig' => 'Docker\\API\\Normalizer\\PluginConfigNormalizer', 'Docker\\API\\Model\\PluginConfigInterface' => 'Docker\\API\\Normalizer\\PluginConfigInterfaceNormalizer', 'Docker\\API\\Model\\PluginConfigUser' => 'Docker\\API\\Normalizer\\PluginConfigUserNormalizer', 'Docker\\API\\Model\\PluginConfigNetwork' => 'Docker\\API\\Normalizer\\PluginConfigNetworkNormalizer', 'Docker\\API\\Model\\PluginConfigLinux' => 'Docker\\API\\Normalizer\\PluginConfigLinuxNormalizer', 'Docker\\API\\Model\\PluginConfigArgs' => 'Docker\\API\\Normalizer\\PluginConfigArgsNormalizer', 'Docker\\API\\Model\\PluginConfigRootfs' => 'Docker\\API\\Normalizer\\PluginConfigRootfsNormalizer', 'Docker\\API\\Model\\ObjectVersion' => 'Docker\\API\\Normalizer\\ObjectVersionNormalizer', 'Docker\\API\\Model\\NodeSpec' => 'Docker\\API\\Normalizer\\NodeSpecNormalizer', 'Docker\\API\\Model\\Node' => 'Docker\\API\\Normalizer\\NodeNormalizer', 'Docker\\API\\Model\\NodeDescription' => 'Docker\\API\\Normalizer\\NodeDescriptionNormalizer', 'Docker\\API\\Model\\Platform' => 'Docker\\API\\Normalizer\\PlatformNormalizer', 'Docker\\API\\Model\\EngineDescription' => 'Docker\\API\\Normalizer\\EngineDescriptionNormalizer', 'Docker\\API\\Model\\EngineDescriptionPluginsItem' => 'Docker\\API\\Normalizer\\EngineDescriptionPluginsItemNormalizer', 'Docker\\API\\Model\\TLSInfo' => 'Docker\\API\\Normalizer\\TLSInfoNormalizer', 'Docker\\API\\Model\\NodeStatus' => 'Docker\\API\\Normalizer\\NodeStatusNormalizer', 'Docker\\API\\Model\\ManagerStatus' => 'Docker\\API\\Normalizer\\ManagerStatusNormalizer', 'Docker\\API\\Model\\SwarmSpec' => 'Docker\\API\\Normalizer\\SwarmSpecNormalizer', 'Docker\\API\\Model\\SwarmSpecOrchestration' => 'Docker\\API\\Normalizer\\SwarmSpecOrchestrationNormalizer', 'Docker\\API\\Model\\SwarmSpecRaft' => 'Docker\\API\\Normalizer\\SwarmSpecRaftNormalizer', 'Docker\\API\\Model\\SwarmSpecDispatcher' => 'Docker\\API\\Normalizer\\SwarmSpecDispatcherNormalizer', 'Docker\\API\\Model\\SwarmSpecCAConfig' => 'Docker\\API\\Normalizer\\SwarmSpecCAConfigNormalizer', 'Docker\\API\\Model\\SwarmSpecCAConfigExternalCAsItem' => 'Docker\\API\\Normalizer\\SwarmSpecCAConfigExternalCAsItemNormalizer', 'Docker\\API\\Model\\SwarmSpecEncryptionConfig' => 'Docker\\API\\Normalizer\\SwarmSpecEncryptionConfigNormalizer', 'Docker\\API\\Model\\SwarmSpecTaskDefaults' => 'Docker\\API\\Normalizer\\SwarmSpecTaskDefaultsNormalizer', 'Docker\\API\\Model\\SwarmSpecTaskDefaultsLogDriver' => 'Docker\\API\\Normalizer\\SwarmSpecTaskDefaultsLogDriverNormalizer', 'Docker\\API\\Model\\ClusterInfo' => 'Docker\\API\\Normalizer\\ClusterInfoNormalizer', 'Docker\\API\\Model\\JoinTokens' => 'Docker\\API\\Normalizer\\JoinTokensNormalizer', 'Docker\\API\\Model\\Swarm' => 'Docker\\API\\Normalizer\\SwarmNormalizer', 'Docker\\API\\Model\\TaskSpec' => 'Docker\\API\\Normalizer\\TaskSpecNormalizer', 'Docker\\API\\Model\\TaskSpecPluginSpec' => 'Docker\\API\\Normalizer\\TaskSpecPluginSpecNormalizer', 'Docker\\API\\Model\\TaskSpecPluginSpecPluginPrivilegeItem' => 'Docker\\API\\Normalizer\\TaskSpecPluginSpecPluginPrivilegeItemNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpec' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecPrivilegesNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesCredentialSpec' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecPrivilegesCredentialSpecNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesSELinuxContext' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecPrivilegesSELinuxContextNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecDNSConfig' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecDNSConfigNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItem' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecSecretsItemNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItemFile' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecSecretsItemFileNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItem' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecConfigsItemNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItemFile' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecConfigsItemFileNormalizer', 'Docker\\API\\Model\\TaskSpecResources' => 'Docker\\API\\Normalizer\\TaskSpecResourcesNormalizer', 'Docker\\API\\Model\\TaskSpecRestartPolicy' => 'Docker\\API\\Normalizer\\TaskSpecRestartPolicyNormalizer', 'Docker\\API\\Model\\TaskSpecPlacement' => 'Docker\\API\\Normalizer\\TaskSpecPlacementNormalizer', 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem' => 'Docker\\API\\Normalizer\\TaskSpecPlacementPreferencesItemNormalizer', 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItemSpread' => 'Docker\\API\\Normalizer\\TaskSpecPlacementPreferencesItemSpreadNormalizer', 'Docker\\API\\Model\\TaskSpecNetworksItem' => 'Docker\\API\\Normalizer\\TaskSpecNetworksItemNormalizer', 'Docker\\API\\Model\\TaskSpecLogDriver' => 'Docker\\API\\Normalizer\\TaskSpecLogDriverNormalizer', 'Docker\\API\\Model\\Task' => 'Docker\\API\\Normalizer\\TaskNormalizer', 'Docker\\API\\Model\\TaskStatus' => 'Docker\\API\\Normalizer\\TaskStatusNormalizer', 'Docker\\API\\Model\\TaskStatusContainerStatus' => 'Docker\\API\\Normalizer\\TaskStatusContainerStatusNormalizer', 'Docker\\API\\Model\\ServiceSpec' => 'Docker\\API\\Normalizer\\ServiceSpecNormalizer', 'Docker\\API\\Model\\ServiceSpecMode' => 'Docker\\API\\Normalizer\\ServiceSpecModeNormalizer', 'Docker\\API\\Model\\ServiceSpecModeReplicated' => 'Docker\\API\\Normalizer\\ServiceSpecModeReplicatedNormalizer', 'Docker\\API\\Model\\ServiceSpecModeGlobal' => 'Docker\\API\\Normalizer\\ServiceSpecModeGlobalNormalizer', 'Docker\\API\\Model\\ServiceSpecUpdateConfig' => 'Docker\\API\\Normalizer\\ServiceSpecUpdateConfigNormalizer', 'Docker\\API\\Model\\ServiceSpecRollbackConfig' => 'Docker\\API\\Normalizer\\ServiceSpecRollbackConfigNormalizer', 'Docker\\API\\Model\\ServiceSpecNetworksItem' => 'Docker\\API\\Normalizer\\ServiceSpecNetworksItemNormalizer', 'Docker\\API\\Model\\EndpointPortConfig' => 'Docker\\API\\Normalizer\\EndpointPortConfigNormalizer', 'Docker\\API\\Model\\EndpointSpec' => 'Docker\\API\\Normalizer\\EndpointSpecNormalizer', 'Docker\\API\\Model\\Service' => 'Docker\\API\\Normalizer\\ServiceNormalizer', 'Docker\\API\\Model\\ServiceEndpoint' => 'Docker\\API\\Normalizer\\ServiceEndpointNormalizer', 'Docker\\API\\Model\\ServiceEndpointVirtualIPsItem' => 'Docker\\API\\Normalizer\\ServiceEndpointVirtualIPsItemNormalizer', 'Docker\\API\\Model\\ServiceUpdateStatus' => 'Docker\\API\\Normalizer\\ServiceUpdateStatusNormalizer', 'Docker\\API\\Model\\ImageDeleteResponseItem' => 'Docker\\API\\Normalizer\\ImageDeleteResponseItemNormalizer', 'Docker\\API\\Model\\ServiceUpdateResponse' => 'Docker\\API\\Normalizer\\ServiceUpdateResponseNormalizer', 'Docker\\API\\Model\\ContainerSummaryItem' => 'Docker\\API\\Normalizer\\ContainerSummaryItemNormalizer', 'Docker\\API\\Model\\ContainerSummaryItemHostConfig' => 'Docker\\API\\Normalizer\\ContainerSummaryItemHostConfigNormalizer', 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings' => 'Docker\\API\\Normalizer\\ContainerSummaryItemNetworkSettingsNormalizer', 'Docker\\API\\Model\\Driver' => 'Docker\\API\\Normalizer\\DriverNormalizer', 'Docker\\API\\Model\\SecretSpec' => 'Docker\\API\\Normalizer\\SecretSpecNormalizer', 'Docker\\API\\Model\\Secret' => 'Docker\\API\\Normalizer\\SecretNormalizer', 'Docker\\API\\Model\\ConfigSpec' => 'Docker\\API\\Normalizer\\ConfigSpecNormalizer', 'Docker\\API\\Model\\Config' => 'Docker\\API\\Normalizer\\ConfigNormalizer', 'Docker\\API\\Model\\SystemInfo' => 'Docker\\API\\Normalizer\\SystemInfoNormalizer', 'Docker\\API\\Model\\PluginsInfo' => 'Docker\\API\\Normalizer\\PluginsInfoNormalizer', 'Docker\\API\\Model\\RegistryServiceConfig' => 'Docker\\API\\Normalizer\\RegistryServiceConfigNormalizer', 'Docker\\API\\Model\\IndexInfo' => 'Docker\\API\\Normalizer\\IndexInfoNormalizer', 'Docker\\API\\Model\\Runtime' => 'Docker\\API\\Normalizer\\RuntimeNormalizer', 'Docker\\API\\Model\\Commit' => 'Docker\\API\\Normalizer\\CommitNormalizer', 'Docker\\API\\Model\\SwarmInfo' => 'Docker\\API\\Normalizer\\SwarmInfoNormalizer', 'Docker\\API\\Model\\PeerNode' => 'Docker\\API\\Normalizer\\PeerNodeNormalizer', 'Docker\\API\\Model\\ContainersCreatePostBody' => 'Docker\\API\\Normalizer\\ContainersCreatePostBodyNormalizer', 'Docker\\API\\Model\\ContainersCreatePostBodyNetworkingConfig' => 'Docker\\API\\Normalizer\\ContainersCreatePostBodyNetworkingConfigNormalizer', 'Docker\\API\\Model\\ContainersCreatePostResponse201' => 'Docker\\API\\Normalizer\\ContainersCreatePostResponse201Normalizer', 'Docker\\API\\Model\\ContainersIdJsonGetResponse200' => 'Docker\\API\\Normalizer\\ContainersIdJsonGetResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdJsonGetResponse200State' => 'Docker\\API\\Normalizer\\ContainersIdJsonGetResponse200StateNormalizer', 'Docker\\API\\Model\\ContainersIdJsonGetResponse200Node' => 'Docker\\API\\Normalizer\\ContainersIdJsonGetResponse200NodeNormalizer', 'Docker\\API\\Model\\ContainersIdTopGetJsonResponse200' => 'Docker\\API\\Normalizer\\ContainersIdTopGetJsonResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdTopGetTextplainResponse200' => 'Docker\\API\\Normalizer\\ContainersIdTopGetTextplainResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdChangesGetResponse200Item' => 'Docker\\API\\Normalizer\\ContainersIdChangesGetResponse200ItemNormalizer', 'Docker\\API\\Model\\ContainersIdUpdatePostBody' => 'Docker\\API\\Normalizer\\ContainersIdUpdatePostBodyNormalizer', 'Docker\\API\\Model\\ContainersIdUpdatePostResponse200' => 'Docker\\API\\Normalizer\\ContainersIdUpdatePostResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdWaitPostResponse200' => 'Docker\\API\\Normalizer\\ContainersIdWaitPostResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdWaitPostResponse200Error' => 'Docker\\API\\Normalizer\\ContainersIdWaitPostResponse200ErrorNormalizer', 'Docker\\API\\Model\\ContainersIdArchiveGetResponse400' => 'Docker\\API\\Normalizer\\ContainersIdArchiveGetResponse400Normalizer', 'Docker\\API\\Model\\ContainersIdArchiveHeadJsonResponse400' => 'Docker\\API\\Normalizer\\ContainersIdArchiveHeadJsonResponse400Normalizer', 'Docker\\API\\Model\\ContainersIdArchiveHeadTextplainResponse400' => 'Docker\\API\\Normalizer\\ContainersIdArchiveHeadTextplainResponse400Normalizer', 'Docker\\API\\Model\\ContainersPrunePostResponse200' => 'Docker\\API\\Normalizer\\ContainersPrunePostResponse200Normalizer', 'Docker\\API\\Model\\BuildPrunePostResponse200' => 'Docker\\API\\Normalizer\\BuildPrunePostResponse200Normalizer', 'Docker\\API\\Model\\ImagesNameHistoryGetResponse200Item' => 'Docker\\API\\Normalizer\\ImagesNameHistoryGetResponse200ItemNormalizer', 'Docker\\API\\Model\\ImagesSearchGetResponse200Item' => 'Docker\\API\\Normalizer\\ImagesSearchGetResponse200ItemNormalizer', 'Docker\\API\\Model\\ImagesPrunePostResponse200' => 'Docker\\API\\Normalizer\\ImagesPrunePostResponse200Normalizer', 'Docker\\API\\Model\\AuthPostResponse200' => 'Docker\\API\\Normalizer\\AuthPostResponse200Normalizer', 'Docker\\API\\Model\\VersionGetResponse200' => 'Docker\\API\\Normalizer\\VersionGetResponse200Normalizer', 'Docker\\API\\Model\\VersionGetResponse200Platform' => 'Docker\\API\\Normalizer\\VersionGetResponse200PlatformNormalizer', 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem' => 'Docker\\API\\Normalizer\\VersionGetResponse200ComponentsItemNormalizer', 'Docker\\API\\Model\\VersionGetResponse200ComponentsItemDetails' => 'Docker\\API\\Normalizer\\VersionGetResponse200ComponentsItemDetailsNormalizer', 'Docker\\API\\Model\\EventsGetResponse200' => 'Docker\\API\\Normalizer\\EventsGetResponse200Normalizer', 'Docker\\API\\Model\\EventsGetResponse200Actor' => 'Docker\\API\\Normalizer\\EventsGetResponse200ActorNormalizer', 'Docker\\API\\Model\\SystemDfGetJsonResponse200' => 'Docker\\API\\Normalizer\\SystemDfGetJsonResponse200Normalizer', 'Docker\\API\\Model\\SystemDfGetTextplainResponse200' => 'Docker\\API\\Normalizer\\SystemDfGetTextplainResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdExecPostBody' => 'Docker\\API\\Normalizer\\ContainersIdExecPostBodyNormalizer', 'Docker\\API\\Model\\ExecIdStartPostBody' => 'Docker\\API\\Normalizer\\ExecIdStartPostBodyNormalizer', 'Docker\\API\\Model\\ExecIdJsonGetResponse200' => 'Docker\\API\\Normalizer\\ExecIdJsonGetResponse200Normalizer', 'Docker\\API\\Model\\VolumesGetResponse200' => 'Docker\\API\\Normalizer\\VolumesGetResponse200Normalizer', 'Docker\\API\\Model\\VolumesCreatePostBody' => 'Docker\\API\\Normalizer\\VolumesCreatePostBodyNormalizer', 'Docker\\API\\Model\\VolumesPrunePostResponse200' => 'Docker\\API\\Normalizer\\VolumesPrunePostResponse200Normalizer', 'Docker\\API\\Model\\NetworksCreatePostBody' => 'Docker\\API\\Normalizer\\NetworksCreatePostBodyNormalizer', 'Docker\\API\\Model\\NetworksCreatePostResponse201' => 'Docker\\API\\Normalizer\\NetworksCreatePostResponse201Normalizer', 'Docker\\API\\Model\\NetworksIdConnectPostBody' => 'Docker\\API\\Normalizer\\NetworksIdConnectPostBodyNormalizer', 'Docker\\API\\Model\\NetworksIdDisconnectPostBody' => 'Docker\\API\\Normalizer\\NetworksIdDisconnectPostBodyNormalizer', 'Docker\\API\\Model\\NetworksPrunePostResponse200' => 'Docker\\API\\Normalizer\\NetworksPrunePostResponse200Normalizer', 'Docker\\API\\Model\\PluginsPrivilegesGetJsonResponse200Item' => 'Docker\\API\\Normalizer\\PluginsPrivilegesGetJsonResponse200ItemNormalizer', 'Docker\\API\\Model\\PluginsPrivilegesGetTextplainResponse200Item' => 'Docker\\API\\Normalizer\\PluginsPrivilegesGetTextplainResponse200ItemNormalizer', 'Docker\\API\\Model\\PluginsPullPostBodyItem' => 'Docker\\API\\Normalizer\\PluginsPullPostBodyItemNormalizer', 'Docker\\API\\Model\\PluginsNameUpgradePostBodyItem' => 'Docker\\API\\Normalizer\\PluginsNameUpgradePostBodyItemNormalizer', 'Docker\\API\\Model\\SwarmInitPostBody' => 'Docker\\API\\Normalizer\\SwarmInitPostBodyNormalizer', 'Docker\\API\\Model\\SwarmJoinPostBody' => 'Docker\\API\\Normalizer\\SwarmJoinPostBodyNormalizer', 'Docker\\API\\Model\\SwarmUnlockkeyGetJsonResponse200' => 'Docker\\API\\Normalizer\\SwarmUnlockkeyGetJsonResponse200Normalizer', 'Docker\\API\\Model\\SwarmUnlockkeyGetTextplainResponse200' => 'Docker\\API\\Normalizer\\SwarmUnlockkeyGetTextplainResponse200Normalizer', 'Docker\\API\\Model\\SwarmUnlockPostBody' => 'Docker\\API\\Normalizer\\SwarmUnlockPostBodyNormalizer', 'Docker\\API\\Model\\ServicesCreatePostBody' => 'Docker\\API\\Normalizer\\ServicesCreatePostBodyNormalizer', 'Docker\\API\\Model\\ServicesCreatePostResponse201' => 'Docker\\API\\Normalizer\\ServicesCreatePostResponse201Normalizer', 'Docker\\API\\Model\\ServicesIdUpdatePostBody' => 'Docker\\API\\Normalizer\\ServicesIdUpdatePostBodyNormalizer', 'Docker\\API\\Model\\SecretsCreatePostBody' => 'Docker\\API\\Normalizer\\SecretsCreatePostBodyNormalizer', 'Docker\\API\\Model\\ConfigsCreatePostBody' => 'Docker\\API\\Normalizer\\ConfigsCreatePostBodyNormalizer', 'Docker\\API\\Model\\DistributionNameJsonGetResponse200' => 'Docker\\API\\Normalizer\\DistributionNameJsonGetResponse200Normalizer', 'Docker\\API\\Model\\DistributionNameJsonGetResponse200Descriptor' => 'Docker\\API\\Normalizer\\DistributionNameJsonGetResponse200DescriptorNormalizer', 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem' => 'Docker\\API\\Normalizer\\DistributionNameJsonGetResponse200PlatformsItemNormalizer', '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => '\\Docker\\API\\Runtime\\Normalizer\\ReferenceNormalizer'), $normalizersCache = [];
+        protected $normalizers = [
+            
+            \Docker\API\Model\Port::class => \Docker\API\Normalizer\PortNormalizer::class,
+            
+            \Docker\API\Model\MountPoint::class => \Docker\API\Normalizer\MountPointNormalizer::class,
+            
+            \Docker\API\Model\DeviceMapping::class => \Docker\API\Normalizer\DeviceMappingNormalizer::class,
+            
+            \Docker\API\Model\ThrottleDevice::class => \Docker\API\Normalizer\ThrottleDeviceNormalizer::class,
+            
+            \Docker\API\Model\Mount::class => \Docker\API\Normalizer\MountNormalizer::class,
+            
+            \Docker\API\Model\MountBindOptions::class => \Docker\API\Normalizer\MountBindOptionsNormalizer::class,
+            
+            \Docker\API\Model\MountVolumeOptions::class => \Docker\API\Normalizer\MountVolumeOptionsNormalizer::class,
+            
+            \Docker\API\Model\MountVolumeOptionsDriverConfig::class => \Docker\API\Normalizer\MountVolumeOptionsDriverConfigNormalizer::class,
+            
+            \Docker\API\Model\MountTmpfsOptions::class => \Docker\API\Normalizer\MountTmpfsOptionsNormalizer::class,
+            
+            \Docker\API\Model\RestartPolicy::class => \Docker\API\Normalizer\RestartPolicyNormalizer::class,
+            
+            \Docker\API\Model\Resources::class => \Docker\API\Normalizer\ResourcesNormalizer::class,
+            
+            \Docker\API\Model\ResourcesBlkioWeightDeviceItem::class => \Docker\API\Normalizer\ResourcesBlkioWeightDeviceItemNormalizer::class,
+            
+            \Docker\API\Model\ResourcesUlimitsItem::class => \Docker\API\Normalizer\ResourcesUlimitsItemNormalizer::class,
+            
+            \Docker\API\Model\ResourceObject::class => \Docker\API\Normalizer\ResourceObjectNormalizer::class,
+            
+            \Docker\API\Model\GenericResourcesItem::class => \Docker\API\Normalizer\GenericResourcesItemNormalizer::class,
+            
+            \Docker\API\Model\GenericResourcesItemNamedResourceSpec::class => \Docker\API\Normalizer\GenericResourcesItemNamedResourceSpecNormalizer::class,
+            
+            \Docker\API\Model\GenericResourcesItemDiscreteResourceSpec::class => \Docker\API\Normalizer\GenericResourcesItemDiscreteResourceSpecNormalizer::class,
+            
+            \Docker\API\Model\HealthConfig::class => \Docker\API\Normalizer\HealthConfigNormalizer::class,
+            
+            \Docker\API\Model\HostConfig::class => \Docker\API\Normalizer\HostConfigNormalizer::class,
+            
+            \Docker\API\Model\HostConfigLogConfig::class => \Docker\API\Normalizer\HostConfigLogConfigNormalizer::class,
+            
+            \Docker\API\Model\ContainerConfig::class => \Docker\API\Normalizer\ContainerConfigNormalizer::class,
+            
+            \Docker\API\Model\ContainerConfigExposedPortsItem::class => \Docker\API\Normalizer\ContainerConfigExposedPortsItemNormalizer::class,
+            
+            \Docker\API\Model\ContainerConfigVolumesItem::class => \Docker\API\Normalizer\ContainerConfigVolumesItemNormalizer::class,
+            
+            \Docker\API\Model\NetworkSettings::class => \Docker\API\Normalizer\NetworkSettingsNormalizer::class,
+            
+            \Docker\API\Model\Address::class => \Docker\API\Normalizer\AddressNormalizer::class,
+            
+            \Docker\API\Model\PortBinding::class => \Docker\API\Normalizer\PortBindingNormalizer::class,
+            
+            \Docker\API\Model\GraphDriverData::class => \Docker\API\Normalizer\GraphDriverDataNormalizer::class,
+            
+            \Docker\API\Model\Image::class => \Docker\API\Normalizer\ImageNormalizer::class,
+            
+            \Docker\API\Model\ImageRootFS::class => \Docker\API\Normalizer\ImageRootFSNormalizer::class,
+            
+            \Docker\API\Model\ImageMetadata::class => \Docker\API\Normalizer\ImageMetadataNormalizer::class,
+            
+            \Docker\API\Model\ImageSummary::class => \Docker\API\Normalizer\ImageSummaryNormalizer::class,
+            
+            \Docker\API\Model\AuthConfig::class => \Docker\API\Normalizer\AuthConfigNormalizer::class,
+            
+            \Docker\API\Model\ProcessConfig::class => \Docker\API\Normalizer\ProcessConfigNormalizer::class,
+            
+            \Docker\API\Model\Volume::class => \Docker\API\Normalizer\VolumeNormalizer::class,
+            
+            \Docker\API\Model\VolumeStatusItem::class => \Docker\API\Normalizer\VolumeStatusItemNormalizer::class,
+            
+            \Docker\API\Model\VolumeUsageData::class => \Docker\API\Normalizer\VolumeUsageDataNormalizer::class,
+            
+            \Docker\API\Model\Network::class => \Docker\API\Normalizer\NetworkNormalizer::class,
+            
+            \Docker\API\Model\IPAM::class => \Docker\API\Normalizer\IPAMNormalizer::class,
+            
+            \Docker\API\Model\NetworkContainer::class => \Docker\API\Normalizer\NetworkContainerNormalizer::class,
+            
+            \Docker\API\Model\BuildInfo::class => \Docker\API\Normalizer\BuildInfoNormalizer::class,
+            
+            \Docker\API\Model\ImageID::class => \Docker\API\Normalizer\ImageIDNormalizer::class,
+            
+            \Docker\API\Model\CreateImageInfo::class => \Docker\API\Normalizer\CreateImageInfoNormalizer::class,
+            
+            \Docker\API\Model\PushImageInfo::class => \Docker\API\Normalizer\PushImageInfoNormalizer::class,
+            
+            \Docker\API\Model\ErrorDetail::class => \Docker\API\Normalizer\ErrorDetailNormalizer::class,
+            
+            \Docker\API\Model\ProgressDetail::class => \Docker\API\Normalizer\ProgressDetailNormalizer::class,
+            
+            \Docker\API\Model\ErrorResponse::class => \Docker\API\Normalizer\ErrorResponseNormalizer::class,
+            
+            \Docker\API\Model\IdResponse::class => \Docker\API\Normalizer\IdResponseNormalizer::class,
+            
+            \Docker\API\Model\EndpointSettings::class => \Docker\API\Normalizer\EndpointSettingsNormalizer::class,
+            
+            \Docker\API\Model\EndpointIPAMConfig::class => \Docker\API\Normalizer\EndpointIPAMConfigNormalizer::class,
+            
+            \Docker\API\Model\PluginMount::class => \Docker\API\Normalizer\PluginMountNormalizer::class,
+            
+            \Docker\API\Model\PluginDevice::class => \Docker\API\Normalizer\PluginDeviceNormalizer::class,
+            
+            \Docker\API\Model\PluginEnv::class => \Docker\API\Normalizer\PluginEnvNormalizer::class,
+            
+            \Docker\API\Model\PluginInterfaceType::class => \Docker\API\Normalizer\PluginInterfaceTypeNormalizer::class,
+            
+            \Docker\API\Model\Plugin::class => \Docker\API\Normalizer\PluginNormalizer::class,
+            
+            \Docker\API\Model\PluginSettings::class => \Docker\API\Normalizer\PluginSettingsNormalizer::class,
+            
+            \Docker\API\Model\PluginConfig::class => \Docker\API\Normalizer\PluginConfigNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigInterface::class => \Docker\API\Normalizer\PluginConfigInterfaceNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigUser::class => \Docker\API\Normalizer\PluginConfigUserNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigNetwork::class => \Docker\API\Normalizer\PluginConfigNetworkNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigLinux::class => \Docker\API\Normalizer\PluginConfigLinuxNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigArgs::class => \Docker\API\Normalizer\PluginConfigArgsNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigRootfs::class => \Docker\API\Normalizer\PluginConfigRootfsNormalizer::class,
+            
+            \Docker\API\Model\ObjectVersion::class => \Docker\API\Normalizer\ObjectVersionNormalizer::class,
+            
+            \Docker\API\Model\NodeSpec::class => \Docker\API\Normalizer\NodeSpecNormalizer::class,
+            
+            \Docker\API\Model\Node::class => \Docker\API\Normalizer\NodeNormalizer::class,
+            
+            \Docker\API\Model\NodeDescription::class => \Docker\API\Normalizer\NodeDescriptionNormalizer::class,
+            
+            \Docker\API\Model\Platform::class => \Docker\API\Normalizer\PlatformNormalizer::class,
+            
+            \Docker\API\Model\EngineDescription::class => \Docker\API\Normalizer\EngineDescriptionNormalizer::class,
+            
+            \Docker\API\Model\EngineDescriptionPluginsItem::class => \Docker\API\Normalizer\EngineDescriptionPluginsItemNormalizer::class,
+            
+            \Docker\API\Model\TLSInfo::class => \Docker\API\Normalizer\TLSInfoNormalizer::class,
+            
+            \Docker\API\Model\NodeStatus::class => \Docker\API\Normalizer\NodeStatusNormalizer::class,
+            
+            \Docker\API\Model\ManagerStatus::class => \Docker\API\Normalizer\ManagerStatusNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpec::class => \Docker\API\Normalizer\SwarmSpecNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecOrchestration::class => \Docker\API\Normalizer\SwarmSpecOrchestrationNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecRaft::class => \Docker\API\Normalizer\SwarmSpecRaftNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecDispatcher::class => \Docker\API\Normalizer\SwarmSpecDispatcherNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecCAConfig::class => \Docker\API\Normalizer\SwarmSpecCAConfigNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecCAConfigExternalCAsItem::class => \Docker\API\Normalizer\SwarmSpecCAConfigExternalCAsItemNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecEncryptionConfig::class => \Docker\API\Normalizer\SwarmSpecEncryptionConfigNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecTaskDefaults::class => \Docker\API\Normalizer\SwarmSpecTaskDefaultsNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecTaskDefaultsLogDriver::class => \Docker\API\Normalizer\SwarmSpecTaskDefaultsLogDriverNormalizer::class,
+            
+            \Docker\API\Model\ClusterInfo::class => \Docker\API\Normalizer\ClusterInfoNormalizer::class,
+            
+            \Docker\API\Model\JoinTokens::class => \Docker\API\Normalizer\JoinTokensNormalizer::class,
+            
+            \Docker\API\Model\Swarm::class => \Docker\API\Normalizer\SwarmNormalizer::class,
+            
+            \Docker\API\Model\TaskSpec::class => \Docker\API\Normalizer\TaskSpecNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPluginSpec::class => \Docker\API\Normalizer\TaskSpecPluginSpecNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPluginSpecPluginPrivilegeItem::class => \Docker\API\Normalizer\TaskSpecPluginSpecPluginPrivilegeItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpec::class => \Docker\API\Normalizer\TaskSpecContainerSpecNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecPrivileges::class => \Docker\API\Normalizer\TaskSpecContainerSpecPrivilegesNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecPrivilegesCredentialSpec::class => \Docker\API\Normalizer\TaskSpecContainerSpecPrivilegesCredentialSpecNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecPrivilegesSELinuxContext::class => \Docker\API\Normalizer\TaskSpecContainerSpecPrivilegesSELinuxContextNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecDNSConfig::class => \Docker\API\Normalizer\TaskSpecContainerSpecDNSConfigNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecSecretsItem::class => \Docker\API\Normalizer\TaskSpecContainerSpecSecretsItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecSecretsItemFile::class => \Docker\API\Normalizer\TaskSpecContainerSpecSecretsItemFileNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecConfigsItem::class => \Docker\API\Normalizer\TaskSpecContainerSpecConfigsItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecConfigsItemFile::class => \Docker\API\Normalizer\TaskSpecContainerSpecConfigsItemFileNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecResources::class => \Docker\API\Normalizer\TaskSpecResourcesNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecRestartPolicy::class => \Docker\API\Normalizer\TaskSpecRestartPolicyNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPlacement::class => \Docker\API\Normalizer\TaskSpecPlacementNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPlacementPreferencesItem::class => \Docker\API\Normalizer\TaskSpecPlacementPreferencesItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPlacementPreferencesItemSpread::class => \Docker\API\Normalizer\TaskSpecPlacementPreferencesItemSpreadNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecNetworksItem::class => \Docker\API\Normalizer\TaskSpecNetworksItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecLogDriver::class => \Docker\API\Normalizer\TaskSpecLogDriverNormalizer::class,
+            
+            \Docker\API\Model\Task::class => \Docker\API\Normalizer\TaskNormalizer::class,
+            
+            \Docker\API\Model\TaskStatus::class => \Docker\API\Normalizer\TaskStatusNormalizer::class,
+            
+            \Docker\API\Model\TaskStatusContainerStatus::class => \Docker\API\Normalizer\TaskStatusContainerStatusNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpec::class => \Docker\API\Normalizer\ServiceSpecNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecMode::class => \Docker\API\Normalizer\ServiceSpecModeNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecModeReplicated::class => \Docker\API\Normalizer\ServiceSpecModeReplicatedNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecModeGlobal::class => \Docker\API\Normalizer\ServiceSpecModeGlobalNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecUpdateConfig::class => \Docker\API\Normalizer\ServiceSpecUpdateConfigNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecRollbackConfig::class => \Docker\API\Normalizer\ServiceSpecRollbackConfigNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecNetworksItem::class => \Docker\API\Normalizer\ServiceSpecNetworksItemNormalizer::class,
+            
+            \Docker\API\Model\EndpointPortConfig::class => \Docker\API\Normalizer\EndpointPortConfigNormalizer::class,
+            
+            \Docker\API\Model\EndpointSpec::class => \Docker\API\Normalizer\EndpointSpecNormalizer::class,
+            
+            \Docker\API\Model\Service::class => \Docker\API\Normalizer\ServiceNormalizer::class,
+            
+            \Docker\API\Model\ServiceEndpoint::class => \Docker\API\Normalizer\ServiceEndpointNormalizer::class,
+            
+            \Docker\API\Model\ServiceEndpointVirtualIPsItem::class => \Docker\API\Normalizer\ServiceEndpointVirtualIPsItemNormalizer::class,
+            
+            \Docker\API\Model\ServiceUpdateStatus::class => \Docker\API\Normalizer\ServiceUpdateStatusNormalizer::class,
+            
+            \Docker\API\Model\ImageDeleteResponseItem::class => \Docker\API\Normalizer\ImageDeleteResponseItemNormalizer::class,
+            
+            \Docker\API\Model\ServiceUpdateResponse::class => \Docker\API\Normalizer\ServiceUpdateResponseNormalizer::class,
+            
+            \Docker\API\Model\ContainerSummaryItem::class => \Docker\API\Normalizer\ContainerSummaryItemNormalizer::class,
+            
+            \Docker\API\Model\ContainerSummaryItemHostConfig::class => \Docker\API\Normalizer\ContainerSummaryItemHostConfigNormalizer::class,
+            
+            \Docker\API\Model\ContainerSummaryItemNetworkSettings::class => \Docker\API\Normalizer\ContainerSummaryItemNetworkSettingsNormalizer::class,
+            
+            \Docker\API\Model\Driver::class => \Docker\API\Normalizer\DriverNormalizer::class,
+            
+            \Docker\API\Model\SecretSpec::class => \Docker\API\Normalizer\SecretSpecNormalizer::class,
+            
+            \Docker\API\Model\Secret::class => \Docker\API\Normalizer\SecretNormalizer::class,
+            
+            \Docker\API\Model\ConfigSpec::class => \Docker\API\Normalizer\ConfigSpecNormalizer::class,
+            
+            \Docker\API\Model\Config::class => \Docker\API\Normalizer\ConfigNormalizer::class,
+            
+            \Docker\API\Model\SystemInfo::class => \Docker\API\Normalizer\SystemInfoNormalizer::class,
+            
+            \Docker\API\Model\PluginsInfo::class => \Docker\API\Normalizer\PluginsInfoNormalizer::class,
+            
+            \Docker\API\Model\RegistryServiceConfig::class => \Docker\API\Normalizer\RegistryServiceConfigNormalizer::class,
+            
+            \Docker\API\Model\IndexInfo::class => \Docker\API\Normalizer\IndexInfoNormalizer::class,
+            
+            \Docker\API\Model\Runtime::class => \Docker\API\Normalizer\RuntimeNormalizer::class,
+            
+            \Docker\API\Model\Commit::class => \Docker\API\Normalizer\CommitNormalizer::class,
+            
+            \Docker\API\Model\SwarmInfo::class => \Docker\API\Normalizer\SwarmInfoNormalizer::class,
+            
+            \Docker\API\Model\PeerNode::class => \Docker\API\Normalizer\PeerNodeNormalizer::class,
+            
+            \Docker\API\Model\ContainersCreatePostBody::class => \Docker\API\Normalizer\ContainersCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\ContainersCreatePostBodyNetworkingConfig::class => \Docker\API\Normalizer\ContainersCreatePostBodyNetworkingConfigNormalizer::class,
+            
+            \Docker\API\Model\ContainersCreatePostResponse201::class => \Docker\API\Normalizer\ContainersCreatePostResponse201Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdJsonGetResponse200::class => \Docker\API\Normalizer\ContainersIdJsonGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdJsonGetResponse200State::class => \Docker\API\Normalizer\ContainersIdJsonGetResponse200StateNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdJsonGetResponse200Node::class => \Docker\API\Normalizer\ContainersIdJsonGetResponse200NodeNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdTopGetJsonResponse200::class => \Docker\API\Normalizer\ContainersIdTopGetJsonResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdTopGetTextplainResponse200::class => \Docker\API\Normalizer\ContainersIdTopGetTextplainResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdChangesGetResponse200Item::class => \Docker\API\Normalizer\ContainersIdChangesGetResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdUpdatePostBody::class => \Docker\API\Normalizer\ContainersIdUpdatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdUpdatePostResponse200::class => \Docker\API\Normalizer\ContainersIdUpdatePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdWaitPostResponse200::class => \Docker\API\Normalizer\ContainersIdWaitPostResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdWaitPostResponse200Error::class => \Docker\API\Normalizer\ContainersIdWaitPostResponse200ErrorNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdArchiveGetResponse400::class => \Docker\API\Normalizer\ContainersIdArchiveGetResponse400Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdArchiveHeadJsonResponse400::class => \Docker\API\Normalizer\ContainersIdArchiveHeadJsonResponse400Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdArchiveHeadTextplainResponse400::class => \Docker\API\Normalizer\ContainersIdArchiveHeadTextplainResponse400Normalizer::class,
+            
+            \Docker\API\Model\ContainersPrunePostResponse200::class => \Docker\API\Normalizer\ContainersPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\BuildPrunePostResponse200::class => \Docker\API\Normalizer\BuildPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\ImagesNameHistoryGetResponse200Item::class => \Docker\API\Normalizer\ImagesNameHistoryGetResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\ImagesSearchGetResponse200Item::class => \Docker\API\Normalizer\ImagesSearchGetResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\ImagesPrunePostResponse200::class => \Docker\API\Normalizer\ImagesPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\AuthPostResponse200::class => \Docker\API\Normalizer\AuthPostResponse200Normalizer::class,
+            
+            \Docker\API\Model\VersionGetResponse200::class => \Docker\API\Normalizer\VersionGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\VersionGetResponse200Platform::class => \Docker\API\Normalizer\VersionGetResponse200PlatformNormalizer::class,
+            
+            \Docker\API\Model\VersionGetResponse200ComponentsItem::class => \Docker\API\Normalizer\VersionGetResponse200ComponentsItemNormalizer::class,
+            
+            \Docker\API\Model\VersionGetResponse200ComponentsItemDetails::class => \Docker\API\Normalizer\VersionGetResponse200ComponentsItemDetailsNormalizer::class,
+            
+            \Docker\API\Model\EventsGetResponse200::class => \Docker\API\Normalizer\EventsGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\EventsGetResponse200Actor::class => \Docker\API\Normalizer\EventsGetResponse200ActorNormalizer::class,
+            
+            \Docker\API\Model\SystemDfGetJsonResponse200::class => \Docker\API\Normalizer\SystemDfGetJsonResponse200Normalizer::class,
+            
+            \Docker\API\Model\SystemDfGetTextplainResponse200::class => \Docker\API\Normalizer\SystemDfGetTextplainResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdExecPostBody::class => \Docker\API\Normalizer\ContainersIdExecPostBodyNormalizer::class,
+            
+            \Docker\API\Model\ExecIdStartPostBody::class => \Docker\API\Normalizer\ExecIdStartPostBodyNormalizer::class,
+            
+            \Docker\API\Model\ExecIdJsonGetResponse200::class => \Docker\API\Normalizer\ExecIdJsonGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\VolumesGetResponse200::class => \Docker\API\Normalizer\VolumesGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\VolumesCreatePostBody::class => \Docker\API\Normalizer\VolumesCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\VolumesPrunePostResponse200::class => \Docker\API\Normalizer\VolumesPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\NetworksCreatePostBody::class => \Docker\API\Normalizer\NetworksCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\NetworksCreatePostResponse201::class => \Docker\API\Normalizer\NetworksCreatePostResponse201Normalizer::class,
+            
+            \Docker\API\Model\NetworksIdConnectPostBody::class => \Docker\API\Normalizer\NetworksIdConnectPostBodyNormalizer::class,
+            
+            \Docker\API\Model\NetworksIdDisconnectPostBody::class => \Docker\API\Normalizer\NetworksIdDisconnectPostBodyNormalizer::class,
+            
+            \Docker\API\Model\NetworksPrunePostResponse200::class => \Docker\API\Normalizer\NetworksPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\PluginsPrivilegesGetJsonResponse200Item::class => \Docker\API\Normalizer\PluginsPrivilegesGetJsonResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\PluginsPrivilegesGetTextplainResponse200Item::class => \Docker\API\Normalizer\PluginsPrivilegesGetTextplainResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\PluginsPullPostBodyItem::class => \Docker\API\Normalizer\PluginsPullPostBodyItemNormalizer::class,
+            
+            \Docker\API\Model\PluginsNameUpgradePostBodyItem::class => \Docker\API\Normalizer\PluginsNameUpgradePostBodyItemNormalizer::class,
+            
+            \Docker\API\Model\SwarmInitPostBody::class => \Docker\API\Normalizer\SwarmInitPostBodyNormalizer::class,
+            
+            \Docker\API\Model\SwarmJoinPostBody::class => \Docker\API\Normalizer\SwarmJoinPostBodyNormalizer::class,
+            
+            \Docker\API\Model\SwarmUnlockkeyGetJsonResponse200::class => \Docker\API\Normalizer\SwarmUnlockkeyGetJsonResponse200Normalizer::class,
+            
+            \Docker\API\Model\SwarmUnlockkeyGetTextplainResponse200::class => \Docker\API\Normalizer\SwarmUnlockkeyGetTextplainResponse200Normalizer::class,
+            
+            \Docker\API\Model\SwarmUnlockPostBody::class => \Docker\API\Normalizer\SwarmUnlockPostBodyNormalizer::class,
+            
+            \Docker\API\Model\ServicesCreatePostBody::class => \Docker\API\Normalizer\ServicesCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\ServicesCreatePostResponse201::class => \Docker\API\Normalizer\ServicesCreatePostResponse201Normalizer::class,
+            
+            \Docker\API\Model\ServicesIdUpdatePostBody::class => \Docker\API\Normalizer\ServicesIdUpdatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\SecretsCreatePostBody::class => \Docker\API\Normalizer\SecretsCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\ConfigsCreatePostBody::class => \Docker\API\Normalizer\ConfigsCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\DistributionNameJsonGetResponse200::class => \Docker\API\Normalizer\DistributionNameJsonGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\DistributionNameJsonGetResponse200Descriptor::class => \Docker\API\Normalizer\DistributionNameJsonGetResponse200DescriptorNormalizer::class,
+            
+            \Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem::class => \Docker\API\Normalizer\DistributionNameJsonGetResponse200PlatformsItemNormalizer::class,
+            
+            \Jane\Component\JsonSchemaRuntime\Reference::class => \Docker\API\Runtime\Normalizer\ReferenceNormalizer::class,
+        ], $normalizersCache = [];
         public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
         {
             return array_key_exists($type, $this->normalizers);
@@ -53,7 +446,205 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Port' => false, 'Docker\\API\\Model\\MountPoint' => false, 'Docker\\API\\Model\\DeviceMapping' => false, 'Docker\\API\\Model\\ThrottleDevice' => false, 'Docker\\API\\Model\\Mount' => false, 'Docker\\API\\Model\\MountBindOptions' => false, 'Docker\\API\\Model\\MountVolumeOptions' => false, 'Docker\\API\\Model\\MountVolumeOptionsDriverConfig' => false, 'Docker\\API\\Model\\MountTmpfsOptions' => false, 'Docker\\API\\Model\\RestartPolicy' => false, 'Docker\\API\\Model\\Resources' => false, 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem' => false, 'Docker\\API\\Model\\ResourcesUlimitsItem' => false, 'Docker\\API\\Model\\ResourceObject' => false, 'Docker\\API\\Model\\GenericResourcesItem' => false, 'Docker\\API\\Model\\GenericResourcesItemNamedResourceSpec' => false, 'Docker\\API\\Model\\GenericResourcesItemDiscreteResourceSpec' => false, 'Docker\\API\\Model\\HealthConfig' => false, 'Docker\\API\\Model\\HostConfig' => false, 'Docker\\API\\Model\\HostConfigLogConfig' => false, 'Docker\\API\\Model\\ContainerConfig' => false, 'Docker\\API\\Model\\ContainerConfigExposedPortsItem' => false, 'Docker\\API\\Model\\ContainerConfigVolumesItem' => false, 'Docker\\API\\Model\\NetworkSettings' => false, 'Docker\\API\\Model\\Address' => false, 'Docker\\API\\Model\\PortBinding' => false, 'Docker\\API\\Model\\GraphDriverData' => false, 'Docker\\API\\Model\\Image' => false, 'Docker\\API\\Model\\ImageRootFS' => false, 'Docker\\API\\Model\\ImageMetadata' => false, 'Docker\\API\\Model\\ImageSummary' => false, 'Docker\\API\\Model\\AuthConfig' => false, 'Docker\\API\\Model\\ProcessConfig' => false, 'Docker\\API\\Model\\Volume' => false, 'Docker\\API\\Model\\VolumeStatusItem' => false, 'Docker\\API\\Model\\VolumeUsageData' => false, 'Docker\\API\\Model\\Network' => false, 'Docker\\API\\Model\\IPAM' => false, 'Docker\\API\\Model\\NetworkContainer' => false, 'Docker\\API\\Model\\BuildInfo' => false, 'Docker\\API\\Model\\ImageID' => false, 'Docker\\API\\Model\\CreateImageInfo' => false, 'Docker\\API\\Model\\PushImageInfo' => false, 'Docker\\API\\Model\\ErrorDetail' => false, 'Docker\\API\\Model\\ProgressDetail' => false, 'Docker\\API\\Model\\ErrorResponse' => false, 'Docker\\API\\Model\\IdResponse' => false, 'Docker\\API\\Model\\EndpointSettings' => false, 'Docker\\API\\Model\\EndpointIPAMConfig' => false, 'Docker\\API\\Model\\PluginMount' => false, 'Docker\\API\\Model\\PluginDevice' => false, 'Docker\\API\\Model\\PluginEnv' => false, 'Docker\\API\\Model\\PluginInterfaceType' => false, 'Docker\\API\\Model\\Plugin' => false, 'Docker\\API\\Model\\PluginSettings' => false, 'Docker\\API\\Model\\PluginConfig' => false, 'Docker\\API\\Model\\PluginConfigInterface' => false, 'Docker\\API\\Model\\PluginConfigUser' => false, 'Docker\\API\\Model\\PluginConfigNetwork' => false, 'Docker\\API\\Model\\PluginConfigLinux' => false, 'Docker\\API\\Model\\PluginConfigArgs' => false, 'Docker\\API\\Model\\PluginConfigRootfs' => false, 'Docker\\API\\Model\\ObjectVersion' => false, 'Docker\\API\\Model\\NodeSpec' => false, 'Docker\\API\\Model\\Node' => false, 'Docker\\API\\Model\\NodeDescription' => false, 'Docker\\API\\Model\\Platform' => false, 'Docker\\API\\Model\\EngineDescription' => false, 'Docker\\API\\Model\\EngineDescriptionPluginsItem' => false, 'Docker\\API\\Model\\TLSInfo' => false, 'Docker\\API\\Model\\NodeStatus' => false, 'Docker\\API\\Model\\ManagerStatus' => false, 'Docker\\API\\Model\\SwarmSpec' => false, 'Docker\\API\\Model\\SwarmSpecOrchestration' => false, 'Docker\\API\\Model\\SwarmSpecRaft' => false, 'Docker\\API\\Model\\SwarmSpecDispatcher' => false, 'Docker\\API\\Model\\SwarmSpecCAConfig' => false, 'Docker\\API\\Model\\SwarmSpecCAConfigExternalCAsItem' => false, 'Docker\\API\\Model\\SwarmSpecEncryptionConfig' => false, 'Docker\\API\\Model\\SwarmSpecTaskDefaults' => false, 'Docker\\API\\Model\\SwarmSpecTaskDefaultsLogDriver' => false, 'Docker\\API\\Model\\ClusterInfo' => false, 'Docker\\API\\Model\\JoinTokens' => false, 'Docker\\API\\Model\\Swarm' => false, 'Docker\\API\\Model\\TaskSpec' => false, 'Docker\\API\\Model\\TaskSpecPluginSpec' => false, 'Docker\\API\\Model\\TaskSpecPluginSpecPluginPrivilegeItem' => false, 'Docker\\API\\Model\\TaskSpecContainerSpec' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesCredentialSpec' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesSELinuxContext' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecDNSConfig' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItem' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItemFile' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItem' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItemFile' => false, 'Docker\\API\\Model\\TaskSpecResources' => false, 'Docker\\API\\Model\\TaskSpecRestartPolicy' => false, 'Docker\\API\\Model\\TaskSpecPlacement' => false, 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem' => false, 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItemSpread' => false, 'Docker\\API\\Model\\TaskSpecNetworksItem' => false, 'Docker\\API\\Model\\TaskSpecLogDriver' => false, 'Docker\\API\\Model\\Task' => false, 'Docker\\API\\Model\\TaskStatus' => false, 'Docker\\API\\Model\\TaskStatusContainerStatus' => false, 'Docker\\API\\Model\\ServiceSpec' => false, 'Docker\\API\\Model\\ServiceSpecMode' => false, 'Docker\\API\\Model\\ServiceSpecModeReplicated' => false, 'Docker\\API\\Model\\ServiceSpecModeGlobal' => false, 'Docker\\API\\Model\\ServiceSpecUpdateConfig' => false, 'Docker\\API\\Model\\ServiceSpecRollbackConfig' => false, 'Docker\\API\\Model\\ServiceSpecNetworksItem' => false, 'Docker\\API\\Model\\EndpointPortConfig' => false, 'Docker\\API\\Model\\EndpointSpec' => false, 'Docker\\API\\Model\\Service' => false, 'Docker\\API\\Model\\ServiceEndpoint' => false, 'Docker\\API\\Model\\ServiceEndpointVirtualIPsItem' => false, 'Docker\\API\\Model\\ServiceUpdateStatus' => false, 'Docker\\API\\Model\\ImageDeleteResponseItem' => false, 'Docker\\API\\Model\\ServiceUpdateResponse' => false, 'Docker\\API\\Model\\ContainerSummaryItem' => false, 'Docker\\API\\Model\\ContainerSummaryItemHostConfig' => false, 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings' => false, 'Docker\\API\\Model\\Driver' => false, 'Docker\\API\\Model\\SecretSpec' => false, 'Docker\\API\\Model\\Secret' => false, 'Docker\\API\\Model\\ConfigSpec' => false, 'Docker\\API\\Model\\Config' => false, 'Docker\\API\\Model\\SystemInfo' => false, 'Docker\\API\\Model\\PluginsInfo' => false, 'Docker\\API\\Model\\RegistryServiceConfig' => false, 'Docker\\API\\Model\\IndexInfo' => false, 'Docker\\API\\Model\\Runtime' => false, 'Docker\\API\\Model\\Commit' => false, 'Docker\\API\\Model\\SwarmInfo' => false, 'Docker\\API\\Model\\PeerNode' => false, 'Docker\\API\\Model\\ContainersCreatePostBody' => false, 'Docker\\API\\Model\\ContainersCreatePostBodyNetworkingConfig' => false, 'Docker\\API\\Model\\ContainersCreatePostResponse201' => false, 'Docker\\API\\Model\\ContainersIdJsonGetResponse200' => false, 'Docker\\API\\Model\\ContainersIdJsonGetResponse200State' => false, 'Docker\\API\\Model\\ContainersIdJsonGetResponse200Node' => false, 'Docker\\API\\Model\\ContainersIdTopGetJsonResponse200' => false, 'Docker\\API\\Model\\ContainersIdTopGetTextplainResponse200' => false, 'Docker\\API\\Model\\ContainersIdChangesGetResponse200Item' => false, 'Docker\\API\\Model\\ContainersIdUpdatePostBody' => false, 'Docker\\API\\Model\\ContainersIdUpdatePostResponse200' => false, 'Docker\\API\\Model\\ContainersIdWaitPostResponse200' => false, 'Docker\\API\\Model\\ContainersIdWaitPostResponse200Error' => false, 'Docker\\API\\Model\\ContainersIdArchiveGetResponse400' => false, 'Docker\\API\\Model\\ContainersIdArchiveHeadJsonResponse400' => false, 'Docker\\API\\Model\\ContainersIdArchiveHeadTextplainResponse400' => false, 'Docker\\API\\Model\\ContainersPrunePostResponse200' => false, 'Docker\\API\\Model\\BuildPrunePostResponse200' => false, 'Docker\\API\\Model\\ImagesNameHistoryGetResponse200Item' => false, 'Docker\\API\\Model\\ImagesSearchGetResponse200Item' => false, 'Docker\\API\\Model\\ImagesPrunePostResponse200' => false, 'Docker\\API\\Model\\AuthPostResponse200' => false, 'Docker\\API\\Model\\VersionGetResponse200' => false, 'Docker\\API\\Model\\VersionGetResponse200Platform' => false, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem' => false, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItemDetails' => false, 'Docker\\API\\Model\\EventsGetResponse200' => false, 'Docker\\API\\Model\\EventsGetResponse200Actor' => false, 'Docker\\API\\Model\\SystemDfGetJsonResponse200' => false, 'Docker\\API\\Model\\SystemDfGetTextplainResponse200' => false, 'Docker\\API\\Model\\ContainersIdExecPostBody' => false, 'Docker\\API\\Model\\ExecIdStartPostBody' => false, 'Docker\\API\\Model\\ExecIdJsonGetResponse200' => false, 'Docker\\API\\Model\\VolumesGetResponse200' => false, 'Docker\\API\\Model\\VolumesCreatePostBody' => false, 'Docker\\API\\Model\\VolumesPrunePostResponse200' => false, 'Docker\\API\\Model\\NetworksCreatePostBody' => false, 'Docker\\API\\Model\\NetworksCreatePostResponse201' => false, 'Docker\\API\\Model\\NetworksIdConnectPostBody' => false, 'Docker\\API\\Model\\NetworksIdDisconnectPostBody' => false, 'Docker\\API\\Model\\NetworksPrunePostResponse200' => false, 'Docker\\API\\Model\\PluginsPrivilegesGetJsonResponse200Item' => false, 'Docker\\API\\Model\\PluginsPrivilegesGetTextplainResponse200Item' => false, 'Docker\\API\\Model\\PluginsPullPostBodyItem' => false, 'Docker\\API\\Model\\PluginsNameUpgradePostBodyItem' => false, 'Docker\\API\\Model\\SwarmInitPostBody' => false, 'Docker\\API\\Model\\SwarmJoinPostBody' => false, 'Docker\\API\\Model\\SwarmUnlockkeyGetJsonResponse200' => false, 'Docker\\API\\Model\\SwarmUnlockkeyGetTextplainResponse200' => false, 'Docker\\API\\Model\\SwarmUnlockPostBody' => false, 'Docker\\API\\Model\\ServicesCreatePostBody' => false, 'Docker\\API\\Model\\ServicesCreatePostResponse201' => false, 'Docker\\API\\Model\\ServicesIdUpdatePostBody' => false, 'Docker\\API\\Model\\SecretsCreatePostBody' => false, 'Docker\\API\\Model\\ConfigsCreatePostBody' => false, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200' => false, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200Descriptor' => false, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem' => false, '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => false];
+            return [
+                
+                \Docker\API\Model\Port::class => false,
+                \Docker\API\Model\MountPoint::class => false,
+                \Docker\API\Model\DeviceMapping::class => false,
+                \Docker\API\Model\ThrottleDevice::class => false,
+                \Docker\API\Model\Mount::class => false,
+                \Docker\API\Model\MountBindOptions::class => false,
+                \Docker\API\Model\MountVolumeOptions::class => false,
+                \Docker\API\Model\MountVolumeOptionsDriverConfig::class => false,
+                \Docker\API\Model\MountTmpfsOptions::class => false,
+                \Docker\API\Model\RestartPolicy::class => false,
+                \Docker\API\Model\Resources::class => false,
+                \Docker\API\Model\ResourcesBlkioWeightDeviceItem::class => false,
+                \Docker\API\Model\ResourcesUlimitsItem::class => false,
+                \Docker\API\Model\ResourceObject::class => false,
+                \Docker\API\Model\GenericResourcesItem::class => false,
+                \Docker\API\Model\GenericResourcesItemNamedResourceSpec::class => false,
+                \Docker\API\Model\GenericResourcesItemDiscreteResourceSpec::class => false,
+                \Docker\API\Model\HealthConfig::class => false,
+                \Docker\API\Model\HostConfig::class => false,
+                \Docker\API\Model\HostConfigLogConfig::class => false,
+                \Docker\API\Model\ContainerConfig::class => false,
+                \Docker\API\Model\ContainerConfigExposedPortsItem::class => false,
+                \Docker\API\Model\ContainerConfigVolumesItem::class => false,
+                \Docker\API\Model\NetworkSettings::class => false,
+                \Docker\API\Model\Address::class => false,
+                \Docker\API\Model\PortBinding::class => false,
+                \Docker\API\Model\GraphDriverData::class => false,
+                \Docker\API\Model\Image::class => false,
+                \Docker\API\Model\ImageRootFS::class => false,
+                \Docker\API\Model\ImageMetadata::class => false,
+                \Docker\API\Model\ImageSummary::class => false,
+                \Docker\API\Model\AuthConfig::class => false,
+                \Docker\API\Model\ProcessConfig::class => false,
+                \Docker\API\Model\Volume::class => false,
+                \Docker\API\Model\VolumeStatusItem::class => false,
+                \Docker\API\Model\VolumeUsageData::class => false,
+                \Docker\API\Model\Network::class => false,
+                \Docker\API\Model\IPAM::class => false,
+                \Docker\API\Model\NetworkContainer::class => false,
+                \Docker\API\Model\BuildInfo::class => false,
+                \Docker\API\Model\ImageID::class => false,
+                \Docker\API\Model\CreateImageInfo::class => false,
+                \Docker\API\Model\PushImageInfo::class => false,
+                \Docker\API\Model\ErrorDetail::class => false,
+                \Docker\API\Model\ProgressDetail::class => false,
+                \Docker\API\Model\ErrorResponse::class => false,
+                \Docker\API\Model\IdResponse::class => false,
+                \Docker\API\Model\EndpointSettings::class => false,
+                \Docker\API\Model\EndpointIPAMConfig::class => false,
+                \Docker\API\Model\PluginMount::class => false,
+                \Docker\API\Model\PluginDevice::class => false,
+                \Docker\API\Model\PluginEnv::class => false,
+                \Docker\API\Model\PluginInterfaceType::class => false,
+                \Docker\API\Model\Plugin::class => false,
+                \Docker\API\Model\PluginSettings::class => false,
+                \Docker\API\Model\PluginConfig::class => false,
+                \Docker\API\Model\PluginConfigInterface::class => false,
+                \Docker\API\Model\PluginConfigUser::class => false,
+                \Docker\API\Model\PluginConfigNetwork::class => false,
+                \Docker\API\Model\PluginConfigLinux::class => false,
+                \Docker\API\Model\PluginConfigArgs::class => false,
+                \Docker\API\Model\PluginConfigRootfs::class => false,
+                \Docker\API\Model\ObjectVersion::class => false,
+                \Docker\API\Model\NodeSpec::class => false,
+                \Docker\API\Model\Node::class => false,
+                \Docker\API\Model\NodeDescription::class => false,
+                \Docker\API\Model\Platform::class => false,
+                \Docker\API\Model\EngineDescription::class => false,
+                \Docker\API\Model\EngineDescriptionPluginsItem::class => false,
+                \Docker\API\Model\TLSInfo::class => false,
+                \Docker\API\Model\NodeStatus::class => false,
+                \Docker\API\Model\ManagerStatus::class => false,
+                \Docker\API\Model\SwarmSpec::class => false,
+                \Docker\API\Model\SwarmSpecOrchestration::class => false,
+                \Docker\API\Model\SwarmSpecRaft::class => false,
+                \Docker\API\Model\SwarmSpecDispatcher::class => false,
+                \Docker\API\Model\SwarmSpecCAConfig::class => false,
+                \Docker\API\Model\SwarmSpecCAConfigExternalCAsItem::class => false,
+                \Docker\API\Model\SwarmSpecEncryptionConfig::class => false,
+                \Docker\API\Model\SwarmSpecTaskDefaults::class => false,
+                \Docker\API\Model\SwarmSpecTaskDefaultsLogDriver::class => false,
+                \Docker\API\Model\ClusterInfo::class => false,
+                \Docker\API\Model\JoinTokens::class => false,
+                \Docker\API\Model\Swarm::class => false,
+                \Docker\API\Model\TaskSpec::class => false,
+                \Docker\API\Model\TaskSpecPluginSpec::class => false,
+                \Docker\API\Model\TaskSpecPluginSpecPluginPrivilegeItem::class => false,
+                \Docker\API\Model\TaskSpecContainerSpec::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecPrivileges::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecPrivilegesCredentialSpec::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecPrivilegesSELinuxContext::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecDNSConfig::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecSecretsItem::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecSecretsItemFile::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecConfigsItem::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecConfigsItemFile::class => false,
+                \Docker\API\Model\TaskSpecResources::class => false,
+                \Docker\API\Model\TaskSpecRestartPolicy::class => false,
+                \Docker\API\Model\TaskSpecPlacement::class => false,
+                \Docker\API\Model\TaskSpecPlacementPreferencesItem::class => false,
+                \Docker\API\Model\TaskSpecPlacementPreferencesItemSpread::class => false,
+                \Docker\API\Model\TaskSpecNetworksItem::class => false,
+                \Docker\API\Model\TaskSpecLogDriver::class => false,
+                \Docker\API\Model\Task::class => false,
+                \Docker\API\Model\TaskStatus::class => false,
+                \Docker\API\Model\TaskStatusContainerStatus::class => false,
+                \Docker\API\Model\ServiceSpec::class => false,
+                \Docker\API\Model\ServiceSpecMode::class => false,
+                \Docker\API\Model\ServiceSpecModeReplicated::class => false,
+                \Docker\API\Model\ServiceSpecModeGlobal::class => false,
+                \Docker\API\Model\ServiceSpecUpdateConfig::class => false,
+                \Docker\API\Model\ServiceSpecRollbackConfig::class => false,
+                \Docker\API\Model\ServiceSpecNetworksItem::class => false,
+                \Docker\API\Model\EndpointPortConfig::class => false,
+                \Docker\API\Model\EndpointSpec::class => false,
+                \Docker\API\Model\Service::class => false,
+                \Docker\API\Model\ServiceEndpoint::class => false,
+                \Docker\API\Model\ServiceEndpointVirtualIPsItem::class => false,
+                \Docker\API\Model\ServiceUpdateStatus::class => false,
+                \Docker\API\Model\ImageDeleteResponseItem::class => false,
+                \Docker\API\Model\ServiceUpdateResponse::class => false,
+                \Docker\API\Model\ContainerSummaryItem::class => false,
+                \Docker\API\Model\ContainerSummaryItemHostConfig::class => false,
+                \Docker\API\Model\ContainerSummaryItemNetworkSettings::class => false,
+                \Docker\API\Model\Driver::class => false,
+                \Docker\API\Model\SecretSpec::class => false,
+                \Docker\API\Model\Secret::class => false,
+                \Docker\API\Model\ConfigSpec::class => false,
+                \Docker\API\Model\Config::class => false,
+                \Docker\API\Model\SystemInfo::class => false,
+                \Docker\API\Model\PluginsInfo::class => false,
+                \Docker\API\Model\RegistryServiceConfig::class => false,
+                \Docker\API\Model\IndexInfo::class => false,
+                \Docker\API\Model\Runtime::class => false,
+                \Docker\API\Model\Commit::class => false,
+                \Docker\API\Model\SwarmInfo::class => false,
+                \Docker\API\Model\PeerNode::class => false,
+                \Docker\API\Model\ContainersCreatePostBody::class => false,
+                \Docker\API\Model\ContainersCreatePostBodyNetworkingConfig::class => false,
+                \Docker\API\Model\ContainersCreatePostResponse201::class => false,
+                \Docker\API\Model\ContainersIdJsonGetResponse200::class => false,
+                \Docker\API\Model\ContainersIdJsonGetResponse200State::class => false,
+                \Docker\API\Model\ContainersIdJsonGetResponse200Node::class => false,
+                \Docker\API\Model\ContainersIdTopGetJsonResponse200::class => false,
+                \Docker\API\Model\ContainersIdTopGetTextplainResponse200::class => false,
+                \Docker\API\Model\ContainersIdChangesGetResponse200Item::class => false,
+                \Docker\API\Model\ContainersIdUpdatePostBody::class => false,
+                \Docker\API\Model\ContainersIdUpdatePostResponse200::class => false,
+                \Docker\API\Model\ContainersIdWaitPostResponse200::class => false,
+                \Docker\API\Model\ContainersIdWaitPostResponse200Error::class => false,
+                \Docker\API\Model\ContainersIdArchiveGetResponse400::class => false,
+                \Docker\API\Model\ContainersIdArchiveHeadJsonResponse400::class => false,
+                \Docker\API\Model\ContainersIdArchiveHeadTextplainResponse400::class => false,
+                \Docker\API\Model\ContainersPrunePostResponse200::class => false,
+                \Docker\API\Model\BuildPrunePostResponse200::class => false,
+                \Docker\API\Model\ImagesNameHistoryGetResponse200Item::class => false,
+                \Docker\API\Model\ImagesSearchGetResponse200Item::class => false,
+                \Docker\API\Model\ImagesPrunePostResponse200::class => false,
+                \Docker\API\Model\AuthPostResponse200::class => false,
+                \Docker\API\Model\VersionGetResponse200::class => false,
+                \Docker\API\Model\VersionGetResponse200Platform::class => false,
+                \Docker\API\Model\VersionGetResponse200ComponentsItem::class => false,
+                \Docker\API\Model\VersionGetResponse200ComponentsItemDetails::class => false,
+                \Docker\API\Model\EventsGetResponse200::class => false,
+                \Docker\API\Model\EventsGetResponse200Actor::class => false,
+                \Docker\API\Model\SystemDfGetJsonResponse200::class => false,
+                \Docker\API\Model\SystemDfGetTextplainResponse200::class => false,
+                \Docker\API\Model\ContainersIdExecPostBody::class => false,
+                \Docker\API\Model\ExecIdStartPostBody::class => false,
+                \Docker\API\Model\ExecIdJsonGetResponse200::class => false,
+                \Docker\API\Model\VolumesGetResponse200::class => false,
+                \Docker\API\Model\VolumesCreatePostBody::class => false,
+                \Docker\API\Model\VolumesPrunePostResponse200::class => false,
+                \Docker\API\Model\NetworksCreatePostBody::class => false,
+                \Docker\API\Model\NetworksCreatePostResponse201::class => false,
+                \Docker\API\Model\NetworksIdConnectPostBody::class => false,
+                \Docker\API\Model\NetworksIdDisconnectPostBody::class => false,
+                \Docker\API\Model\NetworksPrunePostResponse200::class => false,
+                \Docker\API\Model\PluginsPrivilegesGetJsonResponse200Item::class => false,
+                \Docker\API\Model\PluginsPrivilegesGetTextplainResponse200Item::class => false,
+                \Docker\API\Model\PluginsPullPostBodyItem::class => false,
+                \Docker\API\Model\PluginsNameUpgradePostBodyItem::class => false,
+                \Docker\API\Model\SwarmInitPostBody::class => false,
+                \Docker\API\Model\SwarmJoinPostBody::class => false,
+                \Docker\API\Model\SwarmUnlockkeyGetJsonResponse200::class => false,
+                \Docker\API\Model\SwarmUnlockkeyGetTextplainResponse200::class => false,
+                \Docker\API\Model\SwarmUnlockPostBody::class => false,
+                \Docker\API\Model\ServicesCreatePostBody::class => false,
+                \Docker\API\Model\ServicesCreatePostResponse201::class => false,
+                \Docker\API\Model\ServicesIdUpdatePostBody::class => false,
+                \Docker\API\Model\SecretsCreatePostBody::class => false,
+                \Docker\API\Model\ConfigsCreatePostBody::class => false,
+                \Docker\API\Model\DistributionNameJsonGetResponse200::class => false,
+                \Docker\API\Model\DistributionNameJsonGetResponse200Descriptor::class => false,
+                \Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem::class => false,
+                \Jane\Component\JsonSchemaRuntime\Reference::class => false,
+            ];
         }
     }
 } else {
@@ -63,7 +654,400 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use NormalizerAwareTrait;
         use CheckArray;
         use ValidatorTrait;
-        protected $normalizers = array('Docker\\API\\Model\\Port' => 'Docker\\API\\Normalizer\\PortNormalizer', 'Docker\\API\\Model\\MountPoint' => 'Docker\\API\\Normalizer\\MountPointNormalizer', 'Docker\\API\\Model\\DeviceMapping' => 'Docker\\API\\Normalizer\\DeviceMappingNormalizer', 'Docker\\API\\Model\\ThrottleDevice' => 'Docker\\API\\Normalizer\\ThrottleDeviceNormalizer', 'Docker\\API\\Model\\Mount' => 'Docker\\API\\Normalizer\\MountNormalizer', 'Docker\\API\\Model\\MountBindOptions' => 'Docker\\API\\Normalizer\\MountBindOptionsNormalizer', 'Docker\\API\\Model\\MountVolumeOptions' => 'Docker\\API\\Normalizer\\MountVolumeOptionsNormalizer', 'Docker\\API\\Model\\MountVolumeOptionsDriverConfig' => 'Docker\\API\\Normalizer\\MountVolumeOptionsDriverConfigNormalizer', 'Docker\\API\\Model\\MountTmpfsOptions' => 'Docker\\API\\Normalizer\\MountTmpfsOptionsNormalizer', 'Docker\\API\\Model\\RestartPolicy' => 'Docker\\API\\Normalizer\\RestartPolicyNormalizer', 'Docker\\API\\Model\\Resources' => 'Docker\\API\\Normalizer\\ResourcesNormalizer', 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem' => 'Docker\\API\\Normalizer\\ResourcesBlkioWeightDeviceItemNormalizer', 'Docker\\API\\Model\\ResourcesUlimitsItem' => 'Docker\\API\\Normalizer\\ResourcesUlimitsItemNormalizer', 'Docker\\API\\Model\\ResourceObject' => 'Docker\\API\\Normalizer\\ResourceObjectNormalizer', 'Docker\\API\\Model\\GenericResourcesItem' => 'Docker\\API\\Normalizer\\GenericResourcesItemNormalizer', 'Docker\\API\\Model\\GenericResourcesItemNamedResourceSpec' => 'Docker\\API\\Normalizer\\GenericResourcesItemNamedResourceSpecNormalizer', 'Docker\\API\\Model\\GenericResourcesItemDiscreteResourceSpec' => 'Docker\\API\\Normalizer\\GenericResourcesItemDiscreteResourceSpecNormalizer', 'Docker\\API\\Model\\HealthConfig' => 'Docker\\API\\Normalizer\\HealthConfigNormalizer', 'Docker\\API\\Model\\HostConfig' => 'Docker\\API\\Normalizer\\HostConfigNormalizer', 'Docker\\API\\Model\\HostConfigLogConfig' => 'Docker\\API\\Normalizer\\HostConfigLogConfigNormalizer', 'Docker\\API\\Model\\ContainerConfig' => 'Docker\\API\\Normalizer\\ContainerConfigNormalizer', 'Docker\\API\\Model\\ContainerConfigExposedPortsItem' => 'Docker\\API\\Normalizer\\ContainerConfigExposedPortsItemNormalizer', 'Docker\\API\\Model\\ContainerConfigVolumesItem' => 'Docker\\API\\Normalizer\\ContainerConfigVolumesItemNormalizer', 'Docker\\API\\Model\\NetworkSettings' => 'Docker\\API\\Normalizer\\NetworkSettingsNormalizer', 'Docker\\API\\Model\\Address' => 'Docker\\API\\Normalizer\\AddressNormalizer', 'Docker\\API\\Model\\PortBinding' => 'Docker\\API\\Normalizer\\PortBindingNormalizer', 'Docker\\API\\Model\\GraphDriverData' => 'Docker\\API\\Normalizer\\GraphDriverDataNormalizer', 'Docker\\API\\Model\\Image' => 'Docker\\API\\Normalizer\\ImageNormalizer', 'Docker\\API\\Model\\ImageRootFS' => 'Docker\\API\\Normalizer\\ImageRootFSNormalizer', 'Docker\\API\\Model\\ImageMetadata' => 'Docker\\API\\Normalizer\\ImageMetadataNormalizer', 'Docker\\API\\Model\\ImageSummary' => 'Docker\\API\\Normalizer\\ImageSummaryNormalizer', 'Docker\\API\\Model\\AuthConfig' => 'Docker\\API\\Normalizer\\AuthConfigNormalizer', 'Docker\\API\\Model\\ProcessConfig' => 'Docker\\API\\Normalizer\\ProcessConfigNormalizer', 'Docker\\API\\Model\\Volume' => 'Docker\\API\\Normalizer\\VolumeNormalizer', 'Docker\\API\\Model\\VolumeStatusItem' => 'Docker\\API\\Normalizer\\VolumeStatusItemNormalizer', 'Docker\\API\\Model\\VolumeUsageData' => 'Docker\\API\\Normalizer\\VolumeUsageDataNormalizer', 'Docker\\API\\Model\\Network' => 'Docker\\API\\Normalizer\\NetworkNormalizer', 'Docker\\API\\Model\\IPAM' => 'Docker\\API\\Normalizer\\IPAMNormalizer', 'Docker\\API\\Model\\NetworkContainer' => 'Docker\\API\\Normalizer\\NetworkContainerNormalizer', 'Docker\\API\\Model\\BuildInfo' => 'Docker\\API\\Normalizer\\BuildInfoNormalizer', 'Docker\\API\\Model\\ImageID' => 'Docker\\API\\Normalizer\\ImageIDNormalizer', 'Docker\\API\\Model\\CreateImageInfo' => 'Docker\\API\\Normalizer\\CreateImageInfoNormalizer', 'Docker\\API\\Model\\PushImageInfo' => 'Docker\\API\\Normalizer\\PushImageInfoNormalizer', 'Docker\\API\\Model\\ErrorDetail' => 'Docker\\API\\Normalizer\\ErrorDetailNormalizer', 'Docker\\API\\Model\\ProgressDetail' => 'Docker\\API\\Normalizer\\ProgressDetailNormalizer', 'Docker\\API\\Model\\ErrorResponse' => 'Docker\\API\\Normalizer\\ErrorResponseNormalizer', 'Docker\\API\\Model\\IdResponse' => 'Docker\\API\\Normalizer\\IdResponseNormalizer', 'Docker\\API\\Model\\EndpointSettings' => 'Docker\\API\\Normalizer\\EndpointSettingsNormalizer', 'Docker\\API\\Model\\EndpointIPAMConfig' => 'Docker\\API\\Normalizer\\EndpointIPAMConfigNormalizer', 'Docker\\API\\Model\\PluginMount' => 'Docker\\API\\Normalizer\\PluginMountNormalizer', 'Docker\\API\\Model\\PluginDevice' => 'Docker\\API\\Normalizer\\PluginDeviceNormalizer', 'Docker\\API\\Model\\PluginEnv' => 'Docker\\API\\Normalizer\\PluginEnvNormalizer', 'Docker\\API\\Model\\PluginInterfaceType' => 'Docker\\API\\Normalizer\\PluginInterfaceTypeNormalizer', 'Docker\\API\\Model\\Plugin' => 'Docker\\API\\Normalizer\\PluginNormalizer', 'Docker\\API\\Model\\PluginSettings' => 'Docker\\API\\Normalizer\\PluginSettingsNormalizer', 'Docker\\API\\Model\\PluginConfig' => 'Docker\\API\\Normalizer\\PluginConfigNormalizer', 'Docker\\API\\Model\\PluginConfigInterface' => 'Docker\\API\\Normalizer\\PluginConfigInterfaceNormalizer', 'Docker\\API\\Model\\PluginConfigUser' => 'Docker\\API\\Normalizer\\PluginConfigUserNormalizer', 'Docker\\API\\Model\\PluginConfigNetwork' => 'Docker\\API\\Normalizer\\PluginConfigNetworkNormalizer', 'Docker\\API\\Model\\PluginConfigLinux' => 'Docker\\API\\Normalizer\\PluginConfigLinuxNormalizer', 'Docker\\API\\Model\\PluginConfigArgs' => 'Docker\\API\\Normalizer\\PluginConfigArgsNormalizer', 'Docker\\API\\Model\\PluginConfigRootfs' => 'Docker\\API\\Normalizer\\PluginConfigRootfsNormalizer', 'Docker\\API\\Model\\ObjectVersion' => 'Docker\\API\\Normalizer\\ObjectVersionNormalizer', 'Docker\\API\\Model\\NodeSpec' => 'Docker\\API\\Normalizer\\NodeSpecNormalizer', 'Docker\\API\\Model\\Node' => 'Docker\\API\\Normalizer\\NodeNormalizer', 'Docker\\API\\Model\\NodeDescription' => 'Docker\\API\\Normalizer\\NodeDescriptionNormalizer', 'Docker\\API\\Model\\Platform' => 'Docker\\API\\Normalizer\\PlatformNormalizer', 'Docker\\API\\Model\\EngineDescription' => 'Docker\\API\\Normalizer\\EngineDescriptionNormalizer', 'Docker\\API\\Model\\EngineDescriptionPluginsItem' => 'Docker\\API\\Normalizer\\EngineDescriptionPluginsItemNormalizer', 'Docker\\API\\Model\\TLSInfo' => 'Docker\\API\\Normalizer\\TLSInfoNormalizer', 'Docker\\API\\Model\\NodeStatus' => 'Docker\\API\\Normalizer\\NodeStatusNormalizer', 'Docker\\API\\Model\\ManagerStatus' => 'Docker\\API\\Normalizer\\ManagerStatusNormalizer', 'Docker\\API\\Model\\SwarmSpec' => 'Docker\\API\\Normalizer\\SwarmSpecNormalizer', 'Docker\\API\\Model\\SwarmSpecOrchestration' => 'Docker\\API\\Normalizer\\SwarmSpecOrchestrationNormalizer', 'Docker\\API\\Model\\SwarmSpecRaft' => 'Docker\\API\\Normalizer\\SwarmSpecRaftNormalizer', 'Docker\\API\\Model\\SwarmSpecDispatcher' => 'Docker\\API\\Normalizer\\SwarmSpecDispatcherNormalizer', 'Docker\\API\\Model\\SwarmSpecCAConfig' => 'Docker\\API\\Normalizer\\SwarmSpecCAConfigNormalizer', 'Docker\\API\\Model\\SwarmSpecCAConfigExternalCAsItem' => 'Docker\\API\\Normalizer\\SwarmSpecCAConfigExternalCAsItemNormalizer', 'Docker\\API\\Model\\SwarmSpecEncryptionConfig' => 'Docker\\API\\Normalizer\\SwarmSpecEncryptionConfigNormalizer', 'Docker\\API\\Model\\SwarmSpecTaskDefaults' => 'Docker\\API\\Normalizer\\SwarmSpecTaskDefaultsNormalizer', 'Docker\\API\\Model\\SwarmSpecTaskDefaultsLogDriver' => 'Docker\\API\\Normalizer\\SwarmSpecTaskDefaultsLogDriverNormalizer', 'Docker\\API\\Model\\ClusterInfo' => 'Docker\\API\\Normalizer\\ClusterInfoNormalizer', 'Docker\\API\\Model\\JoinTokens' => 'Docker\\API\\Normalizer\\JoinTokensNormalizer', 'Docker\\API\\Model\\Swarm' => 'Docker\\API\\Normalizer\\SwarmNormalizer', 'Docker\\API\\Model\\TaskSpec' => 'Docker\\API\\Normalizer\\TaskSpecNormalizer', 'Docker\\API\\Model\\TaskSpecPluginSpec' => 'Docker\\API\\Normalizer\\TaskSpecPluginSpecNormalizer', 'Docker\\API\\Model\\TaskSpecPluginSpecPluginPrivilegeItem' => 'Docker\\API\\Normalizer\\TaskSpecPluginSpecPluginPrivilegeItemNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpec' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecPrivilegesNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesCredentialSpec' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecPrivilegesCredentialSpecNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesSELinuxContext' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecPrivilegesSELinuxContextNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecDNSConfig' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecDNSConfigNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItem' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecSecretsItemNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItemFile' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecSecretsItemFileNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItem' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecConfigsItemNormalizer', 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItemFile' => 'Docker\\API\\Normalizer\\TaskSpecContainerSpecConfigsItemFileNormalizer', 'Docker\\API\\Model\\TaskSpecResources' => 'Docker\\API\\Normalizer\\TaskSpecResourcesNormalizer', 'Docker\\API\\Model\\TaskSpecRestartPolicy' => 'Docker\\API\\Normalizer\\TaskSpecRestartPolicyNormalizer', 'Docker\\API\\Model\\TaskSpecPlacement' => 'Docker\\API\\Normalizer\\TaskSpecPlacementNormalizer', 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem' => 'Docker\\API\\Normalizer\\TaskSpecPlacementPreferencesItemNormalizer', 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItemSpread' => 'Docker\\API\\Normalizer\\TaskSpecPlacementPreferencesItemSpreadNormalizer', 'Docker\\API\\Model\\TaskSpecNetworksItem' => 'Docker\\API\\Normalizer\\TaskSpecNetworksItemNormalizer', 'Docker\\API\\Model\\TaskSpecLogDriver' => 'Docker\\API\\Normalizer\\TaskSpecLogDriverNormalizer', 'Docker\\API\\Model\\Task' => 'Docker\\API\\Normalizer\\TaskNormalizer', 'Docker\\API\\Model\\TaskStatus' => 'Docker\\API\\Normalizer\\TaskStatusNormalizer', 'Docker\\API\\Model\\TaskStatusContainerStatus' => 'Docker\\API\\Normalizer\\TaskStatusContainerStatusNormalizer', 'Docker\\API\\Model\\ServiceSpec' => 'Docker\\API\\Normalizer\\ServiceSpecNormalizer', 'Docker\\API\\Model\\ServiceSpecMode' => 'Docker\\API\\Normalizer\\ServiceSpecModeNormalizer', 'Docker\\API\\Model\\ServiceSpecModeReplicated' => 'Docker\\API\\Normalizer\\ServiceSpecModeReplicatedNormalizer', 'Docker\\API\\Model\\ServiceSpecModeGlobal' => 'Docker\\API\\Normalizer\\ServiceSpecModeGlobalNormalizer', 'Docker\\API\\Model\\ServiceSpecUpdateConfig' => 'Docker\\API\\Normalizer\\ServiceSpecUpdateConfigNormalizer', 'Docker\\API\\Model\\ServiceSpecRollbackConfig' => 'Docker\\API\\Normalizer\\ServiceSpecRollbackConfigNormalizer', 'Docker\\API\\Model\\ServiceSpecNetworksItem' => 'Docker\\API\\Normalizer\\ServiceSpecNetworksItemNormalizer', 'Docker\\API\\Model\\EndpointPortConfig' => 'Docker\\API\\Normalizer\\EndpointPortConfigNormalizer', 'Docker\\API\\Model\\EndpointSpec' => 'Docker\\API\\Normalizer\\EndpointSpecNormalizer', 'Docker\\API\\Model\\Service' => 'Docker\\API\\Normalizer\\ServiceNormalizer', 'Docker\\API\\Model\\ServiceEndpoint' => 'Docker\\API\\Normalizer\\ServiceEndpointNormalizer', 'Docker\\API\\Model\\ServiceEndpointVirtualIPsItem' => 'Docker\\API\\Normalizer\\ServiceEndpointVirtualIPsItemNormalizer', 'Docker\\API\\Model\\ServiceUpdateStatus' => 'Docker\\API\\Normalizer\\ServiceUpdateStatusNormalizer', 'Docker\\API\\Model\\ImageDeleteResponseItem' => 'Docker\\API\\Normalizer\\ImageDeleteResponseItemNormalizer', 'Docker\\API\\Model\\ServiceUpdateResponse' => 'Docker\\API\\Normalizer\\ServiceUpdateResponseNormalizer', 'Docker\\API\\Model\\ContainerSummaryItem' => 'Docker\\API\\Normalizer\\ContainerSummaryItemNormalizer', 'Docker\\API\\Model\\ContainerSummaryItemHostConfig' => 'Docker\\API\\Normalizer\\ContainerSummaryItemHostConfigNormalizer', 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings' => 'Docker\\API\\Normalizer\\ContainerSummaryItemNetworkSettingsNormalizer', 'Docker\\API\\Model\\Driver' => 'Docker\\API\\Normalizer\\DriverNormalizer', 'Docker\\API\\Model\\SecretSpec' => 'Docker\\API\\Normalizer\\SecretSpecNormalizer', 'Docker\\API\\Model\\Secret' => 'Docker\\API\\Normalizer\\SecretNormalizer', 'Docker\\API\\Model\\ConfigSpec' => 'Docker\\API\\Normalizer\\ConfigSpecNormalizer', 'Docker\\API\\Model\\Config' => 'Docker\\API\\Normalizer\\ConfigNormalizer', 'Docker\\API\\Model\\SystemInfo' => 'Docker\\API\\Normalizer\\SystemInfoNormalizer', 'Docker\\API\\Model\\PluginsInfo' => 'Docker\\API\\Normalizer\\PluginsInfoNormalizer', 'Docker\\API\\Model\\RegistryServiceConfig' => 'Docker\\API\\Normalizer\\RegistryServiceConfigNormalizer', 'Docker\\API\\Model\\IndexInfo' => 'Docker\\API\\Normalizer\\IndexInfoNormalizer', 'Docker\\API\\Model\\Runtime' => 'Docker\\API\\Normalizer\\RuntimeNormalizer', 'Docker\\API\\Model\\Commit' => 'Docker\\API\\Normalizer\\CommitNormalizer', 'Docker\\API\\Model\\SwarmInfo' => 'Docker\\API\\Normalizer\\SwarmInfoNormalizer', 'Docker\\API\\Model\\PeerNode' => 'Docker\\API\\Normalizer\\PeerNodeNormalizer', 'Docker\\API\\Model\\ContainersCreatePostBody' => 'Docker\\API\\Normalizer\\ContainersCreatePostBodyNormalizer', 'Docker\\API\\Model\\ContainersCreatePostBodyNetworkingConfig' => 'Docker\\API\\Normalizer\\ContainersCreatePostBodyNetworkingConfigNormalizer', 'Docker\\API\\Model\\ContainersCreatePostResponse201' => 'Docker\\API\\Normalizer\\ContainersCreatePostResponse201Normalizer', 'Docker\\API\\Model\\ContainersIdJsonGetResponse200' => 'Docker\\API\\Normalizer\\ContainersIdJsonGetResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdJsonGetResponse200State' => 'Docker\\API\\Normalizer\\ContainersIdJsonGetResponse200StateNormalizer', 'Docker\\API\\Model\\ContainersIdJsonGetResponse200Node' => 'Docker\\API\\Normalizer\\ContainersIdJsonGetResponse200NodeNormalizer', 'Docker\\API\\Model\\ContainersIdTopGetJsonResponse200' => 'Docker\\API\\Normalizer\\ContainersIdTopGetJsonResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdTopGetTextplainResponse200' => 'Docker\\API\\Normalizer\\ContainersIdTopGetTextplainResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdChangesGetResponse200Item' => 'Docker\\API\\Normalizer\\ContainersIdChangesGetResponse200ItemNormalizer', 'Docker\\API\\Model\\ContainersIdUpdatePostBody' => 'Docker\\API\\Normalizer\\ContainersIdUpdatePostBodyNormalizer', 'Docker\\API\\Model\\ContainersIdUpdatePostResponse200' => 'Docker\\API\\Normalizer\\ContainersIdUpdatePostResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdWaitPostResponse200' => 'Docker\\API\\Normalizer\\ContainersIdWaitPostResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdWaitPostResponse200Error' => 'Docker\\API\\Normalizer\\ContainersIdWaitPostResponse200ErrorNormalizer', 'Docker\\API\\Model\\ContainersIdArchiveGetResponse400' => 'Docker\\API\\Normalizer\\ContainersIdArchiveGetResponse400Normalizer', 'Docker\\API\\Model\\ContainersIdArchiveHeadJsonResponse400' => 'Docker\\API\\Normalizer\\ContainersIdArchiveHeadJsonResponse400Normalizer', 'Docker\\API\\Model\\ContainersIdArchiveHeadTextplainResponse400' => 'Docker\\API\\Normalizer\\ContainersIdArchiveHeadTextplainResponse400Normalizer', 'Docker\\API\\Model\\ContainersPrunePostResponse200' => 'Docker\\API\\Normalizer\\ContainersPrunePostResponse200Normalizer', 'Docker\\API\\Model\\BuildPrunePostResponse200' => 'Docker\\API\\Normalizer\\BuildPrunePostResponse200Normalizer', 'Docker\\API\\Model\\ImagesNameHistoryGetResponse200Item' => 'Docker\\API\\Normalizer\\ImagesNameHistoryGetResponse200ItemNormalizer', 'Docker\\API\\Model\\ImagesSearchGetResponse200Item' => 'Docker\\API\\Normalizer\\ImagesSearchGetResponse200ItemNormalizer', 'Docker\\API\\Model\\ImagesPrunePostResponse200' => 'Docker\\API\\Normalizer\\ImagesPrunePostResponse200Normalizer', 'Docker\\API\\Model\\AuthPostResponse200' => 'Docker\\API\\Normalizer\\AuthPostResponse200Normalizer', 'Docker\\API\\Model\\VersionGetResponse200' => 'Docker\\API\\Normalizer\\VersionGetResponse200Normalizer', 'Docker\\API\\Model\\VersionGetResponse200Platform' => 'Docker\\API\\Normalizer\\VersionGetResponse200PlatformNormalizer', 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem' => 'Docker\\API\\Normalizer\\VersionGetResponse200ComponentsItemNormalizer', 'Docker\\API\\Model\\VersionGetResponse200ComponentsItemDetails' => 'Docker\\API\\Normalizer\\VersionGetResponse200ComponentsItemDetailsNormalizer', 'Docker\\API\\Model\\EventsGetResponse200' => 'Docker\\API\\Normalizer\\EventsGetResponse200Normalizer', 'Docker\\API\\Model\\EventsGetResponse200Actor' => 'Docker\\API\\Normalizer\\EventsGetResponse200ActorNormalizer', 'Docker\\API\\Model\\SystemDfGetJsonResponse200' => 'Docker\\API\\Normalizer\\SystemDfGetJsonResponse200Normalizer', 'Docker\\API\\Model\\SystemDfGetTextplainResponse200' => 'Docker\\API\\Normalizer\\SystemDfGetTextplainResponse200Normalizer', 'Docker\\API\\Model\\ContainersIdExecPostBody' => 'Docker\\API\\Normalizer\\ContainersIdExecPostBodyNormalizer', 'Docker\\API\\Model\\ExecIdStartPostBody' => 'Docker\\API\\Normalizer\\ExecIdStartPostBodyNormalizer', 'Docker\\API\\Model\\ExecIdJsonGetResponse200' => 'Docker\\API\\Normalizer\\ExecIdJsonGetResponse200Normalizer', 'Docker\\API\\Model\\VolumesGetResponse200' => 'Docker\\API\\Normalizer\\VolumesGetResponse200Normalizer', 'Docker\\API\\Model\\VolumesCreatePostBody' => 'Docker\\API\\Normalizer\\VolumesCreatePostBodyNormalizer', 'Docker\\API\\Model\\VolumesPrunePostResponse200' => 'Docker\\API\\Normalizer\\VolumesPrunePostResponse200Normalizer', 'Docker\\API\\Model\\NetworksCreatePostBody' => 'Docker\\API\\Normalizer\\NetworksCreatePostBodyNormalizer', 'Docker\\API\\Model\\NetworksCreatePostResponse201' => 'Docker\\API\\Normalizer\\NetworksCreatePostResponse201Normalizer', 'Docker\\API\\Model\\NetworksIdConnectPostBody' => 'Docker\\API\\Normalizer\\NetworksIdConnectPostBodyNormalizer', 'Docker\\API\\Model\\NetworksIdDisconnectPostBody' => 'Docker\\API\\Normalizer\\NetworksIdDisconnectPostBodyNormalizer', 'Docker\\API\\Model\\NetworksPrunePostResponse200' => 'Docker\\API\\Normalizer\\NetworksPrunePostResponse200Normalizer', 'Docker\\API\\Model\\PluginsPrivilegesGetJsonResponse200Item' => 'Docker\\API\\Normalizer\\PluginsPrivilegesGetJsonResponse200ItemNormalizer', 'Docker\\API\\Model\\PluginsPrivilegesGetTextplainResponse200Item' => 'Docker\\API\\Normalizer\\PluginsPrivilegesGetTextplainResponse200ItemNormalizer', 'Docker\\API\\Model\\PluginsPullPostBodyItem' => 'Docker\\API\\Normalizer\\PluginsPullPostBodyItemNormalizer', 'Docker\\API\\Model\\PluginsNameUpgradePostBodyItem' => 'Docker\\API\\Normalizer\\PluginsNameUpgradePostBodyItemNormalizer', 'Docker\\API\\Model\\SwarmInitPostBody' => 'Docker\\API\\Normalizer\\SwarmInitPostBodyNormalizer', 'Docker\\API\\Model\\SwarmJoinPostBody' => 'Docker\\API\\Normalizer\\SwarmJoinPostBodyNormalizer', 'Docker\\API\\Model\\SwarmUnlockkeyGetJsonResponse200' => 'Docker\\API\\Normalizer\\SwarmUnlockkeyGetJsonResponse200Normalizer', 'Docker\\API\\Model\\SwarmUnlockkeyGetTextplainResponse200' => 'Docker\\API\\Normalizer\\SwarmUnlockkeyGetTextplainResponse200Normalizer', 'Docker\\API\\Model\\SwarmUnlockPostBody' => 'Docker\\API\\Normalizer\\SwarmUnlockPostBodyNormalizer', 'Docker\\API\\Model\\ServicesCreatePostBody' => 'Docker\\API\\Normalizer\\ServicesCreatePostBodyNormalizer', 'Docker\\API\\Model\\ServicesCreatePostResponse201' => 'Docker\\API\\Normalizer\\ServicesCreatePostResponse201Normalizer', 'Docker\\API\\Model\\ServicesIdUpdatePostBody' => 'Docker\\API\\Normalizer\\ServicesIdUpdatePostBodyNormalizer', 'Docker\\API\\Model\\SecretsCreatePostBody' => 'Docker\\API\\Normalizer\\SecretsCreatePostBodyNormalizer', 'Docker\\API\\Model\\ConfigsCreatePostBody' => 'Docker\\API\\Normalizer\\ConfigsCreatePostBodyNormalizer', 'Docker\\API\\Model\\DistributionNameJsonGetResponse200' => 'Docker\\API\\Normalizer\\DistributionNameJsonGetResponse200Normalizer', 'Docker\\API\\Model\\DistributionNameJsonGetResponse200Descriptor' => 'Docker\\API\\Normalizer\\DistributionNameJsonGetResponse200DescriptorNormalizer', 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem' => 'Docker\\API\\Normalizer\\DistributionNameJsonGetResponse200PlatformsItemNormalizer', '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => '\\Docker\\API\\Runtime\\Normalizer\\ReferenceNormalizer'), $normalizersCache = [];
+        protected $normalizers = [
+            
+            \Docker\API\Model\Port::class => \Docker\API\Normalizer\PortNormalizer::class,
+            
+            \Docker\API\Model\MountPoint::class => \Docker\API\Normalizer\MountPointNormalizer::class,
+            
+            \Docker\API\Model\DeviceMapping::class => \Docker\API\Normalizer\DeviceMappingNormalizer::class,
+            
+            \Docker\API\Model\ThrottleDevice::class => \Docker\API\Normalizer\ThrottleDeviceNormalizer::class,
+            
+            \Docker\API\Model\Mount::class => \Docker\API\Normalizer\MountNormalizer::class,
+            
+            \Docker\API\Model\MountBindOptions::class => \Docker\API\Normalizer\MountBindOptionsNormalizer::class,
+            
+            \Docker\API\Model\MountVolumeOptions::class => \Docker\API\Normalizer\MountVolumeOptionsNormalizer::class,
+            
+            \Docker\API\Model\MountVolumeOptionsDriverConfig::class => \Docker\API\Normalizer\MountVolumeOptionsDriverConfigNormalizer::class,
+            
+            \Docker\API\Model\MountTmpfsOptions::class => \Docker\API\Normalizer\MountTmpfsOptionsNormalizer::class,
+            
+            \Docker\API\Model\RestartPolicy::class => \Docker\API\Normalizer\RestartPolicyNormalizer::class,
+            
+            \Docker\API\Model\Resources::class => \Docker\API\Normalizer\ResourcesNormalizer::class,
+            
+            \Docker\API\Model\ResourcesBlkioWeightDeviceItem::class => \Docker\API\Normalizer\ResourcesBlkioWeightDeviceItemNormalizer::class,
+            
+            \Docker\API\Model\ResourcesUlimitsItem::class => \Docker\API\Normalizer\ResourcesUlimitsItemNormalizer::class,
+            
+            \Docker\API\Model\ResourceObject::class => \Docker\API\Normalizer\ResourceObjectNormalizer::class,
+            
+            \Docker\API\Model\GenericResourcesItem::class => \Docker\API\Normalizer\GenericResourcesItemNormalizer::class,
+            
+            \Docker\API\Model\GenericResourcesItemNamedResourceSpec::class => \Docker\API\Normalizer\GenericResourcesItemNamedResourceSpecNormalizer::class,
+            
+            \Docker\API\Model\GenericResourcesItemDiscreteResourceSpec::class => \Docker\API\Normalizer\GenericResourcesItemDiscreteResourceSpecNormalizer::class,
+            
+            \Docker\API\Model\HealthConfig::class => \Docker\API\Normalizer\HealthConfigNormalizer::class,
+            
+            \Docker\API\Model\HostConfig::class => \Docker\API\Normalizer\HostConfigNormalizer::class,
+            
+            \Docker\API\Model\HostConfigLogConfig::class => \Docker\API\Normalizer\HostConfigLogConfigNormalizer::class,
+            
+            \Docker\API\Model\ContainerConfig::class => \Docker\API\Normalizer\ContainerConfigNormalizer::class,
+            
+            \Docker\API\Model\ContainerConfigExposedPortsItem::class => \Docker\API\Normalizer\ContainerConfigExposedPortsItemNormalizer::class,
+            
+            \Docker\API\Model\ContainerConfigVolumesItem::class => \Docker\API\Normalizer\ContainerConfigVolumesItemNormalizer::class,
+            
+            \Docker\API\Model\NetworkSettings::class => \Docker\API\Normalizer\NetworkSettingsNormalizer::class,
+            
+            \Docker\API\Model\Address::class => \Docker\API\Normalizer\AddressNormalizer::class,
+            
+            \Docker\API\Model\PortBinding::class => \Docker\API\Normalizer\PortBindingNormalizer::class,
+            
+            \Docker\API\Model\GraphDriverData::class => \Docker\API\Normalizer\GraphDriverDataNormalizer::class,
+            
+            \Docker\API\Model\Image::class => \Docker\API\Normalizer\ImageNormalizer::class,
+            
+            \Docker\API\Model\ImageRootFS::class => \Docker\API\Normalizer\ImageRootFSNormalizer::class,
+            
+            \Docker\API\Model\ImageMetadata::class => \Docker\API\Normalizer\ImageMetadataNormalizer::class,
+            
+            \Docker\API\Model\ImageSummary::class => \Docker\API\Normalizer\ImageSummaryNormalizer::class,
+            
+            \Docker\API\Model\AuthConfig::class => \Docker\API\Normalizer\AuthConfigNormalizer::class,
+            
+            \Docker\API\Model\ProcessConfig::class => \Docker\API\Normalizer\ProcessConfigNormalizer::class,
+            
+            \Docker\API\Model\Volume::class => \Docker\API\Normalizer\VolumeNormalizer::class,
+            
+            \Docker\API\Model\VolumeStatusItem::class => \Docker\API\Normalizer\VolumeStatusItemNormalizer::class,
+            
+            \Docker\API\Model\VolumeUsageData::class => \Docker\API\Normalizer\VolumeUsageDataNormalizer::class,
+            
+            \Docker\API\Model\Network::class => \Docker\API\Normalizer\NetworkNormalizer::class,
+            
+            \Docker\API\Model\IPAM::class => \Docker\API\Normalizer\IPAMNormalizer::class,
+            
+            \Docker\API\Model\NetworkContainer::class => \Docker\API\Normalizer\NetworkContainerNormalizer::class,
+            
+            \Docker\API\Model\BuildInfo::class => \Docker\API\Normalizer\BuildInfoNormalizer::class,
+            
+            \Docker\API\Model\ImageID::class => \Docker\API\Normalizer\ImageIDNormalizer::class,
+            
+            \Docker\API\Model\CreateImageInfo::class => \Docker\API\Normalizer\CreateImageInfoNormalizer::class,
+            
+            \Docker\API\Model\PushImageInfo::class => \Docker\API\Normalizer\PushImageInfoNormalizer::class,
+            
+            \Docker\API\Model\ErrorDetail::class => \Docker\API\Normalizer\ErrorDetailNormalizer::class,
+            
+            \Docker\API\Model\ProgressDetail::class => \Docker\API\Normalizer\ProgressDetailNormalizer::class,
+            
+            \Docker\API\Model\ErrorResponse::class => \Docker\API\Normalizer\ErrorResponseNormalizer::class,
+            
+            \Docker\API\Model\IdResponse::class => \Docker\API\Normalizer\IdResponseNormalizer::class,
+            
+            \Docker\API\Model\EndpointSettings::class => \Docker\API\Normalizer\EndpointSettingsNormalizer::class,
+            
+            \Docker\API\Model\EndpointIPAMConfig::class => \Docker\API\Normalizer\EndpointIPAMConfigNormalizer::class,
+            
+            \Docker\API\Model\PluginMount::class => \Docker\API\Normalizer\PluginMountNormalizer::class,
+            
+            \Docker\API\Model\PluginDevice::class => \Docker\API\Normalizer\PluginDeviceNormalizer::class,
+            
+            \Docker\API\Model\PluginEnv::class => \Docker\API\Normalizer\PluginEnvNormalizer::class,
+            
+            \Docker\API\Model\PluginInterfaceType::class => \Docker\API\Normalizer\PluginInterfaceTypeNormalizer::class,
+            
+            \Docker\API\Model\Plugin::class => \Docker\API\Normalizer\PluginNormalizer::class,
+            
+            \Docker\API\Model\PluginSettings::class => \Docker\API\Normalizer\PluginSettingsNormalizer::class,
+            
+            \Docker\API\Model\PluginConfig::class => \Docker\API\Normalizer\PluginConfigNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigInterface::class => \Docker\API\Normalizer\PluginConfigInterfaceNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigUser::class => \Docker\API\Normalizer\PluginConfigUserNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigNetwork::class => \Docker\API\Normalizer\PluginConfigNetworkNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigLinux::class => \Docker\API\Normalizer\PluginConfigLinuxNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigArgs::class => \Docker\API\Normalizer\PluginConfigArgsNormalizer::class,
+            
+            \Docker\API\Model\PluginConfigRootfs::class => \Docker\API\Normalizer\PluginConfigRootfsNormalizer::class,
+            
+            \Docker\API\Model\ObjectVersion::class => \Docker\API\Normalizer\ObjectVersionNormalizer::class,
+            
+            \Docker\API\Model\NodeSpec::class => \Docker\API\Normalizer\NodeSpecNormalizer::class,
+            
+            \Docker\API\Model\Node::class => \Docker\API\Normalizer\NodeNormalizer::class,
+            
+            \Docker\API\Model\NodeDescription::class => \Docker\API\Normalizer\NodeDescriptionNormalizer::class,
+            
+            \Docker\API\Model\Platform::class => \Docker\API\Normalizer\PlatformNormalizer::class,
+            
+            \Docker\API\Model\EngineDescription::class => \Docker\API\Normalizer\EngineDescriptionNormalizer::class,
+            
+            \Docker\API\Model\EngineDescriptionPluginsItem::class => \Docker\API\Normalizer\EngineDescriptionPluginsItemNormalizer::class,
+            
+            \Docker\API\Model\TLSInfo::class => \Docker\API\Normalizer\TLSInfoNormalizer::class,
+            
+            \Docker\API\Model\NodeStatus::class => \Docker\API\Normalizer\NodeStatusNormalizer::class,
+            
+            \Docker\API\Model\ManagerStatus::class => \Docker\API\Normalizer\ManagerStatusNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpec::class => \Docker\API\Normalizer\SwarmSpecNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecOrchestration::class => \Docker\API\Normalizer\SwarmSpecOrchestrationNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecRaft::class => \Docker\API\Normalizer\SwarmSpecRaftNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecDispatcher::class => \Docker\API\Normalizer\SwarmSpecDispatcherNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecCAConfig::class => \Docker\API\Normalizer\SwarmSpecCAConfigNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecCAConfigExternalCAsItem::class => \Docker\API\Normalizer\SwarmSpecCAConfigExternalCAsItemNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecEncryptionConfig::class => \Docker\API\Normalizer\SwarmSpecEncryptionConfigNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecTaskDefaults::class => \Docker\API\Normalizer\SwarmSpecTaskDefaultsNormalizer::class,
+            
+            \Docker\API\Model\SwarmSpecTaskDefaultsLogDriver::class => \Docker\API\Normalizer\SwarmSpecTaskDefaultsLogDriverNormalizer::class,
+            
+            \Docker\API\Model\ClusterInfo::class => \Docker\API\Normalizer\ClusterInfoNormalizer::class,
+            
+            \Docker\API\Model\JoinTokens::class => \Docker\API\Normalizer\JoinTokensNormalizer::class,
+            
+            \Docker\API\Model\Swarm::class => \Docker\API\Normalizer\SwarmNormalizer::class,
+            
+            \Docker\API\Model\TaskSpec::class => \Docker\API\Normalizer\TaskSpecNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPluginSpec::class => \Docker\API\Normalizer\TaskSpecPluginSpecNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPluginSpecPluginPrivilegeItem::class => \Docker\API\Normalizer\TaskSpecPluginSpecPluginPrivilegeItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpec::class => \Docker\API\Normalizer\TaskSpecContainerSpecNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecPrivileges::class => \Docker\API\Normalizer\TaskSpecContainerSpecPrivilegesNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecPrivilegesCredentialSpec::class => \Docker\API\Normalizer\TaskSpecContainerSpecPrivilegesCredentialSpecNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecPrivilegesSELinuxContext::class => \Docker\API\Normalizer\TaskSpecContainerSpecPrivilegesSELinuxContextNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecDNSConfig::class => \Docker\API\Normalizer\TaskSpecContainerSpecDNSConfigNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecSecretsItem::class => \Docker\API\Normalizer\TaskSpecContainerSpecSecretsItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecSecretsItemFile::class => \Docker\API\Normalizer\TaskSpecContainerSpecSecretsItemFileNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecConfigsItem::class => \Docker\API\Normalizer\TaskSpecContainerSpecConfigsItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecContainerSpecConfigsItemFile::class => \Docker\API\Normalizer\TaskSpecContainerSpecConfigsItemFileNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecResources::class => \Docker\API\Normalizer\TaskSpecResourcesNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecRestartPolicy::class => \Docker\API\Normalizer\TaskSpecRestartPolicyNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPlacement::class => \Docker\API\Normalizer\TaskSpecPlacementNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPlacementPreferencesItem::class => \Docker\API\Normalizer\TaskSpecPlacementPreferencesItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecPlacementPreferencesItemSpread::class => \Docker\API\Normalizer\TaskSpecPlacementPreferencesItemSpreadNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecNetworksItem::class => \Docker\API\Normalizer\TaskSpecNetworksItemNormalizer::class,
+            
+            \Docker\API\Model\TaskSpecLogDriver::class => \Docker\API\Normalizer\TaskSpecLogDriverNormalizer::class,
+            
+            \Docker\API\Model\Task::class => \Docker\API\Normalizer\TaskNormalizer::class,
+            
+            \Docker\API\Model\TaskStatus::class => \Docker\API\Normalizer\TaskStatusNormalizer::class,
+            
+            \Docker\API\Model\TaskStatusContainerStatus::class => \Docker\API\Normalizer\TaskStatusContainerStatusNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpec::class => \Docker\API\Normalizer\ServiceSpecNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecMode::class => \Docker\API\Normalizer\ServiceSpecModeNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecModeReplicated::class => \Docker\API\Normalizer\ServiceSpecModeReplicatedNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecModeGlobal::class => \Docker\API\Normalizer\ServiceSpecModeGlobalNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecUpdateConfig::class => \Docker\API\Normalizer\ServiceSpecUpdateConfigNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecRollbackConfig::class => \Docker\API\Normalizer\ServiceSpecRollbackConfigNormalizer::class,
+            
+            \Docker\API\Model\ServiceSpecNetworksItem::class => \Docker\API\Normalizer\ServiceSpecNetworksItemNormalizer::class,
+            
+            \Docker\API\Model\EndpointPortConfig::class => \Docker\API\Normalizer\EndpointPortConfigNormalizer::class,
+            
+            \Docker\API\Model\EndpointSpec::class => \Docker\API\Normalizer\EndpointSpecNormalizer::class,
+            
+            \Docker\API\Model\Service::class => \Docker\API\Normalizer\ServiceNormalizer::class,
+            
+            \Docker\API\Model\ServiceEndpoint::class => \Docker\API\Normalizer\ServiceEndpointNormalizer::class,
+            
+            \Docker\API\Model\ServiceEndpointVirtualIPsItem::class => \Docker\API\Normalizer\ServiceEndpointVirtualIPsItemNormalizer::class,
+            
+            \Docker\API\Model\ServiceUpdateStatus::class => \Docker\API\Normalizer\ServiceUpdateStatusNormalizer::class,
+            
+            \Docker\API\Model\ImageDeleteResponseItem::class => \Docker\API\Normalizer\ImageDeleteResponseItemNormalizer::class,
+            
+            \Docker\API\Model\ServiceUpdateResponse::class => \Docker\API\Normalizer\ServiceUpdateResponseNormalizer::class,
+            
+            \Docker\API\Model\ContainerSummaryItem::class => \Docker\API\Normalizer\ContainerSummaryItemNormalizer::class,
+            
+            \Docker\API\Model\ContainerSummaryItemHostConfig::class => \Docker\API\Normalizer\ContainerSummaryItemHostConfigNormalizer::class,
+            
+            \Docker\API\Model\ContainerSummaryItemNetworkSettings::class => \Docker\API\Normalizer\ContainerSummaryItemNetworkSettingsNormalizer::class,
+            
+            \Docker\API\Model\Driver::class => \Docker\API\Normalizer\DriverNormalizer::class,
+            
+            \Docker\API\Model\SecretSpec::class => \Docker\API\Normalizer\SecretSpecNormalizer::class,
+            
+            \Docker\API\Model\Secret::class => \Docker\API\Normalizer\SecretNormalizer::class,
+            
+            \Docker\API\Model\ConfigSpec::class => \Docker\API\Normalizer\ConfigSpecNormalizer::class,
+            
+            \Docker\API\Model\Config::class => \Docker\API\Normalizer\ConfigNormalizer::class,
+            
+            \Docker\API\Model\SystemInfo::class => \Docker\API\Normalizer\SystemInfoNormalizer::class,
+            
+            \Docker\API\Model\PluginsInfo::class => \Docker\API\Normalizer\PluginsInfoNormalizer::class,
+            
+            \Docker\API\Model\RegistryServiceConfig::class => \Docker\API\Normalizer\RegistryServiceConfigNormalizer::class,
+            
+            \Docker\API\Model\IndexInfo::class => \Docker\API\Normalizer\IndexInfoNormalizer::class,
+            
+            \Docker\API\Model\Runtime::class => \Docker\API\Normalizer\RuntimeNormalizer::class,
+            
+            \Docker\API\Model\Commit::class => \Docker\API\Normalizer\CommitNormalizer::class,
+            
+            \Docker\API\Model\SwarmInfo::class => \Docker\API\Normalizer\SwarmInfoNormalizer::class,
+            
+            \Docker\API\Model\PeerNode::class => \Docker\API\Normalizer\PeerNodeNormalizer::class,
+            
+            \Docker\API\Model\ContainersCreatePostBody::class => \Docker\API\Normalizer\ContainersCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\ContainersCreatePostBodyNetworkingConfig::class => \Docker\API\Normalizer\ContainersCreatePostBodyNetworkingConfigNormalizer::class,
+            
+            \Docker\API\Model\ContainersCreatePostResponse201::class => \Docker\API\Normalizer\ContainersCreatePostResponse201Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdJsonGetResponse200::class => \Docker\API\Normalizer\ContainersIdJsonGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdJsonGetResponse200State::class => \Docker\API\Normalizer\ContainersIdJsonGetResponse200StateNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdJsonGetResponse200Node::class => \Docker\API\Normalizer\ContainersIdJsonGetResponse200NodeNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdTopGetJsonResponse200::class => \Docker\API\Normalizer\ContainersIdTopGetJsonResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdTopGetTextplainResponse200::class => \Docker\API\Normalizer\ContainersIdTopGetTextplainResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdChangesGetResponse200Item::class => \Docker\API\Normalizer\ContainersIdChangesGetResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdUpdatePostBody::class => \Docker\API\Normalizer\ContainersIdUpdatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdUpdatePostResponse200::class => \Docker\API\Normalizer\ContainersIdUpdatePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdWaitPostResponse200::class => \Docker\API\Normalizer\ContainersIdWaitPostResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdWaitPostResponse200Error::class => \Docker\API\Normalizer\ContainersIdWaitPostResponse200ErrorNormalizer::class,
+            
+            \Docker\API\Model\ContainersIdArchiveGetResponse400::class => \Docker\API\Normalizer\ContainersIdArchiveGetResponse400Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdArchiveHeadJsonResponse400::class => \Docker\API\Normalizer\ContainersIdArchiveHeadJsonResponse400Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdArchiveHeadTextplainResponse400::class => \Docker\API\Normalizer\ContainersIdArchiveHeadTextplainResponse400Normalizer::class,
+            
+            \Docker\API\Model\ContainersPrunePostResponse200::class => \Docker\API\Normalizer\ContainersPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\BuildPrunePostResponse200::class => \Docker\API\Normalizer\BuildPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\ImagesNameHistoryGetResponse200Item::class => \Docker\API\Normalizer\ImagesNameHistoryGetResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\ImagesSearchGetResponse200Item::class => \Docker\API\Normalizer\ImagesSearchGetResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\ImagesPrunePostResponse200::class => \Docker\API\Normalizer\ImagesPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\AuthPostResponse200::class => \Docker\API\Normalizer\AuthPostResponse200Normalizer::class,
+            
+            \Docker\API\Model\VersionGetResponse200::class => \Docker\API\Normalizer\VersionGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\VersionGetResponse200Platform::class => \Docker\API\Normalizer\VersionGetResponse200PlatformNormalizer::class,
+            
+            \Docker\API\Model\VersionGetResponse200ComponentsItem::class => \Docker\API\Normalizer\VersionGetResponse200ComponentsItemNormalizer::class,
+            
+            \Docker\API\Model\VersionGetResponse200ComponentsItemDetails::class => \Docker\API\Normalizer\VersionGetResponse200ComponentsItemDetailsNormalizer::class,
+            
+            \Docker\API\Model\EventsGetResponse200::class => \Docker\API\Normalizer\EventsGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\EventsGetResponse200Actor::class => \Docker\API\Normalizer\EventsGetResponse200ActorNormalizer::class,
+            
+            \Docker\API\Model\SystemDfGetJsonResponse200::class => \Docker\API\Normalizer\SystemDfGetJsonResponse200Normalizer::class,
+            
+            \Docker\API\Model\SystemDfGetTextplainResponse200::class => \Docker\API\Normalizer\SystemDfGetTextplainResponse200Normalizer::class,
+            
+            \Docker\API\Model\ContainersIdExecPostBody::class => \Docker\API\Normalizer\ContainersIdExecPostBodyNormalizer::class,
+            
+            \Docker\API\Model\ExecIdStartPostBody::class => \Docker\API\Normalizer\ExecIdStartPostBodyNormalizer::class,
+            
+            \Docker\API\Model\ExecIdJsonGetResponse200::class => \Docker\API\Normalizer\ExecIdJsonGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\VolumesGetResponse200::class => \Docker\API\Normalizer\VolumesGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\VolumesCreatePostBody::class => \Docker\API\Normalizer\VolumesCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\VolumesPrunePostResponse200::class => \Docker\API\Normalizer\VolumesPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\NetworksCreatePostBody::class => \Docker\API\Normalizer\NetworksCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\NetworksCreatePostResponse201::class => \Docker\API\Normalizer\NetworksCreatePostResponse201Normalizer::class,
+            
+            \Docker\API\Model\NetworksIdConnectPostBody::class => \Docker\API\Normalizer\NetworksIdConnectPostBodyNormalizer::class,
+            
+            \Docker\API\Model\NetworksIdDisconnectPostBody::class => \Docker\API\Normalizer\NetworksIdDisconnectPostBodyNormalizer::class,
+            
+            \Docker\API\Model\NetworksPrunePostResponse200::class => \Docker\API\Normalizer\NetworksPrunePostResponse200Normalizer::class,
+            
+            \Docker\API\Model\PluginsPrivilegesGetJsonResponse200Item::class => \Docker\API\Normalizer\PluginsPrivilegesGetJsonResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\PluginsPrivilegesGetTextplainResponse200Item::class => \Docker\API\Normalizer\PluginsPrivilegesGetTextplainResponse200ItemNormalizer::class,
+            
+            \Docker\API\Model\PluginsPullPostBodyItem::class => \Docker\API\Normalizer\PluginsPullPostBodyItemNormalizer::class,
+            
+            \Docker\API\Model\PluginsNameUpgradePostBodyItem::class => \Docker\API\Normalizer\PluginsNameUpgradePostBodyItemNormalizer::class,
+            
+            \Docker\API\Model\SwarmInitPostBody::class => \Docker\API\Normalizer\SwarmInitPostBodyNormalizer::class,
+            
+            \Docker\API\Model\SwarmJoinPostBody::class => \Docker\API\Normalizer\SwarmJoinPostBodyNormalizer::class,
+            
+            \Docker\API\Model\SwarmUnlockkeyGetJsonResponse200::class => \Docker\API\Normalizer\SwarmUnlockkeyGetJsonResponse200Normalizer::class,
+            
+            \Docker\API\Model\SwarmUnlockkeyGetTextplainResponse200::class => \Docker\API\Normalizer\SwarmUnlockkeyGetTextplainResponse200Normalizer::class,
+            
+            \Docker\API\Model\SwarmUnlockPostBody::class => \Docker\API\Normalizer\SwarmUnlockPostBodyNormalizer::class,
+            
+            \Docker\API\Model\ServicesCreatePostBody::class => \Docker\API\Normalizer\ServicesCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\ServicesCreatePostResponse201::class => \Docker\API\Normalizer\ServicesCreatePostResponse201Normalizer::class,
+            
+            \Docker\API\Model\ServicesIdUpdatePostBody::class => \Docker\API\Normalizer\ServicesIdUpdatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\SecretsCreatePostBody::class => \Docker\API\Normalizer\SecretsCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\ConfigsCreatePostBody::class => \Docker\API\Normalizer\ConfigsCreatePostBodyNormalizer::class,
+            
+            \Docker\API\Model\DistributionNameJsonGetResponse200::class => \Docker\API\Normalizer\DistributionNameJsonGetResponse200Normalizer::class,
+            
+            \Docker\API\Model\DistributionNameJsonGetResponse200Descriptor::class => \Docker\API\Normalizer\DistributionNameJsonGetResponse200DescriptorNormalizer::class,
+            
+            \Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem::class => \Docker\API\Normalizer\DistributionNameJsonGetResponse200PlatformsItemNormalizer::class,
+            
+            \Jane\Component\JsonSchemaRuntime\Reference::class => \Docker\API\Runtime\Normalizer\ReferenceNormalizer::class,
+        ], $normalizersCache = [];
         public function supportsDenormalization($data, $type, $format = null, array $context = []) : bool
         {
             return array_key_exists($type, $this->normalizers);
@@ -104,7 +1088,205 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Port' => false, 'Docker\\API\\Model\\MountPoint' => false, 'Docker\\API\\Model\\DeviceMapping' => false, 'Docker\\API\\Model\\ThrottleDevice' => false, 'Docker\\API\\Model\\Mount' => false, 'Docker\\API\\Model\\MountBindOptions' => false, 'Docker\\API\\Model\\MountVolumeOptions' => false, 'Docker\\API\\Model\\MountVolumeOptionsDriverConfig' => false, 'Docker\\API\\Model\\MountTmpfsOptions' => false, 'Docker\\API\\Model\\RestartPolicy' => false, 'Docker\\API\\Model\\Resources' => false, 'Docker\\API\\Model\\ResourcesBlkioWeightDeviceItem' => false, 'Docker\\API\\Model\\ResourcesUlimitsItem' => false, 'Docker\\API\\Model\\ResourceObject' => false, 'Docker\\API\\Model\\GenericResourcesItem' => false, 'Docker\\API\\Model\\GenericResourcesItemNamedResourceSpec' => false, 'Docker\\API\\Model\\GenericResourcesItemDiscreteResourceSpec' => false, 'Docker\\API\\Model\\HealthConfig' => false, 'Docker\\API\\Model\\HostConfig' => false, 'Docker\\API\\Model\\HostConfigLogConfig' => false, 'Docker\\API\\Model\\ContainerConfig' => false, 'Docker\\API\\Model\\ContainerConfigExposedPortsItem' => false, 'Docker\\API\\Model\\ContainerConfigVolumesItem' => false, 'Docker\\API\\Model\\NetworkSettings' => false, 'Docker\\API\\Model\\Address' => false, 'Docker\\API\\Model\\PortBinding' => false, 'Docker\\API\\Model\\GraphDriverData' => false, 'Docker\\API\\Model\\Image' => false, 'Docker\\API\\Model\\ImageRootFS' => false, 'Docker\\API\\Model\\ImageMetadata' => false, 'Docker\\API\\Model\\ImageSummary' => false, 'Docker\\API\\Model\\AuthConfig' => false, 'Docker\\API\\Model\\ProcessConfig' => false, 'Docker\\API\\Model\\Volume' => false, 'Docker\\API\\Model\\VolumeStatusItem' => false, 'Docker\\API\\Model\\VolumeUsageData' => false, 'Docker\\API\\Model\\Network' => false, 'Docker\\API\\Model\\IPAM' => false, 'Docker\\API\\Model\\NetworkContainer' => false, 'Docker\\API\\Model\\BuildInfo' => false, 'Docker\\API\\Model\\ImageID' => false, 'Docker\\API\\Model\\CreateImageInfo' => false, 'Docker\\API\\Model\\PushImageInfo' => false, 'Docker\\API\\Model\\ErrorDetail' => false, 'Docker\\API\\Model\\ProgressDetail' => false, 'Docker\\API\\Model\\ErrorResponse' => false, 'Docker\\API\\Model\\IdResponse' => false, 'Docker\\API\\Model\\EndpointSettings' => false, 'Docker\\API\\Model\\EndpointIPAMConfig' => false, 'Docker\\API\\Model\\PluginMount' => false, 'Docker\\API\\Model\\PluginDevice' => false, 'Docker\\API\\Model\\PluginEnv' => false, 'Docker\\API\\Model\\PluginInterfaceType' => false, 'Docker\\API\\Model\\Plugin' => false, 'Docker\\API\\Model\\PluginSettings' => false, 'Docker\\API\\Model\\PluginConfig' => false, 'Docker\\API\\Model\\PluginConfigInterface' => false, 'Docker\\API\\Model\\PluginConfigUser' => false, 'Docker\\API\\Model\\PluginConfigNetwork' => false, 'Docker\\API\\Model\\PluginConfigLinux' => false, 'Docker\\API\\Model\\PluginConfigArgs' => false, 'Docker\\API\\Model\\PluginConfigRootfs' => false, 'Docker\\API\\Model\\ObjectVersion' => false, 'Docker\\API\\Model\\NodeSpec' => false, 'Docker\\API\\Model\\Node' => false, 'Docker\\API\\Model\\NodeDescription' => false, 'Docker\\API\\Model\\Platform' => false, 'Docker\\API\\Model\\EngineDescription' => false, 'Docker\\API\\Model\\EngineDescriptionPluginsItem' => false, 'Docker\\API\\Model\\TLSInfo' => false, 'Docker\\API\\Model\\NodeStatus' => false, 'Docker\\API\\Model\\ManagerStatus' => false, 'Docker\\API\\Model\\SwarmSpec' => false, 'Docker\\API\\Model\\SwarmSpecOrchestration' => false, 'Docker\\API\\Model\\SwarmSpecRaft' => false, 'Docker\\API\\Model\\SwarmSpecDispatcher' => false, 'Docker\\API\\Model\\SwarmSpecCAConfig' => false, 'Docker\\API\\Model\\SwarmSpecCAConfigExternalCAsItem' => false, 'Docker\\API\\Model\\SwarmSpecEncryptionConfig' => false, 'Docker\\API\\Model\\SwarmSpecTaskDefaults' => false, 'Docker\\API\\Model\\SwarmSpecTaskDefaultsLogDriver' => false, 'Docker\\API\\Model\\ClusterInfo' => false, 'Docker\\API\\Model\\JoinTokens' => false, 'Docker\\API\\Model\\Swarm' => false, 'Docker\\API\\Model\\TaskSpec' => false, 'Docker\\API\\Model\\TaskSpecPluginSpec' => false, 'Docker\\API\\Model\\TaskSpecPluginSpecPluginPrivilegeItem' => false, 'Docker\\API\\Model\\TaskSpecContainerSpec' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecPrivileges' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesCredentialSpec' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecPrivilegesSELinuxContext' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecDNSConfig' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItem' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecSecretsItemFile' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItem' => false, 'Docker\\API\\Model\\TaskSpecContainerSpecConfigsItemFile' => false, 'Docker\\API\\Model\\TaskSpecResources' => false, 'Docker\\API\\Model\\TaskSpecRestartPolicy' => false, 'Docker\\API\\Model\\TaskSpecPlacement' => false, 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItem' => false, 'Docker\\API\\Model\\TaskSpecPlacementPreferencesItemSpread' => false, 'Docker\\API\\Model\\TaskSpecNetworksItem' => false, 'Docker\\API\\Model\\TaskSpecLogDriver' => false, 'Docker\\API\\Model\\Task' => false, 'Docker\\API\\Model\\TaskStatus' => false, 'Docker\\API\\Model\\TaskStatusContainerStatus' => false, 'Docker\\API\\Model\\ServiceSpec' => false, 'Docker\\API\\Model\\ServiceSpecMode' => false, 'Docker\\API\\Model\\ServiceSpecModeReplicated' => false, 'Docker\\API\\Model\\ServiceSpecModeGlobal' => false, 'Docker\\API\\Model\\ServiceSpecUpdateConfig' => false, 'Docker\\API\\Model\\ServiceSpecRollbackConfig' => false, 'Docker\\API\\Model\\ServiceSpecNetworksItem' => false, 'Docker\\API\\Model\\EndpointPortConfig' => false, 'Docker\\API\\Model\\EndpointSpec' => false, 'Docker\\API\\Model\\Service' => false, 'Docker\\API\\Model\\ServiceEndpoint' => false, 'Docker\\API\\Model\\ServiceEndpointVirtualIPsItem' => false, 'Docker\\API\\Model\\ServiceUpdateStatus' => false, 'Docker\\API\\Model\\ImageDeleteResponseItem' => false, 'Docker\\API\\Model\\ServiceUpdateResponse' => false, 'Docker\\API\\Model\\ContainerSummaryItem' => false, 'Docker\\API\\Model\\ContainerSummaryItemHostConfig' => false, 'Docker\\API\\Model\\ContainerSummaryItemNetworkSettings' => false, 'Docker\\API\\Model\\Driver' => false, 'Docker\\API\\Model\\SecretSpec' => false, 'Docker\\API\\Model\\Secret' => false, 'Docker\\API\\Model\\ConfigSpec' => false, 'Docker\\API\\Model\\Config' => false, 'Docker\\API\\Model\\SystemInfo' => false, 'Docker\\API\\Model\\PluginsInfo' => false, 'Docker\\API\\Model\\RegistryServiceConfig' => false, 'Docker\\API\\Model\\IndexInfo' => false, 'Docker\\API\\Model\\Runtime' => false, 'Docker\\API\\Model\\Commit' => false, 'Docker\\API\\Model\\SwarmInfo' => false, 'Docker\\API\\Model\\PeerNode' => false, 'Docker\\API\\Model\\ContainersCreatePostBody' => false, 'Docker\\API\\Model\\ContainersCreatePostBodyNetworkingConfig' => false, 'Docker\\API\\Model\\ContainersCreatePostResponse201' => false, 'Docker\\API\\Model\\ContainersIdJsonGetResponse200' => false, 'Docker\\API\\Model\\ContainersIdJsonGetResponse200State' => false, 'Docker\\API\\Model\\ContainersIdJsonGetResponse200Node' => false, 'Docker\\API\\Model\\ContainersIdTopGetJsonResponse200' => false, 'Docker\\API\\Model\\ContainersIdTopGetTextplainResponse200' => false, 'Docker\\API\\Model\\ContainersIdChangesGetResponse200Item' => false, 'Docker\\API\\Model\\ContainersIdUpdatePostBody' => false, 'Docker\\API\\Model\\ContainersIdUpdatePostResponse200' => false, 'Docker\\API\\Model\\ContainersIdWaitPostResponse200' => false, 'Docker\\API\\Model\\ContainersIdWaitPostResponse200Error' => false, 'Docker\\API\\Model\\ContainersIdArchiveGetResponse400' => false, 'Docker\\API\\Model\\ContainersIdArchiveHeadJsonResponse400' => false, 'Docker\\API\\Model\\ContainersIdArchiveHeadTextplainResponse400' => false, 'Docker\\API\\Model\\ContainersPrunePostResponse200' => false, 'Docker\\API\\Model\\BuildPrunePostResponse200' => false, 'Docker\\API\\Model\\ImagesNameHistoryGetResponse200Item' => false, 'Docker\\API\\Model\\ImagesSearchGetResponse200Item' => false, 'Docker\\API\\Model\\ImagesPrunePostResponse200' => false, 'Docker\\API\\Model\\AuthPostResponse200' => false, 'Docker\\API\\Model\\VersionGetResponse200' => false, 'Docker\\API\\Model\\VersionGetResponse200Platform' => false, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItem' => false, 'Docker\\API\\Model\\VersionGetResponse200ComponentsItemDetails' => false, 'Docker\\API\\Model\\EventsGetResponse200' => false, 'Docker\\API\\Model\\EventsGetResponse200Actor' => false, 'Docker\\API\\Model\\SystemDfGetJsonResponse200' => false, 'Docker\\API\\Model\\SystemDfGetTextplainResponse200' => false, 'Docker\\API\\Model\\ContainersIdExecPostBody' => false, 'Docker\\API\\Model\\ExecIdStartPostBody' => false, 'Docker\\API\\Model\\ExecIdJsonGetResponse200' => false, 'Docker\\API\\Model\\VolumesGetResponse200' => false, 'Docker\\API\\Model\\VolumesCreatePostBody' => false, 'Docker\\API\\Model\\VolumesPrunePostResponse200' => false, 'Docker\\API\\Model\\NetworksCreatePostBody' => false, 'Docker\\API\\Model\\NetworksCreatePostResponse201' => false, 'Docker\\API\\Model\\NetworksIdConnectPostBody' => false, 'Docker\\API\\Model\\NetworksIdDisconnectPostBody' => false, 'Docker\\API\\Model\\NetworksPrunePostResponse200' => false, 'Docker\\API\\Model\\PluginsPrivilegesGetJsonResponse200Item' => false, 'Docker\\API\\Model\\PluginsPrivilegesGetTextplainResponse200Item' => false, 'Docker\\API\\Model\\PluginsPullPostBodyItem' => false, 'Docker\\API\\Model\\PluginsNameUpgradePostBodyItem' => false, 'Docker\\API\\Model\\SwarmInitPostBody' => false, 'Docker\\API\\Model\\SwarmJoinPostBody' => false, 'Docker\\API\\Model\\SwarmUnlockkeyGetJsonResponse200' => false, 'Docker\\API\\Model\\SwarmUnlockkeyGetTextplainResponse200' => false, 'Docker\\API\\Model\\SwarmUnlockPostBody' => false, 'Docker\\API\\Model\\ServicesCreatePostBody' => false, 'Docker\\API\\Model\\ServicesCreatePostResponse201' => false, 'Docker\\API\\Model\\ServicesIdUpdatePostBody' => false, 'Docker\\API\\Model\\SecretsCreatePostBody' => false, 'Docker\\API\\Model\\ConfigsCreatePostBody' => false, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200' => false, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200Descriptor' => false, 'Docker\\API\\Model\\DistributionNameJsonGetResponse200PlatformsItem' => false, '\\Jane\\Component\\JsonSchemaRuntime\\Reference' => false];
+            return [
+                
+                \Docker\API\Model\Port::class => false,
+                \Docker\API\Model\MountPoint::class => false,
+                \Docker\API\Model\DeviceMapping::class => false,
+                \Docker\API\Model\ThrottleDevice::class => false,
+                \Docker\API\Model\Mount::class => false,
+                \Docker\API\Model\MountBindOptions::class => false,
+                \Docker\API\Model\MountVolumeOptions::class => false,
+                \Docker\API\Model\MountVolumeOptionsDriverConfig::class => false,
+                \Docker\API\Model\MountTmpfsOptions::class => false,
+                \Docker\API\Model\RestartPolicy::class => false,
+                \Docker\API\Model\Resources::class => false,
+                \Docker\API\Model\ResourcesBlkioWeightDeviceItem::class => false,
+                \Docker\API\Model\ResourcesUlimitsItem::class => false,
+                \Docker\API\Model\ResourceObject::class => false,
+                \Docker\API\Model\GenericResourcesItem::class => false,
+                \Docker\API\Model\GenericResourcesItemNamedResourceSpec::class => false,
+                \Docker\API\Model\GenericResourcesItemDiscreteResourceSpec::class => false,
+                \Docker\API\Model\HealthConfig::class => false,
+                \Docker\API\Model\HostConfig::class => false,
+                \Docker\API\Model\HostConfigLogConfig::class => false,
+                \Docker\API\Model\ContainerConfig::class => false,
+                \Docker\API\Model\ContainerConfigExposedPortsItem::class => false,
+                \Docker\API\Model\ContainerConfigVolumesItem::class => false,
+                \Docker\API\Model\NetworkSettings::class => false,
+                \Docker\API\Model\Address::class => false,
+                \Docker\API\Model\PortBinding::class => false,
+                \Docker\API\Model\GraphDriverData::class => false,
+                \Docker\API\Model\Image::class => false,
+                \Docker\API\Model\ImageRootFS::class => false,
+                \Docker\API\Model\ImageMetadata::class => false,
+                \Docker\API\Model\ImageSummary::class => false,
+                \Docker\API\Model\AuthConfig::class => false,
+                \Docker\API\Model\ProcessConfig::class => false,
+                \Docker\API\Model\Volume::class => false,
+                \Docker\API\Model\VolumeStatusItem::class => false,
+                \Docker\API\Model\VolumeUsageData::class => false,
+                \Docker\API\Model\Network::class => false,
+                \Docker\API\Model\IPAM::class => false,
+                \Docker\API\Model\NetworkContainer::class => false,
+                \Docker\API\Model\BuildInfo::class => false,
+                \Docker\API\Model\ImageID::class => false,
+                \Docker\API\Model\CreateImageInfo::class => false,
+                \Docker\API\Model\PushImageInfo::class => false,
+                \Docker\API\Model\ErrorDetail::class => false,
+                \Docker\API\Model\ProgressDetail::class => false,
+                \Docker\API\Model\ErrorResponse::class => false,
+                \Docker\API\Model\IdResponse::class => false,
+                \Docker\API\Model\EndpointSettings::class => false,
+                \Docker\API\Model\EndpointIPAMConfig::class => false,
+                \Docker\API\Model\PluginMount::class => false,
+                \Docker\API\Model\PluginDevice::class => false,
+                \Docker\API\Model\PluginEnv::class => false,
+                \Docker\API\Model\PluginInterfaceType::class => false,
+                \Docker\API\Model\Plugin::class => false,
+                \Docker\API\Model\PluginSettings::class => false,
+                \Docker\API\Model\PluginConfig::class => false,
+                \Docker\API\Model\PluginConfigInterface::class => false,
+                \Docker\API\Model\PluginConfigUser::class => false,
+                \Docker\API\Model\PluginConfigNetwork::class => false,
+                \Docker\API\Model\PluginConfigLinux::class => false,
+                \Docker\API\Model\PluginConfigArgs::class => false,
+                \Docker\API\Model\PluginConfigRootfs::class => false,
+                \Docker\API\Model\ObjectVersion::class => false,
+                \Docker\API\Model\NodeSpec::class => false,
+                \Docker\API\Model\Node::class => false,
+                \Docker\API\Model\NodeDescription::class => false,
+                \Docker\API\Model\Platform::class => false,
+                \Docker\API\Model\EngineDescription::class => false,
+                \Docker\API\Model\EngineDescriptionPluginsItem::class => false,
+                \Docker\API\Model\TLSInfo::class => false,
+                \Docker\API\Model\NodeStatus::class => false,
+                \Docker\API\Model\ManagerStatus::class => false,
+                \Docker\API\Model\SwarmSpec::class => false,
+                \Docker\API\Model\SwarmSpecOrchestration::class => false,
+                \Docker\API\Model\SwarmSpecRaft::class => false,
+                \Docker\API\Model\SwarmSpecDispatcher::class => false,
+                \Docker\API\Model\SwarmSpecCAConfig::class => false,
+                \Docker\API\Model\SwarmSpecCAConfigExternalCAsItem::class => false,
+                \Docker\API\Model\SwarmSpecEncryptionConfig::class => false,
+                \Docker\API\Model\SwarmSpecTaskDefaults::class => false,
+                \Docker\API\Model\SwarmSpecTaskDefaultsLogDriver::class => false,
+                \Docker\API\Model\ClusterInfo::class => false,
+                \Docker\API\Model\JoinTokens::class => false,
+                \Docker\API\Model\Swarm::class => false,
+                \Docker\API\Model\TaskSpec::class => false,
+                \Docker\API\Model\TaskSpecPluginSpec::class => false,
+                \Docker\API\Model\TaskSpecPluginSpecPluginPrivilegeItem::class => false,
+                \Docker\API\Model\TaskSpecContainerSpec::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecPrivileges::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecPrivilegesCredentialSpec::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecPrivilegesSELinuxContext::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecDNSConfig::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecSecretsItem::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecSecretsItemFile::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecConfigsItem::class => false,
+                \Docker\API\Model\TaskSpecContainerSpecConfigsItemFile::class => false,
+                \Docker\API\Model\TaskSpecResources::class => false,
+                \Docker\API\Model\TaskSpecRestartPolicy::class => false,
+                \Docker\API\Model\TaskSpecPlacement::class => false,
+                \Docker\API\Model\TaskSpecPlacementPreferencesItem::class => false,
+                \Docker\API\Model\TaskSpecPlacementPreferencesItemSpread::class => false,
+                \Docker\API\Model\TaskSpecNetworksItem::class => false,
+                \Docker\API\Model\TaskSpecLogDriver::class => false,
+                \Docker\API\Model\Task::class => false,
+                \Docker\API\Model\TaskStatus::class => false,
+                \Docker\API\Model\TaskStatusContainerStatus::class => false,
+                \Docker\API\Model\ServiceSpec::class => false,
+                \Docker\API\Model\ServiceSpecMode::class => false,
+                \Docker\API\Model\ServiceSpecModeReplicated::class => false,
+                \Docker\API\Model\ServiceSpecModeGlobal::class => false,
+                \Docker\API\Model\ServiceSpecUpdateConfig::class => false,
+                \Docker\API\Model\ServiceSpecRollbackConfig::class => false,
+                \Docker\API\Model\ServiceSpecNetworksItem::class => false,
+                \Docker\API\Model\EndpointPortConfig::class => false,
+                \Docker\API\Model\EndpointSpec::class => false,
+                \Docker\API\Model\Service::class => false,
+                \Docker\API\Model\ServiceEndpoint::class => false,
+                \Docker\API\Model\ServiceEndpointVirtualIPsItem::class => false,
+                \Docker\API\Model\ServiceUpdateStatus::class => false,
+                \Docker\API\Model\ImageDeleteResponseItem::class => false,
+                \Docker\API\Model\ServiceUpdateResponse::class => false,
+                \Docker\API\Model\ContainerSummaryItem::class => false,
+                \Docker\API\Model\ContainerSummaryItemHostConfig::class => false,
+                \Docker\API\Model\ContainerSummaryItemNetworkSettings::class => false,
+                \Docker\API\Model\Driver::class => false,
+                \Docker\API\Model\SecretSpec::class => false,
+                \Docker\API\Model\Secret::class => false,
+                \Docker\API\Model\ConfigSpec::class => false,
+                \Docker\API\Model\Config::class => false,
+                \Docker\API\Model\SystemInfo::class => false,
+                \Docker\API\Model\PluginsInfo::class => false,
+                \Docker\API\Model\RegistryServiceConfig::class => false,
+                \Docker\API\Model\IndexInfo::class => false,
+                \Docker\API\Model\Runtime::class => false,
+                \Docker\API\Model\Commit::class => false,
+                \Docker\API\Model\SwarmInfo::class => false,
+                \Docker\API\Model\PeerNode::class => false,
+                \Docker\API\Model\ContainersCreatePostBody::class => false,
+                \Docker\API\Model\ContainersCreatePostBodyNetworkingConfig::class => false,
+                \Docker\API\Model\ContainersCreatePostResponse201::class => false,
+                \Docker\API\Model\ContainersIdJsonGetResponse200::class => false,
+                \Docker\API\Model\ContainersIdJsonGetResponse200State::class => false,
+                \Docker\API\Model\ContainersIdJsonGetResponse200Node::class => false,
+                \Docker\API\Model\ContainersIdTopGetJsonResponse200::class => false,
+                \Docker\API\Model\ContainersIdTopGetTextplainResponse200::class => false,
+                \Docker\API\Model\ContainersIdChangesGetResponse200Item::class => false,
+                \Docker\API\Model\ContainersIdUpdatePostBody::class => false,
+                \Docker\API\Model\ContainersIdUpdatePostResponse200::class => false,
+                \Docker\API\Model\ContainersIdWaitPostResponse200::class => false,
+                \Docker\API\Model\ContainersIdWaitPostResponse200Error::class => false,
+                \Docker\API\Model\ContainersIdArchiveGetResponse400::class => false,
+                \Docker\API\Model\ContainersIdArchiveHeadJsonResponse400::class => false,
+                \Docker\API\Model\ContainersIdArchiveHeadTextplainResponse400::class => false,
+                \Docker\API\Model\ContainersPrunePostResponse200::class => false,
+                \Docker\API\Model\BuildPrunePostResponse200::class => false,
+                \Docker\API\Model\ImagesNameHistoryGetResponse200Item::class => false,
+                \Docker\API\Model\ImagesSearchGetResponse200Item::class => false,
+                \Docker\API\Model\ImagesPrunePostResponse200::class => false,
+                \Docker\API\Model\AuthPostResponse200::class => false,
+                \Docker\API\Model\VersionGetResponse200::class => false,
+                \Docker\API\Model\VersionGetResponse200Platform::class => false,
+                \Docker\API\Model\VersionGetResponse200ComponentsItem::class => false,
+                \Docker\API\Model\VersionGetResponse200ComponentsItemDetails::class => false,
+                \Docker\API\Model\EventsGetResponse200::class => false,
+                \Docker\API\Model\EventsGetResponse200Actor::class => false,
+                \Docker\API\Model\SystemDfGetJsonResponse200::class => false,
+                \Docker\API\Model\SystemDfGetTextplainResponse200::class => false,
+                \Docker\API\Model\ContainersIdExecPostBody::class => false,
+                \Docker\API\Model\ExecIdStartPostBody::class => false,
+                \Docker\API\Model\ExecIdJsonGetResponse200::class => false,
+                \Docker\API\Model\VolumesGetResponse200::class => false,
+                \Docker\API\Model\VolumesCreatePostBody::class => false,
+                \Docker\API\Model\VolumesPrunePostResponse200::class => false,
+                \Docker\API\Model\NetworksCreatePostBody::class => false,
+                \Docker\API\Model\NetworksCreatePostResponse201::class => false,
+                \Docker\API\Model\NetworksIdConnectPostBody::class => false,
+                \Docker\API\Model\NetworksIdDisconnectPostBody::class => false,
+                \Docker\API\Model\NetworksPrunePostResponse200::class => false,
+                \Docker\API\Model\PluginsPrivilegesGetJsonResponse200Item::class => false,
+                \Docker\API\Model\PluginsPrivilegesGetTextplainResponse200Item::class => false,
+                \Docker\API\Model\PluginsPullPostBodyItem::class => false,
+                \Docker\API\Model\PluginsNameUpgradePostBodyItem::class => false,
+                \Docker\API\Model\SwarmInitPostBody::class => false,
+                \Docker\API\Model\SwarmJoinPostBody::class => false,
+                \Docker\API\Model\SwarmUnlockkeyGetJsonResponse200::class => false,
+                \Docker\API\Model\SwarmUnlockkeyGetTextplainResponse200::class => false,
+                \Docker\API\Model\SwarmUnlockPostBody::class => false,
+                \Docker\API\Model\ServicesCreatePostBody::class => false,
+                \Docker\API\Model\ServicesCreatePostResponse201::class => false,
+                \Docker\API\Model\ServicesIdUpdatePostBody::class => false,
+                \Docker\API\Model\SecretsCreatePostBody::class => false,
+                \Docker\API\Model\ConfigsCreatePostBody::class => false,
+                \Docker\API\Model\DistributionNameJsonGetResponse200::class => false,
+                \Docker\API\Model\DistributionNameJsonGetResponse200Descriptor::class => false,
+                \Docker\API\Model\DistributionNameJsonGetResponse200PlatformsItem::class => false,
+                \Jane\Component\JsonSchemaRuntime\Reference::class => false,
+            ];
         }
     }
 }

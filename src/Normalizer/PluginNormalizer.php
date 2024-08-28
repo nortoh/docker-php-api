@@ -22,11 +22,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization(mixed $data, string $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Plugin';
+            return $type === \Docker\API\Model\Plugin::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Plugin';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Plugin::class;
         }
         public function denormalize(mixed $data, string $type, string $format = null, array $context = []) : mixed
         {
@@ -62,7 +62,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEnabled(null);
             }
             if (\array_key_exists('Settings', $data) && $data['Settings'] !== null) {
-                $object->setSettings($this->denormalizer->denormalize($data['Settings'], 'Docker\\API\\Model\\PluginSettings', 'json', $context));
+                $object->setSettings($this->denormalizer->denormalize($data['Settings'], \Docker\API\Model\PluginSettings::class, 'json', $context));
                 unset($data['Settings']);
             }
             elseif (\array_key_exists('Settings', $data) && $data['Settings'] === null) {
@@ -76,7 +76,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPluginReference(null);
             }
             if (\array_key_exists('Config', $data) && $data['Config'] !== null) {
-                $object->setConfig($this->denormalizer->denormalize($data['Config'], 'Docker\\API\\Model\\PluginConfig', 'json', $context));
+                $object->setConfig($this->denormalizer->denormalize($data['Config'], \Docker\API\Model\PluginConfig::class, 'json', $context));
                 unset($data['Config']);
             }
             elseif (\array_key_exists('Config', $data) && $data['Config'] === null) {
@@ -111,7 +111,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Plugin' => false];
+            return [\Docker\API\Model\Plugin::class => false];
         }
     }
 } else {
@@ -123,11 +123,11 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         use ValidatorTrait;
         public function supportsDenormalization($data, $type, string $format = null, array $context = []) : bool
         {
-            return $type === 'Docker\\API\\Model\\Plugin';
+            return $type === \Docker\API\Model\Plugin::class;
         }
         public function supportsNormalization(mixed $data, string $format = null, array $context = []) : bool
         {
-            return is_object($data) && get_class($data) === 'Docker\\API\\Model\\Plugin';
+            return is_object($data) && get_class($data) === \Docker\API\Model\Plugin::class;
         }
         /**
          * @return mixed
@@ -166,7 +166,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setEnabled(null);
             }
             if (\array_key_exists('Settings', $data) && $data['Settings'] !== null) {
-                $object->setSettings($this->denormalizer->denormalize($data['Settings'], 'Docker\\API\\Model\\PluginSettings', 'json', $context));
+                $object->setSettings($this->denormalizer->denormalize($data['Settings'], \Docker\API\Model\PluginSettings::class, 'json', $context));
                 unset($data['Settings']);
             }
             elseif (\array_key_exists('Settings', $data) && $data['Settings'] === null) {
@@ -180,7 +180,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
                 $object->setPluginReference(null);
             }
             if (\array_key_exists('Config', $data) && $data['Config'] !== null) {
-                $object->setConfig($this->denormalizer->denormalize($data['Config'], 'Docker\\API\\Model\\PluginConfig', 'json', $context));
+                $object->setConfig($this->denormalizer->denormalize($data['Config'], \Docker\API\Model\PluginConfig::class, 'json', $context));
                 unset($data['Config']);
             }
             elseif (\array_key_exists('Config', $data) && $data['Config'] === null) {
@@ -218,7 +218,7 @@ if (!class_exists(Kernel::class) or (Kernel::MAJOR_VERSION >= 7 or Kernel::MAJOR
         }
         public function getSupportedTypes(?string $format = null) : array
         {
-            return ['Docker\\API\\Model\\Plugin' => false];
+            return [\Docker\API\Model\Plugin::class => false];
         }
     }
 }
