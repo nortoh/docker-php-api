@@ -12,7 +12,7 @@
         "docker-php/docker-php-api": "*"
     },
     "require": {
-        "php": ">=7.1",
+        "php": ">=8.2",
         "jane-php/jane-php": "^7.8.0"
     },
     "require-dev": {
@@ -28,7 +28,7 @@
             "4.1.36": "4.1.36.x-dev"
         }
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "config": {
         "allow-plugins": {
